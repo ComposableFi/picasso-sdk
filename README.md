@@ -3,11 +3,11 @@ Picasso IBC sdk for cosmos, ethereum, solana, and polkadot
 
 # How to use indexer 
 
-1. Transaction with direct channel 
+## 1. Transaction with direct channel 
 * You can query indexer API with txHash 
 https://204.48.25.128/api/ibc_events?txHash=0F3DFE07428C1D600964B5FA9BF91A72EEEED0AFB628532864998B58F97B66A7
 
-2. PFM Transaction via Picasso(Cosmos) 
+## 2. PFM Transaction via Picasso(Cosmos) 
 * query by next hop's information 
 
 [First hop] Composable -> Picasso (kusama)
