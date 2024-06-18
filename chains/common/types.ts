@@ -1,0 +1,1 @@
+export type WalletApiEvents = 'COSMOS_APPROVED' | 'CANCEL_COSMOS' |'SOLANA_APPROVED'|'CANCEL_SOLANA'
