@@ -17,14 +17,14 @@ import {
 	numberTo32ByteBuffer
 } from './helper';
 
-const ibcTransfer = async (
+const solanaTransfer = async (
 	quantity: string,
 	accountId: string,
 	destinationAddress: string,
 	configAssetId: string,
 	sourceChannelId: number,
-	configDenom:string, // 'SOL' (native sol) | 'mSOL' (spl token) | 'transfer/channel-1/transfer/channel-52/wei' ( ibc eth at solana)
-    endpoint: string,
+	configDenom: string, // 'SOL' (native sol) | 'mSOL' (spl token) | 'transfer/channel-1/transfer/channel-52/wei' ( ibc eth at solana)
+	endpoint: string,
 	timeout: number,
 	memo: string = ''
 ) => {
@@ -33,18 +33,13 @@ const ibcTransfer = async (
 	// nativeDenom: assetId, nonNativeDenom: minimalDenom with path
 
 	const isNative = isNativeSolanaAsset(configAssetId);
-	const { denom, baseDenom, assetId, hashedDenom } = getSolanaAsset(
-		configAssetId,
-		configDenom,
-		isNative
-	);
+	const { denom, baseDenom, assetId, hashedDenom } = getSolanaAsset(configAssetId, configDenom, isNative);
 	/**@description examle: transfer/channel-0/transfer/channel-52/wei */
 	const senderPublicKey = new anchor.web3.PublicKey(accountId);
 	const associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
 	const tx = new anchor.web3.Transaction();
 
 	const connection = getConnection(endpoint);
-	const emptyArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 	if (assetId === 'SOL' && connection) {
 		//
 
@@ -177,7 +172,7 @@ const sendTX = async (
 	//set owner as feePayer
 	tx.feePayer = depositor;
 	beforeFeeFunc?.();
-	tx.add(getFee(address, isBundle));
+	tx.add(getFee());
 	//this is event emitter for listening cancel /approval event
 	const signedTx = await solana.signTransaction(tx).catch(err => {
 		emitter.emit('CANCEL_SOLANA');
@@ -215,24 +210,11 @@ const pollingSignatureStatus = async (
 	}
 };
 
-const getFee = (accountId: string, isBundle: boolean): anchor.web3.TransactionInstruction => {
-	if (isBundle) {
-		return getTips(accountId, 15000000);
-	} else {
-		const SEND_AMT = 0.01 * LAMPORTS_PER_SOL; // for test, it used to be 0.006
-		const PRIORITY_FEE_IX = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: SEND_AMT });
+const getFee = (): anchor.web3.TransactionInstruction => {
+	const SEND_AMT = 0.01 * LAMPORTS_PER_SOL; // for test, it used to be 0.006
+	const PRIORITY_FEE_IX = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: SEND_AMT });
 
-		return PRIORITY_FEE_IX;
-	}
+	return PRIORITY_FEE_IX;
 };
 
-const getTips = (accountId: string, lamports: number = 4000000) => {
-	//0.000035
-	//0.015
-	return SystemProgram.transfer({
-		toPubkey: getPublicKey('96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5'), //jito tip account
-		fromPubkey: getPublicKey(accountId),
-		lamports
-	});
-};
-export default ibcTransfer;
+export default solanaTransfer;

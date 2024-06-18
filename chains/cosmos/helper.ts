@@ -3,7 +3,6 @@ import {
  
 } from '@cosmjs/stargate';
 import {TX_MSG_TYPE} from './types'
-import { TIMEOUT_IBC_MAX } from './constants';
 
 
 
@@ -53,14 +52,3 @@ export const getClient = async (chainId:string, rpc:string)=>{
 }
 
 
-export const memoBuilder = ({ destChannel, destAddress }: { destChannel: number; destAddress: string }) => {
-	return JSON.stringify({
-		forward: {
-			receiver: destAddress,
-			port: 'transfer',
-			channel: `channel-${destChannel}`,
-			timeout: TIMEOUT_IBC_MAX,
-			retries: 0
-		}
-	});
-};
