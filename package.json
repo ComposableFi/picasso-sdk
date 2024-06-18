@@ -21,6 +21,7 @@
 		"resolveJsonModule": true
 	},
 	"dependencies": {
+		"eventemitter3": "^5.0.0",
 	
 		"@cosmjs/stargate": "^0.31.0-alpha.2"
 		
