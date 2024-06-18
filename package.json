@@ -1,15 +1,8 @@
 {
-  "name": "picasso-sdk",
+ "name": "picasso-sdk",
   "version": "1.0.0",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "index.ts",
-  "scripts": {
-    "test": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nahyunbak/picasso-sdk.git"
-  },
   "keywords": [
     "picasso",
     "composable",
@@ -20,8 +13,17 @@
   ],
   "author": "composable finance",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nahyunbak/picasso-sdk/issues"
-  },
-  "homepage": "https://github.com/nahyunbak/picasso-sdk#readme"
+	"private": true,
+	"scripts":{},
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true
+	},
+	"dependencies": {
+	
+		"@cosmjs/stargate": "^0.31.0-alpha.2"
+		
+	},
+	"devDependencies": {}
 }
