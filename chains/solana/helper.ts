@@ -1,19 +1,66 @@
-import { Connection, PublicKey } from "@solana/web3.js";
-import { BorshSchema } from 'borsher';
-import { solanaIbcProgramId } from "./constants";
 import * as anchor from '@coral-xyz/anchor';
-import axios from "axios";
+import * as spl from '@solana/spl-token';
+import { Connection, PublicKey } from '@solana/web3.js';
+import axios from 'axios';
+import { BorshSchema } from 'borsher';
+import { sha256 } from 'js-sha256';
+
+import { solanaIbcProgramId } from './constants';
 
 /**@description get connection of solana */
-export const getConnection = (endpoint:string)=>{
-   return new Connection(endpoint, 'finalized')
-}
+export const getConnection = (endpoint: string) => {
+	return new Connection(endpoint, 'finalized');
+};
 
-export const getPublicKey = (address: string) =>{
+export const getPublicKey = (address: string) => {
 	return new PublicKey(address);
+};
+export const isNativeSolanaAsset = (minimalDenom: string) => {
+	return minimalDenom.includes('channel');
+};
+export function hexToBytes(hex: string) {
+	const bytes: number[] = [];
+	for (let c = 0; c < hex.length; c += 2) bytes.push(parseInt(hex.substr(c, 2), 16));
+	return bytes;
 }
+/**@description Tokenmint is derived from hashedDenom */
+export const getTokenMint = (hashedDenom: number[]) => {
+	const [tokenMintPDA, tokenMintBump] = anchor.web3.PublicKey.findProgramAddressSync(
+		[Buffer.from('mint'), Buffer.from(hashedDenom)],
+		solanaIbcProgramId
+	);
+	return tokenMintPDA.toString();
+};
+export const getBaseDenomFromTracePath = (denom: string) => {
+	const parts = denom.split('/');
+	return denom.split('/')[parts.length - 1];
+};
 
-export const  getLatestBlockhash= async(endpoint:string) =>{
+export const getSolanaAsset = (assetId: string, minimalDenom: string,  isNative: boolean) => {
+
+	if (assetId === 'SOL')
+		return {
+			denom: spl.NATIVE_MINT.toString(),
+			baseDenom: spl.NATIVE_MINT.toString(),
+			assetId,
+			hashedDenom: hexToBytes(sha256(spl.NATIVE_MINT.toString()))
+		};
+	const hashedDenom = hexToBytes(sha256(minimalDenom));
+
+	const tokenMint = getTokenMint(hashedDenom) || assetId;
+	console.log('generatedMint:', getTokenMint(hashedDenom), assetId);
+	console.log(tokenMint, assetId, 'check');
+	if (!isNative)
+		return {
+			denom: minimalDenom,
+			baseDenom: getBaseDenomFromTracePath(minimalDenom),
+			assetId,
+			hashedDenom: hashedDenom
+		};
+	return { denom: assetId, baseDenom: assetId, assetId, hashedDenom: hexToBytes(sha256(assetId)) };
+};
+
+export const getLatestBlockhash = async (endpoint: string) => {
 	const data = {
 		id: 1,
 		jsonrpc: '2.0',
@@ -27,7 +74,7 @@ export const  getLatestBlockhash= async(endpoint:string) =>{
 	});
 
 	return response.data.result.value.blockhash || '';
-}
+};
 export const getSolanaTracePath = (denom: string, isNative: boolean) => {
 	if (isNative) return [];
 	const parts = denom.split('/').slice(0, -1);
@@ -136,7 +183,6 @@ export const msgTransferSchema = BorshSchema.Struct({
 	timeout_height_on_b: timeoutHeightSchema,
 	timeout_timestamp_on_b: timeoutTimestampSchema
 });
-
 
 export const instructionSchema = BorshSchema.Struct({
 	discriminator: BorshSchema.Array(BorshSchema.u8, 8),
