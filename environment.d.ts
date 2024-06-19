@@ -7,4 +7,5 @@ interface Window {
 	solana?:any;
 	keplr?:any; 
 	leap?:any; 
+	ethereum?:any; 
 }
