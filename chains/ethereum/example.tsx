@@ -13,6 +13,7 @@ const Button = () => {
 	//example : send ETH osmosis -> solana transfer via picasso pfm
 
 	const AMOUNT = '10000000000000000'; // hardcoded example
+	// example txhash: ethereum -> coreum https://etherscan.io/tx/0x4f832e9934bef544c481c680e9b9c17b61e2f6a370455bd6a1664a3e72ed2cd9 
 	const ethereumToPicassoTransfer = async () => {
 		//TODO: add approval
 		const txHash = await ethereumTransfer({
@@ -28,6 +29,7 @@ const Button = () => {
 		console.log(txHash, 'txHash:Ethereum->Picasso');
 	};
 
+	// example txHash: ethereum -> archway https://etherscan.io/tx/0x332d9cd30af18245e5a70989f0e61a0f98594ca25baf159ab409223b808c4744 
 	// send PICA from ethereum to osmosis
 	const ethereumPfmTransfer = async () => {
 		const approvedAmount = await getApprovedErc20(
