@@ -1,28 +1,39 @@
-import { emitter, getTimeOut } from '../common/utils';
-import { MAINNET_FEE, bankTransferContractAddress } from './constants';
-import {getBankTransferContract, getBlock, getEthGasAmount, getEthSimulate, getGasPrice,  getWeb3} from './helpers';
-import Big from 'big.js'
+import Big from 'big.js';
+import type Web3 from 'web3';
 
+import { emitter, getTimeOut } from '../common/utils';
+import { bankContractAddress, bankTransferContractAddress, MAINNET_FEE } from './constants';
+import {
+	getBankTransferContract,
+	getBlock,
+	getErc20Contract,
+	getEthGasAmount,
+	getEthSimulate,
+	getGasPrice,
+	getWeb3
+} from './helpers';
+
+/**@description etheruem transfer */
 export const ethereumTransfer = async ({
+	web3,
 	amount,
 	assetId,
 	originAddress,
 	destinationAddress,
 	channel,
-    minimalDenom ,
+	minimalDenom,
 	memo = '' //
 }: {
+	web3:Web3, 
 	amount: string;
-	assetId: string; //'ETH' or erc20 token 
+	assetId: string; //'ETH' or erc20 token address
 	originAddress: string;
 	destinationAddress: string;
-	channel: number; 
-    minimalDenom:string; 
+	channel: number;
+	minimalDenom: string;
 	memo?: string;
 }) => {
-
-    const web3 = getWeb3('endpoint');
-	const transferContract = getBankTransferContract(web3)
+	const transferContract = getBankTransferContract(web3);
 	const timeoutBlock = getBlock(web3);
 	const gasPrice = getGasPrice(web3);
 	const rawDataErc20 = transferContract.methods.sendTransfer(
@@ -59,16 +70,26 @@ export const ethereumTransfer = async ({
 	const gas = await getEthGasAmount(web3, txObject);
 
 	// simulate before sending transfer
-	 getEthSimulate(web3, encodedData, txObject);
+	getEthSimulate(web3, encodedData, txObject);
 
-
-	return rawData
-		?.send({ ...txObject, gas })
-		.on('transactionHash', async txHash => {
-        	emitter.emit('ETHEREUM_APPROVED');
-            return txHash; 
-
-		})
-		
+	return rawData?.send({ ...txObject, gas }).on('transactionHash', async txHash => {
+		emitter.emit('ETHEREUM_APPROVED');
+		return txHash;
+	});
 };
 
+/**@description Ask approval */
+export const approveErc20 = async (
+	web3: Web3,
+	account: string,
+	amount: string,
+	erc20TokenAddress: string,
+	spenderContract: string = bankContractAddress
+) => {
+	const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
+	if (!erc20Contract) return;
+	// const account = '0xD36554eF26E9B2ad72f2b53986469A8180522E5F';
+	const tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
+
+	return await tokenApprove.send({ from: account });
+};
