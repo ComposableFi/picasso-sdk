@@ -6,6 +6,7 @@ import { type Contract } from 'web3-eth-contract';
 import { erc20ABI, ics20BankABI, ics20TransferBankABI } from './abi';
 import { type Erc20ABI, type Ics20BankABI, type Ics20TransferBankABI } from './abi/types';
 import { bankContractAddress, bankTransferContractAddress } from "./constants";
+import { TransactionConfig } from "web3-core";
 
 
 
@@ -59,3 +60,45 @@ export  const getBankContract=(web3:Web3)=> {
             const gasPrice = await web3.eth.getGasPrice();
             return new BN(gasPrice || 0).mul(1.3).toFixed(0);
         }
+
+
+      export const getEthGasAmount= async(
+        web3:Web3, 
+            txConfig: Pick<TransactionConfig, 'from' | 'to' | 'value' | 'data'>
+        ) =>{
+    
+            if (!web3) return '0';
+    
+            try {
+                const gasAmount = await web3.eth.estimateGas(txConfig);
+    
+                return gasAmount;
+            } catch (err) {
+                return '0'
+
+            }
+        }
+
+
+
+        export const getTransactionReceipt =async(web3:Web3, txHash: string) =>{
+    
+            if (!web3) return '';
+            const receipt = web3.eth.getTransactionReceipt(txHash);
+            return receipt;
+        }
+
+
+  
+
+        export const getEthSimulate = (web3:Web3,data: string,  txObject: any) => {
+        
+            web3.eth
+                .call({
+                    ...txObject,
+                    data
+                })
+                .then(result => console.log(result, 'simulatedresult'))
+                .catch(err => console.error(err, 'simulated??'));
+        };
+        
