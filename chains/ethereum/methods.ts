@@ -1,11 +1,9 @@
 import { emitter, getTimeOut } from '../common/utils';
 import { MAINNET_FEE, bankTransferContractAddress } from './constants';
-import {getBankTransferContract, getBlock, getEthGasAmount, getEthSimulate, getGasPrice, getTransactionReceipt, getWeb3} from './helpers';
+import {getBankTransferContract, getBlock, getEthGasAmount, getEthSimulate, getGasPrice,  getWeb3} from './helpers';
 import Big from 'big.js'
-const processEthTransfer = async ({
-	destination,
-	actualDestination,
-	origin,
+
+export const ethereumTransfer = async ({
 	amount,
 	assetId,
 	originAddress,
@@ -14,11 +12,8 @@ const processEthTransfer = async ({
     minimalDenom ,
 	memo = '' //
 }: {
-	destination: EthDevNetworkType;
-	origin: EthDevNetworkType;
-	actualDestination: EthDevNetworkType;
 	amount: string;
-	assetId: string;
+	assetId: string; //'ETH' or erc20 token 
 	originAddress: string;
 	destinationAddress: string;
 	channel: string;
@@ -64,63 +59,16 @@ const processEthTransfer = async ({
 	const gas = await getEthGasAmount(web3, txObject);
 
 	// simulate before sending transfer
-	await getEthSimulate(web3, encodedData, txObject);
+	 getEthSimulate(web3, encodedData, txObject);
 
 
-	rawData
+	return rawData
 		?.send({ ...txObject, gas })
 		.on('transactionHash', async txHash => {
         	emitter.emit('ETHEREUM_APPROVED');
+            return txHash; 
 
-			const result: TransferStatusByAddress = {
-				destAddress: destinationAddress,
-				txHash,
-				sequence: '0',
-				destChannel: channel,
-				timestamp: '10000',
-				currentHopIndex: 0,
-				status: 'pending'
-			};
-
-			// TODO : fix types
-			await setHopState(
-				txHash,
-				originAddress,
-				origin as NetworkType,
-				{
-					currentHopIndex: 0,
-					status: 'pending',
-					destinationChannelId: channel
-				},
-				{
-					fromChainId: NetworkChainIdMap[origin],
-					path: getNetworkPath(
-						origin as NetworkType,
-						destination as NetworkType,
-						actualDestination as NetworkType,
-						// TODO: hardcode until mainpanel supports metamask.
-						'keplr', // TODO: catch the case before open PR
-						'keplr'
-					),
-					amount: {
-						denom: assetId,
-						amount
-					},
-					timestamp: new Date().valueOf()
-				},
-				'devnet'
-			);
-			await traceIbcStatus(txHash, originAddress, result);
-			// Check status in case the user leaves this page
-			const status = transferSelect.hopState(useTransferStore.getState(), originAddress, result.txHash);
-			invalidateQuery.balances();
-
-			if (!status)
-				return console.log('there is no matched txHash. Probably transfer state is reset', '', result?.txHash);
 		})
 		
-		.catch(error => {
-			console.error(error, 'txError');
-			
-		});
 };
+
