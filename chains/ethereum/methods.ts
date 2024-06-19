@@ -16,7 +16,7 @@ export const ethereumTransfer = async ({
 	assetId: string; //'ETH' or erc20 token 
 	originAddress: string;
 	destinationAddress: string;
-	channel: string;
+	channel: number; 
     minimalDenom:string; 
 	memo?: string;
 }) => {
