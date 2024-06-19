@@ -13,7 +13,7 @@ const Button = () => {
 	//example : send ETH osmosis -> solana transfer via picasso pfm
 
 	const AMOUNT = '10000000000000000'; // hardcoded example
-	// example txhash: ethereum -> coreum https://etherscan.io/tx/0x4f832e9934bef544c481c680e9b9c17b61e2f6a370455bd6a1664a3e72ed2cd9 
+	// example txhash: ethereum -> picasso https://etherscan.io/tx/0x6c3fd9120cfe7825d98e41e5b71279cfd6543c3811d82e40545ca7e69a2d95ce
 	const ethereumToPicassoTransfer = async () => {
 		//TODO: add approval
 		const txHash = await ethereumTransfer({
