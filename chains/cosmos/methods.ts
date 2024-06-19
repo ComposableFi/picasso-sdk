@@ -5,19 +5,31 @@ import { TX_MSG } from './constants';
 import { generateTransferMsg, getClient, keplr } from './helper';
 import { type TX_MSG_TYPE } from './types';
 
-const cosmosTransfer = async (
-	sourceChannel: number, //channel with picasso(cosmos), ex> osmosis -> picasso(cosmos)'s source channel id is 1279
-	sourceAddress: string,
-	destAddress: string,
-	amount: string,
-	assetId: string,
-	fee: 'auto' | StdFee,
-	chainId: string,
-	rpc: string,
-	memo: string, // pfm requires memo
-	timeout: number = 30,
-	txMsg: TX_MSG_TYPE = TX_MSG,
-) => {
+const cosmosTransfer = async ({
+	sourceChannel,
+	sourceAddress,
+	destAddress,
+	amount,
+	assetId,
+	fee,
+	chainId,
+	rpc,
+	memo,
+	timeout = 30,
+	txMsg = TX_MSG
+}: {
+	sourceChannel: number; //channel with picasso(cosmos), ex> osmosis -> picasso(cosmos)'s source channel id is 1279
+	sourceAddress: string;
+	destAddress: string;
+	amount: string;
+	assetId: string;
+	fee: 'auto' | StdFee;
+	chainId: string;
+	rpc: string;
+	memo: string; // pfm requires memo
+	timeout?: number;
+	txMsg?: TX_MSG_TYPE;
+}) => {
 	const client = await getClient(chainId, rpc);
 	const msg = generateTransferMsg(txMsg, sourceChannel, sourceAddress, destAddress, amount, assetId, memo, timeout);
 
