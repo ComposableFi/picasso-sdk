@@ -18,7 +18,19 @@ import {
 } from './helper';
 
 const solanaTransfer = async (
-	quantity: string,
+    {
+//write
+        quantity,
+        accountId,
+        destinationAddress,
+        configAssetId,
+        sourceChannelId,
+        configDenom,
+        endpoint,
+        timeout,
+        memo = ''
+    }: {
+        quantity: string,
 	accountId: string,
 	destinationAddress: string,
 	configAssetId: string,
@@ -26,7 +38,9 @@ const solanaTransfer = async (
 	configDenom: string, // 'SOL' (native sol) | 'mSOL' (spl token) | 'transfer/channel-1/transfer/channel-52/wei' ( ibc eth at solana)
 	endpoint: string,
 	timeout: number,
-	memo: string = ''
+	memo: string 
+    }
+
 ) => {
 	// const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
 
