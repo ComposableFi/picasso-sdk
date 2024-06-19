@@ -6,4 +6,5 @@ interface Window {
 	};
 	keplr?:any; 
 	leap?:any; 
+	ethereum?:any; 
 }
