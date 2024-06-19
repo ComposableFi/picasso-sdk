@@ -1,3 +1,4 @@
+import { getTimeOut } from '../common/utils';
 import { bankTransferContractAddress } from './constants';
 import {getBankTransferContract, getBlock, getGasPrice, getWeb3} from './helpers';
 
@@ -80,11 +81,7 @@ const processEthTransfer = async ({
 	// simulate before sending transfer
 	await getEthSimulate(ApiUtil.ethereumHandler.getEthInfo(ETH_MODE).endpoint, encodedData, txObject);
 
-	assert(
-		origin && destination && amount && originAddress && destinationAddress,
-		'Missing required parameters for transfer'
-	);
-	transferSet.updateLatestTxHash('NONE');
+
 	rawData
 		?.send({ ...txObject, gas })
 		// .on('confirmation', () => {
