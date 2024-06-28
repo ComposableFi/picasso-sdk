@@ -4,4 +4,4 @@ exports.solana = exports.solanaIbcProgramId = exports.solanaPortId = void 0;
 var web3_js_1 = require("@solana/web3.js");
 exports.solanaPortId = 'transfer';
 exports.solanaIbcProgramId = new web3_js_1.PublicKey('2HLLVco5HvwWriNbUhmVwA2pCetRkpgrqwnjcsZdyTKT'); // cosmos mainnet-solana devnet
-exports.solana = window === null || window === void 0 ? void 0 : window.solana;
+exports.solana = (typeof window !== 'undefined') ? window.solana : undefined; // provider of cosmos wallet 

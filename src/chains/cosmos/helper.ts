@@ -44,7 +44,7 @@ export const getSigner = (chainId:string)=> {
 	return keplr?.getOfflineSigner(chainId)
 }
 
-export const keplr = (window as any)?.keplr; // provider of cosmos wallet 
+export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet 
 
 export const getClient = async (chainId:string, rpc:string)=>{
 	const signer = getSigner(chainId);

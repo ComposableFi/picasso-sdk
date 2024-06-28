@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MAINNET_FEE = exports.TESTNET_FEE = exports.ERC_20_PICA = exports.EthIbcChannel = exports.ETH_MODE = exports.ibcCoreAddress = exports.bankTransferContractAddress = exports.bankContractAddress = exports.ethereum = void 0;
-exports.ethereum = window === null || window === void 0 ? void 0 : window.ethereum;
+exports.ethereum = (typeof window !== 'undefined') ? window.ethereum : undefined; // provider of cosmos wallet 
 exports.bankContractAddress = '0x5933fde9fa60d4f1c0124aa7a7a988f46ba42d78';
 exports.bankTransferContractAddress = '0x148acd3cd4d6a17cd2abbecd0745b09b62c64f84';
 exports.ibcCoreAddress = '0xd856f0f9efa054896fe3596e05978bbe686de131'; // not used

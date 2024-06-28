@@ -1,5 +1,4 @@
-
-export const ethereum = (window as any)?.ethereum; 
+export const ethereum = (typeof window !== 'undefined') ? (window as any).ethereum : undefined; // provider of cosmos wallet 
 
 
 export const bankContractAddress = '0x5933fde9fa60d4f1c0124aa7a7a988f46ba42d78';
