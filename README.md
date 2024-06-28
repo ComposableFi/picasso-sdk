@@ -42,9 +42,7 @@ import React from 'react';
 
 import Big from 'big.js';
 
-import { memoBuilder } from '../common/utils';
-import { getApprovedErc20, getWeb3 } from './helpers';
-import { approveErc20, ethereumTransfer } from './methods';
+import { memoBuilder, getApprovedErc20, getWeb3, approveErc20, ethereumTransfer  } from 'picasso-sdk';
 
 const web3 = getWeb3('endpoint');
 
@@ -127,8 +125,8 @@ export default Button;
 
 import React from 'react';
 
-import { getTimeOut, memoBuilder } from '../common/utils';
-import solanaTransfer from './methods';
+import { getTimeOut, memoBuilder, solanaTransfer } from 'picasso-sdk';
+
 
 // use txhash to track the transaction from indexer
 const Button = () => {
@@ -189,8 +187,7 @@ export default Button;
 
 import React from 'react';
 
-import { memoBuilder } from '../common/utils';
-import cosmosTransfer from './methods';
+import { memoBuilder, cosmosTransfer } from 'picasso-sdk';
 
 // use txhash to track the transaction from indexer
 const Button = () => {
