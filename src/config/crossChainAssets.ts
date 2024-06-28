@@ -1,6 +1,6 @@
 // [FAST TRACK] Add asset info to a network here to enable the asset on that network (add to at least 2 networks)
-import ethereumAssets from './ethereumAssets';
-import solanaAssets from './solanaAssets';
+import { ethereumAssets } from './ethereumAssets';
+import { solanaAssets } from './solanaAssets';
 
 export interface CrosschainAsset {
 	chainId: string;
@@ -10,7 +10,7 @@ export interface CrosschainAsset {
 	realDecimals?: number; // only used at solana, because it is restricted not to use more than 9
 }
 
-const crossChainAssets = {
+export const crossChainAssets = {
 	cosmos: {
 		//  weird exception for ppica due to double origin in Picasso and Centauri
 		ppica: {
@@ -1255,4 +1255,3 @@ const crossChainAssets = {
 	} as const satisfies Record<string, CrosschainAsset>,
 } as const;
 
-export default crossChainAssets;

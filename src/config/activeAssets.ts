@@ -1,7 +1,7 @@
 // [FAST TRACK] Add asset info here to display the asset in our UI
 import CrosschainAssets from './crossChainAssets';
 
-const activeAssets = [
+export const activeAssets = [
 	{
 		decimals: 6,
 		existentialDeposit: '100000000000',
@@ -327,4 +327,3 @@ const activeAssets = [
 	}, [] as any),
 ];
 
-export default activeAssets;

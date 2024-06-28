@@ -5,7 +5,7 @@ import { TX_MSG } from './constants';
 import { generateTransferMsg, getClient, keplr } from './helper';
 import { type TX_MSG_TYPE } from './types';
 
-const cosmosTransfer = async ({
+export const cosmosTransfer = async ({
 	sourceChannel,
 	sourceAddress,
 	destAddress,
@@ -51,4 +51,4 @@ const cosmosTransfer = async ({
 	}
 };
 
-export default cosmosTransfer;
+

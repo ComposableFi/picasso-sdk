@@ -1,5 +1,5 @@
 // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
-const coinGecko = [
+export const coinGecko = [
 	{ name: 'SILK', id: 'silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2' },
 	{ name: 'bCRE', id: 'liquid-staking-crescent' },
 	{ name: 'bSOL', id: 'blazestake-staked-sol' },
@@ -75,4 +75,3 @@ const coinGecko = [
 	// https://app.geckoterminal.com/api/p1/solana/pools/CFvfVr3HVP9nkkUQ5BAWchXq2vyBaDPhmpTNbMvtWFXy?include=dex%2Cdex.network.explorers%2Cdex_link_services%2Cnetwork_link_services%2Cpairs%2Ctoken_link_services%2Ctokens.token_security_metric%2Ctokens.tags&base_token=0
 ];
 
-export default coinGecko;

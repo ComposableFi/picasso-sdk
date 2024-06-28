@@ -1,5 +1,5 @@
 // [FAST TRACK] Add info for assets on ethereum network here
-const ethereumAssets = {
+export const ethereumAssets = {
 	ETH: {
 		erc20Address: '[N/A]',
 		cosmosToEthereumFee: 0.0055,
@@ -251,4 +251,3 @@ const ethereumAssets = {
 	// },
 };
 
-export default ethereumAssets;

@@ -1,5 +1,5 @@
 // [FAST TRACK] Add info for assets on solana network here
-const solanaAssets = {
+export const solanaAssets = {
 	SOL: {
 		mintAddress: '',
 		minimumTransfer: 0.2,
@@ -205,4 +205,3 @@ const solanaAssets = {
 	},
 } as const;
 
-export default solanaAssets;

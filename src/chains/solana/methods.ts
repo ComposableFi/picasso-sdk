@@ -17,7 +17,7 @@ import {
 	numberTo32ByteBuffer
 } from './helper';
 
-const solanaTransfer = async (
+export const solanaTransfer = async (
     {
 //write
         quantity,
@@ -231,4 +231,3 @@ const getFee = (): anchor.web3.TransactionInstruction => {
 	return PRIORITY_FEE_IX;
 };
 
-export default solanaTransfer;
