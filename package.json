@@ -13,7 +13,6 @@
  ],
  "author": "composable finance",
  "license": "ISC",
- "private": true,
  "types": "dist/index.d.ts",
  "scripts": {
   "build": "tsc"
