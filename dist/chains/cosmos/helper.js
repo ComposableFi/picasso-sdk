@@ -68,7 +68,7 @@ var getSigner = function (chainId) {
     return exports.keplr === null || exports.keplr === void 0 ? void 0 : exports.keplr.getOfflineSigner(chainId);
 };
 exports.getSigner = getSigner;
-exports.keplr = window.keplr; // provider of cosmos wallet 
+exports.keplr = window === null || window === void 0 ? void 0 : window.keplr; // provider of cosmos wallet 
 var getClient = function (chainId, rpc) { return __awaiter(void 0, void 0, void 0, function () {
     var signer;
     return __generator(this, function (_a) {

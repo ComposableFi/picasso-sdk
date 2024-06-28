@@ -46,31 +46,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -125,25 +100,19 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
 }); };
 exports.ethereumTransfer = ethereumTransfer;
 /**@description Ask approval */
-var approveErc20 = function (web3_1, account_1, amount_1, erc20TokenAddress_1) {
-    var args_1 = [];
-    for (var _i = 4; _i < arguments.length; _i++) {
-        args_1[_i - 4] = arguments[_i];
-    }
-    return __awaiter(void 0, __spreadArray([web3_1, account_1, amount_1, erc20TokenAddress_1], __read(args_1), false), void 0, function (web3, account, amount, erc20TokenAddress, spenderContract) {
-        var erc20Contract, tokenApprove;
-        if (spenderContract === void 0) { spenderContract = constants_1.bankContractAddress; }
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    erc20Contract = (0, helper_1.getErc20Contract)(web3, erc20TokenAddress);
-                    if (!erc20Contract)
-                        return [2 /*return*/];
-                    tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
-                    return [4 /*yield*/, tokenApprove.send({ from: account })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
+var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var erc20Contract, tokenApprove;
+    var web3 = _b.web3, account = _b.account, amount = _b.amount, erc20TokenAddress = _b.erc20TokenAddress, _c = _b.spenderContract, spenderContract = _c === void 0 ? constants_1.bankContractAddress : _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                erc20Contract = (0, helper_1.getErc20Contract)(web3, erc20TokenAddress);
+                if (!erc20Contract)
+                    return [2 /*return*/];
+                tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
+                return [4 /*yield*/, tokenApprove.send({ from: account })];
+            case 1: return [2 /*return*/, _d.sent()];
+        }
     });
-};
+}); };
 exports.approveErc20 = approveErc20;
