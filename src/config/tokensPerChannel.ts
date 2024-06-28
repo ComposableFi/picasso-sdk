@@ -82,7 +82,7 @@ const tokensPerChannel = [
 			'stATOM',
 			'BLD',
 			// 'ezETH',
-			// 'SEI',
+			'SEI',
 			'SCRT',
 			'STRD',
 			// 'DOT',

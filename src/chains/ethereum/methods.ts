@@ -11,7 +11,7 @@ import {
 	getEthSimulate,
 	getGasPrice,
 	getWeb3
-} from './helpers';
+} from './helper';
 
 /**@description etheruem transfer */
 export const ethereumTransfer = async ({
