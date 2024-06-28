@@ -17,6 +17,10 @@
 		"strict": false,
         "outDir": "dist",        
         "rootDir": "src",   
+		"downlevelIteration": true,
+		"target": "es5",
+   		 "module": "commonjs",
+    	"resolveJsonModule": true
 	},
 	"exclude": ["node_modules"]
 }
