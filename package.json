@@ -33,6 +33,9 @@
   "web3-types": "^1.2.0",
   "web3-utils": "^1.6.0"
  },
+ "files": [
+    "dist/**/*"
+  ],
  "devDependencies": {
   "typescript": "^5.5.2"
  }
