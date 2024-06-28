@@ -20,7 +20,9 @@
 		"downlevelIteration": true,
 		"target": "es5",
    		 "module": "commonjs",
-    	"resolveJsonModule": true
+    	"resolveJsonModule": true,
+		
+		
 	},
 	"exclude": ["node_modules"]
 }

@@ -1,8 +1,9 @@
 {
  "name": "picasso-sdk",
- "version": "0.1.2",
+ "version": "0.1.3",
  "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
  "main": "dist/index.js",
+ "types": "dist/index.d.ts", 
  "keywords": [
   "picasso",
   "composable",
@@ -13,7 +14,6 @@
  ],
  "author": "composable finance",
  "license": "ISC",
- "types": "dist/index.d.ts",
  "scripts": {
   "build": "tsc"
  },
