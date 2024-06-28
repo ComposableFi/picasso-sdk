@@ -78,7 +78,9 @@ const Button = () => {
 			'0xbb63a9b64a80e9338b8ea298c51765e57c4f159c'
 		); // PICA's erc20 address
 		if (new Big(approvedAmount || 0).lt(AMOUNT)) {
-			await approveErc20(
+			await approveErc20({
+        web3
+      }
 				web3,
 				'0xbb63a9b64a80e9338b8ea298c51765e57c4f159c',
 				AMOUNT,

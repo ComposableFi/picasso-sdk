@@ -9,8 +9,7 @@ import {
 	getErc20Contract,
 	getEthGasAmount,
 	getEthSimulate,
-	getGasPrice,
-	getWeb3
+	getGasPrice
 } from './helper';
 
 /**@description etheruem transfer */
@@ -24,7 +23,7 @@ export const ethereumTransfer = async ({
 	minimalDenom,
 	memo = '' //
 }: {
-	web3:Web3, 
+	web3: Web3;
 	amount: string;
 	assetId: string; //'ETH' or erc20 token address
 	originAddress: string;
@@ -79,13 +78,19 @@ export const ethereumTransfer = async ({
 };
 
 /**@description Ask approval */
-export const approveErc20 = async (
-	web3: Web3,
-	account: string,
-	amount: string,
-	erc20TokenAddress: string,
-	spenderContract: string = bankContractAddress
-) => {
+export const approveErc20 = async ({
+	web3,
+	account,
+	amount,
+	erc20TokenAddress,
+	spenderContract = bankContractAddress
+}: {
+	web3: Web3;
+	account: string;
+	amount: string;
+	erc20TokenAddress: string;
+	spenderContract: string;
+}) => {
 	const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
 	if (!erc20Contract) return;
 	// const account = '0xD36554eF26E9B2ad72f2b53986469A8180522E5F';
