@@ -71,6 +71,7 @@ export const cosmosTransfer = async ({
     emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
     return generalResponse.transactionHash; // Query indexer by this txHash
   } catch (ex) {
+    console.error(ex, 'cosmosError');
     emitter.emit('CANCEL_COSMOS'); // optional: emit event for cancel of wallet extension
   }
 };
