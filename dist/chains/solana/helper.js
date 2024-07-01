@@ -133,7 +133,7 @@ var getSolanaAsset = function (assetId, minimalDenom, isNative) {
             denom: spl.NATIVE_MINT.toString(),
             baseDenom: spl.NATIVE_MINT.toString(),
             assetId: assetId,
-            hashedDenom: hexToBytes((0, js_sha256_1.sha256)(spl.NATIVE_MINT.toString()))
+            hashedDenom: hexToBytes((0, js_sha256_1.sha256)(spl.NATIVE_MINT.toString())),
         };
     var hashedDenom = hexToBytes((0, js_sha256_1.sha256)(minimalDenom));
     var tokenMint = (0, exports.getTokenMint)(hashedDenom) || assetId;
@@ -144,9 +144,14 @@ var getSolanaAsset = function (assetId, minimalDenom, isNative) {
             denom: minimalDenom,
             baseDenom: (0, exports.getBaseDenomFromTracePath)(minimalDenom),
             assetId: assetId,
-            hashedDenom: hashedDenom
+            hashedDenom: hashedDenom,
         };
-    return { denom: assetId, baseDenom: assetId, assetId: assetId, hashedDenom: hexToBytes((0, js_sha256_1.sha256)(assetId)) };
+    return {
+        denom: assetId,
+        baseDenom: assetId,
+        assetId: assetId,
+        hashedDenom: hexToBytes((0, js_sha256_1.sha256)(assetId)),
+    };
 };
 exports.getSolanaAsset = getSolanaAsset;
 var getLatestBlockhash = function (endpoint) { return __awaiter(void 0, void 0, void 0, function () {
@@ -157,12 +162,12 @@ var getLatestBlockhash = function (endpoint) { return __awaiter(void 0, void 0, 
                 data = {
                     id: 1,
                     jsonrpc: '2.0',
-                    method: 'getLatestBlockhash'
+                    method: 'getLatestBlockhash',
                 };
                 return [4 /*yield*/, axios_1.default.post(endpoint, data, {
                         headers: {
-                            'Content-Type': 'application/json'
-                        }
+                            'Content-Type': 'application/json',
+                        },
                     })];
             case 1:
                 response = _a.sent();
@@ -192,7 +197,14 @@ var getSolanaGuestChainAccounts = function (portId, channelId, hashedDenom) {
     var _d = __read(anchor.web3.PublicKey.findProgramAddressSync([Buffer.from('private')], constants_1.solanaIbcProgramId), 2), ibcStoragePDA = _d[0], ibcStorageBump = _d[1];
     var _e = __read(anchor.web3.PublicKey.findProgramAddressSync([Buffer.from('escrow'), Buffer.from(hashedDenom)], constants_1.solanaIbcProgramId), 2), escrowAccountPDA = _e[0], escrowAccountBump = _e[1];
     var _f = __read(anchor.web3.PublicKey.findProgramAddressSync([Buffer.from('fee')], constants_1.solanaIbcProgramId), 2), feePDA = _f[0], feeBump = _f[1];
-    return { guestChainPDA: guestChainPDA, triePDA: triePDA, ibcStoragePDA: ibcStoragePDA, mintAuthorityPDA: mintAuthorityPDA, escrowAccountPDA: escrowAccountPDA, feePDA: feePDA };
+    return {
+        guestChainPDA: guestChainPDA,
+        triePDA: triePDA,
+        ibcStoragePDA: ibcStoragePDA,
+        mintAuthorityPDA: mintAuthorityPDA,
+        escrowAccountPDA: escrowAccountPDA,
+        feePDA: feePDA,
+    };
 };
 exports.getSolanaGuestChainAccounts = getSolanaGuestChainAccounts;
 function numberTo32ByteBuffer(num) {
@@ -223,39 +235,39 @@ function numberTo32ByteBuffer(num) {
 // shema
 var tracePathSchema = borsher_1.BorshSchema.Vec(borsher_1.BorshSchema.Struct({
     port_id: borsher_1.BorshSchema.String,
-    channel_id: borsher_1.BorshSchema.String
+    channel_id: borsher_1.BorshSchema.String,
 }));
 var packetDataSchema = borsher_1.BorshSchema.Struct({
     token: borsher_1.BorshSchema.Struct({
         denom: borsher_1.BorshSchema.Struct({
             trace_path: tracePathSchema,
-            base_denom: borsher_1.BorshSchema.String
+            base_denom: borsher_1.BorshSchema.String,
         }),
-        amount: borsher_1.BorshSchema.Array(borsher_1.BorshSchema.u8, 32)
+        amount: borsher_1.BorshSchema.Array(borsher_1.BorshSchema.u8, 32),
     }),
     sender: borsher_1.BorshSchema.String,
     receiver: borsher_1.BorshSchema.String,
-    memo: borsher_1.BorshSchema.String
+    memo: borsher_1.BorshSchema.String,
 });
 var timeoutHeightSchema = borsher_1.BorshSchema.Enum({
     Never: borsher_1.BorshSchema.Unit,
     At: borsher_1.BorshSchema.Struct({
         revision_number: borsher_1.BorshSchema.u64,
-        revision_height: borsher_1.BorshSchema.u64
-    })
+        revision_height: borsher_1.BorshSchema.u64,
+    }),
 });
 var timeoutTimestampSchema = borsher_1.BorshSchema.Struct({
-    time: borsher_1.BorshSchema.u64
+    time: borsher_1.BorshSchema.u64,
 });
 exports.msgTransferSchema = borsher_1.BorshSchema.Struct({
     port_id_on_a: borsher_1.BorshSchema.String,
     chan_id_on_a: borsher_1.BorshSchema.String,
     packet_data: packetDataSchema,
     timeout_height_on_b: timeoutHeightSchema,
-    timeout_timestamp_on_b: timeoutTimestampSchema
+    timeout_timestamp_on_b: timeoutTimestampSchema,
 });
 exports.instructionSchema = borsher_1.BorshSchema.Struct({
     discriminator: borsher_1.BorshSchema.Array(borsher_1.BorshSchema.u8, 8),
     hashed_base_denom: borsher_1.BorshSchema.Array(borsher_1.BorshSchema.u8, 32),
-    msg: exports.msgTransferSchema
+    msg: exports.msgTransferSchema,
 });

@@ -1,4 +1,4 @@
-export declare const solanaTransfer: ({ quantity, accountId, destinationAddress, configAssetId, sourceChannelId, configDenom, endpoint, timeout, memo }: {
+export declare const solanaTransfer: ({ quantity, accountId, destinationAddress, configAssetId, sourceChannelId, configDenom, endpoint, timeout, memo, }: {
     quantity: string;
     accountId: string;
     destinationAddress: string;

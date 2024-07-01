@@ -1,6 +1,7 @@
 import { type StdFee } from '@cosmjs/stargate';
 import { type TX_MSG_TYPE } from './types';
-export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddress, amount, assetId, fee, chainId, rpc, memo, timeout, txMsg }: {
+import { Keplr } from '@keplr-wallet/types';
+export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddress, amount, assetId, fee, chainId, rpc, memo, timeout, txMsg, keplr, supportLedger, }: {
     sourceChannel: number;
     sourceAddress: string;
     destAddress: string;
@@ -12,5 +13,7 @@ export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddres
     memo: string;
     timeout?: number;
     txMsg?: TX_MSG_TYPE;
+    keplr: Keplr;
+    supportLedger: boolean;
 }) => Promise<string>;
 //# sourceMappingURL=methods.d.ts.map

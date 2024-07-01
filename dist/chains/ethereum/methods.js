@@ -58,9 +58,7 @@ var helper_1 = require("./helper");
 /**@description etheruem transfer */
 var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var transferContract, timeoutBlock, gasPrice, rawDataErc20, rawDataEth, isETH, rawData, encodedData, txObject, gas;
-    var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo //
-    , memo = _c === void 0 ? '' : _c //
-    ;
+    var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo, memo = _c === void 0 ? '' : _c;
     return __generator(this, function (_d) {
         switch (_d.label) {
             case 0:
@@ -81,8 +79,10 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                     to: constants_1.bankTransferContractAddress,
                     data: encodedData,
                     from: originAddress,
-                    value: isETH ? new big_js_1.default(amount || 0).plus(constants_1.MAINNET_FEE).toString() : constants_1.MAINNET_FEE,
-                    gasPrice: gasPrice // wei
+                    value: isETH
+                        ? new big_js_1.default(amount || 0).plus(constants_1.MAINNET_FEE).toString()
+                        : constants_1.MAINNET_FEE,
+                    gasPrice: gasPrice, // wei
                 };
                 return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 1:
