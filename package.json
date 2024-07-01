@@ -1,6 +1,6 @@
 {
   "name": "picasso-sdk",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,8 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public"
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
