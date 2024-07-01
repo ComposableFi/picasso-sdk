@@ -1,11 +1,9 @@
-
-
 interface Window {
-	phantom?: {
-		solana: any;
-	};
-	solana?:any;
-	keplr?:any; 
-	leap?:any; 
-	ethereum?:any; 
+  phantom?: {
+    solana: any;
+  };
+  solana?: any;
+  keplr?: any;
+  leap?: any;
+  ethereum?: any;
 }
