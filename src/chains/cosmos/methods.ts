@@ -20,13 +20,15 @@ export const cosmosTransfer = async ({
   txMsg = TX_MSG,
   keplr,
   supportLedger = true,
+  gasPrice,
+  feeAssetId,
 }: {
   sourceChannel: number; //channel with picasso(cosmos), ex> osmosis -> picasso(cosmos)'s source channel id is 1279
   sourceAddress: string;
   destAddress: string;
   amount: string;
   assetId: string;
-  fee: 'auto' | StdFee;
+  fee: string;
   chainId: string;
   rpc: string;
   memo: string; // pfm requires memo
@@ -34,6 +36,8 @@ export const cosmosTransfer = async ({
   txMsg?: TX_MSG_TYPE;
   keplr: Keplr;
   supportLedger: boolean;
+  gasPrice: string;
+  feeAssetId: string;
 }) => {
   const client = await getClient(chainId, rpc, keplr, supportLedger);
   const msg = generateTransferMsg(
@@ -60,7 +64,15 @@ export const cosmosTransfer = async ({
     const generalResponse = await client.signAndBroadcast(
       sourceAddress,
       [msg],
-      fee
+      {
+        amount: [
+          {
+            amount: fee,
+            denom: feeAssetId,
+          },
+        ],
+        gas: gasPrice,
+      }
     );
     emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
     return generalResponse.transactionHash; // Query indexer by this txHash
