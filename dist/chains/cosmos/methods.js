@@ -67,6 +67,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 return [2 /*return*/, generalResponse.transactionHash]; // Query indexer by this txHash
             case 4:
                 ex_1 = _f.sent();
+                console.error(ex_1, 'cosmosError');
                 utils_1.emitter.emit('CANCEL_COSMOS'); // optional: emit event for cancel of wallet extension
                 return [3 /*break*/, 5];
             case 5: return [2 /*return*/];
