@@ -35,13 +35,7 @@ export const cosmosTransfer = async ({
   keplr: Keplr;
   supportLedger: boolean;
 }) => {
-  const client = await getClient(
-    chainId,
-    rpc,
-
-    keplr,
-    supportLedger
-  );
+  const client = await getClient(chainId, rpc, keplr, supportLedger);
   const msg = generateTransferMsg(
     txMsg,
     sourceChannel,
