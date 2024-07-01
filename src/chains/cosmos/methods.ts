@@ -39,7 +39,14 @@ export const cosmosTransfer = async ({
   gasPrice: string;
   feeAssetId: string;
 }) => {
-  const client = await getClient(chainId, rpc, keplr, supportLedger);
+  const client = await getClient({
+    chainId,
+    rpc,
+    keplr,
+    supportLedger,
+    feeAssetId,
+    gasPrice,
+  });
   const msg = generateTransferMsg(
     txMsg,
     sourceChannel,
@@ -50,6 +57,8 @@ export const cosmosTransfer = async ({
     memo,
     timeout
   );
+  const gasEstimation = await client.simulate(sourceAddress, [msg], memo);
+  console.log('gasEstimation', gasEstimation);
 
   // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
   if (keplr) {
@@ -60,19 +69,24 @@ export const cosmosTransfer = async ({
     };
   }
 
+  const refinedFee: 'auto' | StdFee =
+    fee === 'auto'
+      ? 'auto'
+      : {
+          amount: [
+            {
+              amount: fee,
+              denom: feeAssetId,
+            },
+          ],
+          gas: gasPrice,
+        };
+
   try {
     const generalResponse = await client.signAndBroadcast(
       sourceAddress,
       [msg],
-      {
-        amount: [
-          {
-            amount: fee,
-            denom: feeAssetId,
-          },
-        ],
-        gas: gasPrice,
-      }
+      refinedFee
     );
     emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
     return generalResponse.transactionHash; // Query indexer by this txHash

@@ -20,5 +20,12 @@ export declare const generateTransferMsg: (txMsg: TX_MSG_TYPE, channel: number, 
 export declare const getCosmosTimeoutTimestamp: (seconds: number) => number;
 /** @description chainId is from cosmos chain registry */
 export declare const getSigner: (chainId: string, keplr: Keplr, supportLedger?: boolean) => import("@keplr-wallet/types").OfflineAminoSigner;
-export declare const getClient: (chainId: string, rpc: string, keplr: Keplr, supportLedger?: boolean) => Promise<SigningStargateClient>;
+export declare const getClient: ({ chainId, rpc, keplr, feeAssetId, gasPrice, supportLedger, }: {
+    chainId: string;
+    rpc: string;
+    keplr: Keplr;
+    feeAssetId: string;
+    gasPrice: string;
+    supportLedger: boolean;
+}) => Promise<SigningStargateClient>;
 //# sourceMappingURL=helper.d.ts.map

@@ -1,4 +1,4 @@
-import { SigningStargateClient } from '@cosmjs/stargate';
+import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
 import { type Keplr } from '@keplr-wallet/types';
 
@@ -48,12 +48,29 @@ export const getSigner = (
 
 // export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
 
-export const getClient = async (
-  chainId: string,
-  rpc: string,
-  keplr: Keplr,
-  supportLedger: boolean = true
-) => {
+export const getClient = async ({
+  chainId,
+  rpc,
+  keplr,
+  feeAssetId,
+  gasPrice,
+  supportLedger = true,
+}: {
+  chainId: string;
+  rpc: string;
+  keplr: Keplr;
+  feeAssetId: string;
+  gasPrice: string;
+  supportLedger: boolean;
+}) => {
   const signer = getSigner(chainId, keplr, supportLedger);
-  return await SigningStargateClient.connectWithSigner(rpc, signer);
+
+  const finalClient = await SigningStargateClient.connectWithSigner(
+    rpc,
+    signer,
+    {
+      gasPrice: GasPrice.fromString(`${gasPrice}${feeAssetId}`),
+    }
+  );
+  return finalClient;
 };

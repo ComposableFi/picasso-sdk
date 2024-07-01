@@ -35,31 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
 var stargate_1 = require("@cosmjs/stargate");
@@ -97,22 +72,20 @@ var getSigner = function (chainId, keplr, supportLedger) {
 };
 exports.getSigner = getSigner;
 // export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
-var getClient = function (chainId_1, rpc_1, keplr_1) {
-    var args_1 = [];
-    for (var _i = 3; _i < arguments.length; _i++) {
-        args_1[_i - 3] = arguments[_i];
-    }
-    return __awaiter(void 0, __spreadArray([chainId_1, rpc_1, keplr_1], __read(args_1), false), void 0, function (chainId, rpc, keplr, supportLedger) {
-        var signer;
-        if (supportLedger === void 0) { supportLedger = true; }
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    signer = (0, exports.getSigner)(chainId, keplr, supportLedger);
-                    return [4 /*yield*/, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer)];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
+var getClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var signer, finalClient;
+    var chainId = _b.chainId, rpc = _b.rpc, keplr = _b.keplr, feeAssetId = _b.feeAssetId, gasPrice = _b.gasPrice, _c = _b.supportLedger, supportLedger = _c === void 0 ? true : _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                signer = (0, exports.getSigner)(chainId, keplr, supportLedger);
+                return [4 /*yield*/, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer, {
+                        gasPrice: stargate_1.GasPrice.fromString("".concat(gasPrice).concat(feeAssetId)),
+                    })];
+            case 1:
+                finalClient = _d.sent();
+                return [2 /*return*/, finalClient];
+        }
     });
-};
+}); };
 exports.getClient = getClient;
