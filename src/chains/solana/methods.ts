@@ -49,12 +49,14 @@ export const solanaTransfer = async ({
 
     // nativeDenom: assetId, nonNativeDenom: minimalDenom with path
 
-    const isNative = isNativeSolanaAsset(configAssetId);
+    const isNative = isNativeSolanaAsset(configDenom);
+    console.log(isNative, 'isNative');
     const { denom, baseDenom, assetId, hashedDenom } = getSolanaAsset(
       configAssetId,
       configDenom,
       isNative
     );
+
     /**@description examle: transfer/channel-0/transfer/channel-52/wei */
     const senderPublicKey = new anchor.web3.PublicKey(accountId);
     const associatedToken = spl.getAssociatedTokenAddressSync(

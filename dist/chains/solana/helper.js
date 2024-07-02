@@ -107,7 +107,7 @@ var getPublicKey = function (address) {
 };
 exports.getPublicKey = getPublicKey;
 var isNativeSolanaAsset = function (minimalDenom) {
-    return minimalDenom.includes('channel');
+    return !minimalDenom.includes('channel');
 };
 exports.isNativeSolanaAsset = isNativeSolanaAsset;
 function hexToBytes(hex) {
