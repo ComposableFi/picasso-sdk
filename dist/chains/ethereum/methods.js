@@ -59,42 +59,28 @@ var helper_1 = require("./helper");
 var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var transferContract, timeoutBlock, gasPrice, rawDataErc20, rawDataEth, isETH, rawData, encodedData, txObject, gas;
     var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo, memo = _c === void 0 ? '' : _c, //
-    timeout = _b.timeout;
-    return __generator(this, function (_d) {
-        switch (_d.label) {
+    _d = _b.timeout, //
+    timeout = _d === void 0 ? 240 : _d;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
             case 0:
-                (0, helper_1.getConsole)('checkthis0');
                 transferContract = (0, helper_1.getBankTransferContract)(web3);
                 return [4 /*yield*/, (0, helper_1.getBlock)(web3)];
             case 1:
-                timeoutBlock = _d.sent();
+                timeoutBlock = _e.sent();
                 return [4 /*yield*/, (0, helper_1.getGasPrice)(web3)];
             case 2:
-                gasPrice = _d.sent();
-                (0, helper_1.getConsole)('checkthis1');
-                (0, helper_1.getConsole)([
-                    minimalDenom, // pass minimal denom as first argument
-                    'checkthis2',
-                    amount,
-                    destinationAddress, //centauri
-                    'transfer',
-                    "channel-".concat(channel), //update this using config
-                    timeoutBlock, // replace it to get block
-                    timeout || (0, utils_1.getTimeOut)(240).toString(),
-                    memo,
-                ]);
+                gasPrice = _e.sent();
                 rawDataErc20 = transferContract.methods.sendTransfer(minimalDenom, // pass minimal denom as first argument
                 amount, destinationAddress, //centauri
                 'transfer', "channel-".concat(channel), //update this using config
                 timeoutBlock, // replace it to get block
-                timeout || (0, utils_1.getTimeOut)(240).toString(), memo);
+                (0, utils_1.getTimeOut)(timeout).toString(), memo);
                 rawDataEth = transferContract.methods.sendTransferNativeToken(destinationAddress, 'transfer', "channel-".concat(channel), timeoutBlock, // replace it to get block
-                timeout || (0, utils_1.getTimeOut)(240).toString(), memo);
-                (0, helper_1.getConsole)('checkthis3');
+                (0, utils_1.getTimeOut)(timeout).toString(), memo);
                 isETH = assetId === 'ETH';
                 rawData = isETH ? rawDataEth : rawDataErc20;
                 encodedData = rawData.encodeABI();
-                (0, helper_1.getConsole)('checkthis4');
                 txObject = {
                     to: constants_1.bankTransferContractAddress,
                     data: encodedData,
@@ -106,16 +92,10 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                 };
                 return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 3:
-                gas = _d.sent();
+                gas = _e.sent();
                 // simulate before sending transfer
                 (0, helper_1.getEthSimulate)(web3, encodedData, txObject);
-                return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas })).on('transactionHash', function (txHash) { return __awaiter(void 0, void 0, void 0, function () {
-                        return __generator(this, function (_a) {
-                            utils_1.emitter.emit('ETHEREUM_APPROVED');
-                            console.log(txHash, 'txHash');
-                            return [2 /*return*/, txHash];
-                        });
-                    }); }).catch(function (err) { return (0, helper_1.getConsole)(['ethereumTransfer', err]); })];
+                return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
         }
     });
 }); };
