@@ -57,8 +57,7 @@ export const cosmosTransfer = async ({
     memo,
     timeout
   );
-  const gasEstimation = await client.simulate(sourceAddress, [msg], memo);
-  console.log('gasEstimation', gasEstimation);
+  await client.simulate(sourceAddress, [msg], memo);
 
   // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
   if (keplr) {

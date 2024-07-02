@@ -1,56 +1,54 @@
 # picasso-sdk
-This is Picasso IBC sdk for cosmos, ethereum, solana, and polkadot(will be updated soon) 
 
-# How to use indexer 
+This is Picasso IBC sdk for cosmos, ethereum, solana, and polkadot(will be updated soon)
 
-### 1. Transaction with direct channel 
-* You can query indexer [API](https://204.48.25.128/api/ibc_events?txHash=0F3DFE07428C1D600964B5FA9BF91A72EEEED0AFB628532864998B58F97B66A7) with transaction hash
+# How to use indexer
+
+### 1. Transaction with direct channel
+
+- You can query indexer [API](https://204.48.25.128/api/ibc_events?txHash=0F3DFE07428C1D600964B5FA9BF91A72EEEED0AFB628532864998B58F97B66A7) with transaction hash
 
 ### 2. PFM
-* You can query status using next hop's information 
 
-* example : Composable -> Picasso cosmos
+- You can query status using next hop's information
+
+- example : Composable -> Picasso cosmos
+
 1. [Composable -> Picasso (kusama)](https://204.48.25.128/api/ibc_events?fromBlockHash=0x2cfdd9d31db4c1c5b643c7b8a82cdf7e65fcd4b711fa2745e67ee448a69980db&sequence=4823)
 
 ```
 [response]
 
 {
-  ..., 
+  ...,
   toBlockHash : "0xde232ee07fb9d6c36f4f3c04ae3dca1be02890f4f2cbe369d730c25a2083e831",
   nextSequence : "21892"
 }
 ```
+
 2.  [Picasso (kusama) -> Picasso(Cosmos)](https://204.48.25.128/api/ibc_events?fromBlockHash=0xde232ee07fb9d6c36f4f3c04ae3dca1be02890f4f2cbe369d730c25a2083e831&sequence=21892)
 
 ```
-[response] 
+[response]
 {
-  ..., 
+  ...,
   toBlockHash : "C209A7397B3A0C139F5959C48035224AB7048718920CED667AB84DCFEF7FE4F4",
-  nextSequence : "null" // query until nextSequence is null 
+  nextSequence : "null" // query until nextSequence is null
 }
 ```
 
-
-
 # How to use methods
 
-###  Ethereum
+### Ethereum
+
 ```
-import React from 'react';
-
-import Big from 'big.js';
-
-import { memoBuilder, getApprovedErc20, getWeb3, approveErc20, ethereumTransfer  } from 'picasso-sdk';
-
 const web3 = getWeb3('endpoint');
 
+const AMOUNT = '10000000000000000'; // hardcoded example
 // use txhash to track the transaction from indexer
-const Button = () => {
+const EthereumButton = () => {
 	//example : send ETH osmosis -> solana transfer via picasso pfm
 
-	const AMOUNT = '10000000000000000'; // hardcoded example
 	// example txhash: ethereum -> picasso https://etherscan.io/tx/0x6c3fd9120cfe7825d98e41e5b71279cfd6543c3811d82e40545ca7e69a2d95ce
 	const ethereumToPicassoTransfer = async () => {
 		//TODO: add approval
@@ -62,12 +60,13 @@ const Button = () => {
 			destinationAddress: 'pica1ewm97t5qw3uutwd9qh0ydy007ymhl8qth56qlj',
 			channel: 2, // etheruem to picasso(cosmos) channel is 2
 			minimalDenom: 'ETH', // for PICA it is 'transfer/channel-2/ppica'
-			memo: ''
+			memo: '',
+			timeout: 240
 		});
 		console.log(txHash, 'txHash:Ethereum->Picasso');
 	};
 
-	// example txHash: ethereum -> archway https://etherscan.io/tx/0x332d9cd30af18245e5a70989f0e61a0f98594ca25baf159ab409223b808c4744 
+	// example txHash: ethereum -> archway https://etherscan.io/tx/0x332d9cd30af18245e5a70989f0e61a0f98594ca25baf159ab409223b808c4744
 	// send PICA from ethereum to osmosis
 	const ethereumPfmTransfer = async () => {
 		const approvedAmount = await getApprovedErc20(
@@ -77,13 +76,11 @@ const Button = () => {
 		); // PICA's erc20 address
 		if (new Big(approvedAmount || 0).lt(AMOUNT)) {
 			await approveErc20({
-        web3
-      }
 				web3,
-				'0xbb63a9b64a80e9338b8ea298c51765e57c4f159c',
-				AMOUNT,
-				'0xbb63a9b64a80e9338b8ea298c51765e57c4f159c'
-			);
+				account: '0xbb63a9b64a80e9338b8ea298c51765e57c4f159c',
+				amount: AMOUNT,
+				erc20TokenAddress: '0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0' // FXS's erc20 address
+			});
 		}
 
 		// ethereum memo should use escape code
@@ -115,21 +112,12 @@ const Button = () => {
 	);
 };
 
-export default Button;
 ```
 
+### Solana
 
-
-### Solana 
 ```
-
-import React from 'react';
-
-import { getTimeOut, memoBuilder, solanaTransfer } from 'picasso-sdk';
-
-
-// use txhash to track the transaction from indexer
-const Button = () => {
+const SolanaButton = () => {
 	//example : osmosis -> picasso transfer
 	const solanaToPicassoTransfer = async () => {
 		//rewrite below code to use solanaTransfer method
@@ -176,21 +164,12 @@ const Button = () => {
 		</>
 	);
 };
-
-export default Button;
-
 ```
-
 
 ### Cosmos
+
 ```
-
-import React from 'react';
-
-import { memoBuilder, cosmosTransfer } from 'picasso-sdk';
-
-// use txhash to track the transaction from indexer
-const Button = () => {
+const CosmosButton = () => {
 	//example : osmosis -> solana transfer via picasso pfm
 	const cosmosToSolanaTransfer = async () => {
 		const txHash = await cosmosTransfer({
@@ -235,7 +214,4 @@ const Button = () => {
 		</>
 	);
 };
-
-export default Button;
-
 ```

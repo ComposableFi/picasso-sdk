@@ -52,9 +52,7 @@ export const getSolanaAsset = (
     };
   const hashedDenom = hexToBytes(sha256(minimalDenom));
 
-  const tokenMint = getTokenMint(hashedDenom) || assetId;
-  console.log('generatedMint:', getTokenMint(hashedDenom), assetId);
-  console.log(tokenMint, assetId, 'check');
+  // const tokenMint = getTokenMint(hashedDenom) || assetId;
   if (!isNative)
     return {
       denom: minimalDenom,

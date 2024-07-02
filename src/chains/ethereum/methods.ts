@@ -1,7 +1,7 @@
 import Big from 'big.js';
 import type Web3 from 'web3';
 
-import { emitter, getTimeOut } from '../common/utils';
+import { getTimeOut } from '../common/utils';
 import {
   bankContractAddress,
   bankTransferContractAddress,
@@ -10,7 +10,6 @@ import {
 import {
   getBankTransferContract,
   getBlock,
-  getConsole,
   getErc20Contract,
   getEthGasAmount,
   getEthSimulate,
@@ -59,7 +58,6 @@ export const ethereumTransfer = async ({
     `channel-${channel}`,
     timeoutBlock, // replace it to get block
     getTimeOut(timeout).toString(),
-
     memo
   );
 

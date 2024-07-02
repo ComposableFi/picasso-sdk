@@ -59,7 +59,6 @@ export const getBlock = async (web3: Web3, addedAmount: number = 10000) => {
 export const getGasPrice = async (web3: Web3) => {
   if (!web3) return '0';
   const gasPrice = await web3.eth.getGasPrice();
-  console.log(gasPrice, 'gasPrice');
   return new Big(gasPrice || 0).mul(1.3).toFixed(0);
 };
 
@@ -70,7 +69,6 @@ export const getEthGasAmount = async (
   if (!web3) return '0';
   try {
     const gasAmount = await web3.eth.estimateGas(txConfig);
-    console.log(gasAmount, 'gasAmount');
     return gasAmount;
   } catch (err) {
     return '0';

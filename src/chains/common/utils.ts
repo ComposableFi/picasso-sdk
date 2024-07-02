@@ -27,6 +27,5 @@ export const memoBuilder = ({
 export const getTimeOut = (plusMin: number = 30) => {
   const now = new Date();
   const minutesLater = new Date(now.getTime() + plusMin * 60 * 1000);
-  console.log(new Big(minutesLater.getTime()).mul(1000000), 'checkGetTimeOut');
   return new Big(minutesLater.getTime()).mul(1000000);
 };

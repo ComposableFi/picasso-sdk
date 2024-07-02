@@ -108,8 +108,10 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
         switch (_f.label) {
             case 0:
                 _f.trys.push([0, 5, , 6]);
-                isNative = (0, helper_1.isNativeSolanaAsset)(configAssetId);
+                isNative = (0, helper_1.isNativeSolanaAsset)(configDenom);
+                console.log(isNative, 'isNative');
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
+                console.log({ denom: denom, baseDenom: baseDenom, assetId: assetId, hashedDenom: hashedDenom }, 'denomInfoPackage');
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
                 tx_1 = new anchor.web3.Transaction();
@@ -171,6 +173,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         time: timeout,
                     },
                 };
+                console.log(msgTransferPayload, '(msgTransferPayload');
                 instructionPayload = {
                     discriminator: [153, 182, 142, 63, 227, 31, 140, 239],
                     hashed_base_denom: hashedDenom,
