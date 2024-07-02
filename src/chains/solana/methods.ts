@@ -197,13 +197,13 @@ export const solanaTransfer = async ({
     // 	skipPreflight: true
     // });
 
-    return await sendTX(tx, accountId, 'endpoint', false, undefined, () => {
+    return await sendTX(tx, accountId, endpoint, false, undefined, () => {
       tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
       tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
       tx.add(instruction);
     });
   } catch (err) {
-    console.log('solanaTransfer', err);
+    console.error('solanaTransfer', err);
   }
 };
 /**@description this function is used to send tx */

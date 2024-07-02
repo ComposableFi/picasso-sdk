@@ -100,18 +100,19 @@ var utils_1 = require("../common/utils");
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction;
+    var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx_1, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction_1, err_1;
     var 
     //write
     quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, timeout = _b.timeout, _e = _b.memo, memo = _e === void 0 ? '' : _e;
     return __generator(this, function (_f) {
         switch (_f.label) {
             case 0:
+                _f.trys.push([0, 5, , 6]);
                 isNative = (0, helper_1.isNativeSolanaAsset)(configAssetId);
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
-                tx = new anchor.web3.Transaction();
+                tx_1 = new anchor.web3.Transaction();
                 connection = (0, helper_1.getConnection)(endpoint);
                 if (!(assetId === 'SOL' && connection)) return [3 /*break*/, 2];
                 return [4 /*yield*/, connection.getParsedTokenAccountsByOwner(senderPublicKey, {
@@ -123,14 +124,14 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     return token.account.data.parsed.info.mint === spl.NATIVE_MINT.toString();
                 });
                 if (isWSOL) {
-                    tx.add(anchor.web3.SystemProgram.transfer({
+                    tx_1.add(anchor.web3.SystemProgram.transfer({
                         fromPubkey: senderPublicKey,
                         toPubkey: associatedToken,
                         lamports: BigInt(quantity),
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
                 else {
-                    tx.add(
+                    tx_1.add(
                     // add  instruction for creating wSOL account
                     spl.createAssociatedTokenAccountInstruction(senderPublicKey, associatedToken, senderPublicKey, spl.NATIVE_MINT, spl.TOKEN_PROGRAM_ID, spl.ASSOCIATED_TOKEN_PROGRAM_ID), 
                     //add instruction for sol to wsol swap
@@ -177,7 +178,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 };
                 buffer = (0, borsher_1.borshSerialize)(helper_1.instructionSchema, instructionPayload);
                 _d = (0, helper_1.getSolanaGuestChainAccounts)(constants_1.solanaPortId, refinedSourceChannel, hashedDenom), guestChainPDA = _d.guestChainPDA, triePDA = _d.triePDA, ibcStoragePDA = _d.ibcStoragePDA, mintAuthorityPDA = _d.mintAuthorityPDA, escrowAccountPDA = _d.escrowAccountPDA, feePDA = _d.feePDA;
-                instruction = new web3_js_1.TransactionInstruction({
+                instruction_1 = new web3_js_1.TransactionInstruction({
                     keys: [
                         { pubkey: senderPublicKey, isSigner: true, isWritable: true },
                         { pubkey: constants_1.solanaIbcProgramId, isSigner: false, isWritable: true },
@@ -199,10 +200,10 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx, accountId, 'endpoint', false, undefined, function () {
-                        tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
-                        tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
-                        tx.add(instruction);
+                return [4 /*yield*/, sendTX(tx_1, accountId, 'endpoint', false, undefined, function () {
+                        tx_1.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
+                        tx_1.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
+                        tx_1.add(instruction_1);
                     })];
             case 4: 
             // transactions.add(instruction);
@@ -210,6 +211,11 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
             // 	skipPreflight: true
             // });
             return [2 /*return*/, _f.sent()];
+            case 5:
+                err_1 = _f.sent();
+                console.log('solanaTransfer', err_1);
+                return [3 /*break*/, 6];
+            case 6: return [2 /*return*/];
         }
     });
 }); };
