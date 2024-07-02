@@ -19,8 +19,8 @@ export const cosmosTransfer = async ({
   timeout = 30,
   txMsg = TX_MSG,
   keplr,
-  supportLedger = true,
   gasPrice,
+  gas,
   feeAssetId,
 }: {
   sourceChannel: number; //channel with picasso(cosmos), ex> osmosis -> picasso(cosmos)'s source channel id is 1279
@@ -35,15 +35,15 @@ export const cosmosTransfer = async ({
   timeout?: number;
   txMsg?: TX_MSG_TYPE;
   keplr: Keplr;
-  supportLedger: boolean;
   gasPrice: string;
+  gas: string;
   feeAssetId: string;
 }) => {
   const client = await getClient({
     chainId,
     rpc,
     keplr,
-    supportLedger,
+    supportLedger: !!memo,
     feeAssetId,
     gasPrice,
   });
@@ -79,7 +79,7 @@ export const cosmosTransfer = async ({
               denom: feeAssetId,
             },
           ],
-          gas: gasPrice,
+          gas,
         };
 
   try {

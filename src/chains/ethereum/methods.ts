@@ -81,8 +81,10 @@ export const ethereumTransfer = async ({
     ?.send({ ...txObject, gas })
     .on('transactionHash', async (txHash) => {
       emitter.emit('ETHEREUM_APPROVED');
+      console.log(txHash, 'txHash');
       return txHash;
-    });
+    })
+    .catch((err) => console.error('ethereumTransfer', err));
 };
 
 /**@description Ask approval */
@@ -97,7 +99,7 @@ export const approveErc20 = async ({
   account: string;
   amount: string;
   erc20TokenAddress: string;
-  spenderContract: string;
+  spenderContract?: string;
 }) => {
   const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
   if (!erc20Contract) return;

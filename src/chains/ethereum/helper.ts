@@ -1,4 +1,4 @@
-import BN from 'big.js';
+import Big from 'big.js';
 import Web3 from 'web3';
 import { type TransactionConfig } from 'web3-core';
 import { type Contract } from 'web3-eth-contract';
@@ -57,7 +57,8 @@ export const getBlock = async (web3: Web3, addedAmount: number = 10000) => {
 export const getGasPrice = async (web3: Web3) => {
   if (!web3) return '0';
   const gasPrice = await web3.eth.getGasPrice();
-  return new BN(gasPrice || 0).mul(1.3).toFixed(0);
+  console.log(gasPrice, 'gasPrice');
+  return new Big(gasPrice || 0).mul(1.3).toFixed(0);
 };
 
 export const getEthGasAmount = async (
