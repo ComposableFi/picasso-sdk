@@ -41,7 +41,7 @@ var utils_1 = require("../common/utils");
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var client, msg, gasEstimation, refinedFee, generalResponse, ex_1;
+    var client, msg, refinedFee, generalResponse, ex_1;
     var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, _c = _b.timeout, timeout = _c === void 0 ? 30 : _c, _d = _b.txMsg, txMsg = _d === void 0 ? constants_1.TX_MSG : _d, keplr = _b.keplr, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
     return __generator(this, function (_e) {
         switch (_e.label) {
@@ -58,8 +58,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 msg = (0, helper_1.generateTransferMsg)(txMsg, sourceChannel, sourceAddress, destAddress, amount, assetId, memo, timeout);
                 return [4 /*yield*/, client.simulate(sourceAddress, [msg], memo)];
             case 2:
-                gasEstimation = _e.sent();
-                console.log('gasEstimation', gasEstimation);
+                _e.sent();
                 // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
                 if (keplr) {
                     keplr.defaultOptions = {

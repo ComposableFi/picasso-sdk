@@ -100,40 +100,37 @@ var utils_1 = require("../common/utils");
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx_1, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction_1, err_1;
+    var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction;
     var 
     //write
-    quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, timeout = _b.timeout, _e = _b.memo, memo = _e === void 0 ? '' : _e;
-    return __generator(this, function (_f) {
-        switch (_f.label) {
+    quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, _e = _b.timeout, timeout = _e === void 0 ? 30 : _e, _f = _b.memo, memo = _f === void 0 ? '' : _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
             case 0:
-                _f.trys.push([0, 5, , 6]);
                 isNative = (0, helper_1.isNativeSolanaAsset)(configDenom);
-                console.log(isNative, 'isNative');
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
-                console.log({ denom: denom, baseDenom: baseDenom, assetId: assetId, hashedDenom: hashedDenom }, 'denomInfoPackage');
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
-                tx_1 = new anchor.web3.Transaction();
+                tx = new anchor.web3.Transaction();
                 connection = (0, helper_1.getConnection)(endpoint);
                 if (!(assetId === 'SOL' && connection)) return [3 /*break*/, 2];
                 return [4 /*yield*/, connection.getParsedTokenAccountsByOwner(senderPublicKey, {
                         programId: spl.TOKEN_PROGRAM_ID,
                     })];
             case 1:
-                tokenInfo = _f.sent();
+                tokenInfo = _g.sent();
                 isWSOL = !!tokenInfo.value.find(function (token) {
                     return token.account.data.parsed.info.mint === spl.NATIVE_MINT.toString();
                 });
                 if (isWSOL) {
-                    tx_1.add(anchor.web3.SystemProgram.transfer({
+                    tx.add(anchor.web3.SystemProgram.transfer({
                         fromPubkey: senderPublicKey,
                         toPubkey: associatedToken,
                         lamports: BigInt(quantity),
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
                 else {
-                    tx_1.add(
+                    tx.add(
                     // add  instruction for creating wSOL account
                     spl.createAssociatedTokenAccountInstruction(senderPublicKey, associatedToken, senderPublicKey, spl.NATIVE_MINT, spl.TOKEN_PROGRAM_ID, spl.ASSOCIATED_TOKEN_PROGRAM_ID), 
                     //add instruction for sol to wsol swap
@@ -143,14 +140,14 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         lamports: BigInt(quantity),
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
-                _f.label = 2;
+                _g.label = 2;
             case 2:
                 finalAmount = (0, helper_1.numberTo32ByteBuffer)(BigInt(quantity));
                 assetPubkeyAddress = assetId === 'SOL' ? spl.NATIVE_MINT : (0, helper_1.getPublicKey)(assetId);
                 refinedSourceChannel = "channel-".concat(sourceChannelId.toString());
                 return [4 /*yield*/, spl.getAssociatedTokenAddress(assetPubkeyAddress, senderPublicKey)];
             case 3:
-                senderTokenAccount = _f.sent();
+                senderTokenAccount = _g.sent();
                 msgTransferPayload = {
                     port_id_on_a: constants_1.solanaPortId,
                     chan_id_on_a: refinedSourceChannel,
@@ -170,10 +167,9 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         Never: {},
                     },
                     timeout_timestamp_on_b: {
-                        time: timeout,
+                        time: (0, utils_1.getTimeOut)(timeout).toNumber(),
                     },
                 };
-                console.log(msgTransferPayload, '(msgTransferPayload');
                 instructionPayload = {
                     discriminator: [153, 182, 142, 63, 227, 31, 140, 239],
                     hashed_base_denom: hashedDenom,
@@ -181,7 +177,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 };
                 buffer = (0, borsher_1.borshSerialize)(helper_1.instructionSchema, instructionPayload);
                 _d = (0, helper_1.getSolanaGuestChainAccounts)(constants_1.solanaPortId, refinedSourceChannel, hashedDenom), guestChainPDA = _d.guestChainPDA, triePDA = _d.triePDA, ibcStoragePDA = _d.ibcStoragePDA, mintAuthorityPDA = _d.mintAuthorityPDA, escrowAccountPDA = _d.escrowAccountPDA, feePDA = _d.feePDA;
-                instruction_1 = new web3_js_1.TransactionInstruction({
+                instruction = new web3_js_1.TransactionInstruction({
                     keys: [
                         { pubkey: senderPublicKey, isSigner: true, isWritable: true },
                         { pubkey: constants_1.solanaIbcProgramId, isSigner: false, isWritable: true },
@@ -203,22 +199,12 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx_1, accountId, endpoint, false, undefined, function () {
-                        tx_1.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
-                        tx_1.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
-                        tx_1.add(instruction_1);
+                return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
+                        tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
+                        tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
+                        tx.add(instruction);
                     })];
-            case 4: 
-            // transactions.add(instruction);
-            // let tx = await sendAndConfirmTransaction(connection, transactions, [depositor], {
-            // 	skipPreflight: true
-            // });
-            return [2 /*return*/, _f.sent()];
-            case 5:
-                err_1 = _f.sent();
-                console.error('solanaTransfer', err_1);
-                return [3 /*break*/, 6];
-            case 6: return [2 /*return*/];
+            case 4: return [2 /*return*/, _g.sent()];
         }
     });
 }); };

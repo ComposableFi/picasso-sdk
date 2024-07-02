@@ -138,7 +138,6 @@ var getGasPrice = function (web3) { return __awaiter(void 0, void 0, void 0, fun
                 return [4 /*yield*/, web3.eth.getGasPrice()];
             case 1:
                 gasPrice = _a.sent();
-                console.log(gasPrice, 'gasPrice');
                 return [2 /*return*/, new big_js_1.default(gasPrice || 0).mul(1.3).toFixed(0)];
         }
     });
@@ -157,7 +156,6 @@ var getEthGasAmount = function (web3, txConfig) { return __awaiter(void 0, void 
                 return [4 /*yield*/, web3.eth.estimateGas(txConfig)];
             case 2:
                 gasAmount = _a.sent();
-                console.log(gasAmount, 'gasAmount');
                 return [2 /*return*/, gasAmount];
             case 3:
                 err_1 = _a.sent();

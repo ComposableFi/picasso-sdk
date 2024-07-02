@@ -136,9 +136,7 @@ var getSolanaAsset = function (assetId, minimalDenom, isNative) {
             hashedDenom: hexToBytes((0, js_sha256_1.sha256)(spl.NATIVE_MINT.toString())),
         };
     var hashedDenom = hexToBytes((0, js_sha256_1.sha256)(minimalDenom));
-    var tokenMint = (0, exports.getTokenMint)(hashedDenom) || assetId;
-    console.log('generatedMint:', (0, exports.getTokenMint)(hashedDenom), assetId);
-    console.log(tokenMint, assetId, 'check');
+    // const tokenMint = getTokenMint(hashedDenom) || assetId;
     if (!isNative)
         return {
             denom: minimalDenom,
