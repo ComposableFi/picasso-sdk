@@ -200,7 +200,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx_1, accountId, 'endpoint', false, undefined, function () {
+                return [4 /*yield*/, sendTX(tx_1, accountId, endpoint, false, undefined, function () {
                         tx_1.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx_1.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx_1.add(instruction_1);
@@ -213,7 +213,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
             return [2 /*return*/, _f.sent()];
             case 5:
                 err_1 = _f.sent();
-                console.log('solanaTransfer', err_1);
+                console.error('solanaTransfer', err_1);
                 return [3 /*break*/, 6];
             case 6: return [2 /*return*/];
         }

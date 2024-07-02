@@ -16,7 +16,7 @@ export const getPublicKey = (address: string) => {
   return new PublicKey(address);
 };
 export const isNativeSolanaAsset = (minimalDenom: string) => {
-  return minimalDenom.includes('channel');
+  return !minimalDenom.includes('channel');
 };
 export function hexToBytes(hex: string) {
   const bytes: number[] = [];
