@@ -82,14 +82,13 @@ export const ethereumTransfer = async ({
   // simulate before sending transfer
   getEthSimulate(web3, encodedData, txObject);
 
-  return rawData
-    ?.send({ ...txObject, gas })
-    .on('transactionHash', async (txHash) => {
-      emitter.emit('ETHEREUM_APPROVED');
-      console.log(txHash, 'txHash');
-      return txHash;
-    })
-    .catch((err) => console.error('ethereumTransfer', err));
+  return rawData?.send({ ...txObject, gas });
+  // .on('transactionHash', async (txHash) => {
+  //   emitter.emit('ETHEREUM_APPROVED');
+  //   console.log(txHash, 'txHash');
+  //   return txHash;
+  // })
+  // .catch((err) => console.error('ethereumTransfer', err));
 };
 
 /**@description Ask approval */
