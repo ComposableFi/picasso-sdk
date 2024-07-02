@@ -26,6 +26,7 @@ var getTimeOut = function (plusMin) {
     if (plusMin === void 0) { plusMin = 30; }
     var now = new Date();
     var minutesLater = new Date(now.getTime() + plusMin * 60 * 1000);
+    console.log(new big_js_1.default(minutesLater.getTime()).mul(1000000), 'checkGetTimeOut');
     return new big_js_1.default(minutesLater.getTime()).mul(1000000);
 };
 exports.getTimeOut = getTimeOut;

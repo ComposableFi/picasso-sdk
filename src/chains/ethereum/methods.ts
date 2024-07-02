@@ -10,6 +10,7 @@ import {
 import {
   getBankTransferContract,
   getBlock,
+  getConsole,
   getErc20Contract,
   getEthGasAmount,
   getEthSimulate,
@@ -26,6 +27,7 @@ export const ethereumTransfer = async ({
   channel,
   minimalDenom,
   memo = '', //
+  timeout = 240,
 }: {
   web3: Web3;
   amount: string;
@@ -35,10 +37,12 @@ export const ethereumTransfer = async ({
   channel: number;
   minimalDenom: string;
   memo?: string;
+  timeout: number;
 }) => {
   const transferContract = getBankTransferContract(web3);
-  const timeoutBlock = getBlock(web3);
-  const gasPrice = getGasPrice(web3);
+  const timeoutBlock = await getBlock(web3);
+  const gasPrice = await getGasPrice(web3);
+
   const rawDataErc20 = transferContract.methods.sendTransfer(
     minimalDenom, // pass minimal denom as first argument
     amount,
@@ -46,7 +50,7 @@ export const ethereumTransfer = async ({
     'transfer',
     `channel-${channel}`, //update this using config
     timeoutBlock, // replace it to get block
-    getTimeOut(60).toString(),
+    getTimeOut(timeout).toString(),
     memo
   );
   const rawDataEth = transferContract.methods.sendTransferNativeToken(
@@ -54,7 +58,8 @@ export const ethereumTransfer = async ({
     'transfer',
     `channel-${channel}`,
     timeoutBlock, // replace it to get block
-    getTimeOut(240).toString(),
+    getTimeOut(timeout).toString(),
+
     memo
   );
 
@@ -68,7 +73,7 @@ export const ethereumTransfer = async ({
     data: encodedData,
     from: originAddress,
     value: isETH
-      ? new Big(amount || 0).plus(MAINNET_FEE).toString()
+      ? new Big(amount || 0).plus(MAINNET_FEE).toFixed()
       : MAINNET_FEE,
     gasPrice: gasPrice, // wei
   };

@@ -75,7 +75,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.simulate = exports.getApprovedErc20 = exports.getErc20Contract = exports.isValidAddress = exports.getEthSimulate = exports.getTransactionReceipt = exports.getEthGasAmount = exports.getGasPrice = exports.getBlock = exports.getBankContract = exports.getBankTransferContract = exports.getContract = exports.getWeb3 = void 0;
+exports.simulate = exports.getApprovedErc20 = exports.getErc20Contract = exports.isValidAddress = exports.getEthSimulate = exports.getTransactionReceipt = exports.getEthGasAmount = exports.getGasPrice = exports.getBlock = exports.getConsole = exports.getBankContract = exports.getBankTransferContract = exports.getContract = exports.getWeb3 = void 0;
 var big_js_1 = __importDefault(require("big.js"));
 var web3_1 = __importDefault(require("web3"));
 var abi_1 = require("./abi");
@@ -103,6 +103,10 @@ var getBankContract = function (web3) {
     return (0, exports.getContract)(web3, abi_1.ics20BankABI, constants_1.bankContractAddress);
 };
 exports.getBankContract = getBankContract;
+var getConsole = function (msg) {
+    console.log(msg);
+};
+exports.getConsole = getConsole;
 var getBlock = function (web3_2) {
     var args_1 = [];
     for (var _i = 1; _i < arguments.length; _i++) {
@@ -134,6 +138,7 @@ var getGasPrice = function (web3) { return __awaiter(void 0, void 0, void 0, fun
                 return [4 /*yield*/, web3.eth.getGasPrice()];
             case 1:
                 gasPrice = _a.sent();
+                console.log(gasPrice, 'gasPrice');
                 return [2 /*return*/, new big_js_1.default(gasPrice || 0).mul(1.3).toFixed(0)];
         }
     });
@@ -152,6 +157,7 @@ var getEthGasAmount = function (web3, txConfig) { return __awaiter(void 0, void 
                 return [4 /*yield*/, web3.eth.estimateGas(txConfig)];
             case 2:
                 gasAmount = _a.sent();
+                console.log(gasAmount, 'gasAmount');
                 return [2 /*return*/, gasAmount];
             case 3:
                 err_1 = _a.sent();

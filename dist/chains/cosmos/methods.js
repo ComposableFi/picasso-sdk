@@ -42,23 +42,23 @@ var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var client, msg, gasEstimation, refinedFee, generalResponse, ex_1;
-    var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, _c = _b.timeout, timeout = _c === void 0 ? 30 : _c, _d = _b.txMsg, txMsg = _d === void 0 ? constants_1.TX_MSG : _d, keplr = _b.keplr, _e = _b.supportLedger, supportLedger = _e === void 0 ? true : _e, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
-    return __generator(this, function (_f) {
-        switch (_f.label) {
+    var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, _c = _b.timeout, timeout = _c === void 0 ? 30 : _c, _d = _b.txMsg, txMsg = _d === void 0 ? constants_1.TX_MSG : _d, keplr = _b.keplr, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
             case 0: return [4 /*yield*/, (0, helper_1.getClient)({
                     chainId: chainId,
                     rpc: rpc,
                     keplr: keplr,
-                    supportLedger: supportLedger,
+                    supportLedger: !!memo,
                     feeAssetId: feeAssetId,
                     gasPrice: gasPrice,
                 })];
             case 1:
-                client = _f.sent();
+                client = _e.sent();
                 msg = (0, helper_1.generateTransferMsg)(txMsg, sourceChannel, sourceAddress, destAddress, amount, assetId, memo, timeout);
                 return [4 /*yield*/, client.simulate(sourceAddress, [msg], memo)];
             case 2:
-                gasEstimation = _f.sent();
+                gasEstimation = _e.sent();
                 console.log('gasEstimation', gasEstimation);
                 // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
                 if (keplr) {
@@ -79,16 +79,16 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         ],
                         gas: gas,
                     };
-                _f.label = 3;
+                _e.label = 3;
             case 3:
-                _f.trys.push([3, 5, , 6]);
+                _e.trys.push([3, 5, , 6]);
                 return [4 /*yield*/, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
             case 4:
-                generalResponse = _f.sent();
+                generalResponse = _e.sent();
                 utils_1.emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
                 return [2 /*return*/, generalResponse.transactionHash]; // Query indexer by this txHash
             case 5:
-                ex_1 = _f.sent();
+                ex_1 = _e.sent();
                 console.error(ex_1, 'cosmosError');
                 utils_1.emitter.emit('CANCEL_COSMOS'); // optional: emit event for cancel of wallet extension
                 return [3 /*break*/, 6];

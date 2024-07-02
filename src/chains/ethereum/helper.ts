@@ -46,7 +46,9 @@ export const getBankContract = (web3: Web3) => {
     bankContractAddress
   ) as Ics20BankABI;
 };
-
+export const getConsole = (msg: any) => {
+  console.log(msg);
+};
 export const getBlock = async (web3: Web3, addedAmount: number = 10000) => {
   if (!web3) return '0';
 
@@ -68,7 +70,7 @@ export const getEthGasAmount = async (
   if (!web3) return '0';
   try {
     const gasAmount = await web3.eth.estimateGas(txConfig);
-
+    console.log(gasAmount, 'gasAmount');
     return gasAmount;
   } catch (err) {
     return '0';

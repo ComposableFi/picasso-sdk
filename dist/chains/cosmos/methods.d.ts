@@ -1,6 +1,6 @@
 import { type TX_MSG_TYPE } from './types';
 import { Keplr } from '@keplr-wallet/types';
-export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddress, amount, assetId, fee, chainId, rpc, memo, timeout, txMsg, keplr, supportLedger, gasPrice, gas, feeAssetId, }: {
+export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddress, amount, assetId, fee, chainId, rpc, memo, timeout, txMsg, keplr, gasPrice, gas, feeAssetId, }: {
     sourceChannel: number;
     sourceAddress: string;
     destAddress: string;
@@ -13,7 +13,6 @@ export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddres
     timeout?: number;
     txMsg?: TX_MSG_TYPE;
     keplr: Keplr;
-    supportLedger: boolean;
     gasPrice: string;
     gas: string;
     feeAssetId: string;
