@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getClient = exports.keplr = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
+exports.getClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     if (timeout === void 0) { timeout = 30; }
@@ -47,13 +47,13 @@ var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, 
             sourceChannel: "channel-".concat(channel),
             token: {
                 denom: assetId,
-                amount: amount
+                amount: amount,
             },
             sender: sourceAddress,
             receiver: destAddress,
             memo: memo,
-            timeoutTimestamp: (0, exports.getCosmosTimeoutTimestamp)(timeout * 60) //  30~240 minutes
-        }
+            timeoutTimestamp: (0, exports.getCosmosTimeoutTimestamp)(timeout * 60), //  30~240 minutes
+        },
     };
     return msg;
 };
@@ -64,19 +64,27 @@ var getCosmosTimeoutTimestamp = function (seconds) {
 };
 exports.getCosmosTimeoutTimestamp = getCosmosTimeoutTimestamp;
 /** @description chainId is from cosmos chain registry */
-var getSigner = function (chainId) {
-    return exports.keplr === null || exports.keplr === void 0 ? void 0 : exports.keplr.getOfflineSigner(chainId);
+var getSigner = function (chainId, keplr, supportLedger) {
+    if (supportLedger === void 0) { supportLedger = true; }
+    return supportLedger
+        ? keplr.getOfflineSignerOnlyAmino(chainId)
+        : keplr.getOfflineSigner(chainId);
 };
 exports.getSigner = getSigner;
-exports.keplr = (typeof window !== 'undefined') ? window.keplr : undefined; // provider of cosmos wallet 
-var getClient = function (chainId, rpc) { return __awaiter(void 0, void 0, void 0, function () {
-    var signer;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+// export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
+var getClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var signer, finalClient;
+    var chainId = _b.chainId, rpc = _b.rpc, keplr = _b.keplr, feeAssetId = _b.feeAssetId, gasPrice = _b.gasPrice, _c = _b.supportLedger, supportLedger = _c === void 0 ? true : _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
             case 0:
-                signer = (0, exports.getSigner)(chainId);
-                return [4 /*yield*/, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer)];
-            case 1: return [2 /*return*/, _a.sent()];
+                signer = (0, exports.getSigner)(chainId, keplr, supportLedger);
+                return [4 /*yield*/, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer, {
+                        gasPrice: stargate_1.GasPrice.fromString("".concat(gasPrice).concat(feeAssetId)),
+                    })];
+            case 1:
+                finalClient = _d.sent();
+                return [2 /*return*/, finalClient];
         }
     });
 }); };

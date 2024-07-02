@@ -9,7 +9,19 @@ export interface EventOptions {
     topics?: string[];
 }
 export type AcknowledgePacket = ContractEventLog<{
-    packet: [string, string, string, string, string, string, [string, string], string];
+    packet: [
+        string,
+        string,
+        string,
+        string,
+        string,
+        string,
+        [
+            string,
+            string
+        ],
+        string
+    ];
     acknowledgement: string;
     0: [string, string, string, string, string, string, [string, string], string];
     1: string;
@@ -51,7 +63,19 @@ export type SendPacket = ContractEventLog<{
     7: string;
 }>;
 export type TimeoutPacket = ContractEventLog<{
-    packet: [string, string, string, string, string, string, [string, string], string];
+    packet: [
+        string,
+        string,
+        string,
+        string,
+        string,
+        string,
+        [
+            string,
+            string
+        ],
+        string
+    ];
     0: [string, string, string, string, string, string, [string, string], string];
 }>;
 export type WriteAcknowledgement = ContractEventLog<{

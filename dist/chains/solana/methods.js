@@ -103,11 +103,11 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
     var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction;
     var 
     //write
-    quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, timeout = _b.timeout, _e = _b.memo, memo = _e === void 0 ? '' : _e;
-    return __generator(this, function (_f) {
-        switch (_f.label) {
+    quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, _e = _b.timeout, timeout = _e === void 0 ? 30 : _e, _f = _b.memo, memo = _f === void 0 ? '' : _f;
+    return __generator(this, function (_g) {
+        switch (_g.label) {
             case 0:
-                isNative = (0, helper_1.isNativeSolanaAsset)(configAssetId);
+                isNative = (0, helper_1.isNativeSolanaAsset)(configDenom);
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
@@ -115,16 +115,18 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 connection = (0, helper_1.getConnection)(endpoint);
                 if (!(assetId === 'SOL' && connection)) return [3 /*break*/, 2];
                 return [4 /*yield*/, connection.getParsedTokenAccountsByOwner(senderPublicKey, {
-                        programId: spl.TOKEN_PROGRAM_ID
+                        programId: spl.TOKEN_PROGRAM_ID,
                     })];
             case 1:
-                tokenInfo = _f.sent();
-                isWSOL = !!tokenInfo.value.find(function (token) { return token.account.data.parsed.info.mint === spl.NATIVE_MINT.toString(); });
+                tokenInfo = _g.sent();
+                isWSOL = !!tokenInfo.value.find(function (token) {
+                    return token.account.data.parsed.info.mint === spl.NATIVE_MINT.toString();
+                });
                 if (isWSOL) {
                     tx.add(anchor.web3.SystemProgram.transfer({
                         fromPubkey: senderPublicKey,
                         toPubkey: associatedToken,
-                        lamports: BigInt(quantity)
+                        lamports: BigInt(quantity),
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
                 else {
@@ -135,17 +137,17 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     anchor.web3.SystemProgram.transfer({
                         fromPubkey: senderPublicKey,
                         toPubkey: associatedToken,
-                        lamports: BigInt(quantity)
+                        lamports: BigInt(quantity),
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
-                _f.label = 2;
+                _g.label = 2;
             case 2:
                 finalAmount = (0, helper_1.numberTo32ByteBuffer)(BigInt(quantity));
                 assetPubkeyAddress = assetId === 'SOL' ? spl.NATIVE_MINT : (0, helper_1.getPublicKey)(assetId);
                 refinedSourceChannel = "channel-".concat(sourceChannelId.toString());
                 return [4 /*yield*/, spl.getAssociatedTokenAddress(assetPubkeyAddress, senderPublicKey)];
             case 3:
-                senderTokenAccount = _f.sent();
+                senderTokenAccount = _g.sent();
                 msgTransferPayload = {
                     port_id_on_a: constants_1.solanaPortId,
                     chan_id_on_a: refinedSourceChannel,
@@ -153,25 +155,25 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         token: {
                             denom: {
                                 trace_path: (0, helper_1.getSolanaTracePath)(denom, isNative),
-                                base_denom: baseDenom
+                                base_denom: baseDenom,
                             },
-                            amount: finalAmount
+                            amount: finalAmount,
                         },
                         sender: accountId,
                         receiver: destinationAddress,
-                        memo: memo
+                        memo: memo,
                     },
                     timeout_height_on_b: {
-                        Never: {}
+                        Never: {},
                     },
                     timeout_timestamp_on_b: {
-                        time: timeout
-                    }
+                        time: (0, utils_1.getTimeOut)(timeout).toNumber(),
+                    },
                 };
                 instructionPayload = {
                     discriminator: [153, 182, 142, 63, 227, 31, 140, 239],
                     hashed_base_denom: hashedDenom,
-                    msg: msgTransferPayload
+                    msg: msgTransferPayload,
                 };
                 buffer = (0, borsher_1.borshSerialize)(helper_1.instructionSchema, instructionPayload);
                 _d = (0, helper_1.getSolanaGuestChainAccounts)(constants_1.solanaPortId, refinedSourceChannel, hashedDenom), guestChainPDA = _d.guestChainPDA, triePDA = _d.triePDA, ibcStoragePDA = _d.ibcStoragePDA, mintAuthorityPDA = _d.mintAuthorityPDA, escrowAccountPDA = _d.escrowAccountPDA, feePDA = _d.feePDA;
@@ -184,26 +186,25 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         { pubkey: guestChainPDA, isSigner: false, isWritable: true },
                         { pubkey: mintAuthorityPDA, isSigner: false, isWritable: true },
                         { pubkey: assetPubkeyAddress, isSigner: false, isWritable: true },
-                        { pubkey: isNative ? escrowAccountPDA : constants_1.solanaIbcProgramId, isSigner: false, isWritable: true },
+                        {
+                            pubkey: isNative ? escrowAccountPDA : constants_1.solanaIbcProgramId,
+                            isSigner: false,
+                            isWritable: true,
+                        },
                         { pubkey: senderTokenAccount, isSigner: false, isWritable: true },
                         { pubkey: feePDA, isSigner: false, isWritable: true },
                         { pubkey: spl.TOKEN_PROGRAM_ID, isSigner: false, isWritable: true },
-                        { pubkey: web3_js_1.SystemProgram.programId, isSigner: false, isWritable: true }
+                        { pubkey: web3_js_1.SystemProgram.programId, isSigner: false, isWritable: true },
                     ],
                     programId: constants_1.solanaIbcProgramId,
-                    data: buffer // All instructions are hellos
+                    data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx, accountId, 'endpoint', false, undefined, function () {
+                return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
                     })];
-            case 4: 
-            // transactions.add(instruction);
-            // let tx = await sendAndConfirmTransaction(connection, transactions, [depositor], {
-            // 	skipPreflight: true
-            // });
-            return [2 /*return*/, _f.sent()];
+            case 4: return [2 /*return*/, _g.sent()];
         }
     });
 }); };
@@ -266,7 +267,7 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
                     if (!connection)
                         return [2 /*return*/];
                     return [4 /*yield*/, connection.sendRawTransaction(rawTx, {
-                            skipPreflight: skipPreflight
+                            skipPreflight: skipPreflight,
                         })];
                 case 1:
                     signature = _l.sent();
@@ -287,7 +288,8 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
                     return [4 /*yield*/, connection.getSignatureStatus(signature)];
                 case 6:
                     status_1 = _l.sent();
-                    if (((_g = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _g === void 0 ? void 0 : _g.confirmationStatus) === 'finalized' || ((_h = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _h === void 0 ? void 0 : _h.confirmationStatus) === 'confirmed') {
+                    if (((_g = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _g === void 0 ? void 0 : _g.confirmationStatus) === 'finalized' ||
+                        ((_h = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _h === void 0 ? void 0 : _h.confirmationStatus) === 'confirmed') {
                         return [2 /*return*/, { signature: signature, status: (_j = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _j === void 0 ? void 0 : _j.confirmationStatus }];
                     }
                     if (i > 9) {
@@ -321,6 +323,8 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
 };
 var getFee = function () {
     var SEND_AMT = 0.01 * web3_js_1.LAMPORTS_PER_SOL; // for test, it used to be 0.006
-    var PRIORITY_FEE_IX = web3_js_1.ComputeBudgetProgram.setComputeUnitPrice({ microLamports: SEND_AMT });
+    var PRIORITY_FEE_IX = web3_js_1.ComputeBudgetProgram.setComputeUnitPrice({
+        microLamports: SEND_AMT,
+    });
     return PRIORITY_FEE_IX;
 };

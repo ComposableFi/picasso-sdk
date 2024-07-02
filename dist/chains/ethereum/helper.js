@@ -75,7 +75,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.simulate = exports.getApprovedErc20 = exports.getErc20Contract = exports.isValidAddress = exports.getEthSimulate = exports.getTransactionReceipt = exports.getEthGasAmount = exports.getGasPrice = exports.getBlock = exports.getBankContract = exports.getBankTransferContract = exports.getContract = exports.getWeb3 = void 0;
+exports.simulate = exports.getApprovedErc20 = exports.getErc20Contract = exports.isValidAddress = exports.getEthSimulate = exports.getTransactionReceipt = exports.getEthGasAmount = exports.getGasPrice = exports.getBlock = exports.getConsole = exports.getBankContract = exports.getBankTransferContract = exports.getContract = exports.getWeb3 = void 0;
 var big_js_1 = __importDefault(require("big.js"));
 var web3_1 = __importDefault(require("web3"));
 var abi_1 = require("./abi");
@@ -86,8 +86,12 @@ var getWeb3 = function (endpoint) {
 exports.getWeb3 = getWeb3;
 var getContract = function (web3, abi, contractAddress) {
     // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-    typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(window === null || window === void 0 ? void 0 : window.ethereum);
-    return web3 && contractAddress ? new web3.eth.Contract(abi, contractAddress) : undefined;
+    typeof window !== 'undefined' &&
+        !!web3 &&
+        web3.eth.setProvider(window === null || window === void 0 ? void 0 : window.ethereum);
+    return web3 && contractAddress
+        ? new web3.eth.Contract(abi, contractAddress)
+        : undefined;
 };
 exports.getContract = getContract;
 var getBankTransferContract = function (web3) {
@@ -99,6 +103,10 @@ var getBankContract = function (web3) {
     return (0, exports.getContract)(web3, abi_1.ics20BankABI, constants_1.bankContractAddress);
 };
 exports.getBankContract = getBankContract;
+var getConsole = function (msg) {
+    console.log(msg);
+};
+exports.getConsole = getConsole;
 var getBlock = function (web3_2) {
     var args_1 = [];
     for (var _i = 1; _i < arguments.length; _i++) {

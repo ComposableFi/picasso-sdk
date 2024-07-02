@@ -1,3 +1,1 @@
-
-export const TX_MSG = '/ibc.applications.transfer.v1.MsgTransfer' 
-
+export const TX_MSG = '/ibc.applications.transfer.v1.MsgTransfer';

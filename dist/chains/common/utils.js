@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
-exports.emitter = new eventemitter3_1.default;
+exports.emitter = new eventemitter3_1.default();
 exports.TIMEOUT_IBC_MAX = 6000000000000;
 var memoBuilder = function (_a) {
     var destChannel = _a.destChannel, destAddress = _a.destAddress;
@@ -16,8 +16,8 @@ var memoBuilder = function (_a) {
             port: 'transfer',
             channel: "channel-".concat(destChannel),
             timeout: exports.TIMEOUT_IBC_MAX,
-            retries: 0
-        }
+            retries: 0,
+        },
     });
 };
 exports.memoBuilder = memoBuilder;
