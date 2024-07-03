@@ -49,7 +49,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     chainId: chainId,
                     rpc: rpc,
                     keplr: keplr,
-                    supportLedger: !!memo,
+                    supportLedger: !memo,
                     feeAssetId: feeAssetId,
                     gasPrice: gasPrice,
                 })];
