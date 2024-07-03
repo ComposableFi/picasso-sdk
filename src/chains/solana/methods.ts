@@ -31,7 +31,7 @@ export const solanaTransfer = async ({
   sourceChannelId,
   configDenom,
   endpoint,
-  timeout = 30,
+  timeout,
   memo = '',
 }: {
   quantity: string;
@@ -143,7 +143,7 @@ export const solanaTransfer = async ({
       Never: {},
     },
     timeout_timestamp_on_b: {
-      time: getTimeOut(timeout).toNumber(),
+      time: timeout,
     },
   };
 
