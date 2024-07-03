@@ -43,7 +43,7 @@ export const cosmosTransfer = async ({
     chainId,
     rpc,
     keplr,
-    supportLedger: !!memo,
+    supportLedger: !memo,
     feeAssetId,
     gasPrice,
   });
