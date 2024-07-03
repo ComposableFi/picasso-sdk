@@ -39,7 +39,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
-    if (timeout === void 0) { timeout = 30; }
     var msg = {
         typeUrl: txMsg,
         value: {
@@ -52,7 +51,7 @@ var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, 
             sender: sourceAddress,
             receiver: destAddress,
             memo: memo,
-            timeoutTimestamp: (0, exports.getCosmosTimeoutTimestamp)(timeout * 60), //  30~240 minutes
+            timeoutTimestamp: timeout, //  30~240 minutes
         },
     };
     return msg;

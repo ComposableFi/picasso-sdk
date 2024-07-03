@@ -1,7 +1,7 @@
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
 import { type Keplr } from '@keplr-wallet/types';
-export declare const generateTransferMsg: (txMsg: TX_MSG_TYPE, channel: number, sourceAddress: string, destAddress: string, amount: string, assetId: string, memo: string, timeout?: number) => {
+export declare const generateTransferMsg: (txMsg: TX_MSG_TYPE, channel: number, sourceAddress: string, destAddress: string, amount: string, assetId: string, memo: string, timeout: number) => {
     typeUrl: "/ibc.applications.transfer.v1.MsgTransfer";
     value: {
         sourcePort: string;

@@ -10,7 +10,7 @@ export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddres
     chainId: string;
     rpc: string;
     memo: string;
-    timeout?: number;
+    timeout: number;
     txMsg?: TX_MSG_TYPE;
     keplr: Keplr;
     gasPrice: string;

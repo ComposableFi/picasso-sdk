@@ -10,7 +10,7 @@ export const generateTransferMsg = (
   amount: string,
   assetId: string,
   memo: string,
-  timeout: number = 30
+  timeout: number
 ) => {
   const msg = {
     typeUrl: txMsg,
@@ -24,7 +24,7 @@ export const generateTransferMsg = (
       sender: sourceAddress,
       receiver: destAddress,
       memo,
-      timeoutTimestamp: getCosmosTimeoutTimestamp(timeout * 60), //  30~240 minutes
+      timeoutTimestamp: timeout, //  30~240 minutes
     },
   };
   return msg;
