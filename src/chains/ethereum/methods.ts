@@ -1,7 +1,6 @@
 import Big from 'big.js';
 import type Web3 from 'web3';
 
-import { getTimeOut } from '../common/utils';
 import {
   bankContractAddress,
   bankTransferContractAddress,
@@ -26,7 +25,7 @@ export const ethereumTransfer = async ({
   channel,
   minimalDenom,
   memo = '', //
-  timeout = 240,
+  timeout,
 }: {
   web3: Web3;
   amount: string;
@@ -49,7 +48,7 @@ export const ethereumTransfer = async ({
     'transfer',
     `channel-${channel}`, //update this using config
     timeoutBlock, // replace it to get block
-    getTimeOut(timeout).toString(),
+    timeout,
     memo
   );
   const rawDataEth = transferContract.methods.sendTransferNativeToken(
@@ -57,7 +56,7 @@ export const ethereumTransfer = async ({
     'transfer',
     `channel-${channel}`,
     timeoutBlock, // replace it to get block
-    getTimeOut(timeout).toString(),
+    timeout.toString(),
     memo
   );
 
