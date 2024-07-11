@@ -2,39 +2,194 @@
 
 This is Picasso IBC sdk for cosmos, ethereum, solana, and polkadot(will be updated soon)
 
-# How to use indexer
+# How to use indexer Query 
 
-### 1. Transaction with direct channel
+NOTE:  To use the indexer API, you need to obtain the Hasura endpoint and secret key. Please contact the Picasso team for assistance.
 
-- You can query indexer [API](https://204.48.25.128/api/ibc_events?txHash=0F3DFE07428C1D600964B5FA9BF91A72EEEED0AFB628532864998B58F97B66A7) with transaction hash
-
-### 2. PFM
-
-- You can query status using next hop's information
-
-- example : Composable -> Picasso cosmos
-
-1. [Composable -> Picasso (kusama)](https://204.48.25.128/api/ibc_events?fromBlockHash=0x2cfdd9d31db4c1c5b643c7b8a82cdf7e65fcd4b711fa2745e67ee448a69980db&sequence=4823)
+### 1. Install Packages
 
 ```
-[response]
-
-{
-  ...,
-  toBlockHash : "0xde232ee07fb9d6c36f4f3c04ae3dca1be02890f4f2cbe369d730c25a2083e831",
-  nextSequence : "21892"
-}
-```
-
-2.  [Picasso (kusama) -> Picasso(Cosmos)](https://204.48.25.128/api/ibc_events?fromBlockHash=0xde232ee07fb9d6c36f4f3c04ae3dca1be02890f4f2cbe369d730c25a2083e831&sequence=21892)
+npm install react graphql graphql-tag subscriptions-transport-ws picasso-sdk
 
 ```
-[response]
-{
-  ...,
-  toBlockHash : "C209A7397B3A0C139F5959C48035224AB7048718920CED667AB84DCFEF7FE4F4",
-  nextSequence : "null" // query until nextSequence is null
-}
+- Please get hasura url and
+
+### 2. Code example with react 
+
+
+usePicassoStatus.ts
+
+```
+import { useCallback, useEffect, useState } from 'react';
+
+import { type DocumentNode } from 'graphql';
+import gql from 'graphql-tag';
+import { type IbcEventsResponse } from 'picasso-sdk';
+import { SubscriptionClient } from 'subscriptions-transport-ws';
+
+type QueryKey = {
+	fromBlockHash?: { _eq: string };
+	sequence?: { _eq: number };
+};
+
+const HASURA_GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_HASURA_URL || '';
+const HASURA_ADMIN_SECRET = process.env.NEXT_PUBLIC_HASURA_PRIVATE_KEY || '';
+
+const subscriptionQueryWithTxHash = gql`
+	subscription MySubscription(
+		$txHash: String!
+		$fromBlockHash: String_comparison_exp = {}
+		$sequence: String_comparison_exp = {}
+	) {
+		IbcEvents(where: { data: { _contains: { txHash: $txHash } }, fromBlockHash: $fromBlockHash, sequence: $sequence }) {
+			data
+			fromAssetId
+			fromAmount
+			fromAddress
+			fromBlockHash
+			fromChainId
+			fromFee
+			fromFeeAssetId
+			fromTimestamp
+			nextSequence
+			sequence
+			sourceChannel
+			status
+			timeout
+			toAddress
+			toAmount
+			toAssetId
+			toBlockHash
+			toChainId
+			toFee
+			toFeeAssetId
+			updatedAt
+			toTimestamp
+			type
+			timeout_height
+		}
+	}
+`;
+
+const subscriptionQueryWithoutTxHash = gql`
+	subscription MySubscription($fromBlockHash: String_comparison_exp = {}, $sequence: String_comparison_exp = {}) {
+		IbcEvents(where: { fromBlockHash: $fromBlockHash, sequence: $sequence }) {
+			data
+			fromAssetId
+			fromAmount
+			fromAddress
+			fromBlockHash
+			fromChainId
+			fromFee
+			fromFeeAssetId
+			fromTimestamp
+			nextSequence
+			sequence
+			sourceChannel
+			status
+			timeout
+			toAddress
+			toAmount
+			toAssetId
+			toBlockHash
+			toChainId
+			toFee
+			toFeeAssetId
+			updatedAt
+			toTimestamp
+			type
+			timeout_height
+		}
+	}
+`;
+
+export const usePicassoStatus = (txHash: string) => {
+	const [ibcEvent, setIbcEvent] = useState<Partial<IbcEventsResponse>>();
+	const [hopIndex, setHopIndex] = useState(-1);
+
+	const resetStatus = () => {
+		setIbcEvent(undefined);
+		setHopIndex(-1);
+	};
+
+	const subscribeToIbcEvents = useCallback(
+		(client: SubscriptionClient, variables: QueryKey & { txHash?: string }, subscriptionQuery: DocumentNode) => {
+			if (hopIndex > 6) {
+				client.close();
+				return;
+			}
+
+			const subscription = client.request({ query: subscriptionQuery, variables }).subscribe({
+				next(data) {
+					console.log('Received data:', data);
+					const event = data?.data?.IbcEvents?.[0];
+					setIbcEvent(event?.data);
+
+					// this is index for each hop 
+
+					setHopIndex(prev => prev + 1);
+
+					if (event?.toBlockHash && event?.nextSequence) {
+						const nextVariables = {
+							fromBlockHash: { _eq: event.toBlockHash },
+							sequence: { _eq: event.nextSequence }
+						};
+						subscribeToIbcEvents(client, nextVariables, subscriptionQueryWithoutTxHash);
+					} else {
+						client.close();
+						console.log('Subscription stopped');
+					}
+				},
+				error(err) {
+					console.error('Subscription error:', err);
+				},
+				complete() {
+					console.log('Subscription complete');
+				}
+			});
+
+			return subscription;
+		},
+		[hopIndex]
+	);
+
+	useEffect(() => {
+		if (!txHash) return;
+
+		const client = new SubscriptionClient(
+			HASURA_GRAPHQL_ENDPOINT,
+			{
+				reconnect: true,
+				connectionParams: {
+					headers: {
+						'x-hasura-admin-secret': HASURA_ADMIN_SECRET
+					}
+				}
+			},
+			WebSocket
+		);
+
+		const initialVariables = { txHash };
+		const initialSubscription = subscribeToIbcEvents(client, initialVariables, subscriptionQueryWithTxHash);
+
+		return () => {
+			initialSubscription?.unsubscribe();
+			client.close();
+		};
+	}, [txHash, subscribeToIbcEvents]);
+
+	return { hopIndex, ibcEvent, resetStatus };
+};
+
+```
+
+### Usage 
+
+```
+const Stepper = () => {
+	const { ibcEvent, hopIndex, resetStatus } = usePicassoStatus('txHash...');
+	return <div>stepper..</div>;
+};
 ```
 
 # How to use methods
