@@ -16,7 +16,7 @@ export const cosmosTransfer = async ({
   chainId,
   rpc,
   memo,
-  timeout = 30,
+  timeout,
   txMsg = TX_MSG,
   keplr,
   gasPrice,
@@ -32,7 +32,7 @@ export const cosmosTransfer = async ({
   chainId: string;
   rpc: string;
   memo: string; // pfm requires memo
-  timeout?: number;
+  timeout: number;
   txMsg?: TX_MSG_TYPE;
   keplr: Keplr;
   gasPrice: string;
@@ -43,7 +43,7 @@ export const cosmosTransfer = async ({
     chainId,
     rpc,
     keplr,
-    supportLedger: !!memo,
+    supportLedger: !memo,
     feeAssetId,
     gasPrice,
   });

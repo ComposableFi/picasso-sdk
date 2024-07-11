@@ -52,32 +52,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.approveErc20 = exports.ethereumTransfer = void 0;
 var big_js_1 = __importDefault(require("big.js"));
-var utils_1 = require("../common/utils");
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 /**@description etheruem transfer */
 var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var transferContract, timeoutBlock, gasPrice, rawDataErc20, rawDataEth, isETH, rawData, encodedData, txObject, gas;
     var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo, memo = _c === void 0 ? '' : _c, //
-    _d = _b.timeout, //
-    timeout = _d === void 0 ? 240 : _d;
-    return __generator(this, function (_e) {
-        switch (_e.label) {
+    timeout = _b.timeout;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
             case 0:
                 transferContract = (0, helper_1.getBankTransferContract)(web3);
                 return [4 /*yield*/, (0, helper_1.getBlock)(web3)];
             case 1:
-                timeoutBlock = _e.sent();
+                timeoutBlock = _d.sent();
                 return [4 /*yield*/, (0, helper_1.getGasPrice)(web3)];
             case 2:
-                gasPrice = _e.sent();
+                gasPrice = _d.sent();
                 rawDataErc20 = transferContract.methods.sendTransfer(minimalDenom, // pass minimal denom as first argument
                 amount, destinationAddress, //centauri
                 'transfer', "channel-".concat(channel), //update this using config
                 timeoutBlock, // replace it to get block
-                (0, utils_1.getTimeOut)(timeout).toString(), memo);
+                timeout, memo);
                 rawDataEth = transferContract.methods.sendTransferNativeToken(destinationAddress, 'transfer', "channel-".concat(channel), timeoutBlock, // replace it to get block
-                (0, utils_1.getTimeOut)(timeout).toString(), memo);
+                timeout.toString(), memo);
                 isETH = assetId === 'ETH';
                 rawData = isETH ? rawDataEth : rawDataErc20;
                 encodedData = rawData.encodeABI();
@@ -92,7 +90,7 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                 };
                 return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 3:
-                gas = _e.sent();
+                gas = _d.sent();
                 // simulate before sending transfer
                 (0, helper_1.getEthSimulate)(web3, encodedData, txObject);
                 return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
