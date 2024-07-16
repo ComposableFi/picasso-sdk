@@ -2,9 +2,9 @@
 
 This is Picasso IBC sdk for cosmos, ethereum, solana, and polkadot(will be updated soon)
 
-# How to use indexer Query 
+# How to use indexer Query
 
-NOTE:  To use the indexer API, you need to obtain the Hasura endpoint and secret key. Please contact the Picasso team for assistance.
+NOTE: To use the indexer API, you need to obtain the Hasura endpoint and secret key. Please contact the Picasso team for assistance.
 
 ### 1. Install Packages
 
@@ -12,15 +12,15 @@ NOTE:  To use the indexer API, you need to obtain the Hasura endpoint and secret
 npm install react graphql graphql-tag subscriptions-transport-ws picasso-sdk
 
 ```
+
 - Please get hasura url and
 
-### 2. Code example with react 
-
+### 2. Code example with react
 
 usePicassoStatus.ts
 
 ```
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { type DocumentNode } from 'graphql';
 import gql from 'graphql-tag';
@@ -103,7 +103,7 @@ const subscriptionQueryWithoutTxHash = gql`
 	}
 `;
 
-export const usePicassoStatus = (txHash: string) => {
+export const usePicassoStatus = (txHash?: string, duration: number = 10000) => {
 	const [ibcEvent, setIbcEvent] = useState<Partial<IbcEventsResponse>>();
 	const [hopIndex, setHopIndex] = useState(-1);
 
@@ -112,50 +112,51 @@ export const usePicassoStatus = (txHash: string) => {
 		setHopIndex(-1);
 	};
 
-	const subscribeToIbcEvents = useCallback(
-		(client: SubscriptionClient, variables: QueryKey & { txHash?: string }, subscriptionQuery: DocumentNode) => {
-			if (hopIndex > 6) {
-				client.close();
-				return;
-			}
+	const subscribeToIbcEvents = (
+		client: SubscriptionClient,
+		variables: QueryKey & { txHash?: string },
+		subscriptionQuery: DocumentNode
+	) => {
+		if (hopIndex > 100) {
+			client.close();
+			return;
+		}
 
-			const subscription = client.request({ query: subscriptionQuery, variables }).subscribe({
-				next(data) {
-					console.log('Received data:', data);
-					const event = data?.data?.IbcEvents?.[0];
-					setIbcEvent(event?.data);
-
-					// this is index for each hop 
-
+		const subscription = client.request({ query: subscriptionQuery, variables }).subscribe({
+			next(data) {
+				console.log('Received data:', data);
+				const event = data?.data?.IbcEvents?.[0];
+				setIbcEvent(event);
+				if (event?.fromBlockHash !== ibcEvent?.fromBlockHash) {
 					setHopIndex(prev => prev + 1);
-
-					if (event?.toBlockHash && event?.nextSequence) {
-						const nextVariables = {
-							fromBlockHash: { _eq: event.toBlockHash },
-							sequence: { _eq: event.nextSequence }
-						};
-						subscribeToIbcEvents(client, nextVariables, subscriptionQueryWithoutTxHash);
-					} else {
-						client.close();
-						console.log('Subscription stopped');
-					}
-				},
-				error(err) {
-					console.error('Subscription error:', err);
-				},
-				complete() {
-					console.log('Subscription complete');
 				}
-			});
 
-			return subscription;
-		},
-		[hopIndex]
-	);
+				if (event?.toBlockHash && event?.nextSequence) {
+					const nextVariables = {
+						fromBlockHash: { _eq: event.toBlockHash },
+						sequence: { _eq: event.nextSequence }
+					};
+					subscribeToIbcEvents(client, nextVariables, subscriptionQueryWithoutTxHash);
+				} else if (event && ['TransferPending', 'send_packet'].every(v => event?.status !== v)) {
+					client.close();
+
+					console.log('Subscription stopped:', event);
+				}
+			},
+			error(err) {
+				console.error('Subscription error:', err);
+			},
+			complete() {
+				console.log('Subscription complete');
+			}
+		});
+
+		return subscription;
+	};
 
 	useEffect(() => {
 		if (!txHash) return;
-
+		resetStatus();
 		const client = new SubscriptionClient(
 			HASURA_GRAPHQL_ENDPOINT,
 			{
@@ -171,19 +172,37 @@ export const usePicassoStatus = (txHash: string) => {
 
 		const initialVariables = { txHash };
 		const initialSubscription = subscribeToIbcEvents(client, initialVariables, subscriptionQueryWithTxHash);
+		if (ibcEvent && ibcEvent?.status !== 'TransferPending' && ibcEvent?.status !== 'send_packet') {
+			console.log('this has closed');
+			client.close();
+
+			initialSubscription?.unsubscribe();
+			const timer = setTimeout(() => {
+				hopIndex >= 0 && setHopIndex(-1);
+
+				setIbcEvent(undefined);
+			}, duration);
+
+			return () => {
+				clearTimeout(timer);
+				console.log('Subscription stopped!');
+			};
+		}
 
 		return () => {
 			initialSubscription?.unsubscribe();
 			client.close();
+			clearTimeout(duration);
 		};
-	}, [txHash, subscribeToIbcEvents]);
+	}, [txHash, duration]);
 
 	return { hopIndex, ibcEvent, resetStatus };
 };
 
+
 ```
 
-### Usage 
+### Usage
 
 ```
 const Stepper = () => {
