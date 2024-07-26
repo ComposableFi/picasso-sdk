@@ -1,0 +1,77 @@
+{
+  "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+  "rest": "https://osmosis-cmp-api.polkachu.com",
+  "chainId": "osmosis-1",
+  "chainName": "Osmosis",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "osmo",
+    "bech32PrefixAccPub": "osmopub",
+    "bech32PrefixValAddr": "osmovaloper",
+    "bech32PrefixValPub": "osmovaloperpub",
+    "bech32PrefixConsAddr": "osmovalcons",
+    "bech32PrefixConsPub": "osmovalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+      "gasPriceStep": {
+        "low": 0.0025,
+        "average": 0.0025,
+        "high": 0.04
+      }
+    }
+  ],
+  "chainType": "cosmos",
+  "stakeCurrency": {
+    "coinDenom": "OSMO",
+    "coinMinimalDenom": "uosmo",
+    "coinDecimals": 6,
+    "coinGeckoId": "osmosis",
+    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg"
+  },
+  "picassoCurrencies": [
+    {
+      "coinDenom": "",
+      "coinGeckoId": "",
+      "coinImageUrl": "",
+      "decimals": 0,
+      "polkadot": {
+        "picassoAssetId": "",
+        "composableAssetId": ""
+      },
+      "cosmos": {
+        "minimalDenom": ""
+      },
+      "ethereum": {
+        "erc20Address": "",
+        "minimalDenom": ""
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "displayDecimals": 0
+      }
+    }
+  ],
+  "channelMap": {
+    "1": "centauri-1",
+    "5": "----"
+  }
+}

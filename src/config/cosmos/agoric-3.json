@@ -4,13 +4,6 @@
   "chainId": "agoric-3",
   "chainName": "Agoric",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
-  "stakeCurrency": {
-    "coinDenom": "BLD",
-    "coinMinimalDenom": "ubld",
-    "coinDecimals": 6,
-    "coinGeckoId": "agoric",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
-  },
   "bip44": {
     "coinType": 564
   },
@@ -63,25 +56,34 @@
       }
     }
   ],
-  "alternativeBIP44s": [
-    {
-      "coinType": 118
-    }
-  ],
+
+  "chainType": "cosmos",
   "picassoCurrencies": [
     {
-      "denom": "",
+      "coinDenom": "",
       "coinGeckoId": "",
       "coinImageUrl": "",
       "decimals": 0,
-      "picassoAssetId": "",
-      "composableAssetId": "",
-      "cosmosMinimalDenom": "",
-      "ethereumErc20Address": "",
-      "ethereumMinimalDenom": "",
-      "solanaMintAddress": "",
-      "solanaMinimalDenom": "",
-      "solanaDisplayDecimals": 0
+      "polkadot": {
+        "picassoAssetId": "",
+        "composableAssetId": ""
+      },
+      "cosmos": {
+        "minimalDenom": ""
+      },
+      "ethereum": {
+        "erc20Address": "",
+        "minimalDenom": ""
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "displayDecimals": 0
+      }
     }
-  ]
+  ],
+  "channelMap": {
+    "1": "centauri-1",
+    "5": "----"
+  }
 }

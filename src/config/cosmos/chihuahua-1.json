@@ -1,0 +1,77 @@
+{
+  "rpc": "https://chihuahua-rpc.polkachu.com",
+  "rest": "https://chihuahua-api.polkachu.com",
+  "chainId": "chihuahua-1",
+  "chainName": "Chihuahua v1.2",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png",
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "chihuahua",
+    "bech32PrefixAccPub": "chihuahuapub",
+    "bech32PrefixValAddr": "chihuahuavaloper",
+    "bech32PrefixValPub": "chihuahuavaloperpub",
+    "bech32PrefixConsAddr": "chihuahuavalcons",
+    "bech32PrefixConsPub": "chihuahuavalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "HUAHUA",
+      "coinMinimalDenom": "uhuahua",
+      "coinDecimals": 6,
+      "coinGeckoId": "chihuahua-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "HUAHUA",
+      "coinMinimalDenom": "uhuahua",
+      "coinDecimals": 6,
+      "coinGeckoId": "chihuahua-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png",
+      "gasPriceStep": {
+        "low": 100,
+        "average": 500,
+        "high": 500
+      }
+    }
+  ],
+  "chainType": "cosmos",
+  "stakeCurrency": {
+    "coinDenom": "HUAHUA",
+    "coinMinimalDenom": "uhuahua",
+    "coinDecimals": 6,
+    "coinGeckoId": "chihuahua-token",
+    "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png"
+  },
+  "picassoCurrencies": [
+    {
+      "coinDenom": "",
+      "coinGeckoId": "",
+      "coinImageUrl": "",
+      "decimals": 0,
+      "polkadot": {
+        "picassoAssetId": "",
+        "composableAssetId": ""
+      },
+      "cosmos": {
+        "minimalDenom": ""
+      },
+      "ethereum": {
+        "erc20Address": "",
+        "minimalDenom": ""
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "displayDecimals": 0
+      }
+    }
+  ],
+  "channelMap": {
+    "1": "centauri-1",
+    "5": "----"
+  }
+}
