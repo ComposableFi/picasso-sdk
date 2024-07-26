@@ -2,10 +2,24 @@ import fs from 'fs';
 import path from 'path';
 import { type ChainInfo as KeplrChainInfo } from '@keplr-wallet/types';
 import { ReadonlyDeep } from 'type-fest';
+import { CrosschainAsset } from '../dist';
 
 const mainnetPath = path.resolve(
   __dirname,
   '../src/config/cosmos/keplr-info/mainnet'
+);
+
+const crossChainAssetsPath = path.resolve(
+  __dirname,
+  '../src/config/crossChainAssets.ts'
+);
+const solanaAssetsPath = path.resolve(
+  __dirname,
+  '../src/config/solanaAssets.ts'
+);
+const ethereumAssetsPath = path.resolve(
+  __dirname,
+  '../src/config/ethereumAssets.ts'
 );
 
 interface CustomChainInfo {
@@ -66,50 +80,119 @@ const chainFiles = fs
   .readdirSync(mainnetPath)
   .filter((file) => file.endsWith('.ts') && file !== 'index.ts');
 
-console.log(chainFiles, 'chainFiles');
+async function importModule(modulePath: string) {
+  return await import(modulePath);
+}
 
-for (const file of chainFiles) {
-  if (file.endsWith('.ts')) {
-    const chainModule = require(path.join(mainnetPath, file));
-    const chainData = chainModule.default || chainModule;
+async function processChainFiles() {
+  try {
+    //cross chain asset file
+    const crossChainAssetsModule = await importModule(crossChainAssetsPath);
+    const solanaAssetsModule = await importModule(solanaAssetsPath);
+    const ethereumAssetsModule = await importModule(ethereumAssetsPath);
+    const crossChainData =
+      crossChainAssetsModule.default || crossChainAssetsModule;
+    const solanaAssetsData = solanaAssetsModule.default || solanaAssetsModule;
+    const ethereumAssetsData =
+      ethereumAssetsModule.default || ethereumAssetsModule;
 
-    const transformedData: CustomChainInfo = {
-      ...chainData,
-      chainType: 'cosmos',
-      channelMap: { '1': 'centauri-1', '5': '----' },
-      cosmos: {
-        bip44: chainData.bip44,
-        bech32Config: chainData.bech32Config,
-      },
-      currencies: chainData.currencies?.map((currency) => ({
-        ...currency,
-        cosmos: { minimalDenom: currency.coinMinimalDenom },
-        polkadot: {
-          picassoAssetId: 'placeholder', // replace with actual value
-          composableAssetId: 'placeholder', // replace with actual value
-        },
-        ethereum: {
-          minimalDenom: `transfer/channel-2/transfer/channel-13/${currency.coinMinimalDenom}`,
-          erc20Address: 'placeholder', // replace with actual value
-          fromCosmosFee: 0, // replace with actual value
-          minimumTransfer: 0, // replace with actual value
-        },
-        solana: {
-          mintAddress: 'placeholder', // replace with actual value
-          minimalDenom: `transfer/channel-1/transfer/channel-13/${currency.coinMinimalDenom}`,
-          minimumTransfer: 0, // replace with actual value
-          fromCosmosFee: 0, // replace with actual value
-          displayDecimals: 6, // replace with actual value
-        },
-      })),
-      feeCurrencies: chainData.feeCurrencies?.map((feeCurrency) => ({
-        ...feeCurrency,
-      })),
-    };
-
-    fs.writeFileSync(
-      path.join(mainnetPath + '/json', file.replace('.ts', '.json')),
-      JSON.stringify(transformedData, null, 2)
+    console.log(
+      chainFiles,
+      'chainFiles'
+      // crossChainData,
+      // solanaAssetsData,
+      // ethereumAssetsData
     );
+
+    for (const file of chainFiles) {
+      if (file.endsWith('.ts')) {
+        const chainModule = require(path.join(mainnetPath, file));
+        const chainData = (chainModule.default || chainModule)[
+          file.split('.')[0]
+        ];
+        console.log(chainData, 'chainData', file);
+
+        //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
+
+        const transformedData: CustomChainInfo = {
+          ...chainData,
+          chainType: 'cosmos',
+          channelMap: { '1': 'centauri-1', '5': '----' },
+          cosmos: {
+            bip44: chainData.bip44,
+            bech32Config: chainData.bech32Config,
+          },
+          currencies: chainData.currencies?.map((currency) => {
+            const picassoAssetId = Object.keys(crossChainData['dotsama']).find(
+              (key) =>
+                crossChainData['dotsama'][key]?.denom === currency?.coinDenom &&
+                crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
+            );
+
+            const composableAssetId = Object.keys(
+              crossChainData['dotsama']
+            ).find(
+              (key) =>
+                crossChainData['dotsama'][key]?.denom === currency?.coinDenom &&
+                crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
+            );
+
+            //ethereum
+            const ethereumInfo = ethereumAssetsData?.[currency.coinDenom];
+            const erc20Address = ethereumInfo?.erc20Address || '';
+            const ethereumFromCosmosFee =
+              ethereumInfo?.cosmosToEthereumFee || 0;
+            const ethereumMinimumTransfer = ethereumInfo?.minimumTransfer || 0;
+
+            const ethereumMinimalDenom =
+              crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
+
+            //solana
+            const solanaInfo = solanaAssetsData?.[currency.coinDenom];
+            const mintAddress = solanaInfo?.mintAddress || '';
+            const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
+            const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
+            const displayDecimals = solanaInfo?.realDecimals || 0;
+
+            const solanaMinimalDenom =
+              crossChainData['solana'][mintAddress]?.minimalDenom || '';
+
+            return {
+              ...currency,
+              cosmos: { minimalDenom: currency.coinMinimalDenom },
+              polkadot: {
+                picassoAssetId, // replace with actual value
+                composableAssetId, // replace with actual value
+              },
+              ethereum: {
+                minimalDenom: ethereumMinimalDenom,
+                erc20Address, // replace with actual value
+                fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+              },
+              solana: {
+                mintAddress, // replace with actual value
+                minimalDenom: solanaMinimalDenom + 1,
+                minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                displayDecimals, // replace with actual value
+              },
+            };
+          }),
+          feeCurrencies: chainData.feeCurrencies?.map((feeCurrency) => ({
+            ...feeCurrency,
+          })),
+        };
+
+        fs.writeFileSync(
+          path.join(mainnetPath + '/json', file.replace('.ts', '.json')),
+          JSON.stringify(transformedData, null, 2)
+        );
+      }
+    }
+  } catch (e) {
+    console.error(e);
+    throw e;
   }
 }
+processChainFiles().catch(console.error);

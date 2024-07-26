@@ -1,19 +1,191 @@
 {
-  "STARGAZE": {
-    "rpc": "https://stargaze-cmp-rpc.polkachu.com",
-    "rest": "https://stargaze-cmp-api.polkachu.com",
-    "chainId": "stargaze-1",
-    "chainName": "Stargaze",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
-    "stakeCurrency": {
+  "rpc": "https://stargaze-cmp-rpc.polkachu.com",
+  "rest": "https://stargaze-cmp-api.polkachu.com",
+  "chainId": "stargaze-1",
+  "chainName": "Stargaze",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
+  "stakeCurrency": {
+    "coinDenom": "STARS",
+    "coinMinimalDenom": "ustars",
+    "coinDecimals": 6,
+    "coinGeckoId": "stargaze",
+    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
+  },
+  "walletUrl": "https://wallet.keplr.app/chains/stargaze",
+  "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "stars",
+    "bech32PrefixAccPub": "starspub",
+    "bech32PrefixValAddr": "starsvaloper",
+    "bech32PrefixValPub": "starsvaloperpub",
+    "bech32PrefixConsAddr": "starsvalcons",
+    "bech32PrefixConsPub": "starsvalconspub"
+  },
+  "currencies": [
+    {
       "coinDenom": "STARS",
       "coinMinimalDenom": "ustars",
       "coinDecimals": 6,
       "coinGeckoId": "stargaze",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+      "cosmos": {
+        "minimalDenom": "ustars"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-6/ustars",
+        "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
+        "fromCosmosFee": 875,
+        "minimumTransfer": 2000
+      },
+      "solana": {
+        "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
+        "minimalDenom": "transfer/channel-1/transfer/channel-6/ustars1",
+        "minimumTransfer": 990,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
     },
-    "walletUrl": "https://wallet.keplr.app/chains/stargaze",
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
+    {
+      "coinDenom": "STRDST",
+      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/dust.png",
+      "cosmos": {
+        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "1",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "GAZE",
+      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/gaze.png",
+      "cosmos": {
+        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "1",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "OHH",
+      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ohh.png",
+      "cosmos": {
+        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "1",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "BRNCH",
+      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/brnch.png",
+      "cosmos": {
+        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "1",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "SNEAKY",
+      "coinMinimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/sneaky.png",
+      "cosmos": {
+        "minimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "1",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "STARS",
+      "coinMinimalDenom": "ustars",
+      "coinDecimals": 6,
+      "coinGeckoId": "stargaze",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+      "gasPriceStep": {
+        "low": 1,
+        "average": 1.1,
+        "high": 1.2
+      }
+    }
+  ],
+  "features": [],
+  "chainType": "cosmos",
+  "channelMap": {
+    "1": "centauri-1",
+    "5": "----"
+  },
+  "cosmos": {
     "bip44": {
       "coinType": 118
     },
@@ -24,66 +196,6 @@
       "bech32PrefixValPub": "starsvaloperpub",
       "bech32PrefixConsAddr": "starsvalcons",
       "bech32PrefixConsPub": "starsvalconspub"
-    },
-    "currencies": [
-      {
-        "coinDenom": "STARS",
-        "coinMinimalDenom": "ustars",
-        "coinDecimals": 6,
-        "coinGeckoId": "stargaze",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
-      },
-      {
-        "coinDenom": "STRDST",
-        "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust",
-        "coinDecimals": 6,
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/dust.png"
-      },
-      {
-        "coinDenom": "GAZE",
-        "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE",
-        "coinDecimals": 6,
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/gaze.png"
-      },
-      {
-        "coinDenom": "OHH",
-        "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH",
-        "coinDecimals": 6,
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ohh.png"
-      },
-      {
-        "coinDenom": "BRNCH",
-        "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH",
-        "coinDecimals": 6,
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/brnch.png"
-      },
-      {
-        "coinDenom": "SNEAKY",
-        "coinMinimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky",
-        "coinDecimals": 6,
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/sneaky.png"
-      }
-    ],
-    "feeCurrencies": [
-      {
-        "coinDenom": "STARS",
-        "coinMinimalDenom": "ustars",
-        "coinDecimals": 6,
-        "coinGeckoId": "stargaze",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
-        "gasPriceStep": {
-          "low": 1,
-          "average": 1.1,
-          "high": 1.2
-        }
-      }
-    ],
-    "features": []
-  },
-  "chainType": "cosmos",
-  "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
-  },
-  "cosmos": {}
+    }
+  }
 }

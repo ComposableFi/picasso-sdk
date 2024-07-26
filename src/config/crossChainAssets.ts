@@ -1,29 +1,27 @@
 // [FAST TRACK] Add asset info to a network here to enable the asset on that network (add to at least 2 networks)
-import { getChainIdFromNetwork } from '../../chains/helpers';
-import { SecretAssets } from '../../assets/secret';
-import { type CrosschainAsset } from '../../assets/assets';
 import ethereumAssets from './ethereumAssets';
 import solanaAssets from './solanaAssets';
+import { CrosschainAsset } from './types';
 
 const crossChainAssets = {
   cosmos: {
     //  weird exception for ppica due to double origin in Picasso and Centauri
     ppica: {
-      chainId: getChainIdFromNetwork('CENTAURI'),
+      chainId: 'centauri-1',
       network: 'CENTAURI',
       decimals: 12,
       minimalDenom: 'ppica',
       denom: 'PICA',
     },
     uhuahua: {
-      chainId: getChainIdFromNetwork('CHIHUAHUA'),
+      chainId: 'chihuahua-1',
       network: 'CHIHUAHUA',
       decimals: 6,
       minimalDenom: 'uhuahua',
       denom: 'HUAHUA',
     },
     uosmo: {
-      chainId: getChainIdFromNetwork('OSMOSIS'),
+      chainId: 'osmosis-1',
       network: 'OSMOSIS',
       decimals: 6,
       minimalDenom: 'uosmo',
@@ -39,7 +37,7 @@ const crossChainAssets = {
     },
     'factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA':
       {
-        chainId: getChainIdFromNetwork('OSMOSIS'),
+        chainId: 'osmosis-1',
         network: 'OSMOSIS',
         decimals: 6,
         minimalDenom:
@@ -48,7 +46,7 @@ const crossChainAssets = {
       },
     'factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro':
       {
-        chainId: getChainIdFromNetwork('NEUTRON'),
+        chainId: 'neutron-1',
         network: 'NEUTRON',
         decimals: 6,
         minimalDenom:
@@ -56,7 +54,7 @@ const crossChainAssets = {
         denom: 'ASTRO',
       },
     'drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz': {
-      chainId: getChainIdFromNetwork('COREUM'),
+      chainId: 'coreum-mainnet-1',
       network: 'COREUM',
       decimals: 6,
       minimalDenom:
@@ -65,7 +63,7 @@ const crossChainAssets = {
     },
 
     uatom: {
-      chainId: getChainIdFromNetwork('COSMOS'),
+      chainId: 'cosmoshub-4',
       network: 'COSMOS',
       decimals: 6,
       minimalDenom: 'uatom',
@@ -86,56 +84,56 @@ const crossChainAssets = {
       denom: 'stATOM',
     },
     ustars: {
-      chainId: getChainIdFromNetwork('STARGAZE'),
+      chainId: 'stargaze-1',
       network: 'STARGAZE',
       decimals: 6,
       minimalDenom: 'ustars',
       denom: 'STARS',
     },
     ucre: {
-      chainId: getChainIdFromNetwork('CRESCENT'),
+      chainId: 'crescent-1',
       network: 'CRESCENT',
       decimals: 6,
       minimalDenom: 'ucre',
       denom: 'CRE',
     },
     uscrt: {
-      chainId: getChainIdFromNetwork('SECRET'),
+      chainId: 'secret-4',
       network: 'SECRET',
       decimals: 6,
       minimalDenom: 'uscrt',
       denom: 'SCRT',
     },
     untrn: {
-      chainId: getChainIdFromNetwork('NEUTRON'),
+      chainId: 'neutron-1',
       network: 'NEUTRON',
       decimals: 6,
       minimalDenom: 'untrn',
       denom: 'NTRN',
     },
     uumee: {
-      chainId: getChainIdFromNetwork('UMEE'),
+      chainId: 'umee-1',
       network: 'UMEE',
       decimals: 6,
       minimalDenom: 'uumee',
       denom: 'UMEE',
     },
     ubld: {
-      chainId: getChainIdFromNetwork('AGORIC'),
+      chainId: 'agoric-3',
       network: 'AGORIC',
       decimals: 6,
       minimalDenom: 'ubld',
       denom: 'BLD',
     },
     ubcre: {
-      chainId: getChainIdFromNetwork('CRESCENT'),
+      chainId: 'crescent-1',
       network: 'CRESCENT',
       decimals: 6,
       minimalDenom: 'ubcre',
       denom: 'bCRE',
     },
     uist: {
-      chainId: getChainIdFromNetwork('AGORIC'),
+      chainId: 'agoric-3',
       network: 'AGORIC',
       decimals: 6,
       minimalDenom: 'uist',
@@ -148,37 +146,51 @@ const crossChainAssets = {
       minimalDenom: 'usei',
       denom: 'SEI',
     },
-    ...SecretAssets,
+    'cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd': {
+      chainId: 'secret-4',
+      network: 'SECRET',
+      decimals: 6,
+      minimalDenom: 'usilk',
+      denom: 'SILK',
+    },
+    'cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm': {
+      chainId: 'secret-4',
+      network: 'SECRET',
+      decimals: 8,
+      minimalDenom: 'ushd',
+      denom: 'SHD',
+    },
+
     utia: {
-      chainId: getChainIdFromNetwork('CELESTIA'),
+      chainId: 'celestia',
       network: 'CELESTIA',
       decimals: 6,
       minimalDenom: 'utia',
       denom: 'TIA',
     },
     ukuji: {
-      chainId: getChainIdFromNetwork('KUJIRA'),
+      chainId: 'kaiyo-1',
       network: 'KUJIRA',
       decimals: 6,
       minimalDenom: 'ukuji',
       denom: 'KUJI',
     },
     uqck: {
-      chainId: getChainIdFromNetwork('QUICKSILVER'),
+      chainId: 'quicksilver-2',
       network: 'QUICKSILVER',
       decimals: 6,
       minimalDenom: 'uqck',
       denom: 'QCK',
     },
     inj: {
-      chainId: getChainIdFromNetwork('INJECTIVE'),
+      chainId: 'injective-1',
       network: 'INJECTIVE',
       decimals: 18,
       minimalDenom: 'inj',
       denom: 'INJ',
     },
     ucore: {
-      chainId: getChainIdFromNetwork('COREUM'),
+      chainId: 'coreum-mainnet-1',
       network: 'COREUM',
       decimals: 6,
       minimalDenom: 'ucore',
@@ -186,14 +198,14 @@ const crossChainAssets = {
     },
 
     // ubedrock: {
-    // 	chainId: getChainIdFromNetwork('INJECTIVE'),
+    // 	chainId:  "injective-1",
     // 	network: 'INJECTIVE',
     // 	decimals: 18,
     // 	minimalDenom: 'inj',
     // 	denom: 'INJ',
     // },
     aarch: {
-      chainId: getChainIdFromNetwork('ARCHWAY'),
+      chainId: 'archway-1',
       network: 'ARCHWAY',
       decimals: 18,
       minimalDenom: 'aarch',
@@ -367,8 +379,6 @@ const crossChainAssets = {
       minimalDenom: solanaAssets['WHINE'].mintAddress, //  fake
       denom: 'WHINE',
     },
-
-    ...SecretAssets,
   } as const satisfies Record<string, CrosschainAsset>,
   dotsama: {
     '1': {
@@ -481,14 +491,14 @@ const crossChainAssets = {
     },
     // shiden SDN
     '2007': {
-      chainId: getChainIdFromNetwork('SHIDEN'),
+      chainId: '2007',
       network: 'SHIDEN',
       decimals: 18,
       minimalDenom: 'uSDN', //  fake
       denom: 'SDN',
     },
     '2125': {
-      chainId: getChainIdFromNetwork('TINKERNET'),
+      chainId: '2125',
       network: 'TINKERNET',
       decimals: 12,
       minimalDenom: 'uTNKR', //  fake
@@ -510,14 +520,14 @@ const crossChainAssets = {
     },
     //  Dot's ID in the Asset Registry on Composable, required since DOT outside of Picasso will have this baseDenom in denomTrace
     '79228162514264337593543950342': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 10,
       minimalDenom: 'uDOT', //  fake
       denom: 'DOT',
     },
     '79228162514264337593543950351': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 10,
       minimalDenom: 'ulsDOT', //  fake
@@ -525,7 +535,7 @@ const crossChainAssets = {
     },
     //  BLD on composable
     '79228162514264337593543950354': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 6,
       minimalDenom: 'uBLD', //  fake
@@ -533,7 +543,7 @@ const crossChainAssets = {
     },
     //  IST on composable
     '79228162514264337593543950361': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 6,
       minimalDenom: 'uIST', //  fake
@@ -541,7 +551,7 @@ const crossChainAssets = {
     },
     // bnc polkadot on composable
     '79228162514264337593543950369': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 12,
       minimalDenom: 'uBNC_DOT', //  fake
@@ -549,7 +559,7 @@ const crossChainAssets = {
     },
     // vDot on composable
     '79228162514264337593543950370': {
-      chainId: getChainIdFromNetwork('COMPOSABLE'),
+      chainId: '2019',
       network: 'COMPOSABLE',
       decimals: 10,
       minimalDenom: 'uvdot', //  fake
