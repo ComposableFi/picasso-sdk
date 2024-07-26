@@ -1,5 +1,5 @@
 // [FAST TRACK] Add info for assets on ethereum network here
-export const ethereumAssets = {
+const ethereumAssets = {
   ETH: {
     erc20Address: '[N/A]',
     cosmosToEthereumFee: 0.0055,
@@ -182,11 +182,6 @@ export const ethereumAssets = {
     minimumTransfer: 94,
   },
   //Solana assets at ethereum
-  SOL: {
-    erc20Address: '0xd1D82d3Ab815E0B47e38EC2d666c5b8AA05Ae501',
-    cosmosToEthereumFee: 0.055,
-    minimumTransfer: 0.2,
-  },
   wSOL: {
     erc20Address: '0xd1D82d3Ab815E0B47e38EC2d666c5b8AA05Ae501',
     cosmosToEthereumFee: 0.055,
@@ -249,4 +244,6 @@ export const ethereumAssets = {
   // 	cosmosToEthereumFee: 0,
   // 	minimumTransfer: 0,
   // },
-};
+} as const;
+
+export default ethereumAssets;

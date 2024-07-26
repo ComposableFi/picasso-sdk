@@ -1,27 +1,48 @@
 {
-  "rpc": "https://cosmos-cmp-rpc.polkachu.com",
-  "rest": "https://cosmos-cmp-api.polkachu.com",
+  "rpc": "https://rpc-cosmoshub.blockapsis.com",
+  "rest": "https://lcd-cosmoshub.blockapsis.com",
   "chainId": "cosmoshub-4",
   "chainName": "Cosmos Hub",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "cosmos",
-    "bech32PrefixAccPub": "cosmospub",
-    "bech32PrefixValAddr": "cosmosvaloper",
-    "bech32PrefixValPub": "cosmosvaloperpub",
-    "bech32PrefixConsAddr": "cosmosvalcons",
-    "bech32PrefixConsPub": "cosmosvalconspub"
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cosmos",
+      "bech32PrefixAccPub": "cosmospub",
+      "bech32PrefixValAddr": "cosmosvaloper",
+      "bech32PrefixValPub": "cosmosvaloperpub",
+      "bech32PrefixConsAddr": "cosmosvalcons",
+      "bech32PrefixConsPub": "cosmosvalconspub"
+    }
   },
   "currencies": [
     {
       "coinDenom": "ATOM",
-      "coinMinimalDenom": "uatom",
       "coinDecimals": 6,
       "coinGeckoId": "cosmos",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg"
+      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
+      "polkadot": {
+        "picassoAssetId": "44",
+        "composableAssetId": "79228162514264337593543950342"
+      },
+      "cosmos": {
+        "minimalDenom": "uatom"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-4/uatom",
+        "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
+      },
+      "solana": {
+        "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
+        "minimalDenom": "transfer/channel-1/transfer/channel-4/uatom",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 2,
+        "displayDecimals": 6
+      }
     }
   ],
   "feeCurrencies": [
@@ -30,46 +51,14 @@
       "coinMinimalDenom": "uatom",
       "coinDecimals": 6,
       "coinGeckoId": "cosmos",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
       "gasPriceStep": {
         "low": 0.01,
-        "average": 0.025,
-        "high": 0.03
+        "average": 0.02,
+        "high": 0.04
       }
     }
   ],
   "chainType": "cosmos",
-  "stakeCurrency": {
-    "coinDenom": "ATOM",
-    "coinMinimalDenom": "uatom",
-    "coinDecimals": 6,
-    "coinGeckoId": "cosmos",
-    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg"
-  },
-  "picassoCurrencies": [
-    {
-      "coinDenom": "",
-      "coinGeckoId": "",
-      "coinImageUrl": "",
-      "decimals": 0,
-      "polkadot": {
-        "picassoAssetId": "",
-        "composableAssetId": ""
-      },
-      "cosmos": {
-        "minimalDenom": ""
-      },
-      "ethereum": {
-        "erc20Address": "",
-        "minimalDenom": ""
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "displayDecimals": 0
-      }
-    }
-  ],
   "channelMap": {
     "1": "centauri-1",
     "5": "----"

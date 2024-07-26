@@ -1,0 +1,56 @@
+import { type ChainInfo as KeplrChainInfo } from '@keplr-wallet/types';
+import { ReadonlyDeep } from "type-fest";
+
+export const UMEE = {
+  "rpc": "https://umee-cmp-rpc.polkachu.com",
+  "rest": "https://umee-cmp-api.polkachu.com",
+  "chainId": "umee-1",
+  "chainName": "UX",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+  "stakeCurrency": {
+    "coinDenom": "UX",
+    "coinMinimalDenom": "uumee",
+    "coinDecimals": 6,
+    "coinGeckoId": "umee",
+    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+  },
+  "walletUrl": "https://wallet.keplr.app/chains/umee",
+  "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "umee",
+    "bech32PrefixAccPub": "umeepub",
+    "bech32PrefixValAddr": "umeevaloper",
+    "bech32PrefixValPub": "umeevaloperpub",
+    "bech32PrefixConsAddr": "umeevalcons",
+    "bech32PrefixConsPub": "umeevalconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "UX",
+      "coinMinimalDenom": "uumee",
+      "coinDecimals": 6,
+      "coinGeckoId": "umee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "UX",
+      "coinMinimalDenom": "uumee",
+      "coinDecimals": 6,
+      "coinGeckoId": "umee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+      "gasPriceStep": {
+        "low": 0.06,
+        "average": 0.1,
+        "high": 0.14
+      }
+    }
+  ],
+  "features": [
+    "authz-msg-revoke-fixed"
+  ]
+} as const satisfies ReadonlyDeep<KeplrChainInfo>;

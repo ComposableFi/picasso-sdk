@@ -1,77 +1,48 @@
 {
-  "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-  "rest": "https://osmosis-cmp-api.polkachu.com",
+  "rpc": "https://rpc-osmosis.blockapsis.com",
+  "rest": "https://lcd-osmosis.blockapsis.com",
   "chainId": "osmosis-1",
   "chainName": "Osmosis",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "osmo",
-    "bech32PrefixAccPub": "osmopub",
-    "bech32PrefixValAddr": "osmovaloper",
-    "bech32PrefixValPub": "osmovaloperpub",
-    "bech32PrefixConsAddr": "osmovalcons",
-    "bech32PrefixConsPub": "osmovalconspub"
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/osmosis-labs/chain-registry/main/osmosis/images/osmo.png",
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "osmo",
+      "bech32PrefixAccPub": "osmopub",
+      "bech32PrefixValAddr": "osmovaloper",
+      "bech32PrefixValPub": "osmovaloperpub",
+      "bech32PrefixConsAddr": "osmovalcons",
+      "bech32PrefixConsPub": "osmovalconspub"
+    }
   },
   "currencies": [
     {
       "coinDenom": "OSMO",
-      "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg"
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "OSMO",
-      "coinMinimalDenom": "uosmo",
-      "coinDecimals": 6,
-      "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
-      "gasPriceStep": {
-        "low": 0.0025,
-        "average": 0.0025,
-        "high": 0.04
-      }
-    }
-  ],
-  "chainType": "cosmos",
-  "stakeCurrency": {
-    "coinDenom": "OSMO",
-    "coinMinimalDenom": "uosmo",
-    "coinDecimals": 6,
-    "coinGeckoId": "osmosis",
-    "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg"
-  },
-  "picassoCurrencies": [
-    {
-      "coinDenom": "",
-      "coinGeckoId": "",
-      "coinImageUrl": "",
-      "decimals": 0,
+      "coinImageUrl": "https://raw.githubusercontent.com/osmosis-labs/chain-registry/main/osmosis/images/osmo.png",
       "polkadot": {
-        "picassoAssetId": "",
-        "composableAssetId": ""
+        "picassoAssetId": "2007",
+        "composableAssetId": "79228162514264337593543950376"
       },
       "cosmos": {
-        "minimalDenom": ""
+        "minimalDenom": "uosmo"
       },
       "ethereum": {
-        "erc20Address": "",
-        "minimalDenom": ""
+        "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
+        "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+        "fromCosmosFee": 15,
+        "minimumTransfer": 40
       },
       "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "displayDecimals": 0
+        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 20,
+        "displayDecimals": 6
       }
     }
-  ],
-  "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
-  }
+  ]
 }

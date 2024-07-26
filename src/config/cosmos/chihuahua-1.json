@@ -4,24 +4,45 @@
   "chainId": "chihuahua-1",
   "chainName": "Chihuahua v1.2",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "chihuahua",
-    "bech32PrefixAccPub": "chihuahuapub",
-    "bech32PrefixValAddr": "chihuahuavaloper",
-    "bech32PrefixValPub": "chihuahuavaloperpub",
-    "bech32PrefixConsAddr": "chihuahuavalcons",
-    "bech32PrefixConsPub": "chihuahuavalconspub"
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "chihuahua",
+      "bech32PrefixAccPub": "chihuahuapub",
+      "bech32PrefixValAddr": "chihuahuavaloper",
+      "bech32PrefixValPub": "chihuahuavaloperpub",
+      "bech32PrefixConsAddr": "chihuahuavalcons",
+      "bech32PrefixConsPub": "chihuahuavalconspub"
+    }
   },
   "currencies": [
     {
       "coinDenom": "HUAHUA",
-      "coinMinimalDenom": "uhuahua",
       "coinDecimals": 6,
-      "coinGeckoId": "chihuahua-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png"
+      "coinGeckoId": "chihuahua",
+      "coinImageUrl": "",
+      "polkadot": {
+        "picassoAssetId": "",
+        "composableAssetId": ""
+      },
+      "cosmos": {
+        "minimalDenom": "uhuahua"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
     }
   ],
   "feeCurrencies": [
@@ -29,49 +50,17 @@
       "coinDenom": "HUAHUA",
       "coinMinimalDenom": "uhuahua",
       "coinDecimals": 6,
-      "coinGeckoId": "chihuahua-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png",
+      "coinGeckoId": "chihuahua",
       "gasPriceStep": {
-        "low": 100,
-        "average": 500,
-        "high": 500
+        "low": 0,
+        "average": 0,
+        "high": 0
       }
     }
   ],
   "chainType": "cosmos",
-  "stakeCurrency": {
-    "coinDenom": "HUAHUA",
-    "coinMinimalDenom": "uhuahua",
-    "coinDecimals": 6,
-    "coinGeckoId": "chihuahua-token",
-    "coinImageUrl": "https://raw.githubusercontent.com/ChihuahuaChain/resources/main/logo/logo_transparent_notext.png"
-  },
-  "picassoCurrencies": [
-    {
-      "coinDenom": "",
-      "coinGeckoId": "",
-      "coinImageUrl": "",
-      "decimals": 0,
-      "polkadot": {
-        "picassoAssetId": "",
-        "composableAssetId": ""
-      },
-      "cosmos": {
-        "minimalDenom": ""
-      },
-      "ethereum": {
-        "erc20Address": "",
-        "minimalDenom": ""
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "displayDecimals": 0
-      }
-    }
-  ],
   "channelMap": {
-    "1": "centauri-1",
+    "1": "chihuahua-1",
     "5": "----"
   }
 }
