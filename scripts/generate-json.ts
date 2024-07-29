@@ -22,6 +22,12 @@ const ethereumAssetsPath = path.resolve(
   '../src/config/ethereumAssets.ts'
 );
 
+const channelMapPath = path.resolve(__dirname, '../src/config/channelMap.ts');
+const tokensPerChannelPath = path.resolve(
+  __dirname,
+  '../src/config/tokensPerChannel.ts'
+);
+
 interface CustomChainInfo {
   chainType: string;
   channelMap: { [key: string]: string };
@@ -90,15 +96,23 @@ async function processChainFiles() {
     const crossChainAssetsModule = await importModule(crossChainAssetsPath);
     const solanaAssetsModule = await importModule(solanaAssetsPath);
     const ethereumAssetsModule = await importModule(ethereumAssetsPath);
+    const channelMapModule = await importModule(channelMapPath);
+    const tokensPerChannelModule = await importModule(tokensPerChannelPath);
+
     const crossChainData =
       crossChainAssetsModule.default || crossChainAssetsModule;
     const solanaAssetsData = solanaAssetsModule.default || solanaAssetsModule;
     const ethereumAssetsData =
       ethereumAssetsModule.default || ethereumAssetsModule;
 
+    const channelMapData = channelMapModule.default || channelMapModule;
+    const tokensPerChannelData =
+      tokensPerChannelModule.default || tokensPerChannelModule;
+
     console.log(
-      chainFiles,
-      'chainFiles'
+      'chainFiles',
+      channelMapData,
+      tokensPerChannelData
       // crossChainData,
       // solanaAssetsData,
       // ethereumAssetsData
@@ -110,14 +124,15 @@ async function processChainFiles() {
         const chainData = (chainModule.default || chainModule)[
           file.split('.')[0]
         ];
-        console.log(chainData, 'chainData', file);
+
+        let refinedChannelMap = channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
 
         const transformedData: CustomChainInfo = {
           ...chainData,
           chainType: 'cosmos',
-          channelMap: { '1': 'centauri-1', '5': '----' },
+          channelMap: refinedChannelMap,
           cosmos: {
             bip44: chainData.bip44,
             bech32Config: chainData.bech32Config,

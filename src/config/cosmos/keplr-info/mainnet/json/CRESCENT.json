@@ -268,8 +268,15 @@
   "features": [],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "64": {
+      "chainId": "centauri-1",
+      "destinationId": 11,
+      "tokens": [
+        "CRE",
+        "BCRE",
+        "UCRE"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

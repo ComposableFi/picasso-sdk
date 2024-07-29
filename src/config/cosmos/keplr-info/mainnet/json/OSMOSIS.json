@@ -444,8 +444,18 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "782": {
+      "chainId": "pacific-1",
+      "destinationId": 0
+    },
+    "1279": {
+      "chainId": "centauri-1",
+      "destinationId": 3,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

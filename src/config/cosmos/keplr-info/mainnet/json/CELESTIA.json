@@ -66,8 +66,13 @@
   "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia",
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "12": {
+      "chainId": "centauri-1",
+      "destinationId": 38,
+      "tokens": [
+        "TIA"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

@@ -182,8 +182,13 @@
   "features": [],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "184": {
+      "chainId": "centauri-1",
+      "destinationId": 6,
+      "tokens": [
+        "STARS"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

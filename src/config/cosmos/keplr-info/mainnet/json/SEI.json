@@ -413,8 +413,14 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "0": {
+      "chainId": "osmosis-1",
+      "destinationId": 782,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

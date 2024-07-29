@@ -206,8 +206,13 @@
   "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua",
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "62": {
+      "chainId": "centauri-1",
+      "destinationId": 0,
+      "tokens": [
+        "UHUAHUA"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

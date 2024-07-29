@@ -535,8 +535,13 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "17": {
+      "chainId": "centauri-1",
+      "destinationId": 18,
+      "tokens": [
+        "NTRN"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

@@ -1,5 +1,5 @@
 // [FAST TRACK] Add asset here to enable transferring from one network to another
-export const tokensPerChannel = [
+const tokensPerChannel = [
   {
     networks: ['BIFROST_KUSAMA', 'PICASSO'],
     tokens: ['BNC_KSM', 'vKSM'],
@@ -217,3 +217,5 @@ export const tokensPerChannel = [
     ],
   },
 ];
+
+export default tokensPerChannel;

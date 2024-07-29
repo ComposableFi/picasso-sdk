@@ -179,8 +179,13 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "101": {
+      "chainId": "centauri-1",
+      "destinationId": 27,
+      "tokens": [
+        "KUJI"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

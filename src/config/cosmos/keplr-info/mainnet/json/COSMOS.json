@@ -66,8 +66,13 @@
   "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub",
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "617": {
+      "chainId": "centauri-1",
+      "destinationId": 4,
+      "tokens": [
+        "ATOM"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

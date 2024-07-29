@@ -69,8 +69,14 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "31": {
+      "chainId": "centauri-1",
+      "destinationId": 56,
+      "tokens": [
+        "COREUM",
+        "XRP"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {

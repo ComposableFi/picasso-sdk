@@ -113,8 +113,14 @@
   ],
   "chainType": "cosmos",
   "channelMap": {
-    "1": "centauri-1",
-    "5": "----"
+    "55": {
+      "chainId": "centauri-1",
+      "destinationId": 13,
+      "tokens": [
+        "BLD",
+        "IST"
+      ]
+    }
   },
   "cosmos": {
     "bip44": {
