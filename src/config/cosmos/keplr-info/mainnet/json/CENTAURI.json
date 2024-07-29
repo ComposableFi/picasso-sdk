@@ -20,7 +20,7 @@
       "coinDenom": "PICA",
       "coinMinimalDenom": "ppica",
       "coinDecimals": 12,
-      "coinGeckoId": "unknown",
+      "coinGeckoId": "picasso",
       "cosmos": {
         "minimalDenom": "ppica"
       },

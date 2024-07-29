@@ -150,6 +150,7 @@
       "coinMinimalDenom": "staevmos",
       "coinDecimals": 18,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/staevmos.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "staevmos"
       },
@@ -269,6 +270,7 @@
       "coinMinimalDenom": "stusaga",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stusaga.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "stusaga"
       },
@@ -340,6 +342,7 @@
       "coinMinimalDenom": "stusomm",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stusomm.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "stusomm"
       },
@@ -363,6 +366,7 @@
       "coinMinimalDenom": "stadym",
       "coinDecimals": 18,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stadym.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "stadym"
       },

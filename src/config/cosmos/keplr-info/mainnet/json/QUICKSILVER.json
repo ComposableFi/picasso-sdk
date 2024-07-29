@@ -53,6 +53,7 @@
       "coinMinimalDenom": "uqstars",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqstars.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "uqstars"
       },
@@ -76,6 +77,7 @@
       "coinMinimalDenom": "uqatom",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqatom.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "uqatom"
       },
@@ -99,6 +101,7 @@
       "coinMinimalDenom": "uqregen",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqregen.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "uqregen"
       },
@@ -122,6 +125,7 @@
       "coinMinimalDenom": "uqosmo",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqosmo.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "uqosmo"
       },
@@ -145,6 +149,7 @@
       "coinMinimalDenom": "uqsomm",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqsomm.png",
+      "coinGeckoId": "",
       "cosmos": {
         "minimalDenom": "uqsomm"
       },

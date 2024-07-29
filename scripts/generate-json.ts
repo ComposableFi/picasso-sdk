@@ -1,8 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { type ChainInfo as KeplrChainInfo } from '@keplr-wallet/types';
-import { ReadonlyDeep } from 'type-fest';
-import { CrosschainAsset } from '../dist';
 
 const mainnetPath = path.resolve(
   __dirname,
@@ -27,6 +24,8 @@ const tokensPerChannelPath = path.resolve(
   __dirname,
   '../src/config/tokensPerChannel.ts'
 );
+
+const coingeckoPath = path.resolve(__dirname, '../src/config/coinGecko.ts');
 
 interface CustomChainInfo {
   chainType: string;
@@ -98,7 +97,7 @@ async function processChainFiles() {
     const ethereumAssetsModule = await importModule(ethereumAssetsPath);
     const channelMapModule = await importModule(channelMapPath);
     const tokensPerChannelModule = await importModule(tokensPerChannelPath);
-
+    const coingeckoModule = await importModule(coingeckoPath);
     const crossChainData =
       crossChainAssetsModule.default || crossChainAssetsModule;
     const solanaAssetsData = solanaAssetsModule.default || solanaAssetsModule;
@@ -108,6 +107,8 @@ async function processChainFiles() {
     const channelMapData = channelMapModule.default || channelMapModule;
     const tokensPerChannelData =
       tokensPerChannelModule.default || tokensPerChannelModule;
+
+    const coingeckoData = coingeckoModule.default || coingeckoModule;
 
     console.log(
       'chainFiles',
@@ -172,8 +173,16 @@ async function processChainFiles() {
             const solanaMinimalDenom =
               crossChainData['solana'][mintAddress]?.minimalDenom || '';
 
+            const coinGeckoId =
+              coingeckoData.find(
+                (coin) =>
+                  coin.name.toUpperCase() === currency.coinDenom.toUpperCase()
+              )?.id ||
+              currency?.coinGeckoId ||
+              '';
             return {
               ...currency,
+              coinGeckoId: coinGeckoId,
               cosmos: { minimalDenom: currency.coinMinimalDenom },
               polkadot: {
                 picassoAssetId, // replace with actual value
