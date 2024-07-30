@@ -33,12 +33,28 @@ interface CustomChainInfo {
   chainName: string;
   rest?: string;
   rpc: string;
-  channelMap: { [key: string]: string };
+
+  channelMap: {
+    [key: string]: {
+      chainId: string;
+      destinationId: number;
+      tokens: string[];
+    };
+  };
+
   chainSymbolImageUrl: string;
   polkadot?: {
     ss58Format: number;
     isParachain: boolean;
     relayChain: 'polkadot' | 'kusama';
+    hops: {
+      [key: string]: {
+        type: 'xcm';
+        xcmType: string;
+        version: string;
+        tokens: string[];
+      };
+    };
   };
   cosmos?: {
     bip44: { coinType: number };
@@ -129,6 +145,47 @@ async function processChainFiles() {
       // ethereumAssetsData
     );
 
+    const polkadotMap = {
+      PICASSO: {
+        chainId: '2087',
+      },
+      POLKADOT: {
+        chainId: '',
+      },
+      KUSAMA: {
+        chainId: '',
+      },
+      COMPOSABLE: {
+        chainId: '2019',
+      },
+      STATEMINE: {
+        chainId: '1000',
+      },
+      TINKERNET: {
+        chainId: '2125',
+      },
+      BIFROST_KUSAMA: {
+        chainId: '2001',
+      },
+      BIFROST_POLKADOT: {
+        chainId: '2030',
+      },
+      ASTAR: {
+        chainId: '2006',
+      },
+      SHIDEN: {
+        chainId: '2007',
+      },
+      AMPLITUDE: {
+        chainId: '2124',
+      },
+      MOONBEAM: {
+        chainId: '2004',
+      },
+      MOONRIVER: {
+        chainId: '2023',
+      },
+    };
     for (const file of chainFiles) {
       if (file.endsWith('.ts')) {
         const chainModule = require(path.join(mainnetPath, file));
@@ -139,108 +196,247 @@ async function processChainFiles() {
         let refinedChannelMap = channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
+        let transformedData: CustomChainInfo;
+        //cosmos case
+        if (chainData?.rest) {
+          const {
+            chainId,
+            chainName,
+            currencies,
+            chainSymbolImageUrl,
+            feeCurrencies,
+            nodeProvider,
+            rest,
+            rpc,
+            stakeCurrency,
+            features,
+            ...others
+          } = chainData || {};
+          transformedData = {
+            chainId,
+            rest,
+            rpc,
+            chainName,
+            chainSymbolImageUrl,
+            cosmos: others,
+            chainType: 'cosmos',
+            channelMap: refinedChannelMap,
 
-        const {
-          chainId,
-          chainName,
-          currencies,
-          chainSymbolImageUrl,
-          feeCurrencies,
-          nodeProvider,
-          rest,
-          rpc,
-          stakeCurrency,
-          features,
-          ...others
-        } = chainData;
-        const transformedData: CustomChainInfo = {
-          chainId,
-          rest,
-          rpc,
-          chainName,
-          chainSymbolImageUrl,
-          cosmos: others,
-          chainType: 'cosmos',
-          channelMap: refinedChannelMap,
+            currencies: currencies?.map((currency) => {
+              const picassoAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  crossChainData['dotsama'][key]?.denom ===
+                    currency?.coinDenom &&
+                  crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
+              );
 
-          currencies: currencies?.map((currency) => {
-            const picassoAssetId = Object.keys(crossChainData['dotsama']).find(
-              (key) =>
-                crossChainData['dotsama'][key]?.denom === currency?.coinDenom &&
-                crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
-            );
+              const composableAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  crossChainData['dotsama'][key]?.denom ===
+                    currency?.coinDenom &&
+                  crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
+              );
 
-            const composableAssetId = Object.keys(
-              crossChainData['dotsama']
-            ).find(
-              (key) =>
-                crossChainData['dotsama'][key]?.denom === currency?.coinDenom &&
-                crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
-            );
+              //ethereum
+              const ethereumInfo = ethereumAssetsData?.[currency.coinDenom];
+              const erc20Address = ethereumInfo?.erc20Address || '';
+              const ethereumFromCosmosFee =
+                ethereumInfo?.cosmosToEthereumFee || 0;
+              const ethereumMinimumTransfer =
+                ethereumInfo?.minimumTransfer || 0;
 
-            //ethereum
-            const ethereumInfo = ethereumAssetsData?.[currency.coinDenom];
-            const erc20Address = ethereumInfo?.erc20Address || '';
-            const ethereumFromCosmosFee =
-              ethereumInfo?.cosmosToEthereumFee || 0;
-            const ethereumMinimumTransfer = ethereumInfo?.minimumTransfer || 0;
+              const ethereumMinimalDenom =
+                crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
 
-            const ethereumMinimalDenom =
-              crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
+              //solana
+              const solanaInfo = solanaAssetsData?.[currency.coinDenom];
+              const mintAddress = solanaInfo?.mintAddress || '';
+              const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
+              const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
+              const displayDecimals =
+                solanaInfo?.realDecimals ||
+                crossChainData['solana'][mintAddress]?.decimals ||
+                0;
 
-            //solana
-            const solanaInfo = solanaAssetsData?.[currency.coinDenom];
-            const mintAddress = solanaInfo?.mintAddress || '';
-            const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
-            const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
-            const displayDecimals =
-              solanaInfo?.realDecimals ||
-              crossChainData['solana'][mintAddress]?.decimals ||
-              0;
+              const solanaMinimalDenom =
+                crossChainData['solana'][mintAddress]?.minimalDenom || '';
 
-            const solanaMinimalDenom =
-              crossChainData['solana'][mintAddress]?.minimalDenom || '';
+              const coinGeckoId =
+                coingeckoData.find(
+                  (coin) =>
+                    coin.name.toUpperCase() === currency.coinDenom.toUpperCase()
+                )?.id ||
+                currency?.coinGeckoId ||
+                '';
+              return {
+                ...currency,
+                coinGeckoId: coinGeckoId,
+                cosmos: { minimalDenom: currency.coinMinimalDenom },
+                polkadot: {
+                  picassoAssetId, // replace with actual value
+                  composableAssetId, // replace with actual value
+                },
+                ethereum: {
+                  minimalDenom: ethereumMinimalDenom,
+                  erc20Address, // replace with actual value
+                  fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                  minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+                },
+                solana: {
+                  mintAddress, // replace with actual value
+                  minimalDenom: solanaMinimalDenom,
+                  minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                  fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                  displayDecimals, // replace with actual value
+                },
+              };
+            }),
+            feeCurrencies: feeCurrencies?.map((feeCurrency) => {
+              const { gasPriceStep, ...others } = feeCurrency;
+              return {
+                ...others,
+                cosmos: {
+                  gasPriceStep,
+                },
+              };
+            }),
+          };
+          //polkadot case
+        } else if (chainData?.handler === 'POLKADOT') {
+          const {
+            chainId,
+            chainName,
+            currencies,
+            chainSymbolImageUrl,
+            feeCurrencies,
+            nodeProvider,
+            rest,
+            rpc,
+            stakeCurrency,
+            features,
+            ...others
+          } = chainData || {};
+          let refinedHops = {};
+          for (const key in chainData.hops) {
+            refinedHops[polkadotMap[key].chainId] = chainData.hops[key];
+          }
+          const tokensArray = Object.values(chainData.hops)
+            .filter((hop) => chainData.hops.tokens)
+            .flatMap((hop) => chainData.hops.tokens);
 
-            const coinGeckoId =
-              coingeckoData.find(
-                (coin) =>
-                  coin.name.toUpperCase() === currency.coinDenom.toUpperCase()
-              )?.id ||
-              currency?.coinGeckoId ||
-              '';
-            return {
-              ...currency,
-              coinGeckoId: coinGeckoId,
-              cosmos: { minimalDenom: currency.coinMinimalDenom },
-              polkadot: {
-                picassoAssetId, // replace with actual value
-                composableAssetId, // replace with actual value
-              },
-              ethereum: {
-                minimalDenom: ethereumMinimalDenom,
-                erc20Address, // replace with actual value
-                fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
-                minimumTransfer: ethereumMinimumTransfer, // replace with actual value
-              },
-              solana: {
-                mintAddress, // replace with actual value
-                minimalDenom: solanaMinimalDenom,
-                minimumTransfer: solanaMinimumTransfer, // replace with actual value
-                fromCosmosFee: solanaFromCosmosFee, // replace with actual value
-                displayDecimals, // replace with actual value
-              },
-            };
-          }),
-          feeCurrencies: feeCurrencies?.map((feeCurrency) => {
-            const { gasPriceStep, ...others } = feeCurrency;
-            return {
-              ...others,
-              cosmos: {
-                gasPriceStep,
-              },
-            };
-          }),
-        };
+          transformedData = {
+            chainId: chainData.config?.dotChainId,
+            rest: '',
+            rpc: chainData.config.endpoint[0],
+            chainName: chainData.config?.name,
+            chainSymbolImageUrl: '',
+            chainType: 'polkadot',
+            polkadot: {
+              ss58Format: chainData.config?.ss58_format,
+              isParachain: chainData.config?.chain_type === 'PARACHAIN',
+              relayChain: Object.keys(chainData.hops).includes('COMPOSABLE')
+                ? 'polkadot'
+                : 'kusama',
+              hops: refinedHops,
+            },
+            channelMap: refinedChannelMap,
+
+            currencies: tokensArray?.map((currency) => {
+              const picassoAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  key === currency &&
+                  crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
+              );
+
+              const composableAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  key === currency &&
+                  crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
+              );
+
+              const denom = crossChainData['dotsama'][currency]?.denom || '';
+              const decimal =
+                crossChainData['dotsama'][currency]?.decimals || '';
+              //ethereum
+              const ethereumInfo = ethereumAssetsData?.[denom];
+              const erc20Address = ethereumInfo?.erc20Address || '';
+              const ethereumFromCosmosFee =
+                ethereumInfo?.cosmosToEthereumFee || 0;
+              const ethereumMinimumTransfer =
+                ethereumInfo?.minimumTransfer || 0;
+
+              const ethereumMinimalDenom =
+                crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
+
+              //solana
+              const solanaInfo = solanaAssetsData?.[denom];
+              const mintAddress = solanaInfo?.mintAddress || '';
+              const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
+              const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
+              const displayDecimals =
+                solanaInfo?.realDecimals ||
+                crossChainData['solana'][mintAddress]?.decimals ||
+                0;
+
+              const solanaMinimalDenom =
+                crossChainData['solana'][mintAddress]?.minimalDenom || '';
+
+              //cosmos
+              const cosmosInfo = crossChainData['cosmos']?.find(
+                (item) => item.denom === denom
+              );
+
+              const coinGeckoId =
+                coingeckoData.find(
+                  (coin) => coin.name.toUpperCase() === denom.toUpperCase()
+                )?.id ||
+                currency?.coinGeckoId ||
+                '';
+              return {
+                coinDenom: denom,
+                coinDecimals: decimal,
+                coinImageUrl: '',
+
+                coinGeckoId: coinGeckoId,
+                cosmos: { minimalDenom: cosmosInfo.minimalDenom },
+                polkadot: {
+                  picassoAssetId, // replace with actual value
+                  composableAssetId, // replace with actual value
+                },
+                ethereum: {
+                  minimalDenom: ethereumMinimalDenom,
+                  erc20Address, // replace with actual value
+                  fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                  minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+                },
+                solana: {
+                  mintAddress, // replace with actual value
+                  minimalDenom: solanaMinimalDenom,
+                  minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                  fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                  displayDecimals, // replace with actual value
+                },
+              };
+            }),
+            feeCurrencies: feeCurrencies?.map((feeCurrency) => {
+              const { gasPriceStep, ...others } = feeCurrency;
+              return {
+                ...others,
+                cosmos: {
+                  gasPriceStep,
+                },
+              };
+            }),
+          };
+        }
 
         fs.writeFileSync(
           path.join(mainnetPath + '/json', file.replace('.ts', '.json')),

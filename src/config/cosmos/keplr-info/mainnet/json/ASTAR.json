@@ -21,7 +21,15 @@
   "polkadot": {
     "ss58Format": 5,
     "isParachain": true,
-    "relayChain": "polkadot"
+    "relayChain": "polkadot",
+    "hops": {
+      "COMPOSABLE": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": ["79228162514264337593543952342"]
+      }
+    }
   },
   "currencies": [
     {
@@ -37,13 +45,5 @@
       "ethereum": {},
       "solana": {}
     }
-  ],
-  "hops": {
-    "COMPOSABLE": {
-      "type": "XCM",
-      "xcmType": "xTokens.transfer",
-      "version": "V2",
-      "tokens": ["79228162514264337593543952342"]
-    }
-  }
+  ]
 }
