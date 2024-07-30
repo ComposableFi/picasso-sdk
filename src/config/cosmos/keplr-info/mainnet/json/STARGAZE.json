@@ -4,20 +4,6 @@
   "rpc": "https://stargaze-cmp-rpc.polkachu.com",
   "chainName": "Stargaze",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDenom": "STARS",
-      "coinMinimalDenom": "ustars",
-      "coinDecimals": 6,
-      "coinGeckoId": "stargaze",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
-      "gasPriceStep": {
-        "low": 1,
-        "average": 1.1,
-        "high": 1.2
-      }
-    }
-  ],
   "cosmos": {
     "walletUrl": "https://wallet.keplr.app/chains/stargaze",
     "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
@@ -186,6 +172,22 @@
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "STARS",
+      "coinMinimalDenom": "ustars",
+      "coinDecimals": 6,
+      "coinGeckoId": "stargaze",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 1,
+          "average": 1.1,
+          "high": 1.2
+        }
       }
     }
   ]

@@ -4,20 +4,6 @@
   "rpc": "https://umee-cmp-rpc.polkachu.com",
   "chainName": "UX",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDenom": "UX",
-      "coinMinimalDenom": "uumee",
-      "coinDecimals": 6,
-      "coinGeckoId": "umee",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
-      "gasPriceStep": {
-        "low": 0.06,
-        "average": 0.1,
-        "high": 0.14
-      }
-    }
-  ],
   "cosmos": {
     "walletUrl": "https://wallet.keplr.app/chains/umee",
     "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
@@ -66,6 +52,22 @@
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "UX",
+      "coinMinimalDenom": "uumee",
+      "coinDecimals": 6,
+      "coinGeckoId": "umee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.06,
+          "average": 0.1,
+          "high": 0.14
+        }
       }
     }
   ]

@@ -196,7 +196,7 @@ async function processChainFiles() {
         let refinedChannelMap = channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
-        let transformedData: CustomChainInfo;
+        let transformedData: CustomChainInfo | {} = {};
         //cosmos case
         if (chainData?.rest) {
           const {
@@ -322,12 +322,19 @@ async function processChainFiles() {
           } = chainData || {};
           let refinedHops = {};
           for (const key in chainData.hops) {
-            refinedHops[polkadotMap[key].chainId] = chainData.hops[key];
+            refinedHops[polkadotMap[key]?.chainId] = chainData.hops[key];
           }
-          const tokensArray = Object.values(chainData.hops)
-            .filter((hop) => chainData.hops.tokens)
-            .flatMap((hop) => chainData.hops.tokens);
+          const tokensArray: any = Object.values(chainData.hops).reduce(
+            (acc: string[], item: any) => {
+              if (item.tokens) {
+                acc.push(...item.tokens);
+              }
+              return acc;
+            },
+            []
+          );
 
+          console.log(tokensArray, 'tokenArray', chainData.config?.name);
           transformedData = {
             chainId: chainData.config?.dotChainId,
             rest: '',
@@ -390,23 +397,24 @@ async function processChainFiles() {
                 crossChainData['solana'][mintAddress]?.minimalDenom || '';
 
               //cosmos
-              const cosmosInfo = crossChainData['cosmos']?.find(
-                (item) => item.denom === denom
+              const cosmosKey = Object.keys(crossChainData['cosmos'])?.find(
+                (key) => crossChainData['cosmos'][key].denom === denom
               );
 
+              const cosmosInfo: any = crossChainData['cosmos'][cosmosKey];
               const coinGeckoId =
                 coingeckoData.find(
                   (coin) => coin.name.toUpperCase() === denom.toUpperCase()
-                )?.id ||
-                currency?.coinGeckoId ||
-                '';
+                )?.id || '';
               return {
                 coinDenom: denom,
                 coinDecimals: decimal,
                 coinImageUrl: '',
 
                 coinGeckoId: coinGeckoId,
-                cosmos: { minimalDenom: cosmosInfo.minimalDenom },
+                cosmos: cosmosInfo?.minimalDenom
+                  ? { minimalDenom: cosmosInfo.minimalDenom }
+                  : {},
                 polkadot: {
                   picassoAssetId, // replace with actual value
                   composableAssetId, // replace with actual value

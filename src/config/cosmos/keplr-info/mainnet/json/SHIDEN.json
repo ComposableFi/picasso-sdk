@@ -1,34 +1,34 @@
 {
-  "chainId": "2006",
+  "chainId": "2007",
   "rest": "",
-  "rpc": "wss://rpc.astar.network",
-  "chainName": "astar",
+  "rpc": "wss://shiden-rpc.dwellir.com",
+  "chainName": "Shiden",
   "chainSymbolImageUrl": "",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 5,
     "isParachain": false,
-    "relayChain": "polkadot",
+    "relayChain": "kusama",
     "hops": {
-      "2019": {
+      "2087": {
         "type": "XCM",
-        "xcmType": "xTokens.transfer",
-        "version": "V2",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
+        "version": "V3",
         "tokens": [
-          "79228162514264337593543952342"
+          "2007"
         ]
       }
     }
   },
   "currencies": [
     {
-      "coinDenom": "ASTR",
+      "coinDenom": "SDN",
       "coinDecimals": 18,
       "coinImageUrl": "",
-      "coinGeckoId": "astar",
+      "coinGeckoId": "shiden",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "picassoAssetId": "2007"
       },
       "ethereum": {
         "minimalDenom": "",

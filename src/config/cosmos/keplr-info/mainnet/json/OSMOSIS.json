@@ -4,20 +4,6 @@
   "rpc": "https://osmosis-cmp-rpc.polkachu.com",
   "chainName": "Osmosis",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDenom": "OSMO",
-      "coinMinimalDenom": "uosmo",
-      "coinDecimals": 6,
-      "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "gasPriceStep": {
-        "low": 0.0025,
-        "average": 0.025,
-        "high": 0.04
-      }
-    }
-  ],
   "cosmos": {
     "walletUrl": "https://app.osmosis.zone",
     "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
@@ -455,6 +441,22 @@
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0025,
+          "average": 0.025,
+          "high": 0.04
+        }
       }
     }
   ]

@@ -4,20 +4,6 @@
   "rpc": "https://rpc.mainnet.archway.io",
   "chainName": "Archway",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDecimals": 18,
-      "coinDenom": "ARCH",
-      "coinGeckoId": "archway",
-      "coinMinimalDenom": "aarch",
-      "gasPriceStep": {
-        "low": 140000000000,
-        "average": 196000000000,
-        "high": 225400000000
-      },
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
-    }
-  ],
   "cosmos": {
     "bech32Config": {
       "bech32PrefixAccAddr": "archway",
@@ -64,6 +50,22 @@
         "minimumTransfer": 240,
         "fromCosmosFee": 0,
         "displayDecimals": 9
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDecimals": 18,
+      "coinDenom": "ARCH",
+      "coinGeckoId": "archway",
+      "coinMinimalDenom": "aarch",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 140000000000,
+          "average": 196000000000,
+          "high": 225400000000
+        }
       }
     }
   ]

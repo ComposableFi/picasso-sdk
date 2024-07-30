@@ -1,0 +1,48 @@
+{
+  "chainId": "kusama",
+  "rest": "",
+  "rpc": "wss://kusama-rpc.polkadot.io",
+  "chainName": "Kusama",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 2,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2087": {
+        "type": "XCM",
+        "xcmType": "xcmPallet.reserveTransferAssets",
+        "version": "V2",
+        "tokens": [
+          "4"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinGeckoId": "kusama",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "4"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
+        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+        "fromCosmosFee": 0.5,
+        "minimumTransfer": 1
+      },
+      "solana": {
+        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
+        "minimumTransfer": 0.7,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    }
+  ]
+}

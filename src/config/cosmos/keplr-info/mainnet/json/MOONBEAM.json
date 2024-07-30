@@ -1,34 +1,34 @@
 {
-  "chainId": "2006",
+  "chainId": "2004",
   "rest": "",
-  "rpc": "wss://rpc.astar.network",
-  "chainName": "astar",
+  "rpc": "wss://wss.api.moonbeam.network",
+  "chainName": "Moonbeam",
   "chainSymbolImageUrl": "",
   "chainType": "polkadot",
   "polkadot": {
-    "ss58Format": 5,
+    "ss58Format": 0,
     "isParachain": false,
     "relayChain": "polkadot",
     "hops": {
       "2019": {
         "type": "XCM",
-        "xcmType": "xTokens.transfer",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
         "version": "V2",
         "tokens": [
-          "79228162514264337593543952342"
+          "79228162514264337593543950376"
         ]
       }
     }
   },
   "currencies": [
     {
-      "coinDenom": "ASTR",
+      "coinDenom": "GLMR",
       "coinDecimals": 18,
       "coinImageUrl": "",
-      "coinGeckoId": "astar",
+      "coinGeckoId": "moonbeam",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "composableAssetId": "79228162514264337593543950376"
       },
       "ethereum": {
         "minimalDenom": "",

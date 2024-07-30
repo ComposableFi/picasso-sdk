@@ -1,0 +1,72 @@
+{
+  "chainId": "2001",
+  "rest": "",
+  "rpc": "wss://bifrost-rpc.liebi.com/ws",
+  "chainName": "BiFrost Kusama",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 6,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2087": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "31",
+          "32"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "BNC_KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "31"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "vKSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "32"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ]
+}

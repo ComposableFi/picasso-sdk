@@ -15,7 +15,7 @@ export const AMPLITUDE = {
       type: 'XCM',
       xcmType: 'xTokens.transfer',
       version: 'V2',
-      tokens: ['0000'], // ['ASTR'],
+      tokens: [], // ['ASTR'],
     },
   },
 };

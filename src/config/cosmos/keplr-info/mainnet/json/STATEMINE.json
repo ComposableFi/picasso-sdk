@@ -1,34 +1,34 @@
 {
-  "chainId": "2006",
+  "chainId": "1000",
   "rest": "",
-  "rpc": "wss://rpc.astar.network",
-  "chainName": "astar",
+  "rpc": "wss://statemine-rpc.dwellir.com",
+  "chainName": "Kusama Asset Hub",
   "chainSymbolImageUrl": "",
   "chainType": "polkadot",
   "polkadot": {
-    "ss58Format": 5,
+    "ss58Format": 2,
     "isParachain": false,
-    "relayChain": "polkadot",
+    "relayChain": "kusama",
     "hops": {
-      "2019": {
+      "2087": {
         "type": "XCM",
-        "xcmType": "xTokens.transfer",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
         "version": "V2",
         "tokens": [
-          "79228162514264337593543952342"
+          "130"
         ]
       }
     }
   },
   "currencies": [
     {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
+      "coinDenom": "USDT Kusama",
+      "coinDecimals": 6,
       "coinImageUrl": "",
-      "coinGeckoId": "astar",
+      "coinGeckoId": "tether",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "picassoAssetId": "130"
       },
       "ethereum": {
         "minimalDenom": "",

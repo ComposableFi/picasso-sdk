@@ -1,34 +1,34 @@
 {
-  "chainId": "2006",
+  "chainId": "1000",
   "rest": "",
-  "rpc": "wss://rpc.astar.network",
-  "chainName": "astar",
+  "rpc": "wss://rpc-asset-hub-polkadot.luckyfriday.io",
+  "chainName": "Polkadot Asset Hub",
   "chainSymbolImageUrl": "",
   "chainType": "polkadot",
   "polkadot": {
-    "ss58Format": 5,
+    "ss58Format": 0,
     "isParachain": false,
     "relayChain": "polkadot",
     "hops": {
       "2019": {
         "type": "XCM",
-        "xcmType": "xTokens.transfer",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
         "version": "V2",
         "tokens": [
-          "79228162514264337593543952342"
+          "149"
         ]
       }
     }
   },
   "currencies": [
     {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
+      "coinDenom": "USDT Polkadot",
+      "coinDecimals": 6,
       "coinImageUrl": "",
-      "coinGeckoId": "astar",
+      "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "picassoAssetId": "149"
       },
       "ethereum": {
         "minimalDenom": "",

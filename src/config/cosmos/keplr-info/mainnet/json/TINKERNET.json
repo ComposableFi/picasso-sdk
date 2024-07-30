@@ -1,34 +1,34 @@
 {
-  "chainId": "2006",
+  "chainId": "2125",
   "rest": "",
-  "rpc": "wss://rpc.astar.network",
-  "chainName": "astar",
+  "rpc": "wss://tinkernet-rpc.dwellir.com",
+  "chainName": "Tinkernet",
   "chainSymbolImageUrl": "",
   "chainType": "polkadot",
   "polkadot": {
-    "ss58Format": 5,
+    "ss58Format": 117,
     "isParachain": false,
-    "relayChain": "polkadot",
+    "relayChain": "kusama",
     "hops": {
-      "2019": {
+      "2087": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V2",
         "tokens": [
-          "79228162514264337593543952342"
+          "2125"
         ]
       }
     }
   },
   "currencies": [
     {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
+      "coinDenom": "TNKR",
+      "coinDecimals": 12,
       "coinImageUrl": "",
-      "coinGeckoId": "astar",
+      "coinGeckoId": "tinkernet",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "picassoAssetId": "2125"
       },
       "ethereum": {
         "minimalDenom": "",

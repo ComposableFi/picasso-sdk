@@ -1,0 +1,22 @@
+{
+  "chainId": "2124",
+  "rest": "",
+  "rpc": "wss://rpc-amplitude.pendulumchain.tech",
+  "chainName": "amplitude",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 56,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": []
+      }
+    }
+  },
+  "currencies": []
+}

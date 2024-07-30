@@ -1,0 +1,139 @@
+{
+  "chainId": "2019",
+  "rest": "",
+  "rpc": "wss://rpc.composable.finance",
+  "chainName": "Composable",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 50,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2006": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543952342"
+        ]
+      },
+      "2030": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543950369",
+          "79228162514264337593543950370"
+        ]
+      },
+      "2087": {
+        "type": "IBC",
+        "fromChannelId": "15",
+        "toChannelId": "15"
+      },
+      "": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V3",
+        "tokens": [
+          "79228162514264337593543950342"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "DOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "",
+      "coinGeckoId": "polkadot",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950342"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
+      },
+      "solana": {
+        "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "minimumTransfer": 3,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950369"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "vDOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950370"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "",
+      "coinGeckoId": "astar",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543952342"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ]
+}

@@ -4,19 +4,6 @@
   "rpc": "https://sei-rpc.polkachu.com",
   "chainName": "Sei",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDenom": "SEI",
-      "coinMinimalDenom": "usei",
-      "coinDecimals": 6,
-      "coinGeckoId": "sei-network",
-      "gasPriceStep": {
-        "low": 0.1,
-        "average": 0.2,
-        "high": 0.3
-      }
-    }
-  ],
   "cosmos": {
     "bip44": {
       "coinType": 118
@@ -413,6 +400,21 @@
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "SEI",
+      "coinMinimalDenom": "usei",
+      "coinDecimals": 6,
+      "coinGeckoId": "sei-network",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.1,
+          "average": 0.2,
+          "high": 0.3
+        }
       }
     }
   ]

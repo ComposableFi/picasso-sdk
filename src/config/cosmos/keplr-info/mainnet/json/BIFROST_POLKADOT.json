@@ -1,0 +1,72 @@
+{
+  "chainId": "2030",
+  "rest": "",
+  "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
+  "chainName": "BiFrost Polkadot",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 6,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543950369",
+          "79228162514264337593543950370"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950369"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "vDOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950370"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ]
+}

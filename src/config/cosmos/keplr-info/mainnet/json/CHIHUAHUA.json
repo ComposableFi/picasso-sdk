@@ -4,20 +4,6 @@
   "rpc": "https://chihuahua-rpc.polkachu.com",
   "chainName": "Chihuahua",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-  "feeCurrencies": [
-    {
-      "coinDenom": "HUAHUA",
-      "coinMinimalDenom": "uhuahua",
-      "coinDecimals": 6,
-      "coinGeckoId": "chihuahua-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-      "gasPriceStep": {
-        "low": 500,
-        "average": 1250,
-        "high": 2000
-      }
-    }
-  ],
   "cosmos": {
     "bip44": {
       "coinType": 118
@@ -209,6 +195,22 @@
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "HUAHUA",
+      "coinMinimalDenom": "uhuahua",
+      "coinDecimals": 6,
+      "coinGeckoId": "chihuahua-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 500,
+          "average": 1250,
+          "high": 2000
+        }
       }
     }
   ]
