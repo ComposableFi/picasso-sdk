@@ -1,0 +1,49 @@
+{
+  "chainId": "2006",
+  "rest": "",
+  "rpc": "wss://rpc.astar.network",
+  "chainName": "Astar",
+  "chainSymbolImageUrl": "",
+  "chainType": "polkadot",
+
+  "feeCurrencies": [
+    {
+      "coinDenom": "ASTR",
+      "coinMinimalDenom": "",
+      "coinDecimals": 18,
+      "coinGeckoId": "astar",
+      "coinImageUrl": "",
+      "cosmos": {
+        "gasPriceStep": {}
+      }
+    }
+  ],
+  "polkadot": {
+    "ss58Format": 5,
+    "isParachain": true,
+    "relayChain": "polkadot"
+  },
+  "currencies": [
+    {
+      "coinDecimals": 6,
+      "coinDenom": "ASTR",
+      "coinGeckoId": "astar",
+      "coinMinimalDenom": "utia",
+      "coinImageUrl": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543952342"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "hops": {
+    "COMPOSABLE": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": ["79228162514264337593543952342"]
+    }
+  }
+}

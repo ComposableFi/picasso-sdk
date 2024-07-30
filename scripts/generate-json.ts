@@ -28,14 +28,19 @@ const tokensPerChannelPath = path.resolve(
 const coingeckoPath = path.resolve(__dirname, '../src/config/coinGecko.ts');
 
 interface CustomChainInfo {
-  chainType: string;
+  chainType: 'cosmos' | 'polkadot' | 'ethereum' | 'solana';
   chainId: string;
   chainName: string;
   rest?: string;
   rpc: string;
   channelMap: { [key: string]: string };
   chainSymbolImageUrl: string;
-  cosmos: {
+  polkadot?: {
+    ss58Format: number;
+    isParachain: boolean;
+    relayChain: 'polkadot' | 'kusama';
+  };
+  cosmos?: {
     bip44: { coinType: number };
     bech32Config: {
       bech32PrefixAccAddr: string;
@@ -77,7 +82,7 @@ interface CustomChainInfo {
     coinMinimalDenom: string;
     coinDecimals: number;
     coinGeckoId: string;
-    gasPriceStep: {
+    gasPriceStep?: {
       low: number;
       average: number;
       high: number;
@@ -154,7 +159,6 @@ async function processChainFiles() {
           rpc,
           chainName,
           chainSymbolImageUrl,
-          feeCurrencies,
           cosmos: others,
           chainType: 'cosmos',
           channelMap: refinedChannelMap,
@@ -227,9 +231,15 @@ async function processChainFiles() {
               },
             };
           }),
-          // feeCurrencies: feeCurrencies?.map((feeCurrency) => ({
-          //   ...feeCurrency,
-          // })),
+          feeCurrencies: feeCurrencies?.map((feeCurrency) => {
+            const { gasPriceStep, ...others } = feeCurrency;
+            return {
+              ...others,
+              cosmos: {
+                gasPriceStep,
+              },
+            };
+          }),
         };
 
         fs.writeFileSync(
