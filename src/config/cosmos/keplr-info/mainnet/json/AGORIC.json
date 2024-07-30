@@ -1,85 +1,9 @@
 {
-  "rpc": "https://agoric-cmp-rpc.polkachu.com",
-  "rest": "https://agoric-cmp-api.polkachu.com",
   "chainId": "agoric-3",
+  "rest": "https://agoric-cmp-api.polkachu.com",
+  "rpc": "https://agoric-cmp-rpc.polkachu.com",
   "chainName": "Agoric",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
-  "stakeCurrency": {
-    "coinDenom": "BLD",
-    "coinMinimalDenom": "ubld",
-    "coinDecimals": 6,
-    "coinGeckoId": "agoric",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
-  },
-  "walletUrl": "https://wallet.keplr.app/chains/agoric",
-  "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric",
-  "bip44": {
-    "coinType": 564
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "agoric",
-    "bech32PrefixAccPub": "agoricpub",
-    "bech32PrefixValAddr": "agoricvaloper",
-    "bech32PrefixValPub": "agoricvaloperpub",
-    "bech32PrefixConsAddr": "agoricvalcons",
-    "bech32PrefixConsPub": "agoricvalconspub"
-  },
-  "currencies": [
-    {
-      "coinDenom": "BLD",
-      "coinMinimalDenom": "ubld",
-      "coinDecimals": 6,
-      "coinGeckoId": "agoric",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
-      "cosmos": {
-        "minimalDenom": "ubld"
-      },
-      "polkadot": {
-        "picassoAssetId": "18",
-        "composableAssetId": "79228162514264337593543950354"
-      },
-      "ethereum": {
-        "minimalDenom": "transfer/channel-2/transfer/channel-13/ubld",
-        "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
-        "fromCosmosFee": 165,
-        "minimumTransfer": 400
-      },
-      "solana": {
-        "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
-        "minimalDenom": "transfer/channel-1/transfer/channel-13/ubld1",
-        "minimumTransfer": 200,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "IST",
-      "coinMinimalDenom": "uist",
-      "coinDecimals": 6,
-      "coinGeckoId": "inter-stable-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
-      "cosmos": {
-        "minimalDenom": "uist"
-      },
-      "polkadot": {
-        "picassoAssetId": "25",
-        "composableAssetId": "79228162514264337593543950361"
-      },
-      "ethereum": {
-        "minimalDenom": "transfer/channel-2/transfer/channel-13/uist",
-        "erc20Address": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
-        "fromCosmosFee": 20,
-        "minimumTransfer": 50
-      },
-      "solana": {
-        "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",
-        "minimalDenom": "transfer/channel-1/transfer/channel-13/uist1",
-        "minimumTransfer": 20,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    }
-  ],
   "feeCurrencies": [
     {
       "coinDenom": "BLD",
@@ -105,12 +29,26 @@
       }
     }
   ],
-  "features": [],
-  "alternativeBIP44s": [
-    {
-      "coinType": 118
-    }
-  ],
+  "cosmos": {
+    "walletUrl": "https://wallet.keplr.app/chains/agoric",
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric",
+    "bip44": {
+      "coinType": 564
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "agoric",
+      "bech32PrefixAccPub": "agoricpub",
+      "bech32PrefixValAddr": "agoricvaloper",
+      "bech32PrefixValPub": "agoricvaloperpub",
+      "bech32PrefixConsAddr": "agoricvalcons",
+      "bech32PrefixConsPub": "agoricvalconspub"
+    },
+    "alternativeBIP44s": [
+      {
+        "coinType": 118
+      }
+    ]
+  },
   "chainType": "cosmos",
   "channelMap": {
     "55": {
@@ -122,17 +60,60 @@
       ]
     }
   },
-  "cosmos": {
-    "bip44": {
-      "coinType": 564
+  "currencies": [
+    {
+      "coinDenom": "BLD",
+      "coinMinimalDenom": "ubld",
+      "coinDecimals": 6,
+      "coinGeckoId": "agoric",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
+      "cosmos": {
+        "minimalDenom": "ubld"
+      },
+      "polkadot": {
+        "picassoAssetId": "18",
+        "composableAssetId": "79228162514264337593543950354"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-13/ubld",
+        "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
+        "fromCosmosFee": 165,
+        "minimumTransfer": 400
+      },
+      "solana": {
+        "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
+        "minimalDenom": "transfer/channel-1/transfer/channel-13/ubld",
+        "minimumTransfer": 200,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
     },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "agoric",
-      "bech32PrefixAccPub": "agoricpub",
-      "bech32PrefixValAddr": "agoricvaloper",
-      "bech32PrefixValPub": "agoricvaloperpub",
-      "bech32PrefixConsAddr": "agoricvalcons",
-      "bech32PrefixConsPub": "agoricvalconspub"
+    {
+      "coinDenom": "IST",
+      "coinMinimalDenom": "uist",
+      "coinDecimals": 6,
+      "coinGeckoId": "inter-stable-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
+      "cosmos": {
+        "minimalDenom": "uist"
+      },
+      "polkadot": {
+        "picassoAssetId": "25",
+        "composableAssetId": "79228162514264337593543950361"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-13/uist",
+        "erc20Address": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",
+        "minimalDenom": "transfer/channel-1/transfer/channel-13/uist",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
     }
-  }
+  ]
 }

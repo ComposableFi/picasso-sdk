@@ -1,122 +1,8 @@
 {
   "chainId": "centauri-1",
-  "chainName": "picasso",
-  "rpc": "https://picasso-rpc.polkachu.com",
   "rest": "https://picasso-api.polkachu.com",
-  "bip44": {
-    "coinType": 118
-  },
-  "walletUrlForStaking": "https://explorer.nodestake.top/composable",
-  "bech32Config": {
-    "bech32PrefixAccAddr": "pica",
-    "bech32PrefixAccPub": "picapub",
-    "bech32PrefixValAddr": "picavaloper",
-    "bech32PrefixValPub": "picavaloperpub",
-    "bech32PrefixConsAddr": "picavalcons",
-    "bech32PrefixConsPub": "picavalconspub"
-  },
-  "currencies": [
-    {
-      "coinDenom": "PICA",
-      "coinMinimalDenom": "ppica",
-      "coinDecimals": 12,
-      "coinGeckoId": "picasso",
-      "cosmos": {
-        "minimalDenom": "ppica"
-      },
-      "polkadot": {
-        "picassoAssetId": "1"
-      },
-      "ethereum": {
-        "minimalDenom": "transfer/channel-2/ppica",
-        "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-        "fromCosmosFee": 2000,
-        "minimumTransfer": 5000
-      },
-      "solana": {
-        "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
-        "minimalDenom": "transfer/channel-1/ppica1",
-        "minimumTransfer": 4000,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "KSM",
-      "coinMinimalDenom": "ibc/EE9046745AEC0E8302CB7ED9D5AD67F528FB3B7AE044B247FB0FB293DBDA35E9",
-      "coinDecimals": 12,
-      "coinGeckoId": "kusama",
-      "cosmos": {
-        "minimalDenom": "ibc/EE9046745AEC0E8302CB7ED9D5AD67F528FB3B7AE044B247FB0FB293DBDA35E9"
-      },
-      "polkadot": {
-        "picassoAssetId": "4"
-      },
-      "ethereum": {
-        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
-        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-        "fromCosmosFee": 0.5,
-        "minimumTransfer": 1
-      },
-      "solana": {
-        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-        "minimalDenom": "transfer/channel-1/transfer/channel-2/41",
-        "minimumTransfer": 0.7,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "DOT",
-      "coinMinimalDenom": "ibc/3CC19CEC7E5A3E90E78A5A9ECC5A0E2F8F826A375CF1E096F4515CF09DA3E366",
-      "coinDecimals": 10,
-      "coinGeckoId": "polkadot",
-      "cosmos": {
-        "minimalDenom": "ibc/3CC19CEC7E5A3E90E78A5A9ECC5A0E2F8F826A375CF1E096F4515CF09DA3E366"
-      },
-      "polkadot": {
-        "composableAssetId": "79228162514264337593543950342"
-      },
-      "ethereum": {
-        "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
-        "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-        "fromCosmosFee": 2,
-        "minimumTransfer": 5
-      },
-      "solana": {
-        "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
-        "minimalDenom": "transfer/channel-1/transfer/channel-2/transfer/channel-15/792281625142643375935439503421",
-        "minimumTransfer": 3,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "USDT Kusama",
-      "coinMinimalDenom": "ibc/F3EC9F834E57DF704FA3AEAF14E8391C2E58397FE56960AD70E67562990D8265",
-      "coinDecimals": 6,
-      "coinGeckoId": "tether",
-      "cosmos": {
-        "minimalDenom": "ibc/F3EC9F834E57DF704FA3AEAF14E8391C2E58397FE56960AD70E67562990D8265"
-      },
-      "polkadot": {
-        "picassoAssetId": "130"
-      },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    }
-  ],
+  "rpc": "https://picasso-rpc.polkachu.com",
+  "chainName": "picasso",
   "feeCurrencies": [
     {
       "coinDenom": "PICA",
@@ -130,16 +16,20 @@
       }
     }
   ],
-  "stakeCurrency": {
-    "coinDenom": "PICA",
-    "coinMinimalDenom": "ppica",
-    "coinDecimals": 12,
-    "coinGeckoId": "unknown"
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "walletUrlForStaking": "https://explorer.nodestake.top/composable",
+    "bech32Config": {
+      "bech32PrefixAccAddr": "pica",
+      "bech32PrefixAccPub": "picapub",
+      "bech32PrefixValAddr": "picavaloper",
+      "bech32PrefixValPub": "picavaloperpub",
+      "bech32PrefixConsAddr": "picavalcons",
+      "bech32PrefixConsPub": "picavalconspub"
+    }
   },
-  "features": [
-    "ibc-transfer",
-    "ibc-go"
-  ],
   "chainType": "cosmos",
   "channelMap": {
     "0": {
@@ -362,17 +252,106 @@
       ]
     }
   },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
+  "currencies": [
+    {
+      "coinDenom": "PICA",
+      "coinMinimalDenom": "ppica",
+      "coinDecimals": 12,
+      "coinGeckoId": "picasso",
+      "cosmos": {
+        "minimalDenom": "ppica"
+      },
+      "polkadot": {
+        "picassoAssetId": "1"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/ppica",
+        "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
+        "fromCosmosFee": 2000,
+        "minimumTransfer": 5000
+      },
+      "solana": {
+        "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
+        "minimalDenom": "transfer/channel-1/ppica",
+        "minimumTransfer": 4000,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
     },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "pica",
-      "bech32PrefixAccPub": "picapub",
-      "bech32PrefixValAddr": "picavaloper",
-      "bech32PrefixValPub": "picavaloperpub",
-      "bech32PrefixConsAddr": "picavalcons",
-      "bech32PrefixConsPub": "picavalconspub"
+    {
+      "coinDenom": "KSM",
+      "coinMinimalDenom": "ibc/EE9046745AEC0E8302CB7ED9D5AD67F528FB3B7AE044B247FB0FB293DBDA35E9",
+      "coinDecimals": 12,
+      "coinGeckoId": "kusama",
+      "cosmos": {
+        "minimalDenom": "ibc/EE9046745AEC0E8302CB7ED9D5AD67F528FB3B7AE044B247FB0FB293DBDA35E9"
+      },
+      "polkadot": {
+        "picassoAssetId": "4"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
+        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+        "fromCosmosFee": 0.5,
+        "minimumTransfer": 1
+      },
+      "solana": {
+        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
+        "minimumTransfer": 0.7,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinDenom": "DOT",
+      "coinMinimalDenom": "ibc/3CC19CEC7E5A3E90E78A5A9ECC5A0E2F8F826A375CF1E096F4515CF09DA3E366",
+      "coinDecimals": 10,
+      "coinGeckoId": "polkadot",
+      "cosmos": {
+        "minimalDenom": "ibc/3CC19CEC7E5A3E90E78A5A9ECC5A0E2F8F826A375CF1E096F4515CF09DA3E366"
+      },
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950342"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
+      },
+      "solana": {
+        "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "minimumTransfer": 3,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinDenom": "USDT Kusama",
+      "coinMinimalDenom": "ibc/F3EC9F834E57DF704FA3AEAF14E8391C2E58397FE56960AD70E67562990D8265",
+      "coinDecimals": 6,
+      "coinGeckoId": "tether",
+      "cosmos": {
+        "minimalDenom": "ibc/F3EC9F834E57DF704FA3AEAF14E8391C2E58397FE56960AD70E67562990D8265"
+      },
+      "polkadot": {
+        "picassoAssetId": "130"
+      },
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
     }
-  }
+  ]
 }

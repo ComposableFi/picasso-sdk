@@ -1,26 +1,45 @@
 {
-  "rpc": "https://injective-rpc.polkachu.com",
-  "rest": "https://injective-api.polkachu.com",
   "chainId": "injective-1",
+  "rest": "https://injective-api.polkachu.com",
+  "rpc": "https://injective-rpc.polkachu.com",
   "chainName": "Injective",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
-  "bech32Config": {
-    "bech32PrefixAccPub": "injpub",
-    "bech32PrefixValPub": "injvaloperpub",
-    "bech32PrefixAccAddr": "inj",
-    "bech32PrefixConsPub": "injvalconspub",
-    "bech32PrefixValAddr": "injvaloper",
-    "bech32PrefixConsAddr": "injvalcons"
+  "feeCurrencies": [
+    {
+      "coinDenom": "INJ",
+      "coinDecimals": 18,
+      "coinMinimalDenom": "inj",
+      "coinGeckoId": "injective-protocol",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
+      "gasPriceStep": {
+        "low": 500000000,
+        "average": 1000000000,
+        "high": 1500000000
+      }
+    }
+  ],
+  "cosmos": {
+    "bech32Config": {
+      "bech32PrefixAccPub": "injpub",
+      "bech32PrefixValPub": "injvaloperpub",
+      "bech32PrefixAccAddr": "inj",
+      "bech32PrefixConsPub": "injvalconspub",
+      "bech32PrefixValAddr": "injvaloper",
+      "bech32PrefixConsAddr": "injvalcons"
+    },
+    "bip44": {
+      "coinType": 60
+    }
   },
-  "bip44": {
-    "coinType": 60
-  },
-  "stakeCurrency": {
-    "coinDenom": "INJ",
-    "coinDecimals": 18,
-    "coinMinimalDenom": "inj",
-    "coinGeckoId": "injective-protocol",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png"
+  "chainType": "cosmos",
+  "channelMap": {
+    "145": {
+      "chainId": "centauri-1",
+      "destinationId": 29,
+      "tokens": [
+        "INJ"
+      ]
+    }
   },
   "currencies": [
     {
@@ -41,7 +60,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -65,7 +84,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -89,7 +108,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -113,7 +132,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -137,7 +156,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -161,7 +180,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -185,7 +204,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -209,53 +228,11 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
       }
     }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "INJ",
-      "coinDecimals": 18,
-      "coinMinimalDenom": "inj",
-      "coinGeckoId": "injective-protocol",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
-      "gasPriceStep": {
-        "low": 500000000,
-        "average": 1000000000,
-        "high": 1500000000
-      }
-    }
-  ],
-  "features": [
-    "eth-address-gen",
-    "eth-key-sign",
-    "cosmwasm"
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "145": {
-      "chainId": "centauri-1",
-      "destinationId": 29,
-      "tokens": [
-        "INJ"
-      ]
-    }
-  },
-  "cosmos": {
-    "bip44": {
-      "coinType": 60
-    },
-    "bech32Config": {
-      "bech32PrefixAccPub": "injpub",
-      "bech32PrefixValPub": "injvaloperpub",
-      "bech32PrefixAccAddr": "inj",
-      "bech32PrefixConsPub": "injvalconspub",
-      "bech32PrefixValAddr": "injvaloper",
-      "bech32PrefixConsAddr": "injvalcons"
-    }
-  }
+  ]
 }

@@ -1,30 +1,45 @@
 {
-  "rpc": "https://sei-rpc.polkachu.com",
-  "rest": "https://sei-api.polkachu.com",
   "chainId": "pacific-1",
+  "rest": "https://sei-api.polkachu.com",
+  "rpc": "https://sei-rpc.polkachu.com",
   "chainName": "Sei",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
-  "bip44": {
-    "coinType": 118
+  "feeCurrencies": [
+    {
+      "coinDenom": "SEI",
+      "coinMinimalDenom": "usei",
+      "coinDecimals": 6,
+      "coinGeckoId": "sei-network",
+      "gasPriceStep": {
+        "low": 0.1,
+        "average": 0.2,
+        "high": 0.3
+      }
+    }
+  ],
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "sei",
+      "bech32PrefixAccPub": "seipub",
+      "bech32PrefixValAddr": "seivaloper",
+      "bech32PrefixValPub": "seivaloperpub",
+      "bech32PrefixConsAddr": "seivalcons",
+      "bech32PrefixConsPub": "seivalconspub"
+    }
   },
-  "stakeCurrency": {
-    "coinDenom": "SEI",
-    "coinMinimalDenom": "usei",
-    "coinDecimals": 6,
-    "coinGeckoId": "sei-network"
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "sei",
-    "bech32PrefixAccPub": "seipub",
-    "bech32PrefixValAddr": "seivaloper",
-    "bech32PrefixValPub": "seivaloperpub",
-    "bech32PrefixConsAddr": "seivalcons",
-    "bech32PrefixConsPub": "seivalconspub"
-  },
-  "nodeProvider": {
-    "name": "Sei",
-    "email": "ecosystem@seinetwork.io",
-    "website": "https://sei.io"
+  "chainType": "cosmos",
+  "channelMap": {
+    "0": {
+      "chainId": "osmosis-1",
+      "destinationId": 782,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
   },
   "currencies": [
     {
@@ -46,10 +61,10 @@
       },
       "solana": {
         "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
-        "minimalDenom": "transfer/channel-1/transfer/channel-3/transfer/channel-782/usei1",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/transfer/channel-782/usei",
         "minimumTransfer": 30,
         "fromCosmosFee": 0,
-        "displayDecimals": 0
+        "displayDecimals": 6
       }
     },
     {
@@ -69,7 +84,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -93,7 +108,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -116,7 +131,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -139,7 +154,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -162,7 +177,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -185,7 +200,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -208,7 +223,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -231,7 +246,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -254,7 +269,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -277,7 +292,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -300,7 +315,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -323,7 +338,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -346,7 +361,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -370,7 +385,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -394,48 +409,11 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
       }
     }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "SEI",
-      "coinMinimalDenom": "usei",
-      "coinDecimals": 6,
-      "coinGeckoId": "sei-network",
-      "gasPriceStep": {
-        "low": 0.1,
-        "average": 0.2,
-        "high": 0.3
-      }
-    }
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "0": {
-      "chainId": "osmosis-1",
-      "destinationId": 782,
-      "tokens": [
-        "UOSMO",
-        "USEI"
-      ]
-    }
-  },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
-    },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "sei",
-      "bech32PrefixAccPub": "seipub",
-      "bech32PrefixValAddr": "seivaloper",
-      "bech32PrefixValPub": "seivaloperpub",
-      "bech32PrefixConsAddr": "seivalcons",
-      "bech32PrefixConsPub": "seivalconspub"
-    }
-  }
+  ]
 }

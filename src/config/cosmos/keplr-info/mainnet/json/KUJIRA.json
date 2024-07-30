@@ -1,97 +1,9 @@
 {
   "chainId": "kaiyo-1",
+  "rest": "https://kujira-api.polkachu.com",
+  "rpc": "https://kujira-rpc.polkachu.com",
   "chainName": "Kujira",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
-  "rpc": "https://kujira-rpc.polkachu.com",
-  "rest": "https://kujira-api.polkachu.com",
-  "nodeProvider": {
-    "name": "PFC",
-    "email": "pfc-validator@protonmail.com",
-    "website": "https://pfc.zone/"
-  },
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "kujira",
-    "bech32PrefixAccPub": "kujirapub",
-    "bech32PrefixValAddr": "kujiravaloper",
-    "bech32PrefixValPub": "kujiravaloperpub",
-    "bech32PrefixConsAddr": "kujiravalcons",
-    "bech32PrefixConsPub": "kujiravalconspub"
-  },
-  "currencies": [
-    {
-      "coinDenom": "KUJI",
-      "coinMinimalDenom": "ukuji",
-      "coinDecimals": 6,
-      "coinGeckoId": "kujira",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
-      "cosmos": {
-        "minimalDenom": "ukuji"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "USK",
-      "coinMinimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
-      "coinDecimals": 6,
-      "coinGeckoId": "usk",
-      "cosmos": {
-        "minimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "MNTA",
-      "coinMinimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta",
-      "coinDecimals": 6,
-      "coinGeckoId": "mantadao",
-      "cosmos": {
-        "minimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    }
-  ],
   "feeCurrencies": [
     {
       "coinDenom": "KUJI",
@@ -167,26 +79,6 @@
       "coinGeckoId": "ethereum"
     }
   ],
-  "stakeCurrency": {
-    "coinDenom": "KUJI",
-    "coinMinimalDenom": "ukuji",
-    "coinDecimals": 6,
-    "coinGeckoId": "kujira",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
-  },
-  "features": [
-    "cosmwasm"
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "101": {
-      "chainId": "centauri-1",
-      "destinationId": 27,
-      "tokens": [
-        "KUJI"
-      ]
-    }
-  },
   "cosmos": {
     "bip44": {
       "coinType": 118
@@ -199,5 +91,87 @@
       "bech32PrefixConsAddr": "kujiravalcons",
       "bech32PrefixConsPub": "kujiravalconspub"
     }
-  }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "101": {
+      "chainId": "centauri-1",
+      "destinationId": 27,
+      "tokens": [
+        "KUJI"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "KUJI",
+      "coinMinimalDenom": "ukuji",
+      "coinDecimals": 6,
+      "coinGeckoId": "kujira",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
+      "cosmos": {
+        "minimalDenom": "ukuji"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "USK",
+      "coinMinimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
+      "coinDecimals": 6,
+      "coinGeckoId": "usk",
+      "cosmos": {
+        "minimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "MNTA",
+      "coinMinimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta",
+      "coinDecimals": 6,
+      "coinGeckoId": "mantadao",
+      "cosmos": {
+        "minimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ]
 }

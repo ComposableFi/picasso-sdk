@@ -1,478 +1,9 @@
 {
-  "rpc": "https://neutron-cmp-rpc.polkachu.com",
-  "rest": "https://neutron-cmp-api.polkachu.com",
   "chainId": "neutron-1",
+  "rest": "https://neutron-cmp-api.polkachu.com",
+  "rpc": "https://neutron-cmp-rpc.polkachu.com",
   "chainName": "Neutron",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "neutron",
-    "bech32PrefixAccPub": "neutronpub",
-    "bech32PrefixValAddr": "neutronvaloper",
-    "bech32PrefixValPub": "neutronvaloperpub",
-    "bech32PrefixConsAddr": "neutronvalcons",
-    "bech32PrefixConsPub": "neutronvalconspub"
-  },
-  "currencies": [
-    {
-      "coinDenom": "NTRN",
-      "coinMinimalDenom": "untrn",
-      "coinDecimals": 6,
-      "coinGeckoId": "neutron-3",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
-      "cosmos": {
-        "minimalDenom": "untrn"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "wstETH",
-      "coinMinimalDenom": "factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH",
-      "coinDecimals": 18,
-      "coinGeckoId": "wrapped-steth",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH.png",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "NEWT",
-      "coinMinimalDenom": "factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt",
-      "coinDecimals": 6,
-      "coinGeckoId": "newt",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt.png",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "ECLIP",
-      "coinMinimalDenom": "factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "BAD",
-      "coinMinimalDenom": "factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "DSR",
-      "coinMinimalDenom": "factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "NTRL",
-      "coinMinimalDenom": "factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "RETRO",
-      "coinMinimalDenom": "factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/uretro",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/retro.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/uretro"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "CIRCUS",
-      "coinMinimalDenom": "factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "GODRD",
-      "coinMinimalDenom": "factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "GDD",
-      "coinMinimalDenom": "factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/GODDARD",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/gdd.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/GODDARD"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "APOLLO",
-      "coinMinimalDenom": "factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/APOLLO",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/apollo.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/APOLLO"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "ROOM",
-      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/ROOM",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/room.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/ROOM"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "GOP",
-      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "BOY",
-      "coinMinimalDenom": "neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv/boy.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "CARTEL",
-      "coinMinimalDenom": "factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "MOO",
-      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "SCRAP",
-      "coinMinimalDenom": "factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/scrap",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/SCRAP.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/scrap"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "WEIRD",
-      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    }
-  ],
   "feeCurrencies": [
     {
       "coinDenom": "NTRN",
@@ -546,19 +77,6 @@
       }
     }
   ],
-  "features": [
-    "cosmwasm"
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "17": {
-      "chainId": "centauri-1",
-      "destinationId": 18,
-      "tokens": [
-        "NTRN"
-      ]
-    }
-  },
   "cosmos": {
     "bip44": {
       "coinType": 118
@@ -571,5 +89,473 @@
       "bech32PrefixConsAddr": "neutronvalcons",
       "bech32PrefixConsPub": "neutronvalconspub"
     }
-  }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "17": {
+      "chainId": "centauri-1",
+      "destinationId": 18,
+      "tokens": [
+        "NTRN"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "NTRN",
+      "coinMinimalDenom": "untrn",
+      "coinDecimals": 6,
+      "coinGeckoId": "neutron-3",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
+      "cosmos": {
+        "minimalDenom": "untrn"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "wstETH",
+      "coinMinimalDenom": "factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH",
+      "coinDecimals": 18,
+      "coinGeckoId": "wrapped-steth",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH.png",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "NEWT",
+      "coinMinimalDenom": "factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt",
+      "coinDecimals": 6,
+      "coinGeckoId": "newt",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt.png",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1p8d89wvxyjcnawmgw72klknr3lg9gwwl6ypxda/newt"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "ECLIP",
+      "coinMinimalDenom": "factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron10sr06r3qkhn7xzpw3339wuj77hu06mzna6uht0/eclip"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "BAD",
+      "coinMinimalDenom": "factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "DSR",
+      "coinMinimalDenom": "factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "NTRL",
+      "coinMinimalDenom": "factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1ume2n42r5j0660gegrr28fzdze7aqf7r5cd9y6/newtroll"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "RETRO",
+      "coinMinimalDenom": "factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/uretro",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/retro.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1t24nc7whl77relnu3taxyg3p66pjyuk82png2y/uretro"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "CIRCUS",
+      "coinMinimalDenom": "factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron170v88vrtnedesyfytuku257cggxc79rd7lwt7q/ucircus"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "GODRD",
+      "coinMinimalDenom": "factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1t5qrjtyryh8gzt800qr5vylhh2f8cmx4wmz9mc/ugoddard"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "GDD",
+      "coinMinimalDenom": "factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/GODDARD",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/gdd.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1yqj9vcc0y73xfxjzegaj4v8q0zefevnlpuh4rj/GODDARD"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "APOLLO",
+      "coinMinimalDenom": "factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/APOLLO",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/apollo.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron154gg0wtm2v4h9ur8xg32ep64e8ef0g5twlsgvfeajqwghdryvyqsqhgk8e/APOLLO"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "ROOM",
+      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/ROOM",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/room.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/ROOM"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "GOP",
+      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/GOP"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "BOY",
+      "coinMinimalDenom": "neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv/boy.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "neutron1uqvse8fdrd9tam47f2jhy9m6al6xxtqpc83f9pdnz5gdle4swc0spfnctv"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "CARTEL",
+      "coinMinimalDenom": "factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1w0pz4mjw7n96kkragj8etgfgakg5vw9lzg77wq/cartel"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "MOO",
+      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/MOO"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "SCRAP",
+      "coinMinimalDenom": "factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/scrap",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/SCRAP.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron1qm224945hrkwc5qze40tau499n46ydmulpeagscmsuyxfrds02usf7mnpu/scrap"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    },
+    {
+      "coinDenom": "WEIRD",
+      "coinMinimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD.png",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "factory/neutron133xakkrfksq39wxy575unve2nyehg5npx75nph/WEIRD"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
+    }
+  ]
 }

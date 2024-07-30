@@ -29,12 +29,7 @@ const coingeckoPath = path.resolve(__dirname, '../src/config/coinGecko.ts');
 
 interface CustomChainInfo {
   chainType: string;
-  chainId: string;
-  chainName: string;
-  rest?: string;
-  rpc: string;
   channelMap: { [key: string]: string };
-  chainSymbolImageUrl: string;
   cosmos: {
     bip44: { coinType: number };
     bech32Config: {
@@ -135,31 +130,15 @@ async function processChainFiles() {
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
 
-        const {
-          chainId,
-          chainName,
-          currencies,
-          chainSymbolImageUrl,
-          feeCurrencies,
-          nodeProvider,
-          rest,
-          rpc,
-          stakeCurrency,
-          features,
-          ...others
-        } = chainData;
         const transformedData: CustomChainInfo = {
-          chainId,
-          rest,
-          rpc,
-          chainName,
-          chainSymbolImageUrl,
-          feeCurrencies,
-          cosmos: others,
+          ...chainData,
           chainType: 'cosmos',
           channelMap: refinedChannelMap,
-
-          currencies: currencies?.map((currency) => {
+          cosmos: {
+            bip44: chainData.bip44,
+            bech32Config: chainData.bech32Config,
+          },
+          currencies: chainData.currencies?.map((currency) => {
             const picassoAssetId = Object.keys(crossChainData['dotsama']).find(
               (key) =>
                 crossChainData['dotsama'][key]?.denom === currency?.coinDenom &&
@@ -189,10 +168,7 @@ async function processChainFiles() {
             const mintAddress = solanaInfo?.mintAddress || '';
             const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
             const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
-            const displayDecimals =
-              solanaInfo?.realDecimals ||
-              crossChainData['solana'][mintAddress]?.decimals ||
-              0;
+            const displayDecimals = solanaInfo?.realDecimals || 0;
 
             const solanaMinimalDenom =
               crossChainData['solana'][mintAddress]?.minimalDenom || '';
@@ -227,9 +203,9 @@ async function processChainFiles() {
               },
             };
           }),
-          // feeCurrencies: feeCurrencies?.map((feeCurrency) => ({
-          //   ...feeCurrency,
-          // })),
+          feeCurrencies: chainData.feeCurrencies?.map((feeCurrency) => ({
+            ...feeCurrency,
+          })),
         };
 
         fs.writeFileSync(

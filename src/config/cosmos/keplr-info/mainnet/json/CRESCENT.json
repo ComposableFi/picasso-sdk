@@ -1,81 +1,9 @@
 {
-  "rpc": "https://crescent-cmp-rpc.polkachu.com",
-  "rest": "https://crescent-cmp-api.polkachu.com",
   "chainId": "crescent-1",
+  "rest": "https://crescent-cmp-api.polkachu.com",
+  "rpc": "https://crescent-cmp-rpc.polkachu.com",
   "chainName": "Crescent Network",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-  "nodeProvider": {
-    "name": "Crescent Node",
-    "email": "contact@crescent.network",
-    "website": "https://crescent.network"
-  },
-  "stakeCurrency": {
-    "coinDenom": "CRE",
-    "coinMinimalDenom": "ucre",
-    "coinDecimals": 6,
-    "coinGeckoId": "crescent-network"
-  },
-  "walletUrl": "https://app.crescent.network/",
-  "walletUrlForStaking": "https://app.crescent.network/staking",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "cre",
-    "bech32PrefixAccPub": "crepub",
-    "bech32PrefixValAddr": "crevaloper",
-    "bech32PrefixValPub": "crevaloperpub",
-    "bech32PrefixConsAddr": "crevalcons",
-    "bech32PrefixConsPub": "crevalconspub"
-  },
-  "currencies": [
-    {
-      "coinDenom": "CRE",
-      "coinMinimalDenom": "ucre",
-      "coinDecimals": 6,
-      "coinGeckoId": "crescent-network",
-      "cosmos": {
-        "minimalDenom": "ucre"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    },
-    {
-      "coinDenom": "bCRE",
-      "coinMinimalDenom": "ubcre",
-      "coinDecimals": 6,
-      "coinGeckoId": "liquid-staking-crescent",
-      "cosmos": {
-        "minimalDenom": "ubcre"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "1",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
-    }
-  ],
   "feeCurrencies": [
     {
       "coinDenom": "CRE",
@@ -265,7 +193,21 @@
       }
     }
   ],
-  "features": [],
+  "cosmos": {
+    "walletUrl": "https://app.crescent.network/",
+    "walletUrlForStaking": "https://app.crescent.network/staking",
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cre",
+      "bech32PrefixAccPub": "crepub",
+      "bech32PrefixValAddr": "crevaloper",
+      "bech32PrefixValPub": "crevaloperpub",
+      "bech32PrefixConsAddr": "crevalcons",
+      "bech32PrefixConsPub": "crevalconspub"
+    }
+  },
   "chainType": "cosmos",
   "channelMap": {
     "64": {
@@ -278,17 +220,52 @@
       ]
     }
   },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
+  "currencies": [
+    {
+      "coinDenom": "CRE",
+      "coinMinimalDenom": "ucre",
+      "coinDecimals": 6,
+      "coinGeckoId": "crescent-network",
+      "cosmos": {
+        "minimalDenom": "ucre"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
     },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "cre",
-      "bech32PrefixAccPub": "crepub",
-      "bech32PrefixValAddr": "crevaloper",
-      "bech32PrefixValPub": "crevaloperpub",
-      "bech32PrefixConsAddr": "crevalcons",
-      "bech32PrefixConsPub": "crevalconspub"
+    {
+      "coinDenom": "bCRE",
+      "coinMinimalDenom": "ubcre",
+      "coinDecimals": 6,
+      "coinGeckoId": "liquid-staking-crescent",
+      "cosmos": {
+        "minimalDenom": "ubcre"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "",
+        "erc20Address": "",
+        "fromCosmosFee": 0,
+        "minimumTransfer": 0
+      },
+      "solana": {
+        "mintAddress": "",
+        "minimalDenom": "",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 0
+      }
     }
-  }
+  ]
 }

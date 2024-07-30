@@ -1,27 +1,46 @@
 {
-  "rpc": "https://quicksilver-rpc.polkachu.com",
-  "rest": "https://quicksilver-api.polkachu.com",
   "chainId": "quicksilver-2",
+  "rest": "https://quicksilver-api.polkachu.com",
+  "rpc": "https://quicksilver-rpc.polkachu.com",
   "chainName": "Quicksilver",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
-  "stakeCurrency": {
-    "coinDenom": "QCK",
-    "coinMinimalDenom": "uqck",
-    "coinDecimals": 6,
-    "coinGeckoId": "quicksilver",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
+  "feeCurrencies": [
+    {
+      "coinDenom": "QCK",
+      "coinMinimalDenom": "uqck",
+      "coinDecimals": 6,
+      "coinGeckoId": "quicksilver",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
+      "gasPriceStep": {
+        "low": 0.0001,
+        "average": 0.0001,
+        "high": 0.00025
+      }
+    }
+  ],
+  "cosmos": {
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "quick",
+      "bech32PrefixAccPub": "quickpub",
+      "bech32PrefixValAddr": "quickvaloper",
+      "bech32PrefixValPub": "quickvaloperpub",
+      "bech32PrefixConsAddr": "quickvalcons",
+      "bech32PrefixConsPub": "quickvalconspub"
+    }
   },
-  "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "quick",
-    "bech32PrefixAccPub": "quickpub",
-    "bech32PrefixValAddr": "quickvaloper",
-    "bech32PrefixValPub": "quickvaloperpub",
-    "bech32PrefixConsAddr": "quickvalcons",
-    "bech32PrefixConsPub": "quickvalconspub"
+  "chainType": "cosmos",
+  "channelMap": {
+    "94": {
+      "chainId": "centauri-1",
+      "destinationId": 9,
+      "tokens": [
+        "QCK"
+      ]
+    }
   },
   "currencies": [
     {
@@ -42,7 +61,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -66,7 +85,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -90,7 +109,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -114,7 +133,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -138,7 +157,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -162,51 +181,11 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
       }
     }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "QCK",
-      "coinMinimalDenom": "uqck",
-      "coinDecimals": 6,
-      "coinGeckoId": "quicksilver",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
-      "gasPriceStep": {
-        "low": 0.0001,
-        "average": 0.0001,
-        "high": 0.00025
-      }
-    }
-  ],
-  "features": [
-    "authz-msg-revoke-fixed"
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "94": {
-      "chainId": "centauri-1",
-      "destinationId": 9,
-      "tokens": [
-        "QCK"
-      ]
-    }
-  },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
-    },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "quick",
-      "bech32PrefixAccPub": "quickpub",
-      "bech32PrefixValAddr": "quickvaloper",
-      "bech32PrefixValPub": "quickvaloperpub",
-      "bech32PrefixConsAddr": "quickvalcons",
-      "bech32PrefixConsPub": "quickvalconspub"
-    }
-  }
+  ]
 }

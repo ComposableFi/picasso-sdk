@@ -1,18 +1,47 @@
 {
-  "bech32Config": {
-    "bech32PrefixAccAddr": "cosmos",
-    "bech32PrefixAccPub": "cosmospub",
-    "bech32PrefixConsAddr": "cosmosvalcons",
-    "bech32PrefixConsPub": "cosmosvalconspub",
-    "bech32PrefixValAddr": "cosmosvaloper",
-    "bech32PrefixValPub": "cosmosvaloperpub"
-  },
-  "bip44": {
-    "coinType": 118
-  },
   "chainId": "cosmoshub-4",
+  "rest": "https://cosmos-cmp-api.polkachu.com",
+  "rpc": "https://cosmos-cmp-rpc.polkachu.com",
   "chainName": "Cosmos Hub",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
+  "feeCurrencies": [
+    {
+      "coinDecimals": 6,
+      "coinDenom": "ATOM",
+      "coinGeckoId": "cosmos",
+      "coinMinimalDenom": "uatom",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+      "gasPriceStep": {
+        "average": 0.025,
+        "high": 0.03,
+        "low": 0.005
+      }
+    }
+  ],
+  "cosmos": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cosmos",
+      "bech32PrefixAccPub": "cosmospub",
+      "bech32PrefixConsAddr": "cosmosvalcons",
+      "bech32PrefixConsPub": "cosmosvalconspub",
+      "bech32PrefixValAddr": "cosmosvaloper",
+      "bech32PrefixValPub": "cosmosvaloperpub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "617": {
+      "chainId": "centauri-1",
+      "destinationId": 4,
+      "tokens": [
+        "ATOM"
+      ]
+    }
+  },
   "currencies": [
     {
       "coinDecimals": 6,
@@ -32,59 +61,11 @@
       },
       "solana": {
         "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
-        "minimalDenom": "transfer/channel-1/transfer/channel-4/uatom1",
+        "minimalDenom": "transfer/channel-1/transfer/channel-4/uatom",
         "minimumTransfer": 2,
         "fromCosmosFee": 0,
-        "displayDecimals": 0
+        "displayDecimals": 6
       }
     }
-  ],
-  "features": [],
-  "feeCurrencies": [
-    {
-      "coinDecimals": 6,
-      "coinDenom": "ATOM",
-      "coinGeckoId": "cosmos",
-      "coinMinimalDenom": "uatom",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
-      "gasPriceStep": {
-        "average": 0.025,
-        "high": 0.03,
-        "low": 0.005
-      }
-    }
-  ],
-  "rest": "https://cosmos-cmp-api.polkachu.com",
-  "rpc": "https://cosmos-cmp-rpc.polkachu.com",
-  "stakeCurrency": {
-    "coinDecimals": 6,
-    "coinDenom": "ATOM",
-    "coinGeckoId": "cosmos",
-    "coinMinimalDenom": "uatom",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
-  },
-  "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub",
-  "chainType": "cosmos",
-  "channelMap": {
-    "617": {
-      "chainId": "centauri-1",
-      "destinationId": 4,
-      "tokens": [
-        "ATOM"
-      ]
-    }
-  },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
-    },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "cosmos",
-      "bech32PrefixAccPub": "cosmospub",
-      "bech32PrefixConsAddr": "cosmosvalcons",
-      "bech32PrefixConsPub": "cosmosvalconspub",
-      "bech32PrefixValAddr": "cosmosvaloper",
-      "bech32PrefixValPub": "cosmosvaloperpub"
-    }
-  }
+  ]
 }

@@ -1,28 +1,52 @@
 {
-  "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-  "rest": "https://osmosis-cmp-api.polkachu.com",
   "chainId": "osmosis-1",
+  "rest": "https://osmosis-cmp-api.polkachu.com",
+  "rpc": "https://osmosis-cmp-rpc.polkachu.com",
   "chainName": "Osmosis",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-  "stakeCurrency": {
-    "coinDenom": "OSMO",
-    "coinMinimalDenom": "uosmo",
-    "coinDecimals": 6,
-    "coinGeckoId": "osmosis",
-    "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
+  "feeCurrencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "gasPriceStep": {
+        "low": 0.0025,
+        "average": 0.025,
+        "high": 0.04
+      }
+    }
+  ],
+  "cosmos": {
+    "walletUrl": "https://app.osmosis.zone",
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "osmo",
+      "bech32PrefixAccPub": "osmopub",
+      "bech32PrefixValAddr": "osmovaloper",
+      "bech32PrefixValPub": "osmovaloperpub",
+      "bech32PrefixConsAddr": "osmovalcons",
+      "bech32PrefixConsPub": "osmovalconspub"
+    }
   },
-  "walletUrl": "https://app.osmosis.zone",
-  "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
-  "bip44": {
-    "coinType": 118
-  },
-  "bech32Config": {
-    "bech32PrefixAccAddr": "osmo",
-    "bech32PrefixAccPub": "osmopub",
-    "bech32PrefixValAddr": "osmovaloper",
-    "bech32PrefixValPub": "osmovaloperpub",
-    "bech32PrefixConsAddr": "osmovalcons",
-    "bech32PrefixConsPub": "osmovalconspub"
+  "chainType": "cosmos",
+  "channelMap": {
+    "782": {
+      "chainId": "pacific-1",
+      "destinationId": 0
+    },
+    "1279": {
+      "chainId": "centauri-1",
+      "destinationId": 3,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
   },
   "currencies": [
     {
@@ -43,10 +67,10 @@
       },
       "solana": {
         "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
-        "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo1",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
         "minimumTransfer": 20,
         "fromCosmosFee": 0,
-        "displayDecimals": 0
+        "displayDecimals": 6
       }
     },
     {
@@ -67,7 +91,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -91,7 +115,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -115,7 +139,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -139,7 +163,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -163,7 +187,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -187,7 +211,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -211,7 +235,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -235,7 +259,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -259,7 +283,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -283,7 +307,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -307,7 +331,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -331,7 +355,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -355,7 +379,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -379,7 +403,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -403,7 +427,7 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
@@ -427,58 +451,11 @@
       },
       "solana": {
         "mintAddress": "",
-        "minimalDenom": "1",
+        "minimalDenom": "",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
         "displayDecimals": 0
       }
     }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "OSMO",
-      "coinMinimalDenom": "uosmo",
-      "coinDecimals": 6,
-      "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "gasPriceStep": {
-        "low": 0.0025,
-        "average": 0.025,
-        "high": 0.04
-      }
-    }
-  ],
-  "features": [
-    "cosmwasm",
-    "osmosis-txfees",
-    "osmosis-base-fee-beta"
-  ],
-  "chainType": "cosmos",
-  "channelMap": {
-    "782": {
-      "chainId": "pacific-1",
-      "destinationId": 0
-    },
-    "1279": {
-      "chainId": "centauri-1",
-      "destinationId": 3,
-      "tokens": [
-        "UOSMO",
-        "USEI"
-      ]
-    }
-  },
-  "cosmos": {
-    "bip44": {
-      "coinType": 118
-    },
-    "bech32Config": {
-      "bech32PrefixAccAddr": "osmo",
-      "bech32PrefixAccPub": "osmopub",
-      "bech32PrefixValAddr": "osmovaloper",
-      "bech32PrefixValPub": "osmovaloperpub",
-      "bech32PrefixConsAddr": "osmovalcons",
-      "bech32PrefixConsPub": "osmovalconspub"
-    }
-  }
+  ]
 }
