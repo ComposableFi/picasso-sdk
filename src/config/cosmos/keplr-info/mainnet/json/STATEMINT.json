@@ -28,7 +28,8 @@
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
-        "picassoAssetId": "149"
+        "picassoAssetId": "149",
+        "isFee": false
       },
       "ethereum": {
         "minimalDenom": "",

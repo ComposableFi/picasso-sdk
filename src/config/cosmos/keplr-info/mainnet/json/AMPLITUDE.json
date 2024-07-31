@@ -18,5 +18,14 @@
       }
     }
   },
-  "currencies": []
+  "currencies": [],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "astar"
+    }
+  ]
 }

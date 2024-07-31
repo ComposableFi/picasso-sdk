@@ -44,5 +44,14 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "kusama"
+    }
   ]
 }

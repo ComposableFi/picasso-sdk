@@ -68,5 +68,14 @@
         "displayDecimals": 0
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": ""
+    }
   ]
 }

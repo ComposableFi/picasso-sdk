@@ -44,5 +44,14 @@
         "displayDecimals": 0
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "TNKR",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "tinkernet"
+    }
   ]
 }

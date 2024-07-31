@@ -44,5 +44,14 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "DOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "polkadot"
+    }
   ]
 }

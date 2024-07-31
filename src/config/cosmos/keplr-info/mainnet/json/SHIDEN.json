@@ -44,5 +44,14 @@
         "displayDecimals": 0
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "SDN",
+      "coinDecimals": 18,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "shiden"
+    }
   ]
 }

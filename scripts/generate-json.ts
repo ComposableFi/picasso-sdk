@@ -78,14 +78,24 @@ interface CustomChainInfo {
     };
     cosmos: {
       minimalDenom: string;
+      isFee: boolean;
+      gasPriceStep?: {
+        low: number;
+        average: number;
+        high: number;
+      };
     };
     ethereum?: {
+      isFee: boolean;
+
       minimalDenom: string;
       erc20Address: string;
       fromCosmosFee: number;
       minimumTransfer: number;
     };
     solana?: {
+      isFee: boolean;
+
       mintAddress: string;
       minimalDenom: string;
       minimumTransfer: number;
@@ -98,10 +108,12 @@ interface CustomChainInfo {
     coinMinimalDenom: string;
     coinDecimals: number;
     coinGeckoId: string;
-    gasPriceStep?: {
-      low: number;
-      average: number;
-      high: number;
+    cosmos: {
+      gasPriceStep?: {
+        low: number;
+        average: number;
+        high: number;
+      };
     };
   }>;
 }
@@ -135,15 +147,6 @@ async function processChainFiles() {
       tokensPerChannelModule.default || tokensPerChannelModule;
 
     const coingeckoData = coingeckoModule.default || coingeckoModule;
-
-    console.log(
-      'chainFiles',
-      channelMapData,
-      tokensPerChannelData
-      // crossChainData,
-      // solanaAssetsData,
-      // ethereumAssetsData
-    );
 
     const polkadotMap = {
       PICASSO: {
@@ -333,8 +336,14 @@ async function processChainFiles() {
             },
             []
           );
+          const dotAssetInfo =
+            crossChainData['dotsama'][chainData.config?.assetId || ''];
 
-          console.log(tokensArray, 'tokenArray', chainData.config?.name);
+          const coinGeckoIdForFee =
+            coingeckoData.find(
+              (coin) =>
+                coin.name.toUpperCase() === dotAssetInfo.denom.toUpperCase()
+            )?.id || '';
           transformedData = {
             chainId: chainData.config?.dotChainId,
             rest: '',
@@ -434,15 +443,15 @@ async function processChainFiles() {
                 },
               };
             }),
-            feeCurrencies: feeCurrencies?.map((feeCurrency) => {
-              const { gasPriceStep, ...others } = feeCurrency;
-              return {
-                ...others,
-                cosmos: {
-                  gasPriceStep,
-                },
-              };
-            }),
+            feeCurrencies: [
+              {
+                coinDenom: dotAssetInfo.denom,
+                coinDecimals: dotAssetInfo.decimals,
+                coinImageUrl: '',
+                coinMinimalDenom: '',
+                coinGeckoId: coinGeckoIdForFee,
+              },
+            ],
           };
         }
 

@@ -171,5 +171,14 @@
         "displayDecimals": 0
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "PICA",
+      "coinDecimals": 12,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "picasso"
+    }
   ]
 }

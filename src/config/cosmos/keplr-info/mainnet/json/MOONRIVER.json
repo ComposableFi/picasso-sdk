@@ -44,5 +44,14 @@
         "displayDecimals": 0
       }
     }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "MOVR",
+      "coinDecimals": 18,
+      "coinImageUrl": "",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "moonriver"
+    }
   ]
 }
