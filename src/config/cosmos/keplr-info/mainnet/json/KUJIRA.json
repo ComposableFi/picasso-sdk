@@ -38,19 +38,8 @@
         "minimalDenom": "ukuji"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "USK",
@@ -61,19 +50,8 @@
         "minimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "MNTA",
@@ -84,19 +62,8 @@
         "minimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     }
   ],
   "feeCurrencies": [

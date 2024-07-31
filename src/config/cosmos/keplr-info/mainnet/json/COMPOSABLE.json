@@ -70,24 +70,13 @@
       "coinDenom": "BNC_DOT",
       "coinDecimals": 12,
       "coinImageUrl": "",
-      "coinGeckoId": "",
+      "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {
         "composableAssetId": "79228162514264337593543950369"
       },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "vDOT",
@@ -98,19 +87,8 @@
       "polkadot": {
         "composableAssetId": "79228162514264337593543950370"
       },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "ASTR",
@@ -121,19 +99,8 @@
       "polkadot": {
         "composableAssetId": "79228162514264337593543952342"
       },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     }
   ],
   "feeCurrencies": [

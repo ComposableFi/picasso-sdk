@@ -26,24 +26,13 @@
       "coinDenom": "BNC_KSM",
       "coinDecimals": 12,
       "coinImageUrl": "",
-      "coinGeckoId": "",
+      "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {
         "picassoAssetId": "31"
       },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "vKSM",
@@ -54,19 +43,8 @@
       "polkadot": {
         "picassoAssetId": "32"
       },
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     }
   ],
   "feeCurrencies": [

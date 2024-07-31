@@ -64,19 +64,8 @@
         "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "GAZE",
@@ -88,19 +77,8 @@
         "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "OHH",
@@ -112,19 +90,8 @@
         "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "BRNCH",
@@ -136,19 +103,8 @@
         "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "SNEAKY",
@@ -160,19 +116,8 @@
         "minimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     }
   ],
   "feeCurrencies": [

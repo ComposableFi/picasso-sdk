@@ -283,19 +283,23 @@ async function processChainFiles() {
                   picassoAssetId, // replace with actual value
                   composableAssetId, // replace with actual value
                 },
-                ethereum: {
-                  minimalDenom: ethereumMinimalDenom,
-                  erc20Address, // replace with actual value
-                  fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
-                  minimumTransfer: ethereumMinimumTransfer, // replace with actual value
-                },
-                solana: {
-                  mintAddress, // replace with actual value
-                  minimalDenom: solanaMinimalDenom,
-                  minimumTransfer: solanaMinimumTransfer, // replace with actual value
-                  fromCosmosFee: solanaFromCosmosFee, // replace with actual value
-                  displayDecimals, // replace with actual value
-                },
+                ethereum: erc20Address
+                  ? {
+                      minimalDenom: ethereumMinimalDenom,
+                      erc20Address, // replace with actual value
+                      fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                      minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+                    }
+                  : {},
+                solana: mintAddress
+                  ? {
+                      mintAddress, // replace with actual value
+                      minimalDenom: solanaMinimalDenom,
+                      minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                      fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                      displayDecimals, // replace with actual value
+                    }
+                  : {},
               };
             }),
             feeCurrencies: feeCurrencies?.map((feeCurrency) => {
@@ -413,7 +417,9 @@ async function processChainFiles() {
               const cosmosInfo: any = crossChainData['cosmos'][cosmosKey];
               const coinGeckoId =
                 coingeckoData.find(
-                  (coin) => coin.name.toUpperCase() === denom.toUpperCase()
+                  (coin) =>
+                    coin.name.toUpperCase() === denom.toUpperCase() ||
+                    (coin.name === 'BNC' && denom.includes('BNC_'))
                 )?.id || '';
               return {
                 coinDenom: denom,
@@ -428,19 +434,23 @@ async function processChainFiles() {
                   picassoAssetId, // replace with actual value
                   composableAssetId, // replace with actual value
                 },
-                ethereum: {
-                  minimalDenom: ethereumMinimalDenom,
-                  erc20Address, // replace with actual value
-                  fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
-                  minimumTransfer: ethereumMinimumTransfer, // replace with actual value
-                },
-                solana: {
-                  mintAddress, // replace with actual value
-                  minimalDenom: solanaMinimalDenom,
-                  minimumTransfer: solanaMinimumTransfer, // replace with actual value
-                  fromCosmosFee: solanaFromCosmosFee, // replace with actual value
-                  displayDecimals, // replace with actual value
-                },
+                ethereum: erc20Address
+                  ? {
+                      minimalDenom: ethereumMinimalDenom,
+                      erc20Address, // replace with actual value
+                      fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                      minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+                    }
+                  : {},
+                solana: mintAddress
+                  ? {
+                      mintAddress, // replace with actual value
+                      minimalDenom: solanaMinimalDenom,
+                      minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                      fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                      displayDecimals, // replace with actual value
+                    }
+                  : {},
               };
             }),
             feeCurrencies: [

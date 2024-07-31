@@ -39,19 +39,8 @@
         "minimalDenom": "uhuahua"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "BADDOG",
@@ -63,19 +52,8 @@
         "minimalDenom": "factory/chihuahua1x4q2vkrz4dfgd9hcw0p5m2f2nuv2uqmt9xr8k2/achihuahuawifhat"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "WOOF",
@@ -87,19 +65,8 @@
         "minimalDenom": "factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/uwoof"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "TACOS",
@@ -111,19 +78,8 @@
         "minimalDenom": "factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/utacos"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "WEED",
@@ -135,19 +91,8 @@
         "minimalDenom": "factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/uweed"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "BDOG",
@@ -159,19 +104,8 @@
         "minimalDenom": "factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/ubdog"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     },
     {
       "coinDenom": "CORSO",
@@ -183,19 +117,8 @@
         "minimalDenom": "factory/chihuahua13jawsn574rf3f0u5rhu7e8n6sayx5gkw3eddhp/ucorso"
       },
       "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "",
-        "erc20Address": "",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
-      },
-      "solana": {
-        "mintAddress": "",
-        "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
-      }
+      "ethereum": {},
+      "solana": {}
     }
   ],
   "feeCurrencies": [
