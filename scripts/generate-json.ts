@@ -506,8 +506,12 @@ async function processChainFiles() {
               //cosmos
 
               const cosmosKey = Object.keys(crossChainData['cosmos'])?.find(
-                (item) => crossChainData['cosmos'][item].denom === denom
+                (item) =>
+                  crossChainData['cosmos'][item].denom.toUpperCase() ===
+                  denom.toUpperCase()
               );
+              const cosmosMinimalDenom =
+                crossChainData['cosmos'][cosmosKey]?.minimalDenom || '';
 
               //solana
 
@@ -554,8 +558,7 @@ async function processChainFiles() {
                 coinDenom: crossChainData['solana'][currency]?.denom || 0,
                 coinGeckoId: coinGeckoId,
                 cosmos: {
-                  minimalDenom:
-                    crossChainData['cosmos'][cosmosKey]?.minimalDenom,
+                  minimalDenom: cosmosMinimalDenom,
                 },
                 polkadot: {
                   picassoAssetId,

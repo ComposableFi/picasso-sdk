@@ -872,7 +872,9 @@
       "coinDecimals": 9,
       "coinDenom": "mSOL",
       "coinGeckoId": "msol",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
@@ -893,7 +895,9 @@
       "coinDecimals": 9,
       "coinDenom": "JitoSOL",
       "coinGeckoId": "jito-staked-sol",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
@@ -914,7 +918,9 @@
       "coinDecimals": 9,
       "coinDenom": "bSOL",
       "coinGeckoId": "blazestake-staked-sol",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",
@@ -935,7 +941,9 @@
       "coinDecimals": 9,
       "coinDenom": "LST",
       "coinGeckoId": "liquid-staking-token",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp",
@@ -956,7 +964,9 @@
       "coinDecimals": 9,
       "coinDenom": "edgeSOL",
       "coinGeckoId": "edgevana-staked-sol",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt",
@@ -977,7 +987,9 @@
       "coinDecimals": 9,
       "coinDenom": "jupSOL",
       "coinGeckoId": "",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",
@@ -998,7 +1010,9 @@
       "coinDecimals": 9,
       "coinDenom": "hSOL",
       "coinGeckoId": "",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A"
+      },
       "polkadot": {},
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A",

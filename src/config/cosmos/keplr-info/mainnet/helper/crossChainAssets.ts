@@ -278,6 +278,48 @@ const crossChainAssets = {
       minimalDenom: 'So11111111111111111111111111111111111111112',
       denom: 'wSOL',
     },
+    mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So',
+      denom: 'mSOL',
+    },
+    J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn',
+      denom: 'JitoSOL',
+    },
+    bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1',
+      denom: 'bSOL',
+    },
+    LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp',
+      denom: 'LST',
+    },
+    edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt',
+      denom: 'edgeSOL',
+    },
+    jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v',
+      denom: 'jupSOL',
+    },
+    he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A',
+      denom: 'hSOL',
+    },
     EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm: {
       chainId: 'solana',
       decimals: 6,
@@ -783,17 +825,71 @@ const crossChainAssets = {
       minimalDenom: 'factory/sei1fl8pg59wfsgw2wp4aruk38zqccfnc2g8ptrm24/popeye',
       denom: 'POPEYE',
     },
+    SOL: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'SOL',
+      denom: 'SOL',
+    },
     ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump: {
       chainId: 'solana',
       decimals: 6,
       minimalDenom: 'ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump',
       denom: 'WHINE',
     },
+    HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj',
+      denom: 'hausSOL',
+    },
+    BLZEEuZUBVqFhj8adcCFPJvPVCiCyVmh3hkJMrU8KuJA: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'BLZEEuZUBVqFhj8adcCFPJvPVCiCyVmh3hkJMrU8KuJA',
+      denom: 'BLZE',
+    },
+    '5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV': {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: '5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV',
+      denom: 'cSOL',
+    },
+    '3JFC4cB56Er45nWVe29Bhnn5GnwQzSmHVf6eUq9ac91h': {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: '3JFC4cB56Er45nWVe29Bhnn5GnwQzSmHVf6eUq9ac91h',
+      denom: 'cmSOL',
+    },
+    '6mFgUsvXQTEYrYgowc9pVzYi49XEJA5uHA9gVDURc2pM': {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: '6mFgUsvXQTEYrYgowc9pVzYi49XEJA5uHA9gVDURc2pM',
+      denom: 'cJitoSOL',
+    },
+    FZ8KVvJ1QiytR29ykNz6kkhV6tvsB7XdiKW2s14DftFt: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'FZ8KVvJ1QiytR29ykNz6kkhV6tvsB7XdiKW2s14DftFt',
+      denom: 'cbSOL',
+    },
+    Comp4ssDzXcLeu2MnLuGNNFC4cmLPMng8qWHPvzAMU1h: {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: 'Comp4ssDzXcLeu2MnLuGNNFC4cmLPMng8qWHPvzAMU1h',
+      denom: 'compassSOL',
+    },
     ushd: {
       chainId: 'solana',
       decimals: 8,
       minimalDenom: 'ushd',
       denom: 'SHD',
+    },
+    '': {
+      chainId: 'solana',
+      decimals: 9,
+      minimalDenom: '',
+      denom: 'KSM',
     },
     'factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust': {
       chainId: 'stargaze-1',
@@ -935,6 +1031,7 @@ const crossChainAssets = {
     vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'DOT',
     },
     '9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc': {
@@ -946,6 +1043,7 @@ const crossChainAssets = {
     '9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'KSM',
     },
     EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM: {
@@ -981,16 +1079,19 @@ const crossChainAssets = {
     SOL: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'SOL',
       denom: 'SOL',
     },
     J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn',
       denom: 'JitoSOL',
     },
     mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So',
       denom: 'mSOL',
     },
     ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump: {
@@ -1002,61 +1103,73 @@ const crossChainAssets = {
     HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj',
       denom: 'hausSOL',
     },
     bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1',
       denom: 'bSOL',
     },
     LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp',
       denom: 'LST',
     },
     BLZEEuZUBVqFhj8adcCFPJvPVCiCyVmh3hkJMrU8KuJA: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'BLZEEuZUBVqFhj8adcCFPJvPVCiCyVmh3hkJMrU8KuJA',
       denom: 'BLZE',
     },
     edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt',
       denom: 'edgeSOL',
     },
     '5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV',
       denom: 'cSOL',
     },
     '3JFC4cB56Er45nWVe29Bhnn5GnwQzSmHVf6eUq9ac91h': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '3JFC4cB56Er45nWVe29Bhnn5GnwQzSmHVf6eUq9ac91h',
       denom: 'cmSOL',
     },
     '6mFgUsvXQTEYrYgowc9pVzYi49XEJA5uHA9gVDURc2pM': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '6mFgUsvXQTEYrYgowc9pVzYi49XEJA5uHA9gVDURc2pM',
       denom: 'cJitoSOL',
     },
     FZ8KVvJ1QiytR29ykNz6kkhV6tvsB7XdiKW2s14DftFt: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'FZ8KVvJ1QiytR29ykNz6kkhV6tvsB7XdiKW2s14DftFt',
       denom: 'cbSOL',
     },
     Comp4ssDzXcLeu2MnLuGNNFC4cmLPMng8qWHPvzAMU1h: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'Comp4ssDzXcLeu2MnLuGNNFC4cmLPMng8qWHPvzAMU1h',
       denom: 'compassSOL',
     },
     jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v',
       denom: 'jupSOL',
     },
     he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A: {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A',
       denom: 'hSOL',
     },
     So11111111111111111111111111111111111111112: {
@@ -1245,6 +1358,7 @@ const crossChainAssets = {
     '0x21c2c96Dbfa137E23946143c71AC8330F9B44001': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'DOT',
     },
     '0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC': {
@@ -1418,6 +1532,7 @@ const crossChainAssets = {
     '0xB44D6C324A6c15127F1451465f1E1DbC39142A60': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'KSM',
     },
     '0x9e0f65f56120fcaebe2c0675377332ec60abb1ac': {
@@ -1442,36 +1557,43 @@ const crossChainAssets = {
     '0xDa7Fa7248F62e051ccA4Af2522439A61d3976462': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So',
       denom: 'mSOL',
     },
     '0xBe90556468e5eE2A15Da99a5C0e045ED0B142143': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn',
       denom: 'JitoSOL',
     },
     '0xc0732030f4DB63cfE0323dd87b497AE4Ecb43CEc': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1',
       denom: 'bSOL',
     },
     '0x247dB9746755CF119d3AD68A6f8f60E7E650BFa1': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp',
       denom: 'LST',
     },
     '0x3d078B97918eDe947aF59E679eceF9fd87C32082': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt',
       denom: 'edgeSOL',
     },
     '0x5cD8cd3c5e8780cCBc74277f22b099FEFd04F5ef': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v',
       denom: 'jupSOL',
     },
     '0x963b37d30eee26d0D94C1E5a42Aa5B1371494cA2': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: 'he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A',
       denom: 'hSOL',
     },
     '0xCF7e6742266aD5a76ee042e26d3F766c34195E5f': {
@@ -1509,6 +1631,7 @@ const crossChainAssets = {
     '4': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'KSM',
     },
     '18': {
@@ -1589,6 +1712,7 @@ const crossChainAssets = {
     '79228162514264337593543950342': {
       chainId: 'solana',
       decimals: 9,
+      minimalDenom: '',
       denom: 'DOT',
     },
     '79228162514264337593543950376': {
