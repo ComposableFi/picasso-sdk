@@ -1,0 +1,63 @@
+{
+  "chainId": "umee-1",
+  "rest": "https://umee-cmp-api.polkachu.com",
+  "rpc": "https://umee-cmp-rpc.polkachu.com",
+  "chainName": "UMEE",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+  "cosmos": {
+    "walletUrl": "https://wallet.keplr.app/chains/umee",
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "umee",
+      "bech32PrefixAccPub": "umeepub",
+      "bech32PrefixValAddr": "umeevaloper",
+      "bech32PrefixValPub": "umeevaloperpub",
+      "bech32PrefixConsAddr": "umeevalcons",
+      "bech32PrefixConsPub": "umeevalconspub"
+    }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "99": {
+      "chainId": "centauri-1",
+      "destinationId": 20,
+      "tokens": [
+        "UMEE"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "UMEE",
+      "coinMinimalDenom": "uumee",
+      "coinDecimals": 6,
+      "coinGeckoId": "umee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+      "cosmos": {
+        "minimalDenom": "uumee"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "UMEE",
+      "coinMinimalDenom": "uumee",
+      "coinDecimals": 6,
+      "coinGeckoId": "umee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.06,
+          "average": 0.1,
+          "high": 0.14
+        }
+      }
+    }
+  ]
+}

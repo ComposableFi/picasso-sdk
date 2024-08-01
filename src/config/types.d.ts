@@ -1,6 +1,5 @@
 export interface CrosschainAsset {
   chainId: string;
-  network: string;
   decimals: number;
   minimalDenom: string;
   denom: string;

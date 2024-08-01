@@ -1,6 +1,4 @@
 // [FAST TRACK] Add asset info to a network here to enable the asset on that network (add to at least 2 networks)
-import ethereumAssets from './ethereumAssets';
-import solanaAssets from './solanaAssets';
 import { CrosschainAsset } from './types';
 
 const crossChainAssets = {
