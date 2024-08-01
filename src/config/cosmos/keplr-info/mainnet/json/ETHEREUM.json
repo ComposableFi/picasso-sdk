@@ -1086,10 +1086,10 @@
   ],
   "feeCurrencies": [
     {
-      "coinDenom": "SOL",
-      "coinMinimalDenom": "sol",
-      "coinDecimals": 9,
-      "coinGeckoId": "solana"
+      "coinDenom": "ETH",
+      "coinMinimalDenom": "wei",
+      "coinDecimals": 18,
+      "coinGeckoId": "ethereum"
     }
   ]
 }

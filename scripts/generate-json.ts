@@ -476,7 +476,6 @@ async function processChainFiles() {
 
           const solanaAssets = Object.keys(crossChainData['solana']);
 
-          console.log(solanaAssets, 'hmmmm?????');
           transformedData = {
             chainId,
             rest,
@@ -723,7 +722,12 @@ async function processChainFiles() {
         }
 
         fs.writeFileSync(
-          path.join(mainnetPath + '/json', file.replace('.ts', '.json')),
+          path.join(
+            mainnetPath + '/json',
+            (chainData?.chainName || chainData.config?.name)
+              .replace(' ', '')
+              .toLowerCase() + '.json'
+          ),
           JSON.stringify(transformedData, null, 2)
         );
       }
