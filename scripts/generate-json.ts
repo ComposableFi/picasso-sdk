@@ -571,7 +571,7 @@ async function processChainFiles() {
                   : {},
                 solana: currency
                   ? {
-                      currency, // replace with actual value
+                      mintAddress: currency, // replace with actual value
                       minimalDenom: solanaMinimalDenom,
                       minimumTransfer: solanaMinimumTransfer, // replace with actual value
                       fromCosmosFee: solanaFromCosmosFee, // replace with actual value
