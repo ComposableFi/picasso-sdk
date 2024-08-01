@@ -54,6 +54,7 @@ const coinGecko = [
   { name: 'USDe', id: 'ethena-usde' },
   { name: 'PEPE', id: 'pepe' },
   { name: 'USDT Ethereum', id: 'tether' },
+  { name: 'USDT Solana', id: 'tether' },
   { name: 'CRV', id: 'curve-dao-token' },
   { name: 'stTIA', id: 'stride-staked-tia' },
   { name: 'milkTIA', id: 'milkyway-staked-tia' },

@@ -1,15 +1,65 @@
 {
-  "cosmos": {
-    "enabled": false,
-    "handler": "SOLANA",
-    "config": {
-      "name": "Solana",
-      "chainId": "solana",
-      "assetId": "sol"
-    },
-    "hops": {}
+  "chainId": "solana",
+  "rest": "",
+  "rpc": "https://mainnet.helius-rpc.com/?api-key=65520d87-04b2-43a5-b5d5-35d5db0601b3",
+  "chainName": "Solana",
+  "chainSymbolImageUrl": "",
+  "chainType": "solana",
+  "channelMap": {
+    "1": {
+      "chainId": "centauri-1",
+      "destinationId": 71,
+      "tokens": [
+        "PICA",
+        "OSMO",
+        "SOL",
+        "ETH",
+        "wSOL",
+        "WHINE",
+        "LST",
+        "bSOL",
+        "JitoSOL",
+        "edgeSOL",
+        "hSOL",
+        "jupSOL",
+        "mSOL",
+        "BONK",
+        "WIF",
+        "USDT Solana",
+        "DAI",
+        "USDT Ethereum",
+        "CRV",
+        "wBTC",
+        "rETH",
+        "crvUSD",
+        "FRAX",
+        "FXS",
+        "frxETH",
+        "sfrxETH",
+        "sFRAX",
+        "pxETH",
+        "eETH",
+        "ENA",
+        "USDe",
+        "PEPE",
+        "ATOM",
+        "stATOM",
+        "IST",
+        "SEI",
+        "SCRT",
+        "STARS",
+        "BLD",
+        "STRD",
+        "SHD",
+        "SILK",
+        "DOT",
+        "KSM",
+        "XRP",
+        "COREUM",
+        "ASTRO"
+      ]
+    }
   },
-  "chainType": "cosmos",
   "currencies": [
     {
       "coinImageUrl": "",
@@ -377,7 +427,7 @@
       "coinImageUrl": "",
       "coinDecimals": 6,
       "coinDenom": "USDT Solana",
-      "coinGeckoId": "",
+      "coinGeckoId": "tether",
       "cosmos": {
         "minimalDenom": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
       },
