@@ -2,7 +2,7 @@
   "chainId": "umee-1",
   "rest": "https://umee-cmp-api.polkachu.com",
   "rpc": "https://umee-cmp-rpc.polkachu.com",
-  "chainName": "UX",
+  "chainName": "UMEE",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
   "cosmos": {
     "walletUrl": "https://wallet.keplr.app/chains/umee",
@@ -24,14 +24,12 @@
     "99": {
       "chainId": "centauri-1",
       "destinationId": 20,
-      "tokens": [
-        "UMEE"
-      ]
+      "tokens": ["UMEE"]
     }
   },
   "currencies": [
     {
-      "coinDenom": "UX",
+      "coinDenom": "UMEE",
       "coinMinimalDenom": "uumee",
       "coinDecimals": 6,
       "coinGeckoId": "umee",
@@ -46,7 +44,7 @@
   ],
   "feeCurrencies": [
     {
-      "coinDenom": "UX",
+      "coinDenom": "UMEE",
       "coinMinimalDenom": "uumee",
       "coinDecimals": 6,
       "coinGeckoId": "umee",
