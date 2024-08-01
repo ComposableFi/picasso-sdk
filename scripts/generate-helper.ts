@@ -115,8 +115,7 @@ const processFiles = () => {
       }
       // Dotsama 에셋 정보 추출
       if (currency.polkadot) {
-        const { picassoAssetId, composableAssetId } =
-          currency.polkadot?.picassoAssetId;
+        const { picassoAssetId, composableAssetId } = currency.polkadot || {};
         if (currency.polkadot?.picassoAssetId) {
           crossChainAssets['dotsama'][picassoAssetId] = {
             chainId: data.chainId,
@@ -222,6 +221,19 @@ export default tokensPerChannel;
 
   fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
   console.log('coinGecko.ts 파일이 생성되었습니다.');
-};
 
+  const crossChainAssetsOutputContent = `
+// [FAST TRACK] Add cross-chain asset info here
+const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} as const;
+
+export default crossChainAssets;
+`;
+
+  fs.writeFileSync(
+    crossChainAssetsOutputFilePath,
+    crossChainAssetsOutputContent,
+    'utf-8'
+  );
+  console.log('crossChainAssets.ts 파일이 생성되었습니다.');
+};
 processFiles();
