@@ -463,6 +463,117 @@ async function processChainFiles() {
               },
             ],
           };
+        } else if (chainData?.handler === 'SOLANA') {
+          const {
+            chainId,
+            chainName,
+            currencies,
+            chainSymbolImageUrl,
+            feeCurrencies,
+            nodeProvider,
+            rest,
+            rpc,
+            stakeCurrency,
+            features,
+            ...others
+          } = chainData || {};
+          transformedData = {
+            chainId,
+            rest,
+            rpc,
+            chainName,
+            chainSymbolImageUrl,
+            cosmos: others,
+            chainType: 'cosmos',
+            channelMap: refinedChannelMap,
+
+            currencies: currencies?.map((currency) => {
+              const picassoAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  crossChainData['dotsama'][key]?.denom ===
+                    currency?.coinDenom &&
+                  crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
+              );
+
+              const composableAssetId = Object.keys(
+                crossChainData['dotsama']
+              ).find(
+                (key) =>
+                  crossChainData['dotsama'][key]?.denom ===
+                    currency?.coinDenom &&
+                  crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
+              );
+
+              //ethereum
+              const ethereumInfo = ethereumAssetsData?.[currency.coinDenom];
+              const erc20Address = ethereumInfo?.erc20Address || '';
+              const ethereumFromCosmosFee =
+                ethereumInfo?.cosmosToEthereumFee || 0;
+              const ethereumMinimumTransfer =
+                ethereumInfo?.minimumTransfer || 0;
+
+              const ethereumMinimalDenom =
+                crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
+
+              //solana
+              const solanaInfo = solanaAssetsData?.[currency.coinDenom];
+              const mintAddress = solanaInfo?.mintAddress || '';
+              const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
+              const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
+              const displayDecimals =
+                solanaInfo?.realDecimals ||
+                crossChainData['solana'][mintAddress]?.decimals ||
+                0;
+
+              const solanaMinimalDenom =
+                crossChainData['solana'][mintAddress]?.minimalDenom || '';
+
+              const coinGeckoId =
+                coingeckoData.find(
+                  (coin) =>
+                    coin.name.toUpperCase() === currency.coinDenom.toUpperCase()
+                )?.id ||
+                currency?.coinGeckoId ||
+                '';
+              return {
+                ...currency,
+                coinGeckoId: coinGeckoId,
+                cosmos: { minimalDenom: currency.coinMinimalDenom },
+                polkadot: {
+                  picassoAssetId, // replace with actual value
+                  composableAssetId, // replace with actual value
+                },
+                ethereum: erc20Address
+                  ? {
+                      minimalDenom: ethereumMinimalDenom,
+                      erc20Address, // replace with actual value
+                      fromCosmosFee: ethereumFromCosmosFee, // replace with actual value
+                      minimumTransfer: ethereumMinimumTransfer, // replace with actual value
+                    }
+                  : {},
+                solana: mintAddress
+                  ? {
+                      mintAddress, // replace with actual value
+                      minimalDenom: solanaMinimalDenom,
+                      minimumTransfer: solanaMinimumTransfer, // replace with actual value
+                      fromCosmosFee: solanaFromCosmosFee, // replace with actual value
+                      displayDecimals, // replace with actual value
+                    }
+                  : {},
+              };
+            }),
+
+            feeCurrencies: [
+              {
+                coinDenom: 'SOL',
+                coinMinimalDenom: 'sol',
+                coinDecimals: 9,
+                coinGeckoId: 'solana',
+              },
+            ],
+          };
         }
 
         fs.writeFileSync(
