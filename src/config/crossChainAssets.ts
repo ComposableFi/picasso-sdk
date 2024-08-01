@@ -585,172 +585,160 @@ const crossChainAssets = {
     SOL: {
       chainId: 'solana-mainnet',
       denom: 'SOL',
-      minimalDenom: 'SOL', //  fake
+      minimalDenom: 'SOL', // fake
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
     },
-    [solanaAssets['JitoSOL'].mintAddress]: {
+    J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
-      minimalDenom: 'JitoSOL', //  fake
+      minimalDenom: 'JitoSOL', // fake
       denom: 'JitoSOL',
     },
-    [solanaAssets['mSOL'].mintAddress]: {
+    mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
-      minimalDenom: 'mSOL', //  fake
+      minimalDenom: 'mSOL', // fake
       denom: 'mSOL',
     },
-    [solanaAssets['WHINE'].mintAddress]: {
+    ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       realDecimals: 6,
-      minimalDenom: 'WHINE', //  fake
+      minimalDenom: 'WHINE', // fake
       denom: 'WHINE',
     },
-    [solanaAssets['hausSOL'].mintAddress]: {
+    HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
-      minimalDenom: 'hausSOL', //  fake
+      minimalDenom: 'hausSOL', // fake
       denom: 'hausSOL',
     },
-    // BlazeStake Staked SOL (bSOL)
-    [solanaAssets['bSOL'].mintAddress]: {
+    bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
-      minimalDenom: 'bSOL', //  fake
+      minimalDenom: 'bSOL', // fake
       denom: 'bSOL',
     },
-    // mrgn's Liquid Staking Token (LST)
-    [solanaAssets['LST'].mintAddress]: {
+    LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
       realDecimals: 9,
-      minimalDenom: 'LST', //  fake
+      minimalDenom: 'LST', // fake
       denom: 'LST',
     },
-    // Blaze (BLZE)
     BLZEEuZUBVqFhj8adcCFPJvPVCiCyVmh3hkJMrU8KuJA: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'BLZE', //  fake
+      minimalDenom: 'BLZE', // fake
       denom: 'BLZE',
     },
-    //  Edgevana Staked SOL
-    [solanaAssets['edgeSOL'].mintAddress]: {
+    edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'edgeSOL', //  fake
+      minimalDenom: 'edgeSOL', // fake
       denom: 'edgeSOL',
     },
-    //  solend cSOL
     '5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'cSOL', //  fake
+      minimalDenom: 'cSOL', // fake
       denom: 'cSOL',
     },
-    //  solend cmSOL
     '3JFC4cB56Er45nWVe29Bhnn5GnwQzSmHVf6eUq9ac91h': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'cmSOL', //  fake
+      minimalDenom: 'cmSOL', // fake
       denom: 'cmSOL',
     },
-    //  solend cmSOL
     '6mFgUsvXQTEYrYgowc9pVzYi49XEJA5uHA9gVDURc2pM': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'cJitoSOL', //  fake
+      minimalDenom: 'cJitoSOL', // fake
       denom: 'cJitoSOL',
     },
-    //  solend cbSOL
     FZ8KVvJ1QiytR29ykNz6kkhV6tvsB7XdiKW2s14DftFt: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'cbSOL', //  fake
+      minimalDenom: 'cbSOL', // fake
       denom: 'cbSOL',
     },
-    // compassSOL
     Comp4ssDzXcLeu2MnLuGNNFC4cmLPMng8qWHPvzAMU1h: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'compassSOL', //  fake
+      minimalDenom: 'compassSOL', // fake
       denom: 'compassSOL',
     },
-    // jupSOL
-    [solanaAssets['jupSOL'].mintAddress]: {
+    jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'jupSOL', //  fake
+      minimalDenom: 'jupSOL', // fake
       denom: 'jupSOL',
     },
-    // hSOL
-    [solanaAssets['hSOL'].mintAddress]: {
+    he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'hSOL', //  fake
+      minimalDenom: 'hSOL', // fake
       denom: 'hSOL',
     },
-    [solanaAssets['wSOL'].mintAddress]: {
+    So11111111111111111111111111111111111111112: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: 'wSOL', //fake
+      minimalDenom: 'wSOL', // fake
       denom: 'wSOL',
     },
-
-    [solanaAssets['WIF'].mintAddress]: {
+    EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
-      minimalDenom: 'WIF', //fake
+      minimalDenom: 'WIF', // fake
       denom: 'WIF',
     },
-    [solanaAssets['BONK'].mintAddress]: {
+    DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 5,
-      minimalDenom: 'BONK', //fake
+      minimalDenom: 'BONK', // fake
       denom: 'BONK',
     },
-    [solanaAssets['USDT Solana'].mintAddress]: {
+    Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
-      minimalDenom: 'USDT Solana', //fake
+      minimalDenom: 'USDT Solana', // fake
       denom: 'USDT Solana',
     },
-    //ethereum assets-> base denom is same as ethereum address
-    [solanaAssets['DAI'].mintAddress]: {
+    '6SYCn6Hj4X3XV6dzRk8vXa1UyZc4SBvAT7p3e1AcATAx': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['DAI'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x6B175474E89094C44Da98b954EedeAC495271d0F',
       denom: 'DAI',
       realDecimals: 18,
     },
-    [solanaAssets['ETH'].mintAddress]: {
+    EXZbXNMbdTbMYpr9J5MUDv29XnWfxLZYyCCtk2tCy7XV: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
@@ -758,127 +746,140 @@ const crossChainAssets = {
       denom: 'ETH',
       realDecimals: 18,
     },
-    [solanaAssets['USDT Ethereum'].mintAddress]: {
+    EHzGKxauSbvLD5xfX4P9StBdQWmyroferGg9aR6oDU9v: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['USDT Ethereum'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xdAC17F958D2ee523a2206206994597C13D831ec7',
       denom: 'USDT Ethereum',
     },
-    [solanaAssets['CRV'].mintAddress]: {
+    '4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['CRV'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xD533a949740bb3306d119CC777fa900bA034cd52',
       denom: 'CRV',
       realDecimals: 18,
     },
-    [solanaAssets['wBTC'].mintAddress]: {
+    GrkjmJt3KECe6Yi11LZxY88BJ69KyQnRtC6EioFAF1rD: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 8,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['wBTC'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
       denom: 'wBTC',
     },
-    [solanaAssets['rETH'].mintAddress]: {
+    urez9EJo4YNdpQQxw6xrLfF1J3EqJSaVwPGHFNG338B: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['rETH'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xae78736Cd615f374D3085123A210448E74Fc6393',
       denom: 'rETH',
       realDecimals: 18,
     },
-    [solanaAssets['crvUSD'].mintAddress]: {
+    EuBHrXZJa6ZNg6dfhiotxRoHpVpMg6ZsgNc6ZKJ9iUe2: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['crvUSD'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x674C6Ad92Fd080e4004b2312b45f796a192D27a0',
       denom: 'crvUSD',
       realDecimals: 18,
     },
-    [solanaAssets['FRAX'].mintAddress]: {
+    A9zVTbwXTwMA3WsYbB7mGKmDZp3UPfd64sjZfZQ8Lk49: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['FRAX'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x853d955aCEf822Db058eb8505911ED77F175b99e',
       denom: 'FRAX',
       realDecimals: 18,
     },
-    [solanaAssets['FXS'].mintAddress]: {
+    '6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['FXS'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x3432a789b141E659d494c8E074aC4d3c2bDe6a9d',
       denom: 'FXS',
       realDecimals: 18,
     },
-    [solanaAssets['frxETH'].mintAddress]: {
+    Go2RiPCxrU3dWH7cs52pm2Q2R45HB2ACbYBZsx1vadZd: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['frxETH'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x5E8422345238F34275888049021821E8E08CAa1f',
       denom: 'frxETH',
       realDecimals: 18,
     },
-    [solanaAssets['sfrxETH'].mintAddress]: {
+    E5Lz7Bi1KZD9VTYXsCZhkWDiztkNzPoX7Jk71xbTkEoA: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['sfrxETH'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xac3E018457B222d93114458476f3E3416Abbe38F',
       denom: 'sfrxETH',
       realDecimals: 18,
     },
-    [solanaAssets['sFRAX'].mintAddress]: {
+    '3AvDivzbMjfin9hSVUBjdYerKroX8jQuNyDVebdRiULE': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['sFRAX'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xc8E9b3D2AD2C8A2f97DC68cC94a4e7A1429bB10e',
       denom: 'sFRAX',
       realDecimals: 18,
     },
-    [solanaAssets['pxETH'].mintAddress]: {
+    B1cm3Wf5ZNUdgZ1eaXaNdiy9DCmQudfmspRMBb2TqDjb: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['pxETH'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x28CEd45aF1aFF4F5f26E9d07A6dE1170a49a5E06',
       denom: 'pxETH',
       realDecimals: 18,
     },
-    [solanaAssets['eETH'].mintAddress]: {
+    CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['eETH'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0x3446F1cD03C04b1BBFcd8d579D68E3fB7793dB95',
       denom: 'eETH',
       realDecimals: 18,
     },
-    [solanaAssets['ENA'].mintAddress]: {
+    Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['ENA'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xB749A7b4Ed5E5385418EC743aF6A88CF2641bC6D',
       denom: 'ENA',
       realDecimals: 18,
     },
-    [solanaAssets['USDe'].mintAddress]: {
+    GM4RuF5gLcytcq36wNJkX3UBYRKP9hQwJyyRWm6d6o47: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['USDe'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xC2cB1040220768554cf699b0d863A3cd4324ce32',
       denom: 'USDe',
       realDecimals: 18,
     },
-    [solanaAssets['PEPE'].mintAddress]: {
+    uVYDrZeCeq5T5RBHZZWHfsG12SDCm4MPHX2h8iAcXRh: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
-      minimalDenom: `transfer/channel-1/transfer/channel-52/${ethereumAssets['PEPE'].erc20Address}`,
+      minimalDenom:
+        'transfer/channel-1/transfer/channel-52/0xf14eEEdF22ca7c50a2A98E629E3a91C7f8456A35',
       denom: 'PEPE',
       realDecimals: 18,
     },
-
-    //cosmos assets
-    [solanaAssets['PICA'].mintAddress]: {
+    '966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 9,
@@ -886,36 +887,35 @@ const crossChainAssets = {
       denom: 'PICA',
       realDecimals: 12,
     },
-
-    [solanaAssets['OSMO'].mintAddress]: {
+    EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-3/uosmo',
       denom: 'OSMO',
     },
-    [solanaAssets['ATOM'].mintAddress]: {
+    '9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-4/uatom',
       denom: 'ATOM',
     },
-    [solanaAssets['stATOM'].mintAddress]: {
+    '8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-5/stuatom',
       denom: 'stATOM',
     },
-    [solanaAssets['IST'].mintAddress]: {
+    '3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-13/uist',
       denom: 'IST',
     },
-    [solanaAssets['SEI'].mintAddress]: {
+    BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
@@ -923,35 +923,35 @@ const crossChainAssets = {
         'transfer/channel-1/transfer/channel-3/transfer/channel-782/usei',
       denom: 'SEI',
     },
-    [solanaAssets['SCRT'].mintAddress]: {
+    '6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-14/uscrt',
       denom: 'SCRT',
     },
-    [solanaAssets['STARS'].mintAddress]: {
+    HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-6/ustars',
       denom: 'STARS',
     },
-    [solanaAssets['BLD'].mintAddress]: {
+    BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-13/ubld',
       denom: 'BLD',
     },
-    [solanaAssets['STRD'].mintAddress]: {
+    FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-5/ustrd',
       denom: 'STRD',
     },
-    [solanaAssets['SHD'].mintAddress]: {
+    '4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 8,
@@ -959,7 +959,7 @@ const crossChainAssets = {
         'transfer/channel-1/transfer/channel-26/cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm',
       denom: 'SHD',
     },
-    [solanaAssets['SILK'].mintAddress]: {
+    Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
@@ -967,7 +967,7 @@ const crossChainAssets = {
         'transfer/channel-1/transfer/channel-26/cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd',
       denom: 'SILK',
     },
-    [solanaAssets['DOT'].mintAddress]: {
+    vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       realDecimals: 10,
@@ -976,7 +976,7 @@ const crossChainAssets = {
         'transfer/channel-1/transfer/channel-2/transfer/channel-15/79228162514264337593543950342',
       denom: 'DOT',
     },
-    [solanaAssets['KSM'].mintAddress]: {
+    '9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       realDecimals: 12,
@@ -984,7 +984,7 @@ const crossChainAssets = {
       minimalDenom: 'transfer/channel-1/transfer/channel-2/4',
       denom: 'KSM',
     },
-    [solanaAssets['ARCH'].mintAddress]: {
+    BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       realDecimals: 18,
@@ -992,15 +992,14 @@ const crossChainAssets = {
       minimalDenom: 'transfer/channel-1/transfer/channel-50/aarch',
       denom: 'ARCH',
     },
-    [solanaAssets['COREUM'].mintAddress]: {
+    '4wQAZCwoJbBmxHNzg8bK7JqDr8x2YdrFfkBpmAdtuHyE': {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
       minimalDenom: 'transfer/channel-1/transfer/channel-56/ucore',
       denom: 'COREUM',
     },
-
-    [solanaAssets['XRP'].mintAddress]: {
+    DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW: {
       chainId: 'solana-mainnet',
       network: 'SOLANA',
       decimals: 6,
