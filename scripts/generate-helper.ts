@@ -16,6 +16,10 @@ interface TokenPerChannel {
   destinationId: number;
   tokens: string[];
 }
+interface CoinGeckoAsset {
+  name: string;
+  id: string;
+}
 
 const processFiles = () => {
   const dataDir = path.join(
@@ -35,10 +39,16 @@ const processFiles = () => {
     __dirname,
     '../src/config/cosmos/keplr-info/mainnet/helper/tokensPerChannel.ts'
   );
+  const coinGeckoOutputFilePath = path.join(
+    __dirname,
+    '../src/config/cosmos/keplr-info/mainnet/helper/coinGecko.ts'
+  );
 
   const ethereumAssets: Record<string, EthereumAsset> = {};
   const solanaAssets: Record<string, SolanaAsset> = {};
-  const tokensPerChannel: Record<string, SolanaAsset> = {};
+  const tokensPerChannel: Record<string, TokenPerChannel> = {};
+  const coinGeckoAssets: CoinGeckoAsset[] = [];
+
   // 폴더 내의 모든 JSON 파일 읽기
   const files = fs
     .readdirSync(dataDir)
@@ -73,6 +83,14 @@ const processFiles = () => {
             minimumTransfer: solana.minimumTransfer,
           };
         }
+      }
+
+      // CoinGecko 에셋 정보 추출
+      if (currency.coinGeckoId) {
+        coinGeckoAssets.push({
+          name: currency.coinDenom,
+          id: currency.coinGeckoId,
+        });
       }
     });
   });
@@ -129,6 +147,22 @@ export default tokensPerChannel;
     'utf-8'
   );
   console.log('tokensPerChannel.ts 파일이 생성되었습니다.');
+
+  // coinGecko.ts 파일로 저장
+  const coinGeckoOutputDir = path.dirname(coinGeckoOutputFilePath);
+  if (!fs.existsSync(coinGeckoOutputDir)) {
+    fs.mkdirSync(coinGeckoOutputDir);
+  }
+
+  const coinGeckoOutputContent = `
+ // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
+ const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} as const;
+ 
+ export default coinGecko;
+ `;
+
+  fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
+  console.log('coinGecko.ts 파일이 생성되었습니다.');
 };
 
 processFiles();
