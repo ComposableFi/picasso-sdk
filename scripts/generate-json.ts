@@ -477,6 +477,9 @@ async function processChainFiles() {
             features,
             ...others
           } = chainData || {};
+
+          const solanaAssets = Object.keys(crossChainData)['solana'];
+
           transformedData = {
             chainId,
             rest,
@@ -487,13 +490,13 @@ async function processChainFiles() {
             chainType: 'cosmos',
             channelMap: refinedChannelMap,
 
-            currencies: currencies?.map((currency) => {
+            currencies: solanaAssets?.map((currency) => {
               const picassoAssetId = Object.keys(
                 crossChainData['dotsama']
               ).find(
                 (key) =>
                   crossChainData['dotsama'][key]?.denom ===
-                    currency?.coinDenom &&
+                    crossChainData[currency]?.denom &&
                   crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
               );
 
@@ -502,13 +505,20 @@ async function processChainFiles() {
               ).find(
                 (key) =>
                   crossChainData['dotsama'][key]?.denom ===
-                    currency?.coinDenom &&
+                    crossChainData[currency]?.denom &&
                   crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
               );
 
               //ethereum
-              const ethereumInfo = ethereumAssetsData?.[currency.coinDenom];
-              const erc20Address = ethereumInfo?.erc20Address || '';
+              const ethereumAssetId = Object.keys(
+                crossChainData['ethereum']
+              ).find(
+                (key) =>
+                  crossChainData['ethereum'][key]?.denom.toUpperCase() ===
+                  crossChainData[currency]?.denom.toUpperCase()
+              );
+              const erc20Address = ethereumAssetId || '';
+              const ethereumInfo = ethereumAssetsData?.[erc20Address];
               const ethereumFromCosmosFee =
                 ethereumInfo?.cosmosToEthereumFee || 0;
               const ethereumMinimumTransfer =
@@ -518,7 +528,8 @@ async function processChainFiles() {
                 crossChainData['ethereum']?.[erc20Address]?.minimalDenom || '';
 
               //solana
-              const solanaInfo = solanaAssetsData?.[currency.coinDenom];
+
+              const solanaInfo = solanaAssetsData?.[currency];
               const mintAddress = solanaInfo?.mintAddress || '';
               const solanaFromCosmosFee = solanaInfo?.cosmosToSolanaFee || 0;
               const solanaMinimumTransfer = solanaInfo?.minimumTransfer || 0;
@@ -533,17 +544,16 @@ async function processChainFiles() {
               const coinGeckoId =
                 coingeckoData.find(
                   (coin) =>
-                    coin.name.toUpperCase() === currency.coinDenom.toUpperCase()
-                )?.id ||
-                currency?.coinGeckoId ||
-                '';
+                    coin.name.toUpperCase() ===
+                    crossChainData[currency]?.denom?.toUpperCase()
+                )?.id || '';
               return {
                 ...currency,
                 coinGeckoId: coinGeckoId,
                 cosmos: { minimalDenom: currency.coinMinimalDenom },
                 polkadot: {
-                  picassoAssetId, // replace with actual value
-                  composableAssetId, // replace with actual value
+                  picassoAssetId,
+                  composableAssetId,
                 },
                 ethereum: erc20Address
                   ? {
