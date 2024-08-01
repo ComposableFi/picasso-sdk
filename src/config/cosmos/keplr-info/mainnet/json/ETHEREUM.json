@@ -78,8 +78,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/ppica",
         "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 2000,
+        "minimumTransfer": 5000
       },
       "solana": {
         "currency": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
@@ -101,8 +101,8 @@
       "ethereum": {
         "minimalDenom": "0x6b175474e89094c44da98b954eedeac495271d0f",
         "erc20Address": "0x6b175474e89094c44da98b954eedeac495271d0f",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x6b175474e89094c44da98b954eedeac495271d0f",
@@ -124,8 +124,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
         "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 15,
+        "minimumTransfer": 40
       },
       "solana": {
         "currency": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
@@ -147,8 +147,8 @@
       "ethereum": {
         "minimalDenom": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
         "erc20Address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 3,
+        "minimumTransfer": 5
       },
       "solana": {
         "currency": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
@@ -170,8 +170,8 @@
       "ethereum": {
         "minimalDenom": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
         "erc20Address": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 30,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
@@ -193,8 +193,8 @@
       "ethereum": {
         "minimalDenom": "0xac3e018457b222d93114458476f3e3416abbe38f",
         "erc20Address": "0xac3e018457b222d93114458476f3e3416abbe38f",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {
         "currency": "0xac3e018457b222d93114458476f3e3416abbe38f",
@@ -216,8 +216,8 @@
       "ethereum": {
         "minimalDenom": "0x57e114b691db790c35207b2e685d4a43181e6061",
         "erc20Address": "0x57e114b691db790c35207b2e685d4a43181e6061",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 14,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x57e114b691db790c35207b2e685d4a43181e6061",
@@ -239,8 +239,8 @@
       "ethereum": {
         "minimalDenom": "0x853d955acef822db058eb8505911ed77f175b99e",
         "erc20Address": "0x853d955acef822db058eb8505911ed77f175b99e",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x853d955acef822db058eb8505911ed77f175b99e",
@@ -262,8 +262,8 @@
       "ethereum": {
         "minimalDenom": "0x5e8422345238f34275888049021821e8e08caa1f",
         "erc20Address": "0x5e8422345238f34275888049021821e8e08caa1f",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {
         "currency": "0x5e8422345238f34275888049021821e8e08caa1f",
@@ -285,8 +285,8 @@
       "ethereum": {
         "minimalDenom": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
         "erc20Address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.00025,
+        "minimumTransfer": 0.0006
       },
       "solana": {
         "currency": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
@@ -308,8 +308,8 @@
       "ethereum": {
         "minimalDenom": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
         "erc20Address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {}
     },
@@ -325,8 +325,8 @@
       "ethereum": {
         "minimalDenom": "0xae78736cd615f374d3085123a210448e74fc6393",
         "erc20Address": "0xae78736cd615f374d3085123a210448e74fc6393",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {
         "currency": "0xae78736cd615f374d3085123a210448e74fc6393",
@@ -348,8 +348,8 @@
       "ethereum": {
         "minimalDenom": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
         "erc20Address": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
@@ -371,8 +371,8 @@
       "ethereum": {
         "minimalDenom": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
         "erc20Address": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {
         "currency": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
@@ -394,8 +394,8 @@
       "ethereum": {
         "minimalDenom": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
         "erc20Address": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {
         "currency": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
@@ -417,8 +417,8 @@
       "ethereum": {
         "minimalDenom": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
         "erc20Address": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
@@ -440,8 +440,8 @@
       "ethereum": {
         "minimalDenom": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
         "erc20Address": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
       },
       "solana": {}
     },
@@ -457,8 +457,8 @@
       "ethereum": {
         "minimalDenom": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
         "erc20Address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
@@ -480,8 +480,8 @@
       "ethereum": {
         "minimalDenom": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
         "erc20Address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 3000000,
+        "minimumTransfer": 5000000
       },
       "solana": {
         "currency": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
@@ -503,8 +503,8 @@
       "ethereum": {
         "minimalDenom": "0xdac17f958d2ee523a2206206994597c13d831ec7",
         "erc20Address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0xdac17f958d2ee523a2206206994597c13d831ec7",
@@ -526,8 +526,8 @@
       "ethereum": {
         "minimalDenom": "0xd533a949740bb3306d119cc777fa900ba034cd52",
         "erc20Address": "0xd533a949740bb3306d119cc777fa900ba034cd52",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 30,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0xd533a949740bb3306d119cc777fa900ba034cd52",
@@ -549,8 +549,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-4/uatom",
         "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
       },
       "solana": {
         "currency": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
@@ -572,8 +572,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-6/ustars",
         "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 875,
+        "minimumTransfer": 2000
       },
       "solana": {
         "currency": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
@@ -598,8 +598,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-13/uist",
         "erc20Address": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
@@ -621,8 +621,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-5/stuatom",
         "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
       },
       "solana": {
         "currency": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
@@ -647,8 +647,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-13/ubld",
         "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 165,
+        "minimumTransfer": 400
       },
       "solana": {
         "currency": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
@@ -672,8 +672,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-3/transfer/channel-782/usei",
         "erc20Address": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 27,
+        "minimumTransfer": 50
       },
       "solana": {
         "currency": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
@@ -696,7 +696,7 @@
         "minimalDenom": "transfer/channel-2/transfer/channel-50/aarch",
         "erc20Address": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
         "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "minimumTransfer": 600
       },
       "solana": {
         "currency": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
@@ -718,8 +718,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-14/uscrt",
         "erc20Address": "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 34,
+        "minimumTransfer": 80
       },
       "solana": {
         "currency": "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C",
@@ -741,8 +741,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-5/ustrd",
         "erc20Address": "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 7,
+        "minimumTransfer": 17
       },
       "solana": {
         "currency": "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587",
@@ -764,8 +764,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
         "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
       },
       "solana": {
         "currency": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
@@ -787,8 +787,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
         "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.5,
+        "minimumTransfer": 1
       },
       "solana": {
         "currency": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
@@ -811,7 +811,7 @@
         "minimalDenom": "transfer/channel-2/transfer/channel-56/ucore",
         "erc20Address": "0x9e0f65f56120fcaebe2c0675377332ec60abb1ac",
         "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "minimumTransfer": 490
       },
       "solana": {
         "currency": "0x9e0f65f56120fcaebe2c0675377332ec60abb1ac",
@@ -833,8 +833,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
         "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 35,
+        "minimumTransfer": 94
       },
       "solana": {
         "currency": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
@@ -856,8 +856,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/So11111111111111111111111111111111111111112",
         "erc20Address": "0xd1D82d3Ab815E0B47e38EC2d666c5b8AA05Ae501",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.055,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0xd1D82d3Ab815E0B47e38EC2d666c5b8AA05Ae501",
@@ -877,8 +877,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
         "erc20Address": "0xDa7Fa7248F62e051ccA4Af2522439A61d3976462",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0xDa7Fa7248F62e051ccA4Af2522439A61d3976462",
@@ -898,8 +898,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
         "erc20Address": "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143",
@@ -919,8 +919,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",
         "erc20Address": "0xc0732030f4DB63cfE0323dd87b497AE4Ecb43CEc",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0xc0732030f4DB63cfE0323dd87b497AE4Ecb43CEc",
@@ -940,8 +940,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/LSTxxxnJzKDFSLr4dUkPcmCf5VyryEqzPLz5j4bpxFp",
         "erc20Address": "0x247dB9746755CF119d3AD68A6f8f60E7E650BFa1",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0x247dB9746755CF119d3AD68A6f8f60E7E650BFa1",
@@ -961,8 +961,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt",
         "erc20Address": "0x3d078B97918eDe947aF59E679eceF9fd87C32082",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0x3d078B97918eDe947aF59E679eceF9fd87C32082",
@@ -982,8 +982,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",
         "erc20Address": "0x5cD8cd3c5e8780cCBc74277f22b099FEFd04F5ef",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0x5cD8cd3c5e8780cCBc74277f22b099FEFd04F5ef",
@@ -1003,8 +1003,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A",
         "erc20Address": "0x963b37d30eee26d0D94C1E5a42Aa5B1371494cA2",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 0.05,
+        "minimumTransfer": 0.2
       },
       "solana": {
         "currency": "0x963b37d30eee26d0D94C1E5a42Aa5B1371494cA2",
@@ -1026,8 +1026,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
         "erc20Address": "0xCF7e6742266aD5a76ee042e26d3F766c34195E5f",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 3.5,
+        "minimumTransfer": 9
       },
       "solana": {
         "currency": "0xCF7e6742266aD5a76ee042e26d3F766c34195E5f",
@@ -1049,8 +1049,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
         "erc20Address": "0x4aeF9BD3fBb09d8f374436D9ec25711A1Be9BaCb",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 300000,
+        "minimumTransfer": 1200000
       },
       "solana": {
         "currency": "0x4aeF9BD3fBb09d8f374436D9ec25711A1Be9BaCb",
@@ -1072,8 +1072,8 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-71/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
         "erc20Address": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
-        "fromCosmosFee": 0,
-        "minimumTransfer": 0
+        "fromCosmosFee": 10,
+        "minimumTransfer": 30
       },
       "solana": {
         "currency": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
