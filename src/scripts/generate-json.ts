@@ -1,3 +1,4 @@
+//DEPRECATED: Used to abstract chain data from chain files and generate json files for each chain
 import fs from 'fs';
 import path from 'path';
 import { imageList } from './imageList';
