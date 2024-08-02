@@ -30,8 +30,20 @@
     "id": "celestia"
   },
   {
-    "name": "PICA",
-    "id": "picasso"
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
   },
   {
     "name": "HUAHUA",
@@ -162,14 +174,6 @@
     "id": "kusama"
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
     "name": "GLMR",
     "id": "moonbeam"
   },
@@ -192,22 +196,6 @@
   {
     "name": "milkTIA",
     "id": "milkyway-staked-tia"
-  },
-  {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
   },
   {
     "name": "KSM",
@@ -286,6 +274,10 @@
     "id": "stargaze"
   },
   {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
     "name": "stTIA",
     "id": "stride-staked-tia"
   },
@@ -308,6 +300,14 @@
   {
     "name": "UMEE",
     "id": "umee"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "PICA",
+    "id": "picasso"
   }
 ] as const;
  

@@ -24,10 +24,10 @@ const crossChainAssets = {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
     "undefined": {
-      "chainId": "2125",
-      "decimals": 12,
-      "denom": "TNKR",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg"
+      "chainId": "1000",
+      "decimals": 6,
+      "denom": "USDT Kusama",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
     },
     "utia": {
       "chainId": "celestia",
@@ -35,12 +35,6 @@ const crossChainAssets = {
       "minimalDenom": "utia",
       "denom": "TIA",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
-    },
-    "ppica": {
-      "chainId": "centauri-1",
-      "decimals": 12,
-      "minimalDenom": "ppica",
-      "denom": "PICA"
     },
     "uhuahua": {
       "chainId": "chihuahua-1",
@@ -463,6 +457,12 @@ const crossChainAssets = {
       "minimalDenom": "uumee",
       "denom": "UMEE",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+    },
+    "ppica": {
+      "chainId": "centauri-1",
+      "decimals": 12,
+      "minimalDenom": "ppica",
+      "denom": "PICA"
     }
   },
   "solana": {
@@ -487,11 +487,11 @@ const crossChainAssets = {
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
-    "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ": {
-      "chainId": "centauri-1",
+    "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
+      "chainId": "polkadot",
       "decimals": 12,
-      "minimalDenom": "ppica",
-      "denom": "PICA"
+      "denom": "KSM",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
     "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J": {
       "chainId": "2019",
@@ -511,12 +511,6 @@ const crossChainAssets = {
       "minimalDenom": "uatom",
       "denom": "ATOM",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
-    },
-    "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
-      "chainId": "polkadot",
-      "decimals": 12,
-      "denom": "KSM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
     "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET": {
       "chainId": "neutron-1",
@@ -719,6 +713,12 @@ const crossChainAssets = {
       "minimalDenom": "stuatom",
       "denom": "stATOM",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png"
+    },
+    "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ": {
+      "chainId": "centauri-1",
+      "decimals": 12,
+      "minimalDenom": "ppica",
+      "denom": "PICA"
     }
   },
   "ethereum": {
@@ -743,11 +743,11 @@ const crossChainAssets = {
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
-    "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c": {
-      "chainId": "centauri-1",
+    "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
+      "chainId": "polkadot",
       "decimals": 12,
-      "minimalDenom": "ppica",
-      "denom": "PICA"
+      "denom": "KSM",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
     "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
       "chainId": "2019",
@@ -908,12 +908,6 @@ const crossChainAssets = {
       "denom": "CRV",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg"
     },
-    "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
-      "chainId": "polkadot",
-      "decimals": 12,
-      "denom": "KSM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
-    },
     "0x9243b3615ed297403c0cafa156c3fa16057526ca": {
       "chainId": "osmosis-1",
       "decimals": 6,
@@ -1038,6 +1032,12 @@ const crossChainAssets = {
       "minimalDenom": "stuatom",
       "denom": "stATOM",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png"
+    },
+    "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c": {
+      "chainId": "centauri-1",
+      "decimals": 12,
+      "minimalDenom": "ppica",
+      "denom": "PICA"
     }
   },
   "dotsama": {
@@ -1092,7 +1092,7 @@ const crossChainAssets = {
       "denom": "SEI"
     },
     "130": {
-      "chainId": "2087",
+      "chainId": "1000",
       "decimals": 6,
       "denom": "USDT Kusama",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
