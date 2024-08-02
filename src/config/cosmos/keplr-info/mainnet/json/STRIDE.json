@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "stride-1",
   "rest": "https://stride-cmp-api.polkachu.com",
   "rpc": "https://stride-cmp-rpc.polkachu.com",

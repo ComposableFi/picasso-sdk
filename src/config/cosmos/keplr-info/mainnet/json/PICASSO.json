@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2087",
   "rest": "",
   "rpc": "wss://picasso-rpc.composable.finance",

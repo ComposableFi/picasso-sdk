@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "coreum-mainnet-1",
   "rest": "https://rest-coreum.ecostake.com",
   "rpc": "https://full-node.mainnet-1.coreum.dev:26657",

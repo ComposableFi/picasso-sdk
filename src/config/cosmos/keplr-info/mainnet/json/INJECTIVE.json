@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "injective-1",
   "rest": "https://injective-api.polkachu.com",
   "rpc": "https://injective-rpc.polkachu.com",

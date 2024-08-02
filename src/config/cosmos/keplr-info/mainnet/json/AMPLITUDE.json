@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2124",
   "rest": "",
   "rpc": "wss://rpc-amplitude.pendulumchain.tech",

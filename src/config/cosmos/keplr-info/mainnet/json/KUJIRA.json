@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "kaiyo-1",
   "rest": "https://kujira-api.polkachu.com",
   "rpc": "https://kujira-rpc.polkachu.com",

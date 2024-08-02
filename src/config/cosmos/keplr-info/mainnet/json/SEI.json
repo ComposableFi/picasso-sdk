@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "pacific-1",
   "rest": "https://sei-api.polkachu.com",
   "rpc": "https://sei-rpc.polkachu.com",

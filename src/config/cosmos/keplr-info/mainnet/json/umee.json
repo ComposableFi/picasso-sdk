@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "umee-1",
   "rest": "https://umee-cmp-api.polkachu.com",
   "rpc": "https://umee-cmp-rpc.polkachu.com",

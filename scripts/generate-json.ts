@@ -36,7 +36,7 @@ interface CustomChainInfo {
   chainName: string;
   rest?: string;
   rpc: string;
-
+  enabled: boolean;
   channelMap: {
     [key: string]: {
       chainId: string;
@@ -170,11 +170,12 @@ async function processChainFiles() {
       PICASSO: {
         chainId: '2087',
       },
+
       POLKADOT: {
-        chainId: '',
+        chainId: 'polkadot',
       },
       KUSAMA: {
-        chainId: '',
+        chainId: 'kusama',
       },
       COMPOSABLE: {
         chainId: '2019',
@@ -247,7 +248,6 @@ async function processChainFiles() {
             chainType: 'cosmos',
             channelMap: refinedChannelMap,
 
-            currencies2: [],
             currencies: cosmosAssets?.map((minimalDenom) => {
               const currency = currencies.find(
                 (item) =>
@@ -359,9 +359,17 @@ async function processChainFiles() {
             features,
             ...others
           } = chainData || {};
+          let channelMap: any = {};
           let refinedHops = {};
+          channelMap = channelMapData[chainData?.chainId || ''];
+
           for (const key in chainData.hops) {
-            refinedHops[polkadotMap[key]?.chainId] = chainData.hops[key];
+            if (
+              polkadotMap[key]?.chainId &&
+              chainData.hops[key].type !== 'IBC'
+            ) {
+              refinedHops[polkadotMap[key]?.chainId] = chainData.hops[key];
+            }
           }
           const tokensArray: any = Object.values(chainData.hops).reduce(
             (acc: string[], item: any) => {
@@ -532,9 +540,7 @@ async function processChainFiles() {
             currencies: solanaAssets?.map((currency) => {
               //get image
               const denom = crossChainData['solana'][currency]?.denom || '';
-              const tokenFileName = imageList.find(
-                (key) => key.split('.')[0].toUpperCase() === denom.toUpperCase()
-              );
+
               const picassoAssetId = Object.keys(
                 crossChainData['dotsama']
               ).find(
@@ -773,7 +779,7 @@ async function processChainFiles() {
               .replace(/ /g, '')
               .toLowerCase() + '.json'
           ),
-          JSON.stringify(transformedData, null, 2)
+          JSON.stringify({ enabled: true, ...transformedData }, null, 2)
         );
       }
     }

@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "kusama",
   "rest": "",
   "rpc": "wss://kusama-rpc.polkadot.io",

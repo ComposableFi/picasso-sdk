@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "crescent-1",
   "rest": "https://crescent-cmp-api.polkachu.com",
   "rpc": "https://crescent-cmp-rpc.polkachu.com",

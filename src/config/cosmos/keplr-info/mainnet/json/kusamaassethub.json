@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "1000",
   "rest": "",
   "rpc": "wss://statemine-rpc.dwellir.com",

@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2125",
   "rest": "",
   "rpc": "wss://tinkernet-rpc.dwellir.com",

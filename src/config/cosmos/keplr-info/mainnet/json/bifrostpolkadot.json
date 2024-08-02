@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2030",
   "rest": "",
   "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",

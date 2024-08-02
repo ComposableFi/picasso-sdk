@@ -29,6 +29,42 @@ interface CrossChainAssets {
   dotsama: Record<string, CrosschainAsset>;
 }
 
+interface NetworkInfo {
+  name: string;
+  image: string;
+  rpc: string;
+  rest?: string;
+  chain_type: 'polkadot' | 'solana' | 'ethereum';
+  chainId: string;
+  feeAssetId: string;
+  polkadot?: {
+    ss58Format: number;
+    isParachain: boolean;
+    relayChain: 'polkadot' | 'kusama';
+    hops: {
+      [key: string]: {
+        type: 'xcm';
+        xcmType: string;
+        version: string;
+        tokens: string[];
+      };
+    };
+  };
+  cosmos?: {
+    bip44: { coinType: number };
+    bech32Config: {
+      bech32PrefixAccAddr: string;
+      bech32PrefixAccPub: string;
+      bech32PrefixValAddr: string;
+      bech32PrefixValPub: string;
+      bech32PrefixConsAddr: string;
+      bech32PrefixConsPub: string;
+    };
+  };
+  enabled: boolean;
+  network_to?: string[];
+}
+
 const dataDir = path.join(
   __dirname,
   '../src/config/cosmos/keplr-info/mainnet/json'
@@ -54,6 +90,12 @@ const crossChainAssetsOutputFilePath = path.join(
   __dirname,
   '../src/config/cosmos/keplr-info/mainnet/helper/crossChainAssets.ts'
 );
+
+const networksOutputFilePath = path.join(
+  __dirname,
+  '../src/config/cosmos/keplr-info/mainnet/helper/networks.ts'
+);
+
 const processFiles = () => {
   const ethereumAssets: Record<string, EthereumAsset> = {};
   const solanaAssets: Record<string, SolanaAsset> = {};
@@ -65,7 +107,7 @@ const processFiles = () => {
     ethereum: {},
     dotsama: {},
   };
-
+  const networks: Record<string, NetworkInfo> = {};
   // 폴더 내의 모든 JSON 파일 읽기
   const files = fs
     .readdirSync(dataDir)
@@ -74,6 +116,24 @@ const processFiles = () => {
   files.forEach((file) => {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    // Network 정보 추출
+    networks[data.chainId] = {
+      name: data.chainName,
+      image: data.chainSymbolImageUrl,
+      rpc: data.rpc,
+      rest: data.rest,
+      chain_type: data.chainType,
+      chainId: data.chainId,
+      feeAssetId: data.currencies[0].coinDenom,
+      polkadot: data.polkadot,
+      cosmos: data.cosmos,
+      enabled: data.enabled,
+      network_to: [
+        ...Object.keys(data.polkadot['hops']),
+        ...Object.values(data.channelMap).map((item: any) => item.chainId),
+      ],
+    };
+
     // tokensPerChannel 정보 추출
     if (data.channelMap) {
       tokensPerChannel[data.chainId] = data.channelMap;
@@ -211,6 +271,19 @@ export default tokensPerChannel;
   );
   console.log('tokensPerChannel.ts 파일이 생성되었습니다.');
 
+  const networksOutputDir = path.dirname(networksOutputFilePath);
+  if (!fs.existsSync(networksOutputDir)) {
+    fs.mkdirSync(networksOutputDir);
+  }
+  const networksOutputContent = `
+  // [FAST TRACK] Add info for networks here
+  const networks = ${JSON.stringify(networks, null, 2)} as const;
+  
+  export default networks;
+  `;
+
+  fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
+  console.log('networks.ts 파일이 생성되었습니다.');
   // coinGecko.ts 파일로 저장
   const coinGeckoOutputDir = path.dirname(coinGeckoOutputFilePath);
   if (!fs.existsSync(coinGeckoOutputDir)) {

@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "cosmoshub-4",
   "rest": "https://cosmos-cmp-api.polkachu.com",
   "rpc": "https://cosmos-cmp-rpc.polkachu.com",

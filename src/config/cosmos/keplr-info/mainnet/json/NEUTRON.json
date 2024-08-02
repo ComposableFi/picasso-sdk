@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "neutron-1",
   "rest": "https://neutron-cmp-api.polkachu.com",
   "rpc": "https://neutron-cmp-rpc.polkachu.com",

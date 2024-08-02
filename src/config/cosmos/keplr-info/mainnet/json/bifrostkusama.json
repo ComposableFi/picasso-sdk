@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2001",
   "rest": "",
   "rpc": "wss://bifrost-rpc.liebi.com/ws",

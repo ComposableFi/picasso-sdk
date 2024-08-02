@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2006",
   "rest": "",
   "rpc": "wss://rpc.astar.network",

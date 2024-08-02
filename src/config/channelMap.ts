@@ -6,7 +6,7 @@ const ibcChannelMap = {
       tokens: ['UHUAHUA'],
     },
     2: {
-      chainId: 'picasso',
+      chainId: '2087',
       destinationId: 17,
       tokens: ['PICA', 'KSM', 'DOT', 'UMEE', 'ASTR', 'SDN', 'USDT Kusama'],
     },
@@ -179,7 +179,7 @@ const ibcChannelMap = {
       tokens: ['ARCH'],
     },
   },
-  picasso: {
+  '2087': {
     15: {
       chainId: 'composable',
       destinationId: 15,

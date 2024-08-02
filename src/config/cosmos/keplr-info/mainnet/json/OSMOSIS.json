@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "osmosis-1",
   "rest": "https://osmosis-cmp-api.polkachu.com",
   "rpc": "https://osmosis-cmp-rpc.polkachu.com",

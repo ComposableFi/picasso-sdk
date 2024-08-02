@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "polkadot",
   "rest": "",
   "rpc": "wss://rpc.polkadot.io",

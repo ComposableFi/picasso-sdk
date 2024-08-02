@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2007",
   "rest": "",
   "rpc": "wss://shiden-rpc.dwellir.com",

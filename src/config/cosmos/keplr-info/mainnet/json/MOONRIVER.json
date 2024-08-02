@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2023",
   "rest": "",
   "rpc": "wss://moonriver-rpc.dwellir.com",

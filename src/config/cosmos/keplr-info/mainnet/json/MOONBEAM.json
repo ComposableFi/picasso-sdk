@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "2004",
   "rest": "",
   "rpc": "wss://wss.api.moonbeam.network",

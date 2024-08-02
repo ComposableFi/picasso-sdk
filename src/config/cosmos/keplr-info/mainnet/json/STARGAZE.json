@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "stargaze-1",
   "rest": "https://stargaze-cmp-api.polkachu.com",
   "rpc": "https://stargaze-cmp-rpc.polkachu.com",

@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "quicksilver-2",
   "rest": "https://quicksilver-api.polkachu.com",
   "rpc": "https://quicksilver-rpc.polkachu.com",

@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "archway-1",
   "rest": "https://api.mainnet.archway.io",
   "rpc": "https://rpc.mainnet.archway.io",

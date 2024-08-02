@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "chihuahua-1",
   "rest": "https://chihuahua-api.polkachu.com",
   "rpc": "https://chihuahua-rpc.polkachu.com",

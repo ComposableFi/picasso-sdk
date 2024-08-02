@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "chainId": "agoric-3",
   "rest": "https://agoric-cmp-api.polkachu.com",
   "rpc": "https://agoric-cmp-rpc.polkachu.com",
