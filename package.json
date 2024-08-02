@@ -19,7 +19,8 @@
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public",
     "generate-json": "ts-node ./scripts/generate-json.ts",
-    "generate-helper": "ts-node ./scripts/generate-helper.ts"
+    "generate-helper": "ts-node ./scripts/generate-helper.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
@@ -45,6 +46,7 @@
     "dist/**/*"
   ],
   "devDependencies": {
+    "husky": "^9.1.4",
     "typescript": "^5.5.2"
   }
 }
