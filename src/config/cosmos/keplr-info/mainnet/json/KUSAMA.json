@@ -4,16 +4,6 @@
   "rest": "",
   "rpc": "wss://kusama-rpc.polkadot.io",
   "chainName": "Kusama",
-  "hops": {
-    "2087": {
-      "type": "XCM",
-      "xcmType": "xcmPallet.reserveTransferAssets",
-      "version": "V2",
-      "tokens": [
-        "4"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
   "chainType": "polkadot",
   "polkadot": {

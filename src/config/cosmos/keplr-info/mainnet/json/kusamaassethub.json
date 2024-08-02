@@ -4,16 +4,6 @@
   "rest": "",
   "rpc": "wss://statemine-rpc.dwellir.com",
   "chainName": "Kusama Asset Hub",
-  "hops": {
-    "2087": {
-      "type": "XCM",
-      "xcmType": "polkadotXcm.limitedReserveTransferAssets",
-      "version": "V2",
-      "tokens": [
-        "130"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",
   "chainType": "polkadot",
   "polkadot": {

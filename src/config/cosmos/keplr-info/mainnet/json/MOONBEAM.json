@@ -4,16 +4,6 @@
   "rest": "",
   "rpc": "wss://wss.api.moonbeam.network",
   "chainName": "Moonbeam",
-  "hops": {
-    "2019": {
-      "type": "XCM",
-      "xcmType": "polkadotXcm.limitedReserveTransferAssets",
-      "version": "V2",
-      "tokens": [
-        "79228162514264337593543950376"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
   "chainType": "polkadot",
   "polkadot": {

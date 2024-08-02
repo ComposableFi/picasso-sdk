@@ -4,17 +4,6 @@
   "rest": "",
   "rpc": "wss://bifrost-rpc.liebi.com/ws",
   "chainName": "BiFrost Kusama",
-  "hops": {
-    "2087": {
-      "type": "XCM",
-      "xcmType": "xTokens.transfer",
-      "version": "V2",
-      "tokens": [
-        "31",
-        "32"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostKusama.svg",
   "chainType": "polkadot",
   "polkadot": {

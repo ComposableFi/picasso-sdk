@@ -4,14 +4,6 @@
   "rest": "",
   "rpc": "wss://rpc-amplitude.pendulumchain.tech",
   "chainName": "amplitude",
-  "hops": {
-    "2019": {
-      "type": "XCM",
-      "xcmType": "xTokens.transfer",
-      "version": "V2",
-      "tokens": []
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/amplitude.svg",
   "chainType": "polkadot",
   "polkadot": {
@@ -23,11 +15,24 @@
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V2",
-        "tokens": []
+        "tokens": [
+          "0000"
+        ]
       }
     }
   },
-  "currencies": [],
+  "currencies": [
+    {
+      "coinDenom": "",
+      "coinDecimals": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
   "feeCurrencies": [
     {
       "coinDenom": "ASTR",

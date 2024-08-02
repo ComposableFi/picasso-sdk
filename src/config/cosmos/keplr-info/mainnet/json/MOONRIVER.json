@@ -4,16 +4,6 @@
   "rest": "",
   "rpc": "wss://moonriver-rpc.dwellir.com",
   "chainName": "Moonriver",
-  "hops": {
-    "2087": {
-      "type": "XCM",
-      "xcmType": "polkadotXcm.limitedReserveTransferAssets",
-      "version": "V2",
-      "tokens": [
-        "23"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonriver.svg",
   "chainType": "polkadot",
   "polkadot": {

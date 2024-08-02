@@ -4,16 +4,6 @@
   "rest": "",
   "rpc": "wss://rpc.polkadot.io",
   "chainName": "Polkadot",
-  "hops": {
-    "2019": {
-      "type": "XCM",
-      "xcmType": "xcmPallet.limitedReserveTransferAssets",
-      "version": "V2",
-      "tokens": [
-        "4"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
   "chainType": "polkadot",
   "polkadot": {

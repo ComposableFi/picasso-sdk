@@ -4,17 +4,6 @@
   "rest": "",
   "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
   "chainName": "BiFrost Polkadot",
-  "hops": {
-    "2019": {
-      "type": "XCM",
-      "xcmType": "xTokens.transfer",
-      "version": "V2",
-      "tokens": [
-        "79228162514264337593543950369",
-        "79228162514264337593543950370"
-      ]
-    }
-  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostPolkadot.svg",
   "chainType": "polkadot",
   "polkadot": {
