@@ -110,11 +110,23 @@ const processFiles = () => {
   const networks: Record<string, NetworkInfo> = {};
   const files = fs
     .readdirSync(dataDir)
-    .filter((file) => file.endsWith('.json'));
+    .filter((file) => file.endsWith('.json'))
+    .map((file) => {
+      const filePath = path.join(dataDir, file);
+      const stats = fs.statSync(filePath);
+      return {
+        file,
+        birthtime: stats.birthtime,
+      };
+    })
+    .sort((a, b) => Number(a.birthtime) - Number(b.birthtime)) // 생성 날짜 기준 오름차순 정렬
+    .map((fileInfo) => fileInfo.file); // 정렬 후 파일 이름만 추출
 
   files.forEach((file) => {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    // generate networks
+
     networks[data.chainId] = {
       name: data.chainName,
       image: data.chainSymbolImageUrl,
@@ -134,11 +146,11 @@ const processFiles = () => {
       ],
     };
 
-    // tokensPerChannel 정보 추출
+    // generate tokensPerChannel.ts
     if (data.channelMap) {
       tokensPerChannel[data.chainId] = data.channelMap;
     }
-    // Ethereum 에셋 정보 추출
+    // generate ethereumAssets.ts
     data.currencies.forEach((currency: any) => {
       const { coinDenom, ethereum, solana } = currency;
       if (currency.ethereum) {
@@ -158,7 +170,7 @@ const processFiles = () => {
         }
       }
 
-      // Solana 에셋 정보 추출
+      // generate solanaAssets.ts
       if (currency.solana) {
         const mintAddress = solana.mintAddress || '';
         if (mintAddress) {
@@ -175,7 +187,7 @@ const processFiles = () => {
           };
         }
       }
-      // Dotsama 에셋 정보 추출
+      // generate dotsamaAssets.ts
       if (currency.polkadot) {
         const { picassoAssetId, composableAssetId } = currency.polkadot || {};
         if (currency.polkadot?.picassoAssetId) {
@@ -197,7 +209,7 @@ const processFiles = () => {
           };
         }
       }
-      // Cosmos 에셋 정보 추출
+      // generate cosmosAssets.ts
       if (currency.cosmos) {
         crossChainAssets.cosmos[currency.cosmos.minimalDenom] = {
           chainId: data.chainId,
@@ -208,7 +220,8 @@ const processFiles = () => {
         };
       }
 
-      // CoinGecko 에셋 정보 추출
+      // generate coingecko.ts
+
       if (currency.coinGeckoId) {
         coinGeckoAssets.push({
           name: currency.coinDenom,
