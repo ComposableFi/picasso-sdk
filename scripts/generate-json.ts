@@ -354,19 +354,12 @@ async function processChainFiles() {
                 coin.name.toUpperCase() === dotAssetInfo.denom.toUpperCase()
             )?.id || '';
 
-          const imageFileName = imageList.find(
-            (key) =>
-              key.split('.')[0].toUpperCase() ===
-              chainData.config?.name.toUpperCase()
-          );
           transformedData = {
             chainId: chainData.config?.dotChainId,
             rest: '',
             rpc: chainData.config.endpoint[0],
             chainName: chainData.config?.name,
-            chainSymbolImageUrl: imageFileName
-              ? IMG_URL_BASE + '/' + imageFileName
-              : '',
+            chainSymbolImageUrl: getImageUrl(chainData.config?.name),
             chainType: 'polkadot',
             polkadot: {
               ss58Format: chainData.config?.ss58_format,
@@ -622,15 +615,8 @@ async function processChainFiles() {
             ],
           };
         } else if (chainData?.handler === 'ETHEREUM') {
-          const {
-            chainId,
-            chainName,
-            currencies,
-            chainSymbolImageUrl,
-            rest,
-            rpc,
-            ...others
-          } = chainData || {};
+          const { chainId, chainName, currencies, rest, rpc, ...others } =
+            chainData || {};
 
           // it should be native asset
           const ethereumAssets = Object.keys(crossChainData['ethereum']).filter(
@@ -645,7 +631,9 @@ async function processChainFiles() {
             rest,
             rpc,
             chainName,
-            chainSymbolImageUrl,
+            chainSymbolImageUrl:
+              'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg',
+
             chainType: 'ethereum',
             channelMap: refinedChannelMap,
 
