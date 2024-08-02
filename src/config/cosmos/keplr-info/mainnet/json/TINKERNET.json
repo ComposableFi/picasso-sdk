@@ -24,7 +24,7 @@
     {
       "coinDenom": "TNKR",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
       "coinGeckoId": "tinkernet",
       "cosmos": {},
       "polkadot": {
@@ -38,7 +38,7 @@
     {
       "coinDenom": "TNKR",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "tinkernet"
     }

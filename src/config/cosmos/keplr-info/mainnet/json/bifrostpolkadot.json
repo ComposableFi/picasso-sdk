@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
   "chainName": "BiFrost Polkadot",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 6,
@@ -25,7 +25,7 @@
     {
       "coinDenom": "BNC_DOT",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
       "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {
@@ -51,7 +51,7 @@
     {
       "coinDenom": "BNC_DOT",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": ""
     }

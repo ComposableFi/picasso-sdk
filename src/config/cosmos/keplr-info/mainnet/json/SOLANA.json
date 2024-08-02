@@ -80,7 +80,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/jitosol.svg",
       "coinDecimals": 9,
       "coinDenom": "JitoSOL",
       "coinGeckoId": "jito-staked-sol",
@@ -185,7 +185,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LST.svg",
       "coinDecimals": 9,
       "coinDenom": "LST",
       "coinGeckoId": "liquid-staking-token",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BLZE.svg",
       "coinDecimals": 9,
       "coinDenom": "BLZE",
       "coinGeckoId": "solblaze",
@@ -385,7 +385,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/wSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "wSOL",
       "coinGeckoId": "wrapped-solana",
@@ -454,7 +454,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTsolana.svg",
       "coinDecimals": 6,
       "coinDenom": "USDT Solana",
       "coinGeckoId": "tether",

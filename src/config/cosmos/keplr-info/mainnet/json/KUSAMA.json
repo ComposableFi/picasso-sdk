@@ -24,7 +24,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinGeckoId": "kusama",
       "cosmos": {},
       "polkadot": {
@@ -49,7 +49,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "kusama"
     }

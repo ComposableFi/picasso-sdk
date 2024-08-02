@@ -24,7 +24,7 @@
     {
       "coinDenom": "SDN",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg",
       "coinGeckoId": "shiden",
       "cosmos": {},
       "polkadot": {
@@ -38,7 +38,7 @@
     {
       "coinDenom": "SDN",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "shiden"
     }

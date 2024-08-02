@@ -23,7 +23,7 @@
     {
       "coinDenom": "ASTR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "astar"
     }

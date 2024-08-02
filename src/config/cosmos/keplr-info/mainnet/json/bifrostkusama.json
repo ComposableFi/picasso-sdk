@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://bifrost-rpc.liebi.com/ws",
   "chainName": "BiFrost Kusama",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostKusama.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 6,
@@ -25,7 +25,7 @@
     {
       "coinDenom": "BNC_KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg",
       "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {
@@ -51,7 +51,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "kusama"
     }

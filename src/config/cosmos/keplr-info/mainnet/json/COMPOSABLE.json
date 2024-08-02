@@ -46,7 +46,7 @@
     {
       "coinDenom": "DOT",
       "coinDecimals": 10,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg",
       "coinGeckoId": "polkadot",
       "cosmos": {},
       "polkadot": {
@@ -69,7 +69,7 @@
     {
       "coinDenom": "BNC_DOT",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
       "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {
@@ -93,7 +93,7 @@
     {
       "coinDenom": "ASTR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
       "coinGeckoId": "astar",
       "cosmos": {},
       "polkadot": {

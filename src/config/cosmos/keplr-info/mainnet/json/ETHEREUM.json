@@ -42,7 +42,7 @@
   },
   "currencies": [
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ETH.svg",
       "coinDecimals": 18,
       "coinDenom": "ETH",
       "coinGeckoId": "ethereum",
@@ -398,7 +398,7 @@
       "solana": {}
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDe.svg",
       "coinDecimals": 18,
       "coinDenom": "USDe",
       "coinGeckoId": "ethena-usde",
@@ -444,7 +444,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTethereum.svg",
       "coinDecimals": 6,
       "coinDenom": "USDT Ethereum",
       "coinGeckoId": "tether",

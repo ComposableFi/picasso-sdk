@@ -125,14 +125,31 @@ const chainFiles = fs
 async function importModule(modulePath: string) {
   return await import(modulePath);
 }
-const getImageUrl = (denom: string) => {
+const getImageUrl = (input: string) => {
+  const refinedInput = input.replace(/ /g, '');
+
   const tokenFileName = imageList.find(
-    (key) =>
-      key.split('.')[0].toUpperCase() === denom.toUpperCase() ||
-      key.split('.')[0].toUpperCase().includes(denom.toUpperCase())
+    (key) => key.split('.svg')[0].toUpperCase() === refinedInput.toUpperCase()
   );
 
-  return tokenFileName ? IMG_URL_BASE + '/' + tokenFileName : '';
+  const tokenFileSimilarName_A = imageList.find((key) =>
+    key.split('.svg')[0].toUpperCase().includes(refinedInput.toUpperCase())
+  );
+
+  const tokenFileSimilarName_B = imageList.find((key) =>
+    refinedInput.toUpperCase().includes(key.split('.svg')[0].toUpperCase())
+  );
+  console.log(
+    'denom',
+    refinedInput,
+    tokenFileName,
+    tokenFileSimilarName_A,
+    tokenFileSimilarName_B
+  );
+
+  const fileName =
+    tokenFileName || tokenFileSimilarName_A || tokenFileSimilarName_B;
+  return fileName ? IMG_URL_BASE + '/' + fileName : '';
 };
 
 async function processChainFiles() {
@@ -745,7 +762,7 @@ async function processChainFiles() {
           path.join(
             mainnetPath + '/json',
             (chainData?.chainName || chainData.config?.name)
-              .replace(' ', '')
+              .replace(/ /g, '')
               .toLowerCase() + '.json'
           ),
           JSON.stringify(transformedData, null, 2)

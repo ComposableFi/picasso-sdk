@@ -24,7 +24,7 @@
     {
       "coinDenom": "MOVR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
       "coinGeckoId": "moonriver",
       "cosmos": {},
       "polkadot": {
@@ -38,7 +38,7 @@
     {
       "coinDenom": "MOVR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "moonriver"
     }

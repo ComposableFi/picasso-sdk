@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://rpc.polkadot.io",
   "chainName": "Polkadot",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.js.svg",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 0,
@@ -24,7 +24,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinGeckoId": "kusama",
       "cosmos": {},
       "polkadot": {
@@ -49,7 +49,7 @@
     {
       "coinDenom": "DOT",
       "coinDecimals": 10,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "polkadot"
     }

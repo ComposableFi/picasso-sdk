@@ -59,7 +59,7 @@
     {
       "coinDenom": "USDT Kusama",
       "coinDecimals": 6,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
       "coinGeckoId": "tether",
       "cosmos": {},
       "polkadot": {
@@ -71,7 +71,7 @@
     {
       "coinDenom": "TNKR",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
       "coinGeckoId": "tinkernet",
       "cosmos": {},
       "polkadot": {
@@ -83,7 +83,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinGeckoId": "kusama",
       "cosmos": {},
       "polkadot": {
@@ -106,7 +106,7 @@
     {
       "coinDenom": "BNC_KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg",
       "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
       "polkadot": {

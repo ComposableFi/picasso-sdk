@@ -24,7 +24,7 @@
     {
       "coinDenom": "GLMR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
       "coinGeckoId": "moonbeam",
       "cosmos": {},
       "polkadot": {
@@ -38,7 +38,7 @@
     {
       "coinDenom": "GLMR",
       "coinDecimals": 18,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "moonbeam"
     }

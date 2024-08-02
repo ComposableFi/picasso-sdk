@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://statemine-rpc.dwellir.com",
   "chainName": "Kusama Asset Hub",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 2,
@@ -24,7 +24,7 @@
     {
       "coinDenom": "USDT Kusama",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
       "coinGeckoId": "tether",
       "cosmos": {},
       "polkadot": {
@@ -38,7 +38,7 @@
     {
       "coinDenom": "KSM",
       "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "kusama"
     }
