@@ -115,7 +115,6 @@ const processFiles = () => {
   files.forEach((file) => {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    // Network 정보 추출
     networks[data.chainId] = {
       name: data.chainName,
       image: data.chainSymbolImageUrl,
