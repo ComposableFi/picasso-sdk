@@ -463,7 +463,8 @@ var crossChainAssets = {
             "chainId": "centauri-1",
             "decimals": 12,
             "minimalDenom": "ppica",
-            "denom": "PICA"
+            "denom": "PICA",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
         }
     },
     "solana": {
@@ -707,7 +708,8 @@ var crossChainAssets = {
             "chainId": "centauri-1",
             "decimals": 12,
             "minimalDenom": "ppica",
-            "denom": "PICA"
+            "denom": "PICA",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
         },
         "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J": {
             "chainId": "2019",
@@ -1026,7 +1028,8 @@ var crossChainAssets = {
             "chainId": "centauri-1",
             "decimals": 12,
             "minimalDenom": "ppica",
-            "denom": "PICA"
+            "denom": "PICA",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
         },
         "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
             "chainId": "2019",
@@ -1046,7 +1049,8 @@ var crossChainAssets = {
             "chainId": "centauri-1",
             "decimals": 12,
             "minimalDenom": "ppica",
-            "denom": "PICA"
+            "denom": "PICA",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
         },
         "4": {
             "chainId": "polkadot",

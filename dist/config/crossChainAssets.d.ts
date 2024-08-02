@@ -461,6 +461,7 @@ declare const crossChainAssets: {
             readonly decimals: 12;
             readonly minimalDenom: "ppica";
             readonly denom: "PICA";
+            readonly imageUrl: "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg";
         };
     };
     readonly solana: {
@@ -705,6 +706,7 @@ declare const crossChainAssets: {
             readonly decimals: 12;
             readonly minimalDenom: "ppica";
             readonly denom: "PICA";
+            readonly imageUrl: "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg";
         };
         readonly vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J: {
             readonly chainId: "2019";
@@ -1024,6 +1026,7 @@ declare const crossChainAssets: {
             readonly decimals: 12;
             readonly minimalDenom: "ppica";
             readonly denom: "PICA";
+            readonly imageUrl: "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg";
         };
         readonly "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
             readonly chainId: "2019";
@@ -1044,6 +1047,7 @@ declare const crossChainAssets: {
             readonly decimals: 12;
             readonly minimalDenom: "ppica";
             readonly denom: "PICA";
+            readonly imageUrl: "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg";
         };
         readonly "4": {
             readonly chainId: "polkadot";

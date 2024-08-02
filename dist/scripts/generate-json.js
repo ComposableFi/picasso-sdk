@@ -120,6 +120,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//DEPRECATED: Used to abstract chain data from chain files and generate json files for each chain
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
 var imageList_1 = require("./imageList");
