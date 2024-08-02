@@ -93,6 +93,7 @@ const processFiles = () => {
             decimals: currency.coinDecimals,
             minimalDenom: currency.cosmos.minimalDenom,
             denom: coinDenom,
+            imageUrl: currency.coinImageUrl,
           };
         }
       }
@@ -110,6 +111,7 @@ const processFiles = () => {
             decimals: currency.coinDecimals,
             minimalDenom: currency.cosmos.minimalDenom,
             denom: coinDenom,
+            imageUrl: currency.coinImageUrl,
           };
         }
       }
@@ -122,6 +124,7 @@ const processFiles = () => {
             decimals: currency.coinDecimals,
             minimalDenom: currency.cosmos.minimalDenom,
             denom: coinDenom,
+            imageUrl: currency.coinImageUrl,
           };
         }
         if (currency.polkadot?.composableAssetId) {
@@ -130,6 +133,7 @@ const processFiles = () => {
             decimals: currency.coinDecimals,
             minimalDenom: currency.cosmos.minimalDenom,
             denom: coinDenom,
+            imageUrl: currency.coinImageUrl,
           };
         }
       }
@@ -140,6 +144,7 @@ const processFiles = () => {
           decimals: currency.coinDecimals,
           minimalDenom: currency.cosmos.minimalDenom,
           denom: coinDenom,
+          imageUrl: currency.coinImageUrl,
         };
       }
 
