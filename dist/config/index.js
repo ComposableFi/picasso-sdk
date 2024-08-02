@@ -19,3 +19,4 @@ __exportStar(require("./crossChainAssets"), exports);
 __exportStar(require("./ethereumAssets"), exports);
 __exportStar(require("./solanaAssets"), exports);
 __exportStar(require("./tokensPerChannel"), exports);
+__exportStar(require("./networks"), exports);
