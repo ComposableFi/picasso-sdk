@@ -65,10 +65,10 @@ export const NEUTRON = {
     {
       coinDenom: 'ASTRO',
       coinMinimalDenom:
-        'factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8',
+        'factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro',
       coinDecimals: 6,
       coinImageUrl:
-      'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg',
+        'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg',
     },
 
     {

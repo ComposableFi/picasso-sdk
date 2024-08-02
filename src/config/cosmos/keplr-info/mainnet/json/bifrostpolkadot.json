@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
   "chainName": "BiFrost Polkadot",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostPolkadot.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 6,

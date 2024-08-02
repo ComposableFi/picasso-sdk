@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://rpc.composable.finance",
   "chainName": "Composable",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/composable.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 50,

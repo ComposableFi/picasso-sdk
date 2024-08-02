@@ -45,7 +45,7 @@ export const SECRET = {
     },
     {
       coinDenom: 'SILK',
-      coinMinimalDenom: 'cw20:secret1qfql357amn448duf5gvp9gr48sxx9tsnhupu3d',
+      coinMinimalDenom: 'cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd',
       coinDecimals: 6,
       coinGeckoId: 'silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2',
       coinImageUrl:
