@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
   "chainName": "Ethereum",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
   "chainType": "ethereum",
   "channelMap": {
     "2": {
@@ -65,7 +65,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/dai.svg",
       "coinDecimals": 18,
       "coinDenom": "DAI",
       "coinGeckoId": "dai",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/fxs.svg",
       "coinDecimals": 18,
       "coinDenom": "FXS",
       "coinGeckoId": "frax-share",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sFRAX.svg",
       "coinDecimals": 18,
       "coinDenom": "sFRAX",
       "coinGeckoId": "staked-frax",
@@ -134,7 +134,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sfrxETH.svg",
       "coinDecimals": 18,
       "coinDenom": "sfrxETH",
       "coinGeckoId": "staked-frax-ether",
@@ -157,7 +157,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ena.svg",
       "coinDecimals": 18,
       "coinDenom": "ENA",
       "coinGeckoId": "ethena",
@@ -180,7 +180,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/frax.svg",
       "coinDecimals": 18,
       "coinDenom": "FRAX",
       "coinGeckoId": "frax",
@@ -203,7 +203,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/frxeth.svg",
       "coinDecimals": 18,
       "coinDenom": "frxETH",
       "coinGeckoId": "frax-ether",
@@ -226,7 +226,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/wbtc.svg",
       "coinDecimals": 8,
       "coinDenom": "wBTC",
       "coinGeckoId": "wrapped-bitcoin",
@@ -249,7 +249,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/steth.svg",
       "coinDecimals": 18,
       "coinDenom": "stETH",
       "coinGeckoId": "lido-staked-ether",
@@ -266,7 +266,7 @@
       "solana": {}
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/reth.svg",
       "coinDecimals": 18,
       "coinDenom": "rETH",
       "coinGeckoId": "rocket-pool-eth",
@@ -289,7 +289,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crvusd.svg",
       "coinDecimals": 18,
       "coinDenom": "crvUSD",
       "coinGeckoId": "crvusd",
@@ -312,7 +312,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pxeth.svg",
       "coinDecimals": 18,
       "coinDenom": "pxETH",
       "coinGeckoId": "dinero-staked-eth",
@@ -335,7 +335,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/eeth.svg",
       "coinDecimals": 18,
       "coinDenom": "eETH",
       "coinGeckoId": "ether-fi-staked-eth",
@@ -358,7 +358,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/silk.svg",
       "coinDecimals": 6,
       "coinDenom": "SILK",
       "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
@@ -381,7 +381,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ezeth.svg",
       "coinDecimals": 18,
       "coinDenom": "ezETH",
       "coinGeckoId": "renzo-restaked-eth",
@@ -421,7 +421,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pepe.svg",
       "coinDecimals": 18,
       "coinDenom": "PEPE",
       "coinGeckoId": "pepe",
@@ -467,7 +467,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg",
       "coinDecimals": 18,
       "coinDenom": "CRV",
       "coinGeckoId": "curve-dao-token",

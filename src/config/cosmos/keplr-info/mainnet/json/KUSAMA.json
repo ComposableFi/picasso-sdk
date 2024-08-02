@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://kusama-rpc.polkadot.io",
   "chainName": "Kusama",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 2,

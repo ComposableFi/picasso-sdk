@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://rpc.astar.network",
   "chainName": "astar",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astar.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 5,

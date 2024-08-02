@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "https://mainnet.helius-rpc.com/?api-key=65520d87-04b2-43a5-b5d5-35d5db0601b3",
   "chainName": "Solana",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
   "chainType": "solana",
   "channelMap": {
     "1": {
@@ -62,7 +62,7 @@
   },
   "currencies": [
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sol.svg",
       "coinDecimals": 9,
       "coinDenom": "SOL",
       "coinGeckoId": "solana",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/mSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "mSOL",
       "coinGeckoId": "msol",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/WHINE.svg",
       "coinDecimals": 6,
       "coinDenom": "WHINE",
       "coinGeckoId": "",
@@ -144,7 +144,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/hausSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "hausSOL",
       "coinGeckoId": "",
@@ -162,7 +162,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/bSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "bSOL",
       "coinGeckoId": "blazestake-staked-sol",
@@ -226,7 +226,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/edgesol.svg",
       "coinDecimals": 9,
       "coinDenom": "edgeSOL",
       "coinGeckoId": "edgevana-staked-sol",
@@ -249,7 +249,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/csol.svg",
       "coinDecimals": 9,
       "coinDenom": "cSOL",
       "coinGeckoId": "",
@@ -267,7 +267,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/cmsol.svg",
       "coinDecimals": 9,
       "coinDenom": "cmSOL",
       "coinGeckoId": "",
@@ -285,7 +285,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/cJitoSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "cJitoSOL",
       "coinGeckoId": "",
@@ -303,7 +303,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/cbSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "cbSOL",
       "coinGeckoId": "",
@@ -321,7 +321,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/compasssol.svg",
       "coinDecimals": 9,
       "coinDenom": "compassSOL",
       "coinGeckoId": "",
@@ -339,7 +339,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/jupsol.svg",
       "coinDecimals": 9,
       "coinDenom": "jupSOL",
       "coinGeckoId": "",
@@ -362,7 +362,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/hSOL.svg",
       "coinDecimals": 9,
       "coinDenom": "hSOL",
       "coinGeckoId": "",
@@ -408,7 +408,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/WIF.svg",
       "coinDecimals": 6,
       "coinDenom": "WIF",
       "coinGeckoId": "dogwifcoin",
@@ -431,7 +431,7 @@
       }
     },
     {
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BONK.svg",
       "coinDecimals": 5,
       "coinDenom": "BONK",
       "coinGeckoId": "bonk",

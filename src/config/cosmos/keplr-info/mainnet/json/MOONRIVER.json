@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://moonriver-rpc.dwellir.com",
   "chainName": "Moonriver",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonriver.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 0,

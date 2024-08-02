@@ -127,7 +127,9 @@ async function importModule(modulePath: string) {
 }
 const getImageUrl = (denom: string) => {
   const tokenFileName = imageList.find(
-    (key) => key.split('.')[0].toUpperCase() === denom.toUpperCase()
+    (key) =>
+      key.split('.')[0].toUpperCase() === denom.toUpperCase() ||
+      key.split('.')[0].toUpperCase().includes(denom.toUpperCase())
   );
 
   return tokenFileName ? IMG_URL_BASE + '/' + tokenFileName : '';

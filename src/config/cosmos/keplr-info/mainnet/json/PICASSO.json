@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://picasso-rpc.composable.finance",
   "chainName": "Picasso",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 49,
@@ -118,7 +118,7 @@
     {
       "coinDenom": "vKSM",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
@@ -132,7 +132,7 @@
     {
       "coinDenom": "PICA",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "picasso"
     }

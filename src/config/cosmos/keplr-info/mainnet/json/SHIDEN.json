@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://shiden-rpc.dwellir.com",
   "chainName": "Shiden",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/shiden.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 5,

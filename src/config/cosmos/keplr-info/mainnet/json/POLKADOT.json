@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://rpc.polkadot.io",
   "chainName": "Polkadot",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.js.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 0,

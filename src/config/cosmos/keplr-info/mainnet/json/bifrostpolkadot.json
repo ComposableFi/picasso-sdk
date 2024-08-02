@@ -37,7 +37,7 @@
     {
       "coinDenom": "vDOT",
       "coinDecimals": 10,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {

@@ -81,7 +81,7 @@
     {
       "coinDenom": "vDOT",
       "coinDecimals": 10,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
@@ -107,7 +107,7 @@
     {
       "coinDenom": "PICA",
       "coinDecimals": 12,
-      "coinImageUrl": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
       "coinMinimalDenom": "",
       "coinGeckoId": "picasso"
     }

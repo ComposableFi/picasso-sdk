@@ -3,7 +3,7 @@
   "rest": "",
   "rpc": "wss://tinkernet-rpc.dwellir.com",
   "chainName": "Tinkernet",
-  "chainSymbolImageUrl": "",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 117,
