@@ -108,7 +108,6 @@ const processFiles = () => {
     dotsama: {},
   };
   const networks: Record<string, NetworkInfo> = {};
-  // 폴더 내의 모든 JSON 파일 읽기
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'));
