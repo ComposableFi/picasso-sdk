@@ -28,6 +28,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDecimals": 6,

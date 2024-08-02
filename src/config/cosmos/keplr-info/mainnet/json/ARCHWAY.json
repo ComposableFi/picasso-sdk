@@ -27,6 +27,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDecimals": 18,

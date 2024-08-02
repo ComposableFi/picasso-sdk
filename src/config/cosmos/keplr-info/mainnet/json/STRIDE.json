@@ -30,7 +30,21 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
+    {
+      "coinDenom": "stTIA",
+      "coinMinimalDenom": "stutia",
+      "coinDecimals": 6,
+      "coinGeckoId": "stride-staked-tia",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/sttia.png",
+      "cosmos": {
+        "minimalDenom": "stutia"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    },
     {
       "coinDenom": "STRD",
       "coinMinimalDenom": "ustrd",
@@ -78,175 +92,6 @@
         "fromCosmosFee": 0,
         "displayDecimals": 6
       }
-    },
-    {
-      "coinDenom": "stOSMO",
-      "coinMinimalDenom": "stuosmo",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-osmo",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuosmo.png",
-      "cosmos": {
-        "minimalDenom": "stuosmo"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stJUNO",
-      "coinMinimalDenom": "stujuno",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-juno",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stujuno.png",
-      "cosmos": {
-        "minimalDenom": "stujuno"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stSTARS",
-      "coinMinimalDenom": "stustars",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-stars",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stustars.png",
-      "cosmos": {
-        "minimalDenom": "stustars"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stEVMOS",
-      "coinMinimalDenom": "staevmos",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/staevmos.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "staevmos"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stLUNA",
-      "coinMinimalDenom": "stuluna",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-luna",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuluna.png",
-      "cosmos": {
-        "minimalDenom": "stuluna"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stINJ",
-      "coinMinimalDenom": "stinj",
-      "coinDecimals": 18,
-      "coinGeckoId": "stride-staked-injective",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stinj.png",
-      "cosmos": {
-        "minimalDenom": "stinj"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stDYDX",
-      "coinMinimalDenom": "stadydx",
-      "coinDecimals": 18,
-      "coinGeckoId": "stride-staked-dydx",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stdydx.png",
-      "cosmos": {
-        "minimalDenom": "stadydx"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stTIA",
-      "coinMinimalDenom": "stutia",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-tia",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/sttia.png",
-      "cosmos": {
-        "minimalDenom": "stutia"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stSAGA",
-      "coinMinimalDenom": "stusaga",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stusaga.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "stusaga"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stUMEE",
-      "coinMinimalDenom": "stuumee",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-umee",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuumee.png",
-      "cosmos": {
-        "minimalDenom": "stuumee"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stCMDX",
-      "coinMinimalDenom": "stucmdx",
-      "coinDecimals": 6,
-      "coinGeckoId": "stride-staked-comdex",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stucmdx.png",
-      "cosmos": {
-        "minimalDenom": "stucmdx"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stSOMM",
-      "coinMinimalDenom": "stusomm",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stusomm.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "stusomm"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "stDYM",
-      "coinMinimalDenom": "stadym",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stadym.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "stadym"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
     }
   ],
   "feeCurrencies": [

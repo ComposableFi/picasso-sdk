@@ -29,6 +29,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDenom": "STARS",
@@ -53,71 +54,6 @@
         "fromCosmosFee": 0,
         "displayDecimals": 6
       }
-    },
-    {
-      "coinDenom": "STRDST",
-      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/dust.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/dust"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "GAZE",
-      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/gaze.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/mGAZE"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "OHH",
-      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ohh.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uOHH"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "BRNCH",
-      "coinMinimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/brnch.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/stars16da2uus9zrsy83h23ur42v3lglg5rmyrpqnju4/uBRNCH"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "SNEAKY",
-      "coinMinimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/sneaky.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "factory/stars1xx5976njvxpl9n4v8huvff6cudhx7yuu8e7rt4/usneaky"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
     }
   ],
   "feeCurrencies": [

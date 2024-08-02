@@ -28,7 +28,9 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
+    null,
     {
       "coinDenom": "CORE",
       "coinMinimalDenom": "ucore",

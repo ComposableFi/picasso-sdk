@@ -35,6 +35,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDenom": "BLD",

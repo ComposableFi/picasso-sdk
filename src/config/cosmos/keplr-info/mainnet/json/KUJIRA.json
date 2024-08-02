@@ -27,6 +27,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDenom": "KUJI",
@@ -36,30 +37,6 @@
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
       "cosmos": {
         "minimalDenom": "ukuji"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "USK",
-      "coinMinimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk",
-      "coinDecimals": 6,
-      "coinGeckoId": "usk",
-      "cosmos": {
-        "minimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "MNTA",
-      "coinMinimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta",
-      "coinDecimals": 6,
-      "coinGeckoId": "mantadao",
-      "cosmos": {
-        "minimalDenom": "factory/kujira1643jxg8wasy5cfcn7xm8rd742yeazcksqlg4d7/umnta"
       },
       "polkadot": {},
       "ethereum": {},

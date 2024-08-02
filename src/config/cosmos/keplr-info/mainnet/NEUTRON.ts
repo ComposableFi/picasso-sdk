@@ -63,6 +63,15 @@ export const NEUTRON = {
         'https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/factory/neutron143wp6g8paqasnuuey6zyapucknwy9rhnld8hkr/bad.png',
     },
     {
+      coinDenom: 'ASTRO',
+      coinMinimalDenom:
+        'factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8',
+      coinDecimals: 6,
+      coinImageUrl:
+      'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg',
+    },
+
+    {
       coinDenom: 'DSR',
       coinMinimalDenom:
         'factory/neutron1guar6dc2scpxtmmq8reh0q5cv2l37vs0uyfdru/dinosaur',

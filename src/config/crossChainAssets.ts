@@ -145,14 +145,14 @@ const crossChainAssets = {
       chainId: 'secret-4',
       network: 'SECRET',
       decimals: 6,
-      minimalDenom: 'usilk',
+      minimalDenom: 'cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd',
       denom: 'SILK',
     },
     'cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm': {
       chainId: 'secret-4',
       network: 'SECRET',
       decimals: 8,
-      minimalDenom: 'ushd',
+      minimalDenom: 'cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm',
       denom: 'SHD',
     },
     utia: {

@@ -28,6 +28,7 @@
       ]
     }
   },
+  "currencies2": [],
   "currencies": [
     {
       "coinDenom": "QCK",
@@ -37,71 +38,6 @@
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
       "cosmos": {
         "minimalDenom": "uqck"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "qSTARS",
-      "coinMinimalDenom": "uqstars",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqstars.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "uqstars"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "qATOM",
-      "coinMinimalDenom": "uqatom",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqatom.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "uqatom"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "qREGEN",
-      "coinMinimalDenom": "uqregen",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqregen.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "uqregen"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "qOSMO",
-      "coinMinimalDenom": "uqosmo",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqosmo.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "uqosmo"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    },
-    {
-      "coinDenom": "qSOMM",
-      "coinMinimalDenom": "uqsomm",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqsomm.png",
-      "coinGeckoId": "",
-      "cosmos": {
-        "minimalDenom": "uqsomm"
       },
       "polkadot": {},
       "ethereum": {},

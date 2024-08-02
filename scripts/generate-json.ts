@@ -139,13 +139,6 @@ const getImageUrl = (input: string) => {
   const tokenFileSimilarName_B = imageList.find((key) =>
     refinedInput.toUpperCase().includes(key.split('.svg')[0].toUpperCase())
   );
-  console.log(
-    'denom',
-    refinedInput,
-    tokenFileName,
-    tokenFileSimilarName_A,
-    tokenFileSimilarName_B
-  );
 
   const fileName =
     tokenFileName || tokenFileSimilarName_A || tokenFileSimilarName_B;
@@ -239,6 +232,11 @@ async function processChainFiles() {
             features,
             ...others
           } = chainData || {};
+
+          const cosmosAssets = Object.keys(crossChainData['cosmos']).filter(
+            (key) => crossChainData['cosmos'][key].chainId === chainId
+          );
+
           transformedData = {
             chainId,
             rest,
@@ -249,7 +247,17 @@ async function processChainFiles() {
             chainType: 'cosmos',
             channelMap: refinedChannelMap,
 
-            currencies: currencies?.map((currency) => {
+            currencies2: [],
+            currencies: cosmosAssets?.map((minimalDenom) => {
+              const currency = currencies.find(
+                (item) =>
+                  item.coinMinimalDenom.toUpperCase() ===
+                  minimalDenom.toUpperCase()
+              );
+              if (!currency) {
+                console.log('thereIsNo', minimalDenom);
+                return;
+              }
               const picassoAssetId = Object.keys(
                 crossChainData['dotsama']
               ).find(
