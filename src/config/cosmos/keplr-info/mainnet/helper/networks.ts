@@ -312,6 +312,7 @@
     "rest": "",
     "chain_type": "polkadot",
     "chainId": "2124",
+    "feeAssetId": "",
     "polkadot": {
       "ss58Format": 56,
       "isParachain": false,
@@ -321,7 +322,9 @@
           "type": "XCM",
           "xcmType": "xTokens.transfer",
           "version": "V2",
-          "tokens": []
+          "tokens": [
+            "0000"
+          ]
         }
       }
     },

@@ -298,10 +298,6 @@
     "id": "umee"
   },
   {
-    "name": "UMEE",
-    "id": "umee"
-  },
-  {
     "name": "USDT Kusama",
     "id": "tether"
   },

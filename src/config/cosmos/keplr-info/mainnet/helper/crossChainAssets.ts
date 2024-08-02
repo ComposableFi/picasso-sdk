@@ -16,18 +16,18 @@ const crossChainAssets = {
       "denom": "IST",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png"
     },
+    "undefined": {
+      "chainId": "1000",
+      "decimals": 6,
+      "denom": "USDT Kusama",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
+    },
     "aarch": {
       "chainId": "archway-1",
       "decimals": 18,
       "minimalDenom": "aarch",
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
-    },
-    "undefined": {
-      "chainId": "1000",
-      "decimals": 6,
-      "denom": "USDT Kusama",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
     },
     "utia": {
       "chainId": "celestia",
