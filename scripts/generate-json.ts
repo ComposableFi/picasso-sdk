@@ -214,7 +214,8 @@ async function processChainFiles() {
         const chainData = (chainModule.default || chainModule)[
           file.split('.')[0]
         ];
-        let refinedChannelMap = channelMapData[chainData?.chainId || ''];
+        const refinedChannelMap =
+          channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
         let transformedData: CustomChainInfo | {} = {};
@@ -346,22 +347,9 @@ async function processChainFiles() {
           };
           //polkadot case
         } else if (chainData?.handler === 'POLKADOT') {
-          const {
-            chainId,
-            chainName,
-            currencies,
-
-            feeCurrencies,
-            nodeProvider,
-            rest,
-            rpc,
-            stakeCurrency,
-            features,
-            ...others
-          } = chainData || {};
-          let channelMap: any = {};
+          let polkadotIbcChannelMap : any = {};
           let refinedHops = {};
-          channelMap = channelMapData[chainData?.chainId || ''];
+          polkadotIbcChannelMap = channelMapData[chainData.config?.dotChainId || ''];
 
           for (const key in chainData.hops) {
             if (
@@ -394,6 +382,8 @@ async function processChainFiles() {
             rest: '',
             rpc: chainData.config.endpoint[0],
             chainName: chainData.config?.name,
+            channelMap: polkadotIbcChannelMap ,
+
             chainSymbolImageUrl: getImageUrl(chainData.config?.name),
             chainType: 'polkadot',
             polkadot: {
@@ -404,7 +394,6 @@ async function processChainFiles() {
                 : 'kusama',
               hops: refinedHops,
             },
-            channelMap: refinedChannelMap,
 
             currencies: tokensArray?.map((currency) => {
               const picassoAssetId = Object.keys(

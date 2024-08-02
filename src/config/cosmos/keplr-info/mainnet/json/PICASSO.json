@@ -4,6 +4,35 @@
   "rest": "",
   "rpc": "wss://picasso-rpc.composable.finance",
   "chainName": "Picasso",
+  "channelMap": {
+    "15": {
+      "chainId": "2019",
+      "destinationId": 15,
+      "tokens": [
+        "DOT",
+        "PICA",
+        "vDOT",
+        "BNC_DOT",
+        "ASTR",
+        "lsDOT",
+        "BLD",
+        "IST"
+      ]
+    },
+    "17": {
+      "chainId": "centauri-1",
+      "destinationId": 2,
+      "tokens": [
+        "PICA",
+        "KSM",
+        "DOT",
+        "UMEE",
+        "ASTR",
+        "SDN",
+        "USDT Kusama"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
   "chainType": "polkadot",
   "polkadot": {
@@ -28,11 +57,6 @@
           "32"
         ]
       },
-      "2019": {
-        "type": "IBC",
-        "fromChannelId": "15",
-        "toChannelId": "15"
-      },
       "2125": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
@@ -41,12 +65,7 @@
           "2125"
         ]
       },
-      "undefined": {
-        "type": "IBC",
-        "fromChannelId": "17",
-        "toChannelId": "2"
-      },
-      "": {
+      "kusama": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V3",

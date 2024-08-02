@@ -28,7 +28,7 @@
       ]
     },
     "2": {
-      "chainId": "picasso",
+      "chainId": "2087",
       "destinationId": 17,
       "tokens": [
         "PICA",
@@ -240,7 +240,6 @@
       ]
     }
   },
-  "currencies2": [],
   "currencies": [
     {
       "coinDenom": "PICA",

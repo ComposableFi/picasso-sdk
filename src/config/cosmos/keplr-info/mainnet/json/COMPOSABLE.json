@@ -4,6 +4,22 @@
   "rest": "",
   "rpc": "wss://rpc.composable.finance",
   "chainName": "Composable",
+  "channelMap": {
+    "15": {
+      "chainId": "2087",
+      "destinationId": 15,
+      "tokens": [
+        "DOT",
+        "PICA",
+        "vDOT",
+        "BNC_DOT",
+        "ASTR",
+        "lsDOT",
+        "BLD",
+        "IST"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/composable.svg",
   "chainType": "polkadot",
   "polkadot": {
@@ -28,12 +44,7 @@
           "79228162514264337593543950370"
         ]
       },
-      "2087": {
-        "type": "IBC",
-        "fromChannelId": "15",
-        "toChannelId": "15"
-      },
-      "": {
+      "polkadot": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V3",

@@ -181,7 +181,7 @@ const ibcChannelMap = {
   },
   '2087': {
     15: {
-      chainId: 'composable',
+      chainId: '2019',
       destinationId: 15,
       tokens: ['DOT', 'PICA', 'vDOT', 'BNC_DOT', 'ASTR', 'lsDOT', 'BLD', 'IST'],
     },
@@ -191,9 +191,9 @@ const ibcChannelMap = {
       tokens: ['PICA', 'KSM', 'DOT', 'UMEE', 'ASTR', 'SDN', 'USDT Kusama'],
     },
   },
-  composable: {
+  '2019': {
     15: {
-      chainId: 'picasso',
+      chainId: '2087',
       destinationId: 15,
       tokens: ['DOT', 'PICA', 'vDOT', 'BNC_DOT', 'ASTR', 'lsDOT', 'BLD', 'IST'],
     },
