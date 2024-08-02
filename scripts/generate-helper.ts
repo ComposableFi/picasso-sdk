@@ -65,35 +65,32 @@ interface NetworkInfo {
   network_to?: string[];
 }
 
-const dataDir = path.join(
-  __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/json'
-);
+const dataDir = path.join(__dirname, '../src/config/json');
 const ethereumOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/ethereumAssets.ts'
+  '../src/config/ethereumAssets.ts'
 );
 const solanaOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/solanaAssets.ts'
+  '../src/config/solanaAssets.ts'
 );
 
 const tokensPerChannelOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/tokensPerChannel.ts'
+  '../src/config/tokensPerChannel.ts'
 );
 const coinGeckoOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/coinGecko.ts'
+  '../src/config/coinGecko.ts'
 );
 const crossChainAssetsOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/crossChainAssets.ts'
+  '../src/config/crossChainAssets.ts'
 );
 
 const networksOutputFilePath = path.join(
   __dirname,
-  '../src/config/cosmos/keplr-info/mainnet/helper/networks.ts'
+  '../src/config/networks.ts'
 );
 
 const processFiles = () => {

@@ -1,79 +1,311 @@
-// [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
-const coinGecko = [
-  { name: 'SILK', id: 'silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2' },
-  { name: 'bCRE', id: 'liquid-staking-crescent' },
-  { name: 'bSOL', id: 'blazestake-staked-sol' },
-  { name: 'STATOM', id: 'stride-staked-atom' },
-  { name: 'sfrxETH', id: 'staked-frax-ether' },
-  { name: 'LST', id: 'liquid-staking-token' },
-  { name: 'BNC', id: 'bifrost-native-coin' },
-  { name: 'JitoSOL', id: 'jito-staked-sol' },
-  { name: 'HUAHUA', id: 'chihuahua-token' },
-  { name: 'INJ', id: 'injective-protocol' },
-  { name: 'IST', id: 'inter-stable-token' },
-  { name: 'CRE', id: 'crescent-network' },
-  { name: 'wSOL', id: 'wrapped-solana' },
-  { name: 'USDT Kusama', id: 'tether' },
-  { name: 'sFRAX', id: 'staked-frax' },
-  { name: 'SEI', id: 'sei-network' },
-  { name: 'QCK', id: 'quicksilver' },
-  { name: 'NTRN', id: 'neutron-3' },
-  { name: 'STARS', id: 'stargaze' },
-  { name: 'MOVR', id: 'moonriver' },
-  { name: 'TNKR', id: 'tinkernet' },
-  { name: 'FXS', id: 'frax-share' },
-  { name: 'BLZE', id: 'solblaze' },
-  { name: 'GLMR', id: 'moonbeam' },
-  { name: 'PICA', id: 'picasso' },
-  { name: 'DOT', id: 'polkadot' },
-  { name: 'OSMO', id: 'osmosis' },
-  { name: 'TIA', id: 'celestia' },
-  { name: 'ETH', id: 'ethereum' },
-  { name: 'ATOM', id: 'cosmos' },
-  { name: 'STRD', id: 'stride' },
-  { name: 'SCRT', id: 'secret' },
-  { name: 'KUJI', id: 'kujira' },
-  { name: 'KSM', id: 'kusama' },
-  { name: 'BLD', id: 'agoric' },
-  { name: 'ASTR', id: 'astar' },
-  { name: 'SHD', id: 'shade-protocol' },
-  { name: 'SOL', id: 'solana' },
-  { name: 'ENA', id: 'ethena' },
-  { name: 'UMEE', id: 'umee' },
-  { name: 'mSOL', id: 'msol' },
-  { name: 'DAI', id: 'dai' },
-  { name: 'FRAX', id: 'frax' },
-  { name: 'frxETH', id: 'frax-ether' },
-  { name: 'wBTC', id: 'wrapped-bitcoin' },
-  { name: 'stETH', id: 'lido-staked-ether' },
-  { name: 'rETH', id: 'rocket-pool-eth' },
-  { name: 'crvUSD', id: 'crvusd' },
-  { name: 'pxETH', id: 'dinero-staked-eth' },
-  { name: 'eETH', id: 'ether-fi-staked-eth' },
-  { name: 'ezETH', id: 'renzo-restaked-eth' },
-  { name: 'USDe', id: 'ethena-usde' },
-  { name: 'PEPE', id: 'pepe' },
-  { name: 'USDT Ethereum', id: 'tether' },
-  { name: 'USDT Solana', id: 'tether' },
-  { name: 'CRV', id: 'curve-dao-token' },
-  { name: 'stTIA', id: 'stride-staked-tia' },
-  { name: 'milkTIA', id: 'milkyway-staked-tia' },
-  { name: 'SDN', id: 'shiden' },
-  { name: 'XRP', id: 'ripple' },
-  { name: 'SHD', id: 'shade-protocol' },
-  { name: 'WIF', id: 'dogwifcoin' },
-  { name: 'BONK', id: 'bonk' },
-  { name: 'COREUM', id: 'coreum' },
-  { name: 'edgeSOL', id: 'edgevana-staked-sol' },
-  { name: 'AMPE', id: 'amplitude' },
-  { name: 'ARCH', id: 'archway' },
-  { name: 'ASTRO', id: 'astroport-fi' },
 
-  // { name: 'XLM', id: '' },
-
-  //TODO: Change it to use proper api - right now we don't have info
-  // This url is all we get, but need to check if we can call it from fe-not likely
-  // https://app.geckoterminal.com/api/p1/solana/pools/CFvfVr3HVP9nkkUQ5BAWchXq2vyBaDPhmpTNbMvtWFXy?include=dex%2Cdex.network.explorers%2Cdex_link_services%2Cnetwork_link_services%2Cpairs%2Ctoken_link_services%2Ctokens.token_security_metric%2Ctokens.tags&base_token=0
-];
-
-export default coinGecko;
+ // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
+ const coinGecko = [
+  {
+    "name": "BLD",
+    "id": "agoric"
+  },
+  {
+    "name": "IST",
+    "id": "inter-stable-token"
+  },
+  {
+    "name": "ARCH",
+    "id": "archway"
+  },
+  {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "TIA",
+    "id": "celestia"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "HUAHUA",
+    "id": "chihuahua-token"
+  },
+  {
+    "name": "DOT",
+    "id": "polkadot"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "XRP",
+    "id": "ripple"
+  },
+  {
+    "name": "CORE",
+    "id": "coreum"
+  },
+  {
+    "name": "ATOM",
+    "id": "cosmos"
+  },
+  {
+    "name": "CRE",
+    "id": "crescent-network"
+  },
+  {
+    "name": "bCRE",
+    "id": "liquid-staking-crescent"
+  },
+  {
+    "name": "ETH",
+    "id": "ethereum"
+  },
+  {
+    "name": "DAI",
+    "id": "dai"
+  },
+  {
+    "name": "FXS",
+    "id": "frax-share"
+  },
+  {
+    "name": "sFRAX",
+    "id": "staked-frax"
+  },
+  {
+    "name": "sfrxETH",
+    "id": "staked-frax-ether"
+  },
+  {
+    "name": "ENA",
+    "id": "ethena"
+  },
+  {
+    "name": "FRAX",
+    "id": "frax"
+  },
+  {
+    "name": "frxETH",
+    "id": "frax-ether"
+  },
+  {
+    "name": "wBTC",
+    "id": "wrapped-bitcoin"
+  },
+  {
+    "name": "stETH",
+    "id": "lido-staked-ether"
+  },
+  {
+    "name": "rETH",
+    "id": "rocket-pool-eth"
+  },
+  {
+    "name": "crvUSD",
+    "id": "crvusd"
+  },
+  {
+    "name": "pxETH",
+    "id": "dinero-staked-eth"
+  },
+  {
+    "name": "eETH",
+    "id": "ether-fi-staked-eth"
+  },
+  {
+    "name": "SILK",
+    "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+  },
+  {
+    "name": "ezETH",
+    "id": "renzo-restaked-eth"
+  },
+  {
+    "name": "USDe",
+    "id": "ethena-usde"
+  },
+  {
+    "name": "PEPE",
+    "id": "pepe"
+  },
+  {
+    "name": "USDT Ethereum",
+    "id": "tether"
+  },
+  {
+    "name": "CRV",
+    "id": "curve-dao-token"
+  },
+  {
+    "name": "INJ",
+    "id": "injective-protocol"
+  },
+  {
+    "name": "KUJI",
+    "id": "kujira"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "GLMR",
+    "id": "moonbeam"
+  },
+  {
+    "name": "MOVR",
+    "id": "moonriver"
+  },
+  {
+    "name": "ASTRO",
+    "id": "astroport-fi"
+  },
+  {
+    "name": "NTRN",
+    "id": "neutron-3"
+  },
+  {
+    "name": "OSMO",
+    "id": "osmosis"
+  },
+  {
+    "name": "milkTIA",
+    "id": "milkyway-staked-tia"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "QCK",
+    "id": "quicksilver"
+  },
+  {
+    "name": "SCRT",
+    "id": "secret"
+  },
+  {
+    "name": "SILK",
+    "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+  },
+  {
+    "name": "SHD",
+    "id": "shade-protocol"
+  },
+  {
+    "name": "SEI",
+    "id": "sei-network"
+  },
+  {
+    "name": "SDN",
+    "id": "shiden"
+  },
+  {
+    "name": "SOL",
+    "id": "solana"
+  },
+  {
+    "name": "JitoSOL",
+    "id": "jito-staked-sol"
+  },
+  {
+    "name": "mSOL",
+    "id": "msol"
+  },
+  {
+    "name": "bSOL",
+    "id": "blazestake-staked-sol"
+  },
+  {
+    "name": "LST",
+    "id": "liquid-staking-token"
+  },
+  {
+    "name": "BLZE",
+    "id": "solblaze"
+  },
+  {
+    "name": "edgeSOL",
+    "id": "edgevana-staked-sol"
+  },
+  {
+    "name": "wSOL",
+    "id": "wrapped-solana"
+  },
+  {
+    "name": "WIF",
+    "id": "dogwifcoin"
+  },
+  {
+    "name": "BONK",
+    "id": "bonk"
+  },
+  {
+    "name": "USDT Solana",
+    "id": "tether"
+  },
+  {
+    "name": "STARS",
+    "id": "stargaze"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "stTIA",
+    "id": "stride-staked-tia"
+  },
+  {
+    "name": "STRD",
+    "id": "stride"
+  },
+  {
+    "name": "stATOM",
+    "id": "stride-staked-atom"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "UMEE",
+    "id": "umee"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "PICA",
+    "id": "picasso"
+  }
+] as const;
+ 
+ export default coinGecko;
+ 

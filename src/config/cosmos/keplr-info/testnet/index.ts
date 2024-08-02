@@ -1,1 +1,0 @@
-export { centauri } from './centauri';
