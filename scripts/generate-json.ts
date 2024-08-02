@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { imageList } from './imageList';
+const IMG_URL_BASE =
+  'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens';
 
 const mainnetPath = path.resolve(
   __dirname,
@@ -122,6 +125,13 @@ const chainFiles = fs
 async function importModule(modulePath: string) {
   return await import(modulePath);
 }
+const getImageUrl = (denom: string) => {
+  const tokenFileName = imageList.find(
+    (key) => key.split('.')[0].toUpperCase() === denom.toUpperCase()
+  );
+
+  return tokenFileName ? IMG_URL_BASE + '/' + tokenFileName : '';
+};
 
 async function processChainFiles() {
   try {
@@ -191,7 +201,6 @@ async function processChainFiles() {
         const chainData = (chainModule.default || chainModule)[
           file.split('.')[0]
         ];
-
         let refinedChannelMap = channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
@@ -314,7 +323,7 @@ async function processChainFiles() {
             chainId,
             chainName,
             currencies,
-            chainSymbolImageUrl,
+
             feeCurrencies,
             nodeProvider,
             rest,
@@ -344,12 +353,20 @@ async function processChainFiles() {
               (coin) =>
                 coin.name.toUpperCase() === dotAssetInfo.denom.toUpperCase()
             )?.id || '';
+
+          const imageFileName = imageList.find(
+            (key) =>
+              key.split('.')[0].toUpperCase() ===
+              chainData.config?.name.toUpperCase()
+          );
           transformedData = {
             chainId: chainData.config?.dotChainId,
             rest: '',
             rpc: chainData.config.endpoint[0],
             chainName: chainData.config?.name,
-            chainSymbolImageUrl: '',
+            chainSymbolImageUrl: imageFileName
+              ? IMG_URL_BASE + '/' + imageFileName
+              : '',
             chainType: 'polkadot',
             polkadot: {
               ss58Format: chainData.config?.ss58_format,
@@ -379,6 +396,7 @@ async function processChainFiles() {
               );
 
               const denom = crossChainData['dotsama'][currency]?.denom || '';
+
               const decimal =
                 crossChainData['dotsama'][currency]?.decimals || '';
               //ethereum
@@ -420,7 +438,7 @@ async function processChainFiles() {
               return {
                 coinDenom: denom,
                 coinDecimals: decimal,
-                coinImageUrl: '',
+                coinImageUrl: getImageUrl(denom),
 
                 coinGeckoId: coinGeckoId,
                 cosmos: cosmosInfo?.minimalDenom
@@ -453,7 +471,7 @@ async function processChainFiles() {
               {
                 coinDenom: dotAssetInfo.denom,
                 coinDecimals: dotAssetInfo.decimals,
-                coinImageUrl: '',
+                coinImageUrl: getImageUrl(dotAssetInfo.denom),
                 coinMinimalDenom: '',
                 coinGeckoId: coinGeckoIdForFee,
               },
@@ -464,7 +482,7 @@ async function processChainFiles() {
             chainId,
             chainName,
             currencies,
-            chainSymbolImageUrl,
+
             feeCurrencies,
             nodeProvider,
             rest,
@@ -486,12 +504,17 @@ async function processChainFiles() {
             rest,
             rpc,
             chainName,
-            chainSymbolImageUrl,
+            chainSymbolImageUrl:
+              'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg',
             chainType: 'solana',
             channelMap: refinedChannelMap,
 
             currencies: solanaAssets?.map((currency) => {
+              //get image
               const denom = crossChainData['solana'][currency]?.denom || '';
+              const tokenFileName = imageList.find(
+                (key) => key.split('.')[0].toUpperCase() === denom.toUpperCase()
+              );
               const picassoAssetId = Object.keys(
                 crossChainData['dotsama']
               ).find(
@@ -558,9 +581,9 @@ async function processChainFiles() {
                     crossChainData['solana'][currency]?.denom?.toUpperCase()
                 )?.id || '';
               return {
-                coinImageUrl: '',
+                coinImageUrl: getImageUrl(denom),
                 coinDecimals: crossChainData['solana'][currency]?.decimals || 0,
-                coinDenom: crossChainData['solana'][currency]?.denom || 0,
+                coinDenom: denom,
                 coinGeckoId: coinGeckoId,
                 cosmos: {
                   minimalDenom: cosmosMinimalDenom,
@@ -627,12 +650,12 @@ async function processChainFiles() {
             channelMap: refinedChannelMap,
 
             currencies: ethereumAssets?.map((currency) => {
+              const denom = crossChainData['ethereum'][currency]?.denom || '';
               const picassoAssetId = Object.keys(
                 crossChainData['dotsama']
               ).find(
                 (key) =>
-                  crossChainData['ethereum'][currency]?.denom ===
-                    crossChainData['dotsama'][key]?.denom &&
+                  denom === crossChainData['dotsama'][key]?.denom &&
                   crossChainData['dotsama'][key]?.['network'] !== 'COMPOSABLE'
               );
 
@@ -640,15 +663,13 @@ async function processChainFiles() {
                 crossChainData['dotsama']
               ).find(
                 (key) =>
-                  crossChainData['ethereum'][currency]?.denom ===
-                    crossChainData['dotsama'][key]?.denom &&
+                  denom === crossChainData['dotsama'][key]?.denom &&
                   crossChainData['dotsama'][key]?.['network'] === 'COMPOSABLE'
               );
 
               //et
 
-              const ethereumDenom = crossChainData['ethereum'][currency]?.denom;
-              const ethereumInfo = ethereumAssetsData?.[ethereumDenom || ''];
+              const ethereumInfo = ethereumAssetsData?.[denom || ''];
               const ethereumFromCosmosFee =
                 ethereumInfo?.cosmosToEthereumFee || 0;
               const ethereumMinimumTransfer =
@@ -660,16 +681,14 @@ async function processChainFiles() {
               //cosmos
 
               const cosmosKey = Object.keys(crossChainData['cosmos'])?.find(
-                (item) =>
-                  crossChainData['cosmos'][item].denom ===
-                  crossChainData['ethereum'][currency]?.denom
+                (item) => crossChainData['cosmos'][item].denom === denom
               );
 
               //solana
               const solanaAssetId = Object.keys(crossChainData['solana']).find(
                 (key) =>
                   crossChainData['solana'][key]?.denom.toUpperCase() ===
-                  crossChainData['ethereum'][currency]?.denom.toUpperCase()
+                  denom.toUpperCase()
               );
               const solanaInfo = solanaAssetsData?.[solanaAssetId];
 
@@ -685,15 +704,13 @@ async function processChainFiles() {
 
               const coinGeckoId =
                 coingeckoData.find(
-                  (coin) =>
-                    coin.name.toUpperCase() ===
-                    crossChainData['ethereum'][currency]?.denom?.toUpperCase()
+                  (coin) => coin.name.toUpperCase() === denom?.toUpperCase()
                 )?.id || '';
               return {
-                coinImageUrl: '',
+                coinImageUrl: getImageUrl(denom),
                 coinDecimals:
                   crossChainData['ethereum'][currency]?.decimals || 0,
-                coinDenom: crossChainData['ethereum'][currency]?.denom || 0,
+                coinDenom: denom || 0,
                 coinGeckoId: coinGeckoId,
                 cosmos: {
                   minimalDenom:
