@@ -14,52 +14,12 @@
     "id": "archway"
   },
   {
-    "name": "ASTR",
-    "id": "astar"
-  },
-  {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
-  },
-  {
     "name": "TIA",
     "id": "celestia"
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
-  },
-  {
     "name": "HUAHUA",
     "id": "chihuahua-token"
-  },
-  {
-    "name": "DOT",
-    "id": "polkadot"
-  },
-  {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "ASTR",
-    "id": "astar"
   },
   {
     "name": "XRP",
@@ -170,18 +130,6 @@
     "id": "kujira"
   },
   {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "GLMR",
-    "id": "moonbeam"
-  },
-  {
-    "name": "MOVR",
-    "id": "moonriver"
-  },
-  {
     "name": "ASTRO",
     "id": "astroport-fi"
   },
@@ -196,10 +144,6 @@
   {
     "name": "milkTIA",
     "id": "milkyway-staked-tia"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
   },
   {
     "name": "QCK",
@@ -220,10 +164,6 @@
   {
     "name": "SEI",
     "id": "sei-network"
-  },
-  {
-    "name": "SDN",
-    "id": "shiden"
   },
   {
     "name": "SOL",
@@ -290,20 +230,80 @@
     "id": "stride-staked-atom"
   },
   {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
     "name": "UMEE",
     "id": "umee"
+  },
+  {
+    "name": "PICA",
+    "id": "picasso"
+  },
+  {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "DOT",
+    "id": "polkadot"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "GLMR",
+    "id": "moonbeam"
+  },
+  {
+    "name": "MOVR",
+    "id": "moonriver"
   },
   {
     "name": "USDT Kusama",
     "id": "tether"
   },
   {
-    "name": "PICA",
-    "id": "picasso"
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "SDN",
+    "id": "shiden"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
   }
 ] as const;
  

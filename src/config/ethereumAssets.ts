@@ -16,16 +16,6 @@ const ethereumAssets = {
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
   },
-  "KSM": {
-    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-    "cosmosToEthereumFee": 0.5,
-    "minimumTransfer": 1
-  },
-  "DOT": {
-    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-    "cosmosToEthereumFee": 2,
-    "minimumTransfer": 5
-  },
   "XRP": {
     "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
     "cosmosToEthereumFee": 35,
@@ -230,6 +220,16 @@ const ethereumAssets = {
     "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
     "cosmosToEthereumFee": 2000,
     "minimumTransfer": 5000
+  },
+  "DOT": {
+    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+    "cosmosToEthereumFee": 2,
+    "minimumTransfer": 5
+  },
+  "KSM": {
+    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+    "cosmosToEthereumFee": 0.5,
+    "minimumTransfer": 1
   }
 } as const;
 

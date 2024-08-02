@@ -16,12 +16,6 @@ const crossChainAssets = {
       "denom": "IST",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png"
     },
-    "undefined": {
-      "chainId": "1000",
-      "decimals": 6,
-      "denom": "USDT Kusama",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
-    },
     "aarch": {
       "chainId": "archway-1",
       "decimals": 18,
@@ -430,6 +424,12 @@ const crossChainAssets = {
       "denom": "STARS",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
     },
+    "undefined": {
+      "chainId": "1000",
+      "decimals": 6,
+      "denom": "USDT Kusama",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
+    },
     "stutia": {
       "chainId": "stride-1",
       "decimals": 6,
@@ -486,18 +486,6 @@ const crossChainAssets = {
       "minimalDenom": "aarch",
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
-    },
-    "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
-      "chainId": "polkadot",
-      "decimals": 12,
-      "denom": "KSM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
-    },
-    "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J": {
-      "chainId": "2019",
-      "decimals": 10,
-      "denom": "DOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW": {
       "chainId": "coreum-mainnet-1",
@@ -719,6 +707,18 @@ const crossChainAssets = {
       "decimals": 12,
       "minimalDenom": "ppica",
       "denom": "PICA"
+    },
+    "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J": {
+      "chainId": "2019",
+      "decimals": 10,
+      "denom": "DOT",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
+    },
+    "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
+      "chainId": "polkadot",
+      "decimals": 12,
+      "denom": "KSM",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     }
   },
   "ethereum": {
@@ -742,18 +742,6 @@ const crossChainAssets = {
       "minimalDenom": "aarch",
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
-    },
-    "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
-      "chainId": "polkadot",
-      "decimals": 12,
-      "denom": "KSM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
-    },
-    "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
-      "chainId": "2019",
-      "decimals": 10,
-      "denom": "DOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24": {
       "chainId": "coreum-mainnet-1",
@@ -1038,6 +1026,18 @@ const crossChainAssets = {
       "decimals": 12,
       "minimalDenom": "ppica",
       "denom": "PICA"
+    },
+    "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
+      "chainId": "2019",
+      "decimals": 10,
+      "denom": "DOT",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
+    },
+    "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
+      "chainId": "polkadot",
+      "decimals": 12,
+      "denom": "KSM",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     }
   },
   "dotsama": {
@@ -1074,13 +1074,13 @@ const crossChainAssets = {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png"
     },
     "31": {
-      "chainId": "2087",
+      "chainId": "2001",
       "decimals": 12,
       "denom": "BNC_KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg"
     },
     "32": {
-      "chainId": "2087",
+      "chainId": "2001",
       "decimals": 12,
       "denom": "vKSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg"
@@ -1129,23 +1129,23 @@ const crossChainAssets = {
       "denom": "ASTR",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg"
     },
-    "79228162514264337593543950369": {
-      "chainId": "2019",
-      "decimals": 12,
-      "denom": "BNC_DOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg"
-    },
-    "79228162514264337593543950370": {
-      "chainId": "2019",
-      "decimals": 10,
-      "denom": "vDOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg"
-    },
     "79228162514264337593543950342": {
       "chainId": "2019",
       "decimals": 10,
       "denom": "DOT",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
+    },
+    "79228162514264337593543950369": {
+      "chainId": "2030",
+      "decimals": 12,
+      "denom": "BNC_DOT",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg"
+    },
+    "79228162514264337593543950370": {
+      "chainId": "2030",
+      "decimals": 10,
+      "denom": "vDOT",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg"
     },
     "79228162514264337593543950376": {
       "chainId": "2004",

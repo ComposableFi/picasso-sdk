@@ -620,34 +620,6 @@
       "centauri-1"
     ]
   },
-  "kusama": {
-    "name": "Kusama",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
-    "rpc": "wss://kusama-rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "kusama",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 2,
-      "isParachain": false,
-      "relayChain": "kusama",
-      "hops": {
-        "2087": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.reserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "2087"
-    ]
-  },
   "neutron-1": {
     "name": "Neutron",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
@@ -701,34 +673,6 @@
     "network_to": [
       "pacific-1",
       "centauri-1"
-    ]
-  },
-  "polkadot": {
-    "name": "Polkadot",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
-    "rpc": "wss://rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "polkadot",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 0,
-      "isParachain": false,
-      "relayChain": "polkadot",
-      "hops": {
-        "2019": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.limitedReserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "2019"
     ]
   },
   "quicksilver-2": {
@@ -956,6 +900,62 @@
       "ethereum",
       "coreum-mainnet-1",
       "solana"
+    ]
+  },
+  "kusama": {
+    "name": "Kusama",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
+    "rpc": "wss://kusama-rpc.polkadot.io",
+    "rest": "",
+    "chain_type": "polkadot",
+    "chainId": "kusama",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 2,
+      "isParachain": false,
+      "relayChain": "kusama",
+      "hops": {
+        "2087": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.reserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "2087"
+    ]
+  },
+  "polkadot": {
+    "name": "Polkadot",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
+    "rpc": "wss://rpc.polkadot.io",
+    "rest": "",
+    "chain_type": "polkadot",
+    "chainId": "polkadot",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 0,
+      "isParachain": false,
+      "relayChain": "polkadot",
+      "hops": {
+        "2019": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.limitedReserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "2019"
     ]
   }
 } as const;
