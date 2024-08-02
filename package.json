@@ -18,8 +18,8 @@
     "build": "tsc",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public",
-    "generate-json": "ts-node ./scripts/generate-json.ts",
-    "generate-helper": "ts-node ./scripts/generate-helper.ts",
+    "generate-json": "ts-node ./src/scripts/generate-json.ts",
+    "generate-helper": "ts-node ./src/scripts/generate-helper.ts",
     "prepare": "husky install"
   },
   "dependencies": {
