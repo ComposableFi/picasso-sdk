@@ -4,6 +4,16 @@
   "rest": "",
   "rpc": "wss://rpc.astar.network",
   "chainName": "astar",
+  "hops": {
+    "2019": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": [
+        "79228162514264337593543952342"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astar.svg",
   "chainType": "polkadot",
   "polkadot": {

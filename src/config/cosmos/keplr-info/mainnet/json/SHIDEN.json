@@ -4,6 +4,16 @@
   "rest": "",
   "rpc": "wss://shiden-rpc.dwellir.com",
   "chainName": "Shiden",
+  "hops": {
+    "2087": {
+      "type": "XCM",
+      "xcmType": "polkadotXcm.limitedReserveTransferAssets",
+      "version": "V3",
+      "tokens": [
+        "2007"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/shiden.svg",
   "chainType": "polkadot",
   "polkadot": {

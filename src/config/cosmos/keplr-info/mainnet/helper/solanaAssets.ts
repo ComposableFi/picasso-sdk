@@ -13,6 +13,10 @@ const solanaAssets = {
     "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
     "minimumTransfer": 240
   },
+  "PICA": {
+    "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
+    "minimumTransfer": 4000
+  },
   "DOT": {
     "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
     "minimumTransfer": 3

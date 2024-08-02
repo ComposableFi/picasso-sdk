@@ -30,6 +30,10 @@
     "id": "celestia"
   },
   {
+    "name": "PICA",
+    "id": "picasso"
+  },
+  {
     "name": "HUAHUA",
     "id": "chihuahua-token"
   },

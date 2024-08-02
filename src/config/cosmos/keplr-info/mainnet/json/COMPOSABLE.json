@@ -20,6 +20,33 @@
       ]
     }
   },
+  "hops": {
+    "2006": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": [
+        "79228162514264337593543952342"
+      ]
+    },
+    "2030": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": [
+        "79228162514264337593543950369",
+        "79228162514264337593543950370"
+      ]
+    },
+    "polkadot": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V3",
+      "tokens": [
+        "79228162514264337593543950342"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/composable.svg",
   "chainType": "polkadot",
   "polkadot": {

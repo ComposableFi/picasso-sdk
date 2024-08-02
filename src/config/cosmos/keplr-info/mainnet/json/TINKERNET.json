@@ -4,6 +4,16 @@
   "rest": "",
   "rpc": "wss://tinkernet-rpc.dwellir.com",
   "chainName": "Tinkernet",
+  "hops": {
+    "2087": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": [
+        "2125"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
   "chainType": "polkadot",
   "polkadot": {

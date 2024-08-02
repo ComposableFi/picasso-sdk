@@ -124,13 +124,15 @@ const processFiles = () => {
       rest: data.rest,
       chain_type: data.chainType,
       chainId: data.chainId,
-      feeAssetId: data.currencies[0].coinDenom,
+      feeAssetId: data.currencies[0]?.coinDenom,
       polkadot: data.polkadot,
       cosmos: data.cosmos,
       enabled: data.enabled,
       network_to: [
-        ...Object.keys(data.polkadot['hops']),
-        ...Object.values(data.channelMap).map((item: any) => item.chainId),
+        ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),
+        ...Object.values(data.channelMap || {}).map(
+          (item: any) => item.chainId
+        ),
       ],
     };
 
@@ -232,7 +234,7 @@ export default ethereumAssets;
 `;
 
   fs.writeFileSync(ethereumOutputFilePath, ethereumOutputContent, 'utf-8');
-  console.log('ethereumAssets.ts 파일이 생성되었습니다.');
+  console.log('ethereumAssets.ts has been created');
 
   // solanaAssets.ts 파일로 저장
   const solanaOutputDir = path.dirname(solanaOutputFilePath);
@@ -248,7 +250,7 @@ export default solanaAssets;
 `;
 
   fs.writeFileSync(solanaOutputFilePath, solanaOutputContent, 'utf-8');
-  console.log('solanaAssets.ts 파일이 생성되었습니다.');
+  console.log('solanaAssets.ts has been created');
 
   // tokensPerChannel.ts 파일로 저장
   const tokensPerChannelOutputDir = path.dirname(
@@ -269,7 +271,7 @@ export default tokensPerChannel;
     tokensPerChannelOutputContent,
     'utf-8'
   );
-  console.log('tokensPerChannel.ts 파일이 생성되었습니다.');
+  console.log('tokensPerChannel.ts has been created');
 
   const networksOutputDir = path.dirname(networksOutputFilePath);
   if (!fs.existsSync(networksOutputDir)) {
@@ -283,7 +285,7 @@ export default tokensPerChannel;
   `;
 
   fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
-  console.log('networks.ts 파일이 생성되었습니다.');
+  console.log('networks.ts has been created');
   // coinGecko.ts 파일로 저장
   const coinGeckoOutputDir = path.dirname(coinGeckoOutputFilePath);
   if (!fs.existsSync(coinGeckoOutputDir)) {
@@ -298,7 +300,7 @@ export default tokensPerChannel;
  `;
 
   fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
-  console.log('coinGecko.ts 파일이 생성되었습니다.');
+  console.log('coinGecko.ts has been created');
 
   const crossChainAssetsOutputContent = `
 // [FAST TRACK] Add cross-chain asset info here
@@ -312,6 +314,6 @@ export default crossChainAssets;
     crossChainAssetsOutputContent,
     'utf-8'
   );
-  console.log('crossChainAssets.ts 파일이 생성되었습니다.');
+  console.log('crossChainAssets.ts has been created');
 };
 processFiles();

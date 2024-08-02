@@ -33,6 +33,41 @@
       ]
     }
   },
+  "hops": {
+    "1000": {
+      "type": "XCM",
+      "xcmType": "xTokens.transferMultiasset",
+      "version": "V3",
+      "tokens": [
+        "130"
+      ]
+    },
+    "2001": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V2",
+      "tokens": [
+        "31",
+        "32"
+      ]
+    },
+    "2125": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V3",
+      "tokens": [
+        "2125"
+      ]
+    },
+    "kusama": {
+      "type": "XCM",
+      "xcmType": "xTokens.transfer",
+      "version": "V3",
+      "tokens": [
+        "4"
+      ]
+    }
+  },
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
   "chainType": "polkadot",
   "polkadot": {

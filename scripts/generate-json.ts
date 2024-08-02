@@ -214,8 +214,7 @@ async function processChainFiles() {
         const chainData = (chainModule.default || chainModule)[
           file.split('.')[0]
         ];
-        const refinedChannelMap =
-          channelMapData[chainData?.chainId || ''];
+        const refinedChannelMap = channelMapData[chainData?.chainId || ''];
 
         //TODO: 지우고 역으로 찾아서 넣어야 함. 다른 스크립트 생성해야 함.
         let transformedData: CustomChainInfo | {} = {};
@@ -347,9 +346,10 @@ async function processChainFiles() {
           };
           //polkadot case
         } else if (chainData?.handler === 'POLKADOT') {
-          let polkadotIbcChannelMap : any = {};
+          let polkadotIbcChannelMap: any = {};
           let refinedHops = {};
-          polkadotIbcChannelMap = channelMapData[chainData.config?.dotChainId || ''];
+          polkadotIbcChannelMap =
+            channelMapData[chainData.config?.dotChainId || ''];
 
           for (const key in chainData.hops) {
             if (
@@ -382,7 +382,7 @@ async function processChainFiles() {
             rest: '',
             rpc: chainData.config.endpoint[0],
             chainName: chainData.config?.name,
-            channelMap: polkadotIbcChannelMap ,
+            channelMap: polkadotIbcChannelMap,
 
             chainSymbolImageUrl: getImageUrl(chainData.config?.name),
             chainType: 'polkadot',

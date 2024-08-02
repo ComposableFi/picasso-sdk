@@ -16,6 +16,11 @@ const ethereumAssets = {
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
   },
+  "PICA": {
+    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
+    "cosmosToEthereumFee": 2000,
+    "minimumTransfer": 5000
+  },
   "DOT": {
     "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
     "cosmosToEthereumFee": 2,
