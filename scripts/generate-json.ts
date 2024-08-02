@@ -474,7 +474,12 @@ async function processChainFiles() {
             ...others
           } = chainData || {};
 
-          const solanaAssets = Object.keys(crossChainData['solana']);
+          const solanaAssets = Object.keys(crossChainData['solana']).filter(
+            (currency) =>
+              !crossChainData['solana'][currency].minimalDenom.includes(
+                'channel-'
+              )
+          );
 
           transformedData = {
             chainId,
@@ -604,7 +609,13 @@ async function processChainFiles() {
             ...others
           } = chainData || {};
 
-          const ethereumAssets = Object.keys(crossChainData['ethereum']);
+          // it should be native asset
+          const ethereumAssets = Object.keys(crossChainData['ethereum']).filter(
+            (currency) =>
+              !crossChainData['ethereum'][currency].minimalDenom.includes(
+                'channel-'
+              )
+          );
 
           transformedData = {
             chainId,
