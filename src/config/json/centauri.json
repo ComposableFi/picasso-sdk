@@ -23,127 +23,82 @@
     "0": {
       "chainId": "chihuahua-1",
       "destinationId": 62,
-      "tokens": [
-        "UHUAHUA"
-      ]
+      "tokens": ["UHUAHUA"]
     },
     "2": {
       "chainId": "2087",
       "destinationId": 17,
-      "tokens": [
-        "PICA",
-        "KSM",
-        "DOT",
-        "UMEE",
-        "ASTR",
-        "SDN",
-        "USDT Kusama"
-      ]
+      "tokens": ["PICA", "KSM", "DOT", "UMEE", "ASTR", "SDN", "USDT Kusama"]
     },
     "3": {
       "chainId": "osmosis-1",
       "destinationId": 1279,
-      "tokens": [
-        "UOSMO",
-        "USEI"
-      ]
+      "tokens": ["UOSMO", "USEI"]
     },
     "4": {
       "chainId": "cosmoshub-4",
       "destinationId": 617,
-      "tokens": [
-        "ATOM"
-      ]
+      "tokens": ["ATOM"]
     },
     "5": {
       "chainId": "stride-1",
       "destinationId": 134,
-      "tokens": [
-        "STRD",
-        "stATOM"
-      ]
+      "tokens": ["STRD", "stATOM"]
     },
     "6": {
       "chainId": "stargaze-1",
       "destinationId": 184,
-      "tokens": [
-        "STARS"
-      ]
+      "tokens": ["STARS"]
     },
     "9": {
       "chainId": "quicksilver-2",
       "destinationId": 94,
-      "tokens": [
-        "QCK"
-      ]
+      "tokens": ["QCK"]
     },
     "11": {
       "chainId": "crescent-1",
       "destinationId": 64,
-      "tokens": [
-        "CRE",
-        "BCRE",
-        "UCRE"
-      ]
+      "tokens": ["CRE", "BCRE", "UCRE"]
     },
     "13": {
       "chainId": "agoric-3",
       "destinationId": 55,
-      "tokens": [
-        "BLD",
-        "IST"
-      ]
+      "tokens": ["BLD", "IST"]
     },
     "14": {
       "chainId": "secret-4",
       "destinationId": 80,
-      "tokens": [
-        "SCRT",
-        "SILK",
-        "SHD"
-      ]
+      "tokens": ["SCRT", "SILK", "SHD"]
     },
     "18": {
       "chainId": "neutron-1",
       "destinationId": 17,
-      "tokens": [
-        "NTRN"
-      ]
+      "tokens": ["NTRN"]
     },
     "20": {
       "chainId": "umee-1",
       "destinationId": 99,
-      "tokens": [
-        "UMEE"
-      ]
+      "tokens": ["UMEE"]
     },
     "27": {
       "chainId": "kaiyo-1",
       "destinationId": 101,
-      "tokens": [
-        "KUJI"
-      ]
+      "tokens": ["KUJI"]
     },
     "29": {
       "chainId": "injective-1",
       "destinationId": 145,
-      "tokens": [
-        "INJ"
-      ]
+      "tokens": ["INJ"]
     },
     "38": {
       "chainId": "celestia",
       "destinationId": 12,
-      "tokens": [
-        "TIA"
-      ]
+      "tokens": ["TIA"]
     },
     "50": {
       "chainId": "archway-1",
       "destinationId": 108,
-      "tokens": [
-        "ARCH"
-      ]
+      "tokens": ["ARCH"]
     },
     "52": {
       "chainId": "ethereum",
@@ -181,10 +136,7 @@
     "56": {
       "chainId": "coreum-mainnet-1",
       "destinationId": 31,
-      "tokens": [
-        "COREUM",
-        "XRP"
-      ]
+      "tokens": ["COREUM", "XRP"]
     },
     "71": {
       "chainId": "solana",
@@ -246,6 +198,8 @@
       "coinMinimalDenom": "ppica",
       "coinDecimals": 12,
       "coinGeckoId": "picasso",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+
       "cosmos": {
         "minimalDenom": "ppica"
       },
