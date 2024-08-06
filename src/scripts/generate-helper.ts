@@ -61,16 +61,16 @@ const processFiles = () => {
     // generate networks
 
     networks[data.chainId] = {
-      name: data.chainName,
-      image: data.chainSymbolImageUrl,
-      rpc: data.rpc,
-      rest: data.rest,
-      chain_type: data.chainType,
-      chainId: data.chainId,
-      feeAssetId: data.currencies[0]?.coinDenom,
-      polkadot: data.polkadot,
-      cosmos: data.cosmos,
-      enabled: data.enabled,
+      name: data.chainName || '',
+      image: data.chainSymbolImageUrl || '',
+      rpc: data.rpc || '',
+      rest: data.rest || '',
+      chain_type: data.chainType || '',
+      chainId: data.chainId || '',
+      feeAssetId: data.currencies[0]?.coinDenom || '',
+      polkadot: data.polkadot || {},
+      cosmos: data.cosmos || {},
+      enabled: data.enabled || false,
       network_to: [
         ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),
         ...Object.values(data.channelMap || {}).map(
@@ -221,7 +221,7 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as 
   const networksOutputContent = `
 // [GENERATED]
 
- export const networks = ${JSON.stringify(networks, null, 2)} as const;
+ export const networks = ${JSON.stringify(networks, null, 2)} satisfies NetworkInfo as const;
   
   `;
 
