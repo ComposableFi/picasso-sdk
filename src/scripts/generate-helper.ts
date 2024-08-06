@@ -221,7 +221,7 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as 
   const networksOutputContent = `
 // [GENERATED]
 
- export const networks = ${JSON.stringify(networks, null, 2)} satisfies NetworkInfo as const;
+ export const networks = ${JSON.stringify(networks, null, 2)};
   
   `;
 
