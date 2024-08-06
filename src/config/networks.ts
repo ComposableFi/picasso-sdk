@@ -1,6 +1,7 @@
 
-  // [FAST TRACK] Add info for networks here
-  const networks = {
+// [GENERATED]
+
+ export const networks = {
   "1000": {
     "name": "Kusama Asset Hub",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",
@@ -960,5 +961,4 @@
   }
 } as const;
   
-  export default networks;
   

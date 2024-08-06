@@ -171,10 +171,9 @@ const processFiles = () => {
   }
 
   const ethereumOutputContent = `
-// [FAST TRACK] Add info for assets on ethereum network here
-const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)} as const;
+// [GENERATED]
+export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)} as const;
 
-export default ethereumAssets;
 `;
 
   fs.writeFileSync(ethereumOutputFilePath, ethereumOutputContent, 'utf-8');
@@ -187,10 +186,9 @@ export default ethereumAssets;
   }
 
   const solanaOutputContent = `
-// [FAST TRACK] Add info for assets on solana network here
-const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)} as const;
+// [GENERATED]
+export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)} as const;
 
-export default solanaAssets;
 `;
 
   fs.writeFileSync(solanaOutputFilePath, solanaOutputContent, 'utf-8');
@@ -204,10 +202,9 @@ export default solanaAssets;
     fs.mkdirSync(tokensPerChannelOutputDir);
   }
   const tokensPerChannelOutputContent = `
-// [FAST TRACK] Add asset here to enable transferring from one network to another
-const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as const;
+// [GENERATED]
+export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as const;
 
-export default tokensPerChannel;
 `;
 
   fs.writeFileSync(
@@ -222,10 +219,10 @@ export default tokensPerChannel;
     fs.mkdirSync(networksOutputDir);
   }
   const networksOutputContent = `
-  // [FAST TRACK] Add info for networks here
-  const networks = ${JSON.stringify(networks, null, 2)} as const;
+// [GENERATED]
+
+ export const networks = ${JSON.stringify(networks, null, 2)} as const;
   
-  export default networks;
   `;
 
   fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
@@ -237,20 +234,19 @@ export default tokensPerChannel;
   }
 
   const coinGeckoOutputContent = `
- // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
- const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} as const;
+// [GENERATED]
+
+ export const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} as const;
  
- export default coinGecko;
  `;
 
   fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
   console.log('coinGecko.ts has been created');
 
   const crossChainAssetsOutputContent = `
-// [FAST TRACK] Add cross-chain asset info here
-const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} as const;
+// [GENERATED]
+export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} as const;
 
-export default crossChainAssets;
 `;
 
   fs.writeFileSync(

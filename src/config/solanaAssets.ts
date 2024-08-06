@@ -1,6 +1,6 @@
 
-// [FAST TRACK] Add info for assets on solana network here
-const solanaAssets = {
+// [GENERATED]
+export const solanaAssets = {
   "BLD": {
     "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
     "minimumTransfer": 200
@@ -151,4 +151,3 @@ const solanaAssets = {
   }
 } as const;
 
-export default solanaAssets;

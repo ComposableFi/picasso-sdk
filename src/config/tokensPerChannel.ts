@@ -1,6 +1,6 @@
 
-// [FAST TRACK] Add asset here to enable transferring from one network to another
-const tokensPerChannel = {
+// [GENERATED]
+export const tokensPerChannel = {
   "2019": {
     "15": {
       "chainId": "2087",
@@ -525,4 +525,3 @@ const tokensPerChannel = {
   }
 } as const;
 
-export default tokensPerChannel;

@@ -1,6 +1,6 @@
 
-// [FAST TRACK] Add cross-chain asset info here
-const crossChainAssets = {
+// [GENERATED]
+export const crossChainAssets = {
   "cosmos": {
     "ubld": {
       "chainId": "agoric-3",
@@ -1160,4 +1160,3 @@ const crossChainAssets = {
   }
 } as const;
 
-export default crossChainAssets;

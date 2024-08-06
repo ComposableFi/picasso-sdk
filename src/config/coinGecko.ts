@@ -1,6 +1,7 @@
 
- // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
- const coinGecko = [
+// [GENERATED]
+
+ export const coinGecko = [
   {
     "name": "BLD",
     "id": "agoric"
@@ -307,5 +308,4 @@
   }
 ] as const;
  
- export default coinGecko;
  
