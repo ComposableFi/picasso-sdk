@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// [FAST TRACK] Add info for assets on ethereum network here
-var ethereumAssets = {
+exports.ethereumAssets = void 0;
+// [GENERATED]
+exports.ethereumAssets = {
     "BLD": {
         "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
         "cosmosToEthereumFee": 165,
@@ -233,4 +234,3 @@ var ethereumAssets = {
         "minimumTransfer": 1
     }
 };
-exports.default = ethereumAssets;

@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// [FAST TRACK] Add info for assets on solana network here
-var solanaAssets = {
+exports.solanaAssets = void 0;
+// [GENERATED]
+exports.solanaAssets = {
     "BLD": {
         "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
         "minimumTransfer": 200
@@ -151,4 +152,3 @@ var solanaAssets = {
         "minimumTransfer": 0.7
     }
 };
-exports.default = solanaAssets;

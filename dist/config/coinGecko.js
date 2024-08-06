@@ -1,7 +1,8 @@
 "use strict";
+// [GENERATED]
 Object.defineProperty(exports, "__esModule", { value: true });
-// [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI
-var coinGecko = [
+exports.coinGecko = void 0;
+exports.coinGecko = [
     {
         "name": "BLD",
         "id": "agoric"
@@ -307,4 +308,3 @@ var coinGecko = [
         "id": "tether"
     }
 ];
-exports.default = coinGecko;

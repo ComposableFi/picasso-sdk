@@ -1,4 +1,4 @@
-declare const tokensPerChannel: {
+export declare const tokensPerChannel: {
     readonly "2019": {
         readonly "15": {
             readonly chainId: "2087";
@@ -253,5 +253,4 @@ declare const tokensPerChannel: {
         };
     };
 };
-export default tokensPerChannel;
 //# sourceMappingURL=tokensPerChannel.d.ts.map

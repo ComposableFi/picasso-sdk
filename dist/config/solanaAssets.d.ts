@@ -1,4 +1,4 @@
-declare const solanaAssets: {
+export declare const solanaAssets: {
     readonly BLD: {
         readonly mintAddress: "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU";
         readonly minimumTransfer: 200;
@@ -148,5 +148,4 @@ declare const solanaAssets: {
         readonly minimumTransfer: 0.7;
     };
 };
-export default solanaAssets;
 //# sourceMappingURL=solanaAssets.d.ts.map

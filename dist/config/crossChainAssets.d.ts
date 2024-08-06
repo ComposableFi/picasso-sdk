@@ -1,4 +1,4 @@
-declare const crossChainAssets: {
+export declare const crossChainAssets: {
     readonly cosmos: {
         readonly ubld: {
             readonly chainId: "agoric-3";
@@ -1157,5 +1157,4 @@ declare const crossChainAssets: {
         };
     };
 };
-export default crossChainAssets;
 //# sourceMappingURL=crossChainAssets.d.ts.map

@@ -1,4 +1,4 @@
-declare const coinGecko: readonly [{
+export declare const coinGecko: readonly [{
     readonly name: "BLD";
     readonly id: "agoric";
 }, {
@@ -227,5 +227,4 @@ declare const coinGecko: readonly [{
     readonly name: "USDT Kusama";
     readonly id: "tether";
 }];
-export default coinGecko;
 //# sourceMappingURL=coinGecko.d.ts.map

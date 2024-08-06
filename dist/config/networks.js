@@ -1,7 +1,8 @@
 "use strict";
+// [GENERATED]
 Object.defineProperty(exports, "__esModule", { value: true });
-// [FAST TRACK] Add info for networks here
-var networks = {
+exports.networks = void 0;
+exports.networks = {
     "1000": {
         "name": "Kusama Asset Hub",
         "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",
@@ -960,4 +961,3 @@ var networks = {
         ]
     }
 };
-exports.default = networks;

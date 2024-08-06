@@ -1,4 +1,4 @@
-declare const networks: {
+export declare const networks: {
     readonly "1000": {
         readonly name: "Kusama Asset Hub";
         readonly image: "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg";
@@ -820,5 +820,4 @@ declare const networks: {
         readonly network_to: readonly ["2019"];
     };
 };
-export default networks;
 //# sourceMappingURL=networks.d.ts.map

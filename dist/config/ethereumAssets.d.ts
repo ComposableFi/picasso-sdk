@@ -1,4 +1,4 @@
-declare const ethereumAssets: {
+export declare const ethereumAssets: {
     readonly BLD: {
         readonly erc20Address: "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1";
         readonly cosmosToEthereumFee: 165;
@@ -230,5 +230,4 @@ declare const ethereumAssets: {
         readonly minimumTransfer: 1;
     };
 };
-export default ethereumAssets;
 //# sourceMappingURL=ethereumAssets.d.ts.map

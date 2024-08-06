@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// [FAST TRACK] Add cross-chain asset info here
-var crossChainAssets = {
+exports.crossChainAssets = void 0;
+// [GENERATED]
+exports.crossChainAssets = {
     "cosmos": {
         "ubld": {
             "chainId": "agoric-3",
@@ -1160,4 +1161,3 @@ var crossChainAssets = {
         }
     }
 };
-exports.default = crossChainAssets;

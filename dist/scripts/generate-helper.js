@@ -187,7 +187,7 @@ var processFiles = function () {
     if (!fs.existsSync(ethereumOutputDir)) {
         fs.mkdirSync(ethereumOutputDir);
     }
-    var ethereumOutputContent = "\n// [FAST TRACK] Add info for assets on ethereum network here\nconst ethereumAssets = ".concat(JSON.stringify(ethereumAssets, null, 2), " as const;\n\nexport default ethereumAssets;\n");
+    var ethereumOutputContent = "\n// [GENERATED]\nexport const ethereumAssets = ".concat(JSON.stringify(ethereumAssets, null, 2), " as const;\n\n");
     fs.writeFileSync(ethereumOutputFilePath, ethereumOutputContent, 'utf-8');
     console.log('ethereumAssets.ts has been created');
     // solanaAssets.ts 파일로 저장
@@ -195,7 +195,7 @@ var processFiles = function () {
     if (!fs.existsSync(solanaOutputDir)) {
         fs.mkdirSync(solanaOutputDir);
     }
-    var solanaOutputContent = "\n// [FAST TRACK] Add info for assets on solana network here\nconst solanaAssets = ".concat(JSON.stringify(solanaAssets, null, 2), " as const;\n\nexport default solanaAssets;\n");
+    var solanaOutputContent = "\n// [GENERATED]\nexport const solanaAssets = ".concat(JSON.stringify(solanaAssets, null, 2), " as const;\n\n");
     fs.writeFileSync(solanaOutputFilePath, solanaOutputContent, 'utf-8');
     console.log('solanaAssets.ts has been created');
     // tokensPerChannel.ts 파일로 저장
@@ -203,14 +203,14 @@ var processFiles = function () {
     if (!fs.existsSync(tokensPerChannelOutputDir)) {
         fs.mkdirSync(tokensPerChannelOutputDir);
     }
-    var tokensPerChannelOutputContent = "\n// [FAST TRACK] Add asset here to enable transferring from one network to another\nconst tokensPerChannel = ".concat(JSON.stringify(tokensPerChannel, null, 2), " as const;\n\nexport default tokensPerChannel;\n");
+    var tokensPerChannelOutputContent = "\n// [GENERATED]\nexport const tokensPerChannel = ".concat(JSON.stringify(tokensPerChannel, null, 2), " as const;\n\n");
     fs.writeFileSync(tokensPerChannelOutputFilePath, tokensPerChannelOutputContent, 'utf-8');
     console.log('tokensPerChannel.ts has been created');
     var networksOutputDir = path.dirname(networksOutputFilePath);
     if (!fs.existsSync(networksOutputDir)) {
         fs.mkdirSync(networksOutputDir);
     }
-    var networksOutputContent = "\n  // [FAST TRACK] Add info for networks here\n  const networks = ".concat(JSON.stringify(networks, null, 2), " as const;\n  \n  export default networks;\n  ");
+    var networksOutputContent = "\n// [GENERATED]\n\n export const networks = ".concat(JSON.stringify(networks, null, 2), " as const;\n  \n  ");
     fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
     console.log('networks.ts has been created');
     // coinGecko.ts 파일로 저장
@@ -218,10 +218,10 @@ var processFiles = function () {
     if (!fs.existsSync(coinGeckoOutputDir)) {
         fs.mkdirSync(coinGeckoOutputDir);
     }
-    var coinGeckoOutputContent = "\n // [FAST TRACK] Add asset info here to display the USD price from CoinGecko in our UI\n const coinGecko = ".concat(JSON.stringify(coinGeckoAssets, null, 2), " as const;\n \n export default coinGecko;\n ");
+    var coinGeckoOutputContent = "\n// [GENERATED]\n\n export const coinGecko = ".concat(JSON.stringify(coinGeckoAssets, null, 2), " as const;\n \n ");
     fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
     console.log('coinGecko.ts has been created');
-    var crossChainAssetsOutputContent = "\n// [FAST TRACK] Add cross-chain asset info here\nconst crossChainAssets = ".concat(JSON.stringify(crossChainAssets, null, 2), " as const;\n\nexport default crossChainAssets;\n");
+    var crossChainAssetsOutputContent = "\n// [GENERATED]\nexport const crossChainAssets = ".concat(JSON.stringify(crossChainAssets, null, 2), " as const;\n\n");
     fs.writeFileSync(crossChainAssetsOutputFilePath, crossChainAssetsOutputContent, 'utf-8');
     console.log('crossChainAssets.ts has been created');
 };
