@@ -88,16 +88,16 @@ var processFiles = function () {
         var data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         // generate networks
         networks[data.chainId] = {
-            name: data.chainName,
-            image: data.chainSymbolImageUrl,
-            rpc: data.rpc,
-            rest: data.rest,
-            chain_type: data.chainType,
-            chainId: data.chainId,
-            feeAssetId: (_a = data.currencies[0]) === null || _a === void 0 ? void 0 : _a.coinDenom,
-            polkadot: data.polkadot,
-            cosmos: data.cosmos,
-            enabled: data.enabled,
+            name: data.chainName || '',
+            image: data.chainSymbolImageUrl || '',
+            rpc: data.rpc || '',
+            rest: data.rest || '',
+            chain_type: data.chainType || '',
+            chainId: data.chainId || '',
+            feeAssetId: ((_a = data.currencies[0]) === null || _a === void 0 ? void 0 : _a.coinDenom) || '',
+            polkadot: data.polkadot || {},
+            cosmos: data.cosmos || {},
+            enabled: data.enabled || false,
             network_to: __spreadArray(__spreadArray([], __read((((_b = data.polkadot) === null || _b === void 0 ? void 0 : _b['hops']) ? Object.keys(data.polkadot['hops']) : [])), false), __read(Object.values(data.channelMap || {}).map(function (item) { return item.chainId; })), false),
         };
         // generate tokensPerChannel.ts
@@ -210,7 +210,7 @@ var processFiles = function () {
     if (!fs.existsSync(networksOutputDir)) {
         fs.mkdirSync(networksOutputDir);
     }
-    var networksOutputContent = "\n// [GENERATED]\n\n export const networks = ".concat(JSON.stringify(networks, null, 2), " as const;\n  \n  ");
+    var networksOutputContent = "\n// [GENERATED]\n\n export const networks = ".concat(JSON.stringify(networks, null, 2), ";\n  \n  ");
     fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
     console.log('networks.ts has been created');
     // coinGecko.ts 파일로 저장

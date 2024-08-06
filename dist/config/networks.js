@@ -26,6 +26,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -55,6 +56,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -83,6 +85,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2019"
@@ -111,6 +114,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2019"
@@ -139,6 +143,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -184,6 +189,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2006",
@@ -215,6 +221,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -244,6 +251,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2019"
@@ -297,6 +305,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "1000",
@@ -330,6 +339,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2019"
@@ -358,6 +368,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -371,6 +382,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "agoric-3",
         "feeAssetId": "BLD",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://wallet.keplr.app/chains/agoric",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric",
@@ -404,6 +416,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "archway-1",
         "feeAssetId": "ARCH",
+        "polkadot": {},
         "cosmos": {
             "bech32Config": {
                 "bech32PrefixAccAddr": "archway",
@@ -430,6 +443,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "celestia",
         "feeAssetId": "TIA",
+        "polkadot": {},
         "cosmos": {
             "bech32Config": {
                 "bech32PrefixAccAddr": "celestia",
@@ -457,6 +471,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "chihuahua-1",
         "feeAssetId": "HUAHUA",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 118
@@ -484,6 +499,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "coreum-mainnet-1",
         "feeAssetId": "XRP",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 990
@@ -510,6 +526,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "cosmoshub-4",
         "feeAssetId": "ATOM",
+        "polkadot": {},
         "cosmos": {
             "bech32Config": {
                 "bech32PrefixAccAddr": "cosmos",
@@ -537,6 +554,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "crescent-1",
         "feeAssetId": "CRE",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://app.crescent.network/",
             "walletUrlForStaking": "https://app.crescent.network/staking",
@@ -565,6 +583,8 @@ exports.networks = {
         "chain_type": "ethereum",
         "chainId": "ethereum",
         "feeAssetId": "ETH",
+        "polkadot": {},
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "centauri-1"
@@ -578,6 +598,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "injective-1",
         "feeAssetId": "INJ",
+        "polkadot": {},
         "cosmos": {
             "bech32Config": {
                 "bech32PrefixAccPub": "injpub",
@@ -604,6 +625,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "kaiyo-1",
         "feeAssetId": "KUJI",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 118
@@ -630,6 +652,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "neutron-1",
         "feeAssetId": "ASTRO",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 118
@@ -656,6 +679,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "osmosis-1",
         "feeAssetId": "OSMO",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://app.osmosis.zone",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
@@ -685,6 +709,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "quicksilver-2",
         "feeAssetId": "QCK",
+        "polkadot": {},
         "cosmos": {
             "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
             "bip44": {
@@ -712,6 +737,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "secret-4",
         "feeAssetId": "SCRT",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://wallet.keplr.app/chains/secret-network",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
@@ -745,6 +771,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "pacific-1",
         "feeAssetId": "SEI",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 118
@@ -771,6 +798,8 @@ exports.networks = {
         "chain_type": "solana",
         "chainId": "solana",
         "feeAssetId": "SOL",
+        "polkadot": {},
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "centauri-1"
@@ -784,6 +813,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "stargaze-1",
         "feeAssetId": "STARS",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://wallet.keplr.app/chains/stargaze",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
@@ -812,6 +842,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "stride-1",
         "feeAssetId": "stTIA",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://wallet.keplr.app/chains/stride",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/stride",
@@ -840,6 +871,7 @@ exports.networks = {
         "chain_type": "cosmos",
         "chainId": "umee-1",
         "feeAssetId": "UMEE",
+        "polkadot": {},
         "cosmos": {
             "walletUrl": "https://wallet.keplr.app/chains/umee",
             "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
@@ -862,11 +894,13 @@ exports.networks = {
     },
     "centauri-1": {
         "name": "centauri",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
         "rpc": "https://picasso-rpc.polkachu.com",
         "rest": "https://picasso-api.polkachu.com",
         "chain_type": "cosmos",
         "chainId": "centauri-1",
         "feeAssetId": "PICA",
+        "polkadot": {},
         "cosmos": {
             "bip44": {
                 "coinType": 118
@@ -927,6 +961,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2087"
@@ -955,6 +990,7 @@ exports.networks = {
                 }
             }
         },
+        "cosmos": {},
         "enabled": true,
         "network_to": [
             "2019"
