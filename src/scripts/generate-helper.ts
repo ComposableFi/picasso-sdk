@@ -172,7 +172,7 @@ const processFiles = () => {
 
   const ethereumOutputContent = `
 // [GENERATED]
-export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)} as const;
+export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)};
 
 `;
 
@@ -187,7 +187,7 @@ export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)} as cons
 
   const solanaOutputContent = `
 // [GENERATED]
-export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)} as const;
+export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)};
 
 `;
 
@@ -203,7 +203,7 @@ export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)} as const;
   }
   const tokensPerChannelOutputContent = `
 // [GENERATED]
-export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as const;
+export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
 
 `;
 
@@ -236,7 +236,7 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as 
   const coinGeckoOutputContent = `
 // [GENERATED]
 
- export const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} as const;
+ export const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} ;
  
  `;
 
@@ -245,7 +245,7 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} as 
 
   const crossChainAssetsOutputContent = `
 // [GENERATED]
-export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} as const;
+export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} ;
 
 `;
 
