@@ -523,5 +523,5 @@ export const tokensPerChannel = {
       ]
     }
   }
-} as const;
+} ;
 

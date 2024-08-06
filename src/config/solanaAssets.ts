@@ -149,5 +149,5 @@ export const solanaAssets = {
     "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
     "minimumTransfer": 0.7
   }
-} as const;
+};
 

@@ -231,5 +231,5 @@ export const ethereumAssets = {
     "cosmosToEthereumFee": 0.5,
     "minimumTransfer": 1
   }
-} as const;
+};
 

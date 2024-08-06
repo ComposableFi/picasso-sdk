@@ -1158,5 +1158,5 @@ export const crossChainAssets = {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg"
     }
   }
-} as const;
+} ;
 

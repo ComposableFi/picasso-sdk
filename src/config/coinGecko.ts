@@ -306,6 +306,6 @@
     "name": "USDT Kusama",
     "id": "tether"
   }
-] as const;
+] ;
  
  
