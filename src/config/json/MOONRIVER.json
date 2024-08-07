@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "chainId": "2023",
+  "rest": "",
+  "rpc": "wss://moonriver-rpc.dwellir.com",
+  "chainName": "Moonriver",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonriver.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 0,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2087": {
+        "type": "XCM",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
+        "version": "V2",
+        "tokens": [
+          "23"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "MOVR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
+      "coinGeckoId": "moonriver",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "23"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "MOVR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "moonriver"
+    }
+  ]
+}

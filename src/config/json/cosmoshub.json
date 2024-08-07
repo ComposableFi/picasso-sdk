@@ -1,0 +1,74 @@
+{
+  "enabled": true,
+  "chainId": "cosmoshub-4",
+  "rest": "https://cosmos-cmp-api.polkachu.com",
+  "rpc": "https://cosmos-cmp-rpc.polkachu.com",
+  "chainName": "Cosmos Hub",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
+  "cosmos": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cosmos",
+      "bech32PrefixAccPub": "cosmospub",
+      "bech32PrefixConsAddr": "cosmosvalcons",
+      "bech32PrefixConsPub": "cosmosvalconspub",
+      "bech32PrefixValAddr": "cosmosvaloper",
+      "bech32PrefixValPub": "cosmosvaloperpub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "617": {
+      "chainId": "centauri-1",
+      "destinationId": 4,
+      "tokens": [
+        "ATOM"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDecimals": 6,
+      "coinDenom": "ATOM",
+      "coinGeckoId": "cosmos",
+      "coinMinimalDenom": "uatom",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+      "cosmos": {
+        "minimalDenom": "uatom"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-4/uatom",
+        "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
+      },
+      "solana": {
+        "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
+        "minimalDenom": "transfer/channel-1/transfer/channel-4/uatom",
+        "minimumTransfer": 2,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDecimals": 6,
+      "coinDenom": "ATOM",
+      "coinGeckoId": "cosmos",
+      "coinMinimalDenom": "uatom",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "average": 0.025,
+          "high": 0.03,
+          "low": 0.005
+        }
+      }
+    }
+  ]
+}

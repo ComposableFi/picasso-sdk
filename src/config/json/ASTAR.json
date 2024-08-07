@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "chainId": "2006",
+  "rest": "",
+  "rpc": "wss://rpc.astar.network",
+  "chainName": "astar",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astar.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 5,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543952342"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
+      "coinGeckoId": "astar",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543952342"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "astar"
+    }
+  ]
+}

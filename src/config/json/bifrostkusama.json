@@ -1,0 +1,60 @@
+{
+  "enabled": true,
+  "chainId": "2001",
+  "rest": "",
+  "rpc": "wss://bifrost-rpc.liebi.com/ws",
+  "chainName": "BiFrost Kusama",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostKusama.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 6,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2087": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "31",
+          "32"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "BNC_KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg",
+      "coinGeckoId": "bifrost-native-coin",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "31"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "vKSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "32"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "kusama"
+    }
+  ]
+}

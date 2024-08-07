@@ -1,0 +1,60 @@
+{
+  "enabled": true,
+  "chainId": "2030",
+  "rest": "",
+  "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
+  "chainName": "BiFrost Polkadot",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostPolkadot.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 6,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543950369",
+          "79228162514264337593543950370"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
+      "coinGeckoId": "bifrost-native-coin",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950369"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "vDOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950370"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": ""
+    }
+  ]
+}

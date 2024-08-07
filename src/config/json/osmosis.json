@@ -1,0 +1,93 @@
+{
+  "enabled": true,
+  "chainId": "osmosis-1",
+  "rest": "https://osmosis-cmp-api.polkachu.com",
+  "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+  "chainName": "Osmosis",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+  "cosmos": {
+    "walletUrl": "https://app.osmosis.zone",
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "osmo",
+      "bech32PrefixAccPub": "osmopub",
+      "bech32PrefixValAddr": "osmovaloper",
+      "bech32PrefixValPub": "osmovaloperpub",
+      "bech32PrefixConsAddr": "osmovalcons",
+      "bech32PrefixConsPub": "osmovalconspub"
+    }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "782": {
+      "chainId": "pacific-1",
+      "destinationId": 0
+    },
+    "1279": {
+      "chainId": "centauri-1",
+      "destinationId": 3,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "cosmos": {
+        "minimalDenom": "uosmo"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
+        "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+        "fromCosmosFee": 15,
+        "minimumTransfer": 40
+      },
+      "solana": {
+        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    },
+    {
+      "coinDenom": "milkTIA",
+      "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA",
+      "coinDecimals": 6,
+      "coinGeckoId": "milkyway-staked-tia",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
+      "cosmos": {
+        "minimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
+      "coinDecimals": 6,
+      "coinGeckoId": "osmosis",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0025,
+          "average": 0.025,
+          "high": 0.04
+        }
+      }
+    }
+  ]
+}

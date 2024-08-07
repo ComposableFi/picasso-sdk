@@ -1,0 +1,160 @@
+{
+  "enabled": true,
+  "chainId": "2087",
+  "rest": "",
+  "rpc": "wss://picasso-rpc.composable.finance",
+  "chainName": "Picasso",
+  "channelMap": {
+    "15": {
+      "chainId": "2019",
+      "destinationId": 15,
+      "tokens": [
+        "DOT",
+        "PICA",
+        "vDOT",
+        "BNC_DOT",
+        "ASTR",
+        "lsDOT",
+        "BLD",
+        "IST"
+      ]
+    },
+    "17": {
+      "chainId": "centauri-1",
+      "destinationId": 2,
+      "tokens": [
+        "PICA",
+        "KSM",
+        "DOT",
+        "UMEE",
+        "ASTR",
+        "SDN",
+        "USDT Kusama"
+      ]
+    }
+  },
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 49,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "1000": {
+        "type": "XCM",
+        "xcmType": "xTokens.transferMultiasset",
+        "version": "V3",
+        "tokens": [
+          "130"
+        ]
+      },
+      "2001": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "31",
+          "32"
+        ]
+      },
+      "2125": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V3",
+        "tokens": [
+          "2125"
+        ]
+      },
+      "kusama": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V3",
+        "tokens": [
+          "4"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "USDT Kusama",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
+      "coinGeckoId": "tether",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "130"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "TNKR",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
+      "coinGeckoId": "tinkernet",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "2125"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
+      "coinGeckoId": "kusama",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "4"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
+        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+        "fromCosmosFee": 0.5,
+        "minimumTransfer": 1
+      },
+      "solana": {
+        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
+        "minimumTransfer": 0.7,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinDenom": "BNC_KSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg",
+      "coinGeckoId": "bifrost-native-coin",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "31"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "vKSM",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "32"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "PICA",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "picasso"
+    }
+  ]
+}

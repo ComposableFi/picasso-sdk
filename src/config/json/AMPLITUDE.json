@@ -1,0 +1,45 @@
+{
+  "enabled": true,
+  "chainId": "2124",
+  "rest": "",
+  "rpc": "wss://rpc-amplitude.pendulumchain.tech",
+  "chainName": "amplitude",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/amplitude.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 56,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "0000"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "",
+      "coinDecimals": "",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "astar"
+    }
+  ]
+}

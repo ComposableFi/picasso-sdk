@@ -1,0 +1,84 @@
+{
+  "enabled": true,
+  "chainId": "coreum-mainnet-1",
+  "rest": "https://rest-coreum.ecostake.com",
+  "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
+  "chainName": "Coreum",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
+  "cosmos": {
+    "bip44": {
+      "coinType": 990
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "core",
+      "bech32PrefixAccPub": "corepub",
+      "bech32PrefixValAddr": "corevaloper",
+      "bech32PrefixValPub": "corevaloperpub",
+      "bech32PrefixConsAddr": "corevalcons",
+      "bech32PrefixConsPub": "corevalconspub"
+    }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "31": {
+      "chainId": "centauri-1",
+      "destinationId": 56,
+      "tokens": [
+        "COREUM",
+        "XRP"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "XRP",
+      "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
+      "coinDecimals": 6,
+      "coinGeckoId": "ripple",
+      "cosmos": {
+        "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
+        "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
+        "fromCosmosFee": 35,
+        "minimumTransfer": 94
+      },
+      "solana": {
+        "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
+        "minimalDenom": "transfer/channel-1/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    },
+    {
+      "coinDenom": "CORE",
+      "coinMinimalDenom": "ucore",
+      "coinDecimals": 6,
+      "coinGeckoId": "coreum",
+      "cosmos": {
+        "minimalDenom": "ucore"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "CORE",
+      "coinMinimalDenom": "ucore",
+      "coinDecimals": 6,
+      "coinGeckoId": "coreum",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0625,
+          "average": 0.0625,
+          "high": 0.0625
+        }
+      }
+    }
+  ]
+}

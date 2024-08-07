@@ -1,0 +1,63 @@
+{
+  "enabled": true,
+  "chainId": "chihuahua-1",
+  "rest": "https://chihuahua-api.polkachu.com",
+  "rpc": "https://chihuahua-rpc.polkachu.com",
+  "chainName": "Chihuahua",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "chihuahua",
+      "bech32PrefixAccPub": "chihuahuapub",
+      "bech32PrefixValAddr": "chihuahuavaloper",
+      "bech32PrefixValPub": "chihuahuavaloperpub",
+      "bech32PrefixConsAddr": "chihuahuavalcons",
+      "bech32PrefixConsPub": "chihuahuavalconspub"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "62": {
+      "chainId": "centauri-1",
+      "destinationId": 0,
+      "tokens": [
+        "UHUAHUA"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "HUAHUA",
+      "coinMinimalDenom": "uhuahua",
+      "coinDecimals": 6,
+      "coinGeckoId": "chihuahua-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+      "cosmos": {
+        "minimalDenom": "uhuahua"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "HUAHUA",
+      "coinMinimalDenom": "uhuahua",
+      "coinDecimals": 6,
+      "coinGeckoId": "chihuahua-token",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 500,
+          "average": 1250,
+          "high": 2000
+        }
+      }
+    }
+  ]
+}

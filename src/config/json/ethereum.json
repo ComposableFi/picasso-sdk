@@ -1,0 +1,502 @@
+{
+  "enabled": true,
+  "chainId": "ethereum",
+  "rest": "",
+  "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
+  "chainName": "Ethereum",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
+  "chainType": "ethereum",
+  "channelMap": {
+    "2": {
+      "chainId": "centauri-1",
+      "destinationId": 52,
+      "tokens": [
+        "PICA",
+        "ETH",
+        "DAI",
+        "FXS",
+        "sFRAX",
+        "sfrxETH",
+        "OSMO",
+        "ENA",
+        "FRAX",
+        "frxETH",
+        "wBTC",
+        "pxETH",
+        "PEPE",
+        "CRV",
+        "rETH",
+        "crvUSD",
+        "eETH",
+        "USDe",
+        "USDT Ethereum",
+        "stETH",
+        "ATOM",
+        "IST",
+        "stATOM",
+        "BLD",
+        "SEI",
+        "SCRT",
+        "STRD"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ETH.svg",
+      "coinDecimals": 18,
+      "coinDenom": "ETH",
+      "coinGeckoId": "ethereum",
+      "cosmos": {
+        "minimalDenom": "wei"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "ETH",
+        "erc20Address": "ETH",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "ETH",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/wei",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/dai.svg",
+      "coinDecimals": 18,
+      "coinDenom": "DAI",
+      "coinGeckoId": "dai",
+      "cosmos": {
+        "minimalDenom": "0x6b175474e89094c44da98b954eedeac495271d0f"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "erc20Address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6B175474E89094C44Da98b954EedeAC495271d0F",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/fxs.svg",
+      "coinDecimals": 18,
+      "coinDenom": "FXS",
+      "coinGeckoId": "frax-share",
+      "cosmos": {
+        "minimalDenom": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+        "erc20Address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+        "fromCosmosFee": 3,
+        "minimumTransfer": 5
+      },
+      "solana": {
+        "currency": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3432a789b141E659d494c8E074aC4d3c2bDe6a9d",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sFRAX.svg",
+      "coinDecimals": 18,
+      "coinDenom": "sFRAX",
+      "coinGeckoId": "staked-frax",
+      "cosmos": {
+        "minimalDenom": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
+        "erc20Address": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
+        "fromCosmosFee": 30,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xc8E9b3D2AD2C8A2f97DC68cC94a4e7A1429bB10e",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sfrxETH.svg",
+      "coinDecimals": 18,
+      "coinDenom": "sfrxETH",
+      "coinGeckoId": "staked-frax-ether",
+      "cosmos": {
+        "minimalDenom": "0xac3e018457b222d93114458476f3e3416abbe38f"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xac3e018457b222d93114458476f3e3416abbe38f",
+        "erc20Address": "0xac3e018457b222d93114458476f3e3416abbe38f",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "0xac3e018457b222d93114458476f3e3416abbe38f",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xac3E018457B222d93114458476f3E3416Abbe38F",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ena.svg",
+      "coinDecimals": 18,
+      "coinDenom": "ENA",
+      "coinGeckoId": "ethena",
+      "cosmos": {
+        "minimalDenom": "0x57e114b691db790c35207b2e685d4a43181e6061"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x57e114b691db790c35207b2e685d4a43181e6061",
+        "erc20Address": "0x57e114b691db790c35207b2e685d4a43181e6061",
+        "fromCosmosFee": 14,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0x57e114b691db790c35207b2e685d4a43181e6061",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xB749A7b4Ed5E5385418EC743aF6A88CF2641bC6D",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/frax.svg",
+      "coinDecimals": 18,
+      "coinDenom": "FRAX",
+      "coinGeckoId": "frax",
+      "cosmos": {
+        "minimalDenom": "0x853d955acef822db058eb8505911ed77f175b99e"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "erc20Address": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x853d955aCEf822Db058eb8505911ED77F175b99e",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/frxeth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "frxETH",
+      "coinGeckoId": "frax-ether",
+      "cosmos": {
+        "minimalDenom": "0x5e8422345238f34275888049021821e8e08caa1f"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x5e8422345238f34275888049021821e8e08caa1f",
+        "erc20Address": "0x5e8422345238f34275888049021821e8e08caa1f",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "0x5e8422345238f34275888049021821e8e08caa1f",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x5E8422345238F34275888049021821E8E08CAa1f",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/wbtc.svg",
+      "coinDecimals": 8,
+      "coinDenom": "wBTC",
+      "coinGeckoId": "wrapped-bitcoin",
+      "cosmos": {
+        "minimalDenom": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "erc20Address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "fromCosmosFee": 0.00025,
+        "minimumTransfer": 0.0006
+      },
+      "solana": {
+        "currency": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 8
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/steth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "stETH",
+      "coinGeckoId": "lido-staked-ether",
+      "cosmos": {
+        "minimalDenom": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+        "erc20Address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {}
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/reth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "rETH",
+      "coinGeckoId": "rocket-pool-eth",
+      "cosmos": {
+        "minimalDenom": "0xae78736cd615f374d3085123a210448e74fc6393"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "erc20Address": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xae78736Cd615f374D3085123A210448E74Fc6393",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crvusd.svg",
+      "coinDecimals": 18,
+      "coinDenom": "crvUSD",
+      "coinGeckoId": "crvusd",
+      "cosmos": {
+        "minimalDenom": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "erc20Address": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x674C6Ad92Fd080e4004b2312b45f796a192D27a0",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pxeth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "pxETH",
+      "coinGeckoId": "dinero-staked-eth",
+      "cosmos": {
+        "minimalDenom": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
+        "erc20Address": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x28CEd45aF1aFF4F5f26E9d07A6dE1170a49a5E06",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/eeth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "eETH",
+      "coinGeckoId": "ether-fi-staked-eth",
+      "cosmos": {
+        "minimalDenom": "0x35fa164735182de50811e8e2e824cfb9b6118ac2"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+        "erc20Address": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {
+        "currency": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3446F1cD03C04b1BBFcd8d579D68E3fB7793dB95",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/silk.svg",
+      "coinDecimals": 6,
+      "coinDenom": "SILK",
+      "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
+      "cosmos": {
+        "minimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "erc20Address": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ezeth.svg",
+      "coinDecimals": 18,
+      "coinDenom": "ezETH",
+      "coinGeckoId": "renzo-restaked-eth",
+      "cosmos": {
+        "minimalDenom": "0xbf5495efe5db9ce00f80364c8b423567e58d2110"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+        "erc20Address": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+        "fromCosmosFee": 0.0055,
+        "minimumTransfer": 0.01
+      },
+      "solana": {}
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDe.svg",
+      "coinDecimals": 18,
+      "coinDenom": "USDe",
+      "coinGeckoId": "ethena-usde",
+      "cosmos": {
+        "minimalDenom": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "erc20Address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xC2cB1040220768554cf699b0d863A3cd4324ce32",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pepe.svg",
+      "coinDecimals": 18,
+      "coinDenom": "PEPE",
+      "coinGeckoId": "pepe",
+      "cosmos": {
+        "minimalDenom": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+        "erc20Address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+        "fromCosmosFee": 3000000,
+        "minimumTransfer": 5000000
+      },
+      "solana": {
+        "currency": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xf14eEEdF22ca7c50a2A98E629E3a91C7f8456A35",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTethereum.svg",
+      "coinDecimals": 6,
+      "coinDenom": "USDT Ethereum",
+      "coinGeckoId": "tether",
+      "cosmos": {
+        "minimalDenom": "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "erc20Address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "fromCosmosFee": 20,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xdAC17F958D2ee523a2206206994597C13D831ec7",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg",
+      "coinDecimals": 18,
+      "coinDenom": "CRV",
+      "coinGeckoId": "curve-dao-token",
+      "cosmos": {
+        "minimalDenom": "0xd533a949740bb3306d119cc777fa900ba034cd52"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+        "erc20Address": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+        "fromCosmosFee": 30,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "currency": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xD533a949740bb3306d119CC777fa900bA034cd52",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "ETH",
+      "coinMinimalDenom": "wei",
+      "coinDecimals": 18,
+      "coinGeckoId": "ethereum"
+    }
+  ]
+}

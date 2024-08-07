@@ -1,0 +1,74 @@
+{
+  "enabled": true,
+  "chainId": "pacific-1",
+  "rest": "https://sei-api.polkachu.com",
+  "rpc": "https://sei-rpc.polkachu.com",
+  "chainName": "Sei",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
+  "cosmos": {
+    "bip44": {
+      "coinType": 118
+    },
+    "bech32Config": {
+      "bech32PrefixAccAddr": "sei",
+      "bech32PrefixAccPub": "seipub",
+      "bech32PrefixValAddr": "seivaloper",
+      "bech32PrefixValPub": "seivaloperpub",
+      "bech32PrefixConsAddr": "seivalcons",
+      "bech32PrefixConsPub": "seivalconspub"
+    }
+  },
+  "chainType": "cosmos",
+  "channelMap": {
+    "0": {
+      "chainId": "osmosis-1",
+      "destinationId": 782,
+      "tokens": [
+        "UOSMO",
+        "USEI"
+      ]
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "SEI",
+      "coinMinimalDenom": "usei",
+      "coinDecimals": 6,
+      "coinGeckoId": "sei-network",
+      "cosmos": {
+        "minimalDenom": "usei"
+      },
+      "polkadot": {
+        "picassoAssetId": "35"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-3/transfer/channel-782/usei",
+        "erc20Address": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
+        "fromCosmosFee": 27,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/transfer/channel-782/usei",
+        "minimumTransfer": 30,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "SEI",
+      "coinMinimalDenom": "usei",
+      "coinDecimals": 6,
+      "coinGeckoId": "sei-network",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.1,
+          "average": 0.2,
+          "high": 0.3
+        }
+      }
+    }
+  ]
+}

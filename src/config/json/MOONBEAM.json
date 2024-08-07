@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "chainId": "2004",
+  "rest": "",
+  "rpc": "wss://wss.api.moonbeam.network",
+  "chainName": "Moonbeam",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 0,
+    "isParachain": false,
+    "relayChain": "polkadot",
+    "hops": {
+      "2019": {
+        "type": "XCM",
+        "xcmType": "polkadotXcm.limitedReserveTransferAssets",
+        "version": "V2",
+        "tokens": [
+          "79228162514264337593543950376"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "GLMR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
+      "coinGeckoId": "moonbeam",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950376"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "GLMR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "moonbeam"
+    }
+  ]
+}

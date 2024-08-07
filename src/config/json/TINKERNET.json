@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "chainId": "2125",
+  "rest": "",
+  "rpc": "wss://tinkernet-rpc.dwellir.com",
+  "chainName": "Tinkernet",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
+  "chainType": "polkadot",
+  "polkadot": {
+    "ss58Format": 117,
+    "isParachain": false,
+    "relayChain": "kusama",
+    "hops": {
+      "2087": {
+        "type": "XCM",
+        "xcmType": "xTokens.transfer",
+        "version": "V2",
+        "tokens": [
+          "2125"
+        ]
+      }
+    }
+  },
+  "currencies": [
+    {
+      "coinDenom": "TNKR",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
+      "coinGeckoId": "tinkernet",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "2125"
+      },
+      "ethereum": {},
+      "solana": {}
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "TNKR",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
+      "coinMinimalDenom": "",
+      "coinGeckoId": "tinkernet"
+    }
+  ]
+}

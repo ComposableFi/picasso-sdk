@@ -1,6 +1,6 @@
 {
   "name": "picasso-sdk",
-  "version": "0.3.37",
+  "version": "0.3.43",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,9 @@
   "scripts": {
     "build": "tsc",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public"
+    "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public",
+    "generate-helper": "ts-node ./src/scripts/generate-helper.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
@@ -31,6 +33,8 @@
     "eventemitter3": "^5.0.0",
     "js-sha256": "^0.11.0",
     "prettier": "^3.3.2",
+    "ts-node": "^10.9.2",
+    "type-fest": "^4.23.0",
     "web3": "^1.6.0",
     "web3-core": "1.10.2",
     "web3-eth-contract": "1.6.1",
@@ -41,6 +45,7 @@
     "dist/**/*"
   ],
   "devDependencies": {
+    "husky": "^9.1.4",
     "typescript": "^5.5.2"
   }
 }
