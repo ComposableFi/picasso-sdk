@@ -1,6 +1,16 @@
 
 // [GENERATED]
 export const ethereumAssets = {
+  "DOT": {
+    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+    "cosmosToEthereumFee": 2,
+    "minimumTransfer": 5
+  },
+  "KSM": {
+    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+    "cosmosToEthereumFee": 0.5,
+    "minimumTransfer": 1
+  },
   "BLD": {
     "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
     "cosmosToEthereumFee": 165,
@@ -15,6 +25,11 @@ export const ethereumAssets = {
     "erc20Address": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
+  },
+  "PICA": {
+    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
+    "cosmosToEthereumFee": 2000,
+    "minimumTransfer": 5000
   },
   "XRP": {
     "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
@@ -201,6 +216,11 @@ export const ethereumAssets = {
     "cosmosToEthereumFee": 10,
     "minimumTransfer": 30
   },
+  "UWU": {
+    "erc20Address": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
+    "cosmosToEthereumFee": 10,
+    "minimumTransfer": 30
+  },
   "STARS": {
     "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
     "cosmosToEthereumFee": 875,
@@ -215,21 +235,6 @@ export const ethereumAssets = {
     "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
     "cosmosToEthereumFee": 2,
     "minimumTransfer": 5
-  },
-  "PICA": {
-    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-    "cosmosToEthereumFee": 2000,
-    "minimumTransfer": 5000
-  },
-  "DOT": {
-    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-    "cosmosToEthereumFee": 2,
-    "minimumTransfer": 5
-  },
-  "KSM": {
-    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-    "cosmosToEthereumFee": 0.5,
-    "minimumTransfer": 1
   }
 };
 

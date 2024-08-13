@@ -373,6 +373,64 @@
       "2087"
     ]
   },
+  "kusama": {
+    "name": "Kusama",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
+    "rpc": "wss://kusama-rpc.polkadot.io",
+    "rest": "",
+    "chain_type": "polkadot",
+    "chainId": "kusama",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 2,
+      "isParachain": false,
+      "relayChain": "kusama",
+      "hops": {
+        "2087": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.reserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "cosmos": {},
+    "enabled": true,
+    "network_to": [
+      "2087"
+    ]
+  },
+  "polkadot": {
+    "name": "Polkadot",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
+    "rpc": "wss://rpc.polkadot.io",
+    "rest": "",
+    "chain_type": "polkadot",
+    "chainId": "polkadot",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 0,
+      "isParachain": false,
+      "relayChain": "polkadot",
+      "hops": {
+        "2019": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.limitedReserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "cosmos": {},
+    "enabled": true,
+    "network_to": [
+      "2019"
+    ]
+  },
   "agoric-3": {
     "name": "Agoric",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
@@ -460,6 +518,52 @@
     "enabled": true,
     "network_to": [
       "centauri-1"
+    ]
+  },
+  "centauri-1": {
+    "name": "centauri",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+    "rpc": "https://picasso-rpc.polkachu.com",
+    "rest": "https://picasso-api.polkachu.com",
+    "chain_type": "cosmos",
+    "chainId": "centauri-1",
+    "feeAssetId": "PICA",
+    "polkadot": {},
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "walletUrlForStaking": "https://explorer.nodestake.top/composable",
+      "bech32Config": {
+        "bech32PrefixAccAddr": "pica",
+        "bech32PrefixAccPub": "picapub",
+        "bech32PrefixValAddr": "picavaloper",
+        "bech32PrefixValPub": "picavaloperpub",
+        "bech32PrefixConsAddr": "picavalcons",
+        "bech32PrefixConsPub": "picavalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "chihuahua-1",
+      "2087",
+      "osmosis-1",
+      "cosmoshub-4",
+      "stride-1",
+      "stargaze-1",
+      "quicksilver-2",
+      "crescent-1",
+      "agoric-3",
+      "secret-4",
+      "neutron-1",
+      "umee-1",
+      "kaiyo-1",
+      "injective-1",
+      "celestia",
+      "archway-1",
+      "ethereum",
+      "coreum-mainnet-1",
+      "solana"
     ]
   },
   "chihuahua-1": {
@@ -889,110 +993,6 @@
     "enabled": true,
     "network_to": [
       "centauri-1"
-    ]
-  },
-  "centauri-1": {
-    "name": "centauri",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-    "rpc": "https://picasso-rpc.polkachu.com",
-    "rest": "https://picasso-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "centauri-1",
-    "feeAssetId": "PICA",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "walletUrlForStaking": "https://explorer.nodestake.top/composable",
-      "bech32Config": {
-        "bech32PrefixAccAddr": "pica",
-        "bech32PrefixAccPub": "picapub",
-        "bech32PrefixValAddr": "picavaloper",
-        "bech32PrefixValPub": "picavaloperpub",
-        "bech32PrefixConsAddr": "picavalcons",
-        "bech32PrefixConsPub": "picavalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "chihuahua-1",
-      "2087",
-      "osmosis-1",
-      "cosmoshub-4",
-      "stride-1",
-      "stargaze-1",
-      "quicksilver-2",
-      "crescent-1",
-      "agoric-3",
-      "secret-4",
-      "neutron-1",
-      "umee-1",
-      "kaiyo-1",
-      "injective-1",
-      "celestia",
-      "archway-1",
-      "ethereum",
-      "coreum-mainnet-1",
-      "solana"
-    ]
-  },
-  "kusama": {
-    "name": "Kusama",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
-    "rpc": "wss://kusama-rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "kusama",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 2,
-      "isParachain": false,
-      "relayChain": "kusama",
-      "hops": {
-        "2087": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.reserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
-      }
-    },
-    "cosmos": {},
-    "enabled": true,
-    "network_to": [
-      "2087"
-    ]
-  },
-  "polkadot": {
-    "name": "Polkadot",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
-    "rpc": "wss://rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "polkadot",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 0,
-      "isParachain": false,
-      "relayChain": "polkadot",
-      "hops": {
-        "2019": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.limitedReserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
-      }
-    },
-    "cosmos": {},
-    "enabled": true,
-    "network_to": [
-      "2019"
     ]
   }
 };

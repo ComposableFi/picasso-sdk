@@ -3,6 +3,62 @@
 
  export const coinGecko = [
   {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "DOT",
+    "id": "polkadot"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "ASTR",
+    "id": "astar"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "GLMR",
+    "id": "moonbeam"
+  },
+  {
+    "name": "MOVR",
+    "id": "moonriver"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
+  },
+  {
+    "name": "SDN",
+    "id": "shiden"
+  },
+  {
+    "name": "TNKR",
+    "id": "tinkernet"
+  },
+  {
     "name": "BLD",
     "id": "agoric"
   },
@@ -15,8 +71,20 @@
     "id": "archway"
   },
   {
+    "name": "BNC_KSM",
+    "id": "bifrost-native-coin"
+  },
+  {
+    "name": "BNC_DOT",
+    "id": "bifrost-native-coin"
+  },
+  {
     "name": "TIA",
     "id": "celestia"
+  },
+  {
+    "name": "PICA",
+    "id": "picasso"
   },
   {
     "name": "HUAHUA",
@@ -131,6 +199,14 @@
     "id": "kujira"
   },
   {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
     "name": "ASTRO",
     "id": "astroport-fi"
   },
@@ -215,10 +291,6 @@
     "id": "stargaze"
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
     "name": "stTIA",
     "id": "stride-staked-tia"
   },
@@ -233,78 +305,6 @@
   {
     "name": "UMEE",
     "id": "umee"
-  },
-  {
-    "name": "PICA",
-    "id": "picasso"
-  },
-  {
-    "name": "ASTR",
-    "id": "astar"
-  },
-  {
-    "name": "DOT",
-    "id": "polkadot"
-  },
-  {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "ASTR",
-    "id": "astar"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "GLMR",
-    "id": "moonbeam"
-  },
-  {
-    "name": "MOVR",
-    "id": "moonriver"
-  },
-  {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "KSM",
-    "id": "kusama"
-  },
-  {
-    "name": "SDN",
-    "id": "shiden"
-  },
-  {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
-  },
-  {
-    "name": "USDT Kusama",
-    "id": "tether"
   }
 ] ;
  

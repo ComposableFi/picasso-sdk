@@ -22,9 +22,7 @@ export const getContract = <T extends Contract>(
   contractAddress: string
 ) => {
   // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-  typeof window !== 'undefined' &&
-    !!web3 &&
-    web3.eth.setProvider((window as any)?.ethereum);
+  typeof window !== 'undefined' && !!web3;
   return web3 && contractAddress
     ? (new web3.eth.Contract(abi, contractAddress) as unknown as T)
     : undefined;
@@ -52,7 +50,6 @@ export const getConsole = (msg: any) => {
 export const getBlock = async (web3: Web3, addedAmount: number = 10000) => {
   if (!web3) return '0';
 
-  // web3.eth.setProvider((window as any)?.xfi);
   return (await web3.eth.getBlockNumber()) + addedAmount;
 };
 

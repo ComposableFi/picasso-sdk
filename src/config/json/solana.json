@@ -476,6 +476,29 @@
         "fromCosmosFee": 0,
         "displayDecimals": 6
       }
+    },
+    {
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/uwu.svg",
+      "coinDecimals": 6,
+      "coinDenom": "UWU",
+      "coinGeckoId": "",
+      "cosmos": {
+        "minimalDenom": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+      },
+      "polkadot": {},
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-71/Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+        "erc20Address": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
+        "fromCosmosFee": 10,
+        "minimumTransfer": 30
+      },
+      "solana": {
+        "mintAddress": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+        "minimalDenom": "USDT Solana",
+        "minimumTransfer": 30,
+        "fromCosmosFee": 0,
+        "displayDecimals": 6
+      }
     }
   ],
   "feeCurrencies": [
