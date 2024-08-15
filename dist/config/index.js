@@ -21,3 +21,4 @@ __exportStar(require("./solanaAssets"), exports);
 __exportStar(require("./tokensPerChannel"), exports);
 __exportStar(require("./networks"), exports);
 __exportStar(require("./types"), exports);
+__exportStar(require("./keplrChains"), exports);

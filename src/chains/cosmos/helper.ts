@@ -48,7 +48,7 @@ export const getSigner = (
 
 // export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
 
-export const getClient = async ({
+export const getCosmosClient = async ({
   chainId,
   rpc,
   keplr,

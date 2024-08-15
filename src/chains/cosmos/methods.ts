@@ -2,7 +2,7 @@ import { type StdFee } from '@cosmjs/stargate';
 
 import { emitter } from '../common/utils';
 import { TX_MSG } from './constants';
-import { generateTransferMsg, getClient } from './helper';
+import { generateTransferMsg, getCosmosClient } from './helper';
 import { type TX_MSG_TYPE } from './types';
 import { Keplr } from '@keplr-wallet/types';
 
@@ -39,7 +39,7 @@ export const cosmosTransfer = async ({
   gas: string;
   feeAssetId: string;
 }) => {
-  const client = await getClient({
+  const client = await getCosmosClient({
     chainId,
     rpc,
     keplr,
