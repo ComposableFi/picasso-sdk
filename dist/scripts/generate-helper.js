@@ -57,6 +57,7 @@ var tokensPerChannelOutputFilePath = path.join(__dirname, '../config/tokensPerCh
 var coinGeckoOutputFilePath = path.join(__dirname, '../config/coinGecko.ts');
 var crossChainAssetsOutputFilePath = path.join(__dirname, '../config/crossChainAssets.ts');
 var networksOutputFilePath = path.join(__dirname, '../config/networks.ts');
+var keplrChainsOutputFilePath = path.join(__dirname, '../config/keplrChains.ts');
 var processFiles = function () {
     var ethereumAssets = {};
     var solanaAssets = {};
@@ -69,6 +70,7 @@ var processFiles = function () {
         dotsama: {},
     };
     var networks = {};
+    var keplrChains = {};
     var files = fs
         .readdirSync(dataDir)
         .filter(function (file) { return file.endsWith('.json'); })
@@ -92,7 +94,7 @@ var processFiles = function () {
             image: data.chainSymbolImageUrl || '',
             rpc: data.rpc || '',
             rest: data.rest || '',
-            chain_type: data.chainType || '',
+            chainType: data.chainType || '',
             chainId: data.chainId || '',
             feeAssetId: ((_a = data.currencies[0]) === null || _a === void 0 ? void 0 : _a.coinDenom) || '',
             polkadot: data.polkadot || {},
@@ -100,6 +102,38 @@ var processFiles = function () {
             enabled: data.enabled || false,
             network_to: __spreadArray(__spreadArray([], __read((((_b = data.polkadot) === null || _b === void 0 ? void 0 : _b['hops']) ? Object.keys(data.polkadot['hops']) : [])), false), __read(Object.values(data.channelMap || {}).map(function (item) { return item.chainId; })), false),
         };
+        if (data.chainType === 'cosmos') {
+            keplrChains[data.chainId] = {
+                bech32Config: data.cosmos.bech32Config,
+                bip44: data.cosmos.bip44,
+                chainId: data.chainId,
+                chainName: data.chainName,
+                chainSymbolImageUrl: data.chainSymbolImageUrl,
+                currencies: data.currencies.map(function (item) { return ({
+                    coinDecimals: item.coinDecimals,
+                    coinDenom: item.coinDenom,
+                    coinGeckoId: item.coinGeckoId,
+                    coinImageUrl: item.coinImageUrl,
+                }); }),
+                features: [],
+                feeCurrencies: data.feeCurrencies.map(function (item) { return ({
+                    coinDecimals: item.coinDecimals,
+                    coinDenom: item.coinDenom,
+                    coinGeckoId: item.coinGeckoId,
+                    coinImageUrl: item.coinImageUrl,
+                }); }),
+                rest: data.rest,
+                rpc: data.rpc,
+                stakeCurrency: {
+                    coinDecimals: data.currencies[0].coinDecimals,
+                    coinDenom: data.currencies[0].coinDenom,
+                    coinGeckoId: data.currencies[0].coinGeckoId,
+                    coinMinimalDenom: data.currencies[0].coinMinimalDenom,
+                    coinImageUrl: data.currencies[0].coinImageUrl,
+                },
+                walletUrlForStaking: data.cosmos.walletUrlForStaking,
+            };
+        }
         // generate tokensPerChannel.ts
         if (data.channelMap) {
             tokensPerChannel[data.chainId] = data.channelMap;
@@ -224,5 +258,8 @@ var processFiles = function () {
     var crossChainAssetsOutputContent = "\n// [GENERATED]\nexport const crossChainAssets = ".concat(JSON.stringify(crossChainAssets, null, 2), " ;\n\n");
     fs.writeFileSync(crossChainAssetsOutputFilePath, crossChainAssetsOutputContent, 'utf-8');
     console.log('crossChainAssets.ts has been created');
+    var keplrChainsOutputContent = "\n// [GENERATED]\nexport const keplrChains = ".concat(JSON.stringify(keplrChains, null, 2), " ;\n\n");
+    fs.writeFileSync(keplrChainsOutputFilePath, keplrChainsOutputContent, 'utf-8');
+    console.log('keplrChains.ts has been created');
 };
 processFiles();

@@ -4,4 +4,5 @@ export * from './ethereumAssets';
 export * from './solanaAssets';
 export * from './tokensPerChannel';
 export * from './networks';
+export * from './types';
 //# sourceMappingURL=index.d.ts.map

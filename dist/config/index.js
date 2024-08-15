@@ -20,3 +20,4 @@ __exportStar(require("./ethereumAssets"), exports);
 __exportStar(require("./solanaAssets"), exports);
 __exportStar(require("./tokensPerChannel"), exports);
 __exportStar(require("./networks"), exports);
+__exportStar(require("./types"), exports);

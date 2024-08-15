@@ -4,7 +4,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -29,7 +29,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -54,7 +54,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -79,7 +79,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -104,7 +104,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -129,7 +129,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -166,7 +166,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -191,7 +191,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -216,7 +216,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -259,7 +259,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -284,7 +284,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -309,7 +309,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -334,7 +334,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {
@@ -359,7 +359,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -389,7 +389,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -414,7 +414,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -440,7 +440,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -466,7 +466,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -492,7 +492,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -517,7 +517,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -543,7 +543,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -570,7 +570,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -583,7 +583,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -608,7 +608,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -633,7 +633,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -658,7 +658,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -685,7 +685,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -711,7 +711,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -741,7 +741,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -766,7 +766,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -793,7 +793,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -820,7 +820,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
@@ -847,7 +847,7 @@ export declare const networks: {
         image: string;
         rpc: string;
         rest: string;
-        chain_type: string;
+        chainType: string;
         chainId: string;
         feeAssetId: string;
         polkadot: {};
