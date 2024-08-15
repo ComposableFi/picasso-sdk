@@ -121,6 +121,7 @@ var processFiles = function () {
                     coinDenom: item.coinDenom,
                     coinGeckoId: item.coinGeckoId,
                     coinImageUrl: item.coinImageUrl,
+                    gasPriceStep: item.cosmos.gasPriceStep,
                 }); }),
                 rest: data.rest,
                 rpc: data.rpc,

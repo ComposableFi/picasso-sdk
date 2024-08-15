@@ -26,10 +26,20 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         } | {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
             coinImageUrl?: undefined;
         })[];
         rest: string;
@@ -70,6 +80,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -108,6 +123,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -146,6 +166,11 @@ export declare const keplrChains: {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -185,6 +210,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -222,6 +252,11 @@ export declare const keplrChains: {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -259,6 +294,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                average: number;
+                high: number;
+                low: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -296,6 +336,11 @@ export declare const keplrChains: {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -334,6 +379,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -414,9 +464,19 @@ export declare const keplrChains: {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         } | {
             coinDecimals: number;
             coinDenom: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
             coinGeckoId?: undefined;
         })[];
         rest: string;
@@ -456,6 +516,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -495,6 +560,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -534,6 +604,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -571,6 +646,11 @@ export declare const keplrChains: {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -608,6 +688,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;
@@ -647,14 +732,29 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         } | {
             coinDecimals: number;
             coinDenom: string;
             coinGeckoId: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
             coinImageUrl?: undefined;
         } | {
             coinDecimals: number;
             coinDenom: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
             coinGeckoId?: undefined;
             coinImageUrl?: undefined;
         })[];
@@ -696,6 +796,11 @@ export declare const keplrChains: {
             coinDenom: string;
             coinGeckoId: string;
             coinImageUrl: string;
+            gasPriceStep: {
+                low: number;
+                average: number;
+                high: number;
+            };
         }[];
         rest: string;
         rpc: string;

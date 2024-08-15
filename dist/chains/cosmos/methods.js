@@ -45,7 +45,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
     var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, timeout = _b.timeout, _c = _b.txMsg, txMsg = _c === void 0 ? constants_1.TX_MSG : _c, keplr = _b.keplr, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
     return __generator(this, function (_d) {
         switch (_d.label) {
-            case 0: return [4 /*yield*/, (0, helper_1.getClient)({
+            case 0: return [4 /*yield*/, (0, helper_1.getCosmosClient)({
                     chainId: chainId,
                     rpc: rpc,
                     keplr: keplr,

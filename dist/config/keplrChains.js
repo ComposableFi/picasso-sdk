@@ -38,12 +38,22 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "BLD",
                 "coinGeckoId": "agoric",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
+                "gasPriceStep": {
+                    "low": 0.03,
+                    "average": 0.05,
+                    "high": 0.07
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "IST",
-                "coinGeckoId": "inter-stable-token"
+                "coinGeckoId": "inter-stable-token",
+                "gasPriceStep": {
+                    "low": 0.0034,
+                    "average": 0.007,
+                    "high": 0.02
+                }
             }
         ],
         "rest": "https://agoric-cmp-api.polkachu.com",
@@ -86,7 +96,12 @@ exports.keplrChains = {
                 "coinDecimals": 18,
                 "coinDenom": "ARCH",
                 "coinGeckoId": "archway",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+                "gasPriceStep": {
+                    "low": 140000000000,
+                    "average": 196000000000,
+                    "high": 225400000000
+                }
             }
         ],
         "rest": "https://api.mainnet.archway.io",
@@ -128,7 +143,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "TIA",
                 "coinGeckoId": "celestia",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.02,
+                    "high": 0.1
+                }
             }
         ],
         "rest": "https://api.celestia.nodestake.top",
@@ -170,7 +190,12 @@ exports.keplrChains = {
             {
                 "coinDecimals": 12,
                 "coinDenom": "PICA",
-                "coinGeckoId": "unknown"
+                "coinGeckoId": "unknown",
+                "gasPriceStep": {
+                    "low": 0,
+                    "average": 0,
+                    "high": 0
+                }
             }
         ],
         "rest": "https://picasso-api.polkachu.com",
@@ -213,7 +238,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "HUAHUA",
                 "coinGeckoId": "chihuahua-token",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+                "gasPriceStep": {
+                    "low": 500,
+                    "average": 1250,
+                    "high": 2000
+                }
             }
         ],
         "rest": "https://chihuahua-api.polkachu.com",
@@ -259,7 +289,12 @@ exports.keplrChains = {
             {
                 "coinDecimals": 6,
                 "coinDenom": "CORE",
-                "coinGeckoId": "coreum"
+                "coinGeckoId": "coreum",
+                "gasPriceStep": {
+                    "low": 0.0625,
+                    "average": 0.0625,
+                    "high": 0.0625
+                }
             }
         ],
         "rest": "https://rest-coreum.ecostake.com",
@@ -300,7 +335,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "ATOM",
                 "coinGeckoId": "cosmos",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+                "gasPriceStep": {
+                    "average": 0.025,
+                    "high": 0.03,
+                    "low": 0.005
+                }
             }
         ],
         "rest": "https://cosmos-cmp-api.polkachu.com",
@@ -346,87 +386,172 @@ exports.keplrChains = {
             {
                 "coinDecimals": 6,
                 "coinDenom": "CRE",
-                "coinGeckoId": "crescent-network"
+                "coinGeckoId": "crescent-network",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.025,
+                    "high": 0.03
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "bCRE",
-                "coinGeckoId": "liquid-staking-crescent"
+                "coinGeckoId": "liquid-staking-crescent",
+                "gasPriceStep": {
+                    "low": 0.0083,
+                    "average": 0.02075,
+                    "high": 0.0249
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "ATOM",
-                "coinGeckoId": "cosmos"
+                "coinGeckoId": "cosmos",
+                "gasPriceStep": {
+                    "low": 0.000063,
+                    "average": 0.0001575,
+                    "high": 0.000189
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "USDC.grav",
-                "coinGeckoId": "usd-coin"
+                "coinGeckoId": "usd-coin",
+                "gasPriceStep": {
+                    "low": 0.000842,
+                    "average": 0.002105,
+                    "high": 0.002526
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "USDC.axl",
-                "coinGeckoId": "usd-coin"
+                "coinGeckoId": "usd-coin",
+                "gasPriceStep": {
+                    "low": 0.000842,
+                    "average": 0.002105,
+                    "high": 0.002526
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "IST",
-                "coinGeckoId": "inter-stable-token"
+                "coinGeckoId": "inter-stable-token",
+                "gasPriceStep": {
+                    "low": 0.000842,
+                    "average": 0.002105,
+                    "high": 0.002526
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "CMST",
-                "coinGeckoId": "composite"
+                "coinGeckoId": "composite",
+                "gasPriceStep": {
+                    "low": 0.000842,
+                    "average": 0.002105,
+                    "high": 0.002526
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "JUNO",
-                "coinGeckoId": "juno-network"
+                "coinGeckoId": "juno-network",
+                "gasPriceStep": {
+                    "low": 0.000568,
+                    "average": 0.00142,
+                    "high": 0.001704
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "BLD",
-                "coinGeckoId": "agoric"
+                "coinGeckoId": "agoric",
+                "gasPriceStep": {
+                    "low": 0.002,
+                    "average": 0.005,
+                    "high": 0.006
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "CMDX",
-                "coinGeckoId": "comdex"
+                "coinGeckoId": "comdex",
+                "gasPriceStep": {
+                    "low": 0.008146,
+                    "average": 0.020365,
+                    "high": 0.024438
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "GRAV",
-                "coinGeckoId": "graviton"
+                "coinGeckoId": "graviton",
+                "gasPriceStep": {
+                    "low": 0.065405,
+                    "average": 0.1635125,
+                    "high": 0.196215
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "INJ",
-                "coinGeckoId": "injective-protocol"
+                "coinGeckoId": "injective-protocol",
+                "gasPriceStep": {
+                    "low": 3350000000,
+                    "average": 8375000000,
+                    "high": 10050000000
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "LUNA",
-                "coinGeckoId": "terra-luna-2"
+                "coinGeckoId": "terra-luna-2",
+                "gasPriceStep": {
+                    "low": 0.0004,
+                    "average": 0.001,
+                    "high": 0.0012
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "LUNC",
-                "coinGeckoId": "terra-luna"
+                "coinGeckoId": "terra-luna",
+                "gasPriceStep": {
+                    "low": 5,
+                    "average": 12.5,
+                    "high": 15
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "stATOM",
-                "coinGeckoId": "stride-staked-atom"
+                "coinGeckoId": "stride-staked-atom",
+                "gasPriceStep": {
+                    "low": 0.00006,
+                    "average": 0.00015,
+                    "high": 0.00018
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "OKT",
-                "coinGeckoId": "oec-token"
+                "coinGeckoId": "oec-token",
+                "gasPriceStep": {
+                    "low": 200000000,
+                    "average": 500000000,
+                    "high": 600000000
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "AXL",
-                "coinGeckoId": "axelar"
+                "coinGeckoId": "axelar",
+                "gasPriceStep": {
+                    "low": 0.0014,
+                    "average": 0.0035,
+                    "high": 0.0042
+                }
             }
         ],
         "rest": "https://crescent-cmp-api.polkachu.com",
@@ -468,7 +593,12 @@ exports.keplrChains = {
                 "coinDecimals": 18,
                 "coinDenom": "INJ",
                 "coinGeckoId": "injective-protocol",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
+                "gasPriceStep": {
+                    "low": 500000000,
+                    "average": 1000000000,
+                    "high": 1500000000
+                }
             }
         ],
         "rest": "https://injective-api.polkachu.com",
@@ -612,31 +742,66 @@ exports.keplrChains = {
             {
                 "coinDecimals": 6,
                 "coinDenom": "NTRN",
-                "coinGeckoId": "neutron-3"
+                "coinGeckoId": "neutron-3",
+                "gasPriceStep": {
+                    "low": 0.0053,
+                    "average": 0.0053,
+                    "high": 0.0053
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "ATOM"
+                "coinDenom": "ATOM",
+                "gasPriceStep": {
+                    "low": 0.0008,
+                    "average": 0.0008,
+                    "high": 0.0008
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "USDC"
+                "coinDenom": "USDC",
+                "gasPriceStep": {
+                    "low": 0.008,
+                    "average": 0.008,
+                    "high": 0.008
+                }
             },
             {
                 "coinDecimals": 18,
-                "coinDenom": "wstETH"
+                "coinDenom": "wstETH",
+                "gasPriceStep": {
+                    "low": 2903231.6597,
+                    "average": 2903231.6597,
+                    "high": 2903231.6597
+                }
             },
             {
                 "coinDecimals": 18,
-                "coinDenom": "DYDX"
+                "coinDenom": "DYDX",
+                "gasPriceStep": {
+                    "low": 2564102564.1026,
+                    "average": 2564102564.1026,
+                    "high": 2564102564.1026
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "TIA"
+                "coinDenom": "TIA",
+                "gasPriceStep": {
+                    "low": 0.0004,
+                    "average": 0.0004,
+                    "high": 0.0004
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "stATOM"
+                "coinDenom": "stATOM",
+                "gasPriceStep": {
+                    "low": 0.0006,
+                    "average": 0.0006,
+                    "high": 0.0006
+                }
             }
         ],
         "rest": "https://neutron-cmp-api.polkachu.com",
@@ -684,7 +849,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "OSMO",
                 "coinGeckoId": "osmosis",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                "gasPriceStep": {
+                    "low": 0.0025,
+                    "average": 0.025,
+                    "high": 0.04
+                }
             }
         ],
         "rest": "https://osmosis-cmp-api.polkachu.com",
@@ -727,7 +897,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "QCK",
                 "coinGeckoId": "quicksilver",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
+                "gasPriceStep": {
+                    "low": 0.0001,
+                    "average": 0.0001,
+                    "high": 0.00025
+                }
             }
         ],
         "rest": "https://quicksilver-api.polkachu.com",
@@ -782,7 +957,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "SCRT",
                 "coinGeckoId": "secret",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+                "gasPriceStep": {
+                    "low": 0.05,
+                    "average": 0.1,
+                    "high": 0.25
+                }
             }
         ],
         "rest": "https://lcd.mainnet.secretsaturn.net",
@@ -823,7 +1003,12 @@ exports.keplrChains = {
             {
                 "coinDecimals": 6,
                 "coinDenom": "SEI",
-                "coinGeckoId": "sei-network"
+                "coinGeckoId": "sei-network",
+                "gasPriceStep": {
+                    "low": 0.1,
+                    "average": 0.2,
+                    "high": 0.3
+                }
             }
         ],
         "rest": "https://sei-api.polkachu.com",
@@ -864,7 +1049,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "STARS",
                 "coinGeckoId": "stargaze",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+                "gasPriceStep": {
+                    "low": 1,
+                    "average": 1.1,
+                    "high": 1.2
+                }
             }
         ],
         "rest": "https://stargaze-cmp-api.polkachu.com",
@@ -919,84 +1109,169 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "STRD",
                 "coinGeckoId": "stride",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png",
+                "gasPriceStep": {
+                    "low": 0.005,
+                    "average": 0.005,
+                    "high": 0.05
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "ATOM",
-                "coinGeckoId": "cosmos"
+                "coinGeckoId": "cosmos",
+                "gasPriceStep": {
+                    "low": 0.0001,
+                    "average": 0.001,
+                    "high": 0.01
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "OSMO",
                 "coinGeckoId": "osmosis",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/uosmo.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/uosmo.png",
+                "gasPriceStep": {
+                    "low": 0.001,
+                    "average": 0.01,
+                    "high": 0.1
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "stOSMO",
-                "coinGeckoId": "stride-staked-osmo"
+                "coinGeckoId": "stride-staked-osmo",
+                "gasPriceStep": {
+                    "low": 0.001,
+                    "average": 0.01,
+                    "high": 0.1
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "stATOM",
-                "coinGeckoId": "stride-staked-atom"
+                "coinGeckoId": "stride-staked-atom",
+                "gasPriceStep": {
+                    "low": 0.0001,
+                    "average": 0.001,
+                    "high": 0.01
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "INJ",
-                "coinGeckoId": "injective-protocol"
+                "coinGeckoId": "injective-protocol",
+                "gasPriceStep": {
+                    "low": 500000000,
+                    "average": 500000000,
+                    "high": 500000000
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "stINJ",
-                "coinGeckoId": "stride-staked-injective"
+                "coinGeckoId": "stride-staked-injective",
+                "gasPriceStep": {
+                    "low": 500000000,
+                    "average": 500000000,
+                    "high": 500000000
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "EVMOS",
-                "coinGeckoId": "evmos"
+                "coinGeckoId": "evmos",
+                "gasPriceStep": {
+                    "low": 20000000000,
+                    "average": 20000000000,
+                    "high": 20000000000
+                }
             },
             {
                 "coinDecimals": 18,
-                "coinDenom": "stEVMOS"
+                "coinDenom": "stEVMOS",
+                "gasPriceStep": {
+                    "low": 20000000000,
+                    "average": 20000000000,
+                    "high": 20000000000
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "TIA",
-                "coinGeckoId": "celestia"
+                "coinGeckoId": "celestia",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.01,
+                    "high": 0.01
+                }
             },
             {
                 "coinDecimals": 6,
                 "coinDenom": "stTIA",
-                "coinGeckoId": "stride-staked-tia"
+                "coinGeckoId": "stride-staked-tia",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.01,
+                    "high": 0.01
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "DYDX",
-                "coinGeckoId": "dydx-chain"
+                "coinGeckoId": "dydx-chain",
+                "gasPriceStep": {
+                    "low": 15000000000,
+                    "average": 15000000000,
+                    "high": 15000000000
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "stDYDX",
-                "coinGeckoId": "stride-staked-dydx"
+                "coinGeckoId": "stride-staked-dydx",
+                "gasPriceStep": {
+                    "low": 15000000000,
+                    "average": 15000000000,
+                    "high": 15000000000
+                }
             },
             {
                 "coinDecimals": 18,
                 "coinDenom": "DYM",
-                "coinGeckoId": "dymension"
+                "coinGeckoId": "dymension",
+                "gasPriceStep": {
+                    "low": 15000000000,
+                    "average": 15000000000,
+                    "high": 50000000000
+                }
             },
             {
                 "coinDecimals": 18,
-                "coinDenom": "stDYM"
+                "coinDenom": "stDYM",
+                "gasPriceStep": {
+                    "low": 15000000000,
+                    "average": 15000000000,
+                    "high": 50000000000
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "stSAGA"
+                "coinDenom": "stSAGA",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.01,
+                    "high": 0.01
+                }
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "SAGA"
+                "coinDenom": "SAGA",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.01,
+                    "high": 0.01
+                }
             }
         ],
         "rest": "https://stride-cmp-api.polkachu.com",
@@ -1039,7 +1314,12 @@ exports.keplrChains = {
                 "coinDecimals": 6,
                 "coinDenom": "UMEE",
                 "coinGeckoId": "umee",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+                "gasPriceStep": {
+                    "low": 0.06,
+                    "average": 0.1,
+                    "high": 0.14
+                }
             }
         ],
         "rest": "https://umee-cmp-api.polkachu.com",

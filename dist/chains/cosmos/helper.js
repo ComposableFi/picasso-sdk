@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
+exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     var msg = {
@@ -71,7 +71,7 @@ var getSigner = function (chainId, keplr, supportLedger) {
 };
 exports.getSigner = getSigner;
 // export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
-var getClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+var getCosmosClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var signer, finalClient;
     var chainId = _b.chainId, rpc = _b.rpc, keplr = _b.keplr, feeAssetId = _b.feeAssetId, gasPrice = _b.gasPrice, _c = _b.supportLedger, supportLedger = _c === void 0 ? true : _c;
     return __generator(this, function (_d) {
@@ -87,4 +87,4 @@ var getClient = function (_a) { return __awaiter(void 0, [_a], void 0, function 
         }
     });
 }); };
-exports.getClient = getClient;
+exports.getCosmosClient = getCosmosClient;
