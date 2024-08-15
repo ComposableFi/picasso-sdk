@@ -57,6 +57,18 @@ export const solanaAssets = {
     "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
     "minimumTransfer": 30
   },
+  "STARS": {
+    "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
+    "minimumTransfer": 990
+  },
+  "STRD": {
+    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
+    "minimumTransfer": 11
+  },
+  "stATOM": {
+    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
+    "minimumTransfer": 2
+  },
   "SOL": {
     "mintAddress": "SOL",
     "minimumTransfer": 0.2
@@ -138,20 +150,8 @@ export const solanaAssets = {
     "minimumTransfer": 30
   },
   "UWU": {
-    "mintAddress": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
-    "minimumTransfer": 30
-  },
-  "STARS": {
-    "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
-    "minimumTransfer": 990
-  },
-  "STRD": {
-    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
-    "minimumTransfer": 11
-  },
-  "stATOM": {
-    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
-    "minimumTransfer": 2
+    "mintAddress": "UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z",
+    "minimumTransfer": 0
   }
 };
 
