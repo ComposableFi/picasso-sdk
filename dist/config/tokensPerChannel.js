@@ -442,6 +442,34 @@ exports.tokensPerChannel = {
             ]
         }
     },
+    "stargaze-1": {
+        "184": {
+            "chainId": "centauri-1",
+            "destinationId": 6,
+            "tokens": [
+                "STARS"
+            ]
+        }
+    },
+    "stride-1": {
+        "134": {
+            "chainId": "centauri-1",
+            "destinationId": 5,
+            "tokens": [
+                "STRD",
+                "stATOM"
+            ]
+        }
+    },
+    "umee-1": {
+        "99": {
+            "chainId": "centauri-1",
+            "destinationId": 20,
+            "tokens": [
+                "UMEE"
+            ]
+        }
+    },
     "solana": {
         "1": {
             "chainId": "centauri-1",
@@ -494,34 +522,6 @@ exports.tokensPerChannel = {
                 "XRP",
                 "COREUM",
                 "ASTRO"
-            ]
-        }
-    },
-    "stargaze-1": {
-        "184": {
-            "chainId": "centauri-1",
-            "destinationId": 6,
-            "tokens": [
-                "STARS"
-            ]
-        }
-    },
-    "stride-1": {
-        "134": {
-            "chainId": "centauri-1",
-            "destinationId": 5,
-            "tokens": [
-                "STRD",
-                "stATOM"
-            ]
-        }
-    },
-    "umee-1": {
-        "99": {
-            "chainId": "centauri-1",
-            "destinationId": 20,
-            "tokens": [
-                "UMEE"
             ]
         }
     }

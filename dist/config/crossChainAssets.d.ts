@@ -288,6 +288,41 @@ export declare const crossChainAssets: {
             minimalDenom: string;
             denom: string;
         };
+        ustars: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        stutia: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        ustrd: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        stuatom: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        uumee: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
         SOL: {
             chainId: string;
             decimals: number;
@@ -428,35 +463,7 @@ export declare const crossChainAssets: {
             denom: string;
             imageUrl: string;
         };
-        ustars: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        stutia: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        ustrd: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        stuatom: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        uumee: {
+        UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z: {
             chainId: string;
             decimals: number;
             minimalDenom: string;
@@ -559,6 +566,27 @@ export declare const crossChainAssets: {
             minimalDenom: string;
             denom: string;
         };
+        HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE: {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea": {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
         SOL: {
             chainId: string;
             decimals: number;
@@ -699,21 +727,7 @@ export declare const crossChainAssets: {
             denom: string;
             imageUrl: string;
         };
-        HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE: {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea": {
+        UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z: {
             chainId: string;
             decimals: number;
             minimalDenom: string;
@@ -942,6 +956,27 @@ export declare const crossChainAssets: {
             minimalDenom: string;
             denom: string;
         };
+        "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956": {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587": {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
+        "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2": {
+            chainId: string;
+            decimals: number;
+            minimalDenom: string;
+            denom: string;
+            imageUrl: string;
+        };
         "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143": {
             chainId: string;
             decimals: number;
@@ -1013,27 +1048,6 @@ export declare const crossChainAssets: {
             imageUrl: string;
         };
         "0x58efE15C0404aB22F87E4495D71f6f2077e862bE": {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956": {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587": {
-            chainId: string;
-            decimals: number;
-            minimalDenom: string;
-            denom: string;
-            imageUrl: string;
-        };
-        "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2": {
             chainId: string;
             decimals: number;
             minimalDenom: string;

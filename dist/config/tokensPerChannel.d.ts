@@ -224,13 +224,6 @@ export declare const tokensPerChannel: {
             tokens: string[];
         };
     };
-    solana: {
-        "1": {
-            chainId: string;
-            destinationId: number;
-            tokens: string[];
-        };
-    };
     "stargaze-1": {
         "184": {
             chainId: string;
@@ -247,6 +240,13 @@ export declare const tokensPerChannel: {
     };
     "umee-1": {
         "99": {
+            chainId: string;
+            destinationId: number;
+            tokens: string[];
+        };
+    };
+    solana: {
+        "1": {
             chainId: string;
             destinationId: number;
             tokens: string[];

@@ -761,19 +761,6 @@ export declare const networks: {
         enabled: boolean;
         network_to: string[];
     };
-    solana: {
-        name: string;
-        image: string;
-        rpc: string;
-        rest: string;
-        chain_type: string;
-        chainId: string;
-        feeAssetId: string;
-        polkadot: {};
-        cosmos: {};
-        enabled: boolean;
-        network_to: string[];
-    };
     "stargaze-1": {
         name: string;
         image: string;
@@ -852,6 +839,19 @@ export declare const networks: {
                 bech32PrefixConsPub: string;
             };
         };
+        enabled: boolean;
+        network_to: string[];
+    };
+    solana: {
+        name: string;
+        image: string;
+        rpc: string;
+        rest: string;
+        chain_type: string;
+        chainId: string;
+        feeAssetId: string;
+        polkadot: {};
+        cosmos: {};
         enabled: boolean;
         network_to: string[];
     };

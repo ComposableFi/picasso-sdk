@@ -244,6 +244,26 @@ exports.coinGecko = [
         "id": "sei-network"
     },
     {
+        "name": "STARS",
+        "id": "stargaze"
+    },
+    {
+        "name": "stTIA",
+        "id": "stride-staked-tia"
+    },
+    {
+        "name": "STRD",
+        "id": "stride"
+    },
+    {
+        "name": "stATOM",
+        "id": "stride-staked-atom"
+    },
+    {
+        "name": "UMEE",
+        "id": "umee"
+    },
+    {
         "name": "SOL",
         "id": "solana"
     },
@@ -286,25 +306,5 @@ exports.coinGecko = [
     {
         "name": "USDT Solana",
         "id": "tether"
-    },
-    {
-        "name": "STARS",
-        "id": "stargaze"
-    },
-    {
-        "name": "stTIA",
-        "id": "stride-staked-tia"
-    },
-    {
-        "name": "STRD",
-        "id": "stride"
-    },
-    {
-        "name": "stATOM",
-        "id": "stride-staked-atom"
-    },
-    {
-        "name": "UMEE",
-        "id": "umee"
     }
 ];

@@ -159,6 +159,21 @@ export declare const ethereumAssets: {
         cosmosToEthereumFee: number;
         minimumTransfer: number;
     };
+    STARS: {
+        erc20Address: string;
+        cosmosToEthereumFee: number;
+        minimumTransfer: number;
+    };
+    STRD: {
+        erc20Address: string;
+        cosmosToEthereumFee: number;
+        minimumTransfer: number;
+    };
+    stATOM: {
+        erc20Address: string;
+        cosmosToEthereumFee: number;
+        minimumTransfer: number;
+    };
     JitoSOL: {
         erc20Address: string;
         cosmosToEthereumFee: number;
@@ -210,26 +225,6 @@ export declare const ethereumAssets: {
         minimumTransfer: number;
     };
     "USDT Solana": {
-        erc20Address: string;
-        cosmosToEthereumFee: number;
-        minimumTransfer: number;
-    };
-    UWU: {
-        erc20Address: string;
-        cosmosToEthereumFee: number;
-        minimumTransfer: number;
-    };
-    STARS: {
-        erc20Address: string;
-        cosmosToEthereumFee: number;
-        minimumTransfer: number;
-    };
-    STRD: {
-        erc20Address: string;
-        cosmosToEthereumFee: number;
-        minimumTransfer: number;
-    };
-    stATOM: {
         erc20Address: string;
         cosmosToEthereumFee: number;
         minimumTransfer: number;

@@ -55,6 +55,18 @@ export declare const solanaAssets: {
         mintAddress: string;
         minimumTransfer: number;
     };
+    STARS: {
+        mintAddress: string;
+        minimumTransfer: number;
+    };
+    STRD: {
+        mintAddress: string;
+        minimumTransfer: number;
+    };
+    stATOM: {
+        mintAddress: string;
+        minimumTransfer: number;
+    };
     SOL: {
         mintAddress: string;
         minimumTransfer: number;
@@ -136,18 +148,6 @@ export declare const solanaAssets: {
         minimumTransfer: number;
     };
     UWU: {
-        mintAddress: string;
-        minimumTransfer: number;
-    };
-    STARS: {
-        mintAddress: string;
-        minimumTransfer: number;
-    };
-    STRD: {
-        mintAddress: string;
-        minimumTransfer: number;
-    };
-    stATOM: {
         mintAddress: string;
         minimumTransfer: number;
     };
