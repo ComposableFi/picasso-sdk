@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import {
+  ChainInfo,
   CoinGeckoAsset,
   CrosschainAsset,
   CrossChainAssets,
@@ -28,6 +29,10 @@ const crossChainAssetsOutputFilePath = path.join(
 );
 
 const networksOutputFilePath = path.join(__dirname, '../config/networks.ts');
+const keplrChainsOutputFilePath = path.join(
+  __dirname,
+  '../config/keplrChains.ts'
+);
 
 const processFiles = () => {
   const ethereumAssets: Record<string, EthereumAsset> = {};
@@ -40,7 +45,9 @@ const processFiles = () => {
     ethereum: {},
     dotsama: {},
   };
+
   const networks: Record<string, NetworkInfo> = {};
+  const keplrChains: Record<string, ChainInfo> = {};
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
@@ -65,7 +72,7 @@ const processFiles = () => {
       image: data.chainSymbolImageUrl || '',
       rpc: data.rpc || '',
       rest: data.rest || '',
-      chain_type: data.chainType || '',
+      chainType: data.chainType || '',
       chainId: data.chainId || '',
       feeAssetId: data.currencies[0]?.coinDenom || '',
       polkadot: data.polkadot || {},
@@ -79,6 +86,22 @@ const processFiles = () => {
       ],
     };
 
+    if (data.chainType === 'cosmos') {
+      keplrChains[data.chainId] = {
+        bech32Config: data.cosmos.bech32Config,
+        bip44: data.cosmos.bip44,
+        chainId: data.chainId,
+        chainName: data.chainName,
+        chainSymbolImageUrl: data.chainSymbolImageUrl,
+        currencies: data.currencies,
+        features: [],
+        feeCurrencies: data.feeCurrencies,
+        rest: data.rest,
+        rpc: data.rpc,
+        stakeCurrency: data.currencies[0],
+        walletUrlForStaking: data.cosmos.walletUrlForStaking,
+      };
+    }
     // generate tokensPerChannel.ts
     if (data.channelMap) {
       tokensPerChannel[data.chainId] = data.channelMap;
@@ -255,5 +278,18 @@ export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} ;
     'utf-8'
   );
   console.log('crossChainAssets.ts has been created');
+
+  const keplrChainsOutputContent = `
+// [GENERATED]
+export const keplrChains = ${JSON.stringify(keplrChains, null, 2)} ;
+
+`;
+
+  fs.writeFileSync(
+    keplrChainsOutputFilePath,
+    keplrChainsOutputContent,
+    'utf-8'
+  );
+  console.log('keplrChains.ts has been created');
 };
 processFiles();

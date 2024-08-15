@@ -1,3 +1,5 @@
+export { type ChainInfo } from '@keplr-wallet/types';
+
 export interface CrosschainAsset {
   chainId: string;
   decimals: number;
@@ -33,13 +35,12 @@ export interface CrossChainAssets {
   ethereum: Record<string, CrosschainAsset>;
   dotsama: Record<string, CrosschainAsset>;
 }
-
 export interface NetworkInfo {
   name: string;
   image: string;
   rpc: string;
   rest?: string;
-  chain_type: 'polkadot' | 'solana' | 'ethereum';
+  chainType: 'polkadot' | 'solana' | 'ethereum';
   chainId: string;
   feeAssetId: string;
   polkadot?: {
