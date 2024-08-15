@@ -93,12 +93,28 @@ const processFiles = () => {
         chainId: data.chainId,
         chainName: data.chainName,
         chainSymbolImageUrl: data.chainSymbolImageUrl,
-        currencies: data.currencies,
+        currencies: data.currencies.map((item) => ({
+          coinDecimals: item.coinDecimals,
+          coinDenom: item.coinDenom,
+          coinGeckoId: item.coinGeckoId,
+          coinImageUrl: item.coinImageUrl,
+        })),
         features: [],
-        feeCurrencies: data.feeCurrencies,
+        feeCurrencies: data.feeCurrencies.map((item) => ({
+          coinDecimals: item.coinDecimals,
+          coinDenom: item.coinDenom,
+          coinGeckoId: item.coinGeckoId,
+          coinImageUrl: item.coinImageUrl,
+        })),
         rest: data.rest,
         rpc: data.rpc,
-        stakeCurrency: data.currencies[0],
+        stakeCurrency: {
+          coinDecimals: data.currencies[0].coinDecimals,
+          coinDenom: data.currencies[0].coinDenom,
+          coinGeckoId: data.currencies[0].coinGeckoId,
+          coinMinimalDenom: data.currencies[0].coinMinimalDenom,
+          coinImageUrl: data.currencies[0].coinImageUrl,
+        },
         walletUrlForStaking: data.cosmos.walletUrlForStaking,
       };
     }
