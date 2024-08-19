@@ -88,7 +88,7 @@ export const getEthSimulate = (web3: Web3, data: string, txObject: any) => {
     .catch((err) => console.error(err, 'simulated??'));
 };
 
-export const isValidAddress = (web3: Web3, account: string) => {
+export const isEthereumAddress = (web3: Web3, account: string) => {
   if (!web3) return false;
   return web3.utils.isAddress(account);
 };
@@ -108,7 +108,7 @@ export const getApprovedErc20 = async (
   erc20TokenAddress: string,
   spenderContract: string = bankContractAddress
 ) => {
-  if (!isValidAddress(web3, account)) return '0';
+  if (!isEthereumAddress(web3, account)) return '0';
   const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
   if (!erc20Contract) return '0';
 
@@ -123,4 +123,17 @@ export const simulate = (web3: Web3, data: string, txObject: any) => {
     })
     .then((result) => console.log(result, 'simulatedresult'))
     .catch((err) => console.error(err, 'simulated??'));
+};
+
+export const getErc20Balance = async (
+  web3: Web3,
+  account: string,
+  erc20TokenAddress: string
+) => {
+  const isEthereum = isEthereumAddress(web3, account);
+  if (!isEthereum) return '0';
+
+  const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
+  if (!erc20Contract) return '0';
+  return await erc20Contract.methods.balanceOf(account).call();
 };
