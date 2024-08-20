@@ -183,7 +183,7 @@ var processFiles = function () {
                     crossChainAssets['dotsama'][picassoAssetId] = {
                         chainId: data.chainId,
                         decimals: currency.coinDecimals,
-                        minimalDenom: currency.cosmos.minimalDenom,
+                        minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
                         denom: coinDenom,
                         imageUrl: currency.coinImageUrl,
                     };
@@ -256,7 +256,7 @@ var processFiles = function () {
     var coinGeckoOutputContent = "\n// [GENERATED]\n\n export const coinGecko = ".concat(JSON.stringify(coinGeckoAssets, null, 2), " ;\n \n ");
     fs.writeFileSync(coinGeckoOutputFilePath, coinGeckoOutputContent, 'utf-8');
     console.log('coinGecko.ts has been created');
-    var crossChainAssetsOutputContent = "\n// [GENERATED]\nexport const crossChainAssets = ".concat(JSON.stringify(crossChainAssets, null, 2), " ;\n\n");
+    var crossChainAssetsOutputContent = "\n// [GENERATED]\nimport { CrossChainAssets } from \"./types\";\nexport const crossChainAssets :CrossChainAssets= ".concat(JSON.stringify(crossChainAssets, null, 2), " ;\n\n");
     fs.writeFileSync(crossChainAssetsOutputFilePath, crossChainAssetsOutputContent, 'utf-8');
     console.log('crossChainAssets.ts has been created');
     var keplrChainsOutputContent = "\n// [GENERATED]\nexport const keplrChains = ".concat(JSON.stringify(keplrChains, null, 2), " ;\n\n");
