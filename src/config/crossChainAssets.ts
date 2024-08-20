@@ -5,6 +5,7 @@ export const crossChainAssets = {
     "undefined": {
       "chainId": "1000",
       "decimals": 6,
+      "minimalDenom": "",
       "denom": "USDT Kusama",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
     },
@@ -54,13 +55,15 @@ export const crossChainAssets = {
       "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
-      "denom": "XRP"
+      "denom": "XRP",
+      "imageUrl": ""
     },
     "ucore": {
       "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "ucore",
-      "denom": "CORE"
+      "denom": "CORE",
+      "imageUrl": ""
     },
     "uatom": {
       "chainId": "cosmoshub-4",
@@ -73,13 +76,15 @@ export const crossChainAssets = {
       "chainId": "crescent-1",
       "decimals": 6,
       "minimalDenom": "ucre",
-      "denom": "CRE"
+      "denom": "CRE",
+      "imageUrl": ""
     },
     "ubcre": {
       "chainId": "crescent-1",
       "decimals": 6,
       "minimalDenom": "ubcre",
-      "denom": "bCRE"
+      "denom": "bCRE",
+      "imageUrl": ""
     },
     "wei": {
       "chainId": "ethereum",
@@ -288,7 +293,8 @@ export const crossChainAssets = {
       "chainId": "pacific-1",
       "decimals": 6,
       "minimalDenom": "usei",
-      "denom": "SEI"
+      "denom": "SEI",
+      "imageUrl": ""
     },
     "ustars": {
       "chainId": "stargaze-1",
@@ -477,12 +483,14 @@ export const crossChainAssets = {
     "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J": {
       "chainId": "2019",
       "decimals": 10,
+      "minimalDenom": "",
       "denom": "DOT",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
       "chainId": "polkadot",
       "decimals": 12,
+      "minimalDenom": "",
       "denom": "KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
@@ -518,7 +526,8 @@ export const crossChainAssets = {
       "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
-      "denom": "XRP"
+      "denom": "XRP",
+      "imageUrl": ""
     },
     "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc": {
       "chainId": "cosmoshub-4",
@@ -566,7 +575,8 @@ export const crossChainAssets = {
       "chainId": "pacific-1",
       "decimals": 6,
       "minimalDenom": "usei",
-      "denom": "SEI"
+      "denom": "SEI",
+      "imageUrl": ""
     },
     "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB": {
       "chainId": "stargaze-1",
@@ -741,12 +751,14 @@ export const crossChainAssets = {
     "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
       "chainId": "2019",
       "decimals": 10,
+      "minimalDenom": "",
       "denom": "DOT",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
       "chainId": "polkadot",
       "decimals": 12,
+      "minimalDenom": "",
       "denom": "KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
@@ -782,7 +794,8 @@ export const crossChainAssets = {
       "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
-      "denom": "XRP"
+      "denom": "XRP",
+      "imageUrl": ""
     },
     "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC": {
       "chainId": "cosmoshub-4",
@@ -956,7 +969,8 @@ export const crossChainAssets = {
       "chainId": "pacific-1",
       "decimals": 6,
       "minimalDenom": "usei",
-      "denom": "SEI"
+      "denom": "SEI",
+      "imageUrl": ""
     },
     "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956": {
       "chainId": "stargaze-1",
