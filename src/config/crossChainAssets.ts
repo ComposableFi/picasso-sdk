@@ -1083,6 +1083,7 @@ export const crossChainAssets :CrossChainAssets= {
     "4": {
       "chainId": "polkadot",
       "decimals": 12,
+      "minimalDenom": "4",
       "denom": "KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg"
     },
@@ -1096,6 +1097,7 @@ export const crossChainAssets :CrossChainAssets= {
     "23": {
       "chainId": "2023",
       "decimals": 18,
+      "minimalDenom": "23",
       "denom": "MOVR",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg"
     },
@@ -1109,12 +1111,14 @@ export const crossChainAssets :CrossChainAssets= {
     "31": {
       "chainId": "2001",
       "decimals": 12,
+      "minimalDenom": "31",
       "denom": "BNC_KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg"
     },
     "32": {
       "chainId": "2001",
       "decimals": 12,
+      "minimalDenom": "32",
       "denom": "vKSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg"
     },
@@ -1127,18 +1131,21 @@ export const crossChainAssets :CrossChainAssets= {
     "130": {
       "chainId": "1000",
       "decimals": 6,
+      "minimalDenom": "130",
       "denom": "USDT Kusama",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
     },
     "2007": {
       "chainId": "2007",
       "decimals": 18,
+      "minimalDenom": "2007",
       "denom": "SDN",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg"
     },
     "2125": {
       "chainId": "2125",
       "decimals": 12,
+      "minimalDenom": "2125",
       "denom": "TNKR",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg"
     },
