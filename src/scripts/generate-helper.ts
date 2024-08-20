@@ -134,11 +134,11 @@ const processFiles = () => {
             minimumTransfer: ethereum.minimumTransfer,
           };
           crossChainAssets.ethereum[ethereum.erc20Address] = {
-            chainId: data.chainId,
-            decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
-            denom: coinDenom,
-            imageUrl: currency.coinImageUrl,
+            chainId: data.chainId || '',
+            decimals: currency.coinDecimals || '',
+            minimalDenom: currency.cosmos.minimalDenom || '',
+            denom: coinDenom || '',
+            imageUrl: currency?.coinImageUrl || '',
           };
         }
       }
@@ -152,11 +152,11 @@ const processFiles = () => {
             minimumTransfer: solana.minimumTransfer,
           };
           crossChainAssets.solana[mintAddress] = {
-            chainId: data.chainId,
-            decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
-            denom: coinDenom,
-            imageUrl: currency.coinImageUrl,
+            chainId: data.chainId || '',
+            decimals: currency.coinDecimals || '',
+            minimalDenom: currency.cosmos.minimalDenom || '',
+            denom: coinDenom || '',
+            imageUrl: currency.coinImageUrl || '',
           };
         }
       }
@@ -185,11 +185,11 @@ const processFiles = () => {
       // generate cosmosAssets.ts
       if (currency.cosmos) {
         crossChainAssets.cosmos[currency.cosmos.minimalDenom] = {
-          chainId: data.chainId,
-          decimals: currency.coinDecimals,
-          minimalDenom: currency.cosmos.minimalDenom,
-          denom: coinDenom,
-          imageUrl: currency.coinImageUrl,
+          chainId: data.chainId || '',
+          decimals: currency.coinDecimals || '',
+          minimalDenom: currency.cosmos.minimalDenom || '',
+          denom: coinDenom || '',
+          imageUrl: currency.coinImageUrl || '',
         };
       }
 
