@@ -3,6 +3,7 @@ export declare const crossChainAssets: {
         undefined: {
             chainId: string;
             decimals: number;
+            minimalDenom: string;
             denom: string;
             imageUrl: string;
         };
@@ -53,12 +54,14 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         ucore: {
             chainId: string;
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         uatom: {
             chainId: string;
@@ -72,12 +75,14 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         ubcre: {
             chainId: string;
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         wei: {
             chainId: string;
@@ -287,6 +292,7 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         ustars: {
             chainId: string;
@@ -475,12 +481,14 @@ export declare const crossChainAssets: {
         vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J: {
             chainId: string;
             decimals: number;
+            minimalDenom: string;
             denom: string;
             imageUrl: string;
         };
         "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
             chainId: string;
             decimals: number;
+            minimalDenom: string;
             denom: string;
             imageUrl: string;
         };
@@ -517,6 +525,7 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc": {
             chainId: string;
@@ -565,6 +574,7 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB: {
             chainId: string;
@@ -739,12 +749,14 @@ export declare const crossChainAssets: {
         "0x21c2c96Dbfa137E23946143c71AC8330F9B44001": {
             chainId: string;
             decimals: number;
+            minimalDenom: string;
             denom: string;
             imageUrl: string;
         };
         "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
             chainId: string;
             decimals: number;
+            minimalDenom: string;
             denom: string;
             imageUrl: string;
         };
@@ -781,6 +793,7 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC": {
             chainId: string;
@@ -955,6 +968,7 @@ export declare const crossChainAssets: {
             decimals: number;
             minimalDenom: string;
             denom: string;
+            imageUrl: string;
         };
         "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956": {
             chainId: string;

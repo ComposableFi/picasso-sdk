@@ -151,11 +151,11 @@ var processFiles = function () {
                         minimumTransfer: ethereum.minimumTransfer,
                     };
                     crossChainAssets.ethereum[ethereum.erc20Address] = {
-                        chainId: data.chainId,
-                        decimals: currency.coinDecimals,
-                        minimalDenom: currency.cosmos.minimalDenom,
-                        denom: coinDenom,
-                        imageUrl: currency.coinImageUrl,
+                        chainId: data.chainId || '',
+                        decimals: currency.coinDecimals || '',
+                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        denom: coinDenom || '',
+                        imageUrl: (currency === null || currency === void 0 ? void 0 : currency.coinImageUrl) || '',
                     };
                 }
             }
@@ -168,11 +168,11 @@ var processFiles = function () {
                         minimumTransfer: solana.minimumTransfer,
                     };
                     crossChainAssets.solana[mintAddress] = {
-                        chainId: data.chainId,
-                        decimals: currency.coinDecimals,
-                        minimalDenom: currency.cosmos.minimalDenom,
-                        denom: coinDenom,
-                        imageUrl: currency.coinImageUrl,
+                        chainId: data.chainId || '',
+                        decimals: currency.coinDecimals || '',
+                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        denom: coinDenom || '',
+                        imageUrl: currency.coinImageUrl || '',
                     };
                 }
             }
@@ -201,11 +201,11 @@ var processFiles = function () {
             // generate cosmosAssets.ts
             if (currency.cosmos) {
                 crossChainAssets.cosmos[currency.cosmos.minimalDenom] = {
-                    chainId: data.chainId,
-                    decimals: currency.coinDecimals,
-                    minimalDenom: currency.cosmos.minimalDenom,
-                    denom: coinDenom,
-                    imageUrl: currency.coinImageUrl,
+                    chainId: data.chainId || '',
+                    decimals: currency.coinDecimals || '',
+                    minimalDenom: currency.cosmos.minimalDenom || '',
+                    denom: coinDenom || '',
+                    imageUrl: currency.coinImageUrl || '',
                 };
             }
             // generate coingecko.ts
