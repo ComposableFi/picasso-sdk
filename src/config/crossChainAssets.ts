@@ -1,6 +1,7 @@
 
 // [GENERATED]
-export const crossChainAssets = {
+import { CrossChainAssets } from "./types";
+export const crossChainAssets :CrossChainAssets= {
   "cosmos": {
     "undefined": {
       "chainId": "1000",
