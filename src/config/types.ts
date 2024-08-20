@@ -33,7 +33,7 @@ export interface CrossChainAssets {
   cosmos: Record<string, CrosschainAsset>;
   solana: Record<string, CrosschainAsset>;
   ethereum: Record<string, CrosschainAsset>;
-  dotsama: Record<string, CrosschainAsset>;
+  polkadot: Record<string, CrosschainAsset>;
 }
 export interface NetworkInfo {
   name: string;

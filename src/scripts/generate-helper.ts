@@ -43,7 +43,7 @@ const processFiles = () => {
     cosmos: {},
     solana: {},
     ethereum: {},
-    dotsama: {},
+    polkadot: {},
   };
 
   const networks: Record<string, NetworkInfo> = {};
@@ -135,7 +135,7 @@ const processFiles = () => {
           };
           crossChainAssets.ethereum[ethereum.erc20Address] = {
             chainId: data.chainId || '',
-            decimals: currency.coinDecimals || '',
+            decimals: currency.coinDecimals || 0,
             minimalDenom: currency.cosmos.minimalDenom || '',
             denom: coinDenom || '',
             imageUrl: currency?.coinImageUrl || '',
@@ -151,29 +151,35 @@ const processFiles = () => {
             mintAddress: mintAddress,
             minimumTransfer: solana.minimumTransfer,
           };
+
+          const decimals =
+            currency.coinDecimals > 9 ? 9 : currency.coinDecimals || 0;
+          const realDecimals = currency.coinDecimals || 0;
+
           crossChainAssets.solana[mintAddress] = {
             chainId: data.chainId || '',
-            decimals: currency.coinDecimals || '',
+            decimals,
             minimalDenom: currency.cosmos.minimalDenom || '',
             denom: coinDenom || '',
+            realDecimals,
             imageUrl: currency.coinImageUrl || '',
           };
         }
       }
-      // generate dotsamaAssets.ts
+      // generate polkadotAssets.ts
       if (currency.polkadot) {
         const { picassoAssetId, composableAssetId } = currency.polkadot || {};
         if (currency.polkadot?.picassoAssetId) {
-          crossChainAssets['dotsama'][picassoAssetId] = {
+          crossChainAssets['polkadot'][picassoAssetId] = {
             chainId: data.chainId,
-            decimals: currency.coinDecimals,
+            decimals: currency.coinDecimals || 0,
             minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
           };
         }
         if (currency.polkadot?.composableAssetId) {
-          crossChainAssets['dotsama'][composableAssetId] = {
+          crossChainAssets['polkadot'][composableAssetId] = {
             chainId: data.chainId,
             decimals: currency.coinDecimals,
             minimalDenom: currency.cosmos.minimalDenom || composableAssetId,
