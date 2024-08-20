@@ -192,7 +192,7 @@ var processFiles = function () {
                     crossChainAssets['dotsama'][composableAssetId] = {
                         chainId: data.chainId,
                         decimals: currency.coinDecimals,
-                        minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
+                        minimalDenom: currency.cosmos.minimalDenom || composableAssetId,
                         denom: coinDenom,
                         imageUrl: currency.coinImageUrl,
                     };

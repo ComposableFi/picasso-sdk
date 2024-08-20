@@ -1152,30 +1152,35 @@ exports.crossChainAssets = {
         "79228162514264337593543952342": {
             "chainId": "2019",
             "decimals": 18,
+            "minimalDenom": "79228162514264337593543952342",
             "denom": "ASTR",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg"
         },
         "79228162514264337593543950342": {
             "chainId": "2019",
             "decimals": 10,
+            "minimalDenom": "79228162514264337593543950342",
             "denom": "DOT",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
         },
         "79228162514264337593543950369": {
             "chainId": "2030",
             "decimals": 12,
+            "minimalDenom": "79228162514264337593543950369",
             "denom": "BNC_DOT",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg"
         },
         "79228162514264337593543950370": {
             "chainId": "2030",
             "decimals": 10,
+            "minimalDenom": "79228162514264337593543950370",
             "denom": "vDOT",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg"
         },
         "79228162514264337593543950376": {
             "chainId": "2004",
             "decimals": 18,
+            "minimalDenom": "79228162514264337593543950376",
             "denom": "GLMR",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg"
         },
