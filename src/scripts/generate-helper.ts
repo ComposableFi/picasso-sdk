@@ -285,7 +285,8 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
 
   const crossChainAssetsOutputContent = `
 // [GENERATED]
-export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} ;
+import { CrossChainAssets } from "./types";
+export const crossChainAssets :CrossChainAssets= ${JSON.stringify(crossChainAssets, null, 2)} ;
 
 `;
 
