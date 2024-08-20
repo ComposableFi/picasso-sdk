@@ -167,7 +167,7 @@ const processFiles = () => {
           crossChainAssets['dotsama'][picassoAssetId] = {
             chainId: data.chainId,
             decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
+            minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
           };
