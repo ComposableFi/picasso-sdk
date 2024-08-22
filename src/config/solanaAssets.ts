@@ -1,6 +1,8 @@
 
 // [GENERATED]
-export const solanaAssets = {
+import { SolanaAsset } from "./types";
+
+export const solanaAssets:Record<string, SolanaAsset> = {
   "DOT": {
     "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
     "minimumTransfer": 3

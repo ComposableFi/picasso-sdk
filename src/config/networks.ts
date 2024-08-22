@@ -1,7 +1,7 @@
 
 // [GENERATED]
-
- export const networks = {
+import { NetworkInfo } from './types';
+ export const networks: Record<string, NetworkInfo> = {
   "1000": {
     "name": "Kusama Asset Hub",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",

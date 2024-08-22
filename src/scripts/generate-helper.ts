@@ -98,6 +98,7 @@ const processFiles = () => {
           coinDenom: item.coinDenom,
           coinGeckoId: item.coinGeckoId,
           coinImageUrl: item.coinImageUrl,
+          coinMinimalDenom: item.coinMinimalDenom,
         })),
         features: [],
         feeCurrencies: data.feeCurrencies.map((item) => ({
@@ -218,7 +219,9 @@ const processFiles = () => {
 
   const ethereumOutputContent = `
 // [GENERATED]
-export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)};
+import { EthereumAsset } from './types';
+
+export const ethereumAssets :Record<string, EthereumAsset>= ${JSON.stringify(ethereumAssets, null, 2)};
 
 `;
 
@@ -233,7 +236,9 @@ export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)};
 
   const solanaOutputContent = `
 // [GENERATED]
-export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)};
+import { SolanaAsset } from "./types";
+
+export const solanaAssets:Record<string, SolanaAsset> = ${JSON.stringify(solanaAssets, null, 2)};
 
 `;
 
@@ -249,7 +254,12 @@ export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)};
   }
   const tokensPerChannelOutputContent = `
 // [GENERATED]
-export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
+import { TokenPerChannel } from './types';
+
+export const tokensPerChannel : Record<
+  string,
+  Record<string, TokenPerChannel>
+> = ${JSON.stringify(tokensPerChannel, null, 2)} ;
 
 `;
 
@@ -266,8 +276,8 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
   }
   const networksOutputContent = `
 // [GENERATED]
-
- export const networks = ${JSON.stringify(networks, null, 2)};
+import { NetworkInfo } from './types';
+ export const networks: Record<string, NetworkInfo> = ${JSON.stringify(networks, null, 2)};
   
   `;
 
@@ -280,9 +290,10 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
   }
 
   const coinGeckoOutputContent = `
-// [GENERATED]
+  // [GENERATED]
+import { CoinGeckoAsset } from './types';
 
- export const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} ;
+ export const coinGecko: CoinGeckoAsset[] = ${JSON.stringify(coinGeckoAssets, null, 2)} ;
  
  `;
 
@@ -305,7 +316,9 @@ export const crossChainAssets :CrossChainAssets= ${JSON.stringify(crossChainAsse
 
   const keplrChainsOutputContent = `
 // [GENERATED]
-export const keplrChains = ${JSON.stringify(keplrChains, null, 2)} ;
+import { ChainInfo } from "@keplr-wallet/types";
+
+export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChains, null, 2)} ;
 
 `;
 

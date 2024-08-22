@@ -1,6 +1,11 @@
 
 // [GENERATED]
-export const tokensPerChannel = {
+import { TokenPerChannel } from './types';
+
+export const tokensPerChannel : Record<
+  string,
+  Record<string, TokenPerChannel>
+> = {
   "2019": {
     "15": {
       "chainId": "2087",
@@ -99,8 +104,8 @@ export const tokensPerChannel = {
       "chainId": "osmosis-1",
       "destinationId": 1279,
       "tokens": [
-        "UOSMO",
-        "USEI"
+        "OSMO",
+        "SEI"
       ]
     },
     "4": {

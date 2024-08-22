@@ -1,6 +1,8 @@
 
 // [GENERATED]
-export const keplrChains = {
+import { ChainInfo } from "@keplr-wallet/types";
+
+export const keplrChains :Record<string, ChainInfo>= {
   "agoric-3": {
     "bech32Config": {
       "bech32PrefixAccAddr": "agoric",
@@ -21,13 +23,15 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "BLD",
         "coinGeckoId": "agoric",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
+        "coinMinimalDenom": "ubld"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "IST",
         "coinGeckoId": "inter-stable-token",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
+        "coinMinimalDenom": "uist"
       }
     ],
     "features": [],
@@ -85,7 +89,8 @@ export const keplrChains = {
         "coinDecimals": 18,
         "coinDenom": "ARCH",
         "coinGeckoId": "archway",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+        "coinMinimalDenom": "aarch"
       }
     ],
     "features": [],
@@ -132,7 +137,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "TIA",
         "coinGeckoId": "celestia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+        "coinMinimalDenom": "utia"
       }
     ],
     "features": [],
@@ -180,7 +186,8 @@ export const keplrChains = {
         "coinDecimals": 12,
         "coinDenom": "PICA",
         "coinGeckoId": "picasso",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "coinMinimalDenom": "ppica"
       }
     ],
     "features": [],
@@ -227,7 +234,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "HUAHUA",
         "coinGeckoId": "chihuahua-token",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+        "coinMinimalDenom": "uhuahua"
       }
     ],
     "features": [],
@@ -274,12 +282,14 @@ export const keplrChains = {
       {
         "coinDecimals": 6,
         "coinDenom": "XRP",
-        "coinGeckoId": "ripple"
+        "coinGeckoId": "ripple",
+        "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "CORE",
-        "coinGeckoId": "coreum"
+        "coinGeckoId": "coreum",
+        "coinMinimalDenom": "ucore"
       }
     ],
     "features": [],
@@ -324,7 +334,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "ATOM",
         "coinGeckoId": "cosmos",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+        "coinMinimalDenom": "uatom"
       }
     ],
     "features": [],
@@ -371,12 +382,14 @@ export const keplrChains = {
       {
         "coinDecimals": 6,
         "coinDenom": "CRE",
-        "coinGeckoId": "crescent-network"
+        "coinGeckoId": "crescent-network",
+        "coinMinimalDenom": "ucre"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "bCRE",
-        "coinGeckoId": "liquid-staking-crescent"
+        "coinGeckoId": "liquid-staking-crescent",
+        "coinMinimalDenom": "ubcre"
       }
     ],
     "features": [],
@@ -582,7 +595,8 @@ export const keplrChains = {
         "coinDecimals": 18,
         "coinDenom": "INJ",
         "coinGeckoId": "injective-protocol",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
+        "coinMinimalDenom": "inj"
       }
     ],
     "features": [],
@@ -629,7 +643,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "KUJI",
         "coinGeckoId": "kujira",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
+        "coinMinimalDenom": "ukuji"
       }
     ],
     "features": [],
@@ -726,13 +741,15 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "ASTRO",
         "coinGeckoId": "astroport-fi",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg"
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
+        "coinMinimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "NTRN",
         "coinGeckoId": "neutron-3",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
+        "coinMinimalDenom": "untrn"
       }
     ],
     "features": [],
@@ -832,13 +849,15 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "OSMO",
         "coinGeckoId": "osmosis",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+        "coinMinimalDenom": "uosmo"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "milkTIA",
         "coinGeckoId": "milkyway-staked-tia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
+        "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
       }
     ],
     "features": [],
@@ -886,7 +905,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "QCK",
         "coinGeckoId": "quicksilver",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
+        "coinMinimalDenom": "uqck"
       }
     ],
     "features": [],
@@ -934,19 +954,22 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "SCRT",
         "coinGeckoId": "secret",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+        "coinMinimalDenom": "uscrt"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "SILK",
         "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
-        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg"
+        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
+        "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
       },
       {
         "coinDecimals": 8,
         "coinDenom": "SHD",
         "coinGeckoId": "shade-protocol",
-        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg"
+        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
+        "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
       }
     ],
     "features": [],
@@ -993,7 +1016,8 @@ export const keplrChains = {
       {
         "coinDecimals": 6,
         "coinDenom": "SEI",
-        "coinGeckoId": "sei-network"
+        "coinGeckoId": "sei-network",
+        "coinMinimalDenom": "usei"
       }
     ],
     "features": [],
@@ -1038,7 +1062,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "STARS",
         "coinGeckoId": "stargaze",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+        "coinMinimalDenom": "ustars"
       }
     ],
     "features": [],
@@ -1086,19 +1111,22 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "stTIA",
         "coinGeckoId": "stride-staked-tia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/sttia.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/sttia.png",
+        "coinMinimalDenom": "stutia"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "STRD",
         "coinGeckoId": "stride",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png",
+        "coinMinimalDenom": "ustrd"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "stATOM",
         "coinGeckoId": "stride-staked-atom",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png",
+        "coinMinimalDenom": "stuatom"
       }
     ],
     "features": [],
@@ -1303,7 +1331,8 @@ export const keplrChains = {
         "coinDecimals": 6,
         "coinDenom": "UMEE",
         "coinGeckoId": "umee",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+        "coinMinimalDenom": "uumee"
       }
     ],
     "features": [],

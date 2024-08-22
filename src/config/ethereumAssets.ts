@@ -1,6 +1,8 @@
 
 // [GENERATED]
-export const ethereumAssets = {
+import { EthereumAsset } from './types';
+
+export const ethereumAssets :Record<string, EthereumAsset>= {
   "DOT": {
     "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
     "cosmosToEthereumFee": 2,

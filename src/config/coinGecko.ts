@@ -1,7 +1,8 @@
 
-// [GENERATED]
+  // [GENERATED]
+import { CoinGeckoAsset } from './types';
 
- export const coinGecko = [
+ export const coinGecko: CoinGeckoAsset[] = [
   {
     "name": "ASTR",
     "id": "astar"
