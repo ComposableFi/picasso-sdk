@@ -404,14 +404,18 @@ export const tokensPerChannel : Record<
   "osmosis-1": {
     "782": {
       "chainId": "pacific-1",
-      "destinationId": 0
+      "destinationId": 0,
+      "tokens": [
+        "OSMO",
+        "SEI"
+      ]
     },
     "1279": {
       "chainId": "centauri-1",
       "destinationId": 3,
       "tokens": [
-        "UOSMO",
-        "USEI"
+        "OSMO",
+        "SEI"
       ]
     }
   },

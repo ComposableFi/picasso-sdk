@@ -123,6 +123,7 @@ var processFiles = function () {
                     coinGeckoId: item.coinGeckoId,
                     coinImageUrl: item.coinImageUrl,
                     gasPriceStep: item.cosmos.gasPriceStep,
+                    coinMinimalDenom: item.coinMinimalDenom,
                 }); }),
                 rest: data.rest,
                 rpc: data.rpc,
