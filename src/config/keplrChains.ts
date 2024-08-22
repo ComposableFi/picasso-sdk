@@ -45,7 +45,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.03,
           "average": 0.05,
           "high": 0.07
-        }
+        },
+        "coinMinimalDenom": "ubld"
       },
       {
         "coinDecimals": 6,
@@ -55,7 +56,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0034,
           "average": 0.007,
           "high": 0.02
-        }
+        },
+        "coinMinimalDenom": "uist"
       }
     ],
     "rest": "https://agoric-cmp-api.polkachu.com",
@@ -104,7 +106,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 140000000000,
           "average": 196000000000,
           "high": 225400000000
-        }
+        },
+        "coinMinimalDenom": "aarch"
       }
     ],
     "rest": "https://api.mainnet.archway.io",
@@ -152,7 +155,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.02,
           "high": 0.1
-        }
+        },
+        "coinMinimalDenom": "utia"
       }
     ],
     "rest": "https://api.celestia.nodestake.top",
@@ -200,7 +204,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0,
           "average": 0,
           "high": 0
-        }
+        },
+        "coinMinimalDenom": "ppica"
       }
     ],
     "rest": "https://picasso-api.polkachu.com",
@@ -249,7 +254,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 500,
           "average": 1250,
           "high": 2000
-        }
+        },
+        "coinMinimalDenom": "uhuahua"
       }
     ],
     "rest": "https://chihuahua-api.polkachu.com",
@@ -302,7 +308,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0625,
           "average": 0.0625,
           "high": 0.0625
-        }
+        },
+        "coinMinimalDenom": "ucore"
       }
     ],
     "rest": "https://rest-coreum.ecostake.com",
@@ -349,7 +356,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "average": 0.025,
           "high": 0.03,
           "low": 0.005
-        }
+        },
+        "coinMinimalDenom": "uatom"
       }
     ],
     "rest": "https://cosmos-cmp-api.polkachu.com",
@@ -402,7 +410,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.025,
           "high": 0.03
-        }
+        },
+        "coinMinimalDenom": "ucre"
       },
       {
         "coinDecimals": 6,
@@ -412,7 +421,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0083,
           "average": 0.02075,
           "high": 0.0249
-        }
+        },
+        "coinMinimalDenom": "ubcre"
       },
       {
         "coinDecimals": 6,
@@ -422,7 +432,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000063,
           "average": 0.0001575,
           "high": 0.000189
-        }
+        },
+        "coinMinimalDenom": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
       },
       {
         "coinDecimals": 6,
@@ -432,7 +443,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000842,
           "average": 0.002105,
           "high": 0.002526
-        }
+        },
+        "coinMinimalDenom": "ibc/CD01034D6749F20AAC5330EF4FD8B8CA7C40F7527AB8C4A302FBD2A070852EE1"
       },
       {
         "coinDecimals": 6,
@@ -442,7 +454,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000842,
           "average": 0.002105,
           "high": 0.002526
-        }
+        },
+        "coinMinimalDenom": "ibc/BFF0D3805B50D93E2FA5C0B2DDF7E0B30A631076CD80BC12A48C0E95404B4A41"
       },
       {
         "coinDecimals": 6,
@@ -452,7 +465,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000842,
           "average": 0.002105,
           "high": 0.002526
-        }
+        },
+        "coinMinimalDenom": "ibc/CA1261224952DF089EFD363D8DBB30A8AB6D8CD181E60EE9E68E432F8DE14FE3"
       },
       {
         "coinDecimals": 6,
@@ -462,7 +476,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000842,
           "average": 0.002105,
           "high": 0.002526
-        }
+        },
+        "coinMinimalDenom": "ibc/9EC8A1701813BB7B73BFED2496009ABB2C8BF187E6CDFA788D77F68E08BC05CD"
       },
       {
         "coinDecimals": 6,
@@ -472,7 +487,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.000568,
           "average": 0.00142,
           "high": 0.001704
-        }
+        },
+        "coinMinimalDenom": "ibc/C814F0B662234E24248AE3B2FE2C1B54BBAF12934B757F6E7BC5AEC119963895"
       },
       {
         "coinDecimals": 6,
@@ -482,7 +498,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.002,
           "average": 0.005,
           "high": 0.006
-        }
+        },
+        "coinMinimalDenom": "ibc/11F940BCDFD7CFBFD7EDA13F25DA95D308286D441209D780C9863FD4271514EB"
       },
       {
         "coinDecimals": 6,
@@ -492,7 +509,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.008146,
           "average": 0.020365,
           "high": 0.024438
-        }
+        },
+        "coinMinimalDenom": "ibc/61DF64ADF65230540C14C63D64897BE08A3DC9A516A91425913F01240E2F432F"
       },
       {
         "coinDecimals": 6,
@@ -502,7 +520,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.065405,
           "average": 0.1635125,
           "high": 0.196215
-        }
+        },
+        "coinMinimalDenom": "ibc/C950356239AD2A205DE09FDF066B1F9FF19A7CA7145EA48A5B19B76EE47E52F7"
       },
       {
         "coinDecimals": 18,
@@ -512,7 +531,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 3350000000,
           "average": 8375000000,
           "high": 10050000000
-        }
+        },
+        "coinMinimalDenom": "ibc/5A76568E079A31FA12165E4559BA9F1E9D4C97F9C2060B538C84DCD503815E30"
       },
       {
         "coinDecimals": 6,
@@ -522,7 +542,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0004,
           "average": 0.001,
           "high": 0.0012
-        }
+        },
+        "coinMinimalDenom": "ibc/8F865D9760B482FF6254EDFEC1FF2F1273B9AB6873A7DE484F89639795D73D75"
       },
       {
         "coinDecimals": 6,
@@ -532,7 +553,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 5,
           "average": 12.5,
           "high": 15
-        }
+        },
+        "coinMinimalDenom": "ibc/4627AD2524E3E0523047E35BB76CC90E37D9D57ACF14F0FCBCEB2480705F3CB8"
       },
       {
         "coinDecimals": 6,
@@ -542,7 +564,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.00006,
           "average": 0.00015,
           "high": 0.00018
-        }
+        },
+        "coinMinimalDenom": "ibc/D64F87FAE0B35C1954DD7921BA7A2939705DE77CBF72B8002F2E3552EDE4DE52"
       },
       {
         "coinDecimals": 18,
@@ -552,7 +575,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 200000000,
           "average": 500000000,
           "high": 600000000
-        }
+        },
+        "coinMinimalDenom": "ibc/764D1629980B02BAFF3D25BEE4FB1E0C5E350AFA252FDF66E68E10D2179A826A"
       },
       {
         "coinDecimals": 6,
@@ -562,7 +586,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0014,
           "average": 0.0035,
           "high": 0.0042
-        }
+        },
+        "coinMinimalDenom": "ibc/0634D0993744740D675AD01E81156EAC945AEAAE17C074918DC7FF52F41B263E"
       }
     ],
     "rest": "https://crescent-cmp-api.polkachu.com",
@@ -610,7 +635,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 500000000,
           "average": 1000000000,
           "high": 1500000000
-        }
+        },
+        "coinMinimalDenom": "inj"
       }
     ],
     "rest": "https://injective-api.polkachu.com",
@@ -653,62 +679,74 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "KUJI",
         "coinGeckoId": "kujira",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
+        "coinMinimalDenom": "ukuji"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "USK",
-        "coinGeckoId": "usk"
+        "coinGeckoId": "usk",
+        "coinMinimalDenom": "factory/kujira1qk00h5atutpsv900x202pxx42npjr9thg58dnqpa72f2p7m2luase444a7/uusk"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "axlUSDC",
-        "coinGeckoId": "usd-coin"
+        "coinGeckoId": "usd-coin",
+        "coinMinimalDenom": "ibc/295548A78785A1007F232DE286149A6FF512F180AF5657780FC89C009E2C348F"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "ATOM",
-        "coinGeckoId": "cosmos"
+        "coinGeckoId": "cosmos",
+        "coinMinimalDenom": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "OSMO",
-        "coinGeckoId": "osmosis"
+        "coinGeckoId": "osmosis",
+        "coinMinimalDenom": "ibc/47BD209179859CDE4A2806763D7189B6E6FE13A17880FE2B42DE1E6C1E329E23"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "CMDX",
-        "coinGeckoId": "comdex"
+        "coinGeckoId": "comdex",
+        "coinMinimalDenom": "ibc/3607EB5B5E64DD1C0E12E07F077FF470D5BC4706AFCBC98FE1BA960E5AE4CE07"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "EVMOS",
-        "coinGeckoId": "evmos"
+        "coinGeckoId": "evmos",
+        "coinMinimalDenom": "ibc/F3AA7EF362EC5E791FE78A0F4CCC69FEE1F9A7485EB1A8CAB3F6601C00522F10"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "JUNO",
-        "coinGeckoId": "juno-network"
+        "coinGeckoId": "juno-network",
+        "coinMinimalDenom": "ibc/EFF323CC632EC4F747C61BCE238A758EFDB7699C3226565F7C20DA06509D59A5"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "SCRT",
-        "coinGeckoId": "secret"
+        "coinGeckoId": "secret",
+        "coinMinimalDenom": "ibc/A358D7F19237777AF6D8AD0E0F53268F8B18AE8A53ED318095C14D6D7F3B2DB5"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "STARS",
-        "coinGeckoId": "stargaze"
+        "coinGeckoId": "stargaze",
+        "coinMinimalDenom": "ibc/4F393C3FCA4190C0A6756CE7F6D897D5D1BE57D6CCB80D0BC87393566A7B6602"
       },
       {
         "coinDecimals": 18,
         "coinDenom": "wAVAX",
-        "coinGeckoId": "avalanche-2"
+        "coinGeckoId": "avalanche-2",
+        "coinMinimalDenom": "ibc/004EBF085BBED1029326D56BE8A2E67C08CECE670A94AC1947DF413EF5130EB2"
       },
       {
         "coinDecimals": 18,
         "coinDenom": "wETH",
-        "coinGeckoId": "ethereum"
+        "coinGeckoId": "ethereum",
+        "coinMinimalDenom": "ibc/1B38805B1C75352B28169284F96DF56BDEBD9E8FAC005BDCC8CF0378C82AA8E7"
       }
     ],
     "rest": "https://kujira-api.polkachu.com",
@@ -762,7 +800,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0053,
           "average": 0.0053,
           "high": 0.0053
-        }
+        },
+        "coinMinimalDenom": "untrn"
       },
       {
         "coinDecimals": 6,
@@ -771,7 +810,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0008,
           "average": 0.0008,
           "high": 0.0008
-        }
+        },
+        "coinMinimalDenom": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
       },
       {
         "coinDecimals": 6,
@@ -780,7 +820,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.008,
           "average": 0.008,
           "high": 0.008
-        }
+        },
+        "coinMinimalDenom": "ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349"
       },
       {
         "coinDecimals": 18,
@@ -789,7 +830,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 2903231.6597,
           "average": 2903231.6597,
           "high": 2903231.6597
-        }
+        },
+        "coinMinimalDenom": "factory/neutron1ug740qrkquxzrk2hh29qrlx3sktkfml3je7juusc2te7xmvsscns0n2wry/wstETH"
       },
       {
         "coinDecimals": 18,
@@ -798,7 +840,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 2564102564.1026,
           "average": 2564102564.1026,
           "high": 2564102564.1026
-        }
+        },
+        "coinMinimalDenom": "ibc/2CB87BCE0937B1D1DFCEE79BE4501AAF3C265E923509AEAC410AD85D27F35130"
       },
       {
         "coinDecimals": 6,
@@ -807,7 +850,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0004,
           "average": 0.0004,
           "high": 0.0004
-        }
+        },
+        "coinMinimalDenom": "ibc/773B4D0A3CD667B2275D5A4A7A2F0909C0BA0F4059C0B9181E680DDF4965DCC7"
       },
       {
         "coinDecimals": 6,
@@ -816,7 +860,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0006,
           "average": 0.0006,
           "high": 0.0006
-        }
+        },
+        "coinMinimalDenom": "ibc/B7864B03E1B9FD4F049243E92ABD691586F682137037A9F3FCA5222815620B3C"
       }
     ],
     "rest": "https://neutron-cmp-api.polkachu.com",
@@ -871,7 +916,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0025,
           "average": 0.025,
           "high": 0.04
-        }
+        },
+        "coinMinimalDenom": "uosmo"
       }
     ],
     "rest": "https://osmosis-cmp-api.polkachu.com",
@@ -920,7 +966,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0001,
           "average": 0.0001,
           "high": 0.00025
-        }
+        },
+        "coinMinimalDenom": "uqck"
       }
     ],
     "rest": "https://quicksilver-api.polkachu.com",
@@ -983,7 +1030,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.05,
           "average": 0.1,
           "high": 0.25
-        }
+        },
+        "coinMinimalDenom": "uscrt"
       }
     ],
     "rest": "https://lcd.mainnet.secretsaturn.net",
@@ -1030,7 +1078,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.1,
           "average": 0.2,
           "high": 0.3
-        }
+        },
+        "coinMinimalDenom": "usei"
       }
     ],
     "rest": "https://sei-api.polkachu.com",
@@ -1077,7 +1126,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 1,
           "average": 1.1,
           "high": 1.2
-        }
+        },
+        "coinMinimalDenom": "ustars"
       }
     ],
     "rest": "https://stargaze-cmp-api.polkachu.com",
@@ -1140,7 +1190,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.005,
           "average": 0.005,
           "high": 0.05
-        }
+        },
+        "coinMinimalDenom": "ustrd"
       },
       {
         "coinDecimals": 6,
@@ -1150,7 +1201,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0001,
           "average": 0.001,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
       },
       {
         "coinDecimals": 6,
@@ -1161,7 +1213,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.001,
           "average": 0.01,
           "high": 0.1
-        }
+        },
+        "coinMinimalDenom": "ibc/D24B4564BCD51D3D02D9987D92571EAC5915676A9BD6D9B0C1D0254CB8A5EA34"
       },
       {
         "coinDecimals": 6,
@@ -1171,7 +1224,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.001,
           "average": 0.01,
           "high": 0.1
-        }
+        },
+        "coinMinimalDenom": "stuosmo"
       },
       {
         "coinDecimals": 6,
@@ -1181,7 +1235,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.0001,
           "average": 0.001,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "stuatom"
       },
       {
         "coinDecimals": 18,
@@ -1191,7 +1246,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 500000000,
           "average": 500000000,
           "high": 500000000
-        }
+        },
+        "coinMinimalDenom": "ibc/A7454562FF29FE068F42F9DE4805ABEF54F599D1720B345D6518D9B5C64EA6D2"
       },
       {
         "coinDecimals": 18,
@@ -1201,7 +1257,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 500000000,
           "average": 500000000,
           "high": 500000000
-        }
+        },
+        "coinMinimalDenom": "stinj"
       },
       {
         "coinDecimals": 18,
@@ -1211,7 +1268,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 20000000000,
           "average": 20000000000,
           "high": 20000000000
-        }
+        },
+        "coinMinimalDenom": "ibc/4B322204B4F59D770680FE4D7A565DDC3F37BFF035474B717476C66A4F83DD72"
       },
       {
         "coinDecimals": 18,
@@ -1220,7 +1278,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 20000000000,
           "average": 20000000000,
           "high": 20000000000
-        }
+        },
+        "coinMinimalDenom": "staevmos"
       },
       {
         "coinDecimals": 6,
@@ -1230,7 +1289,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.01,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "ibc/BF3B4F53F3694B66E13C23107C84B6485BD2B96296BB7EC680EA77BBA75B4801"
       },
       {
         "coinDecimals": 6,
@@ -1240,7 +1300,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.01,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "stutia"
       },
       {
         "coinDecimals": 18,
@@ -1250,7 +1311,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 15000000000,
           "average": 15000000000,
           "high": 15000000000
-        }
+        },
+        "coinMinimalDenom": "ibc/561C70B20188A047BFDE6F9946BDDC5D8AC172B9BE04FF868DFABF819E5A9CCE"
       },
       {
         "coinDecimals": 18,
@@ -1260,7 +1322,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 15000000000,
           "average": 15000000000,
           "high": 15000000000
-        }
+        },
+        "coinMinimalDenom": "stadydx"
       },
       {
         "coinDecimals": 18,
@@ -1270,7 +1333,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 15000000000,
           "average": 15000000000,
           "high": 50000000000
-        }
+        },
+        "coinMinimalDenom": "ibc/E1C22332C083574F3418481359733BA8887D171E76C80AD9237422AEABB66018"
       },
       {
         "coinDecimals": 18,
@@ -1279,7 +1343,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 15000000000,
           "average": 15000000000,
           "high": 50000000000
-        }
+        },
+        "coinMinimalDenom": "stadym"
       },
       {
         "coinDecimals": 6,
@@ -1288,7 +1353,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.01,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "stusaga"
       },
       {
         "coinDecimals": 6,
@@ -1297,7 +1363,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.01,
           "average": 0.01,
           "high": 0.01
-        }
+        },
+        "coinMinimalDenom": "ibc/520D9C4509027DE66C737A1D6A6021915A3071E30DBA8F758B46532B060D7AA5"
       }
     ],
     "rest": "https://stride-cmp-api.polkachu.com",
@@ -1346,7 +1413,8 @@ export const keplrChains :Record<string, ChainInfo>= {
           "low": 0.06,
           "average": 0.1,
           "high": 0.14
-        }
+        },
+        "coinMinimalDenom": "uumee"
       }
     ],
     "rest": "https://umee-cmp-api.polkachu.com",
