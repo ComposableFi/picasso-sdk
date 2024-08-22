@@ -1,5 +1,4 @@
 "use strict";
-// [GENERATED]
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.networks = void 0;
 exports.networks = {

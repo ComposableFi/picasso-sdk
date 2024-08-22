@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.tokensPerChannel = void 0;
-// [GENERATED]
 exports.tokensPerChannel = {
     "2019": {
         "15": {
@@ -101,8 +100,8 @@ exports.tokensPerChannel = {
             "chainId": "osmosis-1",
             "destinationId": 1279,
             "tokens": [
-                "UOSMO",
-                "USEI"
+                "OSMO",
+                "SEI"
             ]
         },
         "4": {

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.solanaAssets = void 0;
-// [GENERATED]
 exports.solanaAssets = {
     "DOT": {
         "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",

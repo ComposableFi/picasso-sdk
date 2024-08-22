@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ethereumAssets = void 0;
-// [GENERATED]
 exports.ethereumAssets = {
     "DOT": {
         "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
