@@ -8,4 +8,13 @@ export declare const memoBuilder: ({ destChannel, destAddress, }: {
 }) => string;
 /**@description Plus mininutes. Default : 10  */
 export declare const getTimeOut: (plusMin?: number) => any;
+export declare const findSourceChannelId: (sourceChainId: string, destChainId: string) => string | undefined;
+interface Hop {
+    chainId: string;
+    channelId: string;
+}
+export declare const buildIbcPath: (fromChainId: string, toChainId: string) => Hop[] | null;
+/**@description If it returns undefined, that means it is not supported */
+export declare const getSupportedType: (fromChainId: string, toChainId: string) => void;
+export {};
 //# sourceMappingURL=utils.d.ts.map

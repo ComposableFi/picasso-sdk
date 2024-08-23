@@ -15,9 +15,10 @@
   "author": "composable finance",
   "license": "ISC",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run test",
+    "test": "jest",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "publish-npm": "rm -rf ./dist && npm run build && npm publish --access public",
+    "publish-npm": "npm version patch && rm -rf ./dist && npm run build && npm publish --access public",
     "generate-helper": "ts-node ./src/scripts/generate-helper.ts",
     "prepare": "husky install"
   },
@@ -45,7 +46,10 @@
   ],
   "devDependencies": {
     "@keplr-wallet/types": "^0.11.26",
+    "@types/jest": "^29.5.12",
     "husky": "^9.1.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4",
     "typescript": "^5.5.2"
   }
 }

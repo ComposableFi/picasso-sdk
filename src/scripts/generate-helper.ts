@@ -10,6 +10,7 @@ import {
   SolanaAsset,
   TokenPerChannel,
 } from '../config/types';
+import { buildIbcPath } from '../chains';
 
 const dataDir = path.join(__dirname, '../config/json');
 const ethereumOutputFilePath = path.join(
@@ -322,6 +323,11 @@ import { ChainInfo } from "@keplr-wallet/types";
 export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChains, null, 2)} ;
 
 `;
+
+  //test
+
+  const path2 = buildIbcPath('2019', 'ethereum');
+  console.log(path2); // ['2087', 'centauri-1', 'ethereum'] 와 같은 결과가 나와야 함
 
   fs.writeFileSync(
     keplrChainsOutputFilePath,

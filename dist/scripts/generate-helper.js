@@ -50,6 +50,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
+var chains_1 = require("../chains");
 var dataDir = path.join(__dirname, '../config/json');
 var ethereumOutputFilePath = path.join(__dirname, '../config/ethereumAssets.ts');
 var solanaOutputFilePath = path.join(__dirname, '../config/solanaAssets.ts');
@@ -265,6 +266,9 @@ var processFiles = function () {
     fs.writeFileSync(crossChainAssetsOutputFilePath, crossChainAssetsOutputContent, 'utf-8');
     console.log('crossChainAssets.ts has been created');
     var keplrChainsOutputContent = "\n// [GENERATED]\nimport { ChainInfo } from \"@keplr-wallet/types\";\n\nexport const keplrChains :Record<string, ChainInfo>= ".concat(JSON.stringify(keplrChains, null, 2), " ;\n\n");
+    //test
+    var path2 = (0, chains_1.buildIbcPath)('2019', 'ethereum');
+    console.log(path2); // ['2087', 'centauri-1', 'ethereum'] 와 같은 결과가 나와야 함
     fs.writeFileSync(keplrChainsOutputFilePath, keplrChainsOutputContent, 'utf-8');
     console.log('keplrChains.ts has been created');
 };
