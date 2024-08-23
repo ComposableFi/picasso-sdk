@@ -324,11 +324,6 @@ export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChain
 
 `;
 
-  //test
-
-  const path2 = buildIbcPath('2019', 'ethereum');
-  console.log(path2); // ['2087', 'centauri-1', 'ethereum'] 와 같은 결과가 나와야 함
-
   fs.writeFileSync(
     keplrChainsOutputFilePath,
     keplrChainsOutputContent,
