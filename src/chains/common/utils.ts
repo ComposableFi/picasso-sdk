@@ -1,7 +1,7 @@
 import EventEmitter from 'eventemitter3';
 import { WalletApiEvents } from './types';
 import Big from 'big.js';
-import { networks, tokensPerChannel } from '../../config';
+import { networks, tokensPerChannel, TransferType } from '../../config';
 
 export const emitter = new EventEmitter<WalletApiEvents>();
 export const TIMEOUT_IBC_MAX = 6000000000000;
@@ -102,9 +102,19 @@ export const buildIbcPath = (
 
 // Example usage
 
-// 사용 예시
-const path = buildIbcPath('2087', 'ethereum');
-console.log(path); // ['2087', 'centauri-1', 'ethereum'] 와 같은 결과가 나와야 함
-
 /**@description If it returns undefined, that means it is not supported */
-export const getSupportedType = (fromChainId: string, toChainId: string) => {};
+export const getSupportedType = (
+  fromChainId: string,
+  toChainId: string
+): TransferType | undefined => {
+  if (fromChainId === toChainId) return;
+  if (!tokensPerChannel[fromChainId][toChainId]) return 'channel';
+
+  //XCM tx
+  if (
+    networks[fromChainId]?.polkadot?.relayChain ===
+    networks[toChainId].polkadot?.relayChain
+  )
+    return 'xcm';
+  if (buildIbcPath(fromChainId, toChainId)) return 'pfm';
+};

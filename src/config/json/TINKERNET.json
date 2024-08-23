@@ -8,16 +8,14 @@
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 117,
-    "isParachain": false,
+    "isParachain": true,
     "relayChain": "kusama",
     "hops": {
       "2087": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V2",
-        "tokens": [
-          "2125"
-        ]
+        "tokens": ["2125"]
       }
     }
   },

@@ -12,7 +12,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "USDT Kusama",
     "polkadot": {
       "ss58Format": 2,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -25,7 +25,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -41,7 +40,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "BNC_KSM",
     "polkadot": {
       "ss58Format": 6,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -55,7 +54,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -71,7 +69,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "GLMR",
     "polkadot": {
       "ss58Format": 0,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -84,7 +82,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -100,7 +97,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "ASTR",
     "polkadot": {
       "ss58Format": 5,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -113,7 +110,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -129,7 +125,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "SDN",
     "polkadot": {
       "ss58Format": 5,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -142,7 +138,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -158,7 +153,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "DOT",
     "polkadot": {
       "ss58Format": 50,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2006": {
@@ -188,7 +183,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2006",
@@ -207,7 +201,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "MOVR",
     "polkadot": {
       "ss58Format": 0,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -220,7 +214,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -236,7 +229,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "BNC_DOT",
     "polkadot": {
       "ss58Format": 6,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -250,7 +243,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -304,7 +296,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "1000",
@@ -325,7 +316,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "",
     "polkadot": {
       "ss58Format": 56,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -338,7 +329,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -354,7 +344,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "TNKR",
     "polkadot": {
       "ss58Format": 117,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -367,7 +357,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -396,7 +385,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -425,7 +413,6 @@ import { NetworkInfo } from './types';
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -439,7 +426,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "agoric-3",
     "feeAssetId": "BLD",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/agoric",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric",
@@ -473,7 +459,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "archway-1",
     "feeAssetId": "ARCH",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccAddr": "archway",
@@ -500,7 +485,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "celestia",
     "feeAssetId": "TIA",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccAddr": "celestia",
@@ -528,7 +512,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "centauri-1",
     "feeAssetId": "PICA",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -574,7 +557,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "chihuahua-1",
     "feeAssetId": "HUAHUA",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -602,7 +584,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "coreum-mainnet-1",
     "feeAssetId": "XRP",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 990
@@ -629,7 +610,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "cosmoshub-4",
     "feeAssetId": "ATOM",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccAddr": "cosmos",
@@ -657,7 +637,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "crescent-1",
     "feeAssetId": "CRE",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://app.crescent.network/",
       "walletUrlForStaking": "https://app.crescent.network/staking",
@@ -686,8 +665,6 @@ import { NetworkInfo } from './types';
     "chainType": "ethereum",
     "chainId": "ethereum",
     "feeAssetId": "ETH",
-    "polkadot": {},
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "centauri-1"
@@ -701,7 +678,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "injective-1",
     "feeAssetId": "INJ",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccPub": "injpub",
@@ -728,7 +704,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "kaiyo-1",
     "feeAssetId": "KUJI",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -755,7 +730,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "neutron-1",
     "feeAssetId": "ASTRO",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -782,7 +756,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "osmosis-1",
     "feeAssetId": "OSMO",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://app.osmosis.zone",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
@@ -812,7 +785,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "quicksilver-2",
     "feeAssetId": "QCK",
-    "polkadot": {},
     "cosmos": {
       "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
       "bip44": {
@@ -840,7 +812,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "secret-4",
     "feeAssetId": "SCRT",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/secret-network",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
@@ -874,7 +845,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "pacific-1",
     "feeAssetId": "SEI",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -901,7 +871,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "stargaze-1",
     "feeAssetId": "STARS",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/stargaze",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
@@ -930,7 +899,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "stride-1",
     "feeAssetId": "stTIA",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/stride",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/stride",
@@ -959,7 +927,6 @@ import { NetworkInfo } from './types';
     "chainType": "cosmos",
     "chainId": "umee-1",
     "feeAssetId": "UMEE",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/umee",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
@@ -988,8 +955,6 @@ import { NetworkInfo } from './types';
     "chainType": "solana",
     "chainId": "solana",
     "feeAssetId": "SOL",
-    "polkadot": {},
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "centauri-1"

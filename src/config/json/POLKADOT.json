@@ -15,9 +15,7 @@
         "type": "XCM",
         "xcmType": "xcmPallet.limitedReserveTransferAssets",
         "version": "V2",
-        "tokens": [
-          "4"
-        ]
+        "tokens": ["4"]
       }
     }
   },

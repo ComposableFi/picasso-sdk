@@ -8,16 +8,14 @@
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 5,
-    "isParachain": false,
+    "isParachain": true,
     "relayChain": "polkadot",
     "hops": {
       "2019": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V2",
-        "tokens": [
-          "79228162514264337593543952342"
-        ]
+        "tokens": ["79228162514264337593543952342"]
       }
     }
   },

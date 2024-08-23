@@ -76,8 +76,8 @@ const processFiles = () => {
       chainType: data.chainType || '',
       chainId: data.chainId || '',
       feeAssetId: data.currencies[0]?.coinDenom || '',
-      polkadot: data.polkadot || {},
-      cosmos: data.cosmos || {},
+      polkadot: data.polkadot || undefined,
+      cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
       network_to: [
         ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),

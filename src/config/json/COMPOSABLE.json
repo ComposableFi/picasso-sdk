@@ -24,16 +24,14 @@
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 50,
-    "isParachain": false,
+    "isParachain": true,
     "relayChain": "kusama",
     "hops": {
       "2006": {
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V2",
-        "tokens": [
-          "79228162514264337593543952342"
-        ]
+        "tokens": ["79228162514264337593543952342"]
       },
       "2030": {
         "type": "XCM",
@@ -48,9 +46,7 @@
         "type": "XCM",
         "xcmType": "xTokens.transfer",
         "version": "V3",
-        "tokens": [
-          "79228162514264337593543950342"
-        ]
+        "tokens": ["79228162514264337593543950342"]
       }
     }
   },
