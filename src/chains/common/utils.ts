@@ -113,8 +113,12 @@ export const getSupportedType = (
   //XCM tx
   if (
     networks[fromChainId]?.polkadot?.relayChain ===
-    networks[toChainId].polkadot?.relayChain
+    networks[toChainId]?.polkadot?.relayChain
   )
     return 'xcm';
-  if (buildIbcPath(fromChainId, toChainId)) return 'pfm';
+  if (buildIbcPath(fromChainId, toChainId)) {
+    if (fromChainId === 'solana') return 'pfm';
+    return 'multihop';
+  }
+  return;
 };
