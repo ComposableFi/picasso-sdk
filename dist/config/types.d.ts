@@ -40,7 +40,7 @@ export interface NetworkInfo {
     chainType: 'polkadot' | 'solana' | 'ethereum' | 'cosmos';
     chainId: string;
     feeAssetId: string;
-    polkadot: {
+    polkadot?: {
         ss58Format: number;
         isParachain: boolean;
         relayChain: 'polkadot' | 'kusama';
@@ -52,8 +52,10 @@ export interface NetworkInfo {
                 tokens: string[];
             };
         };
-    } | {};
-    cosmos: {
+    };
+    cosmos?: {
+        walletUrl?: string;
+        walletUrlForStaking?: string;
         bip44: {
             coinType: number;
         };
@@ -65,7 +67,12 @@ export interface NetworkInfo {
             bech32PrefixConsAddr: string;
             bech32PrefixConsPub: string;
         };
-    } | {};
+        alternativeBIP44s?: [
+            {
+                coinType: number;
+            }
+        ];
+    };
     enabled: boolean;
     network_to?: string[];
 }

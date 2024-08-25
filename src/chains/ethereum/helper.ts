@@ -1,6 +1,6 @@
 import Big from 'big.js';
 import Web3 from 'web3';
-import { type TransactionConfig } from 'web3-core';
+import { TransactionReceipt, type TransactionConfig } from 'web3-core';
 import { type Contract } from 'web3-eth-contract';
 import { type AbiItem } from 'web3-utils';
 
@@ -72,9 +72,12 @@ export const getEthGasAmount = async (
   }
 };
 
-export const getTransactionReceipt = async (web3: Web3, txHash: string) => {
-  if (!web3) return '';
-  const receipt = web3.eth.getTransactionReceipt(txHash);
+export const getTransactionReceipt = async (
+  web3: Web3,
+  txHash: string
+): Promise<TransactionReceipt | null> => {
+  if (!web3) return null;
+  const receipt = await web3.eth.getTransactionReceipt(txHash);
   return receipt;
 };
 

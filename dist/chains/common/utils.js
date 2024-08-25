@@ -28,10 +28,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSupportedType = exports.buildIbcPath = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
+exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
+var encoding_1 = require("@cosmjs/encoding");
+var util_crypto_1 = require("@polkadot/util-crypto");
 exports.emitter = new eventemitter3_1.default();
 exports.TIMEOUT_IBC_MAX = 6000000000000;
 var memoBuilder = function (_a) {
@@ -69,10 +71,10 @@ var buildIbcPath = function (fromChainId, toChainId) {
     // Start BFS
     while (queue.length > 0) {
         // Get the first element from the queue
-        var _a = __read(queue.shift(), 2), currentChainId = _a[0], path_1 = _a[1];
+        var _a = __read(queue.shift(), 2), currentChainId = _a[0], path = _a[1];
         // If we reach the target chain, return the path
         if (currentChainId === toChainId) {
-            return path_1;
+            return path;
         }
         // Mark the current chain as visited
         visited.add(currentChainId);
@@ -84,7 +86,7 @@ var buildIbcPath = function (fromChainId, toChainId) {
                 // Ensure that the chain has not been visited yet
                 if (!visited.has(nextChainId)) {
                     // Add the next hop (with chain and channel info) to the path
-                    var newPath = __spreadArray(__spreadArray([], __read(path_1), false), [
+                    var newPath = __spreadArray(__spreadArray([], __read(path), false), [
                         { chainId: currentChainId, channelId: destinationId },
                     ], false);
                     // Add the next chain and the updated path to the queue
@@ -98,9 +100,66 @@ var buildIbcPath = function (fromChainId, toChainId) {
 };
 exports.buildIbcPath = buildIbcPath;
 // Example usage
-// 사용 예시
-var path = (0, exports.buildIbcPath)('2087', 'ethereum');
-console.log(path); // ['2087', 'centauri-1', 'ethereum'] 와 같은 결과가 나와야 함
 /**@description If it returns undefined, that means it is not supported */
-var getSupportedType = function (fromChainId, toChainId) { };
+var getSupportedType = function (fromChainId, toChainId) {
+    var _a, _b, _c, _d;
+    if (fromChainId === toChainId)
+        return;
+    if (!config_1.tokensPerChannel[fromChainId][toChainId])
+        return 'channel';
+    //XCM tx
+    if (((_b = (_a = config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.relayChain) ===
+        ((_d = (_c = config_1.networks[toChainId]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.relayChain))
+        return 'xcm';
+    if ((0, exports.buildIbcPath)(fromChainId, toChainId)) {
+        if (fromChainId === 'solana')
+            return 'pfm';
+        return 'multihop';
+    }
+    return;
+};
 exports.getSupportedType = getSupportedType;
+var getPolkadotAddressStr = function (accountId, prefix) {
+    try {
+        return (0, util_crypto_1.encodeAddress)(accountId, prefix || 0);
+    }
+    catch (e) {
+        return accountId;
+    }
+};
+exports.getPolkadotAddressStr = getPolkadotAddressStr;
+var convertCosmosAddress = function (address, newPrefix) {
+    try {
+        // Bech32 주소를 디코딩하여 5바이트 접두사 제거
+        var data = (0, encoding_1.fromBech32)(address).data;
+        // 새로운 접두사로 다시 Bech32 주소 생성
+        return (0, encoding_1.toBech32)(newPrefix, data);
+    }
+    catch (e) {
+        throw new Error('유효하지 않은 Bech32 주소입니다.');
+    }
+};
+exports.convertCosmosAddress = convertCosmosAddress;
+/**@description When it comes to Cosmos network, coinType should be 114 to use this converter*/
+var convertAddressToStr = function (address, fromChainId) {
+    var _a;
+    if (address.startsWith('0x')) {
+        // 2004: moonbeam, 2023:moonriver
+        if (['ethereum', 'solana', '2004', '2023'].some(function (v) { return v === fromChainId; })) {
+            return address;
+        }
+        else if (config_1.networks[origin].chainType === 'polkadot' &&
+            ((_a = config_1.networks[origin].polkadot) === null || _a === void 0 ? void 0 : _a.ss58Format)) {
+            return (0, exports.getPolkadotAddressStr)(address, Number(config_1.networks[origin].polkadot.ss58Format));
+        }
+        else if (config_1.networks[origin].chainType === 'cosmos' &&
+            config_1.networks[origin].cosmos.bech32Config.bech32PrefixAccAddr) {
+            return (0, exports.convertCosmosAddress)(address, config_1.networks[origin].cosmos.bech32Config.bech32PrefixAccAddr);
+        }
+        else {
+            return address;
+        }
+    }
+    return address;
+};
+exports.convertAddressToStr = convertAddressToStr;
