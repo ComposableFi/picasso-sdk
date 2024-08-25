@@ -258,7 +258,7 @@ import { NetworkInfo } from './types';
     "feeAssetId": "USDT Kusama",
     "polkadot": {
       "ss58Format": 49,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "1000": {
