@@ -164,10 +164,15 @@ exports.getEthGasAmount = getEthGasAmount;
 var getTransactionReceipt = function (web3, txHash) { return __awaiter(void 0, void 0, void 0, function () {
     var receipt;
     return __generator(this, function (_a) {
-        if (!web3)
-            return [2 /*return*/, ''];
-        receipt = web3.eth.getTransactionReceipt(txHash);
-        return [2 /*return*/, receipt];
+        switch (_a.label) {
+            case 0:
+                if (!web3)
+                    return [2 /*return*/, null];
+                return [4 /*yield*/, web3.eth.getTransactionReceipt(txHash)];
+            case 1:
+                receipt = _a.sent();
+                return [2 /*return*/, receipt];
+        }
     });
 }); };
 exports.getTransactionReceipt = getTransactionReceipt;
