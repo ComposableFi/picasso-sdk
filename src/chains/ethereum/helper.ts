@@ -1,6 +1,6 @@
 import Big from 'big.js';
 import Web3 from 'web3';
-import { type TransactionConfig } from 'web3-core';
+import { TransactionReceipt, type TransactionConfig } from 'web3-core';
 import { type Contract } from 'web3-eth-contract';
 import { type AbiItem } from 'web3-utils';
 
@@ -22,9 +22,7 @@ export const getContract = <T extends Contract>(
   contractAddress: string
 ) => {
   // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-  typeof window !== 'undefined' &&
-    !!web3 &&
-    web3.eth.setProvider((window as any)?.ethereum);
+  typeof window !== 'undefined' && !!web3;
   return web3 && contractAddress
     ? (new web3.eth.Contract(abi, contractAddress) as unknown as T)
     : undefined;
@@ -52,7 +50,6 @@ export const getConsole = (msg: any) => {
 export const getBlock = async (web3: Web3, addedAmount: number = 10000) => {
   if (!web3) return '0';
 
-  // web3.eth.setProvider((window as any)?.xfi);
   return (await web3.eth.getBlockNumber()) + addedAmount;
 };
 
@@ -75,9 +72,12 @@ export const getEthGasAmount = async (
   }
 };
 
-export const getTransactionReceipt = async (web3: Web3, txHash: string) => {
-  if (!web3) return '';
-  const receipt = web3.eth.getTransactionReceipt(txHash);
+export const getTransactionReceipt = async (
+  web3: Web3,
+  txHash: string
+): Promise<TransactionReceipt | null> => {
+  if (!web3) return null;
+  const receipt = await web3.eth.getTransactionReceipt(txHash);
   return receipt;
 };
 
@@ -91,7 +91,7 @@ export const getEthSimulate = (web3: Web3, data: string, txObject: any) => {
     .catch((err) => console.error(err, 'simulated??'));
 };
 
-export const isValidAddress = (web3: Web3, account: string) => {
+export const isEthereumAddress = (web3: Web3, account: string) => {
   if (!web3) return false;
   return web3.utils.isAddress(account);
 };
@@ -111,7 +111,7 @@ export const getApprovedErc20 = async (
   erc20TokenAddress: string,
   spenderContract: string = bankContractAddress
 ) => {
-  if (!isValidAddress(web3, account)) return '0';
+  if (!isEthereumAddress(web3, account)) return '0';
   const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
   if (!erc20Contract) return '0';
 
@@ -126,4 +126,17 @@ export const simulate = (web3: Web3, data: string, txObject: any) => {
     })
     .then((result) => console.log(result, 'simulatedresult'))
     .catch((err) => console.error(err, 'simulated??'));
+};
+
+export const getErc20Balance = async (
+  web3: Web3,
+  account: string,
+  erc20TokenAddress: string
+) => {
+  const isEthereum = isEthereumAddress(web3, account);
+  if (!isEthereum) return '0';
+
+  const erc20Contract = getErc20Contract(web3, erc20TokenAddress);
+  if (!erc20Contract) return '0';
+  return await erc20Contract.methods.balanceOf(account).call();
 };

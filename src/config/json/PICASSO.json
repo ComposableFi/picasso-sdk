@@ -37,7 +37,7 @@
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 49,
-    "isParachain": false,
+    "isParachain": true,
     "relayChain": "polkadot",
     "hops": {
       "1000": {

@@ -34,7 +34,7 @@
     "3": {
       "chainId": "osmosis-1",
       "destinationId": 1279,
-      "tokens": ["UOSMO", "USEI"]
+      "tokens": ["OSMO", "SEI"]
     },
     "4": {
       "chainId": "cosmoshub-4",

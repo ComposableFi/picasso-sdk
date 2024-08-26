@@ -1,18 +1,18 @@
 
 // [GENERATED]
-
- export const networks = {
+import { NetworkInfo } from './types';
+ export const networks: Record<string, NetworkInfo> = {
   "1000": {
     "name": "Kusama Asset Hub",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusamaassethub.svg",
     "rpc": "wss://statemine-rpc.dwellir.com",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "1000",
     "feeAssetId": "USDT Kusama",
     "polkadot": {
       "ss58Format": 2,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -25,7 +25,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -36,12 +35,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostKusama.svg",
     "rpc": "wss://bifrost-rpc.liebi.com/ws",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2001",
     "feeAssetId": "BNC_KSM",
     "polkadot": {
       "ss58Format": 6,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -55,7 +54,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -66,12 +64,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
     "rpc": "wss://wss.api.moonbeam.network",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2004",
     "feeAssetId": "GLMR",
     "polkadot": {
       "ss58Format": 0,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -84,7 +82,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -95,12 +92,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astar.svg",
     "rpc": "wss://rpc.astar.network",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2006",
     "feeAssetId": "ASTR",
     "polkadot": {
       "ss58Format": 5,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -113,7 +110,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -124,12 +120,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/shiden.svg",
     "rpc": "wss://shiden-rpc.dwellir.com",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2007",
     "feeAssetId": "SDN",
     "polkadot": {
       "ss58Format": 5,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -142,7 +138,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -153,12 +148,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/composable.svg",
     "rpc": "wss://rpc.composable.finance",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2019",
     "feeAssetId": "DOT",
     "polkadot": {
       "ss58Format": 50,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2006": {
@@ -188,7 +183,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2006",
@@ -202,12 +196,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonriver.svg",
     "rpc": "wss://moonriver-rpc.dwellir.com",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2023",
     "feeAssetId": "MOVR",
     "polkadot": {
       "ss58Format": 0,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -220,7 +214,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
@@ -231,12 +224,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BiFrostPolkadot.svg",
     "rpc": "wss://hk.p.bifrost-rpc.liebi.com/ws",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2030",
     "feeAssetId": "BNC_DOT",
     "polkadot": {
       "ss58Format": 6,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -250,7 +243,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -261,12 +253,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
     "rpc": "wss://picasso-rpc.composable.finance",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2087",
     "feeAssetId": "USDT Kusama",
     "polkadot": {
       "ss58Format": 49,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "1000": {
@@ -304,7 +296,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "1000",
@@ -320,12 +311,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/amplitude.svg",
     "rpc": "wss://rpc-amplitude.pendulumchain.tech",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2124",
     "feeAssetId": "",
     "polkadot": {
       "ss58Format": 56,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
         "2019": {
@@ -338,7 +329,6 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2019"
@@ -349,12 +339,12 @@
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
     "rpc": "wss://tinkernet-rpc.dwellir.com",
     "rest": "",
-    "chain_type": "polkadot",
+    "chainType": "polkadot",
     "chainId": "2125",
     "feeAssetId": "TNKR",
     "polkadot": {
       "ss58Format": 117,
-      "isParachain": false,
+      "isParachain": true,
       "relayChain": "kusama",
       "hops": {
         "2087": {
@@ -367,10 +357,65 @@
         }
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
       "2087"
+    ]
+  },
+  "kusama": {
+    "name": "Kusama",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
+    "rpc": "wss://kusama-rpc.polkadot.io",
+    "rest": "",
+    "chainType": "polkadot",
+    "chainId": "kusama",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 2,
+      "isParachain": false,
+      "relayChain": "kusama",
+      "hops": {
+        "2087": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.reserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "2087"
+    ]
+  },
+  "polkadot": {
+    "name": "Polkadot",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
+    "rpc": "wss://rpc.polkadot.io",
+    "rest": "",
+    "chainType": "polkadot",
+    "chainId": "polkadot",
+    "feeAssetId": "KSM",
+    "polkadot": {
+      "ss58Format": 0,
+      "isParachain": false,
+      "relayChain": "polkadot",
+      "hops": {
+        "2019": {
+          "type": "XCM",
+          "xcmType": "xcmPallet.limitedReserveTransferAssets",
+          "version": "V2",
+          "tokens": [
+            "4"
+          ]
+        }
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "2019"
     ]
   },
   "agoric-3": {
@@ -378,10 +423,9 @@
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
     "rpc": "https://agoric-cmp-rpc.polkachu.com",
     "rest": "https://agoric-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
+    "chainType": "cosmos",
     "chainId": "agoric-3",
     "feeAssetId": "BLD",
-    "polkadot": {},
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/agoric",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric",
@@ -412,10 +456,9 @@
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
     "rpc": "https://rpc.mainnet.archway.io",
     "rest": "https://api.mainnet.archway.io",
-    "chain_type": "cosmos",
+    "chainType": "cosmos",
     "chainId": "archway-1",
     "feeAssetId": "ARCH",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccAddr": "archway",
@@ -439,10 +482,9 @@
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
     "rpc": "https://rpc.celestia.nodestake.top",
     "rest": "https://api.celestia.nodestake.top",
-    "chain_type": "cosmos",
+    "chainType": "cosmos",
     "chainId": "celestia",
     "feeAssetId": "TIA",
-    "polkadot": {},
     "cosmos": {
       "bech32Config": {
         "bech32PrefixAccAddr": "celestia",
@@ -462,444 +504,14 @@
       "centauri-1"
     ]
   },
-  "chihuahua-1": {
-    "name": "Chihuahua",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-    "rpc": "https://chihuahua-rpc.polkachu.com",
-    "rest": "https://chihuahua-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "chihuahua-1",
-    "feeAssetId": "HUAHUA",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "chihuahua",
-        "bech32PrefixAccPub": "chihuahuapub",
-        "bech32PrefixValAddr": "chihuahuavaloper",
-        "bech32PrefixValPub": "chihuahuavaloperpub",
-        "bech32PrefixConsAddr": "chihuahuavalcons",
-        "bech32PrefixConsPub": "chihuahuavalconspub"
-      },
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "coreum-mainnet-1": {
-    "name": "Coreum",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
-    "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
-    "rest": "https://rest-coreum.ecostake.com",
-    "chain_type": "cosmos",
-    "chainId": "coreum-mainnet-1",
-    "feeAssetId": "XRP",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 990
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "core",
-        "bech32PrefixAccPub": "corepub",
-        "bech32PrefixValAddr": "corevaloper",
-        "bech32PrefixValPub": "corevaloperpub",
-        "bech32PrefixConsAddr": "corevalcons",
-        "bech32PrefixConsPub": "corevalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "cosmoshub-4": {
-    "name": "Cosmos Hub",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
-    "rpc": "https://cosmos-cmp-rpc.polkachu.com",
-    "rest": "https://cosmos-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "cosmoshub-4",
-    "feeAssetId": "ATOM",
-    "polkadot": {},
-    "cosmos": {
-      "bech32Config": {
-        "bech32PrefixAccAddr": "cosmos",
-        "bech32PrefixAccPub": "cosmospub",
-        "bech32PrefixConsAddr": "cosmosvalcons",
-        "bech32PrefixConsPub": "cosmosvalconspub",
-        "bech32PrefixValAddr": "cosmosvaloper",
-        "bech32PrefixValPub": "cosmosvaloperpub"
-      },
-      "bip44": {
-        "coinType": 118
-      },
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "crescent-1": {
-    "name": "Crescent Network",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-    "rpc": "https://crescent-cmp-rpc.polkachu.com",
-    "rest": "https://crescent-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "crescent-1",
-    "feeAssetId": "CRE",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://app.crescent.network/",
-      "walletUrlForStaking": "https://app.crescent.network/staking",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "cre",
-        "bech32PrefixAccPub": "crepub",
-        "bech32PrefixValAddr": "crevaloper",
-        "bech32PrefixValPub": "crevaloperpub",
-        "bech32PrefixConsAddr": "crevalcons",
-        "bech32PrefixConsPub": "crevalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "ethereum": {
-    "name": "Ethereum",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
-    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
-    "rest": "",
-    "chain_type": "ethereum",
-    "chainId": "ethereum",
-    "feeAssetId": "ETH",
-    "polkadot": {},
-    "cosmos": {},
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "injective-1": {
-    "name": "Injective",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
-    "rpc": "https://injective-rpc.polkachu.com",
-    "rest": "https://injective-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "injective-1",
-    "feeAssetId": "INJ",
-    "polkadot": {},
-    "cosmos": {
-      "bech32Config": {
-        "bech32PrefixAccPub": "injpub",
-        "bech32PrefixValPub": "injvaloperpub",
-        "bech32PrefixAccAddr": "inj",
-        "bech32PrefixConsPub": "injvalconspub",
-        "bech32PrefixValAddr": "injvaloper",
-        "bech32PrefixConsAddr": "injvalcons"
-      },
-      "bip44": {
-        "coinType": 60
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "kaiyo-1": {
-    "name": "Kujira",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
-    "rpc": "https://kujira-rpc.polkachu.com",
-    "rest": "https://kujira-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "kaiyo-1",
-    "feeAssetId": "KUJI",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "kujira",
-        "bech32PrefixAccPub": "kujirapub",
-        "bech32PrefixValAddr": "kujiravaloper",
-        "bech32PrefixValPub": "kujiravaloperpub",
-        "bech32PrefixConsAddr": "kujiravalcons",
-        "bech32PrefixConsPub": "kujiravalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "neutron-1": {
-    "name": "Neutron",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
-    "rpc": "https://neutron-cmp-rpc.polkachu.com",
-    "rest": "https://neutron-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "neutron-1",
-    "feeAssetId": "ASTRO",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "neutron",
-        "bech32PrefixAccPub": "neutronpub",
-        "bech32PrefixValAddr": "neutronvaloper",
-        "bech32PrefixValPub": "neutronvaloperpub",
-        "bech32PrefixConsAddr": "neutronvalcons",
-        "bech32PrefixConsPub": "neutronvalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "osmosis-1": {
-    "name": "Osmosis",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-    "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-    "rest": "https://osmosis-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "osmosis-1",
-    "feeAssetId": "OSMO",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://app.osmosis.zone",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "osmo",
-        "bech32PrefixAccPub": "osmopub",
-        "bech32PrefixValAddr": "osmovaloper",
-        "bech32PrefixValPub": "osmovaloperpub",
-        "bech32PrefixConsAddr": "osmovalcons",
-        "bech32PrefixConsPub": "osmovalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "pacific-1",
-      "centauri-1"
-    ]
-  },
-  "quicksilver-2": {
-    "name": "Quicksilver",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
-    "rpc": "https://quicksilver-rpc.polkachu.com",
-    "rest": "https://quicksilver-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "quicksilver-2",
-    "feeAssetId": "QCK",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "quick",
-        "bech32PrefixAccPub": "quickpub",
-        "bech32PrefixValAddr": "quickvaloper",
-        "bech32PrefixValPub": "quickvaloperpub",
-        "bech32PrefixConsAddr": "quickvalcons",
-        "bech32PrefixConsPub": "quickvalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "secret-4": {
-    "name": "Secret Network",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
-    "rpc": "https://scrt.public-rpc.com",
-    "rest": "https://lcd.mainnet.secretsaturn.net",
-    "chain_type": "cosmos",
-    "chainId": "secret-4",
-    "feeAssetId": "SCRT",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://wallet.keplr.app/chains/secret-network",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
-      "bip44": {
-        "coinType": 529
-      },
-      "alternativeBIP44s": [
-        {
-          "coinType": 118
-        }
-      ],
-      "bech32Config": {
-        "bech32PrefixAccAddr": "secret",
-        "bech32PrefixAccPub": "secretpub",
-        "bech32PrefixValAddr": "secretvaloper",
-        "bech32PrefixValPub": "secretvaloperpub",
-        "bech32PrefixConsAddr": "secretvalcons",
-        "bech32PrefixConsPub": "secretvalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "pacific-1": {
-    "name": "Sei",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
-    "rpc": "https://sei-rpc.polkachu.com",
-    "rest": "https://sei-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "pacific-1",
-    "feeAssetId": "SEI",
-    "polkadot": {},
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "sei",
-        "bech32PrefixAccPub": "seipub",
-        "bech32PrefixValAddr": "seivaloper",
-        "bech32PrefixValPub": "seivaloperpub",
-        "bech32PrefixConsAddr": "seivalcons",
-        "bech32PrefixConsPub": "seivalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "osmosis-1"
-    ]
-  },
-  "solana": {
-    "name": "Solana",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
-    "rpc": "https://mainnet.helius-rpc.com/?api-key=65520d87-04b2-43a5-b5d5-35d5db0601b3",
-    "rest": "",
-    "chain_type": "solana",
-    "chainId": "solana",
-    "feeAssetId": "SOL",
-    "polkadot": {},
-    "cosmos": {},
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "stargaze-1": {
-    "name": "Stargaze",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
-    "rpc": "https://stargaze-cmp-rpc.polkachu.com",
-    "rest": "https://stargaze-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "stargaze-1",
-    "feeAssetId": "STARS",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://wallet.keplr.app/chains/stargaze",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "stars",
-        "bech32PrefixAccPub": "starspub",
-        "bech32PrefixValAddr": "starsvaloper",
-        "bech32PrefixValPub": "starsvaloperpub",
-        "bech32PrefixConsAddr": "starsvalcons",
-        "bech32PrefixConsPub": "starsvalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "stride-1": {
-    "name": "Stride",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/chain.png",
-    "rpc": "https://stride-cmp-rpc.polkachu.com",
-    "rest": "https://stride-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "stride-1",
-    "feeAssetId": "stTIA",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://wallet.keplr.app/chains/stride",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/stride",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "stride",
-        "bech32PrefixAccPub": "stridepub",
-        "bech32PrefixValAddr": "stridevaloper",
-        "bech32PrefixValPub": "stridevaloperpub",
-        "bech32PrefixConsAddr": "stridevalcons",
-        "bech32PrefixConsPub": "stridevalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "umee-1": {
-    "name": "UMEE",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
-    "rpc": "https://umee-cmp-rpc.polkachu.com",
-    "rest": "https://umee-cmp-api.polkachu.com",
-    "chain_type": "cosmos",
-    "chainId": "umee-1",
-    "feeAssetId": "UMEE",
-    "polkadot": {},
-    "cosmos": {
-      "walletUrl": "https://wallet.keplr.app/chains/umee",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "umee",
-        "bech32PrefixAccPub": "umeepub",
-        "bech32PrefixValAddr": "umeevaloper",
-        "bech32PrefixValPub": "umeevaloperpub",
-        "bech32PrefixConsAddr": "umeevalcons",
-        "bech32PrefixConsPub": "umeevalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
   "centauri-1": {
     "name": "centauri",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
     "rpc": "https://picasso-rpc.polkachu.com",
     "rest": "https://picasso-api.polkachu.com",
-    "chain_type": "cosmos",
+    "chainType": "cosmos",
     "chainId": "centauri-1",
     "feeAssetId": "PICA",
-    "polkadot": {},
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -937,62 +549,415 @@
       "solana"
     ]
   },
-  "kusama": {
-    "name": "Kusama",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
-    "rpc": "wss://kusama-rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "kusama",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 2,
-      "isParachain": false,
-      "relayChain": "kusama",
-      "hops": {
-        "2087": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.reserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
-      }
+  "chihuahua-1": {
+    "name": "Chihuahua",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+    "rpc": "https://chihuahua-rpc.polkachu.com",
+    "rest": "https://chihuahua-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "chihuahua-1",
+    "feeAssetId": "HUAHUA",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "chihuahua",
+        "bech32PrefixAccPub": "chihuahuapub",
+        "bech32PrefixValAddr": "chihuahuavaloper",
+        "bech32PrefixValPub": "chihuahuavaloperpub",
+        "bech32PrefixConsAddr": "chihuahuavalcons",
+        "bech32PrefixConsPub": "chihuahuavalconspub"
+      },
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
-      "2087"
+      "centauri-1"
     ]
   },
-  "polkadot": {
-    "name": "Polkadot",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
-    "rpc": "wss://rpc.polkadot.io",
-    "rest": "",
-    "chain_type": "polkadot",
-    "chainId": "polkadot",
-    "feeAssetId": "KSM",
-    "polkadot": {
-      "ss58Format": 0,
-      "isParachain": false,
-      "relayChain": "polkadot",
-      "hops": {
-        "2019": {
-          "type": "XCM",
-          "xcmType": "xcmPallet.limitedReserveTransferAssets",
-          "version": "V2",
-          "tokens": [
-            "4"
-          ]
-        }
+  "coreum-mainnet-1": {
+    "name": "Coreum",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
+    "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
+    "rest": "https://rest-coreum.ecostake.com",
+    "chainType": "cosmos",
+    "chainId": "coreum-mainnet-1",
+    "feeAssetId": "XRP",
+    "cosmos": {
+      "bip44": {
+        "coinType": 990
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "core",
+        "bech32PrefixAccPub": "corepub",
+        "bech32PrefixValAddr": "corevaloper",
+        "bech32PrefixValPub": "corevaloperpub",
+        "bech32PrefixConsAddr": "corevalcons",
+        "bech32PrefixConsPub": "corevalconspub"
       }
     },
-    "cosmos": {},
     "enabled": true,
     "network_to": [
-      "2019"
+      "centauri-1"
+    ]
+  },
+  "cosmoshub-4": {
+    "name": "Cosmos Hub",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
+    "rpc": "https://cosmos-cmp-rpc.polkachu.com",
+    "rest": "https://cosmos-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "cosmoshub-4",
+    "feeAssetId": "ATOM",
+    "cosmos": {
+      "bech32Config": {
+        "bech32PrefixAccAddr": "cosmos",
+        "bech32PrefixAccPub": "cosmospub",
+        "bech32PrefixConsAddr": "cosmosvalcons",
+        "bech32PrefixConsPub": "cosmosvalconspub",
+        "bech32PrefixValAddr": "cosmosvaloper",
+        "bech32PrefixValPub": "cosmosvaloperpub"
+      },
+      "bip44": {
+        "coinType": 118
+      },
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "crescent-1": {
+    "name": "Crescent Network",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
+    "rpc": "https://crescent-cmp-rpc.polkachu.com",
+    "rest": "https://crescent-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "crescent-1",
+    "feeAssetId": "CRE",
+    "cosmos": {
+      "walletUrl": "https://app.crescent.network/",
+      "walletUrlForStaking": "https://app.crescent.network/staking",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "cre",
+        "bech32PrefixAccPub": "crepub",
+        "bech32PrefixValAddr": "crevaloper",
+        "bech32PrefixValPub": "crevaloperpub",
+        "bech32PrefixConsAddr": "crevalcons",
+        "bech32PrefixConsPub": "crevalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "ethereum": {
+    "name": "Ethereum",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
+    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
+    "rest": "",
+    "chainType": "ethereum",
+    "chainId": "ethereum",
+    "feeAssetId": "ETH",
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "injective-1": {
+    "name": "Injective",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
+    "rpc": "https://injective-rpc.polkachu.com",
+    "rest": "https://injective-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "injective-1",
+    "feeAssetId": "INJ",
+    "cosmos": {
+      "bech32Config": {
+        "bech32PrefixAccPub": "injpub",
+        "bech32PrefixValPub": "injvaloperpub",
+        "bech32PrefixAccAddr": "inj",
+        "bech32PrefixConsPub": "injvalconspub",
+        "bech32PrefixValAddr": "injvaloper",
+        "bech32PrefixConsAddr": "injvalcons"
+      },
+      "bip44": {
+        "coinType": 60
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "kaiyo-1": {
+    "name": "Kujira",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
+    "rpc": "https://kujira-rpc.polkachu.com",
+    "rest": "https://kujira-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "kaiyo-1",
+    "feeAssetId": "KUJI",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "kujira",
+        "bech32PrefixAccPub": "kujirapub",
+        "bech32PrefixValAddr": "kujiravaloper",
+        "bech32PrefixValPub": "kujiravaloperpub",
+        "bech32PrefixConsAddr": "kujiravalcons",
+        "bech32PrefixConsPub": "kujiravalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "neutron-1": {
+    "name": "Neutron",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
+    "rpc": "https://neutron-cmp-rpc.polkachu.com",
+    "rest": "https://neutron-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "neutron-1",
+    "feeAssetId": "ASTRO",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "neutron",
+        "bech32PrefixAccPub": "neutronpub",
+        "bech32PrefixValAddr": "neutronvaloper",
+        "bech32PrefixValPub": "neutronvaloperpub",
+        "bech32PrefixConsAddr": "neutronvalcons",
+        "bech32PrefixConsPub": "neutronvalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "osmosis-1": {
+    "name": "Osmosis",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+    "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+    "rest": "https://osmosis-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "osmosis-1",
+    "feeAssetId": "OSMO",
+    "cosmos": {
+      "walletUrl": "https://app.osmosis.zone",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "osmo",
+        "bech32PrefixAccPub": "osmopub",
+        "bech32PrefixValAddr": "osmovaloper",
+        "bech32PrefixValPub": "osmovaloperpub",
+        "bech32PrefixConsAddr": "osmovalcons",
+        "bech32PrefixConsPub": "osmovalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "pacific-1",
+      "centauri-1"
+    ]
+  },
+  "quicksilver-2": {
+    "name": "Quicksilver",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
+    "rpc": "https://quicksilver-rpc.polkachu.com",
+    "rest": "https://quicksilver-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "quicksilver-2",
+    "feeAssetId": "QCK",
+    "cosmos": {
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "quick",
+        "bech32PrefixAccPub": "quickpub",
+        "bech32PrefixValAddr": "quickvaloper",
+        "bech32PrefixValPub": "quickvaloperpub",
+        "bech32PrefixConsAddr": "quickvalcons",
+        "bech32PrefixConsPub": "quickvalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "secret-4": {
+    "name": "Secret Network",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
+    "rpc": "https://scrt.public-rpc.com",
+    "rest": "https://lcd.mainnet.secretsaturn.net",
+    "chainType": "cosmos",
+    "chainId": "secret-4",
+    "feeAssetId": "SCRT",
+    "cosmos": {
+      "walletUrl": "https://wallet.keplr.app/chains/secret-network",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
+      "bip44": {
+        "coinType": 529
+      },
+      "alternativeBIP44s": [
+        {
+          "coinType": 118
+        }
+      ],
+      "bech32Config": {
+        "bech32PrefixAccAddr": "secret",
+        "bech32PrefixAccPub": "secretpub",
+        "bech32PrefixValAddr": "secretvaloper",
+        "bech32PrefixValPub": "secretvaloperpub",
+        "bech32PrefixConsAddr": "secretvalcons",
+        "bech32PrefixConsPub": "secretvalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "pacific-1": {
+    "name": "Sei",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
+    "rpc": "https://sei-rpc.polkachu.com",
+    "rest": "https://sei-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "pacific-1",
+    "feeAssetId": "SEI",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "sei",
+        "bech32PrefixAccPub": "seipub",
+        "bech32PrefixValAddr": "seivaloper",
+        "bech32PrefixValPub": "seivaloperpub",
+        "bech32PrefixConsAddr": "seivalcons",
+        "bech32PrefixConsPub": "seivalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "osmosis-1"
+    ]
+  },
+  "stargaze-1": {
+    "name": "Stargaze",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
+    "rpc": "https://stargaze-cmp-rpc.polkachu.com",
+    "rest": "https://stargaze-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "stargaze-1",
+    "feeAssetId": "STARS",
+    "cosmos": {
+      "walletUrl": "https://wallet.keplr.app/chains/stargaze",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "stars",
+        "bech32PrefixAccPub": "starspub",
+        "bech32PrefixValAddr": "starsvaloper",
+        "bech32PrefixValPub": "starsvaloperpub",
+        "bech32PrefixConsAddr": "starsvalcons",
+        "bech32PrefixConsPub": "starsvalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "stride-1": {
+    "name": "Stride",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/chain.png",
+    "rpc": "https://stride-cmp-rpc.polkachu.com",
+    "rest": "https://stride-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "stride-1",
+    "feeAssetId": "stTIA",
+    "cosmos": {
+      "walletUrl": "https://wallet.keplr.app/chains/stride",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/stride",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "stride",
+        "bech32PrefixAccPub": "stridepub",
+        "bech32PrefixValAddr": "stridevaloper",
+        "bech32PrefixValPub": "stridevaloperpub",
+        "bech32PrefixConsAddr": "stridevalcons",
+        "bech32PrefixConsPub": "stridevalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "umee-1": {
+    "name": "UMEE",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+    "rpc": "https://umee-cmp-rpc.polkachu.com",
+    "rest": "https://umee-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "umee-1",
+    "feeAssetId": "UMEE",
+    "cosmos": {
+      "walletUrl": "https://wallet.keplr.app/chains/umee",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "umee",
+        "bech32PrefixAccPub": "umeepub",
+        "bech32PrefixValAddr": "umeevaloper",
+        "bech32PrefixValPub": "umeevaloperpub",
+        "bech32PrefixConsAddr": "umeevalcons",
+        "bech32PrefixConsPub": "umeevalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "solana": {
+    "name": "Solana",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
+    "rpc": "https://mainnet.helius-rpc.com/?api-key=65520d87-04b2-43a5-b5d5-35d5db0601b3",
+    "rest": "",
+    "chainType": "solana",
+    "chainId": "solana",
+    "feeAssetId": "SOL",
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
     ]
   }
 };

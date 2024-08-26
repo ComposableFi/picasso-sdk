@@ -8,7 +8,7 @@
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 6,
-    "isParachain": false,
+    "isParachain": true,
     "relayChain": "polkadot",
     "hops": {
       "2019": {

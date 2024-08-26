@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import {
+  ChainInfo,
   CoinGeckoAsset,
   CrosschainAsset,
   CrossChainAssets,
@@ -9,6 +10,7 @@ import {
   SolanaAsset,
   TokenPerChannel,
 } from '../config/types';
+import { buildIbcPath } from '../chains';
 
 const dataDir = path.join(__dirname, '../config/json');
 const ethereumOutputFilePath = path.join(
@@ -28,6 +30,10 @@ const crossChainAssetsOutputFilePath = path.join(
 );
 
 const networksOutputFilePath = path.join(__dirname, '../config/networks.ts');
+const keplrChainsOutputFilePath = path.join(
+  __dirname,
+  '../config/keplrChains.ts'
+);
 
 const processFiles = () => {
   const ethereumAssets: Record<string, EthereumAsset> = {};
@@ -38,9 +44,11 @@ const processFiles = () => {
     cosmos: {},
     solana: {},
     ethereum: {},
-    dotsama: {},
+    polkadot: {},
   };
+
   const networks: Record<string, NetworkInfo> = {};
+  const keplrChains: Record<string, ChainInfo> = {};
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
@@ -65,11 +73,11 @@ const processFiles = () => {
       image: data.chainSymbolImageUrl || '',
       rpc: data.rpc || '',
       rest: data.rest || '',
-      chain_type: data.chainType || '',
+      chainType: data.chainType || '',
       chainId: data.chainId || '',
       feeAssetId: data.currencies[0]?.coinDenom || '',
-      polkadot: data.polkadot || {},
-      cosmos: data.cosmos || {},
+      polkadot: data.polkadot || undefined,
+      cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
       network_to: [
         ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),
@@ -79,6 +87,41 @@ const processFiles = () => {
       ],
     };
 
+    if (data.chainType === 'cosmos') {
+      keplrChains[data.chainId] = {
+        bech32Config: data.cosmos.bech32Config,
+        bip44: data.cosmos.bip44,
+        chainId: data.chainId,
+        chainName: data.chainName,
+        chainSymbolImageUrl: data.chainSymbolImageUrl,
+        currencies: data.currencies.map((item) => ({
+          coinDecimals: item.coinDecimals,
+          coinDenom: item.coinDenom,
+          coinGeckoId: item.coinGeckoId,
+          coinImageUrl: item.coinImageUrl,
+          coinMinimalDenom: item.coinMinimalDenom,
+        })),
+        features: [],
+        feeCurrencies: data.feeCurrencies.map((item) => ({
+          coinDecimals: item.coinDecimals,
+          coinDenom: item.coinDenom,
+          coinGeckoId: item.coinGeckoId,
+          coinImageUrl: item.coinImageUrl,
+          gasPriceStep: item.cosmos.gasPriceStep,
+          coinMinimalDenom: item.coinMinimalDenom,
+        })),
+        rest: data.rest,
+        rpc: data.rpc,
+        stakeCurrency: {
+          coinDecimals: data.currencies[0].coinDecimals,
+          coinDenom: data.currencies[0].coinDenom,
+          coinGeckoId: data.currencies[0].coinGeckoId,
+          coinMinimalDenom: data.currencies[0].coinMinimalDenom,
+          coinImageUrl: data.currencies[0].coinImageUrl,
+        },
+        walletUrlForStaking: data.cosmos.walletUrlForStaking,
+      };
+    }
     // generate tokensPerChannel.ts
     if (data.channelMap) {
       tokensPerChannel[data.chainId] = data.channelMap;
@@ -94,11 +137,11 @@ const processFiles = () => {
             minimumTransfer: ethereum.minimumTransfer,
           };
           crossChainAssets.ethereum[ethereum.erc20Address] = {
-            chainId: data.chainId,
-            decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
-            denom: coinDenom,
-            imageUrl: currency.coinImageUrl,
+            chainId: data.chainId || '',
+            decimals: currency.coinDecimals || 0,
+            minimalDenom: currency.cosmos.minimalDenom || '',
+            denom: coinDenom || '',
+            imageUrl: currency?.coinImageUrl || '',
           };
         }
       }
@@ -111,32 +154,38 @@ const processFiles = () => {
             mintAddress: mintAddress,
             minimumTransfer: solana.minimumTransfer,
           };
+
+          const decimals =
+            currency.coinDecimals > 9 ? 9 : currency.coinDecimals || 0;
+          const realDecimals = currency.coinDecimals || 0;
+
           crossChainAssets.solana[mintAddress] = {
-            chainId: data.chainId,
-            decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
-            denom: coinDenom,
-            imageUrl: currency.coinImageUrl,
+            chainId: data.chainId || '',
+            decimals,
+            minimalDenom: currency.cosmos.minimalDenom || '',
+            denom: coinDenom || '',
+            realDecimals,
+            imageUrl: currency.coinImageUrl || '',
           };
         }
       }
-      // generate dotsamaAssets.ts
+      // generate polkadotAssets.ts
       if (currency.polkadot) {
         const { picassoAssetId, composableAssetId } = currency.polkadot || {};
         if (currency.polkadot?.picassoAssetId) {
-          crossChainAssets['dotsama'][picassoAssetId] = {
+          crossChainAssets['polkadot'][picassoAssetId] = {
             chainId: data.chainId,
-            decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
+            decimals: currency.coinDecimals || 0,
+            minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
           };
         }
         if (currency.polkadot?.composableAssetId) {
-          crossChainAssets['dotsama'][composableAssetId] = {
+          crossChainAssets['polkadot'][composableAssetId] = {
             chainId: data.chainId,
             decimals: currency.coinDecimals,
-            minimalDenom: currency.cosmos.minimalDenom,
+            minimalDenom: currency.cosmos.minimalDenom || composableAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
           };
@@ -145,11 +194,11 @@ const processFiles = () => {
       // generate cosmosAssets.ts
       if (currency.cosmos) {
         crossChainAssets.cosmos[currency.cosmos.minimalDenom] = {
-          chainId: data.chainId,
-          decimals: currency.coinDecimals,
-          minimalDenom: currency.cosmos.minimalDenom,
-          denom: coinDenom,
-          imageUrl: currency.coinImageUrl,
+          chainId: data.chainId || '',
+          decimals: currency.coinDecimals || '',
+          minimalDenom: currency.cosmos.minimalDenom || '',
+          denom: coinDenom || '',
+          imageUrl: currency.coinImageUrl || '',
         };
       }
 
@@ -172,7 +221,9 @@ const processFiles = () => {
 
   const ethereumOutputContent = `
 // [GENERATED]
-export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)};
+import { EthereumAsset } from './types';
+
+export const ethereumAssets :Record<string, EthereumAsset>= ${JSON.stringify(ethereumAssets, null, 2)};
 
 `;
 
@@ -187,7 +238,9 @@ export const ethereumAssets = ${JSON.stringify(ethereumAssets, null, 2)};
 
   const solanaOutputContent = `
 // [GENERATED]
-export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)};
+import { SolanaAsset } from "./types";
+
+export const solanaAssets:Record<string, SolanaAsset> = ${JSON.stringify(solanaAssets, null, 2)};
 
 `;
 
@@ -203,7 +256,12 @@ export const solanaAssets = ${JSON.stringify(solanaAssets, null, 2)};
   }
   const tokensPerChannelOutputContent = `
 // [GENERATED]
-export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
+import { TokenPerChannel } from './types';
+
+export const tokensPerChannel : Record<
+  string,
+  Record<string, TokenPerChannel>
+> = ${JSON.stringify(tokensPerChannel, null, 2)} ;
 
 `;
 
@@ -220,8 +278,8 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
   }
   const networksOutputContent = `
 // [GENERATED]
-
- export const networks = ${JSON.stringify(networks, null, 2)};
+import { NetworkInfo } from './types';
+ export const networks: Record<string, NetworkInfo> = ${JSON.stringify(networks, null, 2)};
   
   `;
 
@@ -234,9 +292,10 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
   }
 
   const coinGeckoOutputContent = `
-// [GENERATED]
+  // [GENERATED]
+import { CoinGeckoAsset } from './types';
 
- export const coinGecko = ${JSON.stringify(coinGeckoAssets, null, 2)} ;
+ export const coinGecko: CoinGeckoAsset[] = ${JSON.stringify(coinGeckoAssets, null, 2)} ;
  
  `;
 
@@ -245,7 +304,8 @@ export const tokensPerChannel = ${JSON.stringify(tokensPerChannel, null, 2)} ;
 
   const crossChainAssetsOutputContent = `
 // [GENERATED]
-export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} ;
+import { CrossChainAssets } from "./types";
+export const crossChainAssets :CrossChainAssets= ${JSON.stringify(crossChainAssets, null, 2)} ;
 
 `;
 
@@ -255,5 +315,20 @@ export const crossChainAssets = ${JSON.stringify(crossChainAssets, null, 2)} ;
     'utf-8'
   );
   console.log('crossChainAssets.ts has been created');
+
+  const keplrChainsOutputContent = `
+// [GENERATED]
+import { ChainInfo } from "@keplr-wallet/types";
+
+export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChains, null, 2)} ;
+
+`;
+
+  fs.writeFileSync(
+    keplrChainsOutputFilePath,
+    keplrChainsOutputContent,
+    'utf-8'
+  );
+  console.log('keplrChains.ts has been created');
 };
 processFiles();

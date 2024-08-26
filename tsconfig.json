@@ -15,12 +15,13 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": false,
-    "outDir": "dist",
-    "rootDir": "src",
+    "outDir": "./dist", // 빌드된 파일 경로
+    "rootDir": "./src", // 소스 파일 경로
     "downlevelIteration": true,
     "target": "es5",
     "module": "commonjs",
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"], // 포함할 파일 경로
+  "exclude": ["node_modules", "dist"] // 제외할 파일 경로
 }

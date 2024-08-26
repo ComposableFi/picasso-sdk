@@ -1,3 +1,5 @@
+export { type ChainInfo } from '@keplr-wallet/types';
+
 export interface CrosschainAsset {
   chainId: string;
   decimals: number;
@@ -31,15 +33,14 @@ export interface CrossChainAssets {
   cosmos: Record<string, CrosschainAsset>;
   solana: Record<string, CrosschainAsset>;
   ethereum: Record<string, CrosschainAsset>;
-  dotsama: Record<string, CrosschainAsset>;
+  polkadot: Record<string, CrosschainAsset>;
 }
-
 export interface NetworkInfo {
   name: string;
   image: string;
   rpc: string;
   rest?: string;
-  chain_type: 'polkadot' | 'solana' | 'ethereum';
+  chainType: 'polkadot' | 'solana' | 'ethereum' | 'cosmos';
   chainId: string;
   feeAssetId: string;
   polkadot?: {
@@ -48,14 +49,18 @@ export interface NetworkInfo {
     relayChain: 'polkadot' | 'kusama';
     hops: {
       [key: string]: {
-        type: 'xcm';
+        type: 'XCM';
         xcmType: string;
         version: string;
         tokens: string[];
       };
     };
   };
+
   cosmos?: {
+    walletUrl?: string;
+    walletUrlForStaking?: string;
+
     bip44: { coinType: number };
     bech32Config: {
       bech32PrefixAccAddr: string;
@@ -65,7 +70,14 @@ export interface NetworkInfo {
       bech32PrefixConsAddr: string;
       bech32PrefixConsPub: string;
     };
+    alternativeBIP44s?: [
+      {
+        coinType: number;
+      },
+    ];
   };
   enabled: boolean;
   network_to?: string[];
 }
+
+export type TransferType = 'multihop' | 'pfm' | 'xcm' | 'channel';

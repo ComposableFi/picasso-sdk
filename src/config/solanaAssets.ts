@@ -1,6 +1,16 @@
 
 // [GENERATED]
-export const solanaAssets = {
+import { SolanaAsset } from "./types";
+
+export const solanaAssets:Record<string, SolanaAsset> = {
+  "DOT": {
+    "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
+    "minimumTransfer": 3
+  },
+  "KSM": {
+    "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+    "minimumTransfer": 0.7
+  },
   "BLD": {
     "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
     "minimumTransfer": 200
@@ -12,6 +22,10 @@ export const solanaAssets = {
   "ARCH": {
     "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
     "minimumTransfer": 240
+  },
+  "PICA": {
+    "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
+    "minimumTransfer": 4000
   },
   "XRP": {
     "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
@@ -44,6 +58,18 @@ export const solanaAssets = {
   "SEI": {
     "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
     "minimumTransfer": 30
+  },
+  "STARS": {
+    "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
+    "minimumTransfer": 990
+  },
+  "STRD": {
+    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
+    "minimumTransfer": 11
+  },
+  "stATOM": {
+    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
+    "minimumTransfer": 2
   },
   "SOL": {
     "mintAddress": "SOL",
@@ -125,29 +151,9 @@ export const solanaAssets = {
     "mintAddress": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
     "minimumTransfer": 30
   },
-  "STARS": {
-    "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
-    "minimumTransfer": 990
-  },
-  "STRD": {
-    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
-    "minimumTransfer": 11
-  },
-  "stATOM": {
-    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
-    "minimumTransfer": 2
-  },
-  "PICA": {
-    "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
-    "minimumTransfer": 4000
-  },
-  "DOT": {
-    "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
-    "minimumTransfer": 3
-  },
-  "KSM": {
-    "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-    "minimumTransfer": 0.7
+  "UWU": {
+    "mintAddress": "UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z",
+    "minimumTransfer": 0
   }
 };
 
