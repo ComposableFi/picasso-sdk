@@ -121,8 +121,9 @@ export const getSupportedType = (
   fromChainId: string,
   toChainId: string
 ): TransferType | undefined => {
-  if (fromChainId === toChainId) return;
+  if (fromChainId === toChainId || !fromChainId || !toChainId) return;
   if (
+    tokensPerChannel?.[fromChainId] &&
     Object.values(tokensPerChannel?.[fromChainId]).find(
       (item) => item?.chainId === toChainId
     )

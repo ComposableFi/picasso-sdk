@@ -40,4 +40,7 @@ describe('getSupportedType', function () {
     it('should return multihop for pacific-1 and ethereum', function () {
         expect((0, chains_1.getSupportedType)('pacific-1', 'ethereum')).toBe('multihop');
     });
+    it('should return multihop for kusama asset hub and ethereum', function () {
+        expect((0, chains_1.getSupportedType)('1000', 'ethereum')).toBe(undefined);
+    });
 });

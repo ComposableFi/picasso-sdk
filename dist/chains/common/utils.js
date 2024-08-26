@@ -63,7 +63,9 @@ var findSourceChannelId = function (sourceChainId, destChainId) {
 exports.findSourceChannelId = findSourceChannelId;
 var getForbiddenChains = function (fromChainId, toChainId) {
     if (fromChainId === toChainId ||
-        (fromChainId === 'solana' && config_1.networks[toChainId].chainType === 'polkadot'))
+        (fromChainId === 'solana' &&
+            config_1.networks[toChainId].chainType === 'polkadot') ||
+        (fromChainId === 'ethereum' && config_1.networks[toChainId].chainType === 'polkadot'))
         return true;
     return false;
 };
@@ -112,9 +114,10 @@ exports.buildIbcPath = buildIbcPath;
 /**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
     var _a, _b;
-    if (fromChainId === toChainId)
+    if (fromChainId === toChainId || !fromChainId || !toChainId)
         return;
-    if (Object.values(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (item) { return (item === null || item === void 0 ? void 0 : item.chainId) === toChainId; }))
+    if ((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]) &&
+        Object.values(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (item) { return (item === null || item === void 0 ? void 0 : item.chainId) === toChainId; }))
         return 'channel';
     //XCM tx
     if (config_1.networks[fromChainId].polkadot &&

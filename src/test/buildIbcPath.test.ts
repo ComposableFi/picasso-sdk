@@ -48,4 +48,8 @@ describe('getSupportedType', () => {
   it('should return multihop for pacific-1 and ethereum', () => {
     expect(getSupportedType('pacific-1', 'ethereum')).toBe('multihop');
   });
+
+  it('should return multihop for kusama asset hub and ethereum', () => {
+    expect(getSupportedType('1000', 'ethereum')).toBe(undefined);
+  });
 });
