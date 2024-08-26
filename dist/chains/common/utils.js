@@ -102,14 +102,14 @@ exports.buildIbcPath = buildIbcPath;
 // Example usage
 /**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     if (fromChainId === toChainId)
         return;
-    if (!config_1.tokensPerChannel[fromChainId][toChainId])
+    if (!((_a = config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]) === null || _a === void 0 ? void 0 : _a[toChainId]))
         return 'channel';
     //XCM tx
-    if (((_b = (_a = config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.relayChain) ===
-        ((_d = (_c = config_1.networks[toChainId]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.relayChain))
+    if (((_c = (_b = config_1.networks[fromChainId]) === null || _b === void 0 ? void 0 : _b.polkadot) === null || _c === void 0 ? void 0 : _c.relayChain) ===
+        ((_e = (_d = config_1.networks[toChainId]) === null || _d === void 0 ? void 0 : _d.polkadot) === null || _e === void 0 ? void 0 : _e.relayChain))
         return 'xcm';
     if ((0, exports.buildIbcPath)(fromChainId, toChainId)) {
         if (fromChainId === 'solana')
