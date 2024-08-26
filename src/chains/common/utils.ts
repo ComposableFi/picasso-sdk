@@ -53,7 +53,7 @@ interface TokenPerChannel {
 }
 interface Hop {
   chainId: string;
-  channelId: string;
+  channelId: number;
 }
 
 export const getForbiddenChains = (fromChainId: string, toChainId: string) => {
@@ -100,7 +100,7 @@ export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
           // Add the next hop (with chain and channel info) to the path
           const newPath: Hop[] = [
             ...path,
-            { chainId: currentChainId, channelId: destinationId },
+            { chainId: currentChainId, channelId: Number(destinationId) },
           ];
 
           // Add the next chain and the updated path to the queue

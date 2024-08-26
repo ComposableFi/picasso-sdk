@@ -4,9 +4,9 @@ describe('buildIbcPath', () => {
   it('should return the correct path for osmosis-1 to ethereum', () => {
     const result = buildIbcPath('osmosis-1', 'ethereum');
     expect(result).toEqual([
-      { chainId: 'osmosis-1', channelId: '1279' },
+      { chainId: 'osmosis-1', channelId: 1279 },
 
-      { chainId: 'centauri-1', channelId: '52' },
+      { chainId: 'centauri-1', channelId: 52 },
     ]);
   });
 
@@ -18,8 +18,8 @@ describe('buildIbcPath', () => {
   it('should return the correct path for solana to osmosis-1', () => {
     const result = buildIbcPath('solana', 'osmosis-1');
     expect(result).toEqual([
-      { chainId: 'solana', channelId: '1' },
-      { chainId: 'centauri-1', channelId: '3' },
+      { chainId: 'solana', channelId: 1 },
+      { chainId: 'centauri-1', channelId: 3 },
     ]);
   });
 });
