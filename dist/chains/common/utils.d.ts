@@ -12,7 +12,7 @@ export declare const getTimeOut: (plusMin?: number) => any;
 export declare const findSourceChannelId: (sourceChainId: string, destChainId: string) => string | undefined;
 interface Hop {
     chainId: string;
-    channelId: string;
+    channelId: number;
 }
 export declare const getForbiddenChains: (fromChainId: string, toChainId: string) => boolean;
 export declare const buildIbcPath: (fromChainId: string, toChainId: string) => Hop[];

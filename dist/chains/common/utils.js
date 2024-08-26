@@ -98,7 +98,7 @@ var buildIbcPath = function (fromChainId, toChainId) {
                 if (!visited.has(nextChainId)) {
                     // Add the next hop (with chain and channel info) to the path
                     var newPath = __spreadArray(__spreadArray([], __read(path), false), [
-                        { chainId: currentChainId, channelId: destinationId },
+                        { chainId: currentChainId, channelId: Number(destinationId) },
                     ], false);
                     // Add the next chain and the updated path to the queue
                     queue.push([nextChainId, newPath]);
