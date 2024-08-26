@@ -59,7 +59,9 @@ interface Hop {
 export const getForbiddenChains = (fromChainId: string, toChainId: string) => {
   if (
     fromChainId === toChainId ||
-    (fromChainId === 'solana' && networks[toChainId].chainType === 'polkadot')
+    (fromChainId === 'solana' &&
+      networks[toChainId].chainType === 'polkadot') ||
+    (fromChainId === 'ethereum' && networks[toChainId].chainType === 'polkadot')
   )
     return true;
   return false;
