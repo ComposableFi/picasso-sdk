@@ -114,7 +114,7 @@ export const getSupportedType = (
   toChainId: string
 ): TransferType | undefined => {
   if (fromChainId === toChainId) return;
-  if (!tokensPerChannel[fromChainId][toChainId]) return 'channel';
+  if (!tokensPerChannel?.[fromChainId]?.[toChainId]) return 'channel';
 
   //XCM tx
   if (
