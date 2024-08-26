@@ -9,8 +9,8 @@ import {
 } from '../../config';
 import { fromBech32, fromHex, toBech32 } from '@cosmjs/encoding';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+import { TIMEOUT_IBC_MAX } from '../cosmos';
 export const emitter = new EventEmitter<WalletApiEvents>();
-export const TIMEOUT_IBC_MAX = 6000000000000;
 
 export const memoBuilder = ({
   destChannel,
@@ -54,6 +54,7 @@ interface TokenPerChannel {
 interface Hop {
   chainId: string;
   channelId: number;
+  receiver?: string;
 }
 
 export const getForbiddenChains = (fromChainId: string, toChainId: string) => {
@@ -203,3 +204,40 @@ export const convertAddressToStr = (
   }
   return address;
 };
+
+export const createForwardPathRecursive = (
+  ibcPath: Hop[],
+  index = 0,
+  timeout = TIMEOUT_IBC_MAX
+) => {
+  if (index === ibcPath.length - 1) {
+    return {
+      receiver: ibcPath[index].receiver,
+      port: 'transfer',
+      channel: `channel-${ibcPath[index].channelId}`,
+      timeout,
+      retries: 0,
+    };
+  }
+
+  return {
+    receiver: ibcPath[index].receiver,
+    port: 'transfer',
+    channel: `channel-${ibcPath[index].channelId}`,
+    timeout,
+    retries: 0,
+    next: {
+      forward: createForwardPathRecursive(ibcPath, index + 1),
+    },
+  };
+};
+
+// 예시 데이터
+const ibcPath = [
+  { chainId: 'osmosis-1', channelId: 1279 },
+  { chainId: 'centauri-1', channelId: 52 },
+];
+
+// 실행 예시
+const result = createForwardPathRecursive(ibcPath, 0);
+console.log(JSON.stringify({ forward: result }, null, 2));
