@@ -102,14 +102,16 @@ exports.buildIbcPath = buildIbcPath;
 // Example usage
 /**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
-    var _a, _b, _c, _d, _e;
+    var _a, _b;
     if (fromChainId === toChainId)
         return;
-    if (!((_a = config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]) === null || _a === void 0 ? void 0 : _a[toChainId]))
+    if (Object.values(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (item) { return (item === null || item === void 0 ? void 0 : item.chainId) === toChainId; }))
         return 'channel';
     //XCM tx
-    if (((_c = (_b = config_1.networks[fromChainId]) === null || _b === void 0 ? void 0 : _b.polkadot) === null || _c === void 0 ? void 0 : _c.relayChain) ===
-        ((_e = (_d = config_1.networks[toChainId]) === null || _d === void 0 ? void 0 : _d.polkadot) === null || _e === void 0 ? void 0 : _e.relayChain))
+    if (config_1.networks[fromChainId].polkadot &&
+        config_1.networks[toChainId].polkadot &&
+        ((_a = config_1.networks[fromChainId].polkadot) === null || _a === void 0 ? void 0 : _a.relayChain) ===
+            ((_b = config_1.networks[toChainId].polkadot) === null || _b === void 0 ? void 0 : _b.relayChain))
         return 'xcm';
     if ((0, exports.buildIbcPath)(fromChainId, toChainId)) {
         if (fromChainId === 'solana')

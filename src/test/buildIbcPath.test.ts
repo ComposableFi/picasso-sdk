@@ -13,11 +13,11 @@ describe('buildIbcPath', () => {
 
 describe('getSupportedType', () => {
   it('should return multihop for solana and ethereum', () => {
-    expect(getSupportedType('solana', 'ethereum')).toBe('multihop');
+    expect(getSupportedType('solana', 'ethereum')).toBe('pfm');
   });
 
   it('should return multihop for solana and osmosis-1', () => {
-    expect(getSupportedType('solana', 'osmosis-1')).toBe('multihop');
+    expect(getSupportedType('solana', 'centauri-1')).toBe('channel');
   });
 
   it('should return multihop for osmosis-1 and 2087', () => {

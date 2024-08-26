@@ -114,12 +114,19 @@ export const getSupportedType = (
   toChainId: string
 ): TransferType | undefined => {
   if (fromChainId === toChainId) return;
-  if (!tokensPerChannel?.[fromChainId]?.[toChainId]) return 'channel';
+  if (
+    Object.values(tokensPerChannel?.[fromChainId]).find(
+      (item) => item?.chainId === toChainId
+    )
+  )
+    return 'channel';
 
   //XCM tx
   if (
-    networks[fromChainId]?.polkadot?.relayChain ===
-    networks[toChainId]?.polkadot?.relayChain
+    networks[fromChainId].polkadot &&
+    networks[toChainId].polkadot &&
+    networks[fromChainId].polkadot?.relayChain ===
+      networks[toChainId].polkadot?.relayChain
   )
     return 'xcm';
   if (buildIbcPath(fromChainId, toChainId)) {
