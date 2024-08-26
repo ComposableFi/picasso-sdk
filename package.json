@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.29.0",
-    "@cosmjs/stargate": "^0.31.0-alpha.2",
+    "@cosmjs/stargate": "^0.32.4",
     "@polkadot/util-crypto": "^13.0.2",
     "@solana/spl-token": "^0.3.10",
     "@solana/web3.js": "^1.87.6",
@@ -46,7 +46,7 @@
     "dist/**/*"
   ],
   "devDependencies": {
-    "@keplr-wallet/types": "^0.11.26",
+    "@keplr-wallet/types": "^0.12.123",
     "@types/jest": "^29.5.12",
     "husky": "^9.1.4",
     "jest": "^29.7.0",
