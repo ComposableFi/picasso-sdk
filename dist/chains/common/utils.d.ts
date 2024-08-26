@@ -14,7 +14,8 @@ interface Hop {
     chainId: string;
     channelId: string;
 }
-export declare const buildIbcPath: (fromChainId: string, toChainId: string) => Hop[] | null;
+export declare const getForbiddenChains: (fromChainId: string, toChainId: string) => boolean;
+export declare const buildIbcPath: (fromChainId: string, toChainId: string) => Hop[];
 /**@description If it returns undefined, that means it is not supported */
 export declare const getSupportedType: (fromChainId: string, toChainId: string) => TransferType | undefined;
 export declare const getPolkadotAddressStr: (accountId: string, prefix?: number) => string;

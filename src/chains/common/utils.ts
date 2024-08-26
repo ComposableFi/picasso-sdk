@@ -56,11 +56,17 @@ interface Hop {
   channelId: string;
 }
 
+export const getForbiddenChains = (fromChainId: string, toChainId: string) => {
+  if (
+    fromChainId === toChainId ||
+    (fromChainId === 'solana' && networks[toChainId].chainType === 'polkadot')
+  )
+    return true;
+  return false;
+};
 // Function to find the shortest path with channel information
-export const buildIbcPath = (
-  fromChainId: string,
-  toChainId: string
-): Hop[] | null => {
+export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
+  if (getForbiddenChains(fromChainId, toChainId)) return null;
   // Set to keep track of visited chains
   const visited = new Set<string>();
 
@@ -131,6 +137,7 @@ export const getSupportedType = (
     return 'xcm';
   if (buildIbcPath(fromChainId, toChainId)) {
     if (fromChainId === 'solana') return 'pfm';
+
     return 'multihop';
   }
   return;

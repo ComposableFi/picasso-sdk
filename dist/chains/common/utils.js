@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
+exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
@@ -61,8 +61,17 @@ var findSourceChannelId = function (sourceChainId, destChainId) {
     return Object.keys(config_1.networks[sourceChainId]).find(function (key) { return key === destChainId; });
 };
 exports.findSourceChannelId = findSourceChannelId;
+var getForbiddenChains = function (fromChainId, toChainId) {
+    if (fromChainId === toChainId ||
+        (fromChainId === 'solana' && config_1.networks[toChainId].chainType === 'polkadot'))
+        return true;
+    return false;
+};
+exports.getForbiddenChains = getForbiddenChains;
 // Function to find the shortest path with channel information
 var buildIbcPath = function (fromChainId, toChainId) {
+    if ((0, exports.getForbiddenChains)(fromChainId, toChainId))
+        return null;
     // Set to keep track of visited chains
     var visited = new Set();
     // Initialize the queue for BFS traversal
