@@ -44,3 +44,59 @@ describe('getSupportedType', function () {
         expect((0, chains_1.getSupportedType)('1000', 'ethereum')).toBe(undefined);
     });
 });
+describe('createForwardPathRecursive', function () {
+    test('should create the correct forward structure for a valid ibcPath and destination', function () {
+        // Given test data
+        var ibcPath = [
+            { chainId: 'osmosis-1', channelId: 1279, receiver: 'centauri-address' },
+            { chainId: 'centauri-1', channelId: 52, receiver: 'ethereum-address' },
+        ];
+        // When calling the function
+        var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
+        // Then the expected output should be correct
+        var expectedOutput = {
+            forward: {
+                receiver: 'centauri-address',
+                port: 'transfer',
+                channel: 'channel-1279',
+                timeout: chains_1.TIMEOUT_IBC_MAX,
+                retries: 0,
+                next: {
+                    forward: {
+                        receiver: 'ethereum-address',
+                        port: 'transfer',
+                        channel: 'channel-52',
+                        timeout: chains_1.TIMEOUT_IBC_MAX,
+                        retries: 0,
+                    },
+                },
+            },
+        };
+        // Convert both result and expected output to JSON strings for comparison
+        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
+    });
+    test('should handle a single hop correctly', function () {
+        // Given test data with a single hop
+        var ibcPath = [
+            {
+                chainId: 'centauri-1',
+                channelId: 52,
+                receiver: 'sei-destination-address',
+            },
+        ];
+        // When calling the function
+        var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
+        // Then the expected output should be correct
+        var expectedOutput = {
+            forward: {
+                receiver: 'sei-destination-address',
+                port: 'transfer',
+                channel: 'channel-52',
+                timeout: chains_1.TIMEOUT_IBC_MAX,
+                retries: 0,
+            },
+        };
+        // Convert both result and expected output to JSON strings for comparison
+        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
+    });
+});
