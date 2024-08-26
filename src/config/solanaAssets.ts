@@ -3,14 +3,6 @@
 import { SolanaAsset } from "./types";
 
 export const solanaAssets:Record<string, SolanaAsset> = {
-  "DOT": {
-    "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
-    "minimumTransfer": 3
-  },
-  "KSM": {
-    "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-    "minimumTransfer": 0.7
-  },
   "BLD": {
     "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
     "minimumTransfer": 200
@@ -23,10 +15,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
     "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
     "minimumTransfer": 240
   },
-  "PICA": {
-    "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
-    "minimumTransfer": 4000
-  },
   "XRP": {
     "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
     "minimumTransfer": 0
@@ -38,10 +26,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "ASTRO": {
     "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
     "minimumTransfer": 0
-  },
-  "OSMO": {
-    "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
-    "minimumTransfer": 20
   },
   "SCRT": {
     "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
@@ -70,6 +54,22 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "stATOM": {
     "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
     "minimumTransfer": 2
+  },
+  "DOT": {
+    "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
+    "minimumTransfer": 3
+  },
+  "KSM": {
+    "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+    "minimumTransfer": 0.7
+  },
+  "PICA": {
+    "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
+    "minimumTransfer": 4000
+  },
+  "OSMO": {
+    "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+    "minimumTransfer": 20
   },
   "SOL": {
     "mintAddress": "SOL",
