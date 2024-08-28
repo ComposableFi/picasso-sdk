@@ -210,6 +210,7 @@ export const createForwardPathRecursive = (
   index = 0,
   timeout = TIMEOUT_IBC_MAX
 ) => {
+  if (!ibcPath || ibcPath.length <= 1) return '';
   if (index === ibcPath.length - 1) {
     return {
       receiver: ibcPath[index].receiver,
