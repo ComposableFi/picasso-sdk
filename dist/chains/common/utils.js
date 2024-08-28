@@ -180,6 +180,8 @@ exports.convertAddressToStr = convertAddressToStr;
 var createForwardPathRecursive = function (ibcPath, index, timeout) {
     if (index === void 0) { index = 0; }
     if (timeout === void 0) { timeout = cosmos_1.TIMEOUT_IBC_MAX; }
+    if (!ibcPath || ibcPath.length <= 1)
+        return '';
     if (index === ibcPath.length - 1) {
         return {
             receiver: ibcPath[index].receiver,
