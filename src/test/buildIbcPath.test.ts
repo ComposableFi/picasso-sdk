@@ -15,6 +15,11 @@ describe('buildIbcPath', () => {
     ]);
   });
 
+  it('should return the correct path for agoric-3 to centauri-1', () => {
+    const result = buildIbcPath('agoric-3', 'centauri-1');
+    expect(result).toEqual([{ chainId: 'agoric-3', channelId: 55 }]);
+  });
+
   it('should return the null for solana to 2019', () => {
     const result = buildIbcPath('solana', '2019');
     expect(result).toEqual(null);
