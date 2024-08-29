@@ -163,9 +163,7 @@ export const convertCosmosAddress = (
   newPrefix: string
 ): string => {
   try {
-    // Bech32 주소를 디코딩하여 5바이트 접두사 제거
     const { data } = fromBech32(address);
-    // 새로운 접두사로 다시 Bech32 주소 생성
 
     return toBech32(newPrefix, data);
   } catch (e) {

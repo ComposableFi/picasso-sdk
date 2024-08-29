@@ -1,5 +1,6 @@
 import {
   buildIbcPath,
+  convertCosmosAddress,
   createForwardPathRecursive,
   getSupportedType,
   TIMEOUT_IBC_MAX,
