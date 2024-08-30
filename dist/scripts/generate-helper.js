@@ -145,7 +145,7 @@ var processFiles = function () {
         data.currencies.forEach(function (currency) {
             var _a, _b;
             var coinDenom = currency.coinDenom, ethereum = currency.ethereum, solana = currency.solana;
-            if (currency.ethereum) {
+            if (ethereum) {
                 if (ethereum.erc20Address) {
                     ethereumAssets[coinDenom] = {
                         erc20Address: ethereum.erc20Address,
@@ -162,7 +162,7 @@ var processFiles = function () {
                 }
             }
             // generate solanaAssets.ts
-            if (currency.solana) {
+            if (solana) {
                 var mintAddress = solana.mintAddress || '';
                 if (mintAddress) {
                     solanaAssets[currency.coinDenom] = {
