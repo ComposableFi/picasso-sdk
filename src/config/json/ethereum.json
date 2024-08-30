@@ -58,7 +58,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "ETH",
+        "mintAddress": "EXZbXNMbdTbMYpr9J5MUDv29XnWfxLZYyCCtk2tCy7XV",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/wei",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -81,7 +81,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "mintAddress": "6SYCn6Hj4X3XV6dzRk8vXa1UyZc4SBvAT7p3e1AcATAx",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6B175474E89094C44Da98b954EedeAC495271d0F",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -104,7 +104,7 @@
         "minimumTransfer": 5
       },
       "solana": {
-        "currency": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+        "mintAddress": "6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3432a789b141E659d494c8E074aC4d3c2bDe6a9d",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -127,7 +127,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
+        "mintAddress": "3AvDivzbMjfin9hSVUBjdYerKroX8jQuNyDVebdRiULE",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xc8E9b3D2AD2C8A2f97DC68cC94a4e7A1429bB10e",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -150,7 +150,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "0xac3e018457b222d93114458476f3e3416abbe38f",
+        "mintAddress": "E5Lz7Bi1KZD9VTYXsCZhkWDiztkNzPoX7Jk71xbTkEoA",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xac3E018457B222d93114458476f3E3416Abbe38F",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -173,7 +173,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0x57e114b691db790c35207b2e685d4a43181e6061",
+        "mintAddress": "Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xB749A7b4Ed5E5385418EC743aF6A88CF2641bC6D",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -196,7 +196,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "mintAddress": "A9zVTbwXTwMA3WsYbB7mGKmDZp3UPfd64sjZfZQ8Lk49",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x853d955aCEf822Db058eb8505911ED77F175b99e",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -219,7 +219,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "0x5e8422345238f34275888049021821e8e08caa1f",
+        "mintAddress": "Go2RiPCxrU3dWH7cs52pm2Q2R45HB2ACbYBZsx1vadZd",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x5E8422345238F34275888049021821E8E08CAa1f",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -242,7 +242,7 @@
         "minimumTransfer": 0.0006
       },
       "solana": {
-        "currency": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+        "mintAddress": "GrkjmJt3KECe6Yi11LZxY88BJ69KyQnRtC6EioFAF1rD",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -264,7 +264,13 @@
         "fromCosmosFee": 0.0055,
         "minimumTransfer": 0.01
       },
-      "solana": {}
+      "solana": {
+        "mintAddress": "HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
     },
     {
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/reth.svg",
@@ -282,7 +288,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "mintAddress": "urez9EJo4YNdpQQxw6xrLfF1J3EqJSaVwPGHFNG338B",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xae78736Cd615f374D3085123A210448E74Fc6393",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -305,7 +311,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "mintAddress": "EuBHrXZJa6ZNg6dfhiotxRoHpVpMg6ZsgNc6ZKJ9iUe2",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x674C6Ad92Fd080e4004b2312b45f796a192D27a0",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -328,7 +334,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
+        "mintAddress": "B1cm3Wf5ZNUdgZ1eaXaNdiy9DCmQudfmspRMBb2TqDjb",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x28CEd45aF1aFF4F5f26E9d07A6dE1170a49a5E06",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -351,7 +357,7 @@
         "minimumTransfer": 0.01
       },
       "solana": {
-        "currency": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+        "mintAddress": "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3446F1cD03C04b1BBFcd8d579D68E3fB7793dB95",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -374,7 +380,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "mintAddress": "Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn",
         "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -396,7 +402,13 @@
         "fromCosmosFee": 0.0055,
         "minimumTransfer": 0.01
       },
-      "solana": {}
+      "solana": {
+        "mintAddress": "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv",
+        "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3446F1cD03C04b1BBFcd8d579D68E3fB7793dB95",
+        "minimumTransfer": 0,
+        "fromCosmosFee": 0,
+        "displayDecimals": 9
+      }
     },
     {
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDe.svg",
@@ -414,7 +426,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "mintAddress": "GM4RuF5gLcytcq36wNJkX3UBYRKP9hQwJyyRWm6d6o47",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xC2cB1040220768554cf699b0d863A3cd4324ce32",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -437,7 +449,7 @@
         "minimumTransfer": 5000000
       },
       "solana": {
-        "currency": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+        "mintAddress": "uVYDrZeCeq5T5RBHZZWHfsG12SDCm4MPHX2h8iAcXRh",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xf14eEEdF22ca7c50a2A98E629E3a91C7f8456A35",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -460,7 +472,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "mintAddress": "EHzGKxauSbvLD5xfX4P9StBdQWmyroferGg9aR6oDU9v",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xdAC17F958D2ee523a2206206994597C13D831ec7",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,
@@ -483,7 +495,7 @@
         "minimumTransfer": 50
       },
       "solana": {
-        "currency": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+        "mintAddress": "4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xD533a949740bb3306d119CC777fa900bA034cd52",
         "minimumTransfer": 0,
         "fromCosmosFee": 0,

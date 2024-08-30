@@ -155,7 +155,7 @@ var processFiles = function () {
                     crossChainAssets.ethereum[ethereum.erc20Address] = {
                         chainId: data.chainId || '',
                         decimals: currency.coinDecimals || 0,
-                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        minimalDenom: currency.ethereum.minimalDenom || '',
                         denom: coinDenom || '',
                         imageUrl: (currency === null || currency === void 0 ? void 0 : currency.coinImageUrl) || '',
                     };
@@ -174,7 +174,7 @@ var processFiles = function () {
                     crossChainAssets.solana[mintAddress] = {
                         chainId: data.chainId || '',
                         decimals: decimals,
-                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        minimalDenom: currency.solana.minimalDenom || '',
                         denom: coinDenom || '',
                         realDecimals: realDecimals,
                         imageUrl: currency.coinImageUrl || '',

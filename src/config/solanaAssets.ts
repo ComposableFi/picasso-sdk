@@ -23,6 +23,86 @@ export const solanaAssets:Record<string, SolanaAsset> = {
     "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
     "minimumTransfer": 2
   },
+  "ETH": {
+    "mintAddress": "EXZbXNMbdTbMYpr9J5MUDv29XnWfxLZYyCCtk2tCy7XV",
+    "minimumTransfer": 0
+  },
+  "DAI": {
+    "mintAddress": "6SYCn6Hj4X3XV6dzRk8vXa1UyZc4SBvAT7p3e1AcATAx",
+    "minimumTransfer": 0
+  },
+  "FXS": {
+    "mintAddress": "6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7",
+    "minimumTransfer": 0
+  },
+  "sFRAX": {
+    "mintAddress": "3AvDivzbMjfin9hSVUBjdYerKroX8jQuNyDVebdRiULE",
+    "minimumTransfer": 0
+  },
+  "sfrxETH": {
+    "mintAddress": "E5Lz7Bi1KZD9VTYXsCZhkWDiztkNzPoX7Jk71xbTkEoA",
+    "minimumTransfer": 0
+  },
+  "ENA": {
+    "mintAddress": "Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW",
+    "minimumTransfer": 0
+  },
+  "FRAX": {
+    "mintAddress": "A9zVTbwXTwMA3WsYbB7mGKmDZp3UPfd64sjZfZQ8Lk49",
+    "minimumTransfer": 0
+  },
+  "frxETH": {
+    "mintAddress": "Go2RiPCxrU3dWH7cs52pm2Q2R45HB2ACbYBZsx1vadZd",
+    "minimumTransfer": 0
+  },
+  "wBTC": {
+    "mintAddress": "GrkjmJt3KECe6Yi11LZxY88BJ69KyQnRtC6EioFAF1rD",
+    "minimumTransfer": 0
+  },
+  "stETH": {
+    "mintAddress": "HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj",
+    "minimumTransfer": 0
+  },
+  "rETH": {
+    "mintAddress": "urez9EJo4YNdpQQxw6xrLfF1J3EqJSaVwPGHFNG338B",
+    "minimumTransfer": 0
+  },
+  "crvUSD": {
+    "mintAddress": "EuBHrXZJa6ZNg6dfhiotxRoHpVpMg6ZsgNc6ZKJ9iUe2",
+    "minimumTransfer": 0
+  },
+  "pxETH": {
+    "mintAddress": "B1cm3Wf5ZNUdgZ1eaXaNdiy9DCmQudfmspRMBb2TqDjb",
+    "minimumTransfer": 0
+  },
+  "eETH": {
+    "mintAddress": "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv",
+    "minimumTransfer": 0
+  },
+  "SILK": {
+    "mintAddress": "Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn",
+    "minimumTransfer": 20
+  },
+  "ezETH": {
+    "mintAddress": "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv",
+    "minimumTransfer": 0
+  },
+  "USDe": {
+    "mintAddress": "GM4RuF5gLcytcq36wNJkX3UBYRKP9hQwJyyRWm6d6o47",
+    "minimumTransfer": 0
+  },
+  "PEPE": {
+    "mintAddress": "uVYDrZeCeq5T5RBHZZWHfsG12SDCm4MPHX2h8iAcXRh",
+    "minimumTransfer": 0
+  },
+  "USDT Ethereum": {
+    "mintAddress": "EHzGKxauSbvLD5xfX4P9StBdQWmyroferGg9aR6oDU9v",
+    "minimumTransfer": 0
+  },
+  "CRV": {
+    "mintAddress": "4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6",
+    "minimumTransfer": 0
+  },
   "ASTRO": {
     "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
     "minimumTransfer": 0
@@ -30,10 +110,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "SCRT": {
     "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
     "minimumTransfer": 50
-  },
-  "SILK": {
-    "mintAddress": "Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn",
-    "minimumTransfer": 20
   },
   "SHD": {
     "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",

@@ -144,9 +144,7 @@ var getPolkadotAddressStr = function (accountId, prefix) {
 exports.getPolkadotAddressStr = getPolkadotAddressStr;
 var convertCosmosAddress = function (address, newPrefix) {
     try {
-        // Bech32 주소를 디코딩하여 5바이트 접두사 제거
         var data = (0, encoding_1.fromBech32)(address).data;
-        // 새로운 접두사로 다시 Bech32 주소 생성
         return (0, encoding_1.toBech32)(newPrefix, data);
     }
     catch (e) {
@@ -180,8 +178,6 @@ exports.convertAddressToStr = convertAddressToStr;
 var createForwardPathRecursive = function (ibcPath, index, timeout) {
     if (index === void 0) { index = 0; }
     if (timeout === void 0) { timeout = cosmos_1.TIMEOUT_IBC_MAX; }
-    if (!ibcPath || ibcPath.length <= 1)
-        return '';
     if (index === ibcPath.length - 1) {
         return {
             receiver: ibcPath[index].receiver,
