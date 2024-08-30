@@ -9,6 +9,10 @@ describe('buildIbcPath', function () {
             { chainId: 'centauri-1', channelId: 52 },
         ]);
     });
+    it('should return the correct path for agoric-3 to centauri-1', function () {
+        var result = (0, chains_1.buildIbcPath)('agoric-3', 'centauri-1');
+        expect(result).toEqual([{ chainId: 'agoric-3', channelId: 55 }]);
+    });
     it('should return the null for solana to 2019', function () {
         var result = (0, chains_1.buildIbcPath)('solana', '2019');
         expect(result).toEqual(null);
@@ -42,5 +46,61 @@ describe('getSupportedType', function () {
     });
     it('should return multihop for kusama asset hub and ethereum', function () {
         expect((0, chains_1.getSupportedType)('1000', 'ethereum')).toBe(undefined);
+    });
+});
+describe('createForwardPathRecursive', function () {
+    test('should create the correct forward structure for a valid ibcPath and destination', function () {
+        // Given test data
+        var ibcPath = [
+            { chainId: 'osmosis-1', channelId: 1279, receiver: 'centauri-address' },
+            { chainId: 'centauri-1', channelId: 52, receiver: 'ethereum-address' },
+        ];
+        // When calling the function
+        var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
+        // Then the expected output should be correct
+        var expectedOutput = {
+            forward: {
+                receiver: 'centauri-address',
+                port: 'transfer',
+                channel: 'channel-1279',
+                timeout: chains_1.TIMEOUT_IBC_MAX,
+                retries: 0,
+                next: {
+                    forward: {
+                        receiver: 'ethereum-address',
+                        port: 'transfer',
+                        channel: 'channel-52',
+                        timeout: chains_1.TIMEOUT_IBC_MAX,
+                        retries: 0,
+                    },
+                },
+            },
+        };
+        // Convert both result and expected output to JSON strings for comparison
+        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
+    });
+    test('should handle a single hop correctly', function () {
+        // Given test data with a single hop
+        var ibcPath = [
+            {
+                chainId: 'centauri-1',
+                channelId: 52,
+                receiver: 'sei-destination-address',
+            },
+        ];
+        // When calling the function
+        var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
+        // Then the expected output should be correct
+        var expectedOutput = {
+            forward: {
+                receiver: 'sei-destination-address',
+                port: 'transfer',
+                channel: 'channel-52',
+                timeout: chains_1.TIMEOUT_IBC_MAX,
+                retries: 0,
+            },
+        };
+        // Convert both result and expected output to JSON strings for comparison
+        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
 });

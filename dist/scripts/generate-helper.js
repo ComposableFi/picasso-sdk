@@ -145,7 +145,7 @@ var processFiles = function () {
         data.currencies.forEach(function (currency) {
             var _a, _b;
             var coinDenom = currency.coinDenom, ethereum = currency.ethereum, solana = currency.solana;
-            if (currency.ethereum) {
+            if (ethereum) {
                 if (ethereum.erc20Address) {
                     ethereumAssets[coinDenom] = {
                         erc20Address: ethereum.erc20Address,
@@ -155,14 +155,14 @@ var processFiles = function () {
                     crossChainAssets.ethereum[ethereum.erc20Address] = {
                         chainId: data.chainId || '',
                         decimals: currency.coinDecimals || 0,
-                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        minimalDenom: currency.ethereum.minimalDenom || '',
                         denom: coinDenom || '',
                         imageUrl: (currency === null || currency === void 0 ? void 0 : currency.coinImageUrl) || '',
                     };
                 }
             }
             // generate solanaAssets.ts
-            if (currency.solana) {
+            if (solana) {
                 var mintAddress = solana.mintAddress || '';
                 if (mintAddress) {
                     solanaAssets[currency.coinDenom] = {
@@ -174,7 +174,7 @@ var processFiles = function () {
                     crossChainAssets.solana[mintAddress] = {
                         chainId: data.chainId || '',
                         decimals: decimals,
-                        minimalDenom: currency.cosmos.minimalDenom || '',
+                        minimalDenom: currency.solana.minimalDenom || '',
                         denom: coinDenom || '',
                         realDecimals: realDecimals,
                         imageUrl: currency.coinImageUrl || '',

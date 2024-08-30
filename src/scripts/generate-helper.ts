@@ -129,7 +129,7 @@ const processFiles = () => {
     // generate ethereumAssets.ts
     data.currencies.forEach((currency: any) => {
       const { coinDenom, ethereum, solana } = currency;
-      if (currency.ethereum) {
+      if (ethereum) {
         if (ethereum.erc20Address) {
           ethereumAssets[coinDenom] = {
             erc20Address: ethereum.erc20Address,
@@ -139,7 +139,7 @@ const processFiles = () => {
           crossChainAssets.ethereum[ethereum.erc20Address] = {
             chainId: data.chainId || '',
             decimals: currency.coinDecimals || 0,
-            minimalDenom: currency.cosmos.minimalDenom || '',
+            minimalDenom: currency.ethereum.minimalDenom || '',
             denom: coinDenom || '',
             imageUrl: currency?.coinImageUrl || '',
           };
@@ -147,7 +147,7 @@ const processFiles = () => {
       }
 
       // generate solanaAssets.ts
-      if (currency.solana) {
+      if (solana) {
         const mintAddress = solana.mintAddress || '';
         if (mintAddress) {
           solanaAssets[currency.coinDenom] = {
@@ -162,7 +162,7 @@ const processFiles = () => {
           crossChainAssets.solana[mintAddress] = {
             chainId: data.chainId || '',
             decimals,
-            minimalDenom: currency.cosmos.minimalDenom || '',
+            minimalDenom: currency.solana.minimalDenom || '',
             denom: coinDenom || '',
             realDecimals,
             imageUrl: currency.coinImageUrl || '',

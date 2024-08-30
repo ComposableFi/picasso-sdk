@@ -28,14 +28,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.TIMEOUT_IBC_MAX = exports.emitter = void 0;
+exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
 var encoding_1 = require("@cosmjs/encoding");
 var util_crypto_1 = require("@polkadot/util-crypto");
+var cosmos_1 = require("../cosmos");
 exports.emitter = new eventemitter3_1.default();
-exports.TIMEOUT_IBC_MAX = 6000000000000;
 var memoBuilder = function (_a) {
     var destChannel = _a.destChannel, destAddress = _a.destAddress;
     return JSON.stringify({
@@ -43,7 +43,7 @@ var memoBuilder = function (_a) {
             receiver: destAddress,
             port: 'transfer',
             channel: "channel-".concat(destChannel),
-            timeout: exports.TIMEOUT_IBC_MAX,
+            timeout: cosmos_1.TIMEOUT_IBC_MAX,
             retries: 0,
         },
     });
@@ -144,9 +144,7 @@ var getPolkadotAddressStr = function (accountId, prefix) {
 exports.getPolkadotAddressStr = getPolkadotAddressStr;
 var convertCosmosAddress = function (address, newPrefix) {
     try {
-        // Bech32 주소를 디코딩하여 5바이트 접두사 제거
         var data = (0, encoding_1.fromBech32)(address).data;
-        // 새로운 접두사로 다시 Bech32 주소 생성
         return (0, encoding_1.toBech32)(newPrefix, data);
     }
     catch (e) {
@@ -177,3 +175,35 @@ var convertAddressToStr = function (address, fromChainId) {
     return address;
 };
 exports.convertAddressToStr = convertAddressToStr;
+var createForwardPathRecursive = function (ibcPath, index, timeout) {
+    if (index === void 0) { index = 0; }
+    if (timeout === void 0) { timeout = cosmos_1.TIMEOUT_IBC_MAX; }
+    if (index === ibcPath.length - 1) {
+        return {
+            receiver: ibcPath[index].receiver,
+            port: 'transfer',
+            channel: "channel-".concat(ibcPath[index].channelId),
+            timeout: timeout,
+            retries: 0,
+        };
+    }
+    return {
+        receiver: ibcPath[index].receiver,
+        port: 'transfer',
+        channel: "channel-".concat(ibcPath[index].channelId),
+        timeout: timeout,
+        retries: 0,
+        next: {
+            forward: (0, exports.createForwardPathRecursive)(ibcPath, index + 1),
+        },
+    };
+};
+exports.createForwardPathRecursive = createForwardPathRecursive;
+// 예시 데이터
+var ibcPath = [
+    { chainId: 'osmosis-1', channelId: 1279 },
+    { chainId: 'centauri-1', channelId: 52 },
+];
+// 실행 예시
+var result = (0, exports.createForwardPathRecursive)(ibcPath, 0);
+console.log(JSON.stringify({ forward: result }, null, 2));

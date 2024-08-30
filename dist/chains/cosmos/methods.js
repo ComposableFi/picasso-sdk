@@ -37,7 +37,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cosmosTransfer = void 0;
-var utils_1 = require("../common/utils");
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
@@ -56,9 +55,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
             case 1:
                 client = _d.sent();
                 msg = (0, helper_1.generateTransferMsg)(txMsg, sourceChannel, sourceAddress, destAddress, amount, assetId, memo, timeout);
-                return [4 /*yield*/, client.simulate(sourceAddress, [msg], memo)];
-            case 2:
-                _d.sent();
+                // await client.simulate(sourceAddress, [msg], memo);
                 // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
                 if (keplr) {
                     keplr.defaultOptions = {
@@ -78,20 +75,18 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         ],
                         gas: gas,
                     };
-                _d.label = 3;
-            case 3:
-                _d.trys.push([3, 5, , 6]);
+                _d.label = 2;
+            case 2:
+                _d.trys.push([2, 4, , 5]);
                 return [4 /*yield*/, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
-            case 4:
+            case 3:
                 generalResponse = _d.sent();
-                utils_1.emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
                 return [2 /*return*/, generalResponse.transactionHash]; // Query indexer by this txHash
-            case 5:
+            case 4:
                 ex_1 = _d.sent();
                 console.error(ex_1, 'cosmosError');
-                utils_1.emitter.emit('CANCEL_COSMOS'); // optional: emit event for cancel of wallet extension
-                return [3 /*break*/, 6];
-            case 6: return [2 /*return*/];
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); };

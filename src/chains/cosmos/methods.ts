@@ -57,7 +57,7 @@ export const cosmosTransfer = async ({
     memo,
     timeout
   );
-  await client.simulate(sourceAddress, [msg], memo);
+  // await client.simulate(sourceAddress, [msg], memo);
 
   // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
   if (keplr) {
@@ -87,10 +87,8 @@ export const cosmosTransfer = async ({
       [msg],
       refinedFee
     );
-    emitter.emit('COSMOS_APPROVED'); // optional: emit event for approval of wallet extension
     return generalResponse.transactionHash; // Query indexer by this txHash
   } catch (ex) {
     console.error(ex, 'cosmosError');
-    emitter.emit('CANCEL_COSMOS'); // optional: emit event for cancel of wallet extension
   }
 };

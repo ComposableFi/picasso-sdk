@@ -3,16 +3,6 @@
 import { EthereumAsset } from './types';
 
 export const ethereumAssets :Record<string, EthereumAsset>= {
-  "DOT": {
-    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-    "cosmosToEthereumFee": 2,
-    "minimumTransfer": 5
-  },
-  "KSM": {
-    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-    "cosmosToEthereumFee": 0.5,
-    "minimumTransfer": 1
-  },
   "BLD": {
     "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
     "cosmosToEthereumFee": 165,
@@ -27,11 +17,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "erc20Address": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
-  },
-  "PICA": {
-    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-    "cosmosToEthereumFee": 2000,
-    "minimumTransfer": 5000
   },
   "XRP": {
     "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
@@ -143,11 +128,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "cosmosToEthereumFee": 30,
     "minimumTransfer": 50
   },
-  "OSMO": {
-    "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
-    "cosmosToEthereumFee": 15,
-    "minimumTransfer": 40
-  },
   "SCRT": {
     "erc20Address": "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C",
     "cosmosToEthereumFee": 34,
@@ -177,6 +157,26 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
     "cosmosToEthereumFee": 2,
     "minimumTransfer": 5
+  },
+  "DOT": {
+    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+    "cosmosToEthereumFee": 2,
+    "minimumTransfer": 5
+  },
+  "KSM": {
+    "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+    "cosmosToEthereumFee": 0.5,
+    "minimumTransfer": 1
+  },
+  "PICA": {
+    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
+    "cosmosToEthereumFee": 2000,
+    "minimumTransfer": 5000
+  },
+  "OSMO": {
+    "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+    "cosmosToEthereumFee": 15,
+    "minimumTransfer": 40
   },
   "JitoSOL": {
     "erc20Address": "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143",
