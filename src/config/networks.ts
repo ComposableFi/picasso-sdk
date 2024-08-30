@@ -950,7 +950,7 @@ import { NetworkInfo } from './types';
   "solana": {
     "name": "Solana",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
-    "rpc": "https://mainnet.helius-rpc.com/?api-key=65520d87-04b2-43a5-b5d5-35d5db0601b3",
+    "rpc": "https://madel-m03ip3-fast-mainnet.helius-rpc.com",
     "rest": "",
     "chainType": "solana",
     "chainId": "solana",
