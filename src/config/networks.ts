@@ -556,19 +556,6 @@ import { NetworkInfo } from './types';
       "centauri-1"
     ]
   },
-  "ethereum": {
-    "name": "Ethereum",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
-    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
-    "rest": "",
-    "chainType": "ethereum",
-    "chainId": "ethereum",
-    "feeAssetId": "ETH",
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
   "injective-1": {
     "name": "Injective",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
@@ -944,6 +931,19 @@ import { NetworkInfo } from './types';
     "enabled": true,
     "network_to": [
       "pacific-1",
+      "centauri-1"
+    ]
+  },
+  "ethereum": {
+    "name": "Ethereum",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
+    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
+    "rest": "",
+    "chainType": "ethereum",
+    "chainId": "ethereum",
+    "feeAssetId": "ETH",
+    "enabled": true,
+    "network_to": [
       "centauri-1"
     ]
   },
