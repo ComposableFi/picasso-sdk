@@ -23,5 +23,12 @@ export declare const convertCosmosAddress: (address: string, newPrefix: string) 
 /**@description When it comes to Cosmos network, coinType should be 114 to use this converter*/
 export declare const convertAddressToStr: (address: string, fromChainId: string) => string;
 export declare const createForwardPathRecursive: (ibcPath: Hop[], index?: number, timeout?: number) => any;
+export declare const getSourceChannel: (fromChainId: string, toChainId: string) => string;
+export declare const getXcmInfo: (fromChainId: string, toChainId: string) => {
+    type: "XCM";
+    xcmType: string;
+    version: string;
+    tokens: string[];
+};
 export {};
 //# sourceMappingURL=utils.d.ts.map

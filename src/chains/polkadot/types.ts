@@ -19,3 +19,28 @@ export type TransferTxStatus =
   | 'timeout'
   | 'success'
   | 'error';
+
+export const ChainHops = ['CosmosIbc', 'SubstrateIbc', 'SubstrateXcm'] as const;
+export type ChainHop = (typeof ChainHops)[number];
+
+export interface RouteDetail {
+  chainId?: number;
+  order?: number;
+  channelId?: number;
+  timestamp?: number;
+  height?: number;
+  retries?: number;
+  timeout?: number;
+  chainHop: ChainHop;
+  paraId?: string | null;
+  address?: string;
+}
+
+export interface MultihopRoutePath {
+  from: string;
+  to: string;
+  // paraChain?: NetworkType | '';
+  paraChain?: string | '';
+  index?: number;
+  paths: RouteDetail[];
+}

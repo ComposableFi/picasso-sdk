@@ -43,86 +43,6 @@ exports.coinGecko = [
         "id": "liquid-staking-crescent"
     },
     {
-        "name": "ETH",
-        "id": "ethereum"
-    },
-    {
-        "name": "DAI",
-        "id": "dai"
-    },
-    {
-        "name": "FXS",
-        "id": "frax-share"
-    },
-    {
-        "name": "sFRAX",
-        "id": "staked-frax"
-    },
-    {
-        "name": "sfrxETH",
-        "id": "staked-frax-ether"
-    },
-    {
-        "name": "ENA",
-        "id": "ethena"
-    },
-    {
-        "name": "FRAX",
-        "id": "frax"
-    },
-    {
-        "name": "frxETH",
-        "id": "frax-ether"
-    },
-    {
-        "name": "wBTC",
-        "id": "wrapped-bitcoin"
-    },
-    {
-        "name": "stETH",
-        "id": "lido-staked-ether"
-    },
-    {
-        "name": "rETH",
-        "id": "rocket-pool-eth"
-    },
-    {
-        "name": "crvUSD",
-        "id": "crvusd"
-    },
-    {
-        "name": "pxETH",
-        "id": "dinero-staked-eth"
-    },
-    {
-        "name": "eETH",
-        "id": "ether-fi-staked-eth"
-    },
-    {
-        "name": "SILK",
-        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
-    },
-    {
-        "name": "ezETH",
-        "id": "renzo-restaked-eth"
-    },
-    {
-        "name": "USDe",
-        "id": "ethena-usde"
-    },
-    {
-        "name": "PEPE",
-        "id": "pepe"
-    },
-    {
-        "name": "USDT Ethereum",
-        "id": "tether"
-    },
-    {
-        "name": "CRV",
-        "id": "curve-dao-token"
-    },
-    {
         "name": "INJ",
         "id": "injective-protocol"
     },
@@ -261,6 +181,86 @@ exports.coinGecko = [
     {
         "name": "milkTIA",
         "id": "milkyway-staked-tia"
+    },
+    {
+        "name": "ETH",
+        "id": "ethereum"
+    },
+    {
+        "name": "DAI",
+        "id": "dai"
+    },
+    {
+        "name": "FXS",
+        "id": "frax-share"
+    },
+    {
+        "name": "sFRAX",
+        "id": "staked-frax"
+    },
+    {
+        "name": "sfrxETH",
+        "id": "staked-frax-ether"
+    },
+    {
+        "name": "ENA",
+        "id": "ethena"
+    },
+    {
+        "name": "FRAX",
+        "id": "frax"
+    },
+    {
+        "name": "frxETH",
+        "id": "frax-ether"
+    },
+    {
+        "name": "wBTC",
+        "id": "wrapped-bitcoin"
+    },
+    {
+        "name": "stETH",
+        "id": "lido-staked-ether"
+    },
+    {
+        "name": "rETH",
+        "id": "rocket-pool-eth"
+    },
+    {
+        "name": "crvUSD",
+        "id": "crvusd"
+    },
+    {
+        "name": "pxETH",
+        "id": "dinero-staked-eth"
+    },
+    {
+        "name": "eETH",
+        "id": "ether-fi-staked-eth"
+    },
+    {
+        "name": "SILK",
+        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    },
+    {
+        "name": "ezETH",
+        "id": "renzo-restaked-eth"
+    },
+    {
+        "name": "USDe",
+        "id": "ethena-usde"
+    },
+    {
+        "name": "PEPE",
+        "id": "pepe"
+    },
+    {
+        "name": "USDT Ethereum",
+        "id": "tether"
+    },
+    {
+        "name": "CRV",
+        "id": "curve-dao-token"
     },
     {
         "name": "SOL",

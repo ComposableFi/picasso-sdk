@@ -1,8 +1,7 @@
 import { type ApiPromise } from '@polkadot/api';
 import { type AccountId32 } from '@polkadot/types/interfaces/runtime';
 import { bech32 } from 'bech32';
-
-import { type MultihopRoutePath } from '../cosmos/types';
+import { MultihopRoutePath } from './types';
 
 interface Interior {
   PalletInstance?: number;
@@ -67,7 +66,6 @@ export const buildXcmPalletTransferV1 = (
 export const buildBatchTransfer = (
   fromApi: ApiPromise,
   path: MultihopRoutePath,
-  assetId: string,
   amount: string,
   polkadotAddr: string,
   parachainId: string
@@ -552,7 +550,8 @@ export const buildPolkadotXcmTransferV2 = (
   convertedToAddr: string,
   toChainId: string,
   assetId: string,
-  amount: string
+  amount: string,
+  general_index: string
 ) => {
   const dest = fromApi.createType('XcmVersionedMultiLocation', {
     V2: fromApi.createType('XcmV2MultiLocation', {
@@ -592,10 +591,7 @@ export const buildPolkadotXcmTransferV2 = (
                         PalletInstance: 50,
                       },
                       {
-                        GeneralIndex: fromApi.createType(
-                          'u128',
-                          chainInfo.general_index
-                        ),
+                        GeneralIndex: fromApi.createType('u128', general_index),
                       },
                     ],
                   },
