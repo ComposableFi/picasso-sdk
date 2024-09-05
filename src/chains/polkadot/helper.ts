@@ -106,8 +106,7 @@ export async function setPaymentAsset(
   });
 }
 
-async function getSignAndSendParams(
-  api: ApiPromise,
+export async function getSignAndSendParams(
   accountId: string,
   signer: any
 ): Promise<{
@@ -142,7 +141,6 @@ export async function signAndSend<T extends AnyTuple>({
   const api = await getApi(endpoint);
 
   const { account, signerOption } = await getSignAndSendParams(
-    api,
     accountId,
     signer
   );
@@ -236,3 +234,11 @@ export async function getApi(
     throw ex;
   }
 }
+
+export const getMultiApi = (endpoints: string[]): Promise<ApiPromise[]> => {
+  const promises: Promise<ApiPromise>[] = [];
+  endpoints.forEach((api) => {
+    promises.push(getApi(api));
+  });
+  return Promise.all(endpoints.map((endpoint) => getApi(endpoint)));
+};
