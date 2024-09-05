@@ -551,7 +551,7 @@ export const buildPolkadotXcmTransferV2 = (
   toChainId: string,
   assetId: string,
   amount: string,
-  general_index: string
+  general_index?: string
 ) => {
   const dest = fromApi.createType('XcmVersionedMultiLocation', {
     V2: fromApi.createType('XcmV2MultiLocation', {
@@ -579,7 +579,7 @@ export const buildPolkadotXcmTransferV2 = (
   // Setting up the asset & amount
   const assets = fromApi.createType('XcmVersionedMultiAssets', {
     V2:
-      assetId === '130' //USDT Kusama
+      assetId === '130' && !!general_index //USDT Kusama
         ? [
             {
               id: {

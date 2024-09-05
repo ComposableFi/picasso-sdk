@@ -280,7 +280,7 @@ export async function transferXcm({
           'Native',
           'AccountId32'
         );
-      } else if (fromChainId === 'BIFROST_POLKADOT' && assetId === '33') {
+      } else if (fromChainId === '2030' && assetId === '33') {
         result = buildXTokensTransferV2(
           fromApi,
           convertedToAddr,
@@ -290,7 +290,7 @@ export async function transferXcm({
           'Native',
           'AccountId32'
         );
-      } else if (fromChainId === 'BIFROST_POLKADOT' && assetId === '34') {
+      } else if (fromChainId === '2030' && assetId === '34') {
         result = buildXTokensTransferV2(
           fromApi,
           convertedToAddr,
@@ -300,7 +300,7 @@ export async function transferXcm({
           'VToken2',
           'AccountId32'
         );
-      } else if (toChainId === 'MOONBEAM' || toChainId === 'MOONRIVER') {
+      } else if (toChainId === '2004' || toChainId === '2023') {
         result = buildXTokensTransferV2(
           fromApi,
           convertedToAddr,
@@ -310,7 +310,7 @@ export async function transferXcm({
           'AssetId',
           'AccountKey20'
         );
-      } else if (fromChainId === 'MOONBEAM' || fromChainId === 'MOONRIVER') {
+      } else if (fromChainId === '2004' || fromChainId === '2023') {
         result = buildXTokensMoonbeamTransferV2(
           fromApi,
           convertedToAddr,
@@ -330,7 +330,7 @@ export async function transferXcm({
         );
       }
     } else {
-      if (fromChainId === 'TINKERNET') {
+      if (fromChainId === '2125') {
         result = buildXTokensTransferV3X2(
           fromApi,
           convertedToAddr,
@@ -354,7 +354,8 @@ export async function transferXcm({
         convertedToAddr,
         toChainId,
         assetId,
-        amount
+        amount,
+        fromChainId === '1000' ? '1984' : '' // only for statemine
       );
     } else {
       result = buildPolkadotXcmTransferV3(
