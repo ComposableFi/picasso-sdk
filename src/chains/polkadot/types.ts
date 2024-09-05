@@ -37,8 +37,8 @@ export interface RouteDetail {
 }
 
 export interface MultihopRoutePath {
-  from: string;
-  to: string;
+  fromChainId: string;
+  toChainId: string;
   // paraChain?: NetworkType | '';
   paraChain?: string | '';
   index?: number;

@@ -20,6 +20,7 @@
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "npm version patch && rm -rf ./dist && npm run build && npm publish --access public",
     "generate-helper": "ts-node ./src/scripts/generate-helper.ts",
+    "generate-multihop": "ts-node ./src/scripts/generate-multihop.ts",
     "prepare": "husky install"
   },
   "dependencies": {

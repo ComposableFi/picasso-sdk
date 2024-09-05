@@ -1,0 +1,667 @@
+[
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 5,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 11,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CRESCENT"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 16,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 29,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "INJECTIVE"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "1",
+    "paraChain": "2019",
+    "index": 9,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 1,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "OSMOSIS"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 3,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 18,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "NEUTRON"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "2",
+    "paraChain": "2019",
+    "index": 10,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 7,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 20,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "UMEE"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 17,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 27,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "KUJIRA"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "4",
+    "paraChain": "2019",
+    "index": 13,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "OSMOSIS"
+      },
+      {
+        "chainId": 4,
+        "order": 4,
+        "channelId": 782,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "SEI"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 15,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 13,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "AGORIC"
+      }
+    ]
+  },
+  {
+    "fromChainId": "polkadot",
+    "toChainId": "3",
+    "paraChain": "2019",
+    "index": 14,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 14,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "SECRET"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "3",
+    "index": 1,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "PICASSO"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 3,
+        "order": 3,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "OSMOSIS"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "2",
+    "index": 8,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 20,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "UMEE"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "1",
+    "index": 12,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null,
+        "chainName": "COMPOSABLE"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "2",
+    "index": 2,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "OSMOSIS"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "2",
+    "index": 6,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 11,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CRESCENT"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "2",
+    "index": 4,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      },
+      {
+        "chainId": 2,
+        "order": 2,
+        "channelId": 18,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "NEUTRON"
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "1",
+    "index": 11,
+    "paths": [
+      {
+        "chainId": 1,
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null,
+        "chainName": "CENTAURI"
+      }
+    ]
+  }
+]

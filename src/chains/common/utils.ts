@@ -233,3 +233,47 @@ export const getSourceChannel = (fromChainId: string, toChainId: string) => {
 export const getXcmInfo = (fromChainId: string, toChainId: string) => {
   return networks?.[fromChainId]?.polkadot?.hops?.[toChainId];
 };
+
+// export const getBatchPath = () => {
+//   const found = polkadotRoute(origin, destination);
+//   if (!found) return;
+//   const route = {
+//     ...found,
+//     paths: found.paths?.map((p) => {
+//       return {
+//         ...p,
+//         address:
+//           toWallet !== ''
+//             ? // if we have toWallet, normal multihop checking
+//               getAddressFromNetwork(
+//                 p.chainName,
+//                 pickMultihopWalletByHandler(
+//                   fromWallet,
+//                   toWallet,
+//                   config.networks[p.chainName].handler
+//                 )
+//               )
+//             : // else, if we have toAddres, check if the next hop is from or to
+//               toAddress !== undefined &&
+//                 pickMultihopWalletByHandlerToAddress(
+//                   fromWallet,
+//                   config.networks[p.chainName].handler,
+//                   toAddress
+//                 ) === 'toAddress'
+//               ? // is toAddress, we need to generate the address for the chain
+//                 getConvertedAddress({
+//                   address: toAddress,
+//                   network: p.chainName,
+//                 })
+//               : // is fromWallet
+//                 getAddressFromNetwork(p.chainName, fromWallet),
+
+//         // getAddressFromNetwork(
+//         // 	p.chainName,
+//         // 	// TODO: CHECK THIS
+//         // 	pickMultihopWalletByHandler(fromWallet, toWallet, config.networks[p.chainName].handler)
+//         // )
+//       };
+//     }),
+//   };
+// };

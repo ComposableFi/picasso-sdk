@@ -19,6 +19,9 @@ import {
   polkadotApiRpc,
   polkadotApiTypes,
 } from './api-scheme';
+import { MultihopRoutePath, RouteDetail } from './types';
+import { networks } from '../../config';
+import { hexToString } from '@polkadot/util';
 
 export type OnFailedTxHandler = (
   result: ISubmittableResult,
@@ -43,21 +46,6 @@ export function getSubAccount(api: ApiPromise, poolId: string): string {
     new Uint8Array(32 - accountIdu8a.length).fill(0)
   );
   return api.createType('AccountId32', poolAccount).toString();
-}
-
-export async function getAssetBalance(
-  api: ApiPromise,
-  assetId: string,
-  poolId: string
-): Promise<string> {
-  const convertedAssetId = api.createType('CustomRpcCurrencyId', assetId);
-  const ownerWalletAddress = getSubAccount(api, poolId);
-  const accountId32 = api.createType('AccountId32', ownerWalletAddress);
-  const balance = await api.rpc.assets.balanceOf(
-    convertedAssetId as any,
-    accountId32 as AccountId32
-  );
-  return balance.toJSON();
 }
 
 export async function getPaymentAsset({
@@ -293,4 +281,60 @@ export const makeIbcToPolkadot = ({
     api.createType('u128', amount),
     api.createType('Text', memo)
   );
+};
+
+export const getMultihopPath = async (
+  fromChainId: string,
+  networkType: '2019' | '2087' // composable |picasso
+): Promise<MultihopRoutePath[]> => {
+  const {
+    rpc: fromRpc,
+    polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
+  } = networks[fromChainId];
+
+  const {
+    rpc: rpc,
+    polkadot: { ss58Format: ss58Format, isParachain: isParachain },
+  } = networks[networkType];
+
+  const api = await getApi(rpc);
+  const result =
+    await api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries();
+  return result.map((p) => {
+    const paths = JSON.parse(JSON.stringify(p[1])).map((path) => {
+      return {
+        ...path[0],
+        chainName: path[1].startsWith('0x')
+          ? chainNameMap[hexToString(path[1])]
+          : path[1],
+      };
+    }) as unknown as RouteDetail[];
+    const to = paths[paths.length - 1].chainId || 'NONE';
+    const route = {
+      fromChainId: fromChainId, // Join the characters into a string.
+      toChainId: to.toString(),
+      paraChain: fromChainId === 'kusama' ? undefined : networkType,
+      index: p[0][48], // currently p[0] is array of numbers - the 48th digit represents the actual index. but on the polkadot.js UI, this field is a simple integer.
+      paths,
+    };
+    return route;
+  });
+};
+// for batching tx - inside of route there's a chain name. need to match it with networkType
+const chainNameMap = {
+  polkadot: 'POLKADOT',
+  picasso: 'PICASSO',
+  composable: 'COMPOSABLE',
+  centauri: 'CENTAURI',
+  osmo: 'OSMOSIS',
+  cre: 'CRESCENT',
+  neutron: 'NEUTRON',
+  kujira: 'KUJIRA',
+  celestia: 'CELESTRIA',
+  umee: 'UMEE',
+  sei: 'SEI',
+  secret: 'SECRET',
+  quicksilver: 'QUICKSILVER',
+  inj: 'INJECTIVE',
+  agoric: 'AGORIC',
 };
