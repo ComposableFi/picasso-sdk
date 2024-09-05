@@ -242,3 +242,55 @@ export const getMultiApi = (endpoints: string[]): Promise<ApiPromise[]> => {
   });
   return Promise.all(endpoints.map((endpoint) => getApi(endpoint)));
 };
+
+export const getDefaultTxHeight = (height: number, extra: number = 100) => {
+  return height + extra;
+};
+export const makeIbcToPolkadot = ({
+  api,
+  toAddress,
+  sourceChannel,
+  assetId,
+  amount,
+  defaultHeight,
+  memo = '',
+}: {
+  api: ApiPromise;
+  toAddress: string;
+  sourceChannel: number;
+  assetId: string;
+  amount: string;
+  defaultHeight: number;
+  memo: string;
+}) => {
+  if (memo === '') {
+    return api.tx.ibc.transfer(
+      api.createType('PalletIbcTransferParams', {
+        to: { id: api.createType('AccountId32', toAddress) },
+        sourceChannel: api.createType('u64', sourceChannel),
+        timeout: {
+          absolute: {
+            height: api.createType('u64', defaultHeight),
+          },
+        },
+      }),
+      api.createType('u128', assetId),
+      api.createType('u128', amount),
+      undefined
+    );
+  }
+  return api.tx.ibc.transfer(
+    api.createType('PalletIbcTransferParams', {
+      to: { id: api.createType('AccountId32', toAddress) },
+      sourceChannel: api.createType('u64', sourceChannel),
+      timeout: {
+        absolute: {
+          height: api.createType('u64', defaultHeight),
+        },
+      },
+    }),
+    api.createType('u128', assetId),
+    api.createType('u128', amount),
+    api.createType('Text', memo)
+  );
+};

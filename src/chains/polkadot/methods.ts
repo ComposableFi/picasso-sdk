@@ -14,10 +14,17 @@ import {
 
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { type SubmittableExtrinsic } from '@polkadot/api-base/types';
-import { getMultiApi, getSignAndSendParams } from './helper';
-import { TransferStatusByAddress } from './types';
-import { NetworkInfo, networks } from '../../config';
+import {
+  getDefaultTxHeight,
+  getMultiApi,
+  getSignAndSendParams,
+  makeIbcToPolkadot,
+} from './helper';
+import { networks } from '../../config';
 import { IEvent, AnyTuple } from '@polkadot/types/types';
+import { TransferStatusByAddress } from './types';
+import { getSourceChannel, getXcmInfo } from '../common';
+// import { makeIbcToCosmos, makeIbcToPolkadot, getDefaultTxHeight } from './ibc';
 
 async function signAndSendTransfer<T extends AnyTuple>({
   api,
@@ -189,9 +196,6 @@ export async function transferXcm({
   toAddress,
   amount,
   assetId,
-  isParachain,
-  xcmType,
-  version,
   signer,
 }: {
   fromChainId: string;
@@ -200,22 +204,22 @@ export async function transferXcm({
   toAddress: string;
   amount: string;
   assetId: string;
-  isParachain: boolean;
-  xcmType: string;
-  version: string;
+
   signer: any;
 }): Promise<TransferStatusByAddress> {
   const {
     rpc: fromRpc,
-    polkadot: { ss58Format: fromSs58Format },
+    polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
   } = networks[fromChainId];
 
   const {
     rpc: toRpc,
-    polkadot: { ss58Format: toSs58Format },
+    polkadot: { ss58Format: toSs58Format, isParachain: isToParachain },
   } = networks[toChainId];
-  // Fetch the relevant APIs for the networks
+
+  //get XCM infos
   const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
+  const { xcmType, version } = getXcmInfo(fromChainId, toChainId);
 
   const ethreumlish = ['2004', '2023'];
   // Get network configurations
@@ -387,7 +391,135 @@ export async function transferXcm({
     toAddress: convertedToAddr,
     extrinsic: result(),
     isIbc: false,
-    filter: isParachain ? null : fromApi.events.xcmPallet.Attempted.is,
+    filter: isFromParachain ? null : fromApi.events.xcmPallet.Attempted.is,
     signer,
   });
 }
+
+export async function transferIbc(
+  {
+    fromChainId,
+    toChainId,
+    fromAddress,
+    toAddress,
+    amount,
+    assetId,
+    signer,
+
+    memo,
+  }: {
+    fromChainId: string;
+    toChainId: string;
+    fromAddress: string;
+    toAddress: string;
+    amount: string;
+    assetId: string;
+
+    signer: any;
+
+    memo: string;
+  }
+
+  // networkFrom: NetworkType,
+  // networkTo: NetworkType,
+  // fromAddress: string,
+  // toAddress: string,
+  // amount: string,
+  // assetId: string,
+  // feeAmount: string,
+  // gas: string,
+  // transferMedium: TransferApi | undefined,
+  // memo: string,
+  // config: any,
+): Promise<TransferStatusByAddress> {
+  const sourceChannel = getSourceChannel(fromChainId, toChainId);
+
+  if (!assetId || !sourceChannel) return;
+  const {
+    rpc: fromRpc,
+    polkadot: { ss58Format: fromSs58Format },
+  } = networks[fromChainId];
+
+  const {
+    rpc: toRpc,
+    polkadot: { ss58Format: toSs58Format },
+  } = networks[toChainId];
+
+  // Fetch the relevant APIs for the networks
+  const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
+
+  // Convert the fromAddress using the correct ss58 format for the networkFrom
+  const convertedFromAddr = encodeAddress(
+    decodeAddress(fromAddress),
+    fromSs58Format
+  );
+
+  let convertedToAddr = '';
+  let extrinsic: SubmittableExtrinsic<'promise'>;
+
+  convertedToAddr = encodeAddress(decodeAddress(toAddress), toSs58Format);
+
+  const height = Number(await (toApi || fromApi).query.system.number());
+  const defaultHeight = getDefaultTxHeight(height);
+  extrinsic = makeIbcToPolkadot({
+    api: fromApi,
+    toAddress: convertedToAddr,
+    sourceChannel: Number(sourceChannel),
+    assetId,
+    amount,
+    defaultHeight,
+    memo,
+  });
+  return await signAndSendTransfer({
+    api: fromApi,
+    apiTo: toApi,
+    fromAddress: convertedFromAddr,
+    toAddress: convertedToAddr,
+    extrinsic,
+    isIbc: true,
+    filter: null,
+    signer,
+  });
+}
+
+export const polkadotTransfer = async ({
+  fromChainId,
+  toChainId,
+  fromAddress,
+  toAddress,
+  amount,
+  assetId,
+  signer,
+  memo,
+}: {
+  fromChainId: string;
+  toChainId: string;
+  fromAddress: string;
+  toAddress: string;
+  amount: string;
+  assetId: string;
+  xcmType: string;
+  signer: any;
+  memo: string;
+}) => {
+  if (getXcmInfo(fromChainId, toChainId).type === 'XCM')
+    return transferXcm({
+      fromChainId,
+      toChainId,
+      fromAddress,
+      toAddress,
+      amount,
+      assetId,
+      signer,
+    });
+  return transferIbc({
+    fromChainId,
+    toChainId,
+    fromAddress,
+    toAddress,
+    amount,
+    assetId,
+    signer,
+    memo,
+  });
+};

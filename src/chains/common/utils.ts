@@ -123,13 +123,7 @@ export const getSupportedType = (
   toChainId: string
 ): TransferType | undefined => {
   if (fromChainId === toChainId || !fromChainId || !toChainId) return;
-  if (
-    tokensPerChannel?.[fromChainId] &&
-    Object.values(tokensPerChannel?.[fromChainId]).find(
-      (item) => item?.chainId === toChainId
-    )
-  )
-    return 'channel';
+  if (getSourceChannel(fromChainId, toChainId)) return 'channel';
 
   //XCM tx
   if (
@@ -230,12 +224,12 @@ export const createForwardPathRecursive = (
   };
 };
 
-// 예시 데이터
-const ibcPath = [
-  { chainId: 'osmosis-1', channelId: 1279 },
-  { chainId: 'centauri-1', channelId: 52 },
-];
-
-// 실행 예시
-const result = createForwardPathRecursive(ibcPath, 0);
-console.log(JSON.stringify({ forward: result }, null, 2));
+export const getSourceChannel = (fromChainId: string, toChainId: string) => {
+  if (tokensPerChannel?.[fromChainId])
+    return Object.keys(tokensPerChannel?.[fromChainId]).find(
+      (key) => tokensPerChannel?.[fromChainId][key]?.chainId === toChainId
+    );
+};
+export const getXcmInfo = (fromChainId: string, toChainId: string) => {
+  return networks?.[fromChainId]?.polkadot?.hops?.[toChainId];
+};
