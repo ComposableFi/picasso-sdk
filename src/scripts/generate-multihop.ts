@@ -1,7 +1,10 @@
 import { getMultihopPath } from '../chains/polkadot';
-
-const axios = require('axios');
+import path from 'path';
 const fs = require('fs');
+const multihopRouteFilePath = path.join(
+  __dirname,
+  '../config/multihopRoute.ts'
+);
 
 const fetchMultihopPaths = async () => {
   try {
@@ -10,10 +13,22 @@ const fetchMultihopPaths = async () => {
 
     const result = polkadotComposable.concat(kusamaPicasso);
 
-    // JSON 파일로 저장
-    fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
+    const multihopOutputContent = `
+    // [GENERATED]
+  import { MultihopRoutePath } from "../chains/polkadot/types";
 
-    console.log('Data saved to result.json');
+    
+    export const multihopRoute :MultihopRoutePath[]= ${JSON.stringify(result, null, 2)} ;
+    
+    `;
+
+    fs.writeFileSync(multihopRouteFilePath, multihopOutputContent, 'utf-8');
+
+    // save as tsfile
+    // fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
+
+    process.exit(0);
+    return;
   } catch (error) {
     console.error('Error fetching multihop paths:', error);
   }

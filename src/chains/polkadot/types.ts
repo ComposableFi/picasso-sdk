@@ -24,7 +24,7 @@ export const ChainHops = ['CosmosIbc', 'SubstrateIbc', 'SubstrateXcm'] as const;
 export type ChainHop = (typeof ChainHops)[number];
 
 export interface RouteDetail {
-  chainId?: number;
+  chainId?: string;
   order?: number;
   channelId?: number;
   timestamp?: number;

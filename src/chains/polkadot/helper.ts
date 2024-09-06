@@ -287,15 +287,7 @@ export const getMultihopPath = async (
   fromChainId: string,
   networkType: '2019' | '2087' // composable |picasso
 ): Promise<MultihopRoutePath[]> => {
-  const {
-    rpc: fromRpc,
-    polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
-  } = networks[fromChainId];
-
-  const {
-    rpc: rpc,
-    polkadot: { ss58Format: ss58Format, isParachain: isParachain },
-  } = networks[networkType];
+  const { rpc: rpc } = networks[networkType];
 
   const api = await getApi(rpc);
   const result =
@@ -304,7 +296,7 @@ export const getMultihopPath = async (
     const paths = JSON.parse(JSON.stringify(p[1])).map((path) => {
       return {
         ...path[0],
-        chainName: path[1].startsWith('0x')
+        chainId: path[1].startsWith('0x')
           ? chainNameMap[hexToString(path[1])]
           : path[1],
       };
@@ -322,19 +314,19 @@ export const getMultihopPath = async (
 };
 // for batching tx - inside of route there's a chain name. need to match it with networkType
 const chainNameMap = {
-  polkadot: 'POLKADOT',
-  picasso: 'PICASSO',
-  composable: 'COMPOSABLE',
-  centauri: 'CENTAURI',
-  osmo: 'OSMOSIS',
-  cre: 'CRESCENT',
-  neutron: 'NEUTRON',
-  kujira: 'KUJIRA',
-  celestia: 'CELESTRIA',
-  umee: 'UMEE',
-  sei: 'SEI',
-  secret: 'SECRET',
-  quicksilver: 'QUICKSILVER',
-  inj: 'INJECTIVE',
-  agoric: 'AGORIC',
+  polkadot: 'polkadot',
+  picasso: '2087',
+  composable: '2019',
+  centauri: 'centauri-1',
+  osmo: 'osmosis-1',
+  cre: 'crescent-1',
+  neutron: 'neutron-1',
+  kujira: 'kaiyo-1',
+  celestia: 'celestia',
+  umee: 'umee-1',
+  sei: 'pacific-1',
+  secret: 'secret-4',
+  quicksilver: 'quicksilver-2',
+  inj: 'injective-1',
+  agoric: 'agoric-3',
 };

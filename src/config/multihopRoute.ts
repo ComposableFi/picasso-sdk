@@ -1,4 +1,9 @@
-[
+
+    // [GENERATED]
+  import { MultihopRoutePath } from "../chains/polkadot/types";
+
+    
+    export const multihopRoute :MultihopRoutePath[]= [
   {
     "fromChainId": "polkadot",
     "toChainId": "crescent-1",
@@ -620,4 +625,6 @@
       }
     ]
   }
-]
+] ;
+    
+    
