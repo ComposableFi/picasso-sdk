@@ -47,7 +47,7 @@ var buildXcmPalletTransferV1 = function (fromApi, chainInfo, convertedToAddr, am
     };
 };
 exports.buildXcmPalletTransferV1 = buildXcmPalletTransferV1;
-var buildBatchTransfer = function (fromApi, path, assetId, amount, polkadotAddr, parachainId) {
+var buildBatchTransfer = function (fromApi, path, amount, polkadotAddr, parachainId) {
     var dest = fromApi.createType('XcmVersionedLocation', {
         V2: {
             parents: 0,
@@ -431,7 +431,7 @@ var buildXcmLimitedReserveTransferV2 = function (fromApi, convertedToAddr, toCha
     };
 };
 exports.buildXcmLimitedReserveTransferV2 = buildXcmLimitedReserveTransferV2;
-var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, assetId, amount) {
+var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, assetId, amount, general_index) {
     var dest = fromApi.createType('XcmVersionedMultiLocation', {
         V2: fromApi.createType('XcmV2MultiLocation', {
             parents: 1,
@@ -457,7 +457,7 @@ var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, 
     });
     // Setting up the asset & amount
     var assets = fromApi.createType('XcmVersionedMultiAssets', {
-        V2: assetId === '130' //USDT Kusama
+        V2: assetId === '130' && !!general_index //USDT Kusama
             ? [
                 {
                     id: {
@@ -469,7 +469,7 @@ var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, 
                                         PalletInstance: 50,
                                     },
                                     {
-                                        GeneralIndex: fromApi.createType('u128', chainInfo.general_index),
+                                        GeneralIndex: fromApi.createType('u128', general_index),
                                     },
                                 ],
                             },

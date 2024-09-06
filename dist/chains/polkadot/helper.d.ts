@@ -3,9 +3,9 @@ import { type AddressOrPair, type SubmittableExtrinsic } from '@polkadot/api-bas
 import { ApiOptions } from '@polkadot/api/types';
 import { type AnyTuple, type IEvent, type ISubmittableResult } from '@polkadot/types/types';
 import Big from 'big.js';
+import { MultihopRoutePath } from './types';
 export type OnFailedTxHandler = (result: ISubmittableResult, errorMessage?: string) => void;
 export declare function getSubAccount(api: ApiPromise, poolId: string): string;
-export declare function getAssetBalance(api: ApiPromise, assetId: string, poolId: string): Promise<string>;
 export declare function getPaymentAsset({ endpoint, accountId, }: {
     endpoint: string;
     accountId: string;
@@ -43,4 +43,5 @@ export declare const makeIbcToPolkadot: ({ api, toAddress, sourceChannel, assetI
     defaultHeight: number;
     memo: string;
 }) => SubmittableExtrinsic<"promise", ISubmittableResult>;
+export declare const getMultihopPath: (fromChainId: string, networkType: "2019" | "2087") => Promise<MultihopRoutePath[]>;
 //# sourceMappingURL=helper.d.ts.map

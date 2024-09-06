@@ -261,16 +261,16 @@ function transferXcm(_a) {
                                 fromChainId === '2001') {
                                 result = (0, type_builder_1.buildXTokensTransferV2)(fromApi, convertedToAddr, assetId, amount, toChainId, 'Native', 'AccountId32');
                             }
-                            else if (fromChainId === 'BIFROST_POLKADOT' && assetId === '33') {
+                            else if (fromChainId === '2030' && assetId === '33') {
                                 result = (0, type_builder_1.buildXTokensTransferV2)(fromApi, convertedToAddr, assetId, amount, toChainId, 'Native', 'AccountId32');
                             }
-                            else if (fromChainId === 'BIFROST_POLKADOT' && assetId === '34') {
+                            else if (fromChainId === '2030' && assetId === '34') {
                                 result = (0, type_builder_1.buildXTokensTransferV2)(fromApi, convertedToAddr, '0', amount, toChainId, 'VToken2', 'AccountId32');
                             }
-                            else if (toChainId === 'MOONBEAM' || toChainId === 'MOONRIVER') {
+                            else if (toChainId === '2004' || toChainId === '2023') {
                                 result = (0, type_builder_1.buildXTokensTransferV2)(fromApi, convertedToAddr, assetId, amount, toChainId, 'AssetId', 'AccountKey20');
                             }
-                            else if (fromChainId === 'MOONBEAM' || fromChainId === 'MOONRIVER') {
+                            else if (fromChainId === '2004' || fromChainId === '2023') {
                                 result = (0, type_builder_1.buildXTokensMoonbeamTransferV2)(fromApi, convertedToAddr, assetId, amount, toChainId);
                             }
                             else {
@@ -278,7 +278,7 @@ function transferXcm(_a) {
                             }
                         }
                         else {
-                            if (fromChainId === 'TINKERNET') {
+                            if (fromChainId === '2125') {
                                 result = (0, type_builder_1.buildXTokensTransferV3X2)(fromApi, convertedToAddr, '0', amount, toChainId);
                             }
                             else {
@@ -288,7 +288,8 @@ function transferXcm(_a) {
                     }
                     else if (xcmType === 'polkadotXcm.limitedReserveTransferAssets') {
                         if (version === 'V2') {
-                            result = (0, type_builder_1.buildPolkadotXcmTransferV2)(fromApi, convertedToAddr, toChainId, assetId, amount);
+                            result = (0, type_builder_1.buildPolkadotXcmTransferV2)(fromApi, convertedToAddr, toChainId, assetId, amount, fromChainId === '1000' ? '1984' : '' // only for statemine
+                            );
                         }
                         else {
                             result = (0, type_builder_1.buildPolkadotXcmTransferV3)(fromApi, convertedToAddr, toChainId, amount);

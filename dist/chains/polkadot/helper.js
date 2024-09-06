@@ -50,9 +50,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = void 0;
+exports.getMultihopPath = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = void 0;
 exports.getSubAccount = getSubAccount;
-exports.getAssetBalance = getAssetBalance;
 exports.getPaymentAsset = getPaymentAsset;
 exports.setPaymentAsset = setPaymentAsset;
 exports.getSignAndSendParams = getSignAndSendParams;
@@ -62,6 +61,8 @@ exports.getApi = getApi;
 var api_1 = require("@polkadot/api");
 var big_js_1 = __importDefault(require("big.js"));
 var api_scheme_1 = require("./api-scheme");
+var config_1 = require("../../config");
+var util_1 = require("@polkadot/util");
 function checkWalletIdForSigning(accountId) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -79,23 +80,6 @@ function getSubAccount(api, poolId) {
     var accountIdu8a = poolAccountId.toU8a();
     var poolAccount = (0, api_scheme_1.concatU8a)(accountIdu8a, new Uint8Array(32 - accountIdu8a.length).fill(0));
     return api.createType('AccountId32', poolAccount).toString();
-}
-function getAssetBalance(api, assetId, poolId) {
-    return __awaiter(this, void 0, void 0, function () {
-        var convertedAssetId, ownerWalletAddress, accountId32, balance;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    convertedAssetId = api.createType('CustomRpcCurrencyId', assetId);
-                    ownerWalletAddress = getSubAccount(api, poolId);
-                    accountId32 = api.createType('AccountId32', ownerWalletAddress);
-                    return [4 /*yield*/, api.rpc.assets.balanceOf(convertedAssetId, accountId32)];
-                case 1:
-                    balance = _a.sent();
-                    return [2 /*return*/, balance.toJSON()];
-            }
-        });
-    });
 }
 function getPaymentAsset(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
@@ -311,3 +295,54 @@ var makeIbcToPolkadot = function (_a) {
     }), api.createType('u128', assetId), api.createType('u128', amount), api.createType('Text', memo));
 };
 exports.makeIbcToPolkadot = makeIbcToPolkadot;
+var getMultihopPath = function (fromChainId, networkType // composable |picasso
+) { return __awaiter(void 0, void 0, void 0, function () {
+    var rpc, api, result;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                rpc = config_1.networks[networkType].rpc;
+                return [4 /*yield*/, getApi(rpc)];
+            case 1:
+                api = _a.sent();
+                return [4 /*yield*/, api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries()];
+            case 2:
+                result = _a.sent();
+                return [2 /*return*/, result.map(function (p) {
+                        var paths = JSON.parse(JSON.stringify(p[1])).map(function (path) {
+                            return __assign(__assign({}, path[0]), { chainId: path[1].startsWith('0x')
+                                    ? chainNameMap[(0, util_1.hexToString)(path[1])]
+                                    : path[1] });
+                        });
+                        var to = paths[paths.length - 1].chainId || 'NONE';
+                        var route = {
+                            fromChainId: fromChainId, // Join the characters into a string.
+                            toChainId: to.toString(),
+                            paraChain: fromChainId === 'kusama' ? undefined : networkType,
+                            index: p[0][48], // currently p[0] is array of numbers - the 48th digit represents the actual index. but on the polkadot.js UI, this field is a simple integer.
+                            paths: paths,
+                        };
+                        return route;
+                    })];
+        }
+    });
+}); };
+exports.getMultihopPath = getMultihopPath;
+// for batching tx - inside of route there's a chain name. need to match it with networkType
+var chainNameMap = {
+    polkadot: 'polkadot',
+    picasso: '2087',
+    composable: '2019',
+    centauri: 'centauri-1',
+    osmo: 'osmosis-1',
+    cre: 'crescent-1',
+    neutron: 'neutron-1',
+    kujira: 'kaiyo-1',
+    celestia: 'celestia',
+    umee: 'umee-1',
+    sei: 'pacific-1',
+    secret: 'secret-4',
+    quicksilver: 'quicksilver-2',
+    inj: 'injective-1',
+    agoric: 'agoric-3',
+};
