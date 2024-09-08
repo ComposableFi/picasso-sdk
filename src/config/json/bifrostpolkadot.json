@@ -25,6 +25,8 @@
   "currencies": [
     {
       "coinDenom": "BNC_DOT",
+      "isCoin": true,
+
       "coinDecimals": 12,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
       "coinGeckoId": "bifrost-native-coin",
@@ -46,15 +48,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "BNC_DOT",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": ""
     }
   ]
 }

@@ -26,20 +26,13 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
       "coinGeckoId": "tinkernet",
       "cosmos": {},
+      "isCoin": true,
+
       "polkadot": {
         "picassoAssetId": "2125"
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "TNKR",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/TNKR.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "tinkernet"
     }
   ]
 }

@@ -28,16 +28,8 @@
       "cosmos": {},
       "polkadot": {},
       "ethereum": {},
-      "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "astar"
+      "solana": {},
+      "isCoin": false
     }
   ]
 }

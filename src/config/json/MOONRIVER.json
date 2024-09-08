@@ -23,6 +23,7 @@
     {
       "coinDenom": "MOVR",
       "coinDecimals": 18,
+      "isCoin": true,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
       "coinGeckoId": "moonriver",
       "cosmos": {},
@@ -31,15 +32,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "MOVR",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "moonriver"
     }
   ]
 }

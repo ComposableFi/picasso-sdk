@@ -24,9 +24,7 @@
     "12": {
       "chainId": "centauri-1",
       "destinationId": 38,
-      "tokens": [
-        "TIA"
-      ]
+      "tokens": ["TIA"]
     }
   },
   "currencies": [
@@ -35,29 +33,20 @@
       "coinDenom": "TIA",
       "coinGeckoId": "celestia",
       "coinMinimalDenom": "utia",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-      "cosmos": {
-        "minimalDenom": "utia"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDecimals": 6,
-      "coinDenom": "TIA",
-      "coinGeckoId": "celestia",
-      "coinMinimalDenom": "utia",
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
       "cosmos": {
         "gasPriceStep": {
           "low": 0.01,
           "average": 0.02,
           "high": 0.1
-        }
-      }
+        },
+        "minimalDenom": "utia"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
     }
   ]
 }

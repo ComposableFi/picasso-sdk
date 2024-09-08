@@ -197,11 +197,18 @@
     {
       "coinDenom": "PICA",
       "coinMinimalDenom": "ppica",
+      "isCoin": true,
+
       "coinDecimals": 12,
       "coinGeckoId": "picasso",
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
 
       "cosmos": {
+        "gasPriceStep": {
+          "low": 0,
+          "average": 0,
+          "high": 0
+        },
         "minimalDenom": "ppica"
       },
       "polkadot": {
@@ -219,21 +226,6 @@
         "minimumTransfer": 4000,
         "fromCosmosFee": 0,
         "displayDecimals": 9
-      }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "PICA",
-      "coinMinimalDenom": "ppica",
-      "coinDecimals": 12,
-      "coinGeckoId": "unknown",
-      "cosmos": {
-        "gasPriceStep": {
-          "low": 0,
-          "average": 0,
-          "high": 0
-        }
       }
     }
   ]

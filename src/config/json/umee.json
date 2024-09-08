@@ -25,9 +25,7 @@
     "99": {
       "chainId": "centauri-1",
       "destinationId": 20,
-      "tokens": [
-        "UMEE"
-      ]
+      "tokens": ["UMEE"]
     }
   },
   "currencies": [
@@ -36,29 +34,20 @@
       "coinMinimalDenom": "uumee",
       "coinDecimals": 6,
       "coinGeckoId": "umee",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
-      "cosmos": {
-        "minimalDenom": "uumee"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "UMEE",
-      "coinMinimalDenom": "uumee",
-      "coinDecimals": 6,
-      "coinGeckoId": "umee",
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
       "cosmos": {
         "gasPriceStep": {
           "low": 0.06,
           "average": 0.1,
           "high": 0.14
-        }
-      }
+        },
+        "minimalDenom": "uumee"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
     }
   ]
 }

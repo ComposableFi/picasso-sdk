@@ -185,6 +185,8 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
       "coinGeckoId": "picasso",
       "cosmos": {},
+      "isCoin": true,
+
       "polkadot": {
         "picassoAssetId": "1",
         "composableAssetId": "",
@@ -321,8 +323,8 @@
       "coinGeckoId": "astar",
       "cosmos": {},
       "polkadot": {
-        "picassoAssetId": "2006",
-        "composableAssetId": "",
+        "composableAssetId": "79228162514264337593543952342",
+        "picassoAssetId": "33",
         "ratio": { "n": "4713901", "d": "1" },
         "existentialDeposit": "4700000000000000"
       },
@@ -704,18 +706,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "PICA",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-      "coinMinimalDenom": "",
-      "polkadot": {
-        "picassoAssetId": "1"
-      },
-      "coinGeckoId": "picasso"
     }
   ]
 }

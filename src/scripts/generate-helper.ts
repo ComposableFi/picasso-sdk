@@ -11,6 +11,17 @@ import {
   TokenPerChannel,
 } from '../config/types';
 import { buildIbcPath } from '../chains';
+const getFeeAssetId = (data) => {
+  if (data.chainType === 'polkadot') {
+    if (data.polkadot.relayChain === 'kusama')
+      return data.polkadot.picassoAssetId;
+    if (data.polkadot.relayChain === 'polkadot')
+      return data.polkadot.composableAssetId;
+  }
+  if (data.chainType === 'cosmos') return data.cosmos.minimalDenom;
+  if (data.chainType === 'solana') return data.solana.minimalDenom;
+  if (data.chainType === 'ethereum') return data.ethereum.minimalDenom;
+};
 
 const dataDir = path.join(__dirname, '../config/json');
 const ethereumOutputFilePath = path.join(
@@ -70,6 +81,7 @@ const processFiles = () => {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     // generate networks
+    const coin = data.currencies.filter((item) => item.isCoin);
 
     networks[data.chainId] = {
       name: data.chainName || '',
@@ -78,7 +90,7 @@ const processFiles = () => {
       rest: data.rest || '',
       chainType: data.chainType || '',
       chainId: data.chainId || '',
-      feeAssetId: data.feeCurrencies[0]?.coinDenom || '',
+      feeAssetId: getFeeAssetId(data) || '',
       polkadot: data.polkadot || undefined,
       cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
@@ -105,7 +117,7 @@ const processFiles = () => {
           coinMinimalDenom: item.coinMinimalDenom,
         })),
         features: [],
-        feeCurrencies: data.feeCurrencies.map((item) => ({
+        feeCurrencies: coin.map((item) => ({
           coinDecimals: item.coinDecimals,
           coinDenom: item.coinDenom,
           coinGeckoId: item.coinGeckoId,
@@ -116,11 +128,11 @@ const processFiles = () => {
         rest: data.rest,
         rpc: data.rpc,
         stakeCurrency: {
-          coinDecimals: data.currencies[0].coinDecimals,
-          coinDenom: data.currencies[0].coinDenom,
-          coinGeckoId: data.currencies[0].coinGeckoId,
-          coinMinimalDenom: data.currencies[0].coinMinimalDenom,
-          coinImageUrl: data.currencies[0].coinImageUrl,
+          coinDecimals: coin.coinDecimals,
+          coinDenom: coin.coinDenom,
+          coinGeckoId: coin.coinGeckoId,
+          coinMinimalDenom: coin.coinMinimalDenom,
+          coinImageUrl: coin.coinImageUrl,
         },
         walletUrlForStaking: data.cosmos.walletUrlForStaking,
       };

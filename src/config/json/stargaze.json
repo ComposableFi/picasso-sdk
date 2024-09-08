@@ -25,9 +25,7 @@
     "184": {
       "chainId": "centauri-1",
       "destinationId": 6,
-      "tokens": [
-        "STARS"
-      ]
+      "tokens": ["STARS"]
     }
   },
   "currencies": [
@@ -35,9 +33,16 @@
       "coinDenom": "STARS",
       "coinMinimalDenom": "ustars",
       "coinDecimals": 6,
+      "isCoin": true,
+
       "coinGeckoId": "stargaze",
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
       "cosmos": {
+        "gasPriceStep": {
+          "low": 1,
+          "average": 1.1,
+          "high": 1.2
+        },
         "minimalDenom": "ustars"
       },
       "polkadot": {},
