@@ -132,8 +132,8 @@ import { CoinGeckoAsset } from './types';
     "id": "moonriver"
   },
   {
-    "name": "KSM",
-    "id": "kusama"
+    "name": "DOT",
+    "id": "polkadot"
   },
   {
     "name": "SDN",
@@ -154,10 +154,6 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "PICA",
     "id": "picasso"
-  },
-  {
-    "name": "USDT Kusama",
-    "id": "tether"
   },
   {
     "name": "USDT Kusama",

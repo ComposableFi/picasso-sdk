@@ -12,7 +12,7 @@ import {
 } from '../config/types';
 import { buildIbcPath } from '../chains';
 const getFeeAssetId = (data) => {
-  const coin = data.currencies.find((item) => item.isCoin);
+  const coin = data.currencies.filter((item) => item.isCoin);
 
   if (data.chainType === 'polkadot') {
     if (data.polkadot.relayChain === 'kusama')
@@ -20,9 +20,9 @@ const getFeeAssetId = (data) => {
     if (data.polkadot.relayChain === 'polkadot')
       return data.polkadot.composableAssetId;
   }
-  if (data.chainType === 'cosmos') return coin[0].minimalDenom;
-  if (data.chainType === 'solana') return coin[0].minimalDenom;
-  if (data.chainType === 'ethereum') return coin[0].minimalDenom;
+  if (data.chainType === 'cosmos') return coin[0].cosmos.minimalDenom;
+  if (data.chainType === 'solana') return coin[0].solana.minimalDenom;
+  if (data.chainType === 'ethereum') return coin[0].ethereum.minimalDenom;
 };
 
 const dataDir = path.join(__dirname, '../config/json');
@@ -130,11 +130,11 @@ const processFiles = () => {
         rest: data.rest,
         rpc: data.rpc,
         stakeCurrency: {
-          coinDecimals: coin.coinDecimals,
-          coinDenom: coin.coinDenom,
-          coinGeckoId: coin.coinGeckoId,
-          coinMinimalDenom: coin.coinMinimalDenom,
-          coinImageUrl: coin.coinImageUrl,
+          coinDecimals: coin[0].coinDecimals,
+          coinDenom: coin[0].coinDenom,
+          coinGeckoId: coin[0].coinGeckoId,
+          coinMinimalDenom: coin[0].coinMinimalDenom,
+          coinImageUrl: coin[0].coinImageUrl,
         },
         walletUrlForStaking: data.cosmos.walletUrlForStaking,
       };
