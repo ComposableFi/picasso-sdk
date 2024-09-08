@@ -17,7 +17,7 @@ const getFeeAssetId = (data) => {
   if (data.chainType === 'polkadot') {
     if (data.polkadot.relayChain === 'kusama')
       return coin[0].polkadot.picassoAssetId;
-    if (coin[0].polkadot.relayChain === 'polkadot')
+    if (data.polkadot.relayChain === 'polkadot')
       return coin[0].polkadot.composableAssetId;
   }
   if (data.chainType === 'cosmos') return coin[0].cosmos.minimalDenom;
