@@ -51,12 +51,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
 var getFeeAssetId = function (data) {
+    var _a, _b, _c, _d;
     var coin = data.currencies.filter(function (item) { return item.isCoin; });
     if (data.chainType === 'polkadot') {
         if (data.polkadot.relayChain === 'kusama')
-            return data.polkadot.picassoAssetId;
-        if (data.polkadot.relayChain === 'polkadot')
-            return data.polkadot.composableAssetId;
+            return ((_b = (_a = coin[0]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.picassoAssetId) || '';
+        if (data.polkadot.relayChain === 'polkadot') {
+            return ((_d = (_c = coin[0]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.composableAssetId) || '';
+        }
     }
     if (data.chainType === 'cosmos')
         return coin[0].cosmos.minimalDenom;
