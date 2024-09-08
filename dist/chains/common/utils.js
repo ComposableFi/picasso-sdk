@@ -143,8 +143,8 @@ var getPolkadotAddressStr = function (accountId, prefix) {
 exports.getPolkadotAddressStr = getPolkadotAddressStr;
 var convertCosmosAddress = function (address, newPrefix) {
     try {
-        var data = (0, encoding_1.fromBech32)(address).data;
-        return (0, encoding_1.toBech32)(newPrefix, data);
+        var data_1 = (0, encoding_1.fromBech32)(address).data;
+        return (0, encoding_1.toBech32)(newPrefix, data_1);
     }
     catch (e) {
         throw new Error('유효하지 않은 Bech32 주소입니다.');

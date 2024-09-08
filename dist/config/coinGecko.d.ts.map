@@ -1,1 +1,1 @@
-{"version":3,"file":"coinGecko.d.ts","sourceRoot":"","sources":["../../src/config/coinGecko.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAE,MAAM,SAAS,CAAC;AAExC,eAAO,MAAM,SAAS,EAAE,cAAc,EAiTtC,CAAE"}
+{"version":3,"file":"coinGecko.d.ts","sourceRoot":"","sources":["../../src/config/coinGecko.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,cAAc,EAAE,MAAM,SAAS,CAAC;AAExC,eAAO,MAAM,SAAS,EAAE,cAAc,EAiatC,CAAE"}
