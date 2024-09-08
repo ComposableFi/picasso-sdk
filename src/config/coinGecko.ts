@@ -1,312 +1,313 @@
-
-  // [GENERATED]
+// [GENERATED]
 import { CoinGeckoAsset } from './types';
 
- export const coinGecko: CoinGeckoAsset[] = [
+export const coinGecko: CoinGeckoAsset[] = [
   {
-    "name": "BLD",
-    "id": "agoric"
+    name: 'BLD',
+    id: 'agoric',
   },
   {
-    "name": "IST",
-    "id": "inter-stable-token"
+    name: 'IST',
+    id: 'inter-stable-token',
   },
   {
-    "name": "ARCH",
-    "id": "archway"
+    name: 'ARCH',
+    id: 'archway',
   },
   {
-    "name": "TIA",
-    "id": "celestia"
+    name: 'TIA',
+    id: 'celestia',
   },
   {
-    "name": "HUAHUA",
-    "id": "chihuahua-token"
+    name: 'HUAHUA',
+    id: 'chihuahua-token',
   },
   {
-    "name": "XRP",
-    "id": "ripple"
+    name: 'XRP',
+    id: 'ripple',
   },
   {
-    "name": "CORE",
-    "id": "coreum"
+    name: 'CORE',
+    id: 'coreum',
   },
   {
-    "name": "ATOM",
-    "id": "cosmos"
+    name: 'ATOM',
+    id: 'cosmos',
   },
   {
-    "name": "CRE",
-    "id": "crescent-network"
+    name: 'CRE',
+    id: 'crescent-network',
   },
   {
-    "name": "bCRE",
-    "id": "liquid-staking-crescent"
+    name: 'bCRE',
+    id: 'liquid-staking-crescent',
   },
   {
-    "name": "INJ",
-    "id": "injective-protocol"
+    name: 'INJ',
+    id: 'injective-protocol',
   },
   {
-    "name": "KUJI",
-    "id": "kujira"
+    name: 'KUJI',
+    id: 'kujira',
   },
   {
-    "name": "ASTRO",
-    "id": "astroport-fi"
+    name: 'ASTRO',
+    id: 'astroport-fi',
   },
   {
-    "name": "NTRN",
-    "id": "neutron-3"
+    name: 'NTRN',
+    id: 'neutron-3',
   },
   {
-    "name": "QCK",
-    "id": "quicksilver"
+    name: 'QCK',
+    id: 'quicksilver',
   },
   {
-    "name": "SCRT",
-    "id": "secret"
+    name: 'SCRT',
+    id: 'secret',
   },
   {
-    "name": "SILK",
-    "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    name: 'SILK',
+    id: 'silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2',
   },
   {
-    "name": "SHD",
-    "id": "shade-protocol"
+    name: 'SHD',
+    id: 'shade-protocol',
   },
   {
-    "name": "SEI",
-    "id": "sei-network"
+    name: 'SEI',
+    id: 'sei-network',
   },
   {
-    "name": "STARS",
-    "id": "stargaze"
+    name: 'STARS',
+    id: 'stargaze',
   },
   {
-    "name": "stTIA",
-    "id": "stride-staked-tia"
+    name: 'stTIA',
+    id: 'stride-staked-tia',
   },
   {
-    "name": "STRD",
-    "id": "stride"
+    name: 'STRD',
+    id: 'stride',
   },
   {
-    "name": "stATOM",
-    "id": "stride-staked-atom"
+    name: 'stATOM',
+    id: 'stride-staked-atom',
   },
   {
-    "name": "UMEE",
-    "id": "umee"
+    name: 'UMEE',
+    id: 'umee',
   },
   {
-    "name": "ASTR",
-    "id": "astar"
+    name: 'ASTR',
+    id: 'astar',
   },
   {
-    "name": "DOT",
-    "id": "polkadot"
+    name: 'DOT',
+    id: 'polkadot',
   },
   {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
+    name: 'BNC_DOT',
+    id: 'bifrost-native-coin',
   },
   {
-    "name": "ASTR",
-    "id": "astar"
+    name: 'ASTR',
+    id: 'astar',
   },
   {
-    "name": "KSM",
-    "id": "kusama"
+    name: 'KSM',
+    id: 'kusama',
   },
   {
-    "name": "GLMR",
-    "id": "moonbeam"
+    name: 'GLMR',
+    id: 'moonbeam',
   },
   {
-    "name": "MOVR",
-    "id": "moonriver"
+    name: 'MOVR',
+    id: 'moonriver',
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
+    name: 'KSM',
+    id: 'kusama',
   },
   {
-    "name": "TNKR",
-    "id": "tinkernet"
+    name: 'SDN',
+    id: 'shiden',
   },
   {
-    "name": "KSM",
-    "id": "kusama"
+    name: 'TNKR',
+    id: 'tinkernet',
   },
   {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
+    name: 'BNC_KSM',
+    id: 'bifrost-native-coin',
   },
   {
-    "name": "KSM",
-    "id": "kusama"
+    name: 'BNC_DOT',
+    id: 'bifrost-native-coin',
   },
   {
-    "name": "SDN",
-    "id": "shiden"
+    name: 'PICA',
+    id: 'picasso',
   },
   {
-    "name": "TNKR",
-    "id": "tinkernet"
+    name: 'USDT Kusama',
+    id: 'tether',
   },
   {
-    "name": "BNC_KSM",
-    "id": "bifrost-native-coin"
+    name: 'USDT Kusama',
+    id: 'tether',
   },
   {
-    "name": "BNC_DOT",
-    "id": "bifrost-native-coin"
+    name: 'OSMO',
+    id: 'osmosis',
   },
   {
-    "name": "PICA",
-    "id": "picasso"
+    name: 'milkTIA',
+    id: 'milkyway-staked-tia',
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
+    name: 'ETH',
+    id: 'ethereum',
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
+    name: 'DAI',
+    id: 'dai',
   },
   {
-    "name": "OSMO",
-    "id": "osmosis"
+    name: 'FXS',
+    id: 'frax-share',
   },
   {
-    "name": "milkTIA",
-    "id": "milkyway-staked-tia"
+    name: 'sFRAX',
+    id: 'staked-frax',
   },
   {
-    "name": "ETH",
-    "id": "ethereum"
+    name: 'sfrxETH',
+    id: 'staked-frax-ether',
   },
   {
-    "name": "DAI",
-    "id": "dai"
+    name: 'ENA',
+    id: 'ethena',
   },
   {
-    "name": "FXS",
-    "id": "frax-share"
+    name: 'FRAX',
+    id: 'frax',
   },
   {
-    "name": "sFRAX",
-    "id": "staked-frax"
+    name: 'frxETH',
+    id: 'frax-ether',
   },
   {
-    "name": "sfrxETH",
-    "id": "staked-frax-ether"
+    name: 'wBTC',
+    id: 'wrapped-bitcoin',
   },
   {
-    "name": "ENA",
-    "id": "ethena"
+    name: 'stETH',
+    id: 'lido-staked-ether',
   },
   {
-    "name": "FRAX",
-    "id": "frax"
+    name: 'rETH',
+    id: 'rocket-pool-eth',
   },
   {
-    "name": "frxETH",
-    "id": "frax-ether"
+    name: 'crvUSD',
+    id: 'crvusd',
   },
   {
-    "name": "wBTC",
-    "id": "wrapped-bitcoin"
+    name: 'pxETH',
+    id: 'dinero-staked-eth',
   },
   {
-    "name": "stETH",
-    "id": "lido-staked-ether"
+    name: 'eETH',
+    id: 'ether-fi-staked-eth',
   },
   {
-    "name": "rETH",
-    "id": "rocket-pool-eth"
+    name: 'SILK',
+    id: 'silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2',
   },
   {
-    "name": "crvUSD",
-    "id": "crvusd"
+    name: 'ezETH',
+    id: 'renzo-restaked-eth',
   },
   {
-    "name": "pxETH",
-    "id": "dinero-staked-eth"
+    name: 'USDe',
+    id: 'ethena-usde',
   },
   {
-    "name": "eETH",
-    "id": "ether-fi-staked-eth"
+    name: 'PEPE',
+    id: 'pepe',
   },
   {
-    "name": "SILK",
-    "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    name: 'USDT Ethereum',
+    id: 'tether',
   },
   {
-    "name": "ezETH",
-    "id": "renzo-restaked-eth"
+    name: 'CRV',
+    id: 'curve-dao-token',
   },
   {
-    "name": "USDe",
-    "id": "ethena-usde"
+    name: 'SOL',
+    id: 'solana',
   },
   {
-    "name": "PEPE",
-    "id": "pepe"
+    name: 'JitoSOL',
+    id: 'jito-staked-sol',
   },
   {
-    "name": "USDT Ethereum",
-    "id": "tether"
+    name: 'mSOL',
+    id: 'msol',
   },
   {
-    "name": "CRV",
-    "id": "curve-dao-token"
+    name: 'bSOL',
+    id: 'blazestake-staked-sol',
   },
   {
-    "name": "SOL",
-    "id": "solana"
+    name: 'LST',
+    id: 'liquid-staking-token',
   },
   {
-    "name": "JitoSOL",
-    "id": "jito-staked-sol"
+    name: 'BLZE',
+    id: 'solblaze',
   },
   {
-    "name": "mSOL",
-    "id": "msol"
+    name: 'edgeSOL',
+    id: 'edgevana-staked-sol',
   },
   {
-    "name": "bSOL",
-    "id": "blazestake-staked-sol"
+    name: 'wSOL',
+    id: 'wrapped-solana',
   },
   {
-    "name": "LST",
-    "id": "liquid-staking-token"
+    name: 'WIF',
+    id: 'dogwifcoin',
   },
   {
-    "name": "BLZE",
-    "id": "solblaze"
+    name: 'BONK',
+    id: 'bonk',
   },
   {
-    "name": "edgeSOL",
-    "id": "edgevana-staked-sol"
+    name: 'USDT Solana',
+    id: 'tether',
   },
   {
-    "name": "wSOL",
-    "id": "wrapped-solana"
+    name: 'USDT Kusama',
+    id: 'tether',
   },
   {
-    "name": "WIF",
-    "id": "dogwifcoin"
+    name: 'TNKR',
+    id: 'tinkernet',
   },
   {
-    "name": "BONK",
-    "id": "bonk"
+    name: 'KSM',
+    id: 'kusama',
   },
   {
-    "name": "USDT Solana",
-    "id": "tether"
-  }
-] ;
- 
- 
+    name: 'BNC_KSM',
+    id: 'bifrost-native-coin',
+  },
+  {
+    name: 'PICA',
+    id: 'picasso',
+  },
+];

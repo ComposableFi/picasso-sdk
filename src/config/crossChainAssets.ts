@@ -172,11 +172,11 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
     },
     "undefined": {
-      "chainId": "1000",
-      "decimals": 6,
+      "chainId": "2087",
+      "decimals": 12,
       "minimalDenom": "",
-      "denom": "USDT Kusama",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg"
+      "denom": "PICA",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
     },
     "ppica": {
       "chainId": "centauri-1",
@@ -594,7 +594,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
-      "chainId": "polkadot",
+      "chainId": "2087",
       "decimals": 9,
       "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
       "denom": "KSM",
@@ -1015,7 +1015,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg"
     },
     "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
-      "chainId": "polkadot",
+      "chainId": "2087",
       "decimals": 12,
       "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
       "denom": "KSM",
@@ -1248,14 +1248,14 @@ export const crossChainAssets :CrossChainAssets= {
   },
   "polkadot": {
     "1": {
-      "chainId": "centauri-1",
+      "chainId": "2087",
       "decimals": 12,
-      "minimalDenom": "ppica",
+      "minimalDenom": "1",
       "denom": "PICA",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
     },
     "4": {
-      "chainId": "polkadot",
+      "chainId": "2087",
       "decimals": 12,
       "minimalDenom": "4",
       "denom": "KSM",
@@ -1283,14 +1283,14 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png"
     },
     "31": {
-      "chainId": "2001",
+      "chainId": "2087",
       "decimals": 12,
       "minimalDenom": "31",
       "denom": "BNC_KSM",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg"
     },
     "32": {
-      "chainId": "2001",
+      "chainId": "2087",
       "decimals": 12,
       "minimalDenom": "32",
       "denom": "vKSM",
@@ -1303,7 +1303,7 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "SEI"
     },
     "130": {
-      "chainId": "1000",
+      "chainId": "2087",
       "decimals": 6,
       "minimalDenom": "130",
       "denom": "USDT Kusama",
@@ -1317,7 +1317,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg"
     },
     "2125": {
-      "chainId": "2125",
+      "chainId": "2087",
       "decimals": 12,
       "minimalDenom": "2125",
       "denom": "TNKR",

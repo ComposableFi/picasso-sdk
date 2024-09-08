@@ -75,7 +75,7 @@ const processFiles = () => {
       rest: data.rest || '',
       chainType: data.chainType || '',
       chainId: data.chainId || '',
-      feeAssetId: data.currencies[0]?.coinDenom || '',
+      feeAssetId: data.feeCurrencies[0]?.coinDenom || '',
       polkadot: data.polkadot || undefined,
       cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,

@@ -52,14 +52,73 @@
   },
   "currencies": [
     {
+      "coinDenom": "USDT",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
+      "coinGeckoId": "tether",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "149",
+        "composableAssetId": "79228162514264337593543950485",
+        "ratio": {
+          "n": "1",
+          "d": "5000000"
+        },
+
+        "existentialDeposit": "200000"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "BNC_DOT",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
+      "coinGeckoId": "bifrost-native-coin",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543950369",
+        "picassoAssetId": "33",
+        "ratio": {
+          "n": "11",
+          "d": "1000"
+        },
+        "existential_deposit": "1100000000"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "ASTR",
+      "coinDecimals": 18,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
+      "coinGeckoId": "bifrost-native-coin",
+      "cosmos": {},
+      "polkadot": {
+        "composableAssetId": "79228162514264337593543952342",
+        "picassoAssetId": "33",
+        "ratio": {
+          "n": "4713901",
+          "d": "1"
+        },
+        "existential_deposit": "4700000000000000"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
       "coinDenom": "DOT",
       "coinDecimals": 10,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg",
       "coinGeckoId": "polkadot",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543950342"
+        "picassoAssetId": "6",
+        "composableAssetId": "79228162514264337593543950342",
+        "ratio": { "n": "3", "d": "10000" },
+        "existentialDeposit": "21430000"
       },
+
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
         "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
@@ -75,49 +134,51 @@
       }
     },
     {
-      "coinDenom": "BNC_DOT",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_DOT.svg",
-      "coinGeckoId": "bifrost-native-coin",
-      "cosmos": {},
-      "polkadot": {
-        "composableAssetId": "79228162514264337593543950369"
-      },
-      "ethereum": {},
-      "solana": {}
-    },
-    {
       "coinDenom": "vDOT",
       "coinDecimals": 10,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543950370"
+        "picassoAssetId": "34",
+        "composableAssetId": "79228162514264337593543950370",
+        "ratio": { "n": "4", "d": "10000" },
+        "existentialDeposit": "100000000"
+      },
+
+      "ethereum": {},
+      "solana": {}
+    },
+    {
+      "coinDenom": "lsDOT",
+      "coinDecimals": 10,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LSDOT.svg",
+      "coinGeckoId": "",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "27",
+        "composableAssetId": "79228162514264337593543950351",
+        "ratio": { "n": "29", "d": "100000" },
+        "existentialDeposit": "21430000"
       },
       "ethereum": {},
       "solana": {}
     },
     {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
-      "coinGeckoId": "astar",
+      "coinDenom": "USDC",
+      "coinDecimals": 6,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDC.svg",
+      "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "picassoAssetId": "150",
+        "composableAssetId": "79228162514264337593543950486",
+        "ratio": { "n": "1", "d": "5000000" },
+        "existentialDeposit": "200000"
       },
       "ethereum": {},
       "solana": {}
     }
   ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "PICA",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "picasso"
-    }
-  ]
+  "feeCurrencies": []
 }

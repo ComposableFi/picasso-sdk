@@ -9,7 +9,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "1000",
-    "feeAssetId": "USDT Kusama",
+    "feeAssetId": "KSM",
     "polkadot": {
       "ss58Format": 2,
       "isParachain": true,
@@ -37,7 +37,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2001",
-    "feeAssetId": "BNC_KSM",
+    "feeAssetId": "KSM",
     "polkadot": {
       "ss58Format": 6,
       "isParachain": true,
@@ -150,7 +150,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2019",
-    "feeAssetId": "DOT",
+    "feeAssetId": "PICA",
     "polkadot": {
       "ss58Format": 50,
       "isParachain": true,
@@ -255,7 +255,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2087",
-    "feeAssetId": "USDT Kusama",
+    "feeAssetId": "PICA",
     "polkadot": {
       "ss58Format": 49,
       "isParachain": true,
@@ -313,7 +313,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2124",
-    "feeAssetId": "",
+    "feeAssetId": "ASTR",
     "polkadot": {
       "ss58Format": 56,
       "isParachain": true,
@@ -482,7 +482,7 @@ import { NetworkInfo } from './types';
     "rest": "https://rest-coreum.ecostake.com",
     "chainType": "cosmos",
     "chainId": "coreum-mainnet-1",
-    "feeAssetId": "XRP",
+    "feeAssetId": "CORE",
     "cosmos": {
       "bip44": {
         "coinType": 990
@@ -615,7 +615,7 @@ import { NetworkInfo } from './types';
     "rest": "https://neutron-cmp-api.polkachu.com",
     "chainType": "cosmos",
     "chainId": "neutron-1",
-    "feeAssetId": "ASTRO",
+    "feeAssetId": "NTRN",
     "cosmos": {
       "bip44": {
         "coinType": 118
@@ -755,7 +755,7 @@ import { NetworkInfo } from './types';
     "rest": "https://stride-cmp-api.polkachu.com",
     "chainType": "cosmos",
     "chainId": "stride-1",
-    "feeAssetId": "stTIA",
+    "feeAssetId": "STRD",
     "cosmos": {
       "walletUrl": "https://wallet.keplr.app/chains/stride",
       "walletUrlForStaking": "https://wallet.keplr.app/chains/stride",
@@ -839,7 +839,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "polkadot",
-    "feeAssetId": "KSM",
+    "feeAssetId": "DOT",
     "polkadot": {
       "ss58Format": 0,
       "isParachain": false,
