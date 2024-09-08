@@ -150,7 +150,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2019",
-    "feeAssetId": "PICA",
+    "feeAssetId": "",
     "polkadot": {
       "ss58Format": 50,
       "isParachain": true,

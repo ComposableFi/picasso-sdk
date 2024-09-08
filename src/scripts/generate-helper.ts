@@ -49,6 +49,9 @@ const processFiles = () => {
 
   const networks: Record<string, NetworkInfo> = {};
   const keplrChains: Record<string, ChainInfo> = {};
+
+  const temp = [];
+  const temp2 = [];
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
@@ -323,6 +326,13 @@ import { ChainInfo } from "@keplr-wallet/types";
 export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChains, null, 2)} ;
 
 `;
+
+  fs.writeFileSync(
+    keplrChainsOutputFilePath,
+    keplrChainsOutputContent,
+    'utf-8'
+  );
+  console.log('keplrChains.ts has been created');
 
   fs.writeFileSync(
     keplrChainsOutputFilePath,
