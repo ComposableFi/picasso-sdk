@@ -12,15 +12,17 @@ import {
 } from '../config/types';
 import { buildIbcPath } from '../chains';
 const getFeeAssetId = (data) => {
+  const coin = data.currencies.find((item) => item.isCoin);
+
   if (data.chainType === 'polkadot') {
     if (data.polkadot.relayChain === 'kusama')
       return data.polkadot.picassoAssetId;
     if (data.polkadot.relayChain === 'polkadot')
       return data.polkadot.composableAssetId;
   }
-  if (data.chainType === 'cosmos') return data.cosmos.minimalDenom;
-  if (data.chainType === 'solana') return data.solana.minimalDenom;
-  if (data.chainType === 'ethereum') return data.ethereum.minimalDenom;
+  if (data.chainType === 'cosmos') return coin[0].minimalDenom;
+  if (data.chainType === 'solana') return coin[0].minimalDenom;
+  if (data.chainType === 'ethereum') return coin[0].minimalDenom;
 };
 
 const dataDir = path.join(__dirname, '../config/json');
