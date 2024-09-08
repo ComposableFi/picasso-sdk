@@ -9,7 +9,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '1000',
-    feeAssetId: '',
+    feeAssetId: '130',
     polkadot: {
       ss58Format: 2,
       isParachain: true,
@@ -34,7 +34,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2001',
-    feeAssetId: '',
+    feeAssetId: '31',
     polkadot: {
       ss58Format: 6,
       isParachain: true,
@@ -59,7 +59,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2004',
-    feeAssetId: '',
+    feeAssetId: '79228162514264337593543950376',
     polkadot: {
       ss58Format: 0,
       isParachain: true,
@@ -84,7 +84,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2006',
-    feeAssetId: '',
+    feeAssetId: '79228162514264337593543952342',
     polkadot: {
       ss58Format: 5,
       isParachain: true,
@@ -109,7 +109,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2007',
-    feeAssetId: '',
+    feeAssetId: '2007',
     polkadot: {
       ss58Format: 5,
       isParachain: true,
@@ -174,7 +174,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2023',
-    feeAssetId: '',
+    feeAssetId: '23',
     polkadot: {
       ss58Format: 0,
       isParachain: true,
@@ -199,7 +199,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2030',
-    feeAssetId: '',
+    feeAssetId: '79228162514264337593543950369',
     polkadot: {
       ss58Format: 6,
       isParachain: true,
@@ -262,32 +262,6 @@ export const networks: Record<string, NetworkInfo> = {
     enabled: true,
     network_to: ['1000', '2001', '2125', 'kusama', '2019', 'centauri-1'],
   },
-  '2124': {
-    name: 'amplitude',
-    image:
-      'https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/amplitude.svg',
-    rpc: 'wss://rpc-amplitude.pendulumchain.tech',
-    rest: '',
-
-    chainType: 'polkadot',
-    chainId: '2124',
-    feeAssetId: '',
-    polkadot: {
-      ss58Format: 56,
-      isParachain: true,
-      relayChain: 'polkadot',
-      hops: {
-        '2019': {
-          type: 'XCM',
-          xcmType: 'xTokens.transfer',
-          version: 'V2',
-          tokens: ['0000'],
-        },
-      },
-    },
-    enabled: true,
-    network_to: ['2019'],
-  },
   '2125': {
     name: 'Tinkernet',
     image:
@@ -296,7 +270,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: '2125',
-    feeAssetId: '',
+    feeAssetId: '2125',
     polkadot: {
       ss58Format: 117,
       isParachain: true,
@@ -747,7 +721,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: 'kusama',
-    feeAssetId: '',
+    feeAssetId: '4',
     polkadot: {
       ss58Format: 2,
       isParachain: false,
@@ -772,7 +746,7 @@ export const networks: Record<string, NetworkInfo> = {
     rest: '',
     chainType: 'polkadot',
     chainId: 'polkadot',
-    feeAssetId: '',
+    feeAssetId: '79228162514264337593543950342',
     polkadot: {
       ss58Format: 0,
       isParachain: false,
