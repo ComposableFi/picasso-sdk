@@ -333,12 +333,5 @@ export const keplrChains :Record<string, ChainInfo>= ${JSON.stringify(keplrChain
     'utf-8'
   );
   console.log('keplrChains.ts has been created');
-
-  fs.writeFileSync(
-    keplrChainsOutputFilePath,
-    keplrChainsOutputContent,
-    'utf-8'
-  );
-  console.log('keplrChains.ts has been created');
 };
 processFiles();
