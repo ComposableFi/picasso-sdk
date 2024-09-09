@@ -1562,6 +1562,13 @@ exports.crossChainAssets = {
             "denom": "ASTR",
             "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg"
         },
+        "79228162514264337593543950337": {
+            "chainId": "2087",
+            "decimals": 12,
+            "minimalDenom": "79228162514264337593543950337",
+            "denom": "PICA",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+        },
         "79228162514264337593543950485": {
             "chainId": "2087",
             "decimals": 6,

@@ -103,6 +103,10 @@ exports.coinGecko = [
         "id": "astar"
     },
     {
+        "name": "PICA",
+        "id": "picasso"
+    },
+    {
         "name": "USDT",
         "id": "tether"
     },

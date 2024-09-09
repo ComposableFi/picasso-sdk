@@ -255,7 +255,7 @@ exports.networks = {
         "rest": "",
         "chainType": "polkadot",
         "chainId": "2087",
-        "feeAssetId": "",
+        "feeAssetId": "79228162514264337593543950337",
         "polkadot": {
             "ss58Format": 49,
             "isParachain": true,

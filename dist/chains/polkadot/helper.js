@@ -50,7 +50,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMultihopPath = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = void 0;
+exports.getMultihopPath = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
 exports.getSubAccount = getSubAccount;
 exports.getPaymentAsset = getPaymentAsset;
 exports.setPaymentAsset = setPaymentAsset;
@@ -63,6 +63,11 @@ var big_js_1 = __importDefault(require("big.js"));
 var api_scheme_1 = require("./api-scheme");
 var config_1 = require("../../config");
 var util_1 = require("@polkadot/util");
+var util_crypto_1 = require("@polkadot/util-crypto");
+Object.defineProperty(exports, "decodeAddress", { enumerable: true, get: function () { return util_crypto_1.decodeAddress; } });
+Object.defineProperty(exports, "encodeAddress", { enumerable: true, get: function () { return util_crypto_1.encodeAddress; } });
+var util_crypto_2 = require("@polkadot/util-crypto");
+Object.defineProperty(exports, "base58Decode", { enumerable: true, get: function () { return util_crypto_2.base58Decode; } });
 function checkWalletIdForSigning(accountId) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

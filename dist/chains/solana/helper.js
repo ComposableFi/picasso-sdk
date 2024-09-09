@@ -87,7 +87,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.instructionSchema = exports.msgTransferSchema = exports.getSolanaGuestChainAccounts = exports.getSolanaTracePath = exports.getLatestBlockhash = exports.getSolanaAsset = exports.getBaseDenomFromTracePath = exports.getTokenMint = exports.isNativeSolanaAsset = exports.getPublicKey = exports.getConnection = void 0;
+exports.instructionSchema = exports.msgTransferSchema = exports.getSolanaGuestChainAccounts = exports.getSolanaTracePath = exports.getLatestBlockhash = exports.getSolanaAsset = exports.getBaseDenomFromTracePath = exports.getTokenMint = exports.isNativeSolanaAsset = exports.getPublicKey = exports.getConnection = exports.PublicKey = exports.Keypair = void 0;
 exports.hexToBytes = hexToBytes;
 exports.numberTo32ByteBuffer = numberTo32ByteBuffer;
 var anchor = __importStar(require("@coral-xyz/anchor"));
@@ -97,6 +97,9 @@ var axios_1 = __importDefault(require("axios"));
 var borsher_1 = require("borsher");
 var js_sha256_1 = require("js-sha256");
 var constants_1 = require("./constants");
+var web3_js_2 = require("@solana/web3.js");
+Object.defineProperty(exports, "Keypair", { enumerable: true, get: function () { return web3_js_2.Keypair; } });
+Object.defineProperty(exports, "PublicKey", { enumerable: true, get: function () { return web3_js_2.PublicKey; } });
 /**@description get connection of solana */
 var getConnection = function (endpoint) {
     return new web3_js_1.Connection(endpoint, 'finalized');

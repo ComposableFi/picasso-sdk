@@ -4,6 +4,8 @@ import { ApiOptions } from '@polkadot/api/types';
 import { type AnyTuple, type IEvent, type ISubmittableResult } from '@polkadot/types/types';
 import Big from 'big.js';
 import { MultihopRoutePath } from './types';
+export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+export { base58Decode } from '@polkadot/util-crypto';
 export type OnFailedTxHandler = (result: ISubmittableResult, errorMessage?: string) => void;
 export declare function getSubAccount(api: ApiPromise, poolId: string): string;
 export declare function getPaymentAsset({ endpoint, accountId, }: {
