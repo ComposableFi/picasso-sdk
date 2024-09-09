@@ -6,6 +6,7 @@ import { BorshSchema } from 'borsher';
 import { sha256 } from 'js-sha256';
 
 import { solanaIbcProgramId } from './constants';
+export { Keypair, PublicKey } from '@solana/web3.js';
 
 /**@description get connection of solana */
 export const getConnection = (endpoint: string) => {

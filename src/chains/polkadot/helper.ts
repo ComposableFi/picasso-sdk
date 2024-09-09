@@ -23,6 +23,8 @@ import { MultihopRoutePath, RouteDetail } from './types';
 import { networks } from '../../config';
 import { hexToString } from '@polkadot/util';
 
+export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+export { base58Decode } from '@polkadot/util-crypto';
 export type OnFailedTxHandler = (
   result: ISubmittableResult,
   errorMessage?: string

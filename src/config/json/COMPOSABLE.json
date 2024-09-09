@@ -52,6 +52,22 @@
   },
   "currencies": [
     {
+      "coinDenom": "PICA",
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+      "coinGeckoId": "picasso",
+      "cosmos": {},
+
+      "polkadot": {
+        "picassoAssetId": "1",
+        "composableAssetId": "79228162514264337593543950337",
+        "ratio": null,
+        "existentialDeposit": "100000000000"
+      },
+      "ethereum": {},
+      "solana": {}
+    },
+    {
       "coinDenom": "USDT",
       "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",

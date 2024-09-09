@@ -104,6 +104,10 @@ import { CoinGeckoAsset } from './types';
     "id": "astar"
   },
   {
+    "name": "PICA",
+    "id": "picasso"
+  },
+  {
     "name": "USDT",
     "id": "tether"
   },

@@ -13,7 +13,6 @@ import {
 import { buildIbcPath } from '../chains';
 const getFeeAssetId = (data) => {
   const coin = data.currencies.filter((item) => item.isCoin);
-
   if (data.chainType === 'polkadot') {
     if (data.polkadot.relayChain === 'kusama')
       return coin[0]?.polkadot?.picassoAssetId || '';

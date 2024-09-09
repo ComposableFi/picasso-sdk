@@ -189,7 +189,7 @@
 
       "polkadot": {
         "picassoAssetId": "1",
-        "composableAssetId": "",
+        "composableAssetId": "79228162514264337593543950337",
         "ratio": null,
         "existentialDeposit": "100000000000"
       },
