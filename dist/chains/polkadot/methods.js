@@ -348,7 +348,10 @@ function transferIbc(_a) {
                     _e = __read.apply(void 0, [_g.sent(), 2]), fromApi = _e[0], toApi = _e[1];
                     convertedFromAddr = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(fromAddress), fromSs58Format);
                     convertedToAddr = '';
-                    convertedToAddr = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format);
+                    convertedToAddr =
+                        config_1.networks[toChainId].chainType === 'polkadot'
+                            ? (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format)
+                            : toAddress;
                     _f = Number;
                     return [4 /*yield*/, (toApi || fromApi).query.system.number()];
                 case 2:
