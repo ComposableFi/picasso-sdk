@@ -332,30 +332,30 @@ function transferIbc(_a) {
     // memo: string,
     // config: any,
     ) {
-        var _c, fromRpc, fromSs58Format, _d, toRpc, toSs58Format, _e, fromApi, toApi, convertedFromAddr, convertedToAddr, extrinsic, height, _f, defaultHeight;
+        var _c, _d, fromRpc, _e, _f, _g, fromSs58Format, _h, _j, toRpc, _k, _l, _m, toSs58Format, _o, fromApi, toApi, convertedFromAddr, convertedToAddr, extrinsic, height, _p, defaultHeight;
         var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo;
-        return __generator(this, function (_g) {
-            switch (_g.label) {
+        return __generator(this, function (_q) {
+            switch (_q.label) {
                 case 0:
                     if (!assetId)
                         throw 'assetId not found';
                     if (!sourceChannel)
                         throw 'sourceChannel not found';
-                    _c = config_1.networks[fromChainId], fromRpc = _c.rpc, fromSs58Format = _c.polkadot.ss58Format;
-                    _d = config_1.networks[toChainId], toRpc = _d.rpc, toSs58Format = _d.polkadot.ss58Format;
+                    _c = config_1.networks[fromChainId], _d = _c.rpc, fromRpc = _d === void 0 ? '' : _d, _e = _c.polkadot, _f = _e === void 0 ? {} : _e, _g = _f.ss58Format, fromSs58Format = _g === void 0 ? 0 : _g;
+                    _h = config_1.networks[toChainId], _j = _h.rpc, toRpc = _j === void 0 ? '' : _j, _k = _h.polkadot, _l = _k === void 0 ? {} : _k, _m = _l.ss58Format, toSs58Format = _m === void 0 ? 0 : _m;
                     return [4 /*yield*/, (0, helper_1.getMultiApi)([fromRpc, toRpc])];
                 case 1:
-                    _e = __read.apply(void 0, [_g.sent(), 2]), fromApi = _e[0], toApi = _e[1];
+                    _o = __read.apply(void 0, [_q.sent(), 2]), fromApi = _o[0], toApi = _o[1];
                     convertedFromAddr = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(fromAddress), fromSs58Format);
                     convertedToAddr = '';
                     convertedToAddr =
                         config_1.networks[toChainId].chainType === 'polkadot'
                             ? (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format)
                             : toAddress;
-                    _f = Number;
+                    _p = Number;
                     return [4 /*yield*/, (toApi || fromApi).query.system.number()];
                 case 2:
-                    height = _f.apply(void 0, [_g.sent()]);
+                    height = _p.apply(void 0, [_q.sent()]);
                     defaultHeight = (0, helper_1.getDefaultTxHeight)(height);
                     extrinsic = (0, helper_1.makeIbcToPolkadot)({
                         api: fromApi,
@@ -376,7 +376,7 @@ function transferIbc(_a) {
                             filter: null,
                             signer: signer,
                         })];
-                case 3: return [2 /*return*/, _g.sent()];
+                case 3: return [2 /*return*/, _q.sent()];
             }
         });
     });

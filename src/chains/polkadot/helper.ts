@@ -227,8 +227,9 @@ export async function getApi(
 
 export const getMultiApi = (endpoints: string[]): Promise<ApiPromise[]> => {
   const promises: Promise<ApiPromise>[] = [];
+
   endpoints.forEach((api) => {
-    promises.push(getApi(api));
+    if (api.startsWith('ws://')) promises.push(getApi(api));
   });
   return Promise.all(endpoints.map((endpoint) => getApi(endpoint)));
 };
