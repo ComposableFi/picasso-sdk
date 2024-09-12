@@ -266,7 +266,7 @@ function getApi(endpoint, option) {
 var getMultiApi = function (endpoints) {
     var promises = [];
     endpoints.forEach(function (api) {
-        if (api.startsWith('ws://'))
+        if (api.startsWith('wss://'))
             promises.push(getApi(api));
     });
     return Promise.all(promises);
