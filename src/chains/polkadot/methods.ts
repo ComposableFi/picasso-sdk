@@ -499,7 +499,6 @@ export const polkadotTransfer = async ({
   toAddress: string;
   amount: string;
   assetId: string;
-  xcmType: string;
   signer: any;
   memo: string;
 }) => {
