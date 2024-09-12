@@ -502,7 +502,7 @@ export const polkadotTransfer = async ({
   signer: any;
   memo: string;
 }) => {
-  if (getXcmInfo(fromChainId, toChainId).type === 'XCM')
+  if (getXcmInfo(fromChainId, toChainId)?.type === 'XCM')
     return transferXcm({
       fromChainId,
       toChainId,

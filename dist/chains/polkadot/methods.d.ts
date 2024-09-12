@@ -29,7 +29,6 @@ export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, t
     toAddress: string;
     amount: string;
     assetId: string;
-    xcmType: string;
     signer: any;
     memo: string;
 }) => Promise<TransferStatusByAddress>;
