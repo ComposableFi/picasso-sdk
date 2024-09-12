@@ -231,7 +231,7 @@ export const getMultiApi = (endpoints: string[]): Promise<ApiPromise[]> => {
   endpoints.forEach((api) => {
     if (api.startsWith('ws://')) promises.push(getApi(api));
   });
-  return Promise.all(endpoints.map((endpoint) => getApi(endpoint)));
+  return Promise.all(promises);
 };
 
 export const getDefaultTxHeight = (height: number, extra: number = 100) => {
