@@ -406,7 +406,7 @@ export async function transferIbc(
     amount,
     assetId,
     signer,
-
+    sourceChannel,
     memo,
   }: {
     fromChainId: string;
@@ -417,7 +417,7 @@ export async function transferIbc(
     assetId: string;
 
     signer: any;
-
+    sourceChannel: number;
     memo: string;
   }
 
@@ -433,9 +433,8 @@ export async function transferIbc(
   // memo: string,
   // config: any,
 ): Promise<TransferStatusByAddress> {
-  const sourceChannel = getSourceChannel(fromChainId, toChainId);
-
-  if (!assetId || !sourceChannel) return;
+  if (!assetId) throw 'assetId not found';
+  if (!sourceChannel) throw 'sourceChannel not found';
   const {
     rpc: fromRpc,
     polkadot: { ss58Format: fromSs58Format },
@@ -492,6 +491,7 @@ export const polkadotTransfer = async ({
   assetId,
   signer,
   memo,
+  sourceChannel,
 }: {
   fromChainId: string;
   toChainId: string;
@@ -500,6 +500,7 @@ export const polkadotTransfer = async ({
   amount: string;
   assetId: string;
   signer: any;
+  sourceChannel?: number;
   memo: string;
 }) => {
   try {
@@ -521,6 +522,7 @@ export const polkadotTransfer = async ({
       amount,
       assetId,
       signer,
+      sourceChannel,
       memo,
     });
   } catch (err) {
