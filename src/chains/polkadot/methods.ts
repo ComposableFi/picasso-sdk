@@ -457,7 +457,10 @@ export async function transferIbc(
   let convertedToAddr = '';
   let extrinsic: SubmittableExtrinsic<'promise'>;
 
-  convertedToAddr = encodeAddress(decodeAddress(toAddress), toSs58Format);
+  convertedToAddr =
+    networks[toChainId].chainType === 'polkadot'
+      ? encodeAddress(decodeAddress(toAddress), toSs58Format)
+      : toAddress;
 
   const height = Number(await (toApi || fromApi).query.system.number());
   const defaultHeight = getDefaultTxHeight(height);
