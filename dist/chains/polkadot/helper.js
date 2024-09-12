@@ -269,7 +269,7 @@ var getMultiApi = function (endpoints) {
         if (api.startsWith('ws://'))
             promises.push(getApi(api));
     });
-    return Promise.all(endpoints.map(function (endpoint) { return getApi(endpoint); }));
+    return Promise.all(promises);
 };
 exports.getMultiApi = getMultiApi;
 var getDefaultTxHeight = function (height, extra) {
