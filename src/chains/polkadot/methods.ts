@@ -502,8 +502,18 @@ export const polkadotTransfer = async ({
   signer: any;
   memo: string;
 }) => {
-  if (getXcmInfo(fromChainId, toChainId)?.type === 'XCM')
-    return transferXcm({
+  try {
+    if (getXcmInfo(fromChainId, toChainId)?.type === 'XCM')
+      return transferXcm({
+        fromChainId,
+        toChainId,
+        fromAddress,
+        toAddress,
+        amount,
+        assetId,
+        signer,
+      });
+    return transferIbc({
       fromChainId,
       toChainId,
       fromAddress,
@@ -511,15 +521,9 @@ export const polkadotTransfer = async ({
       amount,
       assetId,
       signer,
+      memo,
     });
-  return transferIbc({
-    fromChainId,
-    toChainId,
-    fromAddress,
-    toAddress,
-    amount,
-    assetId,
-    signer,
-    memo,
-  });
+  } catch (err) {
+    console.error(err);
+  }
 };
