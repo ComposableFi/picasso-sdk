@@ -436,14 +436,12 @@ export async function transferIbc(
   if (!assetId) throw 'assetId not found';
   if (!sourceChannel) throw 'sourceChannel not found';
   const {
-    rpc: fromRpc,
-    polkadot: { ss58Format: fromSs58Format },
+    rpc: fromRpc = '',
+    polkadot: { ss58Format: fromSs58Format = 0 } = {},
   } = networks[fromChainId];
 
-  const {
-    rpc: toRpc,
-    polkadot: { ss58Format: toSs58Format },
-  } = networks[toChainId];
+  const { rpc: toRpc = '', polkadot: { ss58Format: toSs58Format = 0 } = {} } =
+    networks[toChainId];
 
   // Fetch the relevant APIs for the networks
   const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
