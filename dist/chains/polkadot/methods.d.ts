@@ -12,7 +12,7 @@ export declare function transferXcm({ fromChainId, toChainId, fromAddress, toAdd
     assetId: string;
     signer: any;
 }): Promise<TransferStatusByAddress>;
-export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, memo, }: {
+export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, sourceChannel, memo, }: {
     fromChainId: string;
     toChainId: string;
     fromAddress: string;
@@ -20,9 +20,10 @@ export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAdd
     amount: string;
     assetId: string;
     signer: any;
+    sourceChannel: number;
     memo: string;
 }): Promise<TransferStatusByAddress>;
-export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, memo, }: {
+export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, memo, sourceChannel, }: {
     fromChainId: string;
     toChainId: string;
     fromAddress: string;
@@ -30,6 +31,7 @@ export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, t
     amount: string;
     assetId: string;
     signer: any;
+    sourceChannel?: number;
     memo: string;
 }) => Promise<TransferStatusByAddress>;
 //# sourceMappingURL=methods.d.ts.map
