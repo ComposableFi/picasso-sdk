@@ -22,7 +22,7 @@ import {
   makeIbcToPolkadot,
 } from './helper';
 import { networks } from '../../config';
-import { IEvent, AnyTuple } from '@polkadot/types/types';
+import { IEvent, AnyTuple, Signer } from '@polkadot/types/types';
 import { TransferStatusByAddress } from './types';
 import { getSourceChannel, getXcmInfo } from '../common';
 // import { makeIbcToCosmos, makeIbcToPolkadot, getDefaultTxHeight } from './ibc';
@@ -198,6 +198,8 @@ export async function transferXcm({
   amount,
   assetId,
   signer,
+  fromApi,
+  toApi,
 }: {
   fromChainId: string;
   toChainId: string;
@@ -206,20 +208,18 @@ export async function transferXcm({
   amount: string;
   assetId: string;
 
-  signer: any;
+  signer: Signer;
+  fromApi: ApiPromise;
+  toApi: ApiPromise;
 }): Promise<TransferStatusByAddress> {
   const {
-    rpc: fromRpc,
     polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
   } = networks[fromChainId];
 
   const {
-    rpc: toRpc,
     polkadot: { ss58Format: toSs58Format, isParachain: isToParachain },
   } = networks[toChainId];
 
-  //get XCM infos
-  const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
   const { xcmType, version } = getXcmInfo(fromChainId, toChainId);
 
   const ethreumlish = ['2004', '2023'];
@@ -409,6 +409,8 @@ export async function transferIbc(
     signer,
     sourceChannel,
     memo,
+    fromApi,
+    toApi,
   }: {
     fromChainId: string;
     toChainId: string;
@@ -417,9 +419,11 @@ export async function transferIbc(
     amount: string;
     assetId: string;
 
-    signer: any;
+    signer: Signer;
     sourceChannel: number;
     memo: string;
+    fromApi: ApiPromise;
+    toApi?: ApiPromise;
   }
 
   // networkFrom: NetworkType,
@@ -436,19 +440,15 @@ export async function transferIbc(
 ): Promise<TransferStatusByAddress> {
   if (!assetId) throw 'assetId not found';
   if (!sourceChannel) throw 'sourceChannel not found';
-  const {
-    rpc: fromRpc = '',
-    polkadot: { ss58Format: fromSs58Format = 0 } = {},
-  } = networks[fromChainId];
+  const { polkadot: { ss58Format: fromSs58Format = 0 } = {} } =
+    networks[fromChainId];
 
   const {
-    rpc: toRpc = '',
     chainType: toChainType,
     polkadot: { ss58Format: toSs58Format = 0 } = {},
   } = networks[toChainId];
 
   // Fetch the relevant APIs for the networks
-  const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
 
   // Convert the fromAddress using the correct ss58 format for the networkFrom
   const convertedFromAddr = encodeAddress(
@@ -508,6 +508,8 @@ export const polkadotTransfer = async ({
   signer,
   memo,
   sourceChannel,
+  fromApi,
+  toApi,
 }: {
   fromChainId: string;
   toChainId: string;
@@ -518,10 +520,14 @@ export const polkadotTransfer = async ({
   signer: any;
   sourceChannel?: number;
   memo: string;
+  fromApi: ApiPromise;
+  toApi?: ApiPromise;
 }) => {
   try {
     if (getXcmInfo(fromChainId, toChainId)?.type === 'XCM')
       return transferXcm({
+        fromApi,
+        toApi,
         fromChainId,
         toChainId,
         fromAddress,
@@ -540,6 +546,8 @@ export const polkadotTransfer = async ({
       signer,
       sourceChannel,
       memo,
+      fromApi,
+      toApi,
     });
   } catch (err) {
     console.error(err);
