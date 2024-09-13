@@ -28,4 +28,8 @@ export declare const getCosmosClient: ({ chainId, rpc, keplr, feeAssetId, gasPri
     gasPrice: string;
     supportLedger: boolean;
 }) => Promise<SigningStargateClient>;
+export declare const getCosmosBlockHeight: ({ client, extra, }: {
+    client: SigningStargateClient;
+    extra: number;
+}) => Promise<number>;
 //# sourceMappingURL=helper.d.ts.map

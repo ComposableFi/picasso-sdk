@@ -313,10 +313,10 @@ function transferIbc(_a) {
     // memo: string,
     // config: any,
     ) {
-        var _c, _d, _e, fromSs58Format, _f, toChainType, _g, _h, _j, toSs58Format, convertedFromAddr, convertedToAddr, extrinsic, height, _k, defaultHeight;
-        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo, fromApi = _b.fromApi, toApi = _b.toApi;
-        return __generator(this, function (_l) {
-            switch (_l.label) {
+        var _c, _d, _e, fromSs58Format, _f, toChainType, _g, _h, _j, toSs58Format, convertedFromAddr, convertedToAddr, extrinsic;
+        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo, fromApi = _b.fromApi, toApi = _b.toApi, destinationHeight = _b.destinationHeight;
+        return __generator(this, function (_k) {
+            switch (_k.label) {
                 case 0:
                     if (!assetId)
                         throw 'assetId not found';
@@ -330,11 +330,7 @@ function transferIbc(_a) {
                         config_1.networks[toChainId].chainType === 'polkadot'
                             ? (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format)
                             : toAddress;
-                    _k = Number;
-                    return [4 /*yield*/, (toApi || fromApi).query.system.number()];
-                case 1:
-                    height = _k.apply(void 0, [_l.sent()]);
-                    defaultHeight = (0, helper_1.getDefaultTxHeight)(height);
+                    // const defaultHeight = getPolkadotBlockHeight(height, chainType);
                     extrinsic =
                         toChainType === 'polkadot'
                             ? (0, helper_1.makeIbcToPolkadot)({
@@ -343,7 +339,7 @@ function transferIbc(_a) {
                                 sourceChannel: Number(sourceChannel),
                                 assetId: assetId,
                                 amount: amount,
-                                defaultHeight: defaultHeight,
+                                destinationHeight: destinationHeight,
                                 memo: memo,
                             })
                             : (0, helper_1.makeIbcToCosmos)({
@@ -352,7 +348,7 @@ function transferIbc(_a) {
                                 sourceChannel: Number(sourceChannel),
                                 assetId: assetId,
                                 amount: amount,
-                                defaultHeight: defaultHeight,
+                                destinationHeight: destinationHeight,
                                 memo: memo,
                             });
                     return [4 /*yield*/, signAndSendTransfer({
@@ -365,14 +361,14 @@ function transferIbc(_a) {
                             filter: null,
                             signer: signer,
                         })];
-                case 2: return [2 /*return*/, _l.sent()];
+                case 1: return [2 /*return*/, _k.sent()];
             }
         });
     });
 }
 var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var _c;
-    var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, memo = _b.memo, sourceChannel = _b.sourceChannel, fromApi = _b.fromApi, toApi = _b.toApi;
+    var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, memo = _b.memo, sourceChannel = _b.sourceChannel, fromApi = _b.fromApi, toApi = _b.toApi, destinationHeight = _b.destinationHeight;
     return __generator(this, function (_d) {
         try {
             if (((_c = (0, common_1.getXcmInfo)(fromChainId, toChainId)) === null || _c === void 0 ? void 0 : _c.type) === 'XCM')
@@ -397,6 +393,7 @@ var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                     signer: signer,
                     sourceChannel: sourceChannel,
                     memo: memo,
+                    destinationHeight: destinationHeight,
                     fromApi: fromApi,
                     toApi: toApi,
                 })];

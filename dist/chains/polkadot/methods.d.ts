@@ -16,7 +16,7 @@ export declare function transferXcm({ fromChainId, toChainId, fromAddress, toAdd
     fromApi: ApiPromise;
     toApi: ApiPromise;
 }): Promise<TransferStatusByAddress>;
-export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, sourceChannel, memo, fromApi, toApi, }: {
+export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, sourceChannel, memo, fromApi, toApi, destinationHeight, }: {
     fromChainId: string;
     toChainId: string;
     fromAddress: string;
@@ -28,8 +28,9 @@ export declare function transferIbc({ fromChainId, toChainId, fromAddress, toAdd
     memo: string;
     fromApi: ApiPromise;
     toApi?: ApiPromise;
+    destinationHeight: number;
 }): Promise<TransferStatusByAddress>;
-export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, memo, sourceChannel, fromApi, toApi, }: {
+export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, toAddress, amount, assetId, signer, memo, sourceChannel, fromApi, toApi, destinationHeight, }: {
     fromChainId: string;
     toChainId: string;
     fromAddress: string;
@@ -41,5 +42,6 @@ export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, t
     memo: string;
     fromApi: ApiPromise;
     toApi?: ApiPromise;
+    destinationHeight: number;
 }) => Promise<TransferStatusByAddress>;
 //# sourceMappingURL=methods.d.ts.map

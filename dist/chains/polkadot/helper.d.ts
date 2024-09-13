@@ -35,23 +35,23 @@ export declare function signAndSend<T extends AnyTuple>({ accountId, extrinsics,
 export declare function getAvailableCoin(endpoint: string, accountId: string | null): Promise<Big>;
 export declare function getApi(endpoint: string, option?: ApiOptions): Promise<ApiPromise>;
 export declare const getMultiApi: (endpoints: string[]) => Promise<ApiPromise[]>;
-export declare const getDefaultTxHeight: (height: number, extra?: number) => number;
-export declare const makeIbcToPolkadot: ({ api, toAddress, sourceChannel, assetId, amount, defaultHeight, memo, }: {
+export declare const getPolkadotBlockHeight: (api: ApiPromise, extra?: number) => Promise<number>;
+export declare const makeIbcToPolkadot: ({ api, toAddress, sourceChannel, assetId, amount, destinationHeight, memo, }: {
     api: ApiPromise;
     toAddress: string;
     sourceChannel: number;
     assetId: string;
     amount: string;
-    defaultHeight: number;
+    destinationHeight: number;
     memo: string;
 }) => SubmittableExtrinsic<"promise", ISubmittableResult>;
-export declare const makeIbcToCosmos: ({ api, toAddress, sourceChannel, assetId, amount, defaultHeight, memo, }: {
+export declare const makeIbcToCosmos: ({ api, toAddress, sourceChannel, assetId, amount, destinationHeight, memo, }: {
     api: ApiPromise;
     toAddress: string;
     sourceChannel: number;
     assetId: string;
     amount: string;
-    defaultHeight: number;
+    destinationHeight: number;
     memo: string;
 }) => SubmittableExtrinsic<"promise", ISubmittableResult>;
 export declare const getMultihopPath: (fromChainId: string, networkType: "2019" | "2087") => Promise<MultihopRoutePath[]>;

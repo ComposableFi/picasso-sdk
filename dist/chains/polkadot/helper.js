@@ -46,11 +46,36 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMultihopPath = exports.makeIbcToCosmos = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
+exports.getMultihopPath = exports.makeIbcToCosmos = exports.makeIbcToPolkadot = exports.getPolkadotBlockHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
 exports.getSubAccount = getSubAccount;
 exports.getPaymentAsset = getPaymentAsset;
 exports.setPaymentAsset = setPaymentAsset;
@@ -272,20 +297,36 @@ var getMultiApi = function (endpoints) {
     return Promise.all(promises);
 };
 exports.getMultiApi = getMultiApi;
-var getDefaultTxHeight = function (height, extra) {
-    if (extra === void 0) { extra = 100; }
-    return height + extra;
+var getPolkadotBlockHeight = function (api_2) {
+    var args_1 = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args_1[_i - 1] = arguments[_i];
+    }
+    return __awaiter(void 0, __spreadArray([api_2], __read(args_1), false), void 0, function (api, extra) {
+        var height, _a;
+        if (extra === void 0) { extra = 100; }
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _a = Number;
+                    return [4 /*yield*/, api.query.system.number()];
+                case 1:
+                    height = _a.apply(void 0, [_b.sent()]);
+                    return [2 /*return*/, height + extra];
+            }
+        });
+    });
 };
-exports.getDefaultTxHeight = getDefaultTxHeight;
+exports.getPolkadotBlockHeight = getPolkadotBlockHeight;
 var makeIbcToPolkadot = function (_a) {
-    var api = _a.api, toAddress = _a.toAddress, sourceChannel = _a.sourceChannel, assetId = _a.assetId, amount = _a.amount, defaultHeight = _a.defaultHeight, _b = _a.memo, memo = _b === void 0 ? '' : _b;
+    var api = _a.api, toAddress = _a.toAddress, sourceChannel = _a.sourceChannel, assetId = _a.assetId, amount = _a.amount, destinationHeight = _a.destinationHeight, _b = _a.memo, memo = _b === void 0 ? '' : _b;
     if (memo === '') {
         return api.tx.ibc.transfer(api.createType('PalletIbcTransferParams', {
             to: { id: api.createType('AccountId32', toAddress) },
             sourceChannel: api.createType('u64', sourceChannel),
             timeout: {
                 absolute: {
-                    height: api.createType('u64', defaultHeight),
+                    height: api.createType('u64', destinationHeight),
                 },
             },
         }), api.createType('u128', assetId), api.createType('u128', amount), undefined);
@@ -295,21 +336,21 @@ var makeIbcToPolkadot = function (_a) {
         sourceChannel: api.createType('u64', sourceChannel),
         timeout: {
             absolute: {
-                height: api.createType('u64', defaultHeight),
+                height: api.createType('u64', destinationHeight),
             },
         },
     }), api.createType('u128', assetId), api.createType('u128', amount), api.createType('Text', memo));
 };
 exports.makeIbcToPolkadot = makeIbcToPolkadot;
 var makeIbcToCosmos = function (_a) {
-    var api = _a.api, toAddress = _a.toAddress, sourceChannel = _a.sourceChannel, assetId = _a.assetId, amount = _a.amount, defaultHeight = _a.defaultHeight, _b = _a.memo, memo = _b === void 0 ? '' : _b;
+    var api = _a.api, toAddress = _a.toAddress, sourceChannel = _a.sourceChannel, assetId = _a.assetId, amount = _a.amount, destinationHeight = _a.destinationHeight, _b = _a.memo, memo = _b === void 0 ? '' : _b;
     if (memo === '') {
         return api.tx.ibc.transfer(api.createType('PalletIbcTransferParams', {
             to: { Raw: toAddress },
             sourceChannel: api.createType('u64', sourceChannel),
             timeout: {
                 absolute: {
-                    height: api.createType('u64', defaultHeight),
+                    height: api.createType('u64', destinationHeight),
                 },
             },
         }), api.createType('AssetId', assetId), api.createType('Balance', amount), undefined);
@@ -319,7 +360,7 @@ var makeIbcToCosmos = function (_a) {
         sourceChannel: api.createType('u64', sourceChannel),
         timeout: {
             absolute: {
-                height: api.createType('u64', defaultHeight),
+                height: api.createType('u64', destinationHeight),
             },
         },
     }), api.createType('AssetId', assetId), api.createType('Balance', amount), api.createType('Text', memo));
