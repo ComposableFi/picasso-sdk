@@ -50,7 +50,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMultihopPath = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
+exports.getMultihopPath = exports.makeIbcToCosmos = exports.makeIbcToPolkadot = exports.getDefaultTxHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
 exports.getSubAccount = getSubAccount;
 exports.getPaymentAsset = getPaymentAsset;
 exports.setPaymentAsset = setPaymentAsset;
@@ -301,6 +301,30 @@ var makeIbcToPolkadot = function (_a) {
     }), api.createType('u128', assetId), api.createType('u128', amount), api.createType('Text', memo));
 };
 exports.makeIbcToPolkadot = makeIbcToPolkadot;
+var makeIbcToCosmos = function (_a) {
+    var api = _a.api, toAddress = _a.toAddress, sourceChannel = _a.sourceChannel, assetId = _a.assetId, amount = _a.amount, defaultHeight = _a.defaultHeight, _b = _a.memo, memo = _b === void 0 ? '' : _b;
+    if (memo === '') {
+        return api.tx.ibc.transfer(api.createType('PalletIbcTransferParams', {
+            to: { Raw: toAddress },
+            sourceChannel: api.createType('u64', sourceChannel),
+            timeout: {
+                absolute: {
+                    height: api.createType('u64', defaultHeight),
+                },
+            },
+        }), api.createType('AssetId', assetId), api.createType('Balance', amount), undefined);
+    }
+    return api.tx.ibc.transfer(api.createType('PalletIbcTransferParams', {
+        to: { Raw: toAddress },
+        sourceChannel: api.createType('u64', sourceChannel),
+        timeout: {
+            absolute: {
+                height: api.createType('u64', defaultHeight),
+            },
+        },
+    }), api.createType('AssetId', assetId), api.createType('Balance', amount), api.createType('Text', memo));
+};
+exports.makeIbcToCosmos = makeIbcToCosmos;
 var getMultihopPath = function (fromChainId, networkType // composable |picasso
 ) { return __awaiter(void 0, void 0, void 0, function () {
     var rpc, api, result;

@@ -45,5 +45,14 @@ export declare const makeIbcToPolkadot: ({ api, toAddress, sourceChannel, assetI
     defaultHeight: number;
     memo: string;
 }) => SubmittableExtrinsic<"promise", ISubmittableResult>;
+export declare const makeIbcToCosmos: ({ api, toAddress, sourceChannel, assetId, amount, defaultHeight, memo, }: {
+    api: ApiPromise;
+    toAddress: string;
+    sourceChannel: number;
+    assetId: string;
+    amount: string;
+    defaultHeight: number;
+    memo: string;
+}) => SubmittableExtrinsic<"promise", ISubmittableResult>;
 export declare const getMultihopPath: (fromChainId: string, networkType: "2019" | "2087") => Promise<MultihopRoutePath[]>;
 //# sourceMappingURL=helper.d.ts.map

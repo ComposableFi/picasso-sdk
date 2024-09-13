@@ -332,7 +332,7 @@ function transferIbc(_a) {
     // memo: string,
     // config: any,
     ) {
-        var _c, _d, fromRpc, _e, _f, _g, fromSs58Format, _h, _j, toRpc, _k, _l, _m, toSs58Format, _o, fromApi, toApi, convertedFromAddr, convertedToAddr, extrinsic, height, _p, defaultHeight;
+        var _c, _d, fromRpc, _e, _f, _g, fromSs58Format, _h, _j, toRpc, toChainType, _k, _l, _m, toSs58Format, _o, fromApi, toApi, convertedFromAddr, convertedToAddr, extrinsic, height, _p, defaultHeight;
         var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo;
         return __generator(this, function (_q) {
             switch (_q.label) {
@@ -342,7 +342,7 @@ function transferIbc(_a) {
                     if (!sourceChannel)
                         throw 'sourceChannel not found';
                     _c = config_1.networks[fromChainId], _d = _c.rpc, fromRpc = _d === void 0 ? '' : _d, _e = _c.polkadot, _f = _e === void 0 ? {} : _e, _g = _f.ss58Format, fromSs58Format = _g === void 0 ? 0 : _g;
-                    _h = config_1.networks[toChainId], _j = _h.rpc, toRpc = _j === void 0 ? '' : _j, _k = _h.polkadot, _l = _k === void 0 ? {} : _k, _m = _l.ss58Format, toSs58Format = _m === void 0 ? 0 : _m;
+                    _h = config_1.networks[toChainId], _j = _h.rpc, toRpc = _j === void 0 ? '' : _j, toChainType = _h.chainType, _k = _h.polkadot, _l = _k === void 0 ? {} : _k, _m = _l.ss58Format, toSs58Format = _m === void 0 ? 0 : _m;
                     return [4 /*yield*/, (0, helper_1.getMultiApi)([fromRpc, toRpc])];
                 case 1:
                     _o = __read.apply(void 0, [_q.sent(), 2]), fromApi = _o[0], toApi = _o[1];
@@ -357,15 +357,26 @@ function transferIbc(_a) {
                 case 2:
                     height = _p.apply(void 0, [_q.sent()]);
                     defaultHeight = (0, helper_1.getDefaultTxHeight)(height);
-                    extrinsic = (0, helper_1.makeIbcToPolkadot)({
-                        api: fromApi,
-                        toAddress: convertedToAddr,
-                        sourceChannel: Number(sourceChannel),
-                        assetId: assetId,
-                        amount: amount,
-                        defaultHeight: defaultHeight,
-                        memo: memo,
-                    });
+                    extrinsic =
+                        toChainType === 'polkadot'
+                            ? (0, helper_1.makeIbcToPolkadot)({
+                                api: fromApi,
+                                toAddress: convertedToAddr,
+                                sourceChannel: Number(sourceChannel),
+                                assetId: assetId,
+                                amount: amount,
+                                defaultHeight: defaultHeight,
+                                memo: memo,
+                            })
+                            : (0, helper_1.makeIbcToCosmos)({
+                                api: fromApi,
+                                toAddress: convertedToAddr,
+                                sourceChannel: Number(sourceChannel),
+                                assetId: assetId,
+                                amount: amount,
+                                defaultHeight: defaultHeight,
+                                memo: memo,
+                            });
                     return [4 /*yield*/, signAndSendTransfer({
                             api: fromApi,
                             apiTo: toApi,
