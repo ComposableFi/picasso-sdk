@@ -35,22 +35,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.polkadotTransfer = exports.buildStatusInfo = void 0;
 exports.transferXcm = transferXcm;
@@ -221,17 +205,14 @@ var buildStatusInfo = function (txHash, events) {
 exports.buildStatusInfo = buildStatusInfo;
 function transferXcm(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var _c, fromRpc, _d, fromSs58Format, isFromParachain, _e, toRpc, _f, toSs58Format, isToParachain, _g, fromApi, toApi, _h, xcmType, version, ethreumlish, convertedToAddr, convertedFromAddr, result;
-        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer;
-        return __generator(this, function (_j) {
-            switch (_j.label) {
+        var _c, fromSs58Format, isFromParachain, _d, toSs58Format, isToParachain, _e, xcmType, version, ethreumlish, convertedToAddr, convertedFromAddr, result;
+        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, fromApi = _b.fromApi, toApi = _b.toApi;
+        return __generator(this, function (_f) {
+            switch (_f.label) {
                 case 0:
-                    _c = config_1.networks[fromChainId], fromRpc = _c.rpc, _d = _c.polkadot, fromSs58Format = _d.ss58Format, isFromParachain = _d.isParachain;
-                    _e = config_1.networks[toChainId], toRpc = _e.rpc, _f = _e.polkadot, toSs58Format = _f.ss58Format, isToParachain = _f.isParachain;
-                    return [4 /*yield*/, (0, helper_1.getMultiApi)([fromRpc, toRpc])];
-                case 1:
-                    _g = __read.apply(void 0, [_j.sent(), 2]), fromApi = _g[0], toApi = _g[1];
-                    _h = (0, common_1.getXcmInfo)(fromChainId, toChainId), xcmType = _h.xcmType, version = _h.version;
+                    _c = config_1.networks[fromChainId].polkadot, fromSs58Format = _c.ss58Format, isFromParachain = _c.isParachain;
+                    _d = config_1.networks[toChainId].polkadot, toSs58Format = _d.ss58Format, isToParachain = _d.isParachain;
+                    _e = (0, common_1.getXcmInfo)(fromChainId, toChainId), xcmType = _e.xcmType, version = _e.version;
                     ethreumlish = ['2004', '2023'];
                     convertedToAddr = ethreumlish.includes(toChainId)
                         ? toAddress
@@ -311,9 +292,9 @@ function transferXcm(_a) {
                             filter: isFromParachain ? null : fromApi.events.xcmPallet.Attempted.is,
                             signer: signer,
                         })];
-                case 2: 
+                case 1: 
                 // Call signAndSendTransfer with the appropriate parameters
-                return [2 /*return*/, _j.sent()];
+                return [2 /*return*/, _f.sent()];
             }
         });
     });
@@ -332,30 +313,27 @@ function transferIbc(_a) {
     // memo: string,
     // config: any,
     ) {
-        var _c, _d, fromRpc, _e, _f, _g, fromSs58Format, _h, _j, toRpc, toChainType, _k, _l, _m, toSs58Format, _o, fromApi, toApi, convertedFromAddr, convertedToAddr, extrinsic, height, _p, defaultHeight;
-        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo;
-        return __generator(this, function (_q) {
-            switch (_q.label) {
+        var _c, _d, _e, fromSs58Format, _f, toChainType, _g, _h, _j, toSs58Format, convertedFromAddr, convertedToAddr, extrinsic, height, _k, defaultHeight;
+        var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo, fromApi = _b.fromApi, toApi = _b.toApi;
+        return __generator(this, function (_l) {
+            switch (_l.label) {
                 case 0:
                     if (!assetId)
                         throw 'assetId not found';
                     if (!sourceChannel)
                         throw 'sourceChannel not found';
-                    _c = config_1.networks[fromChainId], _d = _c.rpc, fromRpc = _d === void 0 ? '' : _d, _e = _c.polkadot, _f = _e === void 0 ? {} : _e, _g = _f.ss58Format, fromSs58Format = _g === void 0 ? 0 : _g;
-                    _h = config_1.networks[toChainId], _j = _h.rpc, toRpc = _j === void 0 ? '' : _j, toChainType = _h.chainType, _k = _h.polkadot, _l = _k === void 0 ? {} : _k, _m = _l.ss58Format, toSs58Format = _m === void 0 ? 0 : _m;
-                    return [4 /*yield*/, (0, helper_1.getMultiApi)([fromRpc, toRpc])];
-                case 1:
-                    _o = __read.apply(void 0, [_q.sent(), 2]), fromApi = _o[0], toApi = _o[1];
+                    _c = config_1.networks[fromChainId].polkadot, _d = _c === void 0 ? {} : _c, _e = _d.ss58Format, fromSs58Format = _e === void 0 ? 0 : _e;
+                    _f = config_1.networks[toChainId], toChainType = _f.chainType, _g = _f.polkadot, _h = _g === void 0 ? {} : _g, _j = _h.ss58Format, toSs58Format = _j === void 0 ? 0 : _j;
                     convertedFromAddr = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(fromAddress), fromSs58Format);
                     convertedToAddr = '';
                     convertedToAddr =
                         config_1.networks[toChainId].chainType === 'polkadot'
                             ? (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format)
                             : toAddress;
-                    _p = Number;
+                    _k = Number;
                     return [4 /*yield*/, (toApi || fromApi).query.system.number()];
-                case 2:
-                    height = _p.apply(void 0, [_q.sent()]);
+                case 1:
+                    height = _k.apply(void 0, [_l.sent()]);
                     defaultHeight = (0, helper_1.getDefaultTxHeight)(height);
                     extrinsic =
                         toChainType === 'polkadot'
@@ -387,18 +365,20 @@ function transferIbc(_a) {
                             filter: null,
                             signer: signer,
                         })];
-                case 3: return [2 /*return*/, _q.sent()];
+                case 2: return [2 /*return*/, _l.sent()];
             }
         });
     });
 }
 var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var _c;
-    var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, memo = _b.memo, sourceChannel = _b.sourceChannel;
+    var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, memo = _b.memo, sourceChannel = _b.sourceChannel, fromApi = _b.fromApi, toApi = _b.toApi;
     return __generator(this, function (_d) {
         try {
             if (((_c = (0, common_1.getXcmInfo)(fromChainId, toChainId)) === null || _c === void 0 ? void 0 : _c.type) === 'XCM')
                 return [2 /*return*/, transferXcm({
+                        fromApi: fromApi,
+                        toApi: toApi,
                         fromChainId: fromChainId,
                         toChainId: toChainId,
                         fromAddress: fromAddress,
@@ -417,6 +397,8 @@ var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                     signer: signer,
                     sourceChannel: sourceChannel,
                     memo: memo,
+                    fromApi: fromApi,
+                    toApi: toApi,
                 })];
         }
         catch (err) {
