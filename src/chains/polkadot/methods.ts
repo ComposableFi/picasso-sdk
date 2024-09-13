@@ -18,6 +18,7 @@ import {
   getDefaultTxHeight,
   getMultiApi,
   getSignAndSendParams,
+  makeIbcToCosmos,
   makeIbcToPolkadot,
 } from './helper';
 import { networks } from '../../config';
@@ -440,8 +441,11 @@ export async function transferIbc(
     polkadot: { ss58Format: fromSs58Format = 0 } = {},
   } = networks[fromChainId];
 
-  const { rpc: toRpc = '', polkadot: { ss58Format: toSs58Format = 0 } = {} } =
-    networks[toChainId];
+  const {
+    rpc: toRpc = '',
+    chainType: toChainType,
+    polkadot: { ss58Format: toSs58Format = 0 } = {},
+  } = networks[toChainId];
 
   // Fetch the relevant APIs for the networks
   const [fromApi, toApi] = await getMultiApi([fromRpc, toRpc]);
@@ -462,15 +466,26 @@ export async function transferIbc(
 
   const height = Number(await (toApi || fromApi).query.system.number());
   const defaultHeight = getDefaultTxHeight(height);
-  extrinsic = makeIbcToPolkadot({
-    api: fromApi,
-    toAddress: convertedToAddr,
-    sourceChannel: Number(sourceChannel),
-    assetId,
-    amount,
-    defaultHeight,
-    memo,
-  });
+  extrinsic =
+    toChainType === 'polkadot'
+      ? makeIbcToPolkadot({
+          api: fromApi,
+          toAddress: convertedToAddr,
+          sourceChannel: Number(sourceChannel),
+          assetId,
+          amount,
+          defaultHeight,
+          memo,
+        })
+      : makeIbcToCosmos({
+          api: fromApi,
+          toAddress: convertedToAddr,
+          sourceChannel: Number(sourceChannel),
+          assetId,
+          amount,
+          defaultHeight,
+          memo,
+        });
   return await signAndSendTransfer({
     api: fromApi,
     apiTo: toApi,

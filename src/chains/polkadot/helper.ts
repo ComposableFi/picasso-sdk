@@ -286,6 +286,55 @@ export const makeIbcToPolkadot = ({
   );
 };
 
+export const makeIbcToCosmos = ({
+  api,
+  toAddress,
+  sourceChannel,
+  assetId,
+  amount,
+  defaultHeight,
+  memo = '',
+}: {
+  api: ApiPromise;
+  toAddress: string;
+  sourceChannel: number;
+  assetId: string;
+  amount: string;
+  defaultHeight: number;
+  memo: string;
+}) => {
+  if (memo === '') {
+    return api.tx.ibc.transfer(
+      api.createType('PalletIbcTransferParams', {
+        to: { Raw: toAddress },
+        sourceChannel: api.createType('u64', sourceChannel),
+        timeout: {
+          absolute: {
+            height: api.createType('u64', defaultHeight),
+          },
+        },
+      }),
+      api.createType('AssetId', assetId),
+      api.createType('Balance', amount),
+      undefined
+    );
+  }
+  return api.tx.ibc.transfer(
+    api.createType('PalletIbcTransferParams', {
+      to: { Raw: toAddress },
+      sourceChannel: api.createType('u64', sourceChannel),
+      timeout: {
+        absolute: {
+          height: api.createType('u64', defaultHeight),
+        },
+      },
+    }),
+    api.createType('AssetId', assetId),
+    api.createType('Balance', amount),
+    api.createType('Text', memo)
+  );
+};
+
 export const getMultihopPath = async (
   fromChainId: string,
   networkType: '2019' | '2087' // composable |picasso
