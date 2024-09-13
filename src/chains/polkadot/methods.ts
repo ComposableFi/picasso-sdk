@@ -15,8 +15,8 @@ import {
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { type SubmittableExtrinsic } from '@polkadot/api-base/types';
 import {
-  getDefaultTxHeight,
   getMultiApi,
+  getPolkadotBlockHeight,
   getSignAndSendParams,
   makeIbcToCosmos,
   makeIbcToPolkadot,
@@ -411,6 +411,7 @@ export async function transferIbc(
     memo,
     fromApi,
     toApi,
+    destinationHeight,
   }: {
     fromChainId: string;
     toChainId: string;
@@ -418,12 +419,12 @@ export async function transferIbc(
     toAddress: string;
     amount: string;
     assetId: string;
-
     signer: Signer;
     sourceChannel: number;
     memo: string;
     fromApi: ApiPromise;
     toApi?: ApiPromise;
+    destinationHeight: number;
   }
 
   // networkFrom: NetworkType,
@@ -464,8 +465,7 @@ export async function transferIbc(
       ? encodeAddress(decodeAddress(toAddress), toSs58Format)
       : toAddress;
 
-  const height = Number(await (toApi || fromApi).query.system.number());
-  const defaultHeight = getDefaultTxHeight(height);
+  // const defaultHeight = getPolkadotBlockHeight(height, chainType);
   extrinsic =
     toChainType === 'polkadot'
       ? makeIbcToPolkadot({
@@ -474,7 +474,7 @@ export async function transferIbc(
           sourceChannel: Number(sourceChannel),
           assetId,
           amount,
-          defaultHeight,
+          destinationHeight,
           memo,
         })
       : makeIbcToCosmos({
@@ -483,7 +483,7 @@ export async function transferIbc(
           sourceChannel: Number(sourceChannel),
           assetId,
           amount,
-          defaultHeight,
+          destinationHeight,
           memo,
         });
   return await signAndSendTransfer({
@@ -510,6 +510,7 @@ export const polkadotTransfer = async ({
   sourceChannel,
   fromApi,
   toApi,
+  destinationHeight,
 }: {
   fromChainId: string;
   toChainId: string;
@@ -522,6 +523,7 @@ export const polkadotTransfer = async ({
   memo: string;
   fromApi: ApiPromise;
   toApi?: ApiPromise;
+  destinationHeight: number;
 }) => {
   try {
     if (getXcmInfo(fromChainId, toChainId)?.type === 'XCM')
@@ -546,6 +548,7 @@ export const polkadotTransfer = async ({
       signer,
       sourceChannel,
       memo,
+      destinationHeight,
       fromApi,
       toApi,
     });

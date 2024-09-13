@@ -234,7 +234,12 @@ export const getMultiApi = (endpoints: string[]): Promise<ApiPromise[]> => {
   return Promise.all(promises);
 };
 
-export const getDefaultTxHeight = (height: number, extra: number = 100) => {
+export const getPolkadotBlockHeight = async (
+  api: ApiPromise,
+  extra: number = 100
+) => {
+  const height = Number(await api.query.system.number());
+
   return height + extra;
 };
 export const makeIbcToPolkadot = ({
@@ -243,7 +248,7 @@ export const makeIbcToPolkadot = ({
   sourceChannel,
   assetId,
   amount,
-  defaultHeight,
+  destinationHeight,
   memo = '',
 }: {
   api: ApiPromise;
@@ -251,7 +256,7 @@ export const makeIbcToPolkadot = ({
   sourceChannel: number;
   assetId: string;
   amount: string;
-  defaultHeight: number;
+  destinationHeight: number;
   memo: string;
 }) => {
   if (memo === '') {
@@ -261,7 +266,7 @@ export const makeIbcToPolkadot = ({
         sourceChannel: api.createType('u64', sourceChannel),
         timeout: {
           absolute: {
-            height: api.createType('u64', defaultHeight),
+            height: api.createType('u64', destinationHeight),
           },
         },
       }),
@@ -276,7 +281,7 @@ export const makeIbcToPolkadot = ({
       sourceChannel: api.createType('u64', sourceChannel),
       timeout: {
         absolute: {
-          height: api.createType('u64', defaultHeight),
+          height: api.createType('u64', destinationHeight),
         },
       },
     }),
@@ -292,7 +297,7 @@ export const makeIbcToCosmos = ({
   sourceChannel,
   assetId,
   amount,
-  defaultHeight,
+  destinationHeight,
   memo = '',
 }: {
   api: ApiPromise;
@@ -300,7 +305,7 @@ export const makeIbcToCosmos = ({
   sourceChannel: number;
   assetId: string;
   amount: string;
-  defaultHeight: number;
+  destinationHeight: number;
   memo: string;
 }) => {
   if (memo === '') {
@@ -310,7 +315,7 @@ export const makeIbcToCosmos = ({
         sourceChannel: api.createType('u64', sourceChannel),
         timeout: {
           absolute: {
-            height: api.createType('u64', defaultHeight),
+            height: api.createType('u64', destinationHeight),
           },
         },
       }),
@@ -325,7 +330,7 @@ export const makeIbcToCosmos = ({
       sourceChannel: api.createType('u64', sourceChannel),
       timeout: {
         absolute: {
-          height: api.createType('u64', defaultHeight),
+          height: api.createType('u64', destinationHeight),
         },
       },
     }),
