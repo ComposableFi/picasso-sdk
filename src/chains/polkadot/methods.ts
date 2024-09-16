@@ -105,7 +105,7 @@ async function signAndSendTransfer<T extends AnyTuple>({
         }
 
         // Check if transaction is finalized
-        if (status.isFinalized) {
+        if (status) {
           if (isIbc) {
             const header = apiTo ? await apiTo.rpc.chain.getHeader() : null;
             const result: TransferStatusByAddress = {
@@ -151,8 +151,6 @@ async function signAndSendTransfer<T extends AnyTuple>({
             };
             return resolve(result);
           }
-        } else {
-          console.log('Transaction status:', JSON.stringify(status));
         }
       })
       .catch((e) => {
