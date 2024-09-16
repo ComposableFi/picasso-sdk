@@ -99,7 +99,7 @@ function signAndSendTransfer(_a) {
                                                         message: 'Transfer incomplete',
                                                     })];
                                             }
-                                            if (!status.isFinalized) return [3 /*break*/, 10];
+                                            if (!status) return [3 /*break*/, 9];
                                             if (!isIbc) return [3 /*break*/, 4];
                                             if (!apiTo) return [3 /*break*/, 2];
                                             return [4 /*yield*/, apiTo.rpc.chain.getHeader()];
@@ -163,11 +163,7 @@ function signAndSendTransfer(_a) {
                                                 latestBlockNumber: header ? header.number.toNumber() : -1,
                                             };
                                             return [2 /*return*/, resolve(result_3)];
-                                        case 9: return [3 /*break*/, 11];
-                                        case 10:
-                                            console.log('Transaction status:', JSON.stringify(status));
-                                            _d.label = 11;
-                                        case 11: return [2 /*return*/];
+                                        case 9: return [2 /*return*/];
                                     }
                                 });
                             }); })
