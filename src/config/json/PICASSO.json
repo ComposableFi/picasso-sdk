@@ -74,21 +74,7 @@
       "ethereum": {},
       "solana": {}
     },
-    {
-      "coinDenom": "USK",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USK.svg",
-      "coinGeckoId": "",
-      "cosmos": {},
-      "polkadot": {
-        "picassoAssetId": "26",
-        "composableAssetId": "",
-        "ratio": { "n": "1", "d": "5000000" },
-        "existentialDeposit": "200000"
-      },
-      "ethereum": {},
-      "solana": {}
-    },
+
     {
       "coinDenom": "SEI",
       "coinDecimals": 6,
@@ -241,21 +227,7 @@
       "ethereum": {},
       "solana": {}
     },
-    {
-      "coinDenom": "Liquid Staked Kusama",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LIQUID STAKED KUSAMA.svg",
-      "coinGeckoId": "",
-      "cosmos": {},
-      "polkadot": {
-        "picassoAssetId": "20",
-        "composableAssetId": "",
-        "ratio": { "n": "70", "d": "10000" },
-        "existentialDeposit": "375000000"
-      },
-      "ethereum": {},
-      "solana": {}
-    },
+
     {
       "coinDenom": "OSMO",
       "coinDecimals": 6,
