@@ -334,6 +334,62 @@ exports.networks = {
             "2087"
         ]
     },
+    "kusama": {
+        "name": "Kusama",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
+        "rpc": "wss://kusama-rpc.polkadot.io",
+        "rest": "",
+        "chainType": "polkadot",
+        "chainId": "kusama",
+        "feeAssetId": "4",
+        "polkadot": {
+            "ss58Format": 2,
+            "isParachain": false,
+            "relayChain": "kusama",
+            "hops": {
+                "2087": {
+                    "type": "XCM",
+                    "xcmType": "xcmPallet.reserveTransferAssets",
+                    "version": "V2",
+                    "tokens": [
+                        "4"
+                    ]
+                }
+            }
+        },
+        "enabled": true,
+        "network_to": [
+            "2087"
+        ]
+    },
+    "polkadot": {
+        "name": "Polkadot",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
+        "rpc": "wss://rpc.polkadot.io",
+        "rest": "",
+        "chainType": "polkadot",
+        "chainId": "polkadot",
+        "feeAssetId": "79228162514264337593543950342",
+        "polkadot": {
+            "ss58Format": 0,
+            "isParachain": false,
+            "relayChain": "polkadot",
+            "hops": {
+                "2019": {
+                    "type": "XCM",
+                    "xcmType": "xcmPallet.limitedReserveTransferAssets",
+                    "version": "V2",
+                    "tokens": [
+                        "4"
+                    ]
+                }
+            }
+        },
+        "enabled": true,
+        "network_to": [
+            "2019"
+        ]
+    },
     "agoric-3": {
         "name": "Agoric",
         "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
@@ -418,6 +474,51 @@ exports.networks = {
         "enabled": true,
         "network_to": [
             "centauri-1"
+        ]
+    },
+    "centauri-1": {
+        "name": "centauri",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "rpc": "https://picasso-rpc.polkachu.com",
+        "rest": "https://picasso-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "centauri-1",
+        "feeAssetId": "ppica",
+        "cosmos": {
+            "bip44": {
+                "coinType": 118
+            },
+            "walletUrlForStaking": "https://explorer.nodestake.top/composable",
+            "bech32Config": {
+                "bech32PrefixAccAddr": "pica",
+                "bech32PrefixAccPub": "picapub",
+                "bech32PrefixValAddr": "picavaloper",
+                "bech32PrefixValPub": "picavaloperpub",
+                "bech32PrefixConsAddr": "picavalcons",
+                "bech32PrefixConsPub": "picavalconspub"
+            }
+        },
+        "enabled": true,
+        "network_to": [
+            "chihuahua-1",
+            "2087",
+            "osmosis-1",
+            "cosmoshub-4",
+            "stride-1",
+            "stargaze-1",
+            "quicksilver-2",
+            "crescent-1",
+            "agoric-3",
+            "secret-4",
+            "neutron-1",
+            "umee-1",
+            "kaiyo-1",
+            "injective-1",
+            "celestia",
+            "archway-1",
+            "ethereum",
+            "coreum-mainnet-1",
+            "solana"
         ]
     },
     "chihuahua-1": {
@@ -528,6 +629,19 @@ exports.networks = {
             "centauri-1"
         ]
     },
+    "ethereum": {
+        "name": "Ethereum",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
+        "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
+        "rest": "",
+        "chainType": "ethereum",
+        "chainId": "ethereum",
+        "feeAssetId": "ETH",
+        "enabled": true,
+        "network_to": [
+            "centauri-1"
+        ]
+    },
     "injective-1": {
         "name": "Injective",
         "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
@@ -603,6 +717,35 @@ exports.networks = {
         },
         "enabled": true,
         "network_to": [
+            "centauri-1"
+        ]
+    },
+    "osmosis-1": {
+        "name": "Osmosis",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+        "rest": "https://osmosis-cmp-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "osmosis-1",
+        "feeAssetId": "uosmo",
+        "cosmos": {
+            "walletUrl": "https://app.osmosis.zone",
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "osmo",
+                "bech32PrefixAccPub": "osmopub",
+                "bech32PrefixValAddr": "osmovaloper",
+                "bech32PrefixValPub": "osmovaloperpub",
+                "bech32PrefixConsAddr": "osmovalcons",
+                "bech32PrefixConsPub": "osmovalconspub"
+            }
+        },
+        "enabled": true,
+        "network_to": [
+            "pacific-1",
             "centauri-1"
         ]
     },
@@ -692,6 +835,19 @@ exports.networks = {
             "osmosis-1"
         ]
     },
+    "solana": {
+        "name": "Solana",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
+        "rpc": "https://madel-m03ip3-fast-mainnet.helius-rpc.com",
+        "rest": "",
+        "chainType": "solana",
+        "chainId": "solana",
+        "feeAssetId": "SOL",
+        "enabled": true,
+        "network_to": [
+            "centauri-1"
+        ]
+    },
     "stargaze-1": {
         "name": "Stargaze",
         "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
@@ -771,162 +927,6 @@ exports.networks = {
                 "bech32PrefixConsPub": "umeevalconspub"
             }
         },
-        "enabled": true,
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "kusama": {
-        "name": "Kusama",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
-        "rpc": "wss://kusama-rpc.polkadot.io",
-        "rest": "",
-        "chainType": "polkadot",
-        "chainId": "kusama",
-        "feeAssetId": "4",
-        "polkadot": {
-            "ss58Format": 2,
-            "isParachain": false,
-            "relayChain": "kusama",
-            "hops": {
-                "2087": {
-                    "type": "XCM",
-                    "xcmType": "xcmPallet.reserveTransferAssets",
-                    "version": "V2",
-                    "tokens": [
-                        "4"
-                    ]
-                }
-            }
-        },
-        "enabled": true,
-        "network_to": [
-            "2087"
-        ]
-    },
-    "polkadot": {
-        "name": "Polkadot",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
-        "rpc": "wss://rpc.polkadot.io",
-        "rest": "",
-        "chainType": "polkadot",
-        "chainId": "polkadot",
-        "feeAssetId": "79228162514264337593543950342",
-        "polkadot": {
-            "ss58Format": 0,
-            "isParachain": false,
-            "relayChain": "polkadot",
-            "hops": {
-                "2019": {
-                    "type": "XCM",
-                    "xcmType": "xcmPallet.limitedReserveTransferAssets",
-                    "version": "V2",
-                    "tokens": [
-                        "4"
-                    ]
-                }
-            }
-        },
-        "enabled": true,
-        "network_to": [
-            "2019"
-        ]
-    },
-    "centauri-1": {
-        "name": "centauri",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "rpc": "https://picasso-rpc.polkachu.com",
-        "rest": "https://picasso-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "centauri-1",
-        "feeAssetId": "ppica",
-        "cosmos": {
-            "bip44": {
-                "coinType": 118
-            },
-            "walletUrlForStaking": "https://explorer.nodestake.top/composable",
-            "bech32Config": {
-                "bech32PrefixAccAddr": "pica",
-                "bech32PrefixAccPub": "picapub",
-                "bech32PrefixValAddr": "picavaloper",
-                "bech32PrefixValPub": "picavaloperpub",
-                "bech32PrefixConsAddr": "picavalcons",
-                "bech32PrefixConsPub": "picavalconspub"
-            }
-        },
-        "enabled": true,
-        "network_to": [
-            "chihuahua-1",
-            "2087",
-            "osmosis-1",
-            "cosmoshub-4",
-            "stride-1",
-            "stargaze-1",
-            "quicksilver-2",
-            "crescent-1",
-            "agoric-3",
-            "secret-4",
-            "neutron-1",
-            "umee-1",
-            "kaiyo-1",
-            "injective-1",
-            "celestia",
-            "archway-1",
-            "ethereum",
-            "coreum-mainnet-1",
-            "solana"
-        ]
-    },
-    "osmosis-1": {
-        "name": "Osmosis",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-        "rest": "https://osmosis-cmp-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "osmosis-1",
-        "feeAssetId": "uosmo",
-        "cosmos": {
-            "walletUrl": "https://app.osmosis.zone",
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
-            "bip44": {
-                "coinType": 118
-            },
-            "bech32Config": {
-                "bech32PrefixAccAddr": "osmo",
-                "bech32PrefixAccPub": "osmopub",
-                "bech32PrefixValAddr": "osmovaloper",
-                "bech32PrefixValPub": "osmovaloperpub",
-                "bech32PrefixConsAddr": "osmovalcons",
-                "bech32PrefixConsPub": "osmovalconspub"
-            }
-        },
-        "enabled": true,
-        "network_to": [
-            "pacific-1",
-            "centauri-1"
-        ]
-    },
-    "ethereum": {
-        "name": "Ethereum",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
-        "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
-        "rest": "",
-        "chainType": "ethereum",
-        "chainId": "ethereum",
-        "feeAssetId": "ETH",
-        "enabled": true,
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "solana": {
-        "name": "Solana",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
-        "rpc": "https://madel-m03ip3-fast-mainnet.helius-rpc.com",
-        "rest": "",
-        "chainType": "solana",
-        "chainId": "solana",
-        "feeAssetId": "SOL",
         "enabled": true,
         "network_to": [
             "centauri-1"
