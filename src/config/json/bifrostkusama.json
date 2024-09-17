@@ -26,8 +26,13 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BNC_KSM.svg",
       "coinGeckoId": "bifrost-native-coin",
       "cosmos": {},
+      "isCoin": true,
+
       "polkadot": {
-        "picassoAssetId": "31"
+        "picassoAssetId": "31",
+        "composableAssetId": "",
+        "ratio": { "n": "11", "d": "10" },
+        "existentialDeposit": "11000000000"
       },
       "ethereum": {},
       "solana": {}
@@ -35,23 +40,17 @@
     {
       "coinDenom": "vKSM",
       "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VKSM.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
-        "picassoAssetId": "32"
+        "picassoAssetId": "32",
+        "composableAssetId": "",
+        "ratio": { "n": "8", "d": "1000" },
+        "existentialDeposit": "1000000000"
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "KSM",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "kusama"
     }
   ]
 }

@@ -23,6 +23,8 @@
     {
       "coinDenom": "USDT Kusama",
       "coinDecimals": 6,
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
       "coinGeckoId": "tether",
       "cosmos": {},
@@ -31,15 +33,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "KSM",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "kusama"
     }
   ]
 }

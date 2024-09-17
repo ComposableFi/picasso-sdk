@@ -123,13 +123,7 @@ export const getSupportedType = (
   toChainId: string
 ): TransferType | undefined => {
   if (fromChainId === toChainId || !fromChainId || !toChainId) return;
-  if (
-    tokensPerChannel?.[fromChainId] &&
-    Object.values(tokensPerChannel?.[fromChainId]).find(
-      (item) => item?.chainId === toChainId
-    )
-  )
-    return 'channel';
+  if (getSourceChannel(fromChainId, toChainId)) return 'channel';
 
   //XCM tx
   if (
@@ -230,12 +224,56 @@ export const createForwardPathRecursive = (
   };
 };
 
-// 예시 데이터
-const ibcPath = [
-  { chainId: 'osmosis-1', channelId: 1279 },
-  { chainId: 'centauri-1', channelId: 52 },
-];
+export const getSourceChannel = (fromChainId: string, toChainId: string) => {
+  if (tokensPerChannel?.[fromChainId])
+    return Object.keys(tokensPerChannel?.[fromChainId]).find(
+      (key) => tokensPerChannel?.[fromChainId][key]?.chainId === toChainId
+    );
+};
+export const getXcmInfo = (fromChainId: string, toChainId: string) => {
+  return networks?.[fromChainId]?.polkadot?.hops?.[toChainId];
+};
 
-// 실행 예시
-const result = createForwardPathRecursive(ibcPath, 0);
-console.log(JSON.stringify({ forward: result }, null, 2));
+// export const getBatchPath = () => {
+//   const found = polkadotRoute(origin, destination);
+//   if (!found) return;
+//   const route = {
+//     ...found,
+//     paths: found.paths?.map((p) => {
+//       return {
+//         ...p,
+//         address:
+//           toWallet !== ''
+//             ? // if we have toWallet, normal multihop checking
+//               getAddressFromNetwork(
+//                 p.chainName,
+//                 pickMultihopWalletByHandler(
+//                   fromWallet,
+//                   toWallet,
+//                   config.networks[p.chainName].handler
+//                 )
+//               )
+//             : // else, if we have toAddres, check if the next hop is from or to
+//               toAddress !== undefined &&
+//                 pickMultihopWalletByHandlerToAddress(
+//                   fromWallet,
+//                   config.networks[p.chainName].handler,
+//                   toAddress
+//                 ) === 'toAddress'
+//               ? // is toAddress, we need to generate the address for the chain
+//                 getConvertedAddress({
+//                   address: toAddress,
+//                   network: p.chainName,
+//                 })
+//               : // is fromWallet
+//                 getAddressFromNetwork(p.chainName, fromWallet),
+
+//         // getAddressFromNetwork(
+//         // 	p.chainName,
+//         // 	// TODO: CHECK THIS
+//         // 	pickMultihopWalletByHandler(fromWallet, toWallet, config.networks[p.chainName].handler)
+//         // )
+//       };
+//     }),
+//   };
+// };

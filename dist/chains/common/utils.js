@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
+exports.getXcmInfo = exports.getSourceChannel = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
@@ -116,8 +116,7 @@ var getSupportedType = function (fromChainId, toChainId) {
     var _a, _b;
     if (fromChainId === toChainId || !fromChainId || !toChainId)
         return;
-    if ((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]) &&
-        Object.values(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (item) { return (item === null || item === void 0 ? void 0 : item.chainId) === toChainId; }))
+    if ((0, exports.getSourceChannel)(fromChainId, toChainId))
         return 'channel';
     //XCM tx
     if (config_1.networks[fromChainId].polkadot &&
@@ -144,8 +143,8 @@ var getPolkadotAddressStr = function (accountId, prefix) {
 exports.getPolkadotAddressStr = getPolkadotAddressStr;
 var convertCosmosAddress = function (address, newPrefix) {
     try {
-        var data = (0, encoding_1.fromBech32)(address).data;
-        return (0, encoding_1.toBech32)(newPrefix, data);
+        var data_1 = (0, encoding_1.fromBech32)(address).data;
+        return (0, encoding_1.toBech32)(newPrefix, data_1);
     }
     catch (e) {
         throw new Error('유효하지 않은 Bech32 주소입니다.');
@@ -199,11 +198,55 @@ var createForwardPathRecursive = function (ibcPath, index, timeout) {
     };
 };
 exports.createForwardPathRecursive = createForwardPathRecursive;
-// 예시 데이터
-var ibcPath = [
-    { chainId: 'osmosis-1', channelId: 1279 },
-    { chainId: 'centauri-1', channelId: 52 },
-];
-// 실행 예시
-var result = (0, exports.createForwardPathRecursive)(ibcPath, 0);
-console.log(JSON.stringify({ forward: result }, null, 2));
+var getSourceChannel = function (fromChainId, toChainId) {
+    if (config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId])
+        return Object.keys(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (key) { var _a; return ((_a = config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId][key]) === null || _a === void 0 ? void 0 : _a.chainId) === toChainId; });
+};
+exports.getSourceChannel = getSourceChannel;
+var getXcmInfo = function (fromChainId, toChainId) {
+    var _a, _b, _c;
+    return (_c = (_b = (_a = config_1.networks === null || config_1.networks === void 0 ? void 0 : config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.hops) === null || _c === void 0 ? void 0 : _c[toChainId];
+};
+exports.getXcmInfo = getXcmInfo;
+// export const getBatchPath = () => {
+//   const found = polkadotRoute(origin, destination);
+//   if (!found) return;
+//   const route = {
+//     ...found,
+//     paths: found.paths?.map((p) => {
+//       return {
+//         ...p,
+//         address:
+//           toWallet !== ''
+//             ? // if we have toWallet, normal multihop checking
+//               getAddressFromNetwork(
+//                 p.chainName,
+//                 pickMultihopWalletByHandler(
+//                   fromWallet,
+//                   toWallet,
+//                   config.networks[p.chainName].handler
+//                 )
+//               )
+//             : // else, if we have toAddres, check if the next hop is from or to
+//               toAddress !== undefined &&
+//                 pickMultihopWalletByHandlerToAddress(
+//                   fromWallet,
+//                   config.networks[p.chainName].handler,
+//                   toAddress
+//                 ) === 'toAddress'
+//               ? // is toAddress, we need to generate the address for the chain
+//                 getConvertedAddress({
+//                   address: toAddress,
+//                   network: p.chainName,
+//                 })
+//               : // is fromWallet
+//                 getAddressFromNetwork(p.chainName, fromWallet),
+//         // getAddressFromNetwork(
+//         // 	p.chainName,
+//         // 	// TODO: CHECK THIS
+//         // 	pickMultihopWalletByHandler(fromWallet, toWallet, config.networks[p.chainName].handler)
+//         // )
+//       };
+//     }),
+//   };
+// };

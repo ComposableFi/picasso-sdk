@@ -23,10 +23,7 @@
     "31": {
       "chainId": "centauri-1",
       "destinationId": 56,
-      "tokens": [
-        "COREUM",
-        "XRP"
-      ]
+      "tokens": ["COREUM", "XRP"]
     }
   },
   "currencies": [
@@ -55,10 +52,17 @@
     },
     {
       "coinDenom": "CORE",
+      "isCoin": true,
+
       "coinMinimalDenom": "ucore",
       "coinDecimals": 6,
       "coinGeckoId": "coreum",
       "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0625,
+          "average": 0.0625,
+          "high": 0.0625
+        },
         "minimalDenom": "ucore"
       },
       "polkadot": {},

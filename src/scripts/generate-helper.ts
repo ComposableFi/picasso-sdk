@@ -11,6 +11,19 @@ import {
   TokenPerChannel,
 } from '../config/types';
 import { buildIbcPath } from '../chains';
+const getFeeAssetId = (data) => {
+  const coin = data.currencies.filter((item) => item.isCoin);
+  if (data.chainType === 'polkadot') {
+    if (data.polkadot.relayChain === 'kusama')
+      return coin[0]?.polkadot?.picassoAssetId || '';
+    if (data.polkadot.relayChain === 'polkadot') {
+      return coin[0]?.polkadot?.composableAssetId || '';
+    }
+  }
+  if (data.chainType === 'cosmos') return coin[0].cosmos.minimalDenom;
+  if (data.chainType === 'solana') return coin[0].solana.minimalDenom;
+  if (data.chainType === 'ethereum') return coin[0].ethereum.minimalDenom;
+};
 
 const dataDir = path.join(__dirname, '../config/json');
 const ethereumOutputFilePath = path.join(
@@ -49,6 +62,9 @@ const processFiles = () => {
 
   const networks: Record<string, NetworkInfo> = {};
   const keplrChains: Record<string, ChainInfo> = {};
+
+  const temp = [];
+  const temp2 = [];
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
@@ -67,6 +83,7 @@ const processFiles = () => {
     const filePath = path.join(dataDir, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     // generate networks
+    const coin = data.currencies.filter((item) => item.isCoin);
 
     networks[data.chainId] = {
       name: data.chainName || '',
@@ -75,7 +92,7 @@ const processFiles = () => {
       rest: data.rest || '',
       chainType: data.chainType || '',
       chainId: data.chainId || '',
-      feeAssetId: data.currencies[0]?.coinDenom || '',
+      feeAssetId: getFeeAssetId(data) || '',
       polkadot: data.polkadot || undefined,
       cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
@@ -102,7 +119,7 @@ const processFiles = () => {
           coinMinimalDenom: item.coinMinimalDenom,
         })),
         features: [],
-        feeCurrencies: data.feeCurrencies.map((item) => ({
+        feeCurrencies: coin.map((item) => ({
           coinDecimals: item.coinDecimals,
           coinDenom: item.coinDenom,
           coinGeckoId: item.coinGeckoId,
@@ -113,11 +130,11 @@ const processFiles = () => {
         rest: data.rest,
         rpc: data.rpc,
         stakeCurrency: {
-          coinDecimals: data.currencies[0].coinDecimals,
-          coinDenom: data.currencies[0].coinDenom,
-          coinGeckoId: data.currencies[0].coinGeckoId,
-          coinMinimalDenom: data.currencies[0].coinMinimalDenom,
-          coinImageUrl: data.currencies[0].coinImageUrl,
+          coinDecimals: coin[0].coinDecimals,
+          coinDenom: coin[0].coinDenom,
+          coinGeckoId: coin[0].coinGeckoId,
+          coinMinimalDenom: coin[0].coinMinimalDenom,
+          coinImageUrl: coin[0].coinImageUrl,
         },
         walletUrlForStaking: data.cosmos.walletUrlForStaking,
       };

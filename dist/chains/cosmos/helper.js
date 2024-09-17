@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
+exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     var msg = {
@@ -88,3 +88,16 @@ var getCosmosClient = function (_a) { return __awaiter(void 0, [_a], void 0, fun
     });
 }); };
 exports.getCosmosClient = getCosmosClient;
+var getCosmosBlockHeight = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var _c;
+    var client = _b.client, _d = _b.extra, extra = _d === void 0 ? 100 : _d;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
+            case 0:
+                _c = Number;
+                return [4 /*yield*/, client.getHeight()];
+            case 1: return [2 /*return*/, _c.apply(void 0, [_e.sent()]) + extra];
+        }
+    });
+}); };
+exports.getCosmosBlockHeight = getCosmosBlockHeight;

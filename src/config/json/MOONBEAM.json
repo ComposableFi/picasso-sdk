@@ -23,6 +23,8 @@
     {
       "coinDenom": "GLMR",
       "coinDecimals": 18,
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
       "coinGeckoId": "moonbeam",
       "cosmos": {},
@@ -31,15 +33,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "GLMR",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "moonbeam"
     }
   ]
 }

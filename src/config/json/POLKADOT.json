@@ -21,36 +21,29 @@
   },
   "currencies": [
     {
-      "coinDenom": "KSM",
-      "coinDecimals": 12,
+      "coinDenom": "DOT",
+      "coinDecimals": 10,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
-      "coinGeckoId": "kusama",
+      "coinGeckoId": "polkadot",
+      "isCoin": true,
       "cosmos": {},
       "polkadot": {
-        "picassoAssetId": "4"
+        "picassoAssetId": "6",
+        "composableAssetId": "79228162514264337593543950342"
       },
       "ethereum": {
-        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
-        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-        "fromCosmosFee": 0.5,
-        "minimumTransfer": 1
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+        "fromCosmosFee": 2,
+        "minimumTransfer": 5
       },
       "solana": {
-        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
-        "minimumTransfer": 0.7,
+        "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
+        "minimumTransfer": 3,
         "fromCosmosFee": 0,
         "displayDecimals": 9
       }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "DOT",
-      "coinDecimals": 10,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/DOT.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "polkadot"
     }
   ]
 }

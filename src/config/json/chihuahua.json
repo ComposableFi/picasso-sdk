@@ -24,9 +24,7 @@
     "62": {
       "chainId": "centauri-1",
       "destinationId": 0,
-      "tokens": [
-        "UHUAHUA"
-      ]
+      "tokens": ["UHUAHUA"]
     }
   },
   "currencies": [
@@ -37,27 +35,17 @@
       "coinGeckoId": "chihuahua-token",
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
       "cosmos": {
-        "minimalDenom": "uhuahua"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "HUAHUA",
-      "coinMinimalDenom": "uhuahua",
-      "coinDecimals": 6,
-      "coinGeckoId": "chihuahua-token",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-      "cosmos": {
+        "minimalDenom": "uhuahua",
         "gasPriceStep": {
           "low": 500,
           "average": 1250,
           "high": 2000
         }
-      }
+      },
+      "isCoin": true,
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
     }
   ]
 }

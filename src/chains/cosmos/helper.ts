@@ -74,3 +74,13 @@ export const getCosmosClient = async ({
   );
   return finalClient;
 };
+
+export const getCosmosBlockHeight = async ({
+  client,
+  extra = 100,
+}: {
+  client: SigningStargateClient;
+  extra: number;
+}) => {
+  return Number(await client.getHeight()) + extra;
+};

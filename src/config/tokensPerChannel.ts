@@ -118,41 +118,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "ethereum": {
-    "2": {
-      "chainId": "centauri-1",
-      "destinationId": 52,
-      "tokens": [
-        "PICA",
-        "ETH",
-        "DAI",
-        "FXS",
-        "sFRAX",
-        "sfrxETH",
-        "OSMO",
-        "ENA",
-        "FRAX",
-        "frxETH",
-        "wBTC",
-        "pxETH",
-        "PEPE",
-        "CRV",
-        "rETH",
-        "crvUSD",
-        "eETH",
-        "USDe",
-        "USDT Ethereum",
-        "stETH",
-        "ATOM",
-        "IST",
-        "stATOM",
-        "BLD",
-        "SEI",
-        "SCRT",
-        "STRD"
-      ]
-    }
-  },
   "injective-1": {
     "145": {
       "chainId": "centauri-1",
@@ -474,6 +439,41 @@ export const tokensPerChannel : Record<
       "tokens": [
         "OSMO",
         "SEI"
+      ]
+    }
+  },
+  "ethereum": {
+    "2": {
+      "chainId": "centauri-1",
+      "destinationId": 52,
+      "tokens": [
+        "PICA",
+        "ETH",
+        "DAI",
+        "FXS",
+        "sFRAX",
+        "sfrxETH",
+        "OSMO",
+        "ENA",
+        "FRAX",
+        "frxETH",
+        "wBTC",
+        "pxETH",
+        "PEPE",
+        "CRV",
+        "rETH",
+        "crvUSD",
+        "eETH",
+        "USDe",
+        "USDT Ethereum",
+        "stETH",
+        "ATOM",
+        "IST",
+        "stATOM",
+        "BLD",
+        "SEI",
+        "SCRT",
+        "STRD"
       ]
     }
   },

@@ -22,6 +22,8 @@
   "currencies": [
     {
       "coinDenom": "KSM",
+      "isCoin": true,
+
       "coinDecimals": 12,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinGeckoId": "kusama",
@@ -42,15 +44,6 @@
         "fromCosmosFee": 0,
         "displayDecimals": 9
       }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "KSM",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "kusama"
     }
   ]
 }

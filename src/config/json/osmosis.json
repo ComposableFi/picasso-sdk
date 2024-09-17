@@ -39,8 +39,15 @@
       "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
       "coinGeckoId": "osmosis",
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
       "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0025,
+          "average": 0.025,
+          "high": 0.04
+        },
         "minimalDenom": "uosmo"
       },
       "polkadot": {},
@@ -70,22 +77,6 @@
       "polkadot": {},
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "OSMO",
-      "coinMinimalDenom": "uosmo",
-      "coinDecimals": 6,
-      "coinGeckoId": "osmosis",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "cosmos": {
-        "gasPriceStep": {
-          "low": 0.0025,
-          "average": 0.025,
-          "high": 0.04
-        }
-      }
     }
   ]
 }

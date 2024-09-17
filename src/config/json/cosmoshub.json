@@ -24,9 +24,7 @@
     "617": {
       "chainId": "centauri-1",
       "destinationId": 4,
-      "tokens": [
-        "ATOM"
-      ]
+      "tokens": ["ATOM"]
     }
   },
   "currencies": [
@@ -35,8 +33,15 @@
       "coinDenom": "ATOM",
       "coinGeckoId": "cosmos",
       "coinMinimalDenom": "uatom",
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
       "cosmos": {
+        "gasPriceStep": {
+          "average": 0.025,
+          "high": 0.03,
+          "low": 0.005
+        },
         "minimalDenom": "uatom"
       },
       "polkadot": {},
@@ -52,22 +57,6 @@
         "minimumTransfer": 2,
         "fromCosmosFee": 0,
         "displayDecimals": 6
-      }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDecimals": 6,
-      "coinDenom": "ATOM",
-      "coinGeckoId": "cosmos",
-      "coinMinimalDenom": "uatom",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
-      "cosmos": {
-        "gasPriceStep": {
-          "average": 0.025,
-          "high": 0.03,
-          "low": 0.005
-        }
       }
     }
   ]

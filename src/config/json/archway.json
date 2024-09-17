@@ -23,9 +23,7 @@
     "108": {
       "chainId": "centauri-1",
       "destinationId": 50,
-      "tokens": [
-        "ARCH"
-      ]
+      "tokens": ["ARCH"]
     }
   },
   "currencies": [
@@ -34,8 +32,15 @@
       "coinDenom": "ARCH",
       "coinGeckoId": "archway",
       "coinMinimalDenom": "aarch",
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
       "cosmos": {
+        "gasPriceStep": {
+          "low": 140000000000,
+          "average": 196000000000,
+          "high": 225400000000
+        },
         "minimalDenom": "aarch"
       },
       "polkadot": {},
@@ -51,22 +56,6 @@
         "minimumTransfer": 240,
         "fromCosmosFee": 0,
         "displayDecimals": 9
-      }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDecimals": 18,
-      "coinDenom": "ARCH",
-      "coinGeckoId": "archway",
-      "coinMinimalDenom": "aarch",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
-      "cosmos": {
-        "gasPriceStep": {
-          "low": 140000000000,
-          "average": 196000000000,
-          "high": 225400000000
-        }
       }
     }
   ]

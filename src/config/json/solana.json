@@ -66,6 +66,7 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sol.svg",
       "coinDecimals": 9,
       "coinDenom": "SOL",
+      "isCoin": true,
       "coinGeckoId": "solana",
       "cosmos": {
         "minimalDenom": "SOL"
@@ -495,14 +496,6 @@
         "fromCosmosFee": 0,
         "displayDecimals": 6
       }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "SOL",
-      "coinMinimalDenom": "sol",
-      "coinDecimals": 9,
-      "coinGeckoId": "solana"
     }
   ]
 }

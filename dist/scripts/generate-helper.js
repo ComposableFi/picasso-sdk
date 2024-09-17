@@ -50,6 +50,23 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
+var getFeeAssetId = function (data) {
+    var _a, _b, _c, _d;
+    var coin = data.currencies.filter(function (item) { return item.isCoin; });
+    if (data.chainType === 'polkadot') {
+        if (data.polkadot.relayChain === 'kusama')
+            return ((_b = (_a = coin[0]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.picassoAssetId) || '';
+        if (data.polkadot.relayChain === 'polkadot') {
+            return ((_d = (_c = coin[0]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.composableAssetId) || '';
+        }
+    }
+    if (data.chainType === 'cosmos')
+        return coin[0].cosmos.minimalDenom;
+    if (data.chainType === 'solana')
+        return coin[0].solana.minimalDenom;
+    if (data.chainType === 'ethereum')
+        return coin[0].ethereum.minimalDenom;
+};
 var dataDir = path.join(__dirname, '../config/json');
 var ethereumOutputFilePath = path.join(__dirname, '../config/ethereumAssets.ts');
 var solanaOutputFilePath = path.join(__dirname, '../config/solanaAssets.ts');
@@ -71,6 +88,8 @@ var processFiles = function () {
     };
     var networks = {};
     var keplrChains = {};
+    var temp = [];
+    var temp2 = [];
     var files = fs
         .readdirSync(dataDir)
         .filter(function (file) { return file.endsWith('.json'); })
@@ -85,10 +104,11 @@ var processFiles = function () {
         .sort(function (a, b) { return Number(a.birthtime) - Number(b.birthtime); }) // 생성 날짜 기준 오름차순 정렬
         .map(function (fileInfo) { return fileInfo.file; }); // 정렬 후 파일 이름만 추출
     files.forEach(function (file) {
-        var _a, _b;
+        var _a;
         var filePath = path.join(dataDir, file);
         var data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         // generate networks
+        var coin = data.currencies.filter(function (item) { return item.isCoin; });
         networks[data.chainId] = {
             name: data.chainName || '',
             image: data.chainSymbolImageUrl || '',
@@ -96,11 +116,11 @@ var processFiles = function () {
             rest: data.rest || '',
             chainType: data.chainType || '',
             chainId: data.chainId || '',
-            feeAssetId: ((_a = data.currencies[0]) === null || _a === void 0 ? void 0 : _a.coinDenom) || '',
+            feeAssetId: getFeeAssetId(data) || '',
             polkadot: data.polkadot || undefined,
             cosmos: data.cosmos || undefined,
             enabled: data.enabled || false,
-            network_to: __spreadArray(__spreadArray([], __read((((_b = data.polkadot) === null || _b === void 0 ? void 0 : _b['hops']) ? Object.keys(data.polkadot['hops']) : [])), false), __read(Object.values(data.channelMap || {}).map(function (item) { return item.chainId; })), false),
+            network_to: __spreadArray(__spreadArray([], __read((((_a = data.polkadot) === null || _a === void 0 ? void 0 : _a['hops']) ? Object.keys(data.polkadot['hops']) : [])), false), __read(Object.values(data.channelMap || {}).map(function (item) { return item.chainId; })), false),
         };
         if (data.chainType === 'cosmos') {
             keplrChains[data.chainId] = {
@@ -117,7 +137,7 @@ var processFiles = function () {
                     coinMinimalDenom: item.coinMinimalDenom,
                 }); }),
                 features: [],
-                feeCurrencies: data.feeCurrencies.map(function (item) { return ({
+                feeCurrencies: coin.map(function (item) { return ({
                     coinDecimals: item.coinDecimals,
                     coinDenom: item.coinDenom,
                     coinGeckoId: item.coinGeckoId,
@@ -128,11 +148,11 @@ var processFiles = function () {
                 rest: data.rest,
                 rpc: data.rpc,
                 stakeCurrency: {
-                    coinDecimals: data.currencies[0].coinDecimals,
-                    coinDenom: data.currencies[0].coinDenom,
-                    coinGeckoId: data.currencies[0].coinGeckoId,
-                    coinMinimalDenom: data.currencies[0].coinMinimalDenom,
-                    coinImageUrl: data.currencies[0].coinImageUrl,
+                    coinDecimals: coin[0].coinDecimals,
+                    coinDenom: coin[0].coinDenom,
+                    coinGeckoId: coin[0].coinGeckoId,
+                    coinMinimalDenom: coin[0].coinMinimalDenom,
+                    coinImageUrl: coin[0].coinImageUrl,
                 },
                 walletUrlForStaking: data.cosmos.walletUrlForStaking,
             };

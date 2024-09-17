@@ -26,20 +26,15 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
       "coinGeckoId": "astar",
       "cosmos": {},
+      "isCoin": true,
       "polkadot": {
-        "composableAssetId": "79228162514264337593543952342"
+        "composableAssetId": "79228162514264337593543952342",
+        "picassoAssetId": "33",
+        "ratio": { "n": "4713901", "d": "1" },
+        "existentialDeposit": "4700000000000000"
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "ASTR",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ASTR.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "astar"
     }
   ]
 }

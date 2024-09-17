@@ -23,6 +23,8 @@
     {
       "coinDenom": "SDN",
       "coinDecimals": 18,
+      "isCoin": true,
+
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg",
       "coinGeckoId": "shiden",
       "cosmos": {},
@@ -31,15 +33,6 @@
       },
       "ethereum": {},
       "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "SDN",
-      "coinDecimals": 18,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SDN.svg",
-      "coinMinimalDenom": "",
-      "coinGeckoId": "shiden"
     }
   ]
 }

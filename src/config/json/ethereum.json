@@ -46,6 +46,8 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ETH.svg",
       "coinDecimals": 18,
       "coinDenom": "ETH",
+      "isCoin": true,
+
       "coinGeckoId": "ethereum",
       "cosmos": {
         "minimalDenom": "wei"
@@ -501,14 +503,6 @@
         "fromCosmosFee": 0,
         "displayDecimals": 9
       }
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "ETH",
-      "coinMinimalDenom": "wei",
-      "coinDecimals": 18,
-      "coinGeckoId": "ethereum"
     }
   ]
 }

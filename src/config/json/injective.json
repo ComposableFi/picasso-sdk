@@ -23,30 +23,15 @@
     "145": {
       "chainId": "centauri-1",
       "destinationId": 29,
-      "tokens": [
-        "INJ"
-      ]
+      "tokens": ["INJ"]
     }
   },
   "currencies": [
     {
       "coinDenom": "INJ",
       "coinDecimals": 18,
-      "coinMinimalDenom": "inj",
-      "coinGeckoId": "injective-protocol",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
-      "cosmos": {
-        "minimalDenom": "inj"
-      },
-      "polkadot": {},
-      "ethereum": {},
-      "solana": {}
-    }
-  ],
-  "feeCurrencies": [
-    {
-      "coinDenom": "INJ",
-      "coinDecimals": 18,
+      "isCoin": true,
+
       "coinMinimalDenom": "inj",
       "coinGeckoId": "injective-protocol",
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
@@ -55,8 +40,12 @@
           "low": 500000000,
           "average": 1000000000,
           "high": 1500000000
-        }
-      }
+        },
+        "minimalDenom": "inj"
+      },
+      "polkadot": {},
+      "ethereum": {},
+      "solana": {}
     }
   ]
 }

@@ -43,6 +43,134 @@ exports.coinGecko = [
         "id": "liquid-staking-crescent"
     },
     {
+        "name": "INJ",
+        "id": "injective-protocol"
+    },
+    {
+        "name": "KUJI",
+        "id": "kujira"
+    },
+    {
+        "name": "ASTRO",
+        "id": "astroport-fi"
+    },
+    {
+        "name": "NTRN",
+        "id": "neutron-3"
+    },
+    {
+        "name": "QCK",
+        "id": "quicksilver"
+    },
+    {
+        "name": "SCRT",
+        "id": "secret"
+    },
+    {
+        "name": "SILK",
+        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    },
+    {
+        "name": "SHD",
+        "id": "shade-protocol"
+    },
+    {
+        "name": "SEI",
+        "id": "sei-network"
+    },
+    {
+        "name": "STARS",
+        "id": "stargaze"
+    },
+    {
+        "name": "stTIA",
+        "id": "stride-staked-tia"
+    },
+    {
+        "name": "STRD",
+        "id": "stride"
+    },
+    {
+        "name": "stATOM",
+        "id": "stride-staked-atom"
+    },
+    {
+        "name": "UMEE",
+        "id": "umee"
+    },
+    {
+        "name": "ASTR",
+        "id": "astar"
+    },
+    {
+        "name": "PICA",
+        "id": "picasso"
+    },
+    {
+        "name": "USDT",
+        "id": "tether"
+    },
+    {
+        "name": "BNC_DOT",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "ASTR",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "DOT",
+        "id": "polkadot"
+    },
+    {
+        "name": "KSM",
+        "id": "kusama"
+    },
+    {
+        "name": "GLMR",
+        "id": "moonbeam"
+    },
+    {
+        "name": "MOVR",
+        "id": "moonriver"
+    },
+    {
+        "name": "DOT",
+        "id": "polkadot"
+    },
+    {
+        "name": "SDN",
+        "id": "shiden"
+    },
+    {
+        "name": "TNKR",
+        "id": "tinkernet"
+    },
+    {
+        "name": "BNC_KSM",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "BNC_DOT",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "PICA",
+        "id": "picasso"
+    },
+    {
+        "name": "USDT Kusama",
+        "id": "tether"
+    },
+    {
+        "name": "OSMO",
+        "id": "osmosis"
+    },
+    {
+        "name": "milkTIA",
+        "id": "milkyway-staked-tia"
+    },
+    {
         "name": "ETH",
         "id": "ethereum"
     },
@@ -123,146 +251,6 @@ exports.coinGecko = [
         "id": "curve-dao-token"
     },
     {
-        "name": "INJ",
-        "id": "injective-protocol"
-    },
-    {
-        "name": "KUJI",
-        "id": "kujira"
-    },
-    {
-        "name": "ASTRO",
-        "id": "astroport-fi"
-    },
-    {
-        "name": "NTRN",
-        "id": "neutron-3"
-    },
-    {
-        "name": "QCK",
-        "id": "quicksilver"
-    },
-    {
-        "name": "SCRT",
-        "id": "secret"
-    },
-    {
-        "name": "SILK",
-        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
-    },
-    {
-        "name": "SHD",
-        "id": "shade-protocol"
-    },
-    {
-        "name": "SEI",
-        "id": "sei-network"
-    },
-    {
-        "name": "STARS",
-        "id": "stargaze"
-    },
-    {
-        "name": "stTIA",
-        "id": "stride-staked-tia"
-    },
-    {
-        "name": "STRD",
-        "id": "stride"
-    },
-    {
-        "name": "stATOM",
-        "id": "stride-staked-atom"
-    },
-    {
-        "name": "UMEE",
-        "id": "umee"
-    },
-    {
-        "name": "ASTR",
-        "id": "astar"
-    },
-    {
-        "name": "DOT",
-        "id": "polkadot"
-    },
-    {
-        "name": "BNC_DOT",
-        "id": "bifrost-native-coin"
-    },
-    {
-        "name": "ASTR",
-        "id": "astar"
-    },
-    {
-        "name": "KSM",
-        "id": "kusama"
-    },
-    {
-        "name": "GLMR",
-        "id": "moonbeam"
-    },
-    {
-        "name": "MOVR",
-        "id": "moonriver"
-    },
-    {
-        "name": "USDT Kusama",
-        "id": "tether"
-    },
-    {
-        "name": "TNKR",
-        "id": "tinkernet"
-    },
-    {
-        "name": "KSM",
-        "id": "kusama"
-    },
-    {
-        "name": "BNC_KSM",
-        "id": "bifrost-native-coin"
-    },
-    {
-        "name": "KSM",
-        "id": "kusama"
-    },
-    {
-        "name": "SDN",
-        "id": "shiden"
-    },
-    {
-        "name": "TNKR",
-        "id": "tinkernet"
-    },
-    {
-        "name": "BNC_KSM",
-        "id": "bifrost-native-coin"
-    },
-    {
-        "name": "BNC_DOT",
-        "id": "bifrost-native-coin"
-    },
-    {
-        "name": "PICA",
-        "id": "picasso"
-    },
-    {
-        "name": "USDT Kusama",
-        "id": "tether"
-    },
-    {
-        "name": "USDT Kusama",
-        "id": "tether"
-    },
-    {
-        "name": "OSMO",
-        "id": "osmosis"
-    },
-    {
-        "name": "milkTIA",
-        "id": "milkyway-staked-tia"
-    },
-    {
         "name": "SOL",
         "id": "solana"
     },
@@ -305,5 +293,133 @@ exports.coinGecko = [
     {
         "name": "USDT Solana",
         "id": "tether"
+    },
+    {
+        "name": "SEI",
+        "id": "sei-network"
+    },
+    {
+        "name": "SILK",
+        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    },
+    {
+        "name": "QCK",
+        "id": "quicksilver"
+    },
+    {
+        "name": "MOVR",
+        "id": "moonriver"
+    },
+    {
+        "name": "USDT Kusama",
+        "id": "tether"
+    },
+    {
+        "name": "STRD",
+        "id": "stride"
+    },
+    {
+        "name": "PICA",
+        "id": "picasso"
+    },
+    {
+        "name": "BNC_KSM",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "SDN",
+        "id": "shiden"
+    },
+    {
+        "name": "BLD",
+        "id": "agoric"
+    },
+    {
+        "name": "OSMO",
+        "id": "osmosis"
+    },
+    {
+        "name": "BNC_DOT",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "wSOL",
+        "id": "wrapped-solana"
+    },
+    {
+        "name": "ASTR",
+        "id": "astar"
+    },
+    {
+        "name": "stATOM",
+        "id": "stride-staked-atom"
+    },
+    {
+        "name": "NTRN",
+        "id": "neutron-3"
+    },
+    {
+        "name": "ATOM",
+        "id": "cosmos"
+    },
+    {
+        "name": "UMEE",
+        "id": "umee"
+    },
+    {
+        "name": "ETH",
+        "id": "ethereum"
+    },
+    {
+        "name": "IST",
+        "id": "inter-stable-token"
+    },
+    {
+        "name": "CRE",
+        "id": "crescent-network"
+    },
+    {
+        "name": "GLMR",
+        "id": "moonbeam"
+    },
+    {
+        "name": "DOT",
+        "id": "polkadot"
+    },
+    {
+        "name": "KUJI",
+        "id": "kujira"
+    },
+    {
+        "name": "KSM",
+        "id": "kusama"
+    },
+    {
+        "name": "INJ",
+        "id": "injective-protocol"
+    },
+    {
+        "name": "TIA",
+        "id": "celestia"
+    },
+    {
+        "name": "SCRT",
+        "id": "secret"
+    },
+    {
+        "name": "TNKR",
+        "id": "tinkernet"
+    },
+    {
+        "name": "STARS",
+        "id": "stargaze"
+    },
+    {
+        "name": "bCRE",
+        "id": "liquid-staking-crescent"
+    },
+    {
+        "name": "HUAHUA",
+        "id": "chihuahua-token"
     }
 ];

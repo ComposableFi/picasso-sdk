@@ -1,5 +1,6 @@
 import * as anchor from '@coral-xyz/anchor';
 import { BorshSchema } from 'borsher';
+export { Keypair, PublicKey } from '@solana/web3.js';
 /**@description get connection of solana */
 export declare const getConnection: (endpoint: string) => anchor.web3.Connection;
 export declare const getPublicKey: (address: string) => anchor.web3.PublicKey;
