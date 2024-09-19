@@ -192,7 +192,7 @@ export const solanaTransfer = async ({
     data: buffer, // All instructions are hellos
   });
 
-  return await sendTX(tx, accountId, endpoint, false, undefined, () => {
+  return await sendTX(tx, accountId, endpoint, true, undefined, () => {
     tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
     tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
     tx.add(instruction);
