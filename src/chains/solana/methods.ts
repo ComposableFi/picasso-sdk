@@ -238,6 +238,7 @@ const pollingSignatureStatus = async (
   if (!connection) return;
   const signature = await connection.sendRawTransaction(rawTx, {
     skipPreflight: skipPreflight,
+    maxRetries: 5,
   });
 
   await connection.confirmTransaction(signature);
