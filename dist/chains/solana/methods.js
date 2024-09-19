@@ -199,11 +199,11 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx, accountId, endpoint, true, undefined, function () {
+                return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
-                    })];
+                    }, true)];
             case 4: return [2 /*return*/, _f.sent()];
         }
     });
@@ -218,7 +218,7 @@ var sendTX = function (inputTx_1, address_1, endpoint_1) {
     return __awaiter(void 0, __spreadArray([inputTx_1, address_1, endpoint_1], __read(args_1), false), void 0, function (inputTx, address, endpoint, isBundle, tokenMintKeypair, beforeFeeFunc, skipPreflight) {
         var tx, depositor, _a, signedTx, rawTransaction;
         if (isBundle === void 0) { isBundle = true; }
-        if (skipPreflight === void 0) { skipPreflight = false; }
+        if (skipPreflight === void 0) { skipPreflight = true; }
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
