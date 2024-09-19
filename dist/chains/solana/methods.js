@@ -199,7 +199,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
-                return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
+                return [4 /*yield*/, sendTX(tx, accountId, endpoint, true, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
@@ -268,6 +268,7 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
                         return [2 /*return*/];
                     return [4 /*yield*/, connection.sendRawTransaction(rawTx, {
                             skipPreflight: skipPreflight,
+                            maxRetries: 5,
                         })];
                 case 1:
                     signature = _l.sent();

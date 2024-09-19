@@ -192,11 +192,19 @@ export const solanaTransfer = async ({
     data: buffer, // All instructions are hellos
   });
 
-  return await sendTX(tx, accountId, endpoint, true, undefined, () => {
-    tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
-    tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
-    tx.add(instruction);
-  });
+  return await sendTX(
+    tx,
+    accountId,
+    endpoint,
+    false,
+    undefined,
+    () => {
+      tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
+      tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
+      tx.add(instruction);
+    },
+    true
+  );
 };
 /**@description this function is used to send tx */
 const sendTX = async (
@@ -206,7 +214,7 @@ const sendTX = async (
   isBundle: boolean = true,
   tokenMintKeypair?: anchor.web3.Keypair,
   beforeFeeFunc?: () => void,
-  skipPreflight: boolean = false
+  skipPreflight: boolean = true
 ) => {
   const tx = inputTx;
   const depositor = getPublicKey(address);
