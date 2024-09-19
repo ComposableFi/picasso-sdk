@@ -838,7 +838,7 @@ exports.networks = {
     "solana": {
         "name": "Solana",
         "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
-        "rpc": "https://madel-m03ip3-fast-mainnet.helius-rpc.com",
+        "rpc": "https://mainnet.helius-rpc.com/?api-key=c38ba4fb-a06a-46fe-b73a-b382ad810cc2",
         "rest": "",
         "chainType": "solana",
         "chainId": "solana",
