@@ -7,6 +7,10 @@ export interface CrosschainAsset {
     denom: string;
     imageUrl?: string;
     realDecimals?: number;
+    ratio?: {
+        n: string;
+        d: string;
+    };
 }
 export interface EthereumAsset {
     erc20Address: string;
