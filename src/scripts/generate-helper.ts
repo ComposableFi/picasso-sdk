@@ -196,6 +196,7 @@ const processFiles = () => {
             minimalDenom: currency.cosmos.minimalDenom || picassoAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
+            ratio: currency.polkadot.ratio,
           };
         }
         if (currency.polkadot?.composableAssetId) {
@@ -205,6 +206,7 @@ const processFiles = () => {
             minimalDenom: currency.cosmos.minimalDenom || composableAssetId,
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
+            ratio: currency.polkadot.ratio,
           };
         }
       }
