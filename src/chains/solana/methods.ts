@@ -45,7 +45,21 @@ export const solanaTransfer = async ({
   memo: string;
 }) => {
   // const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
-
+  console.log(
+    {
+      //write
+      quantity,
+      accountId,
+      destinationAddress,
+      configAssetId,
+      sourceChannelId,
+      configDenom,
+      endpoint,
+      timeout,
+      memo,
+    },
+    'checkArguments:solanaTransfer'
+  );
   // nativeDenom: assetId, nonNativeDenom: minimalDenom with path
 
   const isNative = isNativeSolanaAsset(configDenom);
@@ -54,6 +68,7 @@ export const solanaTransfer = async ({
     configDenom,
     isNative
   );
+  console.log({ denom, baseDenom, assetId, hashedDenom }, 'checkSolanaAsset');
   /**@description examle: transfer/channel-0/transfer/channel-52/wei */
   const senderPublicKey = new anchor.web3.PublicKey(accountId);
   const associatedToken = spl.getAssociatedTokenAddressSync(
