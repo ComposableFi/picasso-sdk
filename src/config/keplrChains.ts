@@ -172,7 +172,7 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinType": 118
     },
     "chainId": "centauri-1",
-    "chainName": "centauri",
+    "chainName": "Picasso",
     "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
     "currencies": [
       {

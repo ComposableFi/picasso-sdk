@@ -249,7 +249,7 @@ import { NetworkInfo } from './types';
     ]
   },
   "2087": {
-    "name": "Picasso",
+    "name": "Picasso kusama",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Picasso.svg",
     "rpc": "wss://picasso-rpc.composable.finance",
     "rest": "",
@@ -477,7 +477,7 @@ import { NetworkInfo } from './types';
     ]
   },
   "centauri-1": {
-    "name": "centauri",
+    "name": "Picasso",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
     "rpc": "https://picasso-rpc.polkachu.com",
     "rest": "https://picasso-api.polkachu.com",
