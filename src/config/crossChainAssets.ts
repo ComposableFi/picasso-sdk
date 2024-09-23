@@ -1270,7 +1270,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 9,
       "minimalDenom": "3",
       "denom": "wSOL",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/WSOL.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/wSOL.svg",
       "ratio": {
         "n": "8350000",
         "d": "1"
@@ -1299,7 +1299,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "7",
       "denom": "ATOM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ATOM.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/atom.svg",
       "ratio": {
         "n": "2",
         "d": "100000000"
@@ -1310,7 +1310,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "8",
       "denom": "OSMO",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/OSMO.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/osmosis.svg",
       "ratio": {
         "n": "3",
         "d": "10000000"
@@ -1321,7 +1321,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "9",
       "denom": "STRD",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STRD.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/stride.svg",
       "ratio": {
         "n": "18",
         "d": "100000000"
@@ -1332,7 +1332,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "10",
       "denom": "stATOM",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STATOM.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/stATOM.svg",
       "ratio": {
         "n": "18",
         "d": "1000000000"
@@ -1343,7 +1343,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "11",
       "denom": "STARS",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STARS.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STARS.png",
       "ratio": {
         "n": "18",
         "d": "1000000"
@@ -1365,7 +1365,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "13",
       "denom": "CRE",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/CRE.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/cre.svg",
       "ratio": {
         "n": "1",
         "d": "100000"
@@ -1376,7 +1376,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "14",
       "denom": "bCRE",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BCRE.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/bCRE.svg",
       "ratio": {
         "n": "1",
         "d": "100000"
@@ -1398,7 +1398,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "16",
       "denom": "SILK",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SILK.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/silk.svg",
       "ratio": {
         "n": "2",
         "d": "1000000"
@@ -1409,7 +1409,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "17",
       "denom": "UMEE",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/UMEE.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/umee.svg",
       "ratio": {
         "n": "5",
         "d": "100000"
@@ -1467,7 +1467,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 10,
       "minimalDenom": "27",
       "denom": "lsDOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LSDOT.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/lsdot.svg",
       "ratio": {
         "n": "29",
         "d": "100000"
@@ -1533,7 +1533,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 10,
       "minimalDenom": "34",
       "denom": "vDOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VDOT.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
       "ratio": {
         "n": "4",
         "d": "10000"
@@ -1623,7 +1623,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 6,
       "minimalDenom": "420",
       "denom": "HUAHUA",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/HUAHUA.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/huahua.svg",
       "ratio": null
     },
     "2007": {
@@ -1707,7 +1707,7 @@ export const crossChainAssets :CrossChainAssets= {
       "decimals": 10,
       "minimalDenom": "79228162514264337593543950351",
       "denom": "lsDOT",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LSDOT.svg",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/lsdot.svg",
       "ratio": {
         "n": "29",
         "d": "100000"
