@@ -3,7 +3,7 @@
   "chainId": "2087",
   "rest": "",
   "rpc": "wss://picasso-rpc.composable.finance",
-  "chainName": "Picasso",
+  "chainName": "Picasso kusama",
   "channelMap": {
     "15": {
       "chainId": "2019",
