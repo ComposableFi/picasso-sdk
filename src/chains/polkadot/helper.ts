@@ -71,18 +71,17 @@ export async function setPaymentAsset(
   //   walletApi: WalletApi
 
   {
-    endpoint,
     accountId,
     assetId,
     signer,
+    api,
   }: {
-    endpoint: string;
     accountId: string;
     assetId: string;
     signer: any;
+    api: ApiPromise;
   }
 ): Promise<ISubmittableResult> {
-  const api = await getApi(endpoint);
   const asset = Number(assetId) === 1 ? null : api.createType('u128', assetId);
 
   return await signAndSend({
@@ -90,8 +89,7 @@ export async function setPaymentAsset(
     extrinsics: [api.tx.assetTxPayment.setPaymentAsset(accountId, asset)],
     filter: api.events.system.ExtrinsicSuccess.is,
     onFailedTx: undefined,
-
-    endpoint,
+    api,
     signer,
   });
 }
@@ -118,18 +116,17 @@ export async function signAndSend<T extends AnyTuple>({
   extrinsics,
   filter,
   onFailedTx,
-  endpoint,
+
+  api,
   signer,
 }: {
   accountId: string;
   extrinsics: SubmittableExtrinsic<'promise'>[];
   filter: (event: IEvent<AnyTuple>) => event is IEvent<T>;
   onFailedTx: OnFailedTxHandler | undefined;
-  endpoint: string;
+  api: ApiPromise;
   signer: any;
 }): Promise<ISubmittableResult> {
-  const api = await getApi(endpoint);
-
   const { account, signerOption } = await getSignAndSendParams(
     accountId,
     signer
