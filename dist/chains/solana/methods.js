@@ -107,8 +107,22 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
     return __generator(this, function (_f) {
         switch (_f.label) {
             case 0:
+                // const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
+                console.log({
+                    //write
+                    quantity: quantity,
+                    accountId: accountId,
+                    destinationAddress: destinationAddress,
+                    configAssetId: configAssetId,
+                    sourceChannelId: sourceChannelId,
+                    configDenom: configDenom,
+                    endpoint: endpoint,
+                    timeout: timeout,
+                    memo: memo,
+                }, 'checkArguments:solanaTransfer');
                 isNative = (0, helper_1.isNativeSolanaAsset)(configDenom);
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
+                console.log({ denom: denom, baseDenom: baseDenom, assetId: assetId, hashedDenom: hashedDenom }, 'checkSolanaAsset');
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
                 tx = new anchor.web3.Transaction();
