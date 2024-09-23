@@ -556,7 +556,7 @@ export const crossChainAssets :CrossChainAssets= {
     "6SYCn6Hj4X3XV6dzRk8vXa1UyZc4SBvAT7p3e1AcATAx": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6b175474e89094c44da98b954eedeac495271d0f",
       "denom": "DAI",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/dai.svg"
@@ -564,7 +564,7 @@ export const crossChainAssets :CrossChainAssets= {
     "6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3432a789b141E659d494c8E074aC4d3c2bDe6a9d",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
       "denom": "FXS",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/fxs.svg"
@@ -572,7 +572,7 @@ export const crossChainAssets :CrossChainAssets= {
     "3AvDivzbMjfin9hSVUBjdYerKroX8jQuNyDVebdRiULE": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xc8E9b3D2AD2C8A2f97DC68cC94a4e7A1429bB10e",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
       "denom": "sFRAX",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sFRAX.svg"
@@ -580,7 +580,7 @@ export const crossChainAssets :CrossChainAssets= {
     "E5Lz7Bi1KZD9VTYXsCZhkWDiztkNzPoX7Jk71xbTkEoA": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xac3E018457B222d93114458476f3E3416Abbe38F",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xac3e018457b222d93114458476f3e3416abbe38f",
       "denom": "sfrxETH",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sfrxETH.svg"
@@ -588,7 +588,7 @@ export const crossChainAssets :CrossChainAssets= {
     "Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xB749A7b4Ed5E5385418EC743aF6A88CF2641bC6D",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x57e114b691db790c35207b2e685d4a43181e6061",
       "denom": "ENA",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ena.svg"
@@ -636,7 +636,7 @@ export const crossChainAssets :CrossChainAssets= {
     "EuBHrXZJa6ZNg6dfhiotxRoHpVpMg6ZsgNc6ZKJ9iUe2": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x674C6Ad92Fd080e4004b2312b45f796a192D27a0",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
       "denom": "crvUSD",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crvusd.svg"
@@ -644,7 +644,7 @@ export const crossChainAssets :CrossChainAssets= {
     "B1cm3Wf5ZNUdgZ1eaXaNdiy9DCmQudfmspRMBb2TqDjb": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x28CEd45aF1aFF4F5f26E9d07A6dE1170a49a5E06",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
       "denom": "pxETH",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pxeth.svg"
@@ -652,7 +652,7 @@ export const crossChainAssets :CrossChainAssets= {
     "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3446F1cD03C04b1BBFcd8d579D68E3fB7793dB95",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xbf5495efe5db9ce00f80364c8b423567e58d2110",
       "denom": "ezETH",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ezeth.svg"
@@ -668,7 +668,7 @@ export const crossChainAssets :CrossChainAssets= {
     "GM4RuF5gLcytcq36wNJkX3UBYRKP9hQwJyyRWm6d6o47": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xC2cB1040220768554cf699b0d863A3cd4324ce32",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
       "denom": "USDe",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDe.svg"
@@ -676,7 +676,7 @@ export const crossChainAssets :CrossChainAssets= {
     "uVYDrZeCeq5T5RBHZZWHfsG12SDCm4MPHX2h8iAcXRh": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xf14eEEdF22ca7c50a2A98E629E3a91C7f8456A35",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6982508145454ce325ddbe47a25d4ec3d2311933",
       "denom": "PEPE",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/pepe.svg"
@@ -684,7 +684,7 @@ export const crossChainAssets :CrossChainAssets= {
     "EHzGKxauSbvLD5xfX4P9StBdQWmyroferGg9aR6oDU9v": {
       "chainId": "ethereum",
       "decimals": 6,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xdac17f958d2ee523a2206206994597c13d831ec7",
       "denom": "USDT Ethereum",
       "realDecimals": 6,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTethereum.svg"
