@@ -137,23 +137,21 @@ function setPaymentAsset(_a) {
     //   assetId: string,
     //   walletApi: WalletApi
     _b) {
-        var api, asset;
-        var endpoint = _b.endpoint, accountId = _b.accountId, assetId = _b.assetId, signer = _b.signer;
+        var asset;
+        var accountId = _b.accountId, assetId = _b.assetId, signer = _b.signer, api = _b.api;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, getApi(endpoint)];
-                case 1:
-                    api = _c.sent();
+                case 0:
                     asset = Number(assetId) === 1 ? null : api.createType('u128', assetId);
                     return [4 /*yield*/, signAndSend({
                             accountId: accountId,
                             extrinsics: [api.tx.assetTxPayment.setPaymentAsset(accountId, asset)],
                             filter: api.events.system.ExtrinsicSuccess.is,
                             onFailedTx: undefined,
-                            endpoint: endpoint,
+                            api: api,
                             signer: signer,
                         })];
-                case 2: return [2 /*return*/, _c.sent()];
+                case 1: return [2 /*return*/, _c.sent()];
             }
         });
     });
@@ -177,15 +175,12 @@ function getSignAndSendParams(accountId, signer) {
 }
 function signAndSend(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var api, _c, account, signerOption;
-        var accountId = _b.accountId, extrinsics = _b.extrinsics, filter = _b.filter, onFailedTx = _b.onFailedTx, endpoint = _b.endpoint, signer = _b.signer;
+        var _c, account, signerOption;
+        var accountId = _b.accountId, extrinsics = _b.extrinsics, filter = _b.filter, onFailedTx = _b.onFailedTx, api = _b.api, signer = _b.signer;
         return __generator(this, function (_d) {
             switch (_d.label) {
-                case 0: return [4 /*yield*/, getApi(endpoint)];
+                case 0: return [4 /*yield*/, getSignAndSendParams(accountId, signer)];
                 case 1:
-                    api = _d.sent();
-                    return [4 /*yield*/, getSignAndSendParams(accountId, signer)];
-                case 2:
                     _c = _d.sent(), account = _c.account, signerOption = _c.signerOption;
                     return [2 /*return*/, new Promise(function (resolve, reject) {
                             var state = { isFailedTxShown: false };
