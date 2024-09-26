@@ -93,7 +93,10 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                 gas = _d.sent();
                 // simulate before sending transfer
                 (0, helper_1.getEthSimulate)(web3, encodedData, txObject);
-                return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
+                return [2 /*return*/, {
+                        legacyTransfer: function () { return rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas })); },
+                        txObject: txObject,
+                    }];
         }
     });
 }); };
