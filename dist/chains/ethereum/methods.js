@@ -78,9 +78,7 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                 timeout.toString(), memo);
                 isETH = assetId === 'ETH';
                 rawData = isETH ? rawDataEth : rawDataErc20;
-                console.log('1111tx');
                 encodedData = rawData.encodeABI();
-                console.log('2222tx');
                 txObject = {
                     to: constants_1.bankTransferContractAddress,
                     data: encodedData,
@@ -90,18 +88,12 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                         : constants_1.MAINNET_FEE,
                     gasPrice: gasPrice, // wei
                 };
-                console.log('3333tx');
                 return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 3:
                 gas = _d.sent();
-                console.log('4444tx');
                 // simulate before sending transfer
                 (0, helper_1.getEthSimulate)(web3, encodedData, txObject);
-                console.log('5555tx');
-                return [2 /*return*/, {
-                        legacyTransfer: function () { return rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas })); },
-                        txObject: txObject,
-                    }];
+                return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
         }
     });
 }); };
@@ -129,15 +121,7 @@ var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, functi
                 return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 2:
                 gas = _d.sent();
-                return [2 /*return*/, {
-                        txObject: tokenApprove,
-                        legacyTranster: function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0: return [4 /*yield*/, tokenApprove.send({ from: account })];
-                                case 1: return [2 /*return*/, _a.sent()];
-                            }
-                        }); }); },
-                    }];
+                return [2 /*return*/, tokenApprove.send({ from: account })];
         }
     });
 }); };
