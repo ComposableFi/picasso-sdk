@@ -79,7 +79,10 @@ export const ethereumTransfer = async ({
   // simulate before sending transfer
   getEthSimulate(web3, encodedData, txObject);
 
-  return rawData?.send({ ...txObject, gas });
+  return {
+    legacyTransfer: () => rawData?.send({ ...txObject, gas }),
+    txObject,
+  };
   // .on('transactionHash', async (txHash) => {
   //   emitter.emit('ETHEREUM_APPROVED');
   //   console.log(txHash, 'txHash');
