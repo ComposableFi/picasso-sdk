@@ -8,8 +8,8 @@ export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 export { base58Decode } from '@polkadot/util-crypto';
 export type OnFailedTxHandler = (result: ISubmittableResult, errorMessage?: string) => void;
 export declare function getSubAccount(api: ApiPromise, poolId: string): string;
-export declare function getPaymentAsset({ endpoint, accountId, }: {
-    endpoint: string;
+export declare function getPaymentAsset({ api, accountId, }: {
+    api: ApiPromise;
     accountId: string;
 }): Promise<[string, string] | null>;
 export declare function setPaymentAsset({ accountId, assetId, signer, api, }: {

@@ -113,16 +113,14 @@ function getSubAccount(api, poolId) {
 }
 function getPaymentAsset(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var api, accountId32, result;
-        var endpoint = _b.endpoint, accountId = _b.accountId;
+        var accountId32, result;
+        var api = _b.api, accountId = _b.accountId;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, getApi(endpoint)];
-                case 1:
-                    api = _c.sent();
+                case 0:
                     accountId32 = api.createType('AccountId32', accountId);
                     return [4 /*yield*/, api.query.assetTxPayment.paymentAssets(accountId32)];
-                case 2:
+                case 1:
                     result = _c.sent();
                     return [2 /*return*/, result.toJSON()];
             }
