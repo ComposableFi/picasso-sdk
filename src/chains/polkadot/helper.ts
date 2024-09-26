@@ -51,13 +51,12 @@ export function getSubAccount(api: ApiPromise, poolId: string): string {
 }
 
 export async function getPaymentAsset({
-  endpoint,
+  api,
   accountId,
 }: {
-  endpoint: string;
+  api: ApiPromise;
   accountId: string;
 }): Promise<[string, string] | null> {
-  const api = await getApi(endpoint);
   const accountId32 = api.createType('AccountId32', accountId);
   const result = await api.query.assetTxPayment.paymentAssets(accountId32);
   return result.toJSON() as [string, string] | null;
