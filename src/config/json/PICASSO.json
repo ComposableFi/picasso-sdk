@@ -3,7 +3,7 @@
   "chainId": "2087",
   "rest": "",
   "rpc": "wss://picasso-rpc.composable.finance",
-  "chainName": "Picasso",
+  "chainName": "Picasso kusama",
   "channelMap": {
     "15": {
       "chainId": "2019",
@@ -74,21 +74,7 @@
       "ethereum": {},
       "solana": {}
     },
-    {
-      "coinDenom": "USK",
-      "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USK.svg",
-      "coinGeckoId": "",
-      "cosmos": {},
-      "polkadot": {
-        "picassoAssetId": "26",
-        "composableAssetId": "",
-        "ratio": { "n": "1", "d": "5000000" },
-        "existentialDeposit": "200000"
-      },
-      "ethereum": {},
-      "solana": {}
-    },
+
     {
       "coinDenom": "SEI",
       "coinDecimals": 6,
@@ -107,7 +93,7 @@
     {
       "coinDenom": "SILK",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/SILK.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/silk.svg",
       "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
       "cosmos": {},
       "polkadot": {
@@ -167,7 +153,7 @@
     {
       "coinDenom": "STRD",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STRD.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/stride.svg",
       "coinGeckoId": "stride",
       "cosmos": {},
       "polkadot": {
@@ -241,25 +227,11 @@
       "ethereum": {},
       "solana": {}
     },
-    {
-      "coinDenom": "Liquid Staked Kusama",
-      "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LIQUID STAKED KUSAMA.svg",
-      "coinGeckoId": "",
-      "cosmos": {},
-      "polkadot": {
-        "picassoAssetId": "20",
-        "composableAssetId": "",
-        "ratio": { "n": "70", "d": "10000" },
-        "existentialDeposit": "375000000"
-      },
-      "ethereum": {},
-      "solana": {}
-    },
+
     {
       "coinDenom": "OSMO",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/OSMO.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/osmosis.svg",
       "coinGeckoId": "osmosis",
       "cosmos": {},
       "polkadot": {
@@ -304,7 +276,7 @@
     {
       "coinDenom": "wSOL",
       "coinDecimals": 9,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/WSOL.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/wSOL.svg",
       "coinGeckoId": "wrapped-solana",
       "cosmos": {},
       "polkadot": {
@@ -334,7 +306,7 @@
     {
       "coinDenom": "stATOM",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STATOM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/stATOM.svg",
       "coinGeckoId": "stride-staked-atom",
       "cosmos": {},
       "polkadot": {
@@ -364,7 +336,7 @@
     {
       "coinDenom": "ATOM",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ATOM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/atom.svg",
       "coinGeckoId": "cosmos",
       "cosmos": {},
       "polkadot": {
@@ -379,7 +351,7 @@
     {
       "coinDenom": "UMEE",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/UMEE.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/umee.svg",
       "coinGeckoId": "umee",
       "cosmos": {},
       "polkadot": {
@@ -454,7 +426,7 @@
     {
       "coinDenom": "CRE",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/CRE.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/cre.svg",
       "coinGeckoId": "crescent-network",
       "cosmos": {},
       "polkadot": {
@@ -529,7 +501,7 @@
     {
       "coinDenom": "vDOT",
       "coinDecimals": 10,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VDOT.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
@@ -574,7 +546,7 @@
     {
       "coinDenom": "vKSM",
       "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VKSM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
@@ -589,7 +561,7 @@
     {
       "coinDenom": "lsDOT",
       "coinDecimals": 10,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LSDOT.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/lsdot.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
@@ -650,7 +622,7 @@
     {
       "coinDenom": "STARS",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STARS.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/STARS.png",
       "coinGeckoId": "stargaze",
       "cosmos": {},
       "polkadot": {
@@ -665,7 +637,7 @@
     {
       "coinDenom": "bCRE",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/BCRE.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/bCRE.svg",
       "coinGeckoId": "liquid-staking-crescent",
       "cosmos": {},
       "polkadot": {
@@ -680,7 +652,7 @@
     {
       "coinDenom": "HUAHUA",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/HUAHUA.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/huahua.svg",
       "coinGeckoId": "chihuahua-token",
       "cosmos": {},
       "polkadot": {

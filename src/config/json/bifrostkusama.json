@@ -40,7 +40,7 @@
     {
       "coinDenom": "vKSM",
       "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VKSM.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vKSM.svg",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {

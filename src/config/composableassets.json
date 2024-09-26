@@ -77,7 +77,7 @@
   {
     "coinDenom": "vDOT",
     "coinDecimals": 10,
-    "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/VDOT.svg",
+    "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/vDOT.svg",
     "coinGeckoId": "",
     "cosmos": {},
     "polkadot": {
@@ -92,7 +92,7 @@
   {
     "coinDenom": "lsDOT",
     "coinDecimals": 10,
-    "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/LSDOT.svg",
+    "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/lsdot.svg",
     "coinGeckoId": "",
     "cosmos": {},
     "polkadot": {

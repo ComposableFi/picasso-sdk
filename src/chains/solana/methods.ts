@@ -45,7 +45,21 @@ export const solanaTransfer = async ({
   memo: string;
 }) => {
   // const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
-
+  console.log(
+    {
+      //write
+      quantity,
+      accountId,
+      destinationAddress,
+      configAssetId,
+      sourceChannelId,
+      configDenom,
+      endpoint,
+      timeout,
+      memo,
+    },
+    'checkArguments:solanaTransfer'
+  );
   // nativeDenom: assetId, nonNativeDenom: minimalDenom with path
 
   const isNative = isNativeSolanaAsset(configDenom);
@@ -54,6 +68,7 @@ export const solanaTransfer = async ({
     configDenom,
     isNative
   );
+  console.log({ denom, baseDenom, assetId, hashedDenom }, 'checkSolanaAsset');
   /**@description examle: transfer/channel-0/transfer/channel-52/wei */
   const senderPublicKey = new anchor.web3.PublicKey(accountId);
   const associatedToken = spl.getAssociatedTokenAddressSync(
@@ -192,11 +207,19 @@ export const solanaTransfer = async ({
     data: buffer, // All instructions are hellos
   });
 
-  return await sendTX(tx, accountId, endpoint, false, undefined, () => {
-    tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
-    tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
-    tx.add(instruction);
-  });
+  return await sendTX(
+    tx,
+    accountId,
+    endpoint,
+    false,
+    undefined,
+    () => {
+      tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
+      tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 700_000 }));
+      tx.add(instruction);
+    },
+    true
+  );
 };
 /**@description this function is used to send tx */
 const sendTX = async (
@@ -206,7 +229,7 @@ const sendTX = async (
   isBundle: boolean = true,
   tokenMintKeypair?: anchor.web3.Keypair,
   beforeFeeFunc?: () => void,
-  skipPreflight: boolean = false
+  skipPreflight: boolean = true
 ) => {
   const tx = inputTx;
   const depositor = getPublicKey(address);
@@ -238,6 +261,7 @@ const pollingSignatureStatus = async (
   if (!connection) return;
   const signature = await connection.sendRawTransaction(rawTx, {
     skipPreflight: skipPreflight,
+    maxRetries: 5,
   });
 
   await connection.confirmTransaction(signature);

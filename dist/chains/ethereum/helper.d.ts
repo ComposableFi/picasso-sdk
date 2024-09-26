@@ -3,7 +3,7 @@ import { TransactionReceipt, type TransactionConfig } from 'web3-core';
 import { type Contract } from 'web3-eth-contract';
 import { type AbiItem } from 'web3-utils';
 import { type Erc20ABI, type Ics20BankABI, type Ics20TransferBankABI } from './abi/types';
-export declare const getWeb3: (endpoint: string) => Web3;
+export declare const getWeb3: (provider?: string) => Web3;
 export declare const getContract: <T extends Contract>(web3: Web3, abi: AbiItem[] | AbiItem, contractAddress: string) => T;
 export declare const getBankTransferContract: (web3: Web3) => Ics20TransferBankABI;
 export declare const getBankContract: (web3: Web3) => Ics20BankABI;

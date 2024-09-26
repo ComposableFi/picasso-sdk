@@ -107,8 +107,22 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
     return __generator(this, function (_f) {
         switch (_f.label) {
             case 0:
+                // const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
+                console.log({
+                    //write
+                    quantity: quantity,
+                    accountId: accountId,
+                    destinationAddress: destinationAddress,
+                    configAssetId: configAssetId,
+                    sourceChannelId: sourceChannelId,
+                    configDenom: configDenom,
+                    endpoint: endpoint,
+                    timeout: timeout,
+                    memo: memo,
+                }, 'checkArguments:solanaTransfer');
                 isNative = (0, helper_1.isNativeSolanaAsset)(configDenom);
                 _c = (0, helper_1.getSolanaAsset)(configAssetId, configDenom, isNative), denom = _c.denom, baseDenom = _c.baseDenom, assetId = _c.assetId, hashedDenom = _c.hashedDenom;
+                console.log({ denom: denom, baseDenom: baseDenom, assetId: assetId, hashedDenom: hashedDenom }, 'checkSolanaAsset');
                 senderPublicKey = new anchor.web3.PublicKey(accountId);
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
                 tx = new anchor.web3.Transaction();
@@ -203,7 +217,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
-                    })];
+                    }, true)];
             case 4: return [2 /*return*/, _f.sent()];
         }
     });
@@ -218,7 +232,7 @@ var sendTX = function (inputTx_1, address_1, endpoint_1) {
     return __awaiter(void 0, __spreadArray([inputTx_1, address_1, endpoint_1], __read(args_1), false), void 0, function (inputTx, address, endpoint, isBundle, tokenMintKeypair, beforeFeeFunc, skipPreflight) {
         var tx, depositor, _a, signedTx, rawTransaction;
         if (isBundle === void 0) { isBundle = true; }
-        if (skipPreflight === void 0) { skipPreflight = false; }
+        if (skipPreflight === void 0) { skipPreflight = true; }
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -268,6 +282,7 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
                         return [2 /*return*/];
                     return [4 /*yield*/, connection.sendRawTransaction(rawTx, {
                             skipPreflight: skipPreflight,
+                            maxRetries: 5,
                         })];
                 case 1:
                     signature = _l.sent();

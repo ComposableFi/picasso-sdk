@@ -80,13 +80,15 @@ var big_js_1 = __importDefault(require("big.js"));
 var web3_1 = __importDefault(require("web3"));
 var abi_1 = require("./abi");
 var constants_1 = require("./constants");
-var getWeb3 = function (endpoint) {
-    return new web3_1.default(new web3_1.default.providers.HttpProvider(endpoint));
+var config_1 = require("../../config");
+var getWeb3 = function (provider) {
+    var injectedProvider = provider !== null && provider !== void 0 ? provider : new web3_1.default.providers.HttpProvider(config_1.networks['ethereum'].rpc);
+    return new web3_1.default(injectedProvider);
 };
 exports.getWeb3 = getWeb3;
 var getContract = function (web3, abi, contractAddress) {
     // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-    typeof window !== 'undefined' && !!web3;
+    // typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
     return web3 && contractAddress
         ? new web3.eth.Contract(abi, contractAddress)
         : undefined;

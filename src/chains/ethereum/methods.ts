@@ -74,6 +74,7 @@ export const ethereumTransfer = async ({
       : MAINNET_FEE,
     gasPrice: gasPrice, // wei
   };
+
   const gas = await getEthGasAmount(web3, txObject);
 
   // simulate before sending transfer
@@ -107,5 +108,13 @@ export const approveErc20 = async ({
   // const account = '0xD36554eF26E9B2ad72f2b53986469A8180522E5F';
   const tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
 
-  return await tokenApprove.send({ from: account });
+  const gasPrice = await web3.eth.getGasPrice();
+  const txObject = {
+    from: account,
+    to: erc20TokenAddress,
+    data: tokenApprove.encodeABI(),
+    gasPrice: gasPrice,
+  };
+  const gas = await getEthGasAmount(web3, txObject);
+  return tokenApprove.send({ from: account });
 };

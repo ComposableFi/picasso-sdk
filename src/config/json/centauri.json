@@ -4,7 +4,7 @@
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
   "rest": "https://picasso-api.polkachu.com",
   "rpc": "https://picasso-rpc.polkachu.com",
-  "chainName": "centauri",
+  "chainName": "Picasso",
   "cosmos": {
     "bip44": {
       "coinType": 118

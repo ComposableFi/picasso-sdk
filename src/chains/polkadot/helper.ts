@@ -51,13 +51,12 @@ export function getSubAccount(api: ApiPromise, poolId: string): string {
 }
 
 export async function getPaymentAsset({
-  endpoint,
+  api,
   accountId,
 }: {
-  endpoint: string;
+  api: ApiPromise;
   accountId: string;
 }): Promise<[string, string] | null> {
-  const api = await getApi(endpoint);
   const accountId32 = api.createType('AccountId32', accountId);
   const result = await api.query.assetTxPayment.paymentAssets(accountId32);
   return result.toJSON() as [string, string] | null;
@@ -71,18 +70,17 @@ export async function setPaymentAsset(
   //   walletApi: WalletApi
 
   {
-    endpoint,
     accountId,
     assetId,
     signer,
+    api,
   }: {
-    endpoint: string;
     accountId: string;
     assetId: string;
     signer: any;
+    api: ApiPromise;
   }
 ): Promise<ISubmittableResult> {
-  const api = await getApi(endpoint);
   const asset = Number(assetId) === 1 ? null : api.createType('u128', assetId);
 
   return await signAndSend({
@@ -90,8 +88,7 @@ export async function setPaymentAsset(
     extrinsics: [api.tx.assetTxPayment.setPaymentAsset(accountId, asset)],
     filter: api.events.system.ExtrinsicSuccess.is,
     onFailedTx: undefined,
-
-    endpoint,
+    api,
     signer,
   });
 }
@@ -118,18 +115,17 @@ export async function signAndSend<T extends AnyTuple>({
   extrinsics,
   filter,
   onFailedTx,
-  endpoint,
+
+  api,
   signer,
 }: {
   accountId: string;
   extrinsics: SubmittableExtrinsic<'promise'>[];
   filter: (event: IEvent<AnyTuple>) => event is IEvent<T>;
   onFailedTx: OnFailedTxHandler | undefined;
-  endpoint: string;
+  api: ApiPromise;
   signer: any;
 }): Promise<ISubmittableResult> {
-  const api = await getApi(endpoint);
-
   const { account, signerOption } = await getSignAndSendParams(
     accountId,
     signer

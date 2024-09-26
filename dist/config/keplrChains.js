@@ -158,6 +158,56 @@ exports.keplrChains = {
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
     },
+    "centauri-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "pica",
+            "bech32PrefixAccPub": "picapub",
+            "bech32PrefixValAddr": "picavaloper",
+            "bech32PrefixValPub": "picavaloperpub",
+            "bech32PrefixConsAddr": "picavalcons",
+            "bech32PrefixConsPub": "picavalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "centauri-1",
+        "chainName": "Picasso",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "currencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+                "gasPriceStep": {
+                    "low": 0,
+                    "average": 0,
+                    "high": 0
+                },
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "rest": "https://picasso-api.polkachu.com",
+        "rpc": "https://picasso-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 12,
+            "coinDenom": "PICA",
+            "coinGeckoId": "picasso",
+            "coinMinimalDenom": "ppica",
+            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+        },
+        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
+    },
     "chihuahua-1": {
         "bech32Config": {
             "bech32PrefixAccAddr": "chihuahua",
@@ -512,6 +562,63 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png"
         }
     },
+    "osmosis-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "osmo",
+            "bech32PrefixAccPub": "osmopub",
+            "bech32PrefixValAddr": "osmovaloper",
+            "bech32PrefixValPub": "osmovaloperpub",
+            "bech32PrefixConsAddr": "osmovalcons",
+            "bech32PrefixConsPub": "osmovalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "osmosis-1",
+        "chainName": "Osmosis",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "OSMO",
+                "coinGeckoId": "osmosis",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                "coinMinimalDenom": "uosmo"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "milkTIA",
+                "coinGeckoId": "milkyway-staked-tia",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
+                "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "OSMO",
+                "coinGeckoId": "osmosis",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                "gasPriceStep": {
+                    "low": 0.0025,
+                    "average": 0.025,
+                    "high": 0.04
+                },
+                "coinMinimalDenom": "uosmo"
+            }
+        ],
+        "rest": "https://osmosis-cmp-api.polkachu.com",
+        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "OSMO",
+            "coinGeckoId": "osmosis",
+            "coinMinimalDenom": "uosmo",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis"
+    },
     "quicksilver-2": {
         "bech32Config": {
             "bech32PrefixAccAddr": "quick",
@@ -830,112 +937,5 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
-    },
-    "centauri-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "pica",
-            "bech32PrefixAccPub": "picapub",
-            "bech32PrefixValAddr": "picavaloper",
-            "bech32PrefixValPub": "picavaloperpub",
-            "bech32PrefixConsAddr": "picavalcons",
-            "bech32PrefixConsPub": "picavalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "centauri-1",
-        "chainName": "centauri",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "currencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-                "gasPriceStep": {
-                    "low": 0,
-                    "average": 0,
-                    "high": 0
-                },
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "rest": "https://picasso-api.polkachu.com",
-        "rpc": "https://picasso-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 12,
-            "coinDenom": "PICA",
-            "coinGeckoId": "picasso",
-            "coinMinimalDenom": "ppica",
-            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
-        },
-        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
-    },
-    "osmosis-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "osmo",
-            "bech32PrefixAccPub": "osmopub",
-            "bech32PrefixValAddr": "osmovaloper",
-            "bech32PrefixValPub": "osmovaloperpub",
-            "bech32PrefixConsAddr": "osmovalcons",
-            "bech32PrefixConsPub": "osmovalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "osmosis-1",
-        "chainName": "Osmosis",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "OSMO",
-                "coinGeckoId": "osmosis",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-                "coinMinimalDenom": "uosmo"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "milkTIA",
-                "coinGeckoId": "milkyway-staked-tia",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
-                "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "OSMO",
-                "coinGeckoId": "osmosis",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-                "gasPriceStep": {
-                    "low": 0.0025,
-                    "average": 0.025,
-                    "high": 0.04
-                },
-                "coinMinimalDenom": "uosmo"
-            }
-        ],
-        "rest": "https://osmosis-cmp-api.polkachu.com",
-        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "OSMO",
-            "coinGeckoId": "osmosis",
-            "coinMinimalDenom": "uosmo",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis"
     }
 };

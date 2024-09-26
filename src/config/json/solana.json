@@ -2,7 +2,7 @@
   "enabled": true,
   "chainId": "solana",
   "rest": "",
-  "rpc": "https://madel-m03ip3-fast-mainnet.helius-rpc.com",
+  "rpc": "https://mainnet.helius-rpc.com/?api-key=c38ba4fb-a06a-46fe-b73a-b382ad810cc2",
   "chainName": "Solana",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
   "chainType": "solana",

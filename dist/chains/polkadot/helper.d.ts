@@ -8,15 +8,15 @@ export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 export { base58Decode } from '@polkadot/util-crypto';
 export type OnFailedTxHandler = (result: ISubmittableResult, errorMessage?: string) => void;
 export declare function getSubAccount(api: ApiPromise, poolId: string): string;
-export declare function getPaymentAsset({ endpoint, accountId, }: {
-    endpoint: string;
+export declare function getPaymentAsset({ api, accountId, }: {
+    api: ApiPromise;
     accountId: string;
 }): Promise<[string, string] | null>;
-export declare function setPaymentAsset({ endpoint, accountId, assetId, signer, }: {
-    endpoint: string;
+export declare function setPaymentAsset({ accountId, assetId, signer, api, }: {
     accountId: string;
     assetId: string;
     signer: any;
+    api: ApiPromise;
 }): Promise<ISubmittableResult>;
 export declare function getSignAndSendParams(accountId: string, signer: any): Promise<{
     account: AddressOrPair;
@@ -24,12 +24,12 @@ export declare function getSignAndSendParams(accountId: string, signer: any): Pr
         signer: any;
     };
 }>;
-export declare function signAndSend<T extends AnyTuple>({ accountId, extrinsics, filter, onFailedTx, endpoint, signer, }: {
+export declare function signAndSend<T extends AnyTuple>({ accountId, extrinsics, filter, onFailedTx, api, signer, }: {
     accountId: string;
     extrinsics: SubmittableExtrinsic<'promise'>[];
     filter: (event: IEvent<AnyTuple>) => event is IEvent<T>;
     onFailedTx: OnFailedTxHandler | undefined;
-    endpoint: string;
+    api: ApiPromise;
     signer: any;
 }): Promise<ISubmittableResult>;
 export declare function getAvailableCoin(endpoint: string, accountId: string | null): Promise<Big>;
