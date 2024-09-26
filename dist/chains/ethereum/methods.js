@@ -108,22 +108,37 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
 exports.ethereumTransfer = ethereumTransfer;
 /**@description Ask approval */
 var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var erc20Contract, tokenApprove;
+    var erc20Contract, tokenApprove, gasPrice, txObject, gas;
     var web3 = _b.web3, account = _b.account, amount = _b.amount, erc20TokenAddress = _b.erc20TokenAddress, _c = _b.spenderContract, spenderContract = _c === void 0 ? constants_1.bankContractAddress : _c;
     return __generator(this, function (_d) {
-        erc20Contract = (0, helper_1.getErc20Contract)(web3, erc20TokenAddress);
-        if (!erc20Contract)
-            return [2 /*return*/];
-        tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
-        return [2 /*return*/, {
-                txObject: tokenApprove,
-                legacyTranster: function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, tokenApprove.send({ from: account })];
-                        case 1: return [2 /*return*/, _a.sent()];
-                    }
-                }); }); },
-            }];
+        switch (_d.label) {
+            case 0:
+                erc20Contract = (0, helper_1.getErc20Contract)(web3, erc20TokenAddress);
+                if (!erc20Contract)
+                    return [2 /*return*/];
+                tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
+                return [4 /*yield*/, web3.eth.getGasPrice()];
+            case 1:
+                gasPrice = _d.sent();
+                txObject = {
+                    from: account,
+                    to: erc20TokenAddress,
+                    data: tokenApprove.encodeABI(),
+                    gasPrice: gasPrice,
+                };
+                return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
+            case 2:
+                gas = _d.sent();
+                return [2 /*return*/, {
+                        txObject: tokenApprove,
+                        legacyTranster: function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, tokenApprove.send({ from: account })];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        }); }); },
+                    }];
+        }
     });
 }); };
 exports.approveErc20 = approveErc20;

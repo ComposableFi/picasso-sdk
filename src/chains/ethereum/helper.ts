@@ -11,9 +11,12 @@ import {
   type Ics20TransferBankABI,
 } from './abi/types';
 import { bankContractAddress, bankTransferContractAddress } from './constants';
+import { networks } from '../../config';
 
-export const getWeb3 = (endpoint: string): Web3 => {
-  return new Web3(new Web3.providers.HttpProvider(endpoint));
+export const getWeb3 = (provider?: string): Web3 => {
+  const injectedProvider =
+    provider ?? new Web3.providers.HttpProvider(networks['ethereum'].rpc);
+  return new Web3(injectedProvider);
 };
 
 export const getContract = <T extends Contract>(
@@ -22,7 +25,9 @@ export const getContract = <T extends Contract>(
   contractAddress: string
 ) => {
   // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-  typeof window !== 'undefined' && !!web3;
+
+  typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
+
   return web3 && contractAddress
     ? (new web3.eth.Contract(abi, contractAddress) as unknown as T)
     : undefined;
