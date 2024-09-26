@@ -88,7 +88,7 @@ var getWeb3 = function (provider) {
 exports.getWeb3 = getWeb3;
 var getContract = function (web3, abi, contractAddress) {
     // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-    typeof window !== 'undefined' && web3.eth.setProvider(web3_1.default.givenProvider);
+    // typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
     return web3 && contractAddress
         ? new web3.eth.Contract(abi, contractAddress)
         : undefined;
