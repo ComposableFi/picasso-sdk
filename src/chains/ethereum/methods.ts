@@ -63,9 +63,7 @@ export const ethereumTransfer = async ({
   const isETH = assetId === 'ETH';
   const rawData = isETH ? rawDataEth : rawDataErc20;
 
-  console.log('1111tx');
   const encodedData = rawData.encodeABI();
-  console.log('2222tx');
 
   const txObject = {
     to: bankTransferContractAddress,
@@ -76,19 +74,13 @@ export const ethereumTransfer = async ({
       : MAINNET_FEE,
     gasPrice: gasPrice, // wei
   };
-  console.log('3333tx');
 
   const gas = await getEthGasAmount(web3, txObject);
-  console.log('4444tx');
 
   // simulate before sending transfer
   getEthSimulate(web3, encodedData, txObject);
-  console.log('5555tx');
 
-  return {
-    legacyTransfer: () => rawData?.send({ ...txObject, gas }),
-    txObject,
-  };
+  return rawData?.send({ ...txObject, gas });
   // .on('transactionHash', async (txHash) => {
   //   emitter.emit('ETHEREUM_APPROVED');
   //   console.log(txHash, 'txHash');
@@ -124,8 +116,5 @@ export const approveErc20 = async ({
     gasPrice: gasPrice,
   };
   const gas = await getEthGasAmount(web3, txObject);
-  return {
-    txObject: tokenApprove,
-    legacyTranster: async () => await tokenApprove.send({ from: account }),
-  };
+  return tokenApprove.send({ from: account });
 };
