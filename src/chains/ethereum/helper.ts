@@ -26,7 +26,7 @@ export const getContract = <T extends Contract>(
 ) => {
   // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
 
-  typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
+  // typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
 
   return web3 && contractAddress
     ? (new web3.eth.Contract(abi, contractAddress) as unknown as T)
