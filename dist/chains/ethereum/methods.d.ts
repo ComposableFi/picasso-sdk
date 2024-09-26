@@ -27,5 +27,8 @@ export declare const approveErc20: ({ web3, account, amount, erc20TokenAddress, 
     amount: string;
     erc20TokenAddress: string;
     spenderContract?: string;
-}) => Promise<import("web3-core").TransactionReceipt>;
+}) => Promise<{
+    txObject: import("./abi/types/types").NonPayableTransactionObject<boolean>;
+    legacyTranster: () => Promise<import("web3-core").TransactionReceipt>;
+}>;
 //# sourceMappingURL=methods.d.ts.map
