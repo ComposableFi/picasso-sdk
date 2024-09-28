@@ -75,6 +75,7 @@ describe('createForwardPathRecursive', () => {
 
     // When calling the function
     const result = createForwardPathRecursive(ibcPath);
+    console.log(result);
 
     // Then the expected output should be correct
     const expectedOutput = {

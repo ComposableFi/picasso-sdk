@@ -179,21 +179,23 @@ var createForwardPathRecursive = function (ibcPath, index, timeout) {
     if (timeout === void 0) { timeout = cosmos_1.TIMEOUT_IBC_MAX; }
     if (index === ibcPath.length - 1) {
         return {
+            forward: {
+                receiver: ibcPath[index].receiver,
+                port: 'transfer',
+                channel: "channel-".concat(ibcPath[index].channelId),
+                timeout: timeout,
+                retries: 0,
+            },
+        };
+    }
+    return {
+        forward: {
             receiver: ibcPath[index].receiver,
             port: 'transfer',
             channel: "channel-".concat(ibcPath[index].channelId),
             timeout: timeout,
             retries: 0,
-        };
-    }
-    return {
-        receiver: ibcPath[index].receiver,
-        port: 'transfer',
-        channel: "channel-".concat(ibcPath[index].channelId),
-        timeout: timeout,
-        retries: 0,
-        next: {
-            forward: (0, exports.createForwardPathRecursive)(ibcPath, index + 1),
+            next: (0, exports.createForwardPathRecursive)(ibcPath, index + 1),
         },
     };
 };
