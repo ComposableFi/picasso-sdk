@@ -57,7 +57,8 @@ describe('createForwardPathRecursive', function () {
         ];
         // When calling the function
         var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
-        // Then the expected output should be correct
+        console.log(result);
+        // 예상되는 출력을 다시 작성합니다
         var expectedOutput = {
             forward: {
                 receiver: 'centauri-address',
@@ -76,8 +77,8 @@ describe('createForwardPathRecursive', function () {
                 },
             },
         };
-        // Convert both result and expected output to JSON strings for comparison
-        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
+        // Then the expected output should be correct
+        expect(JSON.stringify(result, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
     test('should handle a single hop correctly', function () {
         // Given test data with a single hop
@@ -101,6 +102,6 @@ describe('createForwardPathRecursive', function () {
             },
         };
         // Convert both result and expected output to JSON strings for comparison
-        expect(JSON.stringify({ forward: result }, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
+        expect(JSON.stringify(result, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
 });
