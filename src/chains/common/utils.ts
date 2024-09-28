@@ -204,22 +204,26 @@ export const createForwardPathRecursive = (
 ) => {
   if (index === ibcPath.length - 1) {
     return {
+      forward: {
+        receiver: ibcPath[index].receiver,
+        port: 'transfer',
+        channel: `channel-${ibcPath[index].channelId}`,
+        timeout,
+        retries: 0,
+      },
+    };
+  }
+
+  return {
+    forward: {
       receiver: ibcPath[index].receiver,
       port: 'transfer',
       channel: `channel-${ibcPath[index].channelId}`,
       timeout,
       retries: 0,
-    };
-  }
-
-  return {
-    receiver: ibcPath[index].receiver,
-    port: 'transfer',
-    channel: `channel-${ibcPath[index].channelId}`,
-    timeout,
-    retries: 0,
-    next: {
-      forward: createForwardPathRecursive(ibcPath, index + 1),
+      next: {
+        forward: createForwardPathRecursive(ibcPath, index + 1),
+      },
     },
   };
 };
