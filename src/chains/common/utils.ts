@@ -221,9 +221,7 @@ export const createForwardPathRecursive = (
       channel: `channel-${ibcPath[index].channelId}`,
       timeout,
       retries: 0,
-      next: {
-        forward: createForwardPathRecursive(ibcPath, index + 1),
-      },
+      next: createForwardPathRecursive(ibcPath, index + 1),
     },
   };
 };
