@@ -4,6 +4,8 @@ interface IndexerResult {
 }
 export interface IbcEventsResponses extends IndexerResult {
     ibcEvents: IbcEventsResponse[];
+    totalCount: number;
+    countPerPage: number;
 }
 export type TxHash = string;
 export type TransferState = 'TransferSuccess' | 'TransferFailed' | 'TransferTimeout' | 'TransferPending' | 'TransferMaintenance' | 'send_packet';
