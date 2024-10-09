@@ -23,14 +23,12 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "BLD",
         "coinGeckoId": "agoric",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
         "coinMinimalDenom": "ubld"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "IST",
         "coinGeckoId": "inter-stable-token",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
         "coinMinimalDenom": "uist"
       }
     ],
@@ -80,7 +78,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 18,
         "coinDenom": "ARCH",
         "coinGeckoId": "archway",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
         "coinMinimalDenom": "aarch"
       }
     ],
@@ -129,7 +126,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "TIA",
         "coinGeckoId": "celestia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
         "coinMinimalDenom": "utia"
       }
     ],
@@ -159,56 +155,6 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
   },
-  "centauri-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "pica",
-      "bech32PrefixAccPub": "picapub",
-      "bech32PrefixValAddr": "picavaloper",
-      "bech32PrefixValPub": "picavaloperpub",
-      "bech32PrefixConsAddr": "picavalcons",
-      "bech32PrefixConsPub": "picavalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "centauri-1",
-    "chainName": "Picasso",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-    "currencies": [
-      {
-        "coinDecimals": 12,
-        "coinDenom": "PICA",
-        "coinGeckoId": "picasso",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "coinMinimalDenom": "ppica"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 12,
-        "coinDenom": "PICA",
-        "coinGeckoId": "picasso",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "gasPriceStep": {
-          "low": 0,
-          "average": 0,
-          "high": 0
-        },
-        "coinMinimalDenom": "ppica"
-      }
-    ],
-    "rest": "https://picasso-api.polkachu.com",
-    "rpc": "https://picasso-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 12,
-      "coinDenom": "PICA",
-      "coinGeckoId": "picasso",
-      "coinMinimalDenom": "ppica",
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
-    },
-    "walletUrlForStaking": "https://explorer.nodestake.top/composable"
-  },
   "chihuahua-1": {
     "bech32Config": {
       "bech32PrefixAccAddr": "chihuahua",
@@ -229,7 +175,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "HUAHUA",
         "coinGeckoId": "chihuahua-token",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
         "coinMinimalDenom": "uhuahua"
       }
     ],
@@ -331,7 +276,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "ATOM",
         "coinGeckoId": "cosmos",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
         "coinMinimalDenom": "uatom"
       }
     ],
@@ -434,7 +378,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 18,
         "coinDenom": "INJ",
         "coinGeckoId": "injective-protocol",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
         "coinMinimalDenom": "inj"
       }
     ],
@@ -483,7 +426,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "KUJI",
         "coinGeckoId": "kujira",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
         "coinMinimalDenom": "ukuji"
       }
     ],
@@ -527,14 +469,12 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "ASTRO",
         "coinGeckoId": "astroport-fi",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
         "coinMinimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "NTRN",
         "coinGeckoId": "neutron-3",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
         "coinMinimalDenom": "untrn"
       }
     ],
@@ -583,14 +523,12 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "OSMO",
         "coinGeckoId": "osmosis",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
         "coinMinimalDenom": "uosmo"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "milkTIA",
         "coinGeckoId": "milkyway-staked-tia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
         "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
       }
     ],
@@ -640,7 +578,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "QCK",
         "coinGeckoId": "quicksilver",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
         "coinMinimalDenom": "uqck"
       }
     ],
@@ -690,21 +627,18 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "SCRT",
         "coinGeckoId": "secret",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
         "coinMinimalDenom": "uscrt"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "SILK",
         "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
-        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
         "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
       },
       {
         "coinDecimals": 8,
         "coinDenom": "SHD",
         "coinGeckoId": "shade-protocol",
-        "coinImageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
         "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
       }
     ],
@@ -795,7 +729,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "STARS",
         "coinGeckoId": "stargaze",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
         "coinMinimalDenom": "ustars"
       }
     ],
@@ -845,21 +778,18 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "stTIA",
         "coinGeckoId": "stride-staked-tia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/sttia.png",
         "coinMinimalDenom": "stutia"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "STRD",
         "coinGeckoId": "stride",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png",
         "coinMinimalDenom": "ustrd"
       },
       {
         "coinDecimals": 6,
         "coinDenom": "stATOM",
         "coinGeckoId": "stride-staked-atom",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png",
         "coinMinimalDenom": "stuatom"
       }
     ],
@@ -909,7 +839,6 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "UMEE",
         "coinGeckoId": "umee",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
         "coinMinimalDenom": "uumee"
       }
     ],
@@ -938,6 +867,55 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
+  },
+  "centauri-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "pica",
+      "bech32PrefixAccPub": "picapub",
+      "bech32PrefixValAddr": "picavaloper",
+      "bech32PrefixValPub": "picavaloperpub",
+      "bech32PrefixConsAddr": "picavalcons",
+      "bech32PrefixConsPub": "picavalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "centauri-1",
+    "chainName": "Picasso",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+    "currencies": [
+      {
+        "coinDecimals": 12,
+        "coinDenom": "PICA",
+        "coinGeckoId": "picasso",
+        "coinMinimalDenom": "ppica"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 12,
+        "coinDenom": "PICA",
+        "coinGeckoId": "picasso",
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "gasPriceStep": {
+          "low": 0,
+          "average": 0,
+          "high": 0
+        },
+        "coinMinimalDenom": "ppica"
+      }
+    ],
+    "rest": "https://picasso-api.polkachu.com",
+    "rpc": "https://picasso-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 12,
+      "coinDenom": "PICA",
+      "coinGeckoId": "picasso",
+      "coinMinimalDenom": "ppica",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+    },
+    "walletUrlForStaking": "https://explorer.nodestake.top/composable"
   }
 } ;
 

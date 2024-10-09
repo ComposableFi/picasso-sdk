@@ -90,6 +90,7 @@
         "displayDecimals": 9
       }
     },
+
     {
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/fxs.svg",
       "coinDecimals": 18,
