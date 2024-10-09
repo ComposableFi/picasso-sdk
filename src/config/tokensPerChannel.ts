@@ -88,16 +88,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "coreum-mainnet-1": {
-    "31": {
-      "chainId": "centauri-1",
-      "destinationId": 56,
-      "tokens": [
-        "COREUM",
-        "XRP"
-      ]
-    }
-  },
   "cosmoshub-4": {
     "617": {
       "chainId": "centauri-1",
@@ -439,6 +429,16 @@ export const tokensPerChannel : Record<
         "XRP",
         "COREUM",
         "ASTRO"
+      ]
+    }
+  },
+  "coreum-mainnet-1": {
+    "31": {
+      "chainId": "centauri-1",
+      "destinationId": 56,
+      "tokens": [
+        "COREUM",
+        "XRP"
       ]
     }
   },

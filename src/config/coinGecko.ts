@@ -56,14 +56,6 @@ import { CoinGeckoAsset } from './types';
     "id": "chihuahua-token"
   },
   {
-    "name": "XRP",
-    "id": "ripple"
-  },
-  {
-    "name": "CORE",
-    "id": "coreum"
-  },
-  {
     "name": "ATOM",
     "id": "cosmos"
   },
@@ -298,6 +290,14 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "PICA",
     "id": "picasso"
+  },
+  {
+    "name": "XRP",
+    "id": "ripple"
+  },
+  {
+    "name": "CORE",
+    "id": "coreum"
   },
   {
     "name": "ETH",

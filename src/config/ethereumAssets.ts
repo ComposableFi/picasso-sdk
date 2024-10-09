@@ -28,11 +28,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
   },
-  "XRP": {
-    "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
-    "cosmosToEthereumFee": 35,
-    "minimumTransfer": 94
-  },
   "ATOM": {
     "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
     "cosmosToEthereumFee": 2,
@@ -82,6 +77,11 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
     "cosmosToEthereumFee": 2000,
     "minimumTransfer": 5000
+  },
+  "XRP": {
+    "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
+    "cosmosToEthereumFee": 35,
+    "minimumTransfer": 94
   },
   "ETH": {
     "erc20Address": "ETH",

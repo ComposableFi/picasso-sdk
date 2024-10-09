@@ -503,32 +503,6 @@ import { NetworkInfo } from './types';
       "centauri-1"
     ]
   },
-  "coreum-mainnet-1": {
-    "name": "Coreum",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
-    "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
-    "rest": "https://rest-coreum.ecostake.com",
-    "chainType": "cosmos",
-    "chainId": "coreum-mainnet-1",
-    "feeAssetId": "ucore",
-    "cosmos": {
-      "bip44": {
-        "coinType": 990
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "core",
-        "bech32PrefixAccPub": "corepub",
-        "bech32PrefixValAddr": "corevaloper",
-        "bech32PrefixValPub": "corevaloperpub",
-        "bech32PrefixConsAddr": "corevalcons",
-        "bech32PrefixConsPub": "corevalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
   "cosmoshub-4": {
     "name": "Cosmos Hub",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
@@ -904,6 +878,32 @@ import { NetworkInfo } from './types';
       "ethereum",
       "coreum-mainnet-1",
       "solana"
+    ]
+  },
+  "coreum-mainnet-1": {
+    "name": "Coreum",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
+    "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
+    "rest": "https://rest-coreum.ecostake.com",
+    "chainType": "cosmos",
+    "chainId": "coreum-mainnet-1",
+    "feeAssetId": "ucore",
+    "cosmos": {
+      "bip44": {
+        "coinType": 990
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "core",
+        "bech32PrefixAccPub": "corepub",
+        "bech32PrefixValAddr": "corevaloper",
+        "bech32PrefixValPub": "corevaloperpub",
+        "bech32PrefixConsAddr": "corevalcons",
+        "bech32PrefixConsPub": "corevalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
     ]
   },
   "ethereum": {
