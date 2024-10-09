@@ -61,7 +61,7 @@ exports.networks = {
     },
     "2004": {
         "name": "Moonbeam",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/moonbeam.svg",
         "rpc": "wss://wss.api.moonbeam.network",
         "rest": "",
         "chainType": "polkadot",
@@ -304,34 +304,6 @@ exports.networks = {
             "kusama",
             "2019",
             "centauri-1"
-        ]
-    },
-    "2125": {
-        "name": "Tinkernet",
-        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
-        "rpc": "wss://tinkernet-rpc.dwellir.com",
-        "rest": "",
-        "chainType": "polkadot",
-        "chainId": "2125",
-        "feeAssetId": "2125",
-        "polkadot": {
-            "ss58Format": 117,
-            "isParachain": true,
-            "relayChain": "kusama",
-            "hops": {
-                "2087": {
-                    "type": "XCM",
-                    "xcmType": "xTokens.transfer",
-                    "version": "V2",
-                    "tokens": [
-                        "2125"
-                    ]
-                }
-            }
-        },
-        "enabled": true,
-        "network_to": [
-            "2087"
         ]
     },
     "kusama": {
