@@ -23,10 +23,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
     "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
     "minimumTransfer": 240
   },
-  "XRP": {
-    "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
-    "minimumTransfer": 0
-  },
   "ATOM": {
     "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
     "minimumTransfer": 2
@@ -70,6 +66,10 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "PICA": {
     "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
     "minimumTransfer": 4000
+  },
+  "XRP": {
+    "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
+    "minimumTransfer": 0
   },
   "ETH": {
     "mintAddress": "EXZbXNMbdTbMYpr9J5MUDv29XnWfxLZYyCCtk2tCy7XV",
