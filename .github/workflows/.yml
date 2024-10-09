@@ -1,0 +1,19 @@
+name: Auto Upgrade on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  upgrade:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run upgrade script
+        run: |
+          # Your upgrade script commands here
+          ./scripts/upgrade.sh
