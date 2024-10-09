@@ -223,7 +223,8 @@ export const keplrChains :Record<string, ChainInfo>= {
       {
         "coinDecimals": 6,
         "coinDenom": "XRP",
-        "coinGeckoId": "ripple"
+        "coinGeckoId": "ripple",
+        "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
       },
       {
         "coinDecimals": 6,
