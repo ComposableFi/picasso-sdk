@@ -27,10 +27,6 @@ exports.coinGecko = [
         "id": "shiden"
     },
     {
-        "name": "TNKR",
-        "id": "tinkernet"
-    },
-    {
         "name": "BLD",
         "id": "agoric"
     },

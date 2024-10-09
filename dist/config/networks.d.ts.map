@@ -1,1 +1,1 @@
-{"version":3,"file":"networks.d.ts","sourceRoot":"","sources":["../../src/config/networks.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AACrC,eAAO,MAAM,QAAQ,EAAE,MAAM,CAAC,MAAM,EAAE,WAAW,CAm6BjD,CAAC"}
+{"version":3,"file":"networks.d.ts","sourceRoot":"","sources":["../../src/config/networks.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AACrC,eAAO,MAAM,QAAQ,EAAE,MAAM,CAAC,MAAM,EAAE,WAAW,CAu4BjD,CAAC"}
