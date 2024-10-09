@@ -46,7 +46,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
     },
     "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz": {
-      "chainId": "ethereum",
+      "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
       "denom": "XRP",
@@ -522,7 +522,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
     "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW": {
-      "chainId": "ethereum",
+      "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "transfer/channel-1/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
       "denom": "XRP",
@@ -959,7 +959,7 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
     "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24": {
-      "chainId": "ethereum",
+      "chainId": "coreum-mainnet-1",
       "decimals": 6,
       "minimalDenom": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
       "denom": "XRP",

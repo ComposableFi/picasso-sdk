@@ -90,28 +90,6 @@
         "displayDecimals": 9
       }
     },
-    {
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/xrp.svg",
-      "coinDecimals": 6,
-      "coinDenom": "XRP",
-      "coinGeckoId": "ripple",
-      "cosmos": {
-        "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
-      },
-      "polkadot": {},
-      "ethereum": {
-        "minimalDenom": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
-        "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
-        "fromCosmosFee": 35,
-        "minimumTransfer": 94
-      },
-      "solana": {
-        "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
-        "minimalDenom": "transfer/channel-1/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0
-      }
-    },
 
     {
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/fxs.svg",

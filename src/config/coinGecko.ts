@@ -308,10 +308,6 @@ import { CoinGeckoAsset } from './types';
     "id": "dai"
   },
   {
-    "name": "XRP",
-    "id": "ripple"
-  },
-  {
     "name": "FXS",
     "id": "frax-share"
   },
