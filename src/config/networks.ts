@@ -61,7 +61,7 @@ import { NetworkInfo } from './types';
   },
   "2004": {
     "name": "Moonbeam",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/moonbeam.svg",
     "rpc": "wss://wss.api.moonbeam.network",
     "rest": "",
     "chainType": "polkadot",
