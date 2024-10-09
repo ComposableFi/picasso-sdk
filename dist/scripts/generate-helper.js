@@ -133,7 +133,7 @@ var processFiles = function () {
                     coinDecimals: item.coinDecimals,
                     coinDenom: item.coinDenom,
                     coinGeckoId: item.coinGeckoId,
-                    coinImageUrl: item.coinImageUrl,
+                    // coinImageUrl: item.coinImageUrl,
                     coinMinimalDenom: item.coinMinimalDenom,
                 }); }),
                 features: [],
