@@ -308,6 +308,10 @@ import { CoinGeckoAsset } from './types';
     "id": "dai"
   },
   {
+    "name": "XRP",
+    "id": "ripple"
+  },
+  {
     "name": "FXS",
     "id": "frax-share"
   },
@@ -392,6 +396,10 @@ import { CoinGeckoAsset } from './types';
     "id": "msol"
   },
   {
+    "name": "WHINE",
+    "id": "whine-coin"
+  },
+  {
     "name": "bSOL",
     "id": "blazestake-staked-sol"
   },
@@ -422,6 +430,10 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "USDT Solana",
     "id": "tether"
+  },
+  {
+    "name": "UWU",
+    "id": "unicorn-3"
   }
 ] ;
  

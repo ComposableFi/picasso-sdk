@@ -131,7 +131,7 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/WHINE.svg",
       "coinDecimals": 6,
       "coinDenom": "WHINE",
-      "coinGeckoId": "",
+      "coinGeckoId": "whine-coin",
       "cosmos": {
         "minimalDenom": "ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump"
       },
@@ -483,7 +483,7 @@
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/uwu.svg",
       "coinDecimals": 6,
       "coinDenom": "UWU",
-      "coinGeckoId": "",
+      "coinGeckoId": "unicorn-3",
       "cosmos": {
         "minimalDenom": "UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z"
       },

@@ -46,11 +46,11 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
     },
     "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz": {
-      "chainId": "coreum-mainnet-1",
+      "chainId": "ethereum",
       "decimals": 6,
       "minimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
       "denom": "XRP",
-      "imageUrl": ""
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/xrp.svg"
     },
     "ucore": {
       "chainId": "coreum-mainnet-1",
@@ -522,12 +522,12 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
     "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW": {
-      "chainId": "coreum-mainnet-1",
+      "chainId": "ethereum",
       "decimals": 6,
       "minimalDenom": "transfer/channel-1/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
       "denom": "XRP",
       "realDecimals": 6,
-      "imageUrl": ""
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/xrp.svg"
     },
     "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc": {
       "chainId": "cosmoshub-4",
@@ -959,11 +959,11 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
     "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24": {
-      "chainId": "coreum-mainnet-1",
+      "chainId": "ethereum",
       "decimals": 6,
-      "minimalDenom": "transfer/channel-2/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
+      "minimalDenom": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
       "denom": "XRP",
-      "imageUrl": ""
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/xrp.svg"
     },
     "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC": {
       "chainId": "cosmoshub-4",
