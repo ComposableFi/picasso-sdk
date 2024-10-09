@@ -4,7 +4,7 @@
   "rest": "",
   "rpc": "wss://wss.api.moonbeam.network",
   "chainName": "Moonbeam",
-  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/moonbeam.svg",
+  "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/moonbeam.svg",
   "chainType": "polkadot",
   "polkadot": {
     "ss58Format": 0,
