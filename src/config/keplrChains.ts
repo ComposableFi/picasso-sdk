@@ -159,56 +159,6 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
   },
-  "centauri-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "pica",
-      "bech32PrefixAccPub": "picapub",
-      "bech32PrefixValAddr": "picavaloper",
-      "bech32PrefixValPub": "picavaloperpub",
-      "bech32PrefixConsAddr": "picavalcons",
-      "bech32PrefixConsPub": "picavalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "centauri-1",
-    "chainName": "Picasso",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-    "currencies": [
-      {
-        "coinDecimals": 12,
-        "coinDenom": "PICA",
-        "coinGeckoId": "picasso",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "coinMinimalDenom": "ppica"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 12,
-        "coinDenom": "PICA",
-        "coinGeckoId": "picasso",
-        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "gasPriceStep": {
-          "low": 0,
-          "average": 0,
-          "high": 0
-        },
-        "coinMinimalDenom": "ppica"
-      }
-    ],
-    "rest": "https://picasso-api.polkachu.com",
-    "rpc": "https://picasso-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 12,
-      "coinDenom": "PICA",
-      "coinGeckoId": "picasso",
-      "coinMinimalDenom": "ppica",
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
-    },
-    "walletUrlForStaking": "https://explorer.nodestake.top/composable"
-  },
   "chihuahua-1": {
     "bech32Config": {
       "bech32PrefixAccAddr": "chihuahua",
@@ -938,6 +888,56 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
+  },
+  "centauri-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "pica",
+      "bech32PrefixAccPub": "picapub",
+      "bech32PrefixValAddr": "picavaloper",
+      "bech32PrefixValPub": "picavaloperpub",
+      "bech32PrefixConsAddr": "picavalcons",
+      "bech32PrefixConsPub": "picavalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "centauri-1",
+    "chainName": "Picasso",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+    "currencies": [
+      {
+        "coinDecimals": 12,
+        "coinDenom": "PICA",
+        "coinGeckoId": "picasso",
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "coinMinimalDenom": "ppica"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 12,
+        "coinDenom": "PICA",
+        "coinGeckoId": "picasso",
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "gasPriceStep": {
+          "low": 0,
+          "average": 0,
+          "high": 0
+        },
+        "coinMinimalDenom": "ppica"
+      }
+    ],
+    "rest": "https://picasso-api.polkachu.com",
+    "rpc": "https://picasso-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 12,
+      "coinDenom": "PICA",
+      "coinGeckoId": "picasso",
+      "coinMinimalDenom": "ppica",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+    },
+    "walletUrlForStaking": "https://explorer.nodestake.top/composable"
   }
 } ;
 

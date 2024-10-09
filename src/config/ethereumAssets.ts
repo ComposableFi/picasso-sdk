@@ -3,15 +3,15 @@
 import { EthereumAsset } from './types';
 
 export const ethereumAssets :Record<string, EthereumAsset>= {
-  "DOT": {
-    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-    "cosmosToEthereumFee": 2,
-    "minimumTransfer": 5
-  },
   "KSM": {
     "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
     "cosmosToEthereumFee": 0.5,
     "minimumTransfer": 1
+  },
+  "DOT": {
+    "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
+    "cosmosToEthereumFee": 2,
+    "minimumTransfer": 5
   },
   "BLD": {
     "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
@@ -28,11 +28,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "cosmosToEthereumFee": 0,
     "minimumTransfer": 600
   },
-  "PICA": {
-    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-    "cosmosToEthereumFee": 2000,
-    "minimumTransfer": 5000
-  },
   "XRP": {
     "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
     "cosmosToEthereumFee": 35,
@@ -42,6 +37,51 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
     "cosmosToEthereumFee": 2,
     "minimumTransfer": 5
+  },
+  "OSMO": {
+    "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+    "cosmosToEthereumFee": 15,
+    "minimumTransfer": 40
+  },
+  "SCRT": {
+    "erc20Address": "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C",
+    "cosmosToEthereumFee": 34,
+    "minimumTransfer": 80
+  },
+  "SILK": {
+    "erc20Address": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+    "cosmosToEthereumFee": 20,
+    "minimumTransfer": 50
+  },
+  "SHD": {
+    "erc20Address": "0x",
+    "cosmosToEthereumFee": 3,
+    "minimumTransfer": 7
+  },
+  "SEI": {
+    "erc20Address": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
+    "cosmosToEthereumFee": 27,
+    "minimumTransfer": 50
+  },
+  "STARS": {
+    "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
+    "cosmosToEthereumFee": 875,
+    "minimumTransfer": 2000
+  },
+  "STRD": {
+    "erc20Address": "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587",
+    "cosmosToEthereumFee": 7,
+    "minimumTransfer": 17
+  },
+  "stATOM": {
+    "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
+    "cosmosToEthereumFee": 2,
+    "minimumTransfer": 5
+  },
+  "PICA": {
+    "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
+    "cosmosToEthereumFee": 2000,
+    "minimumTransfer": 5000
   },
   "ETH": {
     "erc20Address": "ETH",
@@ -113,11 +153,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "cosmosToEthereumFee": 0.0055,
     "minimumTransfer": 0.01
   },
-  "SILK": {
-    "erc20Address": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
-    "cosmosToEthereumFee": 20,
-    "minimumTransfer": 50
-  },
   "ezETH": {
     "erc20Address": "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
     "cosmosToEthereumFee": 0.0055,
@@ -141,26 +176,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
   "CRV": {
     "erc20Address": "0xd533a949740bb3306d119cc777fa900ba034cd52",
     "cosmosToEthereumFee": 30,
-    "minimumTransfer": 50
-  },
-  "OSMO": {
-    "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
-    "cosmosToEthereumFee": 15,
-    "minimumTransfer": 40
-  },
-  "SCRT": {
-    "erc20Address": "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C",
-    "cosmosToEthereumFee": 34,
-    "minimumTransfer": 80
-  },
-  "SHD": {
-    "erc20Address": "0x",
-    "cosmosToEthereumFee": 3,
-    "minimumTransfer": 7
-  },
-  "SEI": {
-    "erc20Address": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
-    "cosmosToEthereumFee": 27,
     "minimumTransfer": 50
   },
   "JitoSOL": {
@@ -217,21 +232,6 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
     "erc20Address": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
     "cosmosToEthereumFee": 10,
     "minimumTransfer": 30
-  },
-  "STARS": {
-    "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
-    "cosmosToEthereumFee": 875,
-    "minimumTransfer": 2000
-  },
-  "STRD": {
-    "erc20Address": "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587",
-    "cosmosToEthereumFee": 7,
-    "minimumTransfer": 17
-  },
-  "stATOM": {
-    "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
-    "cosmosToEthereumFee": 2,
-    "minimumTransfer": 5
   }
 };
 

@@ -476,51 +476,6 @@ import { NetworkInfo } from './types';
       "centauri-1"
     ]
   },
-  "centauri-1": {
-    "name": "Picasso",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-    "rpc": "https://picasso-rpc.polkachu.com",
-    "rest": "https://picasso-api.polkachu.com",
-    "chainType": "cosmos",
-    "chainId": "centauri-1",
-    "feeAssetId": "ppica",
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "walletUrlForStaking": "https://explorer.nodestake.top/composable",
-      "bech32Config": {
-        "bech32PrefixAccAddr": "pica",
-        "bech32PrefixAccPub": "picapub",
-        "bech32PrefixValAddr": "picavaloper",
-        "bech32PrefixValPub": "picavaloperpub",
-        "bech32PrefixConsAddr": "picavalcons",
-        "bech32PrefixConsPub": "picavalconspub"
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "chihuahua-1",
-      "2087",
-      "osmosis-1",
-      "cosmoshub-4",
-      "stride-1",
-      "stargaze-1",
-      "quicksilver-2",
-      "crescent-1",
-      "agoric-3",
-      "secret-4",
-      "neutron-1",
-      "umee-1",
-      "kaiyo-1",
-      "injective-1",
-      "celestia",
-      "archway-1",
-      "ethereum",
-      "coreum-mainnet-1",
-      "solana"
-    ]
-  },
   "chihuahua-1": {
     "name": "Chihuahua",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
@@ -624,19 +579,6 @@ import { NetworkInfo } from './types';
         "bech32PrefixConsPub": "crevalconspub"
       }
     },
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "ethereum": {
-    "name": "Ethereum",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
-    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
-    "rest": "",
-    "chainType": "ethereum",
-    "chainId": "ethereum",
-    "feeAssetId": "ETH",
     "enabled": true,
     "network_to": [
       "centauri-1"
@@ -835,19 +777,6 @@ import { NetworkInfo } from './types';
       "osmosis-1"
     ]
   },
-  "solana": {
-    "name": "Solana",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
-    "rpc": "https://mainnet.helius-rpc.com/?api-key=c38ba4fb-a06a-46fe-b73a-b382ad810cc2",
-    "rest": "",
-    "chainType": "solana",
-    "chainId": "solana",
-    "feeAssetId": "SOL",
-    "enabled": true,
-    "network_to": [
-      "centauri-1"
-    ]
-  },
   "stargaze-1": {
     "name": "Stargaze",
     "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
@@ -927,6 +856,77 @@ import { NetworkInfo } from './types';
         "bech32PrefixConsPub": "umeevalconspub"
       }
     },
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "centauri-1": {
+    "name": "Picasso",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+    "rpc": "https://picasso-rpc.polkachu.com",
+    "rest": "https://picasso-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "centauri-1",
+    "feeAssetId": "ppica",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "walletUrlForStaking": "https://explorer.nodestake.top/composable",
+      "bech32Config": {
+        "bech32PrefixAccAddr": "pica",
+        "bech32PrefixAccPub": "picapub",
+        "bech32PrefixValAddr": "picavaloper",
+        "bech32PrefixValPub": "picavaloperpub",
+        "bech32PrefixConsAddr": "picavalcons",
+        "bech32PrefixConsPub": "picavalconspub"
+      }
+    },
+    "enabled": true,
+    "network_to": [
+      "chihuahua-1",
+      "2087",
+      "osmosis-1",
+      "cosmoshub-4",
+      "stride-1",
+      "stargaze-1",
+      "quicksilver-2",
+      "crescent-1",
+      "agoric-3",
+      "secret-4",
+      "neutron-1",
+      "umee-1",
+      "kaiyo-1",
+      "injective-1",
+      "celestia",
+      "archway-1",
+      "ethereum",
+      "coreum-mainnet-1",
+      "solana"
+    ]
+  },
+  "ethereum": {
+    "name": "Ethereum",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/ethereum.svg",
+    "rpc": "https://mainnet.infura.io/v3/a5d75c55a92a4e01b089047f19cc6bdd",
+    "rest": "",
+    "chainType": "ethereum",
+    "chainId": "ethereum",
+    "feeAssetId": "ETH",
+    "enabled": true,
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "solana": {
+    "name": "Solana",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/solana.svg",
+    "rpc": "https://mainnet.helius-rpc.com/?api-key=c38ba4fb-a06a-46fe-b73a-b382ad810cc2",
+    "rest": "",
+    "chainType": "solana",
+    "chainId": "solana",
+    "feeAssetId": "SOL",
     "enabled": true,
     "network_to": [
       "centauri-1"
