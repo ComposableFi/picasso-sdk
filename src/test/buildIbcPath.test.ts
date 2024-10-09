@@ -75,8 +75,9 @@ describe('createForwardPathRecursive', () => {
 
     // When calling the function
     const result = createForwardPathRecursive(ibcPath);
+    console.log(result);
 
-    // Then the expected output should be correct
+    // 예상되는 출력을 다시 작성합니다
     const expectedOutput = {
       forward: {
         receiver: 'centauri-address',
@@ -96,8 +97,9 @@ describe('createForwardPathRecursive', () => {
       },
     };
 
-    // Convert both result and expected output to JSON strings for comparison
-    expect(JSON.stringify({ forward: result }, null, 2)).toBe(
+    // Then the expected output should be correct
+
+    expect(JSON.stringify(result, null, 2)).toBe(
       JSON.stringify(expectedOutput, null, 2)
     );
   });
@@ -127,7 +129,7 @@ describe('createForwardPathRecursive', () => {
     };
 
     // Convert both result and expected output to JSON strings for comparison
-    expect(JSON.stringify({ forward: result }, null, 2)).toBe(
+    expect(JSON.stringify(result, null, 2)).toBe(
       JSON.stringify(expectedOutput, null, 2)
     );
   });

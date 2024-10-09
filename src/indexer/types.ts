@@ -5,6 +5,8 @@ interface IndexerResult {
 
 export interface IbcEventsResponses extends IndexerResult {
   ibcEvents: IbcEventsResponse[];
+  totalCount: number;
+  countPerPage: number;
 }
 
 export type TxHash = string;
