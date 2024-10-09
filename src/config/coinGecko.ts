@@ -28,10 +28,6 @@ import { CoinGeckoAsset } from './types';
     "id": "shiden"
   },
   {
-    "name": "TNKR",
-    "id": "tinkernet"
-  },
-  {
     "name": "BLD",
     "id": "agoric"
   },

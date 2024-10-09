@@ -306,34 +306,6 @@ import { NetworkInfo } from './types';
       "centauri-1"
     ]
   },
-  "2125": {
-    "name": "Tinkernet",
-    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/tinkernet.svg",
-    "rpc": "wss://tinkernet-rpc.dwellir.com",
-    "rest": "",
-    "chainType": "polkadot",
-    "chainId": "2125",
-    "feeAssetId": "2125",
-    "polkadot": {
-      "ss58Format": 117,
-      "isParachain": true,
-      "relayChain": "kusama",
-      "hops": {
-        "2087": {
-          "type": "XCM",
-          "xcmType": "xTokens.transfer",
-          "version": "V2",
-          "tokens": [
-            "2125"
-          ]
-        }
-      }
-    },
-    "enabled": true,
-    "network_to": [
-      "2087"
-    ]
-  },
   "kusama": {
     "name": "Kusama",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
