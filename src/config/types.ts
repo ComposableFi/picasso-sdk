@@ -1,3 +1,5 @@
+import { ExplorerType } from '../chains/common/types';
+
 export { type ChainInfo } from '@keplr-wallet/types';
 
 export interface CrosschainAsset {
@@ -38,7 +40,7 @@ export interface CrossChainAssets {
 }
 export interface NetworkInfo {
   explorer: {
-    type: 'mintscan' | 'subscan' | 'solscan' | 'pingPub' | 'etherscan';
+    type: ExplorerType;
     url: string;
   }[];
   name: string;

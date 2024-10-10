@@ -63,8 +63,6 @@ const processFiles = () => {
   const networks: Record<string, NetworkInfo> = {};
   const keplrChains: Record<string, ChainInfo> = {};
 
-  const temp = [];
-  const temp2 = [];
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))

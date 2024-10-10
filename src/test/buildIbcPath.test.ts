@@ -2,6 +2,7 @@ import {
   buildIbcPath,
   convertCosmosAddress,
   createForwardPathRecursive,
+  getExplorerUrl,
   getSupportedType,
   TIMEOUT_IBC_MAX,
 } from '../chains';
@@ -104,6 +105,69 @@ describe('createForwardPathRecursive', () => {
     );
   });
 
+  describe('getExplorerUrl', () => {
+    test('should return correct URL for Mintscan explorer', () => {
+      const chainId = 'osmosis-1';
+      const txHash = '1234567890ABCDEF';
+      const address = 'osmo1abcdefghijklmnop';
+
+      expect(getExplorerUrl(chainId, 'tx', txHash)).toBe(
+        'https://www.mintscan.io/osmosis/tx/1234567890ABCDEF'
+      );
+      expect(getExplorerUrl(chainId, 'address', address)).toBe(
+        'https://www.mintscan.io/osmosis/address/osmo1abcdefghijklmnop'
+      );
+    });
+
+    test('should return correct URL for Subscan explorer', () => {
+      const chainId = '2006';
+      const txHash = '0x1234567890ABCDEF';
+      const address = '5CGUvruJMqB1VMkqMvfcx9fHVgTLc73fgYMRhzghZQVWfPTw';
+
+      expect(getExplorerUrl(chainId, 'tx', txHash)).toBe(
+        'https://astar.subscan.io/extrinsic/0x1234567890ABCDEF'
+      );
+      expect(getExplorerUrl(chainId, 'address', address)).toBe(
+        'https://astar.subscan.io/account/5CGUvruJMqB1VMkqMvfcx9fHVgTLc73fgYMRhzghZQVWfPTw'
+      );
+    });
+
+    test('should return correct URL for Solscan explorer', () => {
+      const chainId = 'solana';
+      const txHash = '3m7sDC5k3wUPBdRUkJpYXZyDvuMsaQqHoFKrMndomJJx';
+      const address = 'CuieVDEDtLo7FypA9SbLM9saXFdb1dsshEkyErMqkRQq';
+
+      expect(getExplorerUrl(chainId, 'tx', txHash)).toBe(
+        'https://solscan.io/tx/3m7sDC5k3wUPBdRUkJpYXZyDvuMsaQqHoFKrMndomJJx'
+      );
+      expect(getExplorerUrl(chainId, 'address', address)).toBe(
+        'https://solscan.io/address/CuieVDEDtLo7FypA9SbLM9saXFdb1dsshEkyErMqkRQq'
+      );
+    });
+
+    test('should return correct URL for Etherscan explorer', () => {
+      const chainId = 'ethereum';
+      const txHash =
+        '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef';
+      const address = '0x742d35Cc6634C0532925a3b844Bc454e4438f44e';
+
+      expect(getExplorerUrl(chainId, 'tx', txHash)).toBe(
+        'https://etherscan.io/tx/0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
+      );
+      expect(getExplorerUrl(chainId, 'address', address)).toBe(
+        'https://etherscan.io/address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e'
+      );
+    });
+
+    test('should return empty string for unsupported explorer type', () => {
+      const chainId = 'unsupported-chain';
+      const txHash = '1234567890';
+      const address = 'unsupported-address';
+
+      expect(getExplorerUrl(chainId, 'tx', txHash)).toBe('');
+      expect(getExplorerUrl(chainId, 'address', address)).toBe('');
+    });
+  });
   test('should handle a single hop correctly', () => {
     // Given test data with a single hop
     const ibcPath = [
