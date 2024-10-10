@@ -213,18 +213,18 @@ exports.getXcmInfo = getXcmInfo;
 var getExplorerUrl = function (chainId, infoType, info) {
     var _a, _b;
     var explorer = (_b = (_a = config_1.networks[chainId]) === null || _a === void 0 ? void 0 : _a.explorer) === null || _b === void 0 ? void 0 : _b[0];
-    if (!explorer) {
+    if (!explorer || !['tx', 'address'].includes(infoType)) {
         return '';
     }
     switch (explorer.type) {
         case 'mintscan':
-        case 'pingPub':
         case 'solscan':
-            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'tx' : 'address', "/").concat(info);
-        case 'subscan':
-            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'extrinsic' : 'account', "/").concat(info);
         case 'etherscan':
             return "".concat(explorer.url, "/").concat(infoType, "/").concat(info);
+        case 'pingPub':
+            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'tx' : 'account', "/").concat(info);
+        case 'subscan':
+            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'extrinsic' : 'account', "/").concat(info);
         default:
             return '';
     }
