@@ -679,5 +679,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://picasso.subscan.io"
+    }
   ]
 }

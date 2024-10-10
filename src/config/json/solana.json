@@ -497,5 +497,11 @@
         "displayDecimals": 6
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "solscan",
+      "url": "https://solscan.io"
+    }
   ]
 }

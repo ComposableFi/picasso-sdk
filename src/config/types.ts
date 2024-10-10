@@ -37,6 +37,10 @@ export interface CrossChainAssets {
   polkadot: Record<string, CrosschainAsset>;
 }
 export interface NetworkInfo {
+  explorer: {
+    type: 'mintscan' | 'subscan' | 'solscan' | 'pingPub' | 'etherscan';
+    url: string;
+  }[];
   name: string;
   image: string;
   rpc: string;

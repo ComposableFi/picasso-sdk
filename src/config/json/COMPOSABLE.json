@@ -195,5 +195,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://composable.subscan.io"
+    }
   ]
 }

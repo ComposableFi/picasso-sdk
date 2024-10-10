@@ -96,6 +96,7 @@ const processFiles = () => {
       polkadot: data.polkadot || undefined,
       cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
+      explorer: data.explorer || [],
       network_to: [
         ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),
         ...Object.values(data.channelMap || {}).map(

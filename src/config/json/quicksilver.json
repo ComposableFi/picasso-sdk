@@ -47,5 +47,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "pingPub",
+      "url": "https://ping.pub/quicksilver"
+    }
   ]
 }
