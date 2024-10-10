@@ -243,7 +243,7 @@ export const getExplorerUrl = (
 ) => {
   const explorer = networks[chainId]?.explorer?.[0];
 
-  if (!explorer) {
+  if (!explorer || !['tx', 'address'].includes(infoType)) {
     return '';
   }
   switch (explorer.type) {
