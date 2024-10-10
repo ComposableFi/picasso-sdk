@@ -625,7 +625,7 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "chainId": "pacific-1",
     "chainName": "Sei",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
     "currencies": [
       {
         "coinDecimals": 6,
