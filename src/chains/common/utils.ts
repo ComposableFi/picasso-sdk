@@ -248,13 +248,14 @@ export const getExplorerUrl = (
   }
   switch (explorer.type) {
     case 'mintscan':
-    case 'pingPub':
     case 'solscan':
-      return `${explorer.url}/${infoType === 'tx' ? 'tx' : 'address'}/${info}`;
-    case 'subscan':
-      return `${explorer.url}/${infoType === 'tx' ? 'extrinsic' : 'account'}/${info}`;
     case 'etherscan':
       return `${explorer.url}/${infoType}/${info}`;
+    case 'pingPub':
+      return `${explorer.url}/${infoType === 'tx' ? 'tx' : 'account'}/${info}`;
+
+    case 'subscan':
+      return `${explorer.url}/${infoType === 'tx' ? 'extrinsic' : 'account'}/${info}`;
     default:
       return '';
   }
