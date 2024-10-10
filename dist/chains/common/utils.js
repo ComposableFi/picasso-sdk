@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getXcmInfo = exports.getSourceChannel = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
+exports.getExplorerUrl = exports.getXcmInfo = exports.getSourceChannel = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
@@ -210,45 +210,23 @@ var getXcmInfo = function (fromChainId, toChainId) {
     return (_c = (_b = (_a = config_1.networks === null || config_1.networks === void 0 ? void 0 : config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.hops) === null || _c === void 0 ? void 0 : _c[toChainId];
 };
 exports.getXcmInfo = getXcmInfo;
-// export const getBatchPath = () => {
-//   const found = polkadotRoute(origin, destination);
-//   if (!found) return;
-//   const route = {
-//     ...found,
-//     paths: found.paths?.map((p) => {
-//       return {
-//         ...p,
-//         address:
-//           toWallet !== ''
-//             ? // if we have toWallet, normal multihop checking
-//               getAddressFromNetwork(
-//                 p.chainName,
-//                 pickMultihopWalletByHandler(
-//                   fromWallet,
-//                   toWallet,
-//                   config.networks[p.chainName].handler
-//                 )
-//               )
-//             : // else, if we have toAddres, check if the next hop is from or to
-//               toAddress !== undefined &&
-//                 pickMultihopWalletByHandlerToAddress(
-//                   fromWallet,
-//                   config.networks[p.chainName].handler,
-//                   toAddress
-//                 ) === 'toAddress'
-//               ? // is toAddress, we need to generate the address for the chain
-//                 getConvertedAddress({
-//                   address: toAddress,
-//                   network: p.chainName,
-//                 })
-//               : // is fromWallet
-//                 getAddressFromNetwork(p.chainName, fromWallet),
-//         // getAddressFromNetwork(
-//         // 	p.chainName,
-//         // 	// TODO: CHECK THIS
-//         // 	pickMultihopWalletByHandler(fromWallet, toWallet, config.networks[p.chainName].handler)
-//         // )
-//       };
-//     }),
-//   };
-// };
+var getExplorerUrl = function (chainId, infoType, info) {
+    var _a, _b;
+    var explorer = (_b = (_a = config_1.networks[chainId]) === null || _a === void 0 ? void 0 : _a.explorer) === null || _b === void 0 ? void 0 : _b[0];
+    if (!explorer) {
+        return '';
+    }
+    switch (explorer.type) {
+        case 'mintscan':
+        case 'pingPub':
+        case 'solscan':
+            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'tx' : 'address', "/").concat(info);
+        case 'subscan':
+            return "".concat(explorer.url, "/").concat(infoType === 'tx' ? 'extrinsic' : 'account', "/").concat(info);
+        case 'etherscan':
+            return "".concat(explorer.url, "/").concat(infoType, "/").concat(info);
+        default:
+            return '';
+    }
+};
+exports.getExplorerUrl = getExplorerUrl;

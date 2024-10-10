@@ -88,8 +88,6 @@ var processFiles = function () {
     };
     var networks = {};
     var keplrChains = {};
-    var temp = [];
-    var temp2 = [];
     var files = fs
         .readdirSync(dataDir)
         .filter(function (file) { return file.endsWith('.json'); })
@@ -120,6 +118,7 @@ var processFiles = function () {
             polkadot: data.polkadot || undefined,
             cosmos: data.cosmos || undefined,
             enabled: data.enabled || false,
+            explorer: data.explorer || [],
             network_to: __spreadArray(__spreadArray([], __read((((_a = data.polkadot) === null || _a === void 0 ? void 0 : _a['hops']) ? Object.keys(data.polkadot['hops']) : [])), false), __read(Object.values(data.channelMap || {}).map(function (item) { return item.chainId; })), false),
         };
         if (data.chainType === 'cosmos') {
