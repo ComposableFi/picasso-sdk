@@ -699,7 +699,7 @@ exports.networks = {
     },
     "pacific-1": {
         "name": "Sei",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
+        "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
         "rpc": "https://sei-rpc.polkachu.com",
         "rest": "https://sei-api.polkachu.com",
         "chainType": "cosmos",
