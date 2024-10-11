@@ -52,5 +52,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://bifrost-kusama.subscan.io"
+    }
   ]
 }

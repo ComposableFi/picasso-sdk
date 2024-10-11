@@ -26,6 +26,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://assethub-kusama.subscan.io"
+      }
+    ],
     "network_to": [
       "2087"
     ]
@@ -55,6 +61,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://bifrost-kusama.subscan.io"
+      }
+    ],
     "network_to": [
       "2087"
     ]
@@ -83,6 +95,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://moonbeam.subscan.io"
+      }
+    ],
     "network_to": [
       "2019"
     ]
@@ -111,6 +129,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://astar.subscan.io"
+      }
+    ],
     "network_to": [
       "2019"
     ]
@@ -139,6 +163,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://shiden.subscan.io"
+      }
+    ],
     "network_to": [
       "2087"
     ]
@@ -184,6 +214,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://composable.subscan.io"
+      }
+    ],
     "network_to": [
       "2006",
       "2030",
@@ -215,6 +251,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://moonriver.subscan.io"
+      }
+    ],
     "network_to": [
       "2087"
     ]
@@ -244,6 +286,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://bifrost.subscan.io"
+      }
+    ],
     "network_to": [
       "2019"
     ]
@@ -297,6 +345,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://picasso.subscan.io"
+      }
+    ],
     "network_to": [
       "1000",
       "2001",
@@ -330,6 +384,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://kusama.subscan.io"
+      }
+    ],
     "network_to": [
       "2087"
     ]
@@ -358,6 +418,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "subscan",
+        "url": "https://polkadot.subscan.io"
+      }
+    ],
     "network_to": [
       "2019"
     ]
@@ -391,6 +457,12 @@ import { NetworkInfo } from './types';
       ]
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/agoric"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -417,6 +489,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/archway"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -444,6 +522,12 @@ import { NetworkInfo } from './types';
       "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/celestia"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -471,6 +555,12 @@ import { NetworkInfo } from './types';
       "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/chihuahua"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -498,6 +588,12 @@ import { NetworkInfo } from './types';
       "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/cosmos"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -526,6 +622,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "pingPub",
+        "url": "https://ping.pub/crescent"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -552,6 +654,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/injective"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -578,6 +686,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "pingPub",
+        "url": "https://ping.pub/kujira"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -604,6 +718,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/neutron"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -632,6 +752,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/osmosis"
+      }
+    ],
     "network_to": [
       "pacific-1",
       "centauri-1"
@@ -660,6 +786,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "pingPub",
+        "url": "https://ping.pub/quicksilver"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -693,13 +825,19 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/secret"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
   },
   "pacific-1": {
     "name": "Sei",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/pacific/chain.png",
+    "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
     "rpc": "https://sei-rpc.polkachu.com",
     "rest": "https://sei-api.polkachu.com",
     "chainType": "cosmos",
@@ -719,6 +857,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/sei"
+      }
+    ],
     "network_to": [
       "osmosis-1"
     ]
@@ -747,6 +891,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/stargaze"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -775,6 +925,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/stride"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -803,6 +959,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/umee"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -830,6 +992,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "pingPub",
+        "url": "https://ping.pub/picasso"
+      }
+    ],
     "network_to": [
       "chihuahua-1",
       "2087",
@@ -874,6 +1042,12 @@ import { NetworkInfo } from './types';
       }
     },
     "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/coreum"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -887,6 +1061,12 @@ import { NetworkInfo } from './types';
     "chainId": "ethereum",
     "feeAssetId": "ETH",
     "enabled": true,
+    "explorer": [
+      {
+        "type": "etherscan",
+        "url": "https://etherscan.io"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]
@@ -900,6 +1080,12 @@ import { NetworkInfo } from './types';
     "chainId": "solana",
     "feeAssetId": "SOL",
     "enabled": true,
+    "explorer": [
+      {
+        "type": "solscan",
+        "url": "https://solscan.io"
+      }
+    ],
     "network_to": [
       "centauri-1"
     ]

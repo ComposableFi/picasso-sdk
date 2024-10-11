@@ -45,5 +45,11 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://polkadot.subscan.io"
+    }
   ]
 }

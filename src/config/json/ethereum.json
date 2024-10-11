@@ -506,5 +506,11 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "etherscan",
+      "url": "https://etherscan.io"
+    }
   ]
 }

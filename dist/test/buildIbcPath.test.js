@@ -80,6 +80,43 @@ describe('createForwardPathRecursive', function () {
         // Then the expected output should be correct
         expect(JSON.stringify(result, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
+    describe('getExplorerUrl', function () {
+        test('should return correct URL for Mintscan explorer', function () {
+            var chainId = 'osmosis-1';
+            var txHash = '1234567890ABCDEF';
+            var address = 'osmo1abcdefghijklmnop';
+            expect((0, chains_1.getExplorerUrl)(chainId, 'tx', txHash)).toBe('https://www.mintscan.io/osmosis/tx/1234567890ABCDEF');
+            expect((0, chains_1.getExplorerUrl)(chainId, 'address', address)).toBe('https://www.mintscan.io/osmosis/address/osmo1abcdefghijklmnop');
+        });
+        test('should return correct URL for Subscan explorer', function () {
+            var chainId = '2006';
+            var txHash = '0x1234567890ABCDEF';
+            var address = '5CGUvruJMqB1VMkqMvfcx9fHVgTLc73fgYMRhzghZQVWfPTw';
+            expect((0, chains_1.getExplorerUrl)(chainId, 'tx', txHash)).toBe('https://astar.subscan.io/extrinsic/0x1234567890ABCDEF');
+            expect((0, chains_1.getExplorerUrl)(chainId, 'address', address)).toBe('https://astar.subscan.io/account/5CGUvruJMqB1VMkqMvfcx9fHVgTLc73fgYMRhzghZQVWfPTw');
+        });
+        test('should return correct URL for Solscan explorer', function () {
+            var chainId = 'solana';
+            var txHash = '3m7sDC5k3wUPBdRUkJpYXZyDvuMsaQqHoFKrMndomJJx';
+            var address = 'CuieVDEDtLo7FypA9SbLM9saXFdb1dsshEkyErMqkRQq';
+            expect((0, chains_1.getExplorerUrl)(chainId, 'tx', txHash)).toBe('https://solscan.io/tx/3m7sDC5k3wUPBdRUkJpYXZyDvuMsaQqHoFKrMndomJJx');
+            expect((0, chains_1.getExplorerUrl)(chainId, 'address', address)).toBe('https://solscan.io/address/CuieVDEDtLo7FypA9SbLM9saXFdb1dsshEkyErMqkRQq');
+        });
+        test('should return correct URL for Etherscan explorer', function () {
+            var chainId = 'ethereum';
+            var txHash = '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef';
+            var address = '0x742d35Cc6634C0532925a3b844Bc454e4438f44e';
+            expect((0, chains_1.getExplorerUrl)(chainId, 'tx', txHash)).toBe('https://etherscan.io/tx/0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef');
+            expect((0, chains_1.getExplorerUrl)(chainId, 'address', address)).toBe('https://etherscan.io/address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e');
+        });
+        test('should return empty string for unsupported explorer type', function () {
+            var chainId = 'unsupported-chain';
+            var txHash = '1234567890';
+            var address = 'unsupported-address';
+            expect((0, chains_1.getExplorerUrl)(chainId, 'tx', txHash)).toBe('');
+            expect((0, chains_1.getExplorerUrl)(chainId, 'address', address)).toBe('');
+        });
+    });
     test('should handle a single hop correctly', function () {
         // Given test data with a single hop
         var ibcPath = [

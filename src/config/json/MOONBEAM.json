@@ -34,5 +34,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://moonbeam.subscan.io"
+    }
   ]
 }

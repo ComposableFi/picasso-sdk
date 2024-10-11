@@ -228,5 +228,11 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "pingPub",
+      "url": "https://ping.pub/picasso"
+    }
   ]
 }

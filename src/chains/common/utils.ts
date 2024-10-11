@@ -1,5 +1,5 @@
 import EventEmitter from 'eventemitter3';
-import { WalletApiEvents } from './types';
+import { ExplorerType, WalletApiEvents } from './types';
 import Big from 'big.js';
 import {
   keplrChains,
@@ -236,46 +236,27 @@ export const getXcmInfo = (fromChainId: string, toChainId: string) => {
   return networks?.[fromChainId]?.polkadot?.hops?.[toChainId];
 };
 
-// export const getBatchPath = () => {
-//   const found = polkadotRoute(origin, destination);
-//   if (!found) return;
-//   const route = {
-//     ...found,
-//     paths: found.paths?.map((p) => {
-//       return {
-//         ...p,
-//         address:
-//           toWallet !== ''
-//             ? // if we have toWallet, normal multihop checking
-//               getAddressFromNetwork(
-//                 p.chainName,
-//                 pickMultihopWalletByHandler(
-//                   fromWallet,
-//                   toWallet,
-//                   config.networks[p.chainName].handler
-//                 )
-//               )
-//             : // else, if we have toAddres, check if the next hop is from or to
-//               toAddress !== undefined &&
-//                 pickMultihopWalletByHandlerToAddress(
-//                   fromWallet,
-//                   config.networks[p.chainName].handler,
-//                   toAddress
-//                 ) === 'toAddress'
-//               ? // is toAddress, we need to generate the address for the chain
-//                 getConvertedAddress({
-//                   address: toAddress,
-//                   network: p.chainName,
-//                 })
-//               : // is fromWallet
-//                 getAddressFromNetwork(p.chainName, fromWallet),
+export const getExplorerUrl = (
+  chainId: string,
+  infoType: 'tx' | 'address',
+  info: string
+) => {
+  const explorer = networks[chainId]?.explorer?.[0];
 
-//         // getAddressFromNetwork(
-//         // 	p.chainName,
-//         // 	// TODO: CHECK THIS
-//         // 	pickMultihopWalletByHandler(fromWallet, toWallet, config.networks[p.chainName].handler)
-//         // )
-//       };
-//     }),
-//   };
-// };
+  if (!explorer || !['tx', 'address'].includes(infoType)) {
+    return '';
+  }
+  switch (explorer.type) {
+    case 'mintscan':
+    case 'solscan':
+    case 'etherscan':
+      return `${explorer.url}/${infoType}/${info}`;
+    case 'pingPub':
+      return `${explorer.url}/${infoType === 'tx' ? 'tx' : 'account'}/${info}`;
+
+    case 'subscan':
+      return `${explorer.url}/${infoType === 'tx' ? 'extrinsic' : 'account'}/${info}`;
+    default:
+      return '';
+  }
+};

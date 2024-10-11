@@ -1,3 +1,5 @@
+import { ExplorerType } from '../chains/common/types';
+
 export { type ChainInfo } from '@keplr-wallet/types';
 
 export interface CrosschainAsset {
@@ -37,6 +39,10 @@ export interface CrossChainAssets {
   polkadot: Record<string, CrosschainAsset>;
 }
 export interface NetworkInfo {
+  explorer: {
+    type: ExplorerType;
+    url: string;
+  }[];
   name: string;
   image: string;
   rpc: string;

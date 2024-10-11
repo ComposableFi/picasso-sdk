@@ -63,8 +63,6 @@ const processFiles = () => {
   const networks: Record<string, NetworkInfo> = {};
   const keplrChains: Record<string, ChainInfo> = {};
 
-  const temp = [];
-  const temp2 = [];
   const files = fs
     .readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
@@ -96,6 +94,7 @@ const processFiles = () => {
       polkadot: data.polkadot || undefined,
       cosmos: data.cosmos || undefined,
       enabled: data.enabled || false,
+      explorer: data.explorer || [],
       network_to: [
         ...(data.polkadot?.['hops'] ? Object.keys(data.polkadot['hops']) : []),
         ...Object.values(data.channelMap || {}).map(

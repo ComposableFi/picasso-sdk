@@ -33,5 +33,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://moonriver.subscan.io"
+    }
   ]
 }

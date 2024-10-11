@@ -5,3 +5,10 @@ export type WalletApiEvents =
   | 'CANCEL_SOLANA'
   | 'ETHEREUM_APPROVED'
   | 'CANCEL_ETHEREUM';
+
+export type ExplorerType =
+  | 'mintscan'
+  | 'subscan'
+  | 'solscan'
+  | 'pingPub'
+  | 'etherscan';

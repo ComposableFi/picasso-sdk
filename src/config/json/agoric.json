@@ -95,5 +95,11 @@
         "displayDecimals": 6
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "mintscan",
+      "url": "https://www.mintscan.io/agoric"
+    }
   ]
 }

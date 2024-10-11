@@ -58,5 +58,11 @@
         "displayDecimals": 9
       }
     }
+  ],
+  "explorer": [
+    {
+      "type": "mintscan",
+      "url": "https://www.mintscan.io/archway"
+    }
   ]
 }

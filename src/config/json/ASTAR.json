@@ -36,5 +36,11 @@
       "ethereum": {},
       "solana": {}
     }
+  ],
+  "explorer": [
+    {
+      "type": "subscan",
+      "url": "https://astar.subscan.io"
+    }
   ]
 }
