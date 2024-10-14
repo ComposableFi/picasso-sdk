@@ -36,8 +36,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = void 0;
+exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = exports.SigningStargateClient = void 0;
 var stargate_1 = require("@cosmjs/stargate");
+Object.defineProperty(exports, "SigningStargateClient", { enumerable: true, get: function () { return stargate_1.SigningStargateClient; } });
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     var msg = {
         typeUrl: txMsg,
