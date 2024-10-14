@@ -2,6 +2,9 @@ import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
 import { type Keplr } from '@keplr-wallet/types';
 
+
+
+export { SigningStargateClient };
 export const generateTransferMsg = (
   txMsg: TX_MSG_TYPE,
   channel: number,
