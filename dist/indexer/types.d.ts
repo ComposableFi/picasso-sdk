@@ -17,8 +17,6 @@ export interface IbcEventsResponse {
     id: number;
     sequence: `${number}`;
     type: 'ibc' | 'xcm';
-    fromAssetId: string;
-    toAssetId: string;
     status: TransferState;
     realStatus: string;
     sourceChannel: `channel-${number}`;
