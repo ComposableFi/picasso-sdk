@@ -22,6 +22,7 @@ export interface IbcEventsResponse {
     sourceChannel: `channel-${number}`;
     destinationChannel: `channel-${number}`;
     fromChainId: string;
+    fromAssetId: string;
     fromBlockHash: string;
     fromFee: `${number}`;
     fromFeeAssetId: string;
