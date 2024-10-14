@@ -756,7 +756,7 @@ export const crossChainAssets :CrossChainAssets= {
     "4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6": {
       "chainId": "ethereum",
       "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xD533a949740bb3306d119CC777fa900bA034cd52",
+      "minimalDenom": "transfer/channel-1/transfer/channel-52/0xd533a949740bb3306d119cc777fa900ba034cd52",
       "denom": "CRV",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg"
