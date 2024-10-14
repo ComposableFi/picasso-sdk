@@ -1,7 +1,9 @@
 import { SigningStargateClient } from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
 import { type Keplr } from '@keplr-wallet/types';
-export { SigningStargateClient };
+import { Tendermint34Client } from '@cosmjs/tendermint-rpc';
+import { QueryClient, setupIbcExtension } from '@cosmjs/stargate';
+export { SigningStargateClient, QueryClient, setupIbcExtension, Tendermint34Client };
 export declare const generateTransferMsg: (txMsg: TX_MSG_TYPE, channel: number, sourceAddress: string, destAddress: string, amount: string, assetId: string, memo: string, timeout: number) => {
     typeUrl: "/ibc.applications.transfer.v1.MsgTransfer";
     value: {

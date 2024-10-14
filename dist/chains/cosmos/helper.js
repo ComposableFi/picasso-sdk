@@ -36,9 +36,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = exports.SigningStargateClient = void 0;
+exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = exports.Tendermint34Client = exports.setupIbcExtension = exports.QueryClient = exports.SigningStargateClient = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 Object.defineProperty(exports, "SigningStargateClient", { enumerable: true, get: function () { return stargate_1.SigningStargateClient; } });
+var tendermint_rpc_1 = require("@cosmjs/tendermint-rpc");
+Object.defineProperty(exports, "Tendermint34Client", { enumerable: true, get: function () { return tendermint_rpc_1.Tendermint34Client; } });
+var stargate_2 = require("@cosmjs/stargate");
+Object.defineProperty(exports, "QueryClient", { enumerable: true, get: function () { return stargate_2.QueryClient; } });
+Object.defineProperty(exports, "setupIbcExtension", { enumerable: true, get: function () { return stargate_2.setupIbcExtension; } });
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     var msg = {
         typeUrl: txMsg,
