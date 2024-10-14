@@ -184,11 +184,13 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         time: timeout,
                     },
                 };
+                console.log(msgTransferPayload, '(msgTransferPayload');
                 instructionPayload = {
                     discriminator: [153, 182, 142, 63, 227, 31, 140, 239],
                     hashed_base_denom: hashedDenom,
                     msg: msgTransferPayload,
                 };
+                console.log(instructionPayload, 'instructionPayload ');
                 buffer = (0, borsher_1.borshSerialize)(helper_1.instructionSchema, instructionPayload);
                 _d = (0, helper_1.getSolanaGuestChainAccounts)(constants_1.solanaPortId, refinedSourceChannel, hashedDenom), guestChainPDA = _d.guestChainPDA, triePDA = _d.triePDA, ibcStoragePDA = _d.ibcStoragePDA, mintAuthorityPDA = _d.mintAuthorityPDA, escrowAccountPDA = _d.escrowAccountPDA, feePDA = _d.feePDA;
                 instruction = new web3_js_1.TransactionInstruction({
