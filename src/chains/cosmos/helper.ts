@@ -1,10 +1,12 @@
-import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
+import { GasPrice, SigningStargateClient} from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
 import { type Keplr } from '@keplr-wallet/types';
+import { Tendermint34Client } from '@cosmjs/tendermint-rpc';
+
+import { IbcExtension, QueryClient, setupIbcExtension } from '@cosmjs/stargate';
 
 
-
-export { SigningStargateClient };
+export { SigningStargateClient,  QueryClient, setupIbcExtension, Tendermint34Client };
 export const generateTransferMsg = (
   txMsg: TX_MSG_TYPE,
   channel: number,
