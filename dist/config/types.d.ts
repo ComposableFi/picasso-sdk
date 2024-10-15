@@ -3,7 +3,6 @@ export { type ChainInfo } from '@keplr-wallet/types';
 export interface CrosschainAsset {
     chainId: string;
     decimals: number;
-    network?: string;
     minimalDenom: string;
     denom: string;
     imageUrl?: string;
@@ -12,6 +11,7 @@ export interface CrosschainAsset {
         n: string;
         d: string;
     };
+    currentChainId?: string;
 }
 export interface EthereumAsset {
     erc20Address: string;
