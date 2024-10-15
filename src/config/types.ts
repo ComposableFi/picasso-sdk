@@ -10,7 +10,7 @@ export interface CrosschainAsset {
   imageUrl?: string;
   realDecimals?: number; // only used at solana, because it is restricted not to use more than 9
   ratio?: { n: string; d: string };
-  currentChainId?:string; // current network. 
+  currentEcosystem:string; // current network. 
 }
 
 export interface EthereumAsset {

@@ -158,7 +158,7 @@ const processFiles = () => {
             minimalDenom: currency.ethereum.minimalDenom || '',
             denom: coinDenom || '',
             imageUrl: currency?.coinImageUrl || '',
-            currentChainId: 'ethereum',
+            currentEcosystem: 'ethereum',
           };
         }
       }
@@ -183,7 +183,7 @@ const processFiles = () => {
             denom: coinDenom || '',
             realDecimals,
             imageUrl: currency.coinImageUrl || '',
-            currentChainId: 'solana',
+            currentEcosystem: 'solana',
 
           };
         }
@@ -199,7 +199,7 @@ const processFiles = () => {
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
             ratio: currency.polkadot.ratio,
-            currentChainId: picassoAssetId,
+            currentEcosystem: 'polkadot',
           };
         }
         if (currency.polkadot?.composableAssetId) {
@@ -210,7 +210,8 @@ const processFiles = () => {
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
             ratio: currency.polkadot.ratio,
-            currentChainId: composableAssetId,
+            currentEcosystem: 'polkadot',
+
 
           };
         }
@@ -223,7 +224,7 @@ const processFiles = () => {
           minimalDenom: currency.cosmos.minimalDenom || '',
           denom: coinDenom || '',
           imageUrl: currency.coinImageUrl || '',
-          currentChainId: data.chainId || '',
+          currentEcosystem: 'cosmos',
 
         };
       }
