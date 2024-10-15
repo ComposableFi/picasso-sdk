@@ -183,7 +183,7 @@ const processFiles = () => {
             denom: coinDenom || '',
             realDecimals,
             imageUrl: currency.coinImageUrl || '',
-            currentChainId: 'ethereum',
+            currentChainId: 'solana',
 
           };
         }
