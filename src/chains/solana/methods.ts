@@ -65,6 +65,7 @@ export const solanaTransfer = async ({
   const isNative = isNativeSolanaAsset(configDenom);
   const { denom, baseDenom, assetId, hashedDenom } = getSolanaAsset(
     configAssetId,
+
     configDenom,
     isNative
   );
@@ -161,6 +162,7 @@ export const solanaTransfer = async ({
       time: timeout,
     },
   };
+  console.log(msgTransferPayload, '(msgTransferPayload');
 
   const instructionPayload = {
     discriminator: [153, 182, 142, 63, 227, 31, 140, 239],
@@ -168,6 +170,7 @@ export const solanaTransfer = async ({
     hashed_base_denom: hashedDenom,
     msg: msgTransferPayload,
   };
+  console.log(instructionPayload, 'instructionPayload ');
 
   const buffer = borshSerialize(instructionSchema, instructionPayload);
 
