@@ -237,7 +237,7 @@ var getChannelIdsFromMemo = function (memo) {
             if (channelId)
                 channels.push(Number(channelId));
         }
-        if (findInfos(obj.next)) {
+        if (obj.next) {
             var next = findInfos(obj.next);
             channels = channels === null || channels === void 0 ? void 0 : channels.concat(next === null || next === void 0 ? void 0 : next.channels);
             finalReceiver = next === null || next === void 0 ? void 0 : next.finalReceiver;
