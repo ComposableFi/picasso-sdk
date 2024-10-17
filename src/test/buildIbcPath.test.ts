@@ -221,7 +221,7 @@ describe('getChannelIdsFromMemo', () => {
   test('should extract correct channel ID from memo', () => {
     const memo = "{\"forward\":{\"receiver\":\"6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6\",\"port\":\"transfer\",\"channel\":\"channel-71\",\"timeout\":6000000000000,\"retries\":0}}";
     const result = getChannelIdsFromMemo(memo);
-    expect(result).toEqual([71]);
+    expect(result).toEqual({channels: [71], finalReceiver:'6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6'});
   });
 });
 

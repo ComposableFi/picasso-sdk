@@ -250,15 +250,16 @@ export const createForwardPathRecursive = (
   };
 };
 
-export const getChannelIdsFromMemo = (memo:string):number[]=>{
+export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalReceiver:string} =>{
 
 
   const memoObj = JSON.parse(memo);
 
-  const findChannels = (obj: any): number[] => {
-    if (!obj || typeof obj !== 'object') return [];
+  const findInfos = (obj: any): {channels:number[], finalReceiver:string} => {
+    if (!obj || typeof obj !== 'object') return {channels:[], finalReceiver:''};
     
     let channels: number[] = [];
+    let finalReceiver = obj.receiver; 
     
     if (obj.channel && typeof obj.channel === 'string') {
       const channelId = obj.channel.split('-')[1];
@@ -266,17 +267,19 @@ export const getChannelIdsFromMemo = (memo:string):number[]=>{
     }
     
     if (obj.next) {
-      channels = channels.concat(findChannels(obj.next));
+      const next = findInfos(obj.next);
+      channels = channels.concat(next.channels);
+      finalReceiver = next.finalReceiver;
     }
     
-    return channels;
+    return {channels , finalReceiver};
   };
 
-  const channels = findChannels(memoObj.forward);
+    
+  const {channels , finalReceiver} = findInfos(memoObj.forward)
   if (channels.length > 0) {
-    return channels;
+    return {channels , finalReceiver};
   }
-  return memoObj?.forward?.channel.split('-')[1]
 }
 export const getSourceChannel = (fromChainId: string, toChainId: string) => {
   if (tokensPerChannel?.[fromChainId])
