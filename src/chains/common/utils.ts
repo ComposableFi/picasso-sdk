@@ -115,6 +115,30 @@ export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
   return null;
 };
 
+
+export const channelList = Object.values(networks); 
+
+export const getChainIdsByChannels= (channels: number[]):string[]  => {
+  const chainIdsByChannels = Object.keys(tokensPerChannel);
+
+  let chainIds = channels.map((channel, i) => {
+    if(i===0){
+     return  chainIdsByChannels.find(chaainId =>Object.keys(tokensPerChannel[chaainId]).some(v=>v===channels[i].toString()))
+    }
+    return chainIdsByChannels.find(chainId => 
+      Object.keys(tokensPerChannel[chainId]).some(v => v === channel.toString())
+    );
+  });
+  const lastChannel = channels[channels.length-1];
+
+  const lastChainId = Object.values(tokensPerChannel).find(v=>!!v[lastChannel.toString()].chainId)[lastChannel.toString()].chainId
+
+  if(lastChainId) chainIds.push(lastChainId)
+
+  return chainIds;
+};
+
+
 // Example usage
 
 /**@description If it returns undefined, that means it is not supported */

@@ -2,10 +2,13 @@ import {
   buildIbcPath,
   convertCosmosAddress,
   createForwardPathRecursive,
+  getChainIdsByChannels,
   getExplorerUrl,
   getSupportedType,
   TIMEOUT_IBC_MAX,
 } from '../chains';
+import { expect , it , describe, test } from '@jest/globals';
+
 
 describe('buildIbcPath', () => {
   it('should return the correct path for osmosis-1 to ethereum', () => {
@@ -198,3 +201,18 @@ describe('createForwardPathRecursive', () => {
     );
   });
 });
+
+
+
+describe('getChainIdsByChannels', () => {
+  test('should return correct chain IDs for given channel IDs', () => {
+    const channels = [1279, 71];
+    const expectedChainIds = ['osmosis-1', 'centauri-1', 'solana'];
+    
+    const result = getChainIdsByChannels(channels);
+    
+    expect(result).toEqual(expectedChainIds);
+  });
+});
+
+
