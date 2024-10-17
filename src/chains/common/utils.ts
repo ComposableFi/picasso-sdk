@@ -273,7 +273,7 @@ export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalRec
     }
     
  
-    if (findInfos(obj.next)) {
+    if (obj.next ) {
       const next = findInfos(obj.next);
       channels = channels?.concat(next?.channels);
       finalReceiver = next?.finalReceiver; 

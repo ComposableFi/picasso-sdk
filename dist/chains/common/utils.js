@@ -220,7 +220,13 @@ var createForwardPathRecursive = function (ibcPath, index, timeout) {
 };
 exports.createForwardPathRecursive = createForwardPathRecursive;
 var getChannelIdsFromMemo = function (memo) {
-    var memoObj = JSON.parse(memo);
+    var memoObj;
+    try {
+        memoObj = JSON.parse(memo);
+    }
+    catch (e) {
+        return { channels: [], finalReceiver: '' };
+    }
     var findInfos = function (obj) {
         if (!obj || typeof obj !== 'object')
             return { channels: [], finalReceiver: '' };
@@ -231,10 +237,10 @@ var getChannelIdsFromMemo = function (memo) {
             if (channelId)
                 channels.push(Number(channelId));
         }
-        if (obj.next) {
+        if (findInfos(obj.next)) {
             var next = findInfos(obj.next);
-            channels = channels.concat(next.channels);
-            finalReceiver = next.finalReceiver;
+            channels = channels === null || channels === void 0 ? void 0 : channels.concat(next === null || next === void 0 ? void 0 : next.channels);
+            finalReceiver = next === null || next === void 0 ? void 0 : next.finalReceiver;
         }
         return { channels: channels, finalReceiver: finalReceiver };
     };
