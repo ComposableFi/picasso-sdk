@@ -131,7 +131,7 @@ export const getChainIdsByChannels= (channels: number[]):string[]  => {
   });
   const lastChannel = channels[channels.length-1];
 
-  const lastChainId = Object.values(tokensPerChannel).find(v=>!!v[lastChannel.toString()].chainId)[lastChannel.toString()].chainId
+  const lastChainId = Object.values(tokensPerChannel).find(v=>!!v[lastChannel.toString()]?.chainId)[lastChannel.toString()]?.chainId
 
   if(lastChainId) chainIds.push(lastChainId)
 
@@ -250,6 +250,34 @@ export const createForwardPathRecursive = (
   };
 };
 
+export const getChannelIdsFromMemo = (memo:string):number[]=>{
+
+
+  const memoObj = JSON.parse(memo);
+
+  const findChannels = (obj: any): number[] => {
+    if (!obj || typeof obj !== 'object') return [];
+    
+    let channels: number[] = [];
+    
+    if (obj.channel && typeof obj.channel === 'string') {
+      const channelId = obj.channel.split('-')[1];
+      if (channelId) channels.push(Number(channelId));
+    }
+    
+    if (obj.next) {
+      channels = channels.concat(findChannels(obj.next));
+    }
+    
+    return channels;
+  };
+
+  const channels = findChannels(memoObj.forward);
+  if (channels.length > 0) {
+    return channels;
+  }
+  return memoObj?.forward?.channel.split('-')[1]
+}
 export const getSourceChannel = (fromChainId: string, toChainId: string) => {
   if (tokensPerChannel?.[fromChainId])
     return Object.keys(tokensPerChannel?.[fromChainId]).find(
