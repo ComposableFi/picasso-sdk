@@ -220,27 +220,28 @@ var createForwardPathRecursive = function (ibcPath, index, timeout) {
 };
 exports.createForwardPathRecursive = createForwardPathRecursive;
 var getChannelIdsFromMemo = function (memo) {
-    var _a;
     var memoObj = JSON.parse(memo);
-    var findChannels = function (obj) {
+    var findInfos = function (obj) {
         if (!obj || typeof obj !== 'object')
-            return [];
+            return { channels: [], finalReceiver: '' };
         var channels = [];
+        var finalReceiver = obj.receiver;
         if (obj.channel && typeof obj.channel === 'string') {
             var channelId = obj.channel.split('-')[1];
             if (channelId)
                 channels.push(Number(channelId));
         }
         if (obj.next) {
-            channels = channels.concat(findChannels(obj.next));
+            var next = findInfos(obj.next);
+            channels = channels.concat(next.channels);
+            finalReceiver = next.finalReceiver;
         }
-        return channels;
+        return { channels: channels, finalReceiver: finalReceiver };
     };
-    var channels = findChannels(memoObj.forward);
+    var _a = findInfos(memoObj.forward), channels = _a.channels, finalReceiver = _a.finalReceiver;
     if (channels.length > 0) {
-        return channels;
+        return { channels: channels, finalReceiver: finalReceiver };
     }
-    return (_a = memoObj === null || memoObj === void 0 ? void 0 : memoObj.forward) === null || _a === void 0 ? void 0 : _a.channel.split('-')[1];
 };
 exports.getChannelIdsFromMemo = getChannelIdsFromMemo;
 var getSourceChannel = function (fromChainId, toChainId) {
