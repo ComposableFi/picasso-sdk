@@ -253,7 +253,13 @@ export const createForwardPathRecursive = (
 export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalReceiver:string} =>{
 
 
-  const memoObj = JSON.parse(memo);
+  let memoObj; 
+  
+  try {
+    memoObj = JSON.parse(memo);
+  } catch (e) {
+    return {channels:[], finalReceiver:''};
+  }
 
   const findInfos = (obj: any): {channels:number[], finalReceiver:string} => {
     if (!obj || typeof obj !== 'object') return {channels:[], finalReceiver:''};
@@ -267,10 +273,10 @@ export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalRec
     }
     
  
-    if (obj.next) {
+    if (findInfos(obj.next)) {
       const next = findInfos(obj.next);
-      channels = channels.concat(next.channels);
-      finalReceiver = next.finalReceiver; 
+      channels = channels?.concat(next?.channels);
+      finalReceiver = next?.finalReceiver; 
     }
     
     return {channels , finalReceiver};
