@@ -248,6 +248,7 @@ var getChannelIdsFromMemo = function (memo) {
     if (channels.length > 0) {
         return { channels: channels, finalReceiver: finalReceiver };
     }
+    return { channels: [], finalReceiver: '' };
 };
 exports.getChannelIdsFromMemo = getChannelIdsFromMemo;
 var getSourceChannel = function (fromChainId, toChainId) {
