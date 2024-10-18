@@ -115,6 +115,30 @@ export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
   return null;
 };
 
+
+export const channelList = Object.values(networks); 
+
+export const getChainIdsByChannels= (channels: number[]):string[]  => {
+  const chainIdsByChannels = Object.keys(tokensPerChannel);
+
+  let chainIds = channels.map((channel, i) => {
+    if(i===0){
+     return  chainIdsByChannels.find(chaainId =>Object.keys(tokensPerChannel[chaainId]).some(v=>v===channels[i].toString()))
+    }
+    return chainIdsByChannels.find(chainId => 
+      Object.keys(tokensPerChannel[chainId]).some(v => v === channel.toString())
+    );
+  });
+  const lastChannel = channels[channels.length-1];
+
+  const lastChainId = Object.values(tokensPerChannel).find(v=>!!v[lastChannel.toString()]?.chainId)[lastChannel.toString()]?.chainId
+
+  if(lastChainId) chainIds.push(lastChainId)
+
+  return chainIds;
+};
+
+
 // Example usage
 
 /**@description If it returns undefined, that means it is not supported */
@@ -226,6 +250,45 @@ export const createForwardPathRecursive = (
   };
 };
 
+export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalReceiver:string} =>{
+
+
+  let memoObj; 
+  
+  try {
+    memoObj = JSON.parse(memo);
+  } catch (e) {
+    return {channels:[], finalReceiver:''};
+  }
+
+  const findInfos = (obj: any): {channels:number[], finalReceiver:string} => {
+    if (!obj || typeof obj !== 'object') return {channels:[], finalReceiver:''};
+    
+    let channels: number[] = [];
+    let finalReceiver = obj.receiver; 
+    
+    if (obj.channel && typeof obj.channel === 'string') {
+      const channelId = obj.channel.split('-')[1];
+      if (channelId) channels.push(Number(channelId));
+    }
+    
+ 
+    if (obj.next ) {
+      const next = findInfos(obj.next);
+      channels = channels?.concat(next?.channels);
+      finalReceiver = next?.finalReceiver; 
+    }
+    
+    return {channels , finalReceiver};
+  };
+
+    
+  const {channels , finalReceiver} = findInfos(memoObj.forward) 
+  if (channels.length > 0) {
+    return { channels , finalReceiver};
+  }
+  return { channels: [], finalReceiver: '' };
+}
 export const getSourceChannel = (fromChainId: string, toChainId: string) => {
   if (tokensPerChannel?.[fromChainId])
     return Object.keys(tokensPerChannel?.[fromChainId]).find(

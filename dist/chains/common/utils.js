@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getExplorerUrl = exports.getXcmInfo = exports.getSourceChannel = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
+exports.getExplorerUrl = exports.getXcmInfo = exports.getSourceChannel = exports.getChannelIdsFromMemo = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.getChainIdsByChannels = exports.channelList = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
@@ -110,6 +110,25 @@ var buildIbcPath = function (fromChainId, toChainId) {
     return null;
 };
 exports.buildIbcPath = buildIbcPath;
+exports.channelList = Object.values(config_1.networks);
+var getChainIdsByChannels = function (channels) {
+    var _a;
+    var chainIdsByChannels = Object.keys(config_1.tokensPerChannel);
+    var chainIds = channels.map(function (channel, i) {
+        if (i === 0) {
+            return chainIdsByChannels.find(function (chaainId) { return Object.keys(config_1.tokensPerChannel[chaainId]).some(function (v) { return v === channels[i].toString(); }); });
+        }
+        return chainIdsByChannels.find(function (chainId) {
+            return Object.keys(config_1.tokensPerChannel[chainId]).some(function (v) { return v === channel.toString(); });
+        });
+    });
+    var lastChannel = channels[channels.length - 1];
+    var lastChainId = (_a = Object.values(config_1.tokensPerChannel).find(function (v) { var _a; return !!((_a = v[lastChannel.toString()]) === null || _a === void 0 ? void 0 : _a.chainId); })[lastChannel.toString()]) === null || _a === void 0 ? void 0 : _a.chainId;
+    if (lastChainId)
+        chainIds.push(lastChainId);
+    return chainIds;
+};
+exports.getChainIdsByChannels = getChainIdsByChannels;
 // Example usage
 /**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
@@ -200,6 +219,38 @@ var createForwardPathRecursive = function (ibcPath, index, timeout) {
     };
 };
 exports.createForwardPathRecursive = createForwardPathRecursive;
+var getChannelIdsFromMemo = function (memo) {
+    var memoObj;
+    try {
+        memoObj = JSON.parse(memo);
+    }
+    catch (e) {
+        return { channels: [], finalReceiver: '' };
+    }
+    var findInfos = function (obj) {
+        if (!obj || typeof obj !== 'object')
+            return { channels: [], finalReceiver: '' };
+        var channels = [];
+        var finalReceiver = obj.receiver;
+        if (obj.channel && typeof obj.channel === 'string') {
+            var channelId = obj.channel.split('-')[1];
+            if (channelId)
+                channels.push(Number(channelId));
+        }
+        if (obj.next) {
+            var next = findInfos(obj.next);
+            channels = channels === null || channels === void 0 ? void 0 : channels.concat(next === null || next === void 0 ? void 0 : next.channels);
+            finalReceiver = next === null || next === void 0 ? void 0 : next.finalReceiver;
+        }
+        return { channels: channels, finalReceiver: finalReceiver };
+    };
+    var _a = findInfos(memoObj.forward), channels = _a.channels, finalReceiver = _a.finalReceiver;
+    if (channels.length > 0) {
+        return { channels: channels, finalReceiver: finalReceiver };
+    }
+    return { channels: [], finalReceiver: '' };
+};
+exports.getChannelIdsFromMemo = getChannelIdsFromMemo;
 var getSourceChannel = function (fromChainId, toChainId) {
     if (config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId])
         return Object.keys(config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId]).find(function (key) { var _a; return ((_a = config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[fromChainId][key]) === null || _a === void 0 ? void 0 : _a.chainId) === toChainId; });

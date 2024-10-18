@@ -154,6 +154,55 @@ exports.keplrChains = {
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
     },
+    "centauri-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "pica",
+            "bech32PrefixAccPub": "picapub",
+            "bech32PrefixValAddr": "picavaloper",
+            "bech32PrefixValPub": "picavaloperpub",
+            "bech32PrefixConsAddr": "picavalcons",
+            "bech32PrefixConsPub": "picavalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "centauri-1",
+        "chainName": "Picasso",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "currencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+                "gasPriceStep": {
+                    "low": 0,
+                    "average": 0,
+                    "high": 0
+                },
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "rest": "https://picasso-api.polkachu.com",
+        "rpc": "https://picasso-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 12,
+            "coinDenom": "PICA",
+            "coinGeckoId": "picasso",
+            "coinMinimalDenom": "ppica",
+            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+        },
+        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
+    },
     "chihuahua-1": {
         "bech32Config": {
             "bech32PrefixAccAddr": "chihuahua",
@@ -202,6 +251,58 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
+    },
+    "coreum-mainnet-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "core",
+            "bech32PrefixAccPub": "corepub",
+            "bech32PrefixValAddr": "corevaloper",
+            "bech32PrefixValPub": "corevaloperpub",
+            "bech32PrefixConsAddr": "corevalcons",
+            "bech32PrefixConsPub": "corevalconspub"
+        },
+        "bip44": {
+            "coinType": 990
+        },
+        "chainId": "coreum-mainnet-1",
+        "chainName": "Coreum",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "XRP",
+                "coinGeckoId": "ripple",
+                "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "CORE",
+                "coinGeckoId": "coreum",
+                "coinMinimalDenom": "ucore"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "CORE",
+                "coinGeckoId": "coreum",
+                "gasPriceStep": {
+                    "low": 0.0625,
+                    "average": 0.0625,
+                    "high": 0.0625
+                },
+                "coinMinimalDenom": "ucore"
+            }
+        ],
+        "rest": "https://rest-coreum.ecostake.com",
+        "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "CORE",
+            "coinGeckoId": "coreum",
+            "coinMinimalDenom": "ucore"
+        }
     },
     "cosmoshub-4": {
         "bech32Config": {
@@ -814,106 +915,5 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
-    },
-    "centauri-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "pica",
-            "bech32PrefixAccPub": "picapub",
-            "bech32PrefixValAddr": "picavaloper",
-            "bech32PrefixValPub": "picavaloperpub",
-            "bech32PrefixConsAddr": "picavalcons",
-            "bech32PrefixConsPub": "picavalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "centauri-1",
-        "chainName": "Picasso",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "currencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-                "gasPriceStep": {
-                    "low": 0,
-                    "average": 0,
-                    "high": 0
-                },
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "rest": "https://picasso-api.polkachu.com",
-        "rpc": "https://picasso-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 12,
-            "coinDenom": "PICA",
-            "coinGeckoId": "picasso",
-            "coinMinimalDenom": "ppica",
-            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
-        },
-        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
-    },
-    "coreum-mainnet-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "core",
-            "bech32PrefixAccPub": "corepub",
-            "bech32PrefixValAddr": "corevaloper",
-            "bech32PrefixValPub": "corevaloperpub",
-            "bech32PrefixConsAddr": "corevalcons",
-            "bech32PrefixConsPub": "corevalconspub"
-        },
-        "bip44": {
-            "coinType": 990
-        },
-        "chainId": "coreum-mainnet-1",
-        "chainName": "Coreum",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "XRP",
-                "coinGeckoId": "ripple",
-                "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "CORE",
-                "coinGeckoId": "coreum",
-                "coinMinimalDenom": "ucore"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "CORE",
-                "coinGeckoId": "coreum",
-                "gasPriceStep": {
-                    "low": 0.0625,
-                    "average": 0.0625,
-                    "high": 0.0625
-                },
-                "coinMinimalDenom": "ucore"
-            }
-        ],
-        "rest": "https://rest-coreum.ecostake.com",
-        "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "CORE",
-            "coinGeckoId": "coreum",
-            "coinMinimalDenom": "ucore"
-        }
     }
 };
