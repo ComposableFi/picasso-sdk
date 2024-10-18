@@ -283,10 +283,11 @@ export const getChannelIdsFromMemo = (memo:string): {channels:number[], finalRec
   };
 
     
-  const {channels , finalReceiver} = findInfos(memoObj.forward)
+  const {channels , finalReceiver} = findInfos(memoObj.forward) 
   if (channels.length > 0) {
     return { channels , finalReceiver};
   }
+  return { channels: [], finalReceiver: '' };
 }
 export const getSourceChannel = (fromChainId: string, toChainId: string) => {
   if (tokensPerChannel?.[fromChainId])
