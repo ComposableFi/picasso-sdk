@@ -153,8 +153,11 @@ var globals_1 = require("@jest/globals");
 });
 (0, globals_1.describe)('getChannelIdsFromMemo', function () {
     (0, globals_1.test)('should extract correct channel ID from memo', function () {
-        var memo = "{\"forward\":{\"receiver\":\"6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6\",\"port\":\"transfer\",\"channel\":\"channel-71\",\"timeout\":6000000000000,\"retries\":0}}";
+        var memo = '{"forward":{"receiver":"6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6","port":"transfer","channel":"channel-71","timeout":6000000000000,"retries":0}}';
         var result = (0, chains_1.getChannelIdsFromMemo)(memo);
-        (0, globals_1.expect)(result).toEqual({ channels: [71], finalReceiver: '6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6' });
+        (0, globals_1.expect)(result).toEqual({
+            channels: [71],
+            finalReceiver: '6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6',
+        });
     });
 });
