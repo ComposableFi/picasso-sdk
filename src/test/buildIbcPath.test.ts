@@ -8,8 +8,7 @@ import {
   getSupportedType,
   TIMEOUT_IBC_MAX,
 } from '../chains';
-import { expect , it , describe, test } from '@jest/globals';
-
+import { expect, it, describe, test } from '@jest/globals';
 
 describe('buildIbcPath', () => {
   it('should return the correct path for osmosis-1 to ethereum', () => {
@@ -203,25 +202,25 @@ describe('createForwardPathRecursive', () => {
   });
 });
 
-
-
 describe('getChainIdsByChannels', () => {
   test('should return correct chain IDs for given channel IDs', () => {
     const channels = [1279, 71];
     const expectedChainIds = ['osmosis-1', 'centauri-1', 'solana'];
-    
+
     const result = getChainIdsByChannels(channels);
-    
+
     expect(result).toEqual(expectedChainIds);
   });
 });
 
-
 describe('getChannelIdsFromMemo', () => {
   test('should extract correct channel ID from memo', () => {
-    const memo = "{\"forward\":{\"receiver\":\"6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6\",\"port\":\"transfer\",\"channel\":\"channel-71\",\"timeout\":6000000000000,\"retries\":0}}";
+    const memo =
+      '{"forward":{"receiver":"6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6","port":"transfer","channel":"channel-71","timeout":6000000000000,"retries":0}}';
     const result = getChannelIdsFromMemo(memo);
-    expect(result).toEqual({channels: [71], finalReceiver:'6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6'});
+    expect(result).toEqual({
+      channels: [71],
+      finalReceiver: '6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6',
+    });
   });
 });
-

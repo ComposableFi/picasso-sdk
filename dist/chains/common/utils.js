@@ -116,7 +116,9 @@ var getChainIdsByChannels = function (channels) {
     var chainIdsByChannels = Object.keys(config_1.tokensPerChannel);
     var chainIds = channels.map(function (channel, i) {
         if (i === 0) {
-            return chainIdsByChannels.find(function (chaainId) { return Object.keys(config_1.tokensPerChannel[chaainId]).some(function (v) { return v === channels[i].toString(); }); });
+            return chainIdsByChannels.find(function (chaainId) {
+                return Object.keys(config_1.tokensPerChannel[chaainId]).some(function (v) { return v === channels[i].toString(); });
+            });
         }
         return chainIdsByChannels.find(function (chainId) {
             return Object.keys(config_1.tokensPerChannel[chainId]).some(function (v) { return v === channel.toString(); });
@@ -132,16 +134,16 @@ exports.getChainIdsByChannels = getChainIdsByChannels;
 // Example usage
 /**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
-    var _a, _b;
+    var _a, _b, _c, _d, _e, _f;
     if (fromChainId === toChainId || !fromChainId || !toChainId)
         return;
     if ((0, exports.getSourceChannel)(fromChainId, toChainId))
         return 'channel';
     //XCM tx
-    if (config_1.networks[fromChainId].polkadot &&
-        config_1.networks[toChainId].polkadot &&
-        ((_a = config_1.networks[fromChainId].polkadot) === null || _a === void 0 ? void 0 : _a.relayChain) ===
-            ((_b = config_1.networks[toChainId].polkadot) === null || _b === void 0 ? void 0 : _b.relayChain))
+    if (((_a = config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) &&
+        ((_b = config_1.networks[toChainId]) === null || _b === void 0 ? void 0 : _b.polkadot) &&
+        ((_d = (_c = config_1.networks[fromChainId]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.relayChain) ===
+            ((_f = (_e = config_1.networks[toChainId]) === null || _e === void 0 ? void 0 : _e.polkadot) === null || _f === void 0 ? void 0 : _f.relayChain))
         return 'xcm';
     if ((0, exports.buildIbcPath)(fromChainId, toChainId)) {
         if (fromChainId === 'solana')
@@ -172,14 +174,16 @@ var convertCosmosAddress = function (address, newPrefix) {
 exports.convertCosmosAddress = convertCosmosAddress;
 /**@description When it comes to Cosmos network, coinType should be 114 to use this converter*/
 var convertAddressToStr = function (address, fromChainId) {
-    var _a;
+    var _a, _b, _c;
+    if (!config_1.networks[fromChainId])
+        return address;
     if (address.startsWith('0x')) {
         // 2004: moonbeam, 2023:moonriver
         if (['ethereum', 'solana', '2004', '2023'].some(function (v) { return v === fromChainId; })) {
             return address;
         }
-        else if (config_1.networks[origin].chainType === 'polkadot' &&
-            ((_a = config_1.networks[origin].polkadot) === null || _a === void 0 ? void 0 : _a.ss58Format)) {
+        else if (((_a = config_1.networks[origin]) === null || _a === void 0 ? void 0 : _a.chainType) === 'polkadot' &&
+            ((_c = (_b = config_1.networks[origin]) === null || _b === void 0 ? void 0 : _b.polkadot) === null || _c === void 0 ? void 0 : _c.ss58Format)) {
             return (0, exports.getPolkadotAddressStr)(address, Number(config_1.networks[origin].polkadot.ss58Format));
         }
         else if (config_1.networks[origin].chainType === 'cosmos' &&
