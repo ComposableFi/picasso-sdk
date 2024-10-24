@@ -112,20 +112,20 @@ var buildIbcPath = function (fromChainId, toChainId) {
 exports.buildIbcPath = buildIbcPath;
 exports.channelList = Object.values(config_1.networks);
 var getChainIdsByChannels = function (channels) {
-    var _a;
+    var _a, _b;
     var chainIdsByChannels = Object.keys(config_1.tokensPerChannel);
     var chainIds = channels.map(function (channel, i) {
         if (i === 0) {
-            return chainIdsByChannels.find(function (chaainId) {
-                return Object.keys(config_1.tokensPerChannel[chaainId]).some(function (v) { return v === channels[i].toString(); });
+            return chainIdsByChannels.find(function (chainId) {
+                return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { return v === channels[i].toString(); });
             });
         }
         return chainIdsByChannels.find(function (chainId) {
-            return Object.keys(config_1.tokensPerChannel[chainId]).some(function (v) { return v === channel.toString(); });
+            return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { return v === channel.toString(); });
         });
     });
     var lastChannel = channels[channels.length - 1];
-    var lastChainId = (_a = Object.values(config_1.tokensPerChannel).find(function (v) { var _a; return !!((_a = v[lastChannel.toString()]) === null || _a === void 0 ? void 0 : _a.chainId); })[lastChannel.toString()]) === null || _a === void 0 ? void 0 : _a.chainId;
+    var lastChainId = (_b = (_a = Object.values(config_1.tokensPerChannel).find(function (v) { var _a; return !!((_a = v === null || v === void 0 ? void 0 : v[lastChannel.toString()]) === null || _a === void 0 ? void 0 : _a.chainId); })) === null || _a === void 0 ? void 0 : _a[lastChannel.toString()]) === null || _b === void 0 ? void 0 : _b.chainId;
     if (lastChainId)
         chainIds.push(lastChainId);
     return chainIds;
