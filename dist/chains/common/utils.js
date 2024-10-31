@@ -117,11 +117,11 @@ var getChainIdsByChannels = function (channels) {
     var chainIds = channels.map(function (channel, i) {
         if (i === 0) {
             return chainIdsByChannels.find(function (chainId) {
-                return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { return v === channels[i].toString(); });
+                return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { var _a; return v === ((_a = channels[i]) === null || _a === void 0 ? void 0 : _a.toString()); });
             });
         }
         return chainIdsByChannels.find(function (chainId) {
-            return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { return v === channel.toString(); });
+            return Object.keys((config_1.tokensPerChannel === null || config_1.tokensPerChannel === void 0 ? void 0 : config_1.tokensPerChannel[chainId]) || {}).some(function (v) { return v === (channel === null || channel === void 0 ? void 0 : channel.toString()); });
         });
     });
     var lastChannel = channels[channels.length - 1];

@@ -124,16 +124,17 @@ export const getChainIdsByChannels = (channels: number[]): string[] => {
     if (i === 0) {
       return chainIdsByChannels.find((chainId) =>
         Object.keys(tokensPerChannel?.[chainId] || {}).some(
-          (v) => v === channels[i].toString()
+          (v) => v === channels[i]?.toString()
         )
       );
     }
     return chainIdsByChannels.find((chainId) =>
       Object.keys(tokensPerChannel?.[chainId] || {}).some(
-        (v) => v === channel.toString()
+        (v) => v === channel?.toString()
       )
     );
   });
+
   const lastChannel = channels[channels.length - 1];
 
   const lastChainId = Object.values(tokensPerChannel).find(

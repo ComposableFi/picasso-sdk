@@ -106,55 +106,6 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     }
   },
-  "celestia": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "celestia",
-      "bech32PrefixAccPub": "celestiapub",
-      "bech32PrefixConsAddr": "celestiavalcons",
-      "bech32PrefixConsPub": "celestiavalconspub",
-      "bech32PrefixValAddr": "celestiavaloper",
-      "bech32PrefixValPub": "celestiavaloperpub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "celestia",
-    "chainName": "Celestia",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "TIA",
-        "coinGeckoId": "celestia",
-        "coinMinimalDenom": "utia"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "TIA",
-        "coinGeckoId": "celestia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-        "gasPriceStep": {
-          "low": 0.01,
-          "average": 0.02,
-          "high": 0.1
-        },
-        "coinMinimalDenom": "utia"
-      }
-    ],
-    "rest": "https://api.celestia.nodestake.top",
-    "rpc": "https://rpc.celestia.nodestake.top",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "TIA",
-      "coinGeckoId": "celestia",
-      "coinMinimalDenom": "utia",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
-  },
   "centauri-1": {
     "bech32Config": {
       "bech32PrefixAccAddr": "pica",
@@ -916,6 +867,55 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
+  },
+  "celestia": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "celestia",
+      "bech32PrefixAccPub": "celestiapub",
+      "bech32PrefixConsAddr": "celestiavalcons",
+      "bech32PrefixConsPub": "celestiavalconspub",
+      "bech32PrefixValAddr": "celestiavaloper",
+      "bech32PrefixValPub": "celestiavaloperpub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "celestia",
+    "chainName": "Celestia",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "TIA",
+        "coinGeckoId": "celestia",
+        "coinMinimalDenom": "utia"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "TIA",
+        "coinGeckoId": "celestia",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+        "gasPriceStep": {
+          "low": 0.01,
+          "average": 0.02,
+          "high": 0.1
+        },
+        "coinMinimalDenom": "utia"
+      }
+    ],
+    "rest": "https://api.celestia.nodestake.top",
+    "rpc": "https://rpc.celestia.nodestake.top",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "TIA",
+      "coinGeckoId": "celestia",
+      "coinMinimalDenom": "utia",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
   }
 } ;
 

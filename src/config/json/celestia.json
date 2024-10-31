@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "chainId": "celestia",
   "rest": "https://api.celestia.nodestake.top",
   "rpc": "https://rpc.celestia.nodestake.top",

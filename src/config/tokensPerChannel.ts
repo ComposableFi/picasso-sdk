@@ -70,15 +70,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "celestia": {
-    "12": {
-      "chainId": "centauri-1",
-      "destinationId": 38,
-      "tokens": [
-        "TIA"
-      ]
-    }
-  },
   "centauri-1": {
     "0": {
       "chainId": "chihuahua-1",
@@ -529,6 +520,15 @@ export const tokensPerChannel : Record<
       "destinationId": 20,
       "tokens": [
         "UMEE"
+      ]
+    }
+  },
+  "celestia": {
+    "12": {
+      "chainId": "centauri-1",
+      "destinationId": 38,
+      "tokens": [
+        "TIA"
       ]
     }
   }

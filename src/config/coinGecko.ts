@@ -196,10 +196,6 @@ import { CoinGeckoAsset } from './types';
     "id": "bifrost-native-coin"
   },
   {
-    "name": "TIA",
-    "id": "celestia"
-  },
-  {
     "name": "PICA",
     "id": "picasso"
   },
@@ -426,6 +422,10 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "UMEE",
     "id": "umee"
+  },
+  {
+    "name": "TIA",
+    "id": "celestia"
   }
 ] ;
  
