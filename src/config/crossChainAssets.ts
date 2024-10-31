@@ -24,13 +24,6 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "ARCH",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
     },
-    "utia": {
-      "chainId": "celestia",
-      "decimals": 6,
-      "minimalDenom": "utia",
-      "denom": "TIA",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
-    },
     "ppica": {
       "chainId": "centauri-1",
       "decimals": 12,
@@ -471,6 +464,13 @@ export const crossChainAssets :CrossChainAssets= {
       "minimalDenom": "uumee",
       "denom": "UMEE",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+    },
+    "utia": {
+      "chainId": "celestia",
+      "decimals": 6,
+      "minimalDenom": "utia",
+      "denom": "TIA",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
     }
   },
   "solana": {

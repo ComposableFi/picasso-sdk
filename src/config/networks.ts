@@ -499,39 +499,6 @@ import { NetworkInfo } from './types';
       "centauri-1"
     ]
   },
-  "celestia": {
-    "name": "Celestia",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-    "rpc": "https://rpc.celestia.nodestake.top",
-    "rest": "https://api.celestia.nodestake.top",
-    "chainType": "cosmos",
-    "chainId": "celestia",
-    "feeAssetId": "utia",
-    "cosmos": {
-      "bech32Config": {
-        "bech32PrefixAccAddr": "celestia",
-        "bech32PrefixAccPub": "celestiapub",
-        "bech32PrefixConsAddr": "celestiavalcons",
-        "bech32PrefixConsPub": "celestiavalconspub",
-        "bech32PrefixValAddr": "celestiavaloper",
-        "bech32PrefixValPub": "celestiavaloperpub"
-      },
-      "bip44": {
-        "coinType": 118
-      },
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
-    },
-    "enabled": true,
-    "explorer": [
-      {
-        "type": "mintscan",
-        "url": "https://www.mintscan.io/celestia"
-      }
-    ],
-    "network_to": [
-      "centauri-1"
-    ]
-  },
   "centauri-1": {
     "name": "Picasso",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
@@ -704,7 +671,7 @@ import { NetworkInfo } from './types';
         "bech32PrefixConsPub": "crevalconspub"
       }
     },
-    "enabled": true,
+    "enabled": false,
     "explorer": [
       {
         "type": "pingPub",
@@ -1079,11 +1046,44 @@ import { NetworkInfo } from './types';
         "bech32PrefixConsPub": "umeevalconspub"
       }
     },
-    "enabled": true,
+    "enabled": false,
     "explorer": [
       {
         "type": "mintscan",
         "url": "https://www.mintscan.io/umee"
+      }
+    ],
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "celestia": {
+    "name": "Celestia",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+    "rpc": "https://rpc.celestia.nodestake.top",
+    "rest": "https://api.celestia.nodestake.top",
+    "chainType": "cosmos",
+    "chainId": "celestia",
+    "feeAssetId": "utia",
+    "cosmos": {
+      "bech32Config": {
+        "bech32PrefixAccAddr": "celestia",
+        "bech32PrefixAccPub": "celestiapub",
+        "bech32PrefixConsAddr": "celestiavalcons",
+        "bech32PrefixConsPub": "celestiavalconspub",
+        "bech32PrefixValAddr": "celestiavaloper",
+        "bech32PrefixValPub": "celestiavaloperpub"
+      },
+      "bip44": {
+        "coinType": 118
+      },
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
+    },
+    "enabled": false,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/celestia"
       }
     ],
     "network_to": [
