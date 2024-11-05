@@ -305,59 +305,6 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
   },
-  "crescent-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "cre",
-      "bech32PrefixAccPub": "crepub",
-      "bech32PrefixValAddr": "crevaloper",
-      "bech32PrefixValPub": "crevaloperpub",
-      "bech32PrefixConsAddr": "crevalcons",
-      "bech32PrefixConsPub": "crevalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "crescent-1",
-    "chainName": "Crescent Network",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "CRE",
-        "coinGeckoId": "crescent-network",
-        "coinMinimalDenom": "ucre"
-      },
-      {
-        "coinDecimals": 6,
-        "coinDenom": "bCRE",
-        "coinGeckoId": "liquid-staking-crescent",
-        "coinMinimalDenom": "ubcre"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "CRE",
-        "coinGeckoId": "crescent-network",
-        "gasPriceStep": {
-          "low": 0.01,
-          "average": 0.025,
-          "high": 0.03
-        },
-        "coinMinimalDenom": "ucre"
-      }
-    ],
-    "rest": "https://crescent-cmp-api.polkachu.com",
-    "rpc": "https://crescent-cmp-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "CRE",
-      "coinGeckoId": "crescent-network",
-      "coinMinimalDenom": "ucre"
-    },
-    "walletUrlForStaking": "https://app.crescent.network/staking"
-  },
   "injective-1": {
     "bech32Config": {
       "bech32PrefixAccPub": "injpub",
@@ -819,55 +766,6 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/stride"
   },
-  "umee-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "umee",
-      "bech32PrefixAccPub": "umeepub",
-      "bech32PrefixValAddr": "umeevaloper",
-      "bech32PrefixValPub": "umeevaloperpub",
-      "bech32PrefixConsAddr": "umeevalcons",
-      "bech32PrefixConsPub": "umeevalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "umee-1",
-    "chainName": "UMEE",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "UMEE",
-        "coinGeckoId": "umee",
-        "coinMinimalDenom": "uumee"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "UMEE",
-        "coinGeckoId": "umee",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
-        "gasPriceStep": {
-          "low": 0.06,
-          "average": 0.1,
-          "high": 0.14
-        },
-        "coinMinimalDenom": "uumee"
-      }
-    ],
-    "rest": "https://umee-cmp-api.polkachu.com",
-    "rpc": "https://umee-cmp-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "UMEE",
-      "coinGeckoId": "umee",
-      "coinMinimalDenom": "uumee",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
-  },
   "celestia": {
     "bech32Config": {
       "bech32PrefixAccAddr": "celestia",
@@ -916,6 +814,108 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
+  },
+  "crescent-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cre",
+      "bech32PrefixAccPub": "crepub",
+      "bech32PrefixValAddr": "crevaloper",
+      "bech32PrefixValPub": "crevaloperpub",
+      "bech32PrefixConsAddr": "crevalcons",
+      "bech32PrefixConsPub": "crevalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "crescent-1",
+    "chainName": "Crescent Network",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "CRE",
+        "coinGeckoId": "crescent-network",
+        "coinMinimalDenom": "ucre"
+      },
+      {
+        "coinDecimals": 6,
+        "coinDenom": "bCRE",
+        "coinGeckoId": "liquid-staking-crescent",
+        "coinMinimalDenom": "ubcre"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "CRE",
+        "coinGeckoId": "crescent-network",
+        "gasPriceStep": {
+          "low": 0.01,
+          "average": 0.025,
+          "high": 0.03
+        },
+        "coinMinimalDenom": "ucre"
+      }
+    ],
+    "rest": "https://crescent-cmp-api.polkachu.com",
+    "rpc": "https://crescent-cmp-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "CRE",
+      "coinGeckoId": "crescent-network",
+      "coinMinimalDenom": "ucre"
+    },
+    "walletUrlForStaking": "https://app.crescent.network/staking"
+  },
+  "umee-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "umee",
+      "bech32PrefixAccPub": "umeepub",
+      "bech32PrefixValAddr": "umeevaloper",
+      "bech32PrefixValPub": "umeevaloperpub",
+      "bech32PrefixConsAddr": "umeevalcons",
+      "bech32PrefixConsPub": "umeevalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "umee-1",
+    "chainName": "UMEE",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "UMEE",
+        "coinGeckoId": "umee",
+        "coinMinimalDenom": "uumee"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "UMEE",
+        "coinGeckoId": "umee",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+        "gasPriceStep": {
+          "low": 0.06,
+          "average": 0.1,
+          "high": 0.14
+        },
+        "coinMinimalDenom": "uumee"
+      }
+    ],
+    "rest": "https://umee-cmp-api.polkachu.com",
+    "rpc": "https://umee-cmp-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "UMEE",
+      "coinGeckoId": "umee",
+      "coinMinimalDenom": "uumee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
   }
 } ;
 

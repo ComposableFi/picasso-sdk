@@ -183,8 +183,7 @@ const processFiles = () => {
             denom: coinDenom || '',
             realDecimals,
             imageUrl: currency.coinImageUrl || '',
-            currentChainId: 'solana', 
-
+            currentChainId: 'solana',
           };
         }
       }
@@ -210,9 +209,7 @@ const processFiles = () => {
             denom: coinDenom,
             imageUrl: currency.coinImageUrl,
             ratio: currency.polkadot.ratio,
-            currentChainId: "2019", //composable chainId
-
-
+            currentChainId: '2019', //composable chainId
           };
         }
       }
@@ -224,7 +221,7 @@ const processFiles = () => {
           minimalDenom: currency.cosmos.minimalDenom || '',
           denom: coinDenom || '',
           imageUrl: currency.coinImageUrl || '',
-
+          codeHash: currency.code_hash || '',
         };
       }
 
