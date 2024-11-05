@@ -185,7 +185,7 @@ exports.crossChainAssets = {
             "minimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd",
             "denom": "SILK",
             "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
-            "codeHash": ""
+            "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e"
         },
         "0xbf5495efe5db9ce00f80364c8b423567e58d2110": {
             "chainId": "ethereum",
@@ -297,7 +297,7 @@ exports.crossChainAssets = {
             "minimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
             "denom": "SHD",
             "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
-            "codeHash": ""
+            "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e"
         },
         "usei": {
             "chainId": "pacific-1",

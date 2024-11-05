@@ -236,7 +236,7 @@ var processFiles = function () {
                     minimalDenom: currency.cosmos.minimalDenom || '',
                     denom: coinDenom || '',
                     imageUrl: currency.coinImageUrl || '',
-                    codeHash: currency.code_hash || '',
+                    codeHash: currency.codeHash || '',
                 };
             }
             // generate coingecko.ts
