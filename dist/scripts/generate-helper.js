@@ -224,7 +224,7 @@ var processFiles = function () {
                         denom: coinDenom,
                         imageUrl: currency.coinImageUrl,
                         ratio: currency.polkadot.ratio,
-                        currentChainId: "2019", //composable chainId
+                        currentChainId: '2019', //composable chainId
                     };
                 }
             }
@@ -236,6 +236,7 @@ var processFiles = function () {
                     minimalDenom: currency.cosmos.minimalDenom || '',
                     denom: coinDenom || '',
                     imageUrl: currency.coinImageUrl || '',
+                    codeHash: currency.code_hash || '',
                 };
             }
             // generate coingecko.ts
