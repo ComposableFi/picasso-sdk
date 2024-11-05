@@ -296,7 +296,7 @@ exports.crossChainAssets = {
             "decimals": 8,
             "minimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
             "denom": "SHD",
-            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
+            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
             "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e"
         },
         "usei": {
@@ -817,7 +817,7 @@ exports.crossChainAssets = {
             "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
             "denom": "SHD",
             "realDecimals": 8,
-            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
+            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
             "currentChainId": "solana"
         },
         "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S": {
@@ -1283,7 +1283,7 @@ exports.crossChainAssets = {
             "decimals": 8,
             "minimalDenom": "",
             "denom": "SHD",
-            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/silk.svg",
+            "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
             "currentChainId": "ethereum"
         },
         "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5": {
