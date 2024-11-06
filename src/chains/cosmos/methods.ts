@@ -1,7 +1,12 @@
 import { type StdFee } from '@cosmjs/stargate';
 
 import { TX_MSG } from './constants';
-import { broadcastTx, generateTransferMsg, getCosmosClient } from './helper';
+import {
+  broadcastTx,
+  generateTransferMsg,
+  getCosmosClient,
+  getSigner,
+} from './helper';
 import { type TX_MSG_TYPE } from './types';
 import {
   Keplr,
@@ -124,7 +129,6 @@ export const secretTransfer = async ({
   amount,
   secretAssetId,
   keplr,
-  signer,
   sourceAddress,
   destAddress,
   sourceChannel,
@@ -133,7 +137,6 @@ export const secretTransfer = async ({
   amount: string;
   secretAssetId: string;
   keplr: Keplr;
-  signer: OfflineAminoSigner;
   sourceAddress: string;
   destAddress: string;
   sourceChannel: number;
@@ -151,6 +154,7 @@ export const secretTransfer = async ({
   //   memo || '',
   //   30
   // );
+  const signer = getSigner('secret-4', keplr);
 
   const client = await getSecretClient({
     keplr,
