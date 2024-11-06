@@ -105,12 +105,13 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
 }); };
 exports.cosmosTransfer = cosmosTransfer;
 var secretTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var refinedSecretAssetId, client, rawLog, txHash, generalResponse, ex_2;
-    var amount = _b.amount, secretAssetId = _b.secretAssetId, keplr = _b.keplr, signer = _b.signer, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, sourceChannel = _b.sourceChannel, codeHash = _b.codeHash;
+    var refinedSecretAssetId, signer, client, rawLog, txHash, generalResponse, ex_2;
+    var amount = _b.amount, secretAssetId = _b.secretAssetId, keplr = _b.keplr, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, sourceChannel = _b.sourceChannel, codeHash = _b.codeHash;
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
                 refinedSecretAssetId = secretAssetId.split(':')[1];
+                signer = (0, helper_1.getSigner)('secret-4', keplr);
                 return [4 /*yield*/, (0, helper_2.getSecretClient)({
                         keplr: keplr,
                         signer: signer,
