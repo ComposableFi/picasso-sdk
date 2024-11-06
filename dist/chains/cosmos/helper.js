@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = exports.Tendermint34Client = exports.setupIbcExtension = exports.QueryClient = exports.SigningStargateClient = void 0;
+exports.broadcastTx = exports.getSecretClient = exports.getCosmosBlockHeight = exports.getCosmosClient = exports.getSigner = exports.getCosmosTimeoutTimestamp = exports.generateTransferMsg = exports.Tendermint34Client = exports.setupIbcExtension = exports.QueryClient = exports.SigningStargateClient = void 0;
 var stargate_1 = require("@cosmjs/stargate");
 Object.defineProperty(exports, "SigningStargateClient", { enumerable: true, get: function () { return stargate_1.SigningStargateClient; } });
 var tendermint_rpc_1 = require("@cosmjs/tendermint-rpc");
@@ -44,6 +44,9 @@ Object.defineProperty(exports, "Tendermint34Client", { enumerable: true, get: fu
 var stargate_2 = require("@cosmjs/stargate");
 Object.defineProperty(exports, "QueryClient", { enumerable: true, get: function () { return stargate_2.QueryClient; } });
 Object.defineProperty(exports, "setupIbcExtension", { enumerable: true, get: function () { return stargate_2.setupIbcExtension; } });
+var secretjs_1 = require("secretjs");
+var config_1 = require("../../config");
+var sdk_ts_1 = require("@injectivelabs/sdk-ts");
 var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, amount, assetId, memo, timeout) {
     var msg = {
         typeUrl: txMsg,
@@ -107,3 +110,38 @@ var getCosmosBlockHeight = function (_a) { return __awaiter(void 0, [_a], void 0
     });
 }); };
 exports.getCosmosBlockHeight = getCosmosBlockHeight;
+var getSecretClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var secretChainId;
+    var keplr = _b.keplr, signer = _b.signer, address = _b.address;
+    return __generator(this, function (_c) {
+        secretChainId = 'secret-4';
+        if (!keplr) {
+            console.error('keplr provider is required');
+            return [2 /*return*/];
+        }
+        return [2 /*return*/, new secretjs_1.SecretNetworkClient({
+                chainId: secretChainId,
+                url: config_1.networks[secretChainId].rest || '',
+                wallet: signer,
+                walletAddress: address,
+                //  NOTE : keep this in mind when integrating other wallets that potentially do not support this
+                encryptionUtils: keplr.getEnigmaUtils(secretChainId), //  lets keplr handle the encryption
+            })];
+    });
+}); };
+exports.getSecretClient = getSecretClient;
+var broadcastTx = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var result;
+    var chainId = _b.chainId, txRaw = _b.txRaw, keplr = _b.keplr;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0: return [4 /*yield*/, (keplr === null || keplr === void 0 ? void 0 : keplr.sendTx(chainId, sdk_ts_1.CosmosTxV1Beta1Tx.TxRaw.encode(txRaw).finish(), 'sync'))];
+            case 1:
+                result = _c.sent();
+                if (result && (result === null || result === void 0 ? void 0 : result.length) !== 0)
+                    return [2 /*return*/];
+                return [2 /*return*/, Buffer.from(result).toString('hex')];
+        }
+    });
+}); };
+exports.broadcastTx = broadcastTx;
