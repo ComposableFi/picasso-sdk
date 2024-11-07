@@ -831,45 +831,6 @@ exports.networks = {
             "centauri-1"
         ]
     },
-    "secret-4": {
-        "name": "Secret Network",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
-        "rpc": "https://scrt.public-rpc.com",
-        "rest": "https://lcd.mainnet.secretsaturn.net",
-        "chainType": "cosmos",
-        "chainId": "secret-4",
-        "feeAssetId": "uscrt",
-        "cosmos": {
-            "walletUrl": "https://wallet.keplr.app/chains/secret-network",
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
-            "bip44": {
-                "coinType": 529
-            },
-            "alternativeBIP44s": [
-                {
-                    "coinType": 118
-                }
-            ],
-            "bech32Config": {
-                "bech32PrefixAccAddr": "secret",
-                "bech32PrefixAccPub": "secretpub",
-                "bech32PrefixValAddr": "secretvaloper",
-                "bech32PrefixValPub": "secretvaloperpub",
-                "bech32PrefixConsAddr": "secretvalcons",
-                "bech32PrefixConsPub": "secretvalconspub"
-            }
-        },
-        "enabled": true,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/secret"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
     "pacific-1": {
         "name": "Sei",
         "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
@@ -1084,6 +1045,45 @@ exports.networks = {
             {
                 "type": "mintscan",
                 "url": "https://www.mintscan.io/umee"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "secret-4": {
+        "name": "Secret Network",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
+        "rpc": "https://scrt.public-rpc.com",
+        "rest": "https://lcd.mainnet.secretsaturn.net",
+        "chainType": "cosmos",
+        "chainId": "secret-4",
+        "feeAssetId": "uscrt",
+        "cosmos": {
+            "walletUrl": "https://wallet.keplr.app/chains/secret-network",
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
+            "bip44": {
+                "coinType": 529
+            },
+            "alternativeBIP44s": [
+                {
+                    "coinType": 118
+                }
+            ],
+            "bech32Config": {
+                "bech32PrefixAccAddr": "secret",
+                "bech32PrefixAccPub": "secretpub",
+                "bech32PrefixValAddr": "secretvaloper",
+                "bech32PrefixValPub": "secretvaloperpub",
+                "bech32PrefixConsAddr": "secretvalcons",
+                "bech32PrefixConsPub": "secretvalconspub"
+            }
+        },
+        "enabled": true,
+        "explorer": [
+            {
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/secret"
             }
         ],
         "network_to": [

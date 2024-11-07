@@ -553,62 +553,6 @@ exports.keplrChains = {
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver"
     },
-    "secret-4": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "secret",
-            "bech32PrefixAccPub": "secretpub",
-            "bech32PrefixValAddr": "secretvaloper",
-            "bech32PrefixValPub": "secretvaloperpub",
-            "bech32PrefixConsAddr": "secretvalcons",
-            "bech32PrefixConsPub": "secretvalconspub"
-        },
-        "bip44": {
-            "coinType": 529
-        },
-        "chainId": "secret-4",
-        "chainName": "Secret Network",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "SCRT",
-                "coinGeckoId": "secret",
-                "coinMinimalDenom": "uscrt"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "SILK",
-                "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
-                "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
-            },
-            {
-                "coinDecimals": 8,
-                "coinDenom": "SHD",
-                "coinGeckoId": "shade-protocol",
-                "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "SCRT",
-                "coinGeckoId": "secret",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
-                "coinMinimalDenom": "uscrt"
-            }
-        ],
-        "rest": "https://lcd.mainnet.secretsaturn.net",
-        "rpc": "https://scrt.public-rpc.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "SCRT",
-            "coinGeckoId": "secret",
-            "coinMinimalDenom": "uscrt",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network"
-    },
     "pacific-1": {
         "bech32Config": {
             "bech32PrefixAccAddr": "sei",
@@ -915,5 +859,61 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
+    },
+    "secret-4": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "secret",
+            "bech32PrefixAccPub": "secretpub",
+            "bech32PrefixValAddr": "secretvaloper",
+            "bech32PrefixValPub": "secretvaloperpub",
+            "bech32PrefixConsAddr": "secretvalcons",
+            "bech32PrefixConsPub": "secretvalconspub"
+        },
+        "bip44": {
+            "coinType": 529
+        },
+        "chainId": "secret-4",
+        "chainName": "Secret Network",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "SCRT",
+                "coinGeckoId": "secret",
+                "coinMinimalDenom": "uscrt"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "SILK",
+                "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
+                "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
+            },
+            {
+                "coinDecimals": 8,
+                "coinDenom": "SHD",
+                "coinGeckoId": "shade-protocol",
+                "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "SCRT",
+                "coinGeckoId": "secret",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+                "coinMinimalDenom": "uscrt"
+            }
+        ],
+        "rest": "https://lcd.mainnet.secretsaturn.net",
+        "rpc": "https://scrt.public-rpc.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "SCRT",
+            "coinGeckoId": "secret",
+            "coinMinimalDenom": "uscrt",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network"
     }
 };

@@ -327,18 +327,6 @@ exports.coinGecko = [
         "id": "quicksilver"
     },
     {
-        "name": "SCRT",
-        "id": "secret"
-    },
-    {
-        "name": "SILK",
-        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
-    },
-    {
-        "name": "SHD",
-        "id": "shade-protocol"
-    },
-    {
         "name": "SEI",
         "id": "sei-network"
     },
@@ -425,5 +413,17 @@ exports.coinGecko = [
     {
         "name": "UMEE",
         "id": "umee"
+    },
+    {
+        "name": "SCRT",
+        "id": "secret"
+    },
+    {
+        "name": "SILK",
+        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    },
+    {
+        "name": "SHD",
+        "id": "shade-protocol"
     }
 ];
