@@ -283,22 +283,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
       "codeHash": ""
     },
-    "uscrt": {
-      "chainId": "secret-4",
-      "decimals": 6,
-      "minimalDenom": "uscrt",
-      "denom": "SCRT",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
-      "codeHash": ""
-    },
-    "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm": {
-      "chainId": "secret-4",
-      "decimals": 8,
-      "minimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
-      "denom": "SHD",
-      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
-      "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e"
-    },
     "usei": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -538,6 +522,22 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "UMEE",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
       "codeHash": ""
+    },
+    "uscrt": {
+      "chainId": "secret-4",
+      "decimals": 6,
+      "minimalDenom": "uscrt",
+      "denom": "SCRT",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+      "codeHash": ""
+    },
+    "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm": {
+      "chainId": "secret-4",
+      "decimals": 8,
+      "minimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
+      "denom": "SHD",
+      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
+      "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e"
     }
   },
   "solana": {
@@ -802,24 +802,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
       "currentChainId": "solana"
     },
-    "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V": {
-      "chainId": "secret-4",
-      "decimals": 6,
-      "minimalDenom": "transfer/channel-1/transfer/channel-14/uscrt",
-      "denom": "SCRT",
-      "realDecimals": 6,
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
-      "currentChainId": "solana"
-    },
-    "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ": {
-      "chainId": "secret-4",
-      "decimals": 8,
-      "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
-      "denom": "SHD",
-      "realDecimals": 8,
-      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
-      "currentChainId": "solana"
-    },
     "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -1034,6 +1016,24 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "stATOM",
       "realDecimals": 6,
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png",
+      "currentChainId": "solana"
+    },
+    "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V": {
+      "chainId": "secret-4",
+      "decimals": 6,
+      "minimalDenom": "transfer/channel-1/transfer/channel-14/uscrt",
+      "denom": "SCRT",
+      "realDecimals": 6,
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+      "currentChainId": "solana"
+    },
+    "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ": {
+      "chainId": "secret-4",
+      "decimals": 8,
+      "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm",
+      "denom": "SHD",
+      "realDecimals": 8,
+      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
       "currentChainId": "solana"
     }
   },
@@ -1270,22 +1270,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
       "currentChainId": "ethereum"
     },
-    "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C": {
-      "chainId": "secret-4",
-      "decimals": 6,
-      "minimalDenom": "transfer/channel-2/transfer/channel-14/uscrt",
-      "denom": "SCRT",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
-      "currentChainId": "ethereum"
-    },
-    "0x": {
-      "chainId": "secret-4",
-      "decimals": 8,
-      "minimalDenom": "",
-      "denom": "SHD",
-      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
-      "currentChainId": "ethereum"
-    },
     "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -1404,6 +1388,22 @@ export const crossChainAssets :CrossChainAssets= {
       "minimalDenom": "transfer/channel-2/transfer/channel-5/stuatom",
       "denom": "stATOM",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/stuatom.png",
+      "currentChainId": "ethereum"
+    },
+    "0xF7F00d598b2a651404993E93Df7AE16C3C736F3C": {
+      "chainId": "secret-4",
+      "decimals": 6,
+      "minimalDenom": "transfer/channel-2/transfer/channel-14/uscrt",
+      "denom": "SCRT",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+      "currentChainId": "ethereum"
+    },
+    "0x": {
+      "chainId": "secret-4",
+      "decimals": 8,
+      "minimalDenom": "",
+      "denom": "SHD",
+      "imageUrl": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
       "currentChainId": "ethereum"
     }
   },

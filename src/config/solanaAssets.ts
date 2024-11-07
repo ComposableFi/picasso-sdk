@@ -123,14 +123,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
     "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
     "minimumTransfer": 20
   },
-  "SCRT": {
-    "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
-    "minimumTransfer": 50
-  },
-  "SHD": {
-    "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",
-    "minimumTransfer": 5
-  },
   "SEI": {
     "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
     "minimumTransfer": 30
@@ -230,6 +222,14 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "stATOM": {
     "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
     "minimumTransfer": 2
+  },
+  "SCRT": {
+    "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
+    "minimumTransfer": 50
+  },
+  "SHD": {
+    "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",
+    "minimumTransfer": 5
   }
 };
 
