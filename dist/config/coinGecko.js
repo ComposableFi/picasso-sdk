@@ -195,10 +195,6 @@ exports.coinGecko = [
         "id": "bifrost-native-coin"
     },
     {
-        "name": "TIA",
-        "id": "celestia"
-    },
-    {
         "name": "PICA",
         "id": "picasso"
     },
@@ -217,14 +213,6 @@ exports.coinGecko = [
     {
         "name": "ATOM",
         "id": "cosmos"
-    },
-    {
-        "name": "CRE",
-        "id": "crescent-network"
-    },
-    {
-        "name": "bCRE",
-        "id": "liquid-staking-crescent"
     },
     {
         "name": "ETH",
@@ -421,6 +409,18 @@ exports.coinGecko = [
     {
         "name": "stATOM",
         "id": "stride-staked-atom"
+    },
+    {
+        "name": "TIA",
+        "id": "celestia"
+    },
+    {
+        "name": "CRE",
+        "id": "crescent-network"
+    },
+    {
+        "name": "bCRE",
+        "id": "liquid-staking-crescent"
     },
     {
         "name": "UMEE",

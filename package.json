@@ -1,6 +1,6 @@
 {
   "name": "picasso-sdk",
-  "version": "0.3.153",
+  "version": "0.3.161",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,6 +24,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "secretjs": "1.9.3",
     "@coral-xyz/anchor": "^0.29.0",
     "@cosmjs/stargate": "^0.32.4",
     "@cosmjs/tendermint-rpc": "^0.32.4",
@@ -39,6 +40,7 @@
     "bech32": "^2.0.0",
     "big.js": "^6.2.1",
     "borsher": "^3.5.0",
+    "@injectivelabs/sdk-ts": "1.14.4",
     "eventemitter3": "^5.0.0",
     "js-sha256": "^0.11.0",
     "prettier": "^3.3.3",

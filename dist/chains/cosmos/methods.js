@@ -36,11 +36,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cosmosTransfer = void 0;
+exports.injectiveTransfer = exports.secretTransfer = exports.cosmosTransfer = void 0;
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
+var secretjs_1 = require("secretjs");
+var helper_2 = require("./helper");
+var config_1 = require("../../config");
+var sdk_ts_1 = require("@injectivelabs/sdk-ts");
+var utils_1 = require("@injectivelabs/utils");
 var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
-    var client, msg, refinedFee, generalResponse, ex_1;
+    var client, msg, refinedFee, injectiveResponse, generalResponse, ex_1;
     var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, timeout = _b.timeout, _c = _b.txMsg, txMsg = _c === void 0 ? constants_1.TX_MSG : _c, keplr = _b.keplr, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
     return __generator(this, function (_d) {
         switch (_d.label) {
@@ -77,17 +82,158 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     };
                 _d.label = 2;
             case 2:
-                _d.trys.push([2, 4, , 5]);
-                return [4 /*yield*/, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
+                _d.trys.push([2, 6, , 7]);
+                if (!(chainId === 'injective-1')) return [3 /*break*/, 4];
+                return [4 /*yield*/, (0, exports.injectiveTransfer)({
+                        generatedMsg: msg,
+                        keplr: keplr,
+                    })];
             case 3:
+                injectiveResponse = _d.sent();
+                return [2 /*return*/, injectiveResponse.txHash];
+            case 4: return [4 /*yield*/, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
+            case 5:
                 generalResponse = _d.sent();
                 return [2 /*return*/, generalResponse.transactionHash]; // Query indexer by this txHash
-            case 4:
+            case 6:
                 ex_1 = _d.sent();
                 console.error(ex_1, 'cosmosError');
+                return [3 /*break*/, 7];
+            case 7: return [2 /*return*/];
+        }
+    });
+}); };
+exports.cosmosTransfer = cosmosTransfer;
+var secretTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var refinedSecretAssetId, signer, client, rawLog, txHash, generalResponse, ex_2;
+    var amount = _b.amount, secretAssetId = _b.secretAssetId, keplr = _b.keplr, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, sourceChannel = _b.sourceChannel, codeHash = _b.codeHash;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                refinedSecretAssetId = secretAssetId.split(':')[1];
+                signer = (0, helper_1.getSigner)('secret-4', keplr);
+                return [4 /*yield*/, (0, helper_2.getSecretClient)({
+                        keplr: keplr,
+                        signer: signer,
+                        address: sourceAddress,
+                    })];
+            case 1:
+                client = _c.sent();
+                _c.label = 2;
+            case 2:
+                _c.trys.push([2, 4, , 5]);
+                return [4 /*yield*/, client.tx.compute.executeContract({
+                        contract_address: refinedSecretAssetId,
+                        code_hash: codeHash,
+                        sender: sourceAddress,
+                        msg: {
+                            send: {
+                                //  no idea why this is hardcoded ngl
+                                recipient: 'secret1tqmms5awftpuhalcv5h5mg76fa0tkdz4jv9ex4', // cw20-ics20
+                                recipient_code_hash: 'f85b413b547b9460162958bafd51113ac266dac96a84c33b9150f68f045f2641',
+                                amount: amount,
+                                // memo -> 1
+                                msg: (0, secretjs_1.toBase64)((0, secretjs_1.toUtf8)(JSON.stringify({
+                                    channel: "channel-".concat(sourceChannel),
+                                    remote_address: destAddress,
+                                    timeout: 30 * 60, // 2 minute timeout,
+                                }))),
+                            },
+                        },
+                    }, 
+                    //  ref https://github.com/scrtlabs/dash.scrt.network/blob/723e2e92e01c65cb4df67a7ddf097a5bd038f974/src/shared/utils/config.ts#L34
+                    {
+                        gasLimit: 300000,
+                        gasPriceInFeeDenom: 0.1,
+                        feeDenom: 'uscrt',
+                        feeGranter: '',
+                        ibcTxsOptions: {
+                            resolveResponses: true,
+                            resolveResponsesCheckIntervalMs: 10000,
+                            resolveResponsesTimeoutMs: 12 * 60 * 1000,
+                        },
+                    })];
+            case 3:
+                generalResponse = _c.sent();
+                rawLog = generalResponse.rawLog;
+                txHash = generalResponse.transactionHash;
+                return [2 /*return*/, txHash];
+            case 4:
+                ex_2 = _c.sent();
+                console.error(ex_2, 'secretError');
                 return [3 /*break*/, 5];
             case 5: return [2 /*return*/];
         }
     });
 }); };
-exports.cosmosTransfer = cosmosTransfer;
+exports.secretTransfer = secretTransfer;
+var injectiveTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
+    var chainId, restEndpoint, chainRestAuthApi, accountDetailsResponse, baseAccount, chainRestTendermintApi, latestBlock, latestHeight, timeoutHeight, msg, pubKeyResult, pubKey, signDoc, signer, result, txRaw, txHash, response;
+    var _c;
+    var generatedMsg = _b.generatedMsg, keplr = _b.keplr;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                chainId = 'injective-1';
+                restEndpoint = config_1.networks[chainId].rest;
+                chainRestAuthApi = new sdk_ts_1.ChainRestAuthApi(restEndpoint);
+                return [4 /*yield*/, chainRestAuthApi.fetchAccount(generatedMsg.value.sender)];
+            case 1:
+                accountDetailsResponse = _d.sent();
+                baseAccount = sdk_ts_1.BaseAccount.fromRestApi(accountDetailsResponse);
+                chainRestTendermintApi = new sdk_ts_1.ChainRestTendermintApi(restEndpoint);
+                return [4 /*yield*/, chainRestTendermintApi.fetchLatestBlock()];
+            case 2:
+                latestBlock = _d.sent();
+                latestHeight = latestBlock.header.height;
+                timeoutHeight = Number(latestHeight) + utils_1.DEFAULT_BLOCK_TIMEOUT_HEIGHT;
+                msg = sdk_ts_1.MsgTransfer.fromJSON({
+                    port: generatedMsg.value.sourcePort,
+                    channelId: generatedMsg.value.sourceChannel,
+                    timeout: generatedMsg.value.timeoutTimestamp,
+                    memo: generatedMsg.value.memo,
+                    height: {
+                        revisionNumber: 0,
+                        revisionHeight: 0,
+                    },
+                    amount: {
+                        amount: generatedMsg.value.token.amount,
+                        denom: generatedMsg.value.token.denom,
+                    },
+                    sender: generatedMsg.value.sender,
+                    receiver: generatedMsg.value.receiver,
+                });
+                return [4 /*yield*/, (keplr === null || keplr === void 0 ? void 0 : keplr.getKey(chainId))];
+            case 3:
+                pubKeyResult = (_c = (_d.sent())) === null || _c === void 0 ? void 0 : _c.pubKey;
+                pubKey = Buffer.from(pubKeyResult).toString('base64');
+                signDoc = (0, sdk_ts_1.createTransaction)({
+                    pubKey: pubKey,
+                    chainId: chainId,
+                    fee: utils_1.DEFAULT_STD_FEE,
+                    message: msg,
+                    sequence: baseAccount.sequence,
+                    timeoutHeight: timeoutHeight,
+                    accountNumber: baseAccount.accountNumber,
+                }).signDoc;
+                signer = keplr.getOfflineSigner(chainId);
+                return [4 /*yield*/, (signer === null || signer === void 0 ? void 0 : signer.signDirect(generatedMsg.value.sender, signDoc))];
+            case 4:
+                result = _d.sent();
+                if (!result) return [3 /*break*/, 7];
+                txRaw = (0, sdk_ts_1.getTxRawFromTxRawOrDirectSignResponse)(result);
+                return [4 /*yield*/, (0, helper_1.broadcastTx)({ chainId: chainId, txRaw: txRaw, keplr: keplr })];
+            case 5:
+                txHash = _d.sent();
+                console.log('injectiveHash:', txHash);
+                if (!txHash) return [3 /*break*/, 7];
+                return [4 /*yield*/, new sdk_ts_1.TxRestClient(restEndpoint).fetchTxPoll(txHash)];
+            case 6:
+                response = _d.sent();
+                console.log('injectiveResponse:', response);
+                return [2 /*return*/, response];
+            case 7: return [2 /*return*/];
+        }
+    });
+}); };
+exports.injectiveTransfer = injectiveTransfer;

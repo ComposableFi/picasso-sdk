@@ -66,15 +66,6 @@ exports.tokensPerChannel = {
             ]
         }
     },
-    "celestia": {
-        "12": {
-            "chainId": "centauri-1",
-            "destinationId": 38,
-            "tokens": [
-                "TIA"
-            ]
-        }
-    },
     "centauri-1": {
         "0": {
             "chainId": "chihuahua-1",
@@ -324,17 +315,6 @@ exports.tokensPerChannel = {
             ]
         }
     },
-    "crescent-1": {
-        "64": {
-            "chainId": "centauri-1",
-            "destinationId": 11,
-            "tokens": [
-                "CRE",
-                "BCRE",
-                "UCRE"
-            ]
-        }
-    },
     "ethereum": {
         "2": {
             "chainId": "centauri-1",
@@ -516,6 +496,26 @@ exports.tokensPerChannel = {
             "tokens": [
                 "STRD",
                 "stATOM"
+            ]
+        }
+    },
+    "celestia": {
+        "12": {
+            "chainId": "centauri-1",
+            "destinationId": 38,
+            "tokens": [
+                "TIA"
+            ]
+        }
+    },
+    "crescent-1": {
+        "64": {
+            "chainId": "centauri-1",
+            "destinationId": 11,
+            "tokens": [
+                "CRE",
+                "BCRE",
+                "UCRE"
             ]
         }
     },

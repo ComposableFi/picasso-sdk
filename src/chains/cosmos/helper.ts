@@ -1,12 +1,19 @@
-import { GasPrice, SigningStargateClient} from '@cosmjs/stargate';
+import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
 import { TX_MSG_TYPE } from './types';
-import { type Keplr } from '@keplr-wallet/types';
+import { OfflineAminoSigner, type Keplr } from '@keplr-wallet/types';
 import { Tendermint34Client } from '@cosmjs/tendermint-rpc';
 
 import { IbcExtension, QueryClient, setupIbcExtension } from '@cosmjs/stargate';
+import { SecretNetworkClient } from 'secretjs';
+import { networks } from '../../config';
+import { CosmosTxV1Beta1Tx } from '@injectivelabs/sdk-ts';
 
-
-export { SigningStargateClient,  QueryClient, setupIbcExtension, Tendermint34Client };
+export {
+  SigningStargateClient,
+  QueryClient,
+  setupIbcExtension,
+  Tendermint34Client,
+};
 export const generateTransferMsg = (
   txMsg: TX_MSG_TYPE,
   channel: number,
@@ -88,4 +95,51 @@ export const getCosmosBlockHeight = async ({
   extra: number;
 }) => {
   return Number(await client.getHeight()) + extra;
+};
+
+export const getSecretClient = async ({
+  keplr,
+  signer,
+  address,
+}: {
+  keplr: Keplr;
+  signer: OfflineAminoSigner;
+  address: string;
+}) => {
+  //  @TODO : make this work for non-keplr wallets
+  const secretChainId = 'secret-4';
+
+  if (!keplr) {
+    console.error('keplr provider is required');
+    return;
+  }
+
+  return new SecretNetworkClient({
+    chainId: secretChainId,
+    url: networks[secretChainId].rest || '',
+    wallet: signer,
+
+    walletAddress: address,
+    //  NOTE : keep this in mind when integrating other wallets that potentially do not support this
+    encryptionUtils: keplr.getEnigmaUtils(secretChainId), //  lets keplr handle the encryption
+  });
+};
+
+export const broadcastTx = async ({
+  chainId,
+  txRaw,
+  keplr,
+}: {
+  chainId: string;
+  txRaw: CosmosTxV1Beta1Tx.TxRaw;
+  keplr: Keplr;
+}) => {
+  const result = await keplr?.sendTx(
+    chainId,
+    CosmosTxV1Beta1Tx.TxRaw.encode(txRaw).finish(),
+    'sync' as any
+  );
+
+  if (result && result?.length !== 0) return;
+  return Buffer.from(result).toString('hex');
 };

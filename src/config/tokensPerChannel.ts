@@ -319,17 +319,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "crescent-1": {
-    "64": {
-      "chainId": "centauri-1",
-      "destinationId": 11,
-      "tokens": [
-        "CRE",
-        "BCRE",
-        "UCRE"
-      ]
-    }
-  },
   "ethereum": {
     "2": {
       "chainId": "centauri-1",
@@ -514,21 +503,32 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "umee-1": {
-    "99": {
-      "chainId": "centauri-1",
-      "destinationId": 20,
-      "tokens": [
-        "UMEE"
-      ]
-    }
-  },
   "celestia": {
     "12": {
       "chainId": "centauri-1",
       "destinationId": 38,
       "tokens": [
         "TIA"
+      ]
+    }
+  },
+  "crescent-1": {
+    "64": {
+      "chainId": "centauri-1",
+      "destinationId": 11,
+      "tokens": [
+        "CRE",
+        "BCRE",
+        "UCRE"
+      ]
+    }
+  },
+  "umee-1": {
+    "99": {
+      "chainId": "centauri-1",
+      "destinationId": 20,
+      "tokens": [
+        "UMEE"
       ]
     }
   }

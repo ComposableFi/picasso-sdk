@@ -216,14 +216,6 @@ import { CoinGeckoAsset } from './types';
     "id": "cosmos"
   },
   {
-    "name": "CRE",
-    "id": "crescent-network"
-  },
-  {
-    "name": "bCRE",
-    "id": "liquid-staking-crescent"
-  },
-  {
     "name": "ETH",
     "id": "ethereum"
   },
@@ -420,12 +412,20 @@ import { CoinGeckoAsset } from './types';
     "id": "stride-staked-atom"
   },
   {
-    "name": "UMEE",
-    "id": "umee"
-  },
-  {
     "name": "TIA",
     "id": "celestia"
+  },
+  {
+    "name": "CRE",
+    "id": "crescent-network"
+  },
+  {
+    "name": "bCRE",
+    "id": "liquid-staking-crescent"
+  },
+  {
+    "name": "UMEE",
+    "id": "umee"
   }
 ] ;
  

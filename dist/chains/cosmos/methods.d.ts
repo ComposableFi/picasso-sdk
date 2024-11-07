@@ -1,3 +1,4 @@
+import { generateTransferMsg } from './helper';
 import { type TX_MSG_TYPE } from './types';
 import { Keplr } from '@keplr-wallet/types';
 export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddress, amount, assetId, fee, chainId, rpc, memo, timeout, txMsg, keplr, gasPrice, gas, feeAssetId, }: {
@@ -17,4 +18,17 @@ export declare const cosmosTransfer: ({ sourceChannel, sourceAddress, destAddres
     gas: string;
     feeAssetId: string;
 }) => Promise<string>;
+export declare const secretTransfer: ({ amount, secretAssetId, keplr, sourceAddress, destAddress, sourceChannel, codeHash, }: {
+    amount: string;
+    secretAssetId: string;
+    keplr: Keplr;
+    sourceAddress: string;
+    destAddress: string;
+    sourceChannel: number;
+    codeHash: string;
+}) => Promise<string>;
+export declare const injectiveTransfer: ({ generatedMsg, keplr, }: {
+    generatedMsg: ReturnType<typeof generateTransferMsg>;
+    keplr: Keplr;
+}) => Promise<import("@injectivelabs/sdk-ts").TxResponse>;
 //# sourceMappingURL=methods.d.ts.map

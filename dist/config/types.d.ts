@@ -6,6 +6,7 @@ export interface CrosschainAsset {
     minimalDenom: string;
     denom: string;
     imageUrl?: string;
+    codeHash?: string;
     realDecimals?: number;
     ratio?: {
         n: string;

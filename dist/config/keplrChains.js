@@ -105,55 +105,6 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
         }
     },
-    "celestia": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "celestia",
-            "bech32PrefixAccPub": "celestiapub",
-            "bech32PrefixConsAddr": "celestiavalcons",
-            "bech32PrefixConsPub": "celestiavalconspub",
-            "bech32PrefixValAddr": "celestiavaloper",
-            "bech32PrefixValPub": "celestiavaloperpub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "celestia",
-        "chainName": "Celestia",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "TIA",
-                "coinGeckoId": "celestia",
-                "coinMinimalDenom": "utia"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "TIA",
-                "coinGeckoId": "celestia",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-                "gasPriceStep": {
-                    "low": 0.01,
-                    "average": 0.02,
-                    "high": 0.1
-                },
-                "coinMinimalDenom": "utia"
-            }
-        ],
-        "rest": "https://api.celestia.nodestake.top",
-        "rpc": "https://rpc.celestia.nodestake.top",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "TIA",
-            "coinGeckoId": "celestia",
-            "coinMinimalDenom": "utia",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
-    },
     "centauri-1": {
         "bech32Config": {
             "bech32PrefixAccAddr": "pica",
@@ -352,59 +303,6 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
-    },
-    "crescent-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "cre",
-            "bech32PrefixAccPub": "crepub",
-            "bech32PrefixValAddr": "crevaloper",
-            "bech32PrefixValPub": "crevaloperpub",
-            "bech32PrefixConsAddr": "crevalcons",
-            "bech32PrefixConsPub": "crevalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "crescent-1",
-        "chainName": "Crescent Network",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "CRE",
-                "coinGeckoId": "crescent-network",
-                "coinMinimalDenom": "ucre"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "bCRE",
-                "coinGeckoId": "liquid-staking-crescent",
-                "coinMinimalDenom": "ubcre"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "CRE",
-                "coinGeckoId": "crescent-network",
-                "gasPriceStep": {
-                    "low": 0.01,
-                    "average": 0.025,
-                    "high": 0.03
-                },
-                "coinMinimalDenom": "ucre"
-            }
-        ],
-        "rest": "https://crescent-cmp-api.polkachu.com",
-        "rpc": "https://crescent-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "CRE",
-            "coinGeckoId": "crescent-network",
-            "coinMinimalDenom": "ucre"
-        },
-        "walletUrlForStaking": "https://app.crescent.network/staking"
     },
     "injective-1": {
         "bech32Config": {
@@ -866,6 +764,108 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/stride"
+    },
+    "celestia": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "celestia",
+            "bech32PrefixAccPub": "celestiapub",
+            "bech32PrefixConsAddr": "celestiavalcons",
+            "bech32PrefixConsPub": "celestiavalconspub",
+            "bech32PrefixValAddr": "celestiavaloper",
+            "bech32PrefixValPub": "celestiavaloperpub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "celestia",
+        "chainName": "Celestia",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "TIA",
+                "coinGeckoId": "celestia",
+                "coinMinimalDenom": "utia"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "TIA",
+                "coinGeckoId": "celestia",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.02,
+                    "high": 0.1
+                },
+                "coinMinimalDenom": "utia"
+            }
+        ],
+        "rest": "https://api.celestia.nodestake.top",
+        "rpc": "https://rpc.celestia.nodestake.top",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "TIA",
+            "coinGeckoId": "celestia",
+            "coinMinimalDenom": "utia",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
+    },
+    "crescent-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "cre",
+            "bech32PrefixAccPub": "crepub",
+            "bech32PrefixValAddr": "crevaloper",
+            "bech32PrefixValPub": "crevaloperpub",
+            "bech32PrefixConsAddr": "crevalcons",
+            "bech32PrefixConsPub": "crevalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "crescent-1",
+        "chainName": "Crescent Network",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "CRE",
+                "coinGeckoId": "crescent-network",
+                "coinMinimalDenom": "ucre"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "bCRE",
+                "coinGeckoId": "liquid-staking-crescent",
+                "coinMinimalDenom": "ubcre"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "CRE",
+                "coinGeckoId": "crescent-network",
+                "gasPriceStep": {
+                    "low": 0.01,
+                    "average": 0.025,
+                    "high": 0.03
+                },
+                "coinMinimalDenom": "ucre"
+            }
+        ],
+        "rest": "https://crescent-cmp-api.polkachu.com",
+        "rpc": "https://crescent-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "CRE",
+            "coinGeckoId": "crescent-network",
+            "coinMinimalDenom": "ucre"
+        },
+        "walletUrlForStaking": "https://app.crescent.network/staking"
     },
     "umee-1": {
         "bech32Config": {
