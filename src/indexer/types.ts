@@ -22,7 +22,16 @@ export type TransferState =
   | 'TransferTimeout'
   | 'TransferPending'
   | 'TransferMaintenance'
+  | 'TransferSuccessButError'
   | 'send_packet';
+
+export const TransferSuccess = ['TransferSuccess', 'TransferSuccessButError'];
+export const TransferFail = [
+  'TransferFailed',
+  'TransferTimeout',
+  'TransferMaintenance',
+];
+export const TransferPending = ['TransferPending', 'send_packet'];
 
 export type Path = {
   origin: string;
