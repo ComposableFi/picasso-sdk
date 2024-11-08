@@ -227,7 +227,7 @@ exports.keplrChains = {
             },
             {
                 "coinDecimals": 6,
-                "coinDenom": "CORE",
+                "coinDenom": "COREUM",
                 "coinGeckoId": "coreum",
                 "coinMinimalDenom": "ucore"
             }
@@ -236,7 +236,7 @@ exports.keplrChains = {
         "feeCurrencies": [
             {
                 "coinDecimals": 6,
-                "coinDenom": "CORE",
+                "coinDenom": "COREUM",
                 "coinGeckoId": "coreum",
                 "gasPriceStep": {
                     "low": 0.0625,
@@ -250,7 +250,7 @@ exports.keplrChains = {
         "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
         "stakeCurrency": {
             "coinDecimals": 6,
-            "coinDenom": "CORE",
+            "coinDenom": "COREUM",
             "coinGeckoId": "coreum",
             "coinMinimalDenom": "ucore"
         }

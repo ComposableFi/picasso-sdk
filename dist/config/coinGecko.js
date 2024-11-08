@@ -207,7 +207,7 @@ exports.coinGecko = [
         "id": "ripple"
     },
     {
-        "name": "CORE",
+        "name": "COREUM",
         "id": "coreum"
     },
     {
