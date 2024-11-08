@@ -34,14 +34,14 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
         "erc20Address": "0x21c2c96Dbfa137E23946143c71AC8330F9B44001",
-        "fromCosmosFee": 2,
+        "fromCosmosFee": 2.5,
         "minimumTransfer": 5
       },
       "solana": {
         "mintAddress": "vbJ16tHqqVKvLq8rgWeGboJvSCoeFjSYYvH77czoT9J",
         "minimalDenom": "transfer/channel-1/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",
         "minimumTransfer": 3,
-        "fromCosmosFee": 0,
+        "fromCosmosFee": 1.3,
         "displayDecimals": 9
       }
     }

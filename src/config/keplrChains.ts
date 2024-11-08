@@ -228,7 +228,7 @@ export const keplrChains :Record<string, ChainInfo>= {
       },
       {
         "coinDecimals": 6,
-        "coinDenom": "CORE",
+        "coinDenom": "COREUM",
         "coinGeckoId": "coreum",
         "coinMinimalDenom": "ucore"
       }
@@ -237,7 +237,7 @@ export const keplrChains :Record<string, ChainInfo>= {
     "feeCurrencies": [
       {
         "coinDecimals": 6,
-        "coinDenom": "CORE",
+        "coinDenom": "COREUM",
         "coinGeckoId": "coreum",
         "gasPriceStep": {
           "low": 0.0625,
@@ -251,7 +251,7 @@ export const keplrChains :Record<string, ChainInfo>= {
     "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
     "stakeCurrency": {
       "coinDecimals": 6,
-      "coinDenom": "CORE",
+      "coinDenom": "COREUM",
       "coinGeckoId": "coreum",
       "coinMinimalDenom": "ucore"
     }

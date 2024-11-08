@@ -29,19 +29,22 @@
       "coinGeckoId": "kusama",
       "cosmos": {},
       "polkadot": {
-        "picassoAssetId": "4"
+        "picassoAssetId": "4",
+        "composableAssetId": "",
+        "ratio": { "n": "70", "d": "10000" },
+        "existentialDeposit": "375000000"
       },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
         "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
-        "fromCosmosFee": 0.5,
+        "fromCosmosFee": 0.6,
         "minimumTransfer": 1
       },
       "solana": {
         "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
         "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
-        "minimumTransfer": 0.7,
-        "fromCosmosFee": 0,
+        "minimumTransfer": 1,
+        "fromCosmosFee": 0.3,
         "displayDecimals": 9
       }
     }

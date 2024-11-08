@@ -91,19 +91,33 @@
       "solana": {}
     },
     {
-      "coinDenom": "SILK",
-      "coinDecimals": 6,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/silk.svg",
+      "coinDecimals": 6,
+      "codeHash": "638a3e1d50175fbcb8373cf801565283e3eb23d88a9b7b7f99fcc5eb1e6b561e",
+      "coinDenom": "SILK",
       "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
-      "cosmos": {},
+      "cosmos": {
+        "minimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
+      },
       "polkadot": {
         "picassoAssetId": "16",
         "composableAssetId": "",
         "ratio": { "n": "2", "d": "1000000" },
         "existentialDeposit": "20000"
       },
-      "ethereum": {},
-      "solana": {}
+      "ethereum": {
+        "minimalDenom": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "erc20Address": "0x854b8fc032a5b7828d8de72702f1fdd9bcfb3efa",
+        "fromCosmosFee": 10,
+        "minimumTransfer": 50
+      },
+      "solana": {
+        "mintAddress": "Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn",
+        "minimalDenom": "transfer/channel-1/transfer/channel-26/cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 5,
+        "displayDecimals": 6
+      }
     },
     {
       "coinDenom": "QCK",
@@ -230,18 +244,39 @@
 
     {
       "coinDenom": "OSMO",
+      "coinMinimalDenom": "uosmo",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/osmosis.svg",
       "coinGeckoId": "osmosis",
-      "cosmos": {},
+      "isCoin": true,
+
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "cosmos": {
+        "gasPriceStep": {
+          "low": 0.0025,
+          "average": 0.025,
+          "high": 0.04
+        },
+        "minimalDenom": "uosmo"
+      },
       "polkadot": {
         "picassoAssetId": "8",
         "composableAssetId": "",
         "ratio": { "n": "3", "d": "10000000" },
         "existentialDeposit": "40000"
       },
-      "ethereum": {},
-      "solana": {}
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
+        "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+        "fromCosmosFee": 23,
+        "minimumTransfer": 40
+      },
+      "solana": {
+        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+        "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 11,
+        "displayDecimals": 6
+      }
     },
     {
       "coinDenom": "BNC_DOT",
@@ -485,6 +520,7 @@
     },
     {
       "coinDenom": "KSM",
+      "isCoin": true,
       "coinDecimals": 12,
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "coinGeckoId": "kusama",
@@ -495,8 +531,19 @@
         "ratio": { "n": "70", "d": "10000" },
         "existentialDeposit": "375000000"
       },
-      "ethereum": {},
-      "solana": {}
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
+        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+        "fromCosmosFee": 0.6,
+        "minimumTransfer": 1
+      },
+      "solana": {
+        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
+        "minimumTransfer": 1,
+        "fromCosmosFee": 0.3,
+        "displayDecimals": 9
+      }
     },
     {
       "coinDenom": "vDOT",

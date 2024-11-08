@@ -41,9 +41,9 @@
       "solana": {
         "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
         "minimalDenom": "",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0,
-        "displayDecimals": 0
+        "minimumTransfer": 40000,
+        "fromCosmosFee": 26000,
+        "displayDecimals": 6
       }
     },
     {

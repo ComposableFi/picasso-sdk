@@ -47,12 +47,12 @@
       "solana": {
         "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
         "minimalDenom": "transfer/channel-1/transfer/channel-56/drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz",
-        "minimumTransfer": 0,
-        "fromCosmosFee": 0
+        "minimumTransfer": 35,
+        "fromCosmosFee": 10
       }
     },
     {
-      "coinDenom": "CORE",
+      "coinDenom": "COREUM",
       "isCoin": true,
 
       "coinMinimalDenom": "ucore",
@@ -67,8 +67,18 @@
         "minimalDenom": "ucore"
       },
       "polkadot": {},
-      "ethereum": {},
-      "solana": {}
+      "ethereum": {
+        "minimalDenom": "0x9e0F65F56120FCaebe2c0675377332Ec60ABB1aC",
+        "erc20Address": "0x9e0F65F56120FCaebe2c0675377332Ec60ABB1aC",
+        "fromCosmosFee": 165,
+        "minimumTransfer": 490
+      },
+      "solana": {
+        "mintAddress": "Cq5Z54y9FpWQHkvspw63TKd9P9w34X5XjFk14FkG1H8",
+        "minimalDenom": "transfer/channel-1/transfer/channel-56/ucore",
+        "minimumTransfer": 200,
+        "fromCosmosFee": 83
+      }
     }
   ],
   "feeCurrencies": [

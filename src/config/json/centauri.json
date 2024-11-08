@@ -224,7 +224,7 @@
         "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
         "minimalDenom": "transfer/channel-1/ppica",
         "minimumTransfer": 4000,
-        "fromCosmosFee": 0,
+        "fromCosmosFee": 12000,
         "displayDecimals": 9
       }
     }

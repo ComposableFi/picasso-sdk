@@ -208,7 +208,7 @@ import { CoinGeckoAsset } from './types';
     "id": "ripple"
   },
   {
-    "name": "CORE",
+    "name": "COREUM",
     "id": "coreum"
   },
   {
