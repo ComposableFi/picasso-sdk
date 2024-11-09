@@ -404,17 +404,6 @@ exports.tokensPerChannel = {
             ]
         }
     },
-    "secret-4": {
-        "80": {
-            "chainId": "centauri-1",
-            "destinationId": 14,
-            "tokens": [
-                "SCRT",
-                "SILK",
-                "SHD"
-            ]
-        }
-    },
     "pacific-1": {
         "0": {
             "chainId": "osmosis-1",
@@ -525,6 +514,17 @@ exports.tokensPerChannel = {
             "destinationId": 20,
             "tokens": [
                 "UMEE"
+            ]
+        }
+    },
+    "secret-4": {
+        "80": {
+            "chainId": "centauri-1",
+            "destinationId": 14,
+            "tokens": [
+                "SCRT",
+                "SILK",
+                "SHD"
             ]
         }
     }

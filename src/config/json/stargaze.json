@@ -55,8 +55,8 @@
       "solana": {
         "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
         "minimalDenom": "transfer/channel-1/transfer/channel-6/ustars",
-        "minimumTransfer": 990,
-        "fromCosmosFee": 0,
+        "minimumTransfer": 2000,
+        "fromCosmosFee": 1600,
         "displayDecimals": 6
       }
     }

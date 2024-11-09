@@ -55,7 +55,7 @@
         "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
         "minimalDenom": "transfer/channel-1/transfer/channel-3/transfer/channel-782/usei",
         "minimumTransfer": 30,
-        "fromCosmosFee": 0,
+        "fromCosmosFee": 13,
         "displayDecimals": 6
       }
     }

@@ -55,7 +55,7 @@
         "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
         "minimalDenom": "transfer/channel-1/transfer/channel-4/uatom",
         "minimumTransfer": 2,
-        "fromCosmosFee": 0,
+        "fromCosmosFee": 1,
         "displayDecimals": 6
       }
     }

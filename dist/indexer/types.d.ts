@@ -8,7 +8,10 @@ export interface IbcEventsResponses extends IndexerResult {
     countPerPage: number;
 }
 export type TxHash = string;
-export type TransferState = 'TransferSuccess' | 'TransferFailed' | 'TransferTimeout' | 'TransferPending' | 'TransferMaintenance' | 'send_packet';
+export type TransferState = 'TransferSuccess' | 'TransferFailed' | 'TransferTimeout' | 'TransferPending' | 'TransferMaintenance' | 'TransferSuccessButError' | 'send_packet';
+export declare const TransferSuccess: string[];
+export declare const TransferFail: string[];
+export declare const TransferPending: string[];
 export type Path = {
     origin: string;
     destination: string;
