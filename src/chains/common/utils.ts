@@ -336,6 +336,7 @@ export const getExplorerUrl = (
 };
 
 export const getNetworkFromAddress = (address: string) => {
+  let ret = null;
   //solana
   try {
     getPublicKey(address);
@@ -347,25 +348,29 @@ export const getNetworkFromAddress = (address: string) => {
     const decoded = bech32.decode(address);
     Object.values(keplrChains).forEach((v) => {
       if (v.bech32Config.bech32PrefixAccAddr === decoded.prefix)
-        return v.chainId;
+        ret = v.chainId;
     });
+    return ret;
   } catch {}
 
   // ethereum
   try {
-    Web3.utils.isAddress(address);
-    return 'ethereum';
+    if (Web3.utils.isAddress(address)) return 'ethereum';
   } catch {}
   //polkadot
   try {
-    Object.values(networks).forEach((v) => {
-      if (v.polkadot?.ss58Format) {
-        const decoded = decodeAddress(address, false, v.polkadot.ss58Format);
-        if (decoded) return v.chainId;
-      }
-    });
-    return 'polkadot';
+    const decoded = decodeAddress(address, false);
+    const ss58 = decoded[0];
+
+    return Object.values(networks).find((v) => {
+      const encoded = encodeAddress(
+        decodeAddress(address),
+        v.polkadot?.ss58Format
+      );
+
+      if (encoded === address) return v.chainId;
+    })?.chainId;
   } catch {}
 
-  return { type: 'invalid', isValid: false };
+  return null;
 };

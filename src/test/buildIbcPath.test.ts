@@ -5,6 +5,7 @@ import {
   getChainIdsByChannels,
   getChannelIdsFromMemo,
   getExplorerUrl,
+  getNetworkFromAddress,
   getSupportedType,
   TIMEOUT_IBC_MAX,
 } from '../chains';
@@ -222,5 +223,33 @@ describe('getChannelIdsFromMemo', () => {
       channels: [71],
       finalReceiver: '6ijw2nSoson3ft9kajLKc3zFiYccB2V1PbsSUJfjrKS6',
     });
+  });
+});
+
+describe('getNetworkFromAddress', () => {
+  test('should correctly detect Solana address', () => {
+    const solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4qxPHKhmAht6pXPFWo';
+    expect(getNetworkFromAddress(solanaAddress)).toBe('solana');
+  });
+
+  test('should correctly detect Picasso bech32 address', () => {
+    const picassoAddress = 'pica1src4utrx6llsteqd7wf5qcuxcgjg6s8tle8kvq';
+    expect(getNetworkFromAddress(picassoAddress)).toBe('centauri-1');
+  });
+
+  test('should correctly detect Osmosis bech32 address', () => {
+    const osmosisAddress = 'osmo1src4utrx6llsteqd7wf5qcuxcgjg6s8tv7hr74';
+    expect(getNetworkFromAddress(osmosisAddress)).toBe('osmosis-1');
+  });
+
+  test('should correctly detect Ethereum address', () => {
+    const ethereumAddress = '0x46762bdE09C1a1c566c3efD959368455Bf20c354';
+    expect(getNetworkFromAddress(ethereumAddress)).toBe('ethereum');
+  });
+
+  test('should correctly detect Picasso SS58 address', () => {
+    const picassoSS58Address =
+      '5wFJF7twuHuSfUwK6tJFfHAbi55ubDx38QYSa5JfpDMNKuqU';
+    expect(getNetworkFromAddress(picassoSS58Address)).toBe('2087');
   });
 });
