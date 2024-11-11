@@ -359,9 +359,6 @@ export const getNetworkFromAddress = (address: string) => {
   } catch {}
   //polkadot
   try {
-    const decoded = decodeAddress(address, false);
-    const ss58 = decoded[0];
-
     return Object.values(networks).find((v) => {
       const encoded = encodeAddress(
         decodeAddress(address),

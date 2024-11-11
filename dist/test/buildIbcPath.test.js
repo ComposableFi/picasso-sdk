@@ -161,3 +161,25 @@ var globals_1 = require("@jest/globals");
         });
     });
 });
+(0, globals_1.describe)('getNetworkFromAddress', function () {
+    (0, globals_1.test)('should correctly detect Solana address', function () {
+        var solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4qxPHKhmAht6pXPFWo';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(solanaAddress)).toBe('solana');
+    });
+    (0, globals_1.test)('should correctly detect Picasso bech32 address', function () {
+        var picassoAddress = 'pica1src4utrx6llsteqd7wf5qcuxcgjg6s8tle8kvq';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoAddress)).toBe('centauri-1');
+    });
+    (0, globals_1.test)('should correctly detect Osmosis bech32 address', function () {
+        var osmosisAddress = 'osmo1src4utrx6llsteqd7wf5qcuxcgjg6s8tv7hr74';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(osmosisAddress)).toBe('osmosis-1');
+    });
+    (0, globals_1.test)('should correctly detect Ethereum address', function () {
+        var ethereumAddress = '0x46762bdE09C1a1c566c3efD959368455Bf20c354';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(ethereumAddress)).toBe('ethereum');
+    });
+    (0, globals_1.test)('should correctly detect Picasso SS58 address', function () {
+        var picassoSS58Address = '5wFJF7twuHuSfUwK6tJFfHAbi55ubDx38QYSa5JfpDMNKuqU';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoSS58Address)).toBe('2087');
+    });
+});
