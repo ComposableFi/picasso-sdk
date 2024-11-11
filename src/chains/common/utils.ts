@@ -11,7 +11,9 @@ import { fromBech32, fromHex, toBech32 } from '@cosmjs/encoding';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 import { TIMEOUT_IBC_MAX } from '../cosmos';
 export const emitter = new EventEmitter<WalletApiEvents>();
-
+import { bech32 } from 'bech32';
+import { getPublicKey } from '../solana';
+import Web3 from 'web3';
 export const memoBuilder = ({
   destChannel,
   destAddress,
@@ -331,4 +333,41 @@ export const getExplorerUrl = (
     default:
       return '';
   }
+};
+
+export const getNetworkFromAddress = (address: string) => {
+  let ret = null;
+  //solana
+  try {
+    getPublicKey(address);
+    return 'solana';
+  } catch {}
+
+  // cosmos
+  try {
+    const decoded = bech32.decode(address);
+    Object.values(keplrChains).forEach((v) => {
+      if (v.bech32Config.bech32PrefixAccAddr === decoded.prefix)
+        ret = v.chainId;
+    });
+    return ret;
+  } catch {}
+
+  // ethereum
+  try {
+    if (Web3.utils.isAddress(address)) return 'ethereum';
+  } catch {}
+  //polkadot
+  try {
+    return Object.values(networks).find((v) => {
+      const encoded = encodeAddress(
+        decodeAddress(address),
+        v.polkadot?.ss58Format
+      );
+
+      if (encoded === address) return v.chainId;
+    })?.chainId;
+  } catch {}
+
+  return null;
 };

@@ -1,1 +1,1 @@
-{"version":3,"file":"solanaAssets.d.ts","sourceRoot":"","sources":["../../src/config/solanaAssets.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AAEtC,eAAO,MAAM,YAAY,EAAC,MAAM,CAAC,MAAM,EAAE,WAAW,CAqOnD,CAAC"}
+{"version":3,"file":"solanaAssets.d.ts","sourceRoot":"","sources":["../../src/config/solanaAssets.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AAEtC,eAAO,MAAM,YAAY,EAAC,MAAM,CAAC,MAAM,EAAE,WAAW,CAyOnD,CAAC"}

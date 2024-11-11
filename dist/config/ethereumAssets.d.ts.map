@@ -1,1 +1,1 @@
-{"version":3,"file":"ethereumAssets.d.ts","sourceRoot":"","sources":["../../src/config/ethereumAssets.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAExC,eAAO,MAAM,cAAc,EAAE,MAAM,CAAC,MAAM,EAAE,aAAa,CAuOxD,CAAC"}
+{"version":3,"file":"ethereumAssets.d.ts","sourceRoot":"","sources":["../../src/config/ethereumAssets.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,aAAa,EAAE,MAAM,SAAS,CAAC;AAExC,eAAO,MAAM,cAAc,EAAE,MAAM,CAAC,MAAM,EAAE,aAAa,CA4OxD,CAAC"}
