@@ -51,6 +51,71 @@ export const tokensPerChannel : Record<
       ]
     }
   },
+  "chihuahua-1": {
+    "62": {
+      "chainId": "centauri-1",
+      "destinationId": 0,
+      "tokens": [
+        "UHUAHUA"
+      ]
+    }
+  },
+  "injective-1": {
+    "145": {
+      "chainId": "centauri-1",
+      "destinationId": 29,
+      "tokens": [
+        "INJ"
+      ]
+    }
+  },
+  "kaiyo-1": {
+    "101": {
+      "chainId": "centauri-1",
+      "destinationId": 27,
+      "tokens": [
+        "KUJI"
+      ]
+    }
+  },
+  "quicksilver-2": {
+    "94": {
+      "chainId": "centauri-1",
+      "destinationId": 9,
+      "tokens": [
+        "QCK"
+      ]
+    }
+  },
+  "celestia": {
+    "12": {
+      "chainId": "centauri-1",
+      "destinationId": 38,
+      "tokens": [
+        "TIA"
+      ]
+    }
+  },
+  "crescent-1": {
+    "64": {
+      "chainId": "centauri-1",
+      "destinationId": 11,
+      "tokens": [
+        "CRE",
+        "BCRE",
+        "UCRE"
+      ]
+    }
+  },
+  "umee-1": {
+    "99": {
+      "chainId": "centauri-1",
+      "destinationId": 20,
+      "tokens": [
+        "UMEE"
+      ]
+    }
+  },
   "agoric-3": {
     "55": {
       "chainId": "centauri-1",
@@ -291,15 +356,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "chihuahua-1": {
-    "62": {
-      "chainId": "centauri-1",
-      "destinationId": 0,
-      "tokens": [
-        "UHUAHUA"
-      ]
-    }
-  },
   "coreum-mainnet-1": {
     "31": {
       "chainId": "centauri-1",
@@ -354,24 +410,6 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "injective-1": {
-    "145": {
-      "chainId": "centauri-1",
-      "destinationId": 29,
-      "tokens": [
-        "INJ"
-      ]
-    }
-  },
-  "kaiyo-1": {
-    "101": {
-      "chainId": "centauri-1",
-      "destinationId": 27,
-      "tokens": [
-        "KUJI"
-      ]
-    }
-  },
   "neutron-1": {
     "17": {
       "chainId": "centauri-1",
@@ -399,12 +437,14 @@ export const tokensPerChannel : Record<
       ]
     }
   },
-  "quicksilver-2": {
-    "94": {
+  "secret-4": {
+    "80": {
       "chainId": "centauri-1",
-      "destinationId": 9,
+      "destinationId": 14,
       "tokens": [
-        "QCK"
+        "SCRT",
+        "SILK",
+        "SHD"
       ]
     }
   },
@@ -489,46 +529,6 @@ export const tokensPerChannel : Record<
       "tokens": [
         "STRD",
         "stATOM"
-      ]
-    }
-  },
-  "celestia": {
-    "12": {
-      "chainId": "centauri-1",
-      "destinationId": 38,
-      "tokens": [
-        "TIA"
-      ]
-    }
-  },
-  "crescent-1": {
-    "64": {
-      "chainId": "centauri-1",
-      "destinationId": 11,
-      "tokens": [
-        "CRE",
-        "BCRE",
-        "UCRE"
-      ]
-    }
-  },
-  "umee-1": {
-    "99": {
-      "chainId": "centauri-1",
-      "destinationId": 20,
-      "tokens": [
-        "UMEE"
-      ]
-    }
-  },
-  "secret-4": {
-    "80": {
-      "chainId": "centauri-1",
-      "destinationId": 14,
-      "tokens": [
-        "SCRT",
-        "SILK",
-        "SHD"
       ]
     }
   }

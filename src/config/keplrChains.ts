@@ -3,6 +3,346 @@
 import { ChainInfo } from "@keplr-wallet/types";
 
 export const keplrChains :Record<string, ChainInfo>= {
+  "chihuahua-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "chihuahua",
+      "bech32PrefixAccPub": "chihuahuapub",
+      "bech32PrefixValAddr": "chihuahuavaloper",
+      "bech32PrefixValPub": "chihuahuavaloperpub",
+      "bech32PrefixConsAddr": "chihuahuavalcons",
+      "bech32PrefixConsPub": "chihuahuavalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "chihuahua-1",
+    "chainName": "Chihuahua",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "HUAHUA",
+        "coinGeckoId": "chihuahua-token",
+        "coinMinimalDenom": "uhuahua"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "HUAHUA",
+        "coinGeckoId": "chihuahua-token",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+        "gasPriceStep": {
+          "low": 500,
+          "average": 1250,
+          "high": 2000
+        },
+        "coinMinimalDenom": "uhuahua"
+      }
+    ],
+    "rest": "https://chihuahua-api.polkachu.com",
+    "rpc": "https://chihuahua-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "HUAHUA",
+      "coinGeckoId": "chihuahua-token",
+      "coinMinimalDenom": "uhuahua",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
+  },
+  "injective-1": {
+    "bech32Config": {
+      "bech32PrefixAccPub": "injpub",
+      "bech32PrefixValPub": "injvaloperpub",
+      "bech32PrefixAccAddr": "inj",
+      "bech32PrefixConsPub": "injvalconspub",
+      "bech32PrefixValAddr": "injvaloper",
+      "bech32PrefixConsAddr": "injvalcons"
+    },
+    "bip44": {
+      "coinType": 60
+    },
+    "chainId": "injective-1",
+    "chainName": "Injective",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 18,
+        "coinDenom": "INJ",
+        "coinGeckoId": "injective-protocol",
+        "coinMinimalDenom": "inj"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 18,
+        "coinDenom": "INJ",
+        "coinGeckoId": "injective-protocol",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
+        "gasPriceStep": {
+          "low": 500000000,
+          "average": 1000000000,
+          "high": 1500000000
+        },
+        "coinMinimalDenom": "inj"
+      }
+    ],
+    "rest": "https://injective-api.polkachu.com",
+    "rpc": "https://injective-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 18,
+      "coinDenom": "INJ",
+      "coinGeckoId": "injective-protocol",
+      "coinMinimalDenom": "inj",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png"
+    }
+  },
+  "kaiyo-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "kujira",
+      "bech32PrefixAccPub": "kujirapub",
+      "bech32PrefixValAddr": "kujiravaloper",
+      "bech32PrefixValPub": "kujiravaloperpub",
+      "bech32PrefixConsAddr": "kujiravalcons",
+      "bech32PrefixConsPub": "kujiravalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "kaiyo-1",
+    "chainName": "Kujira",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "KUJI",
+        "coinGeckoId": "kujira",
+        "coinMinimalDenom": "ukuji"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "KUJI",
+        "coinGeckoId": "kujira",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
+        "coinMinimalDenom": "ukuji"
+      }
+    ],
+    "rest": "https://kujira-api.polkachu.com",
+    "rpc": "https://kujira-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "KUJI",
+      "coinGeckoId": "kujira",
+      "coinMinimalDenom": "ukuji",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
+    }
+  },
+  "quicksilver-2": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "quick",
+      "bech32PrefixAccPub": "quickpub",
+      "bech32PrefixValAddr": "quickvaloper",
+      "bech32PrefixValPub": "quickvaloperpub",
+      "bech32PrefixConsAddr": "quickvalcons",
+      "bech32PrefixConsPub": "quickvalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "quicksilver-2",
+    "chainName": "Quicksilver",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "QCK",
+        "coinGeckoId": "quicksilver",
+        "coinMinimalDenom": "uqck"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "QCK",
+        "coinGeckoId": "quicksilver",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
+        "gasPriceStep": {
+          "low": 0.0001,
+          "average": 0.0001,
+          "high": 0.00025
+        },
+        "coinMinimalDenom": "uqck"
+      }
+    ],
+    "rest": "https://quicksilver-api.polkachu.com",
+    "rpc": "https://quicksilver-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "QCK",
+      "coinGeckoId": "quicksilver",
+      "coinMinimalDenom": "uqck",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver"
+  },
+  "celestia": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "celestia",
+      "bech32PrefixAccPub": "celestiapub",
+      "bech32PrefixConsAddr": "celestiavalcons",
+      "bech32PrefixConsPub": "celestiavalconspub",
+      "bech32PrefixValAddr": "celestiavaloper",
+      "bech32PrefixValPub": "celestiavaloperpub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "celestia",
+    "chainName": "Celestia",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "TIA",
+        "coinGeckoId": "celestia",
+        "coinMinimalDenom": "utia"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "TIA",
+        "coinGeckoId": "celestia",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+        "gasPriceStep": {
+          "low": 0.01,
+          "average": 0.02,
+          "high": 0.1
+        },
+        "coinMinimalDenom": "utia"
+      }
+    ],
+    "rest": "https://api.celestia.nodestake.top",
+    "rpc": "https://rpc.celestia.nodestake.top",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "TIA",
+      "coinGeckoId": "celestia",
+      "coinMinimalDenom": "utia",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
+  },
+  "crescent-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "cre",
+      "bech32PrefixAccPub": "crepub",
+      "bech32PrefixValAddr": "crevaloper",
+      "bech32PrefixValPub": "crevaloperpub",
+      "bech32PrefixConsAddr": "crevalcons",
+      "bech32PrefixConsPub": "crevalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "crescent-1",
+    "chainName": "Crescent Network",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "CRE",
+        "coinGeckoId": "crescent-network",
+        "coinMinimalDenom": "ucre"
+      },
+      {
+        "coinDecimals": 6,
+        "coinDenom": "bCRE",
+        "coinGeckoId": "liquid-staking-crescent",
+        "coinMinimalDenom": "ubcre"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "CRE",
+        "coinGeckoId": "crescent-network",
+        "gasPriceStep": {
+          "low": 0.01,
+          "average": 0.025,
+          "high": 0.03
+        },
+        "coinMinimalDenom": "ucre"
+      }
+    ],
+    "rest": "https://crescent-cmp-api.polkachu.com",
+    "rpc": "https://crescent-cmp-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "CRE",
+      "coinGeckoId": "crescent-network",
+      "coinMinimalDenom": "ucre"
+    },
+    "walletUrlForStaking": "https://app.crescent.network/staking"
+  },
+  "umee-1": {
+    "bech32Config": {
+      "bech32PrefixAccAddr": "umee",
+      "bech32PrefixAccPub": "umeepub",
+      "bech32PrefixValAddr": "umeevaloper",
+      "bech32PrefixValPub": "umeevaloperpub",
+      "bech32PrefixConsAddr": "umeevalcons",
+      "bech32PrefixConsPub": "umeevalconspub"
+    },
+    "bip44": {
+      "coinType": 118
+    },
+    "chainId": "umee-1",
+    "chainName": "UMEE",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+    "currencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "UMEE",
+        "coinGeckoId": "umee",
+        "coinMinimalDenom": "uumee"
+      }
+    ],
+    "features": [],
+    "feeCurrencies": [
+      {
+        "coinDecimals": 6,
+        "coinDenom": "UMEE",
+        "coinGeckoId": "umee",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
+        "gasPriceStep": {
+          "low": 0.06,
+          "average": 0.1,
+          "high": 0.14
+        },
+        "coinMinimalDenom": "uumee"
+      }
+    ],
+    "rest": "https://umee-cmp-api.polkachu.com",
+    "rpc": "https://umee-cmp-rpc.polkachu.com",
+    "stakeCurrency": {
+      "coinDecimals": 6,
+      "coinDenom": "UMEE",
+      "coinGeckoId": "umee",
+      "coinMinimalDenom": "uumee",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
+    },
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
+  },
   "agoric-3": {
     "bech32Config": {
       "bech32PrefixAccAddr": "agoric",
@@ -155,55 +495,6 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://explorer.nodestake.top/composable"
   },
-  "chihuahua-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "chihuahua",
-      "bech32PrefixAccPub": "chihuahuapub",
-      "bech32PrefixValAddr": "chihuahuavaloper",
-      "bech32PrefixValPub": "chihuahuavaloperpub",
-      "bech32PrefixConsAddr": "chihuahuavalcons",
-      "bech32PrefixConsPub": "chihuahuavalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "chihuahua-1",
-    "chainName": "Chihuahua",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "HUAHUA",
-        "coinGeckoId": "chihuahua-token",
-        "coinMinimalDenom": "uhuahua"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "HUAHUA",
-        "coinGeckoId": "chihuahua-token",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-        "gasPriceStep": {
-          "low": 500,
-          "average": 1250,
-          "high": 2000
-        },
-        "coinMinimalDenom": "uhuahua"
-      }
-    ],
-    "rest": "https://chihuahua-api.polkachu.com",
-    "rpc": "https://chihuahua-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "HUAHUA",
-      "coinGeckoId": "chihuahua-token",
-      "coinMinimalDenom": "uhuahua",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
-  },
   "coreum-mainnet-1": {
     "bech32Config": {
       "bech32PrefixAccAddr": "core",
@@ -304,97 +595,6 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
-  },
-  "injective-1": {
-    "bech32Config": {
-      "bech32PrefixAccPub": "injpub",
-      "bech32PrefixValPub": "injvaloperpub",
-      "bech32PrefixAccAddr": "inj",
-      "bech32PrefixConsPub": "injvalconspub",
-      "bech32PrefixValAddr": "injvaloper",
-      "bech32PrefixConsAddr": "injvalcons"
-    },
-    "bip44": {
-      "coinType": 60
-    },
-    "chainId": "injective-1",
-    "chainName": "Injective",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 18,
-        "coinDenom": "INJ",
-        "coinGeckoId": "injective-protocol",
-        "coinMinimalDenom": "inj"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 18,
-        "coinDenom": "INJ",
-        "coinGeckoId": "injective-protocol",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png",
-        "gasPriceStep": {
-          "low": 500000000,
-          "average": 1000000000,
-          "high": 1500000000
-        },
-        "coinMinimalDenom": "inj"
-      }
-    ],
-    "rest": "https://injective-api.polkachu.com",
-    "rpc": "https://injective-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 18,
-      "coinDenom": "INJ",
-      "coinGeckoId": "injective-protocol",
-      "coinMinimalDenom": "inj",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/inj.png"
-    }
-  },
-  "kaiyo-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "kujira",
-      "bech32PrefixAccPub": "kujirapub",
-      "bech32PrefixValAddr": "kujiravaloper",
-      "bech32PrefixValPub": "kujiravaloperpub",
-      "bech32PrefixConsAddr": "kujiravalcons",
-      "bech32PrefixConsPub": "kujiravalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "kaiyo-1",
-    "chainName": "Kujira",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "KUJI",
-        "coinGeckoId": "kujira",
-        "coinMinimalDenom": "ukuji"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "KUJI",
-        "coinGeckoId": "kujira",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png",
-        "coinMinimalDenom": "ukuji"
-      }
-    ],
-    "rest": "https://kujira-api.polkachu.com",
-    "rpc": "https://kujira-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "KUJI",
-      "coinGeckoId": "kujira",
-      "coinMinimalDenom": "ukuji",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
-    }
   },
   "neutron-1": {
     "bech32Config": {
@@ -505,54 +705,61 @@ export const keplrChains :Record<string, ChainInfo>= {
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis"
   },
-  "quicksilver-2": {
+  "secret-4": {
     "bech32Config": {
-      "bech32PrefixAccAddr": "quick",
-      "bech32PrefixAccPub": "quickpub",
-      "bech32PrefixValAddr": "quickvaloper",
-      "bech32PrefixValPub": "quickvaloperpub",
-      "bech32PrefixConsAddr": "quickvalcons",
-      "bech32PrefixConsPub": "quickvalconspub"
+      "bech32PrefixAccAddr": "secret",
+      "bech32PrefixAccPub": "secretpub",
+      "bech32PrefixValAddr": "secretvaloper",
+      "bech32PrefixValPub": "secretvaloperpub",
+      "bech32PrefixConsAddr": "secretvalcons",
+      "bech32PrefixConsPub": "secretvalconspub"
     },
     "bip44": {
-      "coinType": 118
+      "coinType": 529
     },
-    "chainId": "quicksilver-2",
-    "chainName": "Quicksilver",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
+    "chainId": "secret-4",
+    "chainName": "Secret Network",
+    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
     "currencies": [
       {
         "coinDecimals": 6,
-        "coinDenom": "QCK",
-        "coinGeckoId": "quicksilver",
-        "coinMinimalDenom": "uqck"
+        "coinDenom": "SCRT",
+        "coinGeckoId": "secret",
+        "coinMinimalDenom": "uscrt"
+      },
+      {
+        "coinDecimals": 6,
+        "coinDenom": "SILK",
+        "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
+        "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
+      },
+      {
+        "coinDecimals": 8,
+        "coinDenom": "SHD",
+        "coinGeckoId": "shade-protocol",
+        "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
       }
     ],
     "features": [],
     "feeCurrencies": [
       {
         "coinDecimals": 6,
-        "coinDenom": "QCK",
-        "coinGeckoId": "quicksilver",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png",
-        "gasPriceStep": {
-          "low": 0.0001,
-          "average": 0.0001,
-          "high": 0.00025
-        },
-        "coinMinimalDenom": "uqck"
+        "coinDenom": "SCRT",
+        "coinGeckoId": "secret",
+        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
+        "coinMinimalDenom": "uscrt"
       }
     ],
-    "rest": "https://quicksilver-api.polkachu.com",
-    "rpc": "https://quicksilver-rpc.polkachu.com",
+    "rest": "https://lcd.mainnet.secretsaturn.net",
+    "rpc": "https://scrt.public-rpc.com",
     "stakeCurrency": {
       "coinDecimals": 6,
-      "coinDenom": "QCK",
-      "coinGeckoId": "quicksilver",
-      "coinMinimalDenom": "uqck",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
+      "coinDenom": "SCRT",
+      "coinGeckoId": "secret",
+      "coinMinimalDenom": "uscrt",
+      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
     },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver"
+    "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network"
   },
   "pacific-1": {
     "bech32Config": {
@@ -709,213 +916,6 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
     },
     "walletUrlForStaking": "https://wallet.keplr.app/chains/stride"
-  },
-  "celestia": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "celestia",
-      "bech32PrefixAccPub": "celestiapub",
-      "bech32PrefixConsAddr": "celestiavalcons",
-      "bech32PrefixConsPub": "celestiavalconspub",
-      "bech32PrefixValAddr": "celestiavaloper",
-      "bech32PrefixValPub": "celestiavaloperpub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "celestia",
-    "chainName": "Celestia",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "TIA",
-        "coinGeckoId": "celestia",
-        "coinMinimalDenom": "utia"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "TIA",
-        "coinGeckoId": "celestia",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-        "gasPriceStep": {
-          "low": 0.01,
-          "average": 0.02,
-          "high": 0.1
-        },
-        "coinMinimalDenom": "utia"
-      }
-    ],
-    "rest": "https://api.celestia.nodestake.top",
-    "rpc": "https://rpc.celestia.nodestake.top",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "TIA",
-      "coinGeckoId": "celestia",
-      "coinMinimalDenom": "utia",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
-  },
-  "crescent-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "cre",
-      "bech32PrefixAccPub": "crepub",
-      "bech32PrefixValAddr": "crevaloper",
-      "bech32PrefixValPub": "crevaloperpub",
-      "bech32PrefixConsAddr": "crevalcons",
-      "bech32PrefixConsPub": "crevalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "crescent-1",
-    "chainName": "Crescent Network",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "CRE",
-        "coinGeckoId": "crescent-network",
-        "coinMinimalDenom": "ucre"
-      },
-      {
-        "coinDecimals": 6,
-        "coinDenom": "bCRE",
-        "coinGeckoId": "liquid-staking-crescent",
-        "coinMinimalDenom": "ubcre"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "CRE",
-        "coinGeckoId": "crescent-network",
-        "gasPriceStep": {
-          "low": 0.01,
-          "average": 0.025,
-          "high": 0.03
-        },
-        "coinMinimalDenom": "ucre"
-      }
-    ],
-    "rest": "https://crescent-cmp-api.polkachu.com",
-    "rpc": "https://crescent-cmp-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "CRE",
-      "coinGeckoId": "crescent-network",
-      "coinMinimalDenom": "ucre"
-    },
-    "walletUrlForStaking": "https://app.crescent.network/staking"
-  },
-  "umee-1": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "umee",
-      "bech32PrefixAccPub": "umeepub",
-      "bech32PrefixValAddr": "umeevaloper",
-      "bech32PrefixValPub": "umeevaloperpub",
-      "bech32PrefixConsAddr": "umeevalcons",
-      "bech32PrefixConsPub": "umeevalconspub"
-    },
-    "bip44": {
-      "coinType": 118
-    },
-    "chainId": "umee-1",
-    "chainName": "UMEE",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "UMEE",
-        "coinGeckoId": "umee",
-        "coinMinimalDenom": "uumee"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "UMEE",
-        "coinGeckoId": "umee",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
-        "gasPriceStep": {
-          "low": 0.06,
-          "average": 0.1,
-          "high": 0.14
-        },
-        "coinMinimalDenom": "uumee"
-      }
-    ],
-    "rest": "https://umee-cmp-api.polkachu.com",
-    "rpc": "https://umee-cmp-rpc.polkachu.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "UMEE",
-      "coinGeckoId": "umee",
-      "coinMinimalDenom": "uumee",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
-  },
-  "secret-4": {
-    "bech32Config": {
-      "bech32PrefixAccAddr": "secret",
-      "bech32PrefixAccPub": "secretpub",
-      "bech32PrefixValAddr": "secretvaloper",
-      "bech32PrefixValPub": "secretvaloperpub",
-      "bech32PrefixConsAddr": "secretvalcons",
-      "bech32PrefixConsPub": "secretvalconspub"
-    },
-    "bip44": {
-      "coinType": 529
-    },
-    "chainId": "secret-4",
-    "chainName": "Secret Network",
-    "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
-    "currencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "SCRT",
-        "coinGeckoId": "secret",
-        "coinMinimalDenom": "uscrt"
-      },
-      {
-        "coinDecimals": 6,
-        "coinDenom": "SILK",
-        "coinGeckoId": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2",
-        "coinMinimalDenom": "cw20:secret1fl449muk5yq8dlad7a22nje4p5d2pnsgymhjfd"
-      },
-      {
-        "coinDecimals": 8,
-        "coinDenom": "SHD",
-        "coinGeckoId": "shade-protocol",
-        "coinMinimalDenom": "cw20:secret153wu605vvp934xhd4k9dtd640zsep5jkesstdm"
-      }
-    ],
-    "features": [],
-    "feeCurrencies": [
-      {
-        "coinDecimals": 6,
-        "coinDenom": "SCRT",
-        "coinGeckoId": "secret",
-        "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png",
-        "coinMinimalDenom": "uscrt"
-      }
-    ],
-    "rest": "https://lcd.mainnet.secretsaturn.net",
-    "rpc": "https://scrt.public-rpc.com",
-    "stakeCurrency": {
-      "coinDecimals": 6,
-      "coinDenom": "SCRT",
-      "coinGeckoId": "secret",
-      "coinMinimalDenom": "uscrt",
-      "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
-    },
-    "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network"
   }
 } ;
 
