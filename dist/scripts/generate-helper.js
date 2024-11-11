@@ -188,6 +188,7 @@ var processFiles = function () {
                     solanaAssets[currency.coinDenom] = {
                         mintAddress: mintAddress,
                         minimumTransfer: solana.minimumTransfer,
+                        fromCosmosFee: solana.fromCosmosFee,
                     };
                     var decimals = currency.coinDecimals > 9 ? 9 : currency.coinDecimals || 0;
                     var realDecimals = currency.coinDecimals || 0;

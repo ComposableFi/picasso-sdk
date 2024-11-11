@@ -22,6 +22,7 @@ export interface EthereumAsset {
 export interface SolanaAsset {
     mintAddress: string;
     minimumTransfer: number;
+    fromCosmosFee: number;
 }
 export interface TokenPerChannel {
     chainId: string;

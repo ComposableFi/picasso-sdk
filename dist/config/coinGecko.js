@@ -7,6 +7,62 @@ exports.coinGecko = [
         "id": "astar"
     },
     {
+        "name": "GLMR",
+        "id": "moonbeam"
+    },
+    {
+        "name": "MOVR",
+        "id": "moonriver"
+    },
+    {
+        "name": "SDN",
+        "id": "shiden"
+    },
+    {
+        "name": "BNC_KSM",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "BNC_DOT",
+        "id": "bifrost-native-coin"
+    },
+    {
+        "name": "HUAHUA",
+        "id": "chihuahua-token"
+    },
+    {
+        "name": "INJ",
+        "id": "injective-protocol"
+    },
+    {
+        "name": "KUJI",
+        "id": "kujira"
+    },
+    {
+        "name": "USDT Kusama",
+        "id": "tether"
+    },
+    {
+        "name": "QCK",
+        "id": "quicksilver"
+    },
+    {
+        "name": "TIA",
+        "id": "celestia"
+    },
+    {
+        "name": "CRE",
+        "id": "crescent-network"
+    },
+    {
+        "name": "bCRE",
+        "id": "liquid-staking-crescent"
+    },
+    {
+        "name": "UMEE",
+        "id": "umee"
+    },
+    {
         "name": "PICA",
         "id": "picasso"
     },
@@ -29,14 +85,6 @@ exports.coinGecko = [
     {
         "name": "KSM",
         "id": "kusama"
-    },
-    {
-        "name": "GLMR",
-        "id": "moonbeam"
-    },
-    {
-        "name": "MOVR",
-        "id": "moonriver"
     },
     {
         "name": "SEI",
@@ -171,10 +219,6 @@ exports.coinGecko = [
         "id": "polkadot"
     },
     {
-        "name": "SDN",
-        "id": "shiden"
-    },
-    {
         "name": "BLD",
         "id": "agoric"
     },
@@ -187,20 +231,8 @@ exports.coinGecko = [
         "id": "archway"
     },
     {
-        "name": "BNC_KSM",
-        "id": "bifrost-native-coin"
-    },
-    {
-        "name": "BNC_DOT",
-        "id": "bifrost-native-coin"
-    },
-    {
         "name": "PICA",
         "id": "picasso"
-    },
-    {
-        "name": "HUAHUA",
-        "id": "chihuahua-token"
     },
     {
         "name": "XRP",
@@ -295,18 +327,6 @@ exports.coinGecko = [
         "id": "curve-dao-token"
     },
     {
-        "name": "INJ",
-        "id": "injective-protocol"
-    },
-    {
-        "name": "KUJI",
-        "id": "kujira"
-    },
-    {
-        "name": "USDT Kusama",
-        "id": "tether"
-    },
-    {
         "name": "ASTRO",
         "id": "astroport-fi"
     },
@@ -323,8 +343,16 @@ exports.coinGecko = [
         "id": "milkyway-staked-tia"
     },
     {
-        "name": "QCK",
-        "id": "quicksilver"
+        "name": "SCRT",
+        "id": "secret"
+    },
+    {
+        "name": "SILK",
+        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
+    },
+    {
+        "name": "SHD",
+        "id": "shade-protocol"
     },
     {
         "name": "SEI",
@@ -397,33 +425,5 @@ exports.coinGecko = [
     {
         "name": "stATOM",
         "id": "stride-staked-atom"
-    },
-    {
-        "name": "TIA",
-        "id": "celestia"
-    },
-    {
-        "name": "CRE",
-        "id": "crescent-network"
-    },
-    {
-        "name": "bCRE",
-        "id": "liquid-staking-crescent"
-    },
-    {
-        "name": "UMEE",
-        "id": "umee"
-    },
-    {
-        "name": "SCRT",
-        "id": "secret"
-    },
-    {
-        "name": "SILK",
-        "id": "silk-bcec1136-561c-4706-a42c-8b67d0d7f7d2"
-    },
-    {
-        "name": "SHD",
-        "id": "shade-protocol"
     }
 ];
