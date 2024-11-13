@@ -32,7 +32,7 @@
       "coinMinimalDenom": "usei",
       "coinDecimals": 6,
       "isCoin": true,
-
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
       "coinGeckoId": "sei-network",
       "cosmos": {
         "gasPriceStep": {

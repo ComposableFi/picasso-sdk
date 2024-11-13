@@ -790,6 +790,7 @@ export const keplrChains :Record<string, ChainInfo>= {
         "coinDecimals": 6,
         "coinDenom": "SEI",
         "coinGeckoId": "sei-network",
+        "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
         "gasPriceStep": {
           "low": 0.1,
           "average": 0.2,
@@ -804,7 +805,8 @@ export const keplrChains :Record<string, ChainInfo>= {
       "coinDecimals": 6,
       "coinDenom": "SEI",
       "coinGeckoId": "sei-network",
-      "coinMinimalDenom": "usei"
+      "coinMinimalDenom": "usei",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg"
     }
   },
   "stargaze-1": {
