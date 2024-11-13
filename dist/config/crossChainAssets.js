@@ -336,7 +336,7 @@ exports.crossChainAssets = {
             "decimals": 6,
             "minimalDenom": "usei",
             "denom": "SEI",
-            "imageUrl": "",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
             "codeHash": ""
         },
         "SOL": {
@@ -835,7 +835,7 @@ exports.crossChainAssets = {
             "minimalDenom": "transfer/channel-1/transfer/channel-3/transfer/channel-782/usei",
             "denom": "SEI",
             "realDecimals": 6,
-            "imageUrl": "",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
             "currentChainId": "solana"
         },
         "SOL": {
@@ -1308,7 +1308,7 @@ exports.crossChainAssets = {
             "decimals": 6,
             "minimalDenom": "transfer/channel-2/transfer/channel-3/transfer/channel-782/usei",
             "denom": "SEI",
-            "imageUrl": "",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
             "currentChainId": "ethereum"
         },
         "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143": {
@@ -1750,6 +1750,7 @@ exports.crossChainAssets = {
             "decimals": 6,
             "minimalDenom": "usei",
             "denom": "SEI",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
             "currentChainId": "2087"
         },
         "40": {
