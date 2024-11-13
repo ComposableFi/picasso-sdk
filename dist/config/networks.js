@@ -360,6 +360,237 @@ exports.networks = {
             "centauri-1"
         ]
     },
+    "chihuahua-1": {
+        "name": "Chihuahua",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
+        "rpc": "https://chihuahua-rpc.polkachu.com",
+        "rest": "https://chihuahua-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "chihuahua-1",
+        "feeAssetId": "uhuahua",
+        "cosmos": {
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "chihuahua",
+                "bech32PrefixAccPub": "chihuahuapub",
+                "bech32PrefixValAddr": "chihuahuavaloper",
+                "bech32PrefixValPub": "chihuahuavaloperpub",
+                "bech32PrefixConsAddr": "chihuahuavalcons",
+                "bech32PrefixConsPub": "chihuahuavalconspub"
+            },
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
+        },
+        "enabled": true,
+        "explorer": [
+            {
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/chihuahua"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "injective-1": {
+        "name": "Injective",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
+        "rpc": "https://injective-rpc.polkachu.com",
+        "rest": "https://injective-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "injective-1",
+        "feeAssetId": "inj",
+        "cosmos": {
+            "bech32Config": {
+                "bech32PrefixAccPub": "injpub",
+                "bech32PrefixValPub": "injvaloperpub",
+                "bech32PrefixAccAddr": "inj",
+                "bech32PrefixConsPub": "injvalconspub",
+                "bech32PrefixValAddr": "injvaloper",
+                "bech32PrefixConsAddr": "injvalcons"
+            },
+            "bip44": {
+                "coinType": 60
+            }
+        },
+        "enabled": true,
+        "explorer": [
+            {
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/injective"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "kaiyo-1": {
+        "name": "Kujira",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
+        "rpc": "https://kujira-rpc.polkachu.com",
+        "rest": "https://kujira-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "kaiyo-1",
+        "feeAssetId": "ukuji",
+        "cosmos": {
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "kujira",
+                "bech32PrefixAccPub": "kujirapub",
+                "bech32PrefixValAddr": "kujiravaloper",
+                "bech32PrefixValPub": "kujiravaloperpub",
+                "bech32PrefixConsAddr": "kujiravalcons",
+                "bech32PrefixConsPub": "kujiravalconspub"
+            }
+        },
+        "enabled": true,
+        "explorer": [
+            {
+                "type": "pingPub",
+                "url": "https://ping.pub/kujira"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "quicksilver-2": {
+        "name": "Quicksilver",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
+        "rpc": "https://quicksilver-rpc.polkachu.com",
+        "rest": "https://quicksilver-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "quicksilver-2",
+        "feeAssetId": "uqck",
+        "cosmos": {
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "quick",
+                "bech32PrefixAccPub": "quickpub",
+                "bech32PrefixValAddr": "quickvaloper",
+                "bech32PrefixValPub": "quickvaloperpub",
+                "bech32PrefixConsAddr": "quickvalcons",
+                "bech32PrefixConsPub": "quickvalconspub"
+            }
+        },
+        "enabled": true,
+        "explorer": [
+            {
+                "type": "pingPub",
+                "url": "https://ping.pub/quicksilver"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "celestia": {
+        "name": "Celestia",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
+        "rpc": "https://rpc.celestia.nodestake.top",
+        "rest": "https://api.celestia.nodestake.top",
+        "chainType": "cosmos",
+        "chainId": "celestia",
+        "feeAssetId": "utia",
+        "cosmos": {
+            "bech32Config": {
+                "bech32PrefixAccAddr": "celestia",
+                "bech32PrefixAccPub": "celestiapub",
+                "bech32PrefixConsAddr": "celestiavalcons",
+                "bech32PrefixConsPub": "celestiavalconspub",
+                "bech32PrefixValAddr": "celestiavaloper",
+                "bech32PrefixValPub": "celestiavaloperpub"
+            },
+            "bip44": {
+                "coinType": 118
+            },
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
+        },
+        "enabled": false,
+        "explorer": [
+            {
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/celestia"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "crescent-1": {
+        "name": "Crescent Network",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
+        "rpc": "https://crescent-cmp-rpc.polkachu.com",
+        "rest": "https://crescent-cmp-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "crescent-1",
+        "feeAssetId": "ucre",
+        "cosmos": {
+            "walletUrl": "https://app.crescent.network/",
+            "walletUrlForStaking": "https://app.crescent.network/staking",
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "cre",
+                "bech32PrefixAccPub": "crepub",
+                "bech32PrefixValAddr": "crevaloper",
+                "bech32PrefixValPub": "crevaloperpub",
+                "bech32PrefixConsAddr": "crevalcons",
+                "bech32PrefixConsPub": "crevalconspub"
+            }
+        },
+        "enabled": false,
+        "explorer": [
+            {
+                "type": "pingPub",
+                "url": "https://ping.pub/crescent"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
+    "umee-1": {
+        "name": "UMEE",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
+        "rpc": "https://umee-cmp-rpc.polkachu.com",
+        "rest": "https://umee-cmp-api.polkachu.com",
+        "chainType": "cosmos",
+        "chainId": "umee-1",
+        "feeAssetId": "uumee",
+        "cosmos": {
+            "walletUrl": "https://wallet.keplr.app/chains/umee",
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
+            "bip44": {
+                "coinType": 118
+            },
+            "bech32Config": {
+                "bech32PrefixAccAddr": "umee",
+                "bech32PrefixAccPub": "umeepub",
+                "bech32PrefixValAddr": "umeevaloper",
+                "bech32PrefixValPub": "umeevaloperpub",
+                "bech32PrefixConsAddr": "umeevalcons",
+                "bech32PrefixConsPub": "umeevalconspub"
+            }
+        },
+        "enabled": false,
+        "explorer": [
+            {
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/umee"
+            }
+        ],
+        "network_to": [
+            "centauri-1"
+        ]
+    },
     "kusama": {
         "name": "Kusama",
         "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/kusama.svg",
@@ -550,39 +781,6 @@ exports.networks = {
             "solana"
         ]
     },
-    "chihuahua-1": {
-        "name": "Chihuahua",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png",
-        "rpc": "https://chihuahua-rpc.polkachu.com",
-        "rest": "https://chihuahua-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "chihuahua-1",
-        "feeAssetId": "uhuahua",
-        "cosmos": {
-            "bip44": {
-                "coinType": 118
-            },
-            "bech32Config": {
-                "bech32PrefixAccAddr": "chihuahua",
-                "bech32PrefixAccPub": "chihuahuapub",
-                "bech32PrefixValAddr": "chihuahuavaloper",
-                "bech32PrefixValPub": "chihuahuavaloperpub",
-                "bech32PrefixConsAddr": "chihuahuavalcons",
-                "bech32PrefixConsPub": "chihuahuavalconspub"
-            },
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
-        },
-        "enabled": true,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/chihuahua"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
     "coreum-mainnet-1": {
         "name": "Coreum",
         "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
@@ -667,70 +865,6 @@ exports.networks = {
             "centauri-1"
         ]
     },
-    "injective-1": {
-        "name": "Injective",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/injective/chain.png",
-        "rpc": "https://injective-rpc.polkachu.com",
-        "rest": "https://injective-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "injective-1",
-        "feeAssetId": "inj",
-        "cosmos": {
-            "bech32Config": {
-                "bech32PrefixAccPub": "injpub",
-                "bech32PrefixValPub": "injvaloperpub",
-                "bech32PrefixAccAddr": "inj",
-                "bech32PrefixConsPub": "injvalconspub",
-                "bech32PrefixValAddr": "injvaloper",
-                "bech32PrefixConsAddr": "injvalcons"
-            },
-            "bip44": {
-                "coinType": 60
-            }
-        },
-        "enabled": true,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/injective"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "kaiyo-1": {
-        "name": "Kujira",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/chain.png",
-        "rpc": "https://kujira-rpc.polkachu.com",
-        "rest": "https://kujira-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "kaiyo-1",
-        "feeAssetId": "ukuji",
-        "cosmos": {
-            "bip44": {
-                "coinType": 118
-            },
-            "bech32Config": {
-                "bech32PrefixAccAddr": "kujira",
-                "bech32PrefixAccPub": "kujirapub",
-                "bech32PrefixValAddr": "kujiravaloper",
-                "bech32PrefixValPub": "kujiravaloperpub",
-                "bech32PrefixConsAddr": "kujiravalcons",
-                "bech32PrefixConsPub": "kujiravalconspub"
-            }
-        },
-        "enabled": true,
-        "explorer": [
-            {
-                "type": "pingPub",
-                "url": "https://ping.pub/kujira"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
     "neutron-1": {
         "name": "Neutron",
         "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
@@ -798,33 +932,39 @@ exports.networks = {
             "centauri-1"
         ]
     },
-    "quicksilver-2": {
-        "name": "Quicksilver",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/chain.png",
-        "rpc": "https://quicksilver-rpc.polkachu.com",
-        "rest": "https://quicksilver-api.polkachu.com",
+    "secret-4": {
+        "name": "Secret Network",
+        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
+        "rpc": "https://scrt.public-rpc.com",
+        "rest": "https://lcd.mainnet.secretsaturn.net",
         "chainType": "cosmos",
-        "chainId": "quicksilver-2",
-        "feeAssetId": "uqck",
+        "chainId": "secret-4",
+        "feeAssetId": "uscrt",
         "cosmos": {
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver",
+            "walletUrl": "https://wallet.keplr.app/chains/secret-network",
+            "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
             "bip44": {
-                "coinType": 118
+                "coinType": 529
             },
+            "alternativeBIP44s": [
+                {
+                    "coinType": 118
+                }
+            ],
             "bech32Config": {
-                "bech32PrefixAccAddr": "quick",
-                "bech32PrefixAccPub": "quickpub",
-                "bech32PrefixValAddr": "quickvaloper",
-                "bech32PrefixValPub": "quickvaloperpub",
-                "bech32PrefixConsAddr": "quickvalcons",
-                "bech32PrefixConsPub": "quickvalconspub"
+                "bech32PrefixAccAddr": "secret",
+                "bech32PrefixAccPub": "secretpub",
+                "bech32PrefixValAddr": "secretvaloper",
+                "bech32PrefixValPub": "secretvaloperpub",
+                "bech32PrefixConsAddr": "secretvalcons",
+                "bech32PrefixConsPub": "secretvalconspub"
             }
         },
         "enabled": true,
         "explorer": [
             {
-                "type": "pingPub",
-                "url": "https://ping.pub/quicksilver"
+                "type": "mintscan",
+                "url": "https://www.mintscan.io/secret"
             }
         ],
         "network_to": [
@@ -944,146 +1084,6 @@ exports.networks = {
             {
                 "type": "mintscan",
                 "url": "https://www.mintscan.io/stride"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "celestia": {
-        "name": "Celestia",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/celestia/chain.png",
-        "rpc": "https://rpc.celestia.nodestake.top",
-        "rest": "https://api.celestia.nodestake.top",
-        "chainType": "cosmos",
-        "chainId": "celestia",
-        "feeAssetId": "utia",
-        "cosmos": {
-            "bech32Config": {
-                "bech32PrefixAccAddr": "celestia",
-                "bech32PrefixAccPub": "celestiapub",
-                "bech32PrefixConsAddr": "celestiavalcons",
-                "bech32PrefixConsPub": "celestiavalconspub",
-                "bech32PrefixValAddr": "celestiavaloper",
-                "bech32PrefixValPub": "celestiavaloperpub"
-            },
-            "bip44": {
-                "coinType": 118
-            },
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/celestia"
-        },
-        "enabled": false,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/celestia"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "crescent-1": {
-        "name": "Crescent Network",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
-        "rpc": "https://crescent-cmp-rpc.polkachu.com",
-        "rest": "https://crescent-cmp-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "crescent-1",
-        "feeAssetId": "ucre",
-        "cosmos": {
-            "walletUrl": "https://app.crescent.network/",
-            "walletUrlForStaking": "https://app.crescent.network/staking",
-            "bip44": {
-                "coinType": 118
-            },
-            "bech32Config": {
-                "bech32PrefixAccAddr": "cre",
-                "bech32PrefixAccPub": "crepub",
-                "bech32PrefixValAddr": "crevaloper",
-                "bech32PrefixValPub": "crevaloperpub",
-                "bech32PrefixConsAddr": "crevalcons",
-                "bech32PrefixConsPub": "crevalconspub"
-            }
-        },
-        "enabled": false,
-        "explorer": [
-            {
-                "type": "pingPub",
-                "url": "https://ping.pub/crescent"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "umee-1": {
-        "name": "UMEE",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/chain.png",
-        "rpc": "https://umee-cmp-rpc.polkachu.com",
-        "rest": "https://umee-cmp-api.polkachu.com",
-        "chainType": "cosmos",
-        "chainId": "umee-1",
-        "feeAssetId": "uumee",
-        "cosmos": {
-            "walletUrl": "https://wallet.keplr.app/chains/umee",
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/umee",
-            "bip44": {
-                "coinType": 118
-            },
-            "bech32Config": {
-                "bech32PrefixAccAddr": "umee",
-                "bech32PrefixAccPub": "umeepub",
-                "bech32PrefixValAddr": "umeevaloper",
-                "bech32PrefixValPub": "umeevaloperpub",
-                "bech32PrefixConsAddr": "umeevalcons",
-                "bech32PrefixConsPub": "umeevalconspub"
-            }
-        },
-        "enabled": false,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/umee"
-            }
-        ],
-        "network_to": [
-            "centauri-1"
-        ]
-    },
-    "secret-4": {
-        "name": "Secret Network",
-        "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/chain.png",
-        "rpc": "https://scrt.public-rpc.com",
-        "rest": "https://lcd.mainnet.secretsaturn.net",
-        "chainType": "cosmos",
-        "chainId": "secret-4",
-        "feeAssetId": "uscrt",
-        "cosmos": {
-            "walletUrl": "https://wallet.keplr.app/chains/secret-network",
-            "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network",
-            "bip44": {
-                "coinType": 529
-            },
-            "alternativeBIP44s": [
-                {
-                    "coinType": 118
-                }
-            ],
-            "bech32Config": {
-                "bech32PrefixAccAddr": "secret",
-                "bech32PrefixAccPub": "secretpub",
-                "bech32PrefixValAddr": "secretvaloper",
-                "bech32PrefixValPub": "secretvaloperpub",
-                "bech32PrefixConsAddr": "secretvalcons",
-                "bech32PrefixConsPub": "secretvalconspub"
-            }
-        },
-        "enabled": true,
-        "explorer": [
-            {
-                "type": "mintscan",
-                "url": "https://www.mintscan.io/secret"
             }
         ],
         "network_to": [

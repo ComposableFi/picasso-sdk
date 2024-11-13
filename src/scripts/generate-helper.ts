@@ -170,6 +170,7 @@ const processFiles = () => {
           solanaAssets[currency.coinDenom] = {
             mintAddress: mintAddress,
             minimumTransfer: solana.minimumTransfer,
+            fromCosmosFee: solana.fromCosmosFee,
           };
 
           const decimals =

@@ -2,158 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.keplrChains = void 0;
 exports.keplrChains = {
-    "agoric-3": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "agoric",
-            "bech32PrefixAccPub": "agoricpub",
-            "bech32PrefixValAddr": "agoricvaloper",
-            "bech32PrefixValPub": "agoricvaloperpub",
-            "bech32PrefixConsAddr": "agoricvalcons",
-            "bech32PrefixConsPub": "agoricvalconspub"
-        },
-        "bip44": {
-            "coinType": 564
-        },
-        "chainId": "agoric-3",
-        "chainName": "Agoric",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "BLD",
-                "coinGeckoId": "agoric",
-                "coinMinimalDenom": "ubld"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "IST",
-                "coinGeckoId": "inter-stable-token",
-                "coinMinimalDenom": "uist"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "BLD",
-                "coinGeckoId": "agoric",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
-                "gasPriceStep": {
-                    "low": 0.03,
-                    "average": 0.05,
-                    "high": 0.07
-                },
-                "coinMinimalDenom": "ubld"
-            }
-        ],
-        "rest": "https://agoric-cmp-api.polkachu.com",
-        "rpc": "https://agoric-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "BLD",
-            "coinGeckoId": "agoric",
-            "coinMinimalDenom": "ubld",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric"
-    },
-    "archway-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "archway",
-            "bech32PrefixAccPub": "archwaypub",
-            "bech32PrefixConsAddr": "archwayvalcons",
-            "bech32PrefixConsPub": "archwayvalconspub",
-            "bech32PrefixValAddr": "archwayvaloper",
-            "bech32PrefixValPub": "archwayvaloperpub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "archway-1",
-        "chainName": "Archway",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 18,
-                "coinDenom": "ARCH",
-                "coinGeckoId": "archway",
-                "coinMinimalDenom": "aarch"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 18,
-                "coinDenom": "ARCH",
-                "coinGeckoId": "archway",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
-                "gasPriceStep": {
-                    "low": 140000000000,
-                    "average": 196000000000,
-                    "high": 225400000000
-                },
-                "coinMinimalDenom": "aarch"
-            }
-        ],
-        "rest": "https://api.mainnet.archway.io",
-        "rpc": "https://rpc.mainnet.archway.io",
-        "stakeCurrency": {
-            "coinDecimals": 18,
-            "coinDenom": "ARCH",
-            "coinGeckoId": "archway",
-            "coinMinimalDenom": "aarch",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
-        }
-    },
-    "centauri-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "pica",
-            "bech32PrefixAccPub": "picapub",
-            "bech32PrefixValAddr": "picavaloper",
-            "bech32PrefixValPub": "picavaloperpub",
-            "bech32PrefixConsAddr": "picavalcons",
-            "bech32PrefixConsPub": "picavalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "centauri-1",
-        "chainName": "Picasso",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-        "currencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 12,
-                "coinDenom": "PICA",
-                "coinGeckoId": "picasso",
-                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
-                "gasPriceStep": {
-                    "low": 0,
-                    "average": 0,
-                    "high": 0
-                },
-                "coinMinimalDenom": "ppica"
-            }
-        ],
-        "rest": "https://picasso-api.polkachu.com",
-        "rpc": "https://picasso-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 12,
-            "coinDenom": "PICA",
-            "coinGeckoId": "picasso",
-            "coinMinimalDenom": "ppica",
-            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
-        },
-        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
-    },
     "chihuahua-1": {
         "bech32Config": {
             "bech32PrefixAccAddr": "chihuahua",
@@ -202,107 +50,6 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/chihuahua/chain.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/chihuahua"
-    },
-    "coreum-mainnet-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "core",
-            "bech32PrefixAccPub": "corepub",
-            "bech32PrefixValAddr": "corevaloper",
-            "bech32PrefixValPub": "corevaloperpub",
-            "bech32PrefixConsAddr": "corevalcons",
-            "bech32PrefixConsPub": "corevalconspub"
-        },
-        "bip44": {
-            "coinType": 990
-        },
-        "chainId": "coreum-mainnet-1",
-        "chainName": "Coreum",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "XRP",
-                "coinGeckoId": "ripple",
-                "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "COREUM",
-                "coinGeckoId": "coreum",
-                "coinMinimalDenom": "ucore"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "COREUM",
-                "coinGeckoId": "coreum",
-                "gasPriceStep": {
-                    "low": 0.0625,
-                    "average": 0.0625,
-                    "high": 0.0625
-                },
-                "coinMinimalDenom": "ucore"
-            }
-        ],
-        "rest": "https://rest-coreum.ecostake.com",
-        "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "COREUM",
-            "coinGeckoId": "coreum",
-            "coinMinimalDenom": "ucore"
-        }
-    },
-    "cosmoshub-4": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "cosmos",
-            "bech32PrefixAccPub": "cosmospub",
-            "bech32PrefixConsAddr": "cosmosvalcons",
-            "bech32PrefixConsPub": "cosmosvalconspub",
-            "bech32PrefixValAddr": "cosmosvaloper",
-            "bech32PrefixValPub": "cosmosvaloperpub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "cosmoshub-4",
-        "chainName": "Cosmos Hub",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "ATOM",
-                "coinGeckoId": "cosmos",
-                "coinMinimalDenom": "uatom"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "ATOM",
-                "coinGeckoId": "cosmos",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
-                "gasPriceStep": {
-                    "average": 0.025,
-                    "high": 0.03,
-                    "low": 0.005
-                },
-                "coinMinimalDenom": "uatom"
-            }
-        ],
-        "rest": "https://cosmos-cmp-api.polkachu.com",
-        "rpc": "https://cosmos-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "ATOM",
-            "coinGeckoId": "cosmos",
-            "coinMinimalDenom": "uatom",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
     },
     "injective-1": {
         "bech32Config": {
@@ -395,115 +142,6 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/kaiyo/ukuji.png"
         }
     },
-    "neutron-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "neutron",
-            "bech32PrefixAccPub": "neutronpub",
-            "bech32PrefixValAddr": "neutronvaloper",
-            "bech32PrefixValPub": "neutronvaloperpub",
-            "bech32PrefixConsAddr": "neutronvalcons",
-            "bech32PrefixConsPub": "neutronvalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "neutron-1",
-        "chainName": "Neutron",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "ASTRO",
-                "coinGeckoId": "astroport-fi",
-                "coinMinimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "NTRN",
-                "coinGeckoId": "neutron-3",
-                "coinMinimalDenom": "untrn"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "NTRN",
-                "coinGeckoId": "neutron-3",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
-                "gasPriceStep": {
-                    "low": 0.0008,
-                    "average": 0.0008,
-                    "high": 0.0008
-                },
-                "coinMinimalDenom": "untrn"
-            }
-        ],
-        "rest": "https://neutron-cmp-api.polkachu.com",
-        "rpc": "https://neutron-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "NTRN",
-            "coinGeckoId": "neutron-3",
-            "coinMinimalDenom": "untrn",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png"
-        }
-    },
-    "osmosis-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "osmo",
-            "bech32PrefixAccPub": "osmopub",
-            "bech32PrefixValAddr": "osmovaloper",
-            "bech32PrefixValPub": "osmovaloperpub",
-            "bech32PrefixConsAddr": "osmovalcons",
-            "bech32PrefixConsPub": "osmovalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "osmosis-1",
-        "chainName": "Osmosis",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "OSMO",
-                "coinGeckoId": "osmosis",
-                "coinMinimalDenom": "uosmo"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "milkTIA",
-                "coinGeckoId": "milkyway-staked-tia",
-                "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "OSMO",
-                "coinGeckoId": "osmosis",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-                "gasPriceStep": {
-                    "low": 0.0025,
-                    "average": 0.025,
-                    "high": 0.04
-                },
-                "coinMinimalDenom": "uosmo"
-            }
-        ],
-        "rest": "https://osmosis-cmp-api.polkachu.com",
-        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "OSMO",
-            "coinGeckoId": "osmosis",
-            "coinMinimalDenom": "uosmo",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis"
-    },
     "quicksilver-2": {
         "bech32Config": {
             "bech32PrefixAccAddr": "quick",
@@ -552,162 +190,6 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/quicksilver/uqck.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/quicksilver"
-    },
-    "pacific-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "sei",
-            "bech32PrefixAccPub": "seipub",
-            "bech32PrefixValAddr": "seivaloper",
-            "bech32PrefixValPub": "seivaloperpub",
-            "bech32PrefixConsAddr": "seivalcons",
-            "bech32PrefixConsPub": "seivalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "pacific-1",
-        "chainName": "Sei",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "SEI",
-                "coinGeckoId": "sei-network",
-                "coinMinimalDenom": "usei"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "SEI",
-                "coinGeckoId": "sei-network",
-                "gasPriceStep": {
-                    "low": 0.1,
-                    "average": 0.2,
-                    "high": 0.3
-                },
-                "coinMinimalDenom": "usei"
-            }
-        ],
-        "rest": "https://sei-api.polkachu.com",
-        "rpc": "https://sei-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "SEI",
-            "coinGeckoId": "sei-network",
-            "coinMinimalDenom": "usei"
-        }
-    },
-    "stargaze-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "stars",
-            "bech32PrefixAccPub": "starspub",
-            "bech32PrefixValAddr": "starsvaloper",
-            "bech32PrefixValPub": "starsvaloperpub",
-            "bech32PrefixConsAddr": "starsvalcons",
-            "bech32PrefixConsPub": "starsvalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "stargaze-1",
-        "chainName": "Stargaze",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "STARS",
-                "coinGeckoId": "stargaze",
-                "coinMinimalDenom": "ustars"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "STARS",
-                "coinGeckoId": "stargaze",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
-                "gasPriceStep": {
-                    "low": 1,
-                    "average": 1.1,
-                    "high": 1.2
-                },
-                "coinMinimalDenom": "ustars"
-            }
-        ],
-        "rest": "https://stargaze-cmp-api.polkachu.com",
-        "rpc": "https://stargaze-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "STARS",
-            "coinGeckoId": "stargaze",
-            "coinMinimalDenom": "ustars",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze"
-    },
-    "stride-1": {
-        "bech32Config": {
-            "bech32PrefixAccAddr": "stride",
-            "bech32PrefixAccPub": "stridepub",
-            "bech32PrefixValAddr": "stridevaloper",
-            "bech32PrefixValPub": "stridevaloperpub",
-            "bech32PrefixConsAddr": "stridevalcons",
-            "bech32PrefixConsPub": "stridevalconspub"
-        },
-        "bip44": {
-            "coinType": 118
-        },
-        "chainId": "stride-1",
-        "chainName": "Stride",
-        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/chain.png",
-        "currencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "stTIA",
-                "coinGeckoId": "stride-staked-tia",
-                "coinMinimalDenom": "stutia"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "STRD",
-                "coinGeckoId": "stride",
-                "coinMinimalDenom": "ustrd"
-            },
-            {
-                "coinDecimals": 6,
-                "coinDenom": "stATOM",
-                "coinGeckoId": "stride-staked-atom",
-                "coinMinimalDenom": "stuatom"
-            }
-        ],
-        "features": [],
-        "feeCurrencies": [
-            {
-                "coinDecimals": 6,
-                "coinDenom": "STRD",
-                "coinGeckoId": "stride",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png",
-                "gasPriceStep": {
-                    "low": 0.005,
-                    "average": 0.005,
-                    "high": 0.05
-                },
-                "coinMinimalDenom": "ustrd"
-            }
-        ],
-        "rest": "https://stride-cmp-api.polkachu.com",
-        "rpc": "https://stride-cmp-rpc.polkachu.com",
-        "stakeCurrency": {
-            "coinDecimals": 6,
-            "coinDenom": "STRD",
-            "coinGeckoId": "stride",
-            "coinMinimalDenom": "ustrd",
-            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
-        },
-        "walletUrlForStaking": "https://wallet.keplr.app/chains/stride"
     },
     "celestia": {
         "bech32Config": {
@@ -860,6 +342,368 @@ exports.keplrChains = {
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/umee"
     },
+    "agoric-3": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "agoric",
+            "bech32PrefixAccPub": "agoricpub",
+            "bech32PrefixValAddr": "agoricvaloper",
+            "bech32PrefixValPub": "agoricvaloperpub",
+            "bech32PrefixConsAddr": "agoricvalcons",
+            "bech32PrefixConsPub": "agoricvalconspub"
+        },
+        "bip44": {
+            "coinType": 564
+        },
+        "chainId": "agoric-3",
+        "chainName": "Agoric",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "BLD",
+                "coinGeckoId": "agoric",
+                "coinMinimalDenom": "ubld"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "IST",
+                "coinGeckoId": "inter-stable-token",
+                "coinMinimalDenom": "uist"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "BLD",
+                "coinGeckoId": "agoric",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
+                "gasPriceStep": {
+                    "low": 0.03,
+                    "average": 0.05,
+                    "high": 0.07
+                },
+                "coinMinimalDenom": "ubld"
+            }
+        ],
+        "rest": "https://agoric-cmp-api.polkachu.com",
+        "rpc": "https://agoric-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "BLD",
+            "coinGeckoId": "agoric",
+            "coinMinimalDenom": "ubld",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/agoric"
+    },
+    "archway-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "archway",
+            "bech32PrefixAccPub": "archwaypub",
+            "bech32PrefixConsAddr": "archwayvalcons",
+            "bech32PrefixConsPub": "archwayvalconspub",
+            "bech32PrefixValAddr": "archwayvaloper",
+            "bech32PrefixValPub": "archwayvaloperpub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "archway-1",
+        "chainName": "Archway",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 18,
+                "coinDenom": "ARCH",
+                "coinGeckoId": "archway",
+                "coinMinimalDenom": "aarch"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 18,
+                "coinDenom": "ARCH",
+                "coinGeckoId": "archway",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+                "gasPriceStep": {
+                    "low": 140000000000,
+                    "average": 196000000000,
+                    "high": 225400000000
+                },
+                "coinMinimalDenom": "aarch"
+            }
+        ],
+        "rest": "https://api.mainnet.archway.io",
+        "rpc": "https://rpc.mainnet.archway.io",
+        "stakeCurrency": {
+            "coinDecimals": 18,
+            "coinDenom": "ARCH",
+            "coinGeckoId": "archway",
+            "coinMinimalDenom": "aarch",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+        }
+    },
+    "centauri-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "pica",
+            "bech32PrefixAccPub": "picapub",
+            "bech32PrefixValAddr": "picavaloper",
+            "bech32PrefixValPub": "picavaloperpub",
+            "bech32PrefixConsAddr": "picavalcons",
+            "bech32PrefixConsPub": "picavalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "centauri-1",
+        "chainName": "Picasso",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+        "currencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 12,
+                "coinDenom": "PICA",
+                "coinGeckoId": "picasso",
+                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg",
+                "gasPriceStep": {
+                    "low": 0,
+                    "average": 0,
+                    "high": 0
+                },
+                "coinMinimalDenom": "ppica"
+            }
+        ],
+        "rest": "https://picasso-api.polkachu.com",
+        "rpc": "https://picasso-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 12,
+            "coinDenom": "PICA",
+            "coinGeckoId": "picasso",
+            "coinMinimalDenom": "ppica",
+            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/PICA.svg"
+        },
+        "walletUrlForStaking": "https://explorer.nodestake.top/composable"
+    },
+    "coreum-mainnet-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "core",
+            "bech32PrefixAccPub": "corepub",
+            "bech32PrefixValAddr": "corevaloper",
+            "bech32PrefixValPub": "corevaloperpub",
+            "bech32PrefixConsAddr": "corevalcons",
+            "bech32PrefixConsPub": "corevalconspub"
+        },
+        "bip44": {
+            "coinType": 990
+        },
+        "chainId": "coreum-mainnet-1",
+        "chainName": "Coreum",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/coreum-mainnet/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "XRP",
+                "coinGeckoId": "ripple",
+                "coinMinimalDenom": "drop-core1zhs909jp9yktml6qqx9f0ptcq2xnhhj99cja03j3lfcsp2pgm86studdrz"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "COREUM",
+                "coinGeckoId": "coreum",
+                "coinMinimalDenom": "ucore"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "COREUM",
+                "coinGeckoId": "coreum",
+                "gasPriceStep": {
+                    "low": 0.0625,
+                    "average": 0.0625,
+                    "high": 0.0625
+                },
+                "coinMinimalDenom": "ucore"
+            }
+        ],
+        "rest": "https://rest-coreum.ecostake.com",
+        "rpc": "https://full-node.mainnet-1.coreum.dev:26657",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "COREUM",
+            "coinGeckoId": "coreum",
+            "coinMinimalDenom": "ucore"
+        }
+    },
+    "cosmoshub-4": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "cosmos",
+            "bech32PrefixAccPub": "cosmospub",
+            "bech32PrefixConsAddr": "cosmosvalcons",
+            "bech32PrefixConsPub": "cosmosvalconspub",
+            "bech32PrefixValAddr": "cosmosvaloper",
+            "bech32PrefixValPub": "cosmosvaloperpub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "cosmoshub-4",
+        "chainName": "Cosmos Hub",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "ATOM",
+                "coinGeckoId": "cosmos",
+                "coinMinimalDenom": "uatom"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "ATOM",
+                "coinGeckoId": "cosmos",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png",
+                "gasPriceStep": {
+                    "average": 0.025,
+                    "high": 0.03,
+                    "low": 0.005
+                },
+                "coinMinimalDenom": "uatom"
+            }
+        ],
+        "rest": "https://cosmos-cmp-api.polkachu.com",
+        "rpc": "https://cosmos-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "ATOM",
+            "coinGeckoId": "cosmos",
+            "coinMinimalDenom": "uatom",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/uatom.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/cosmos-hub"
+    },
+    "neutron-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "neutron",
+            "bech32PrefixAccPub": "neutronpub",
+            "bech32PrefixValAddr": "neutronvaloper",
+            "bech32PrefixValPub": "neutronvaloperpub",
+            "bech32PrefixConsAddr": "neutronvalcons",
+            "bech32PrefixConsPub": "neutronvalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "neutron-1",
+        "chainName": "Neutron",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "ASTRO",
+                "coinGeckoId": "astroport-fi",
+                "coinMinimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "NTRN",
+                "coinGeckoId": "neutron-3",
+                "coinMinimalDenom": "untrn"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "NTRN",
+                "coinGeckoId": "neutron-3",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
+                "gasPriceStep": {
+                    "low": 0.0008,
+                    "average": 0.0008,
+                    "high": 0.0008
+                },
+                "coinMinimalDenom": "untrn"
+            }
+        ],
+        "rest": "https://neutron-cmp-api.polkachu.com",
+        "rpc": "https://neutron-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "NTRN",
+            "coinGeckoId": "neutron-3",
+            "coinMinimalDenom": "untrn",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png"
+        }
+    },
+    "osmosis-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "osmo",
+            "bech32PrefixAccPub": "osmopub",
+            "bech32PrefixValAddr": "osmovaloper",
+            "bech32PrefixValPub": "osmovaloperpub",
+            "bech32PrefixConsAddr": "osmovalcons",
+            "bech32PrefixConsPub": "osmovalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "osmosis-1",
+        "chainName": "Osmosis",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "OSMO",
+                "coinGeckoId": "osmosis",
+                "coinMinimalDenom": "uosmo"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "milkTIA",
+                "coinGeckoId": "milkyway-staked-tia",
+                "coinMinimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "OSMO",
+                "coinGeckoId": "osmosis",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+                "gasPriceStep": {
+                    "low": 0.0025,
+                    "average": 0.025,
+                    "high": 0.04
+                },
+                "coinMinimalDenom": "uosmo"
+            }
+        ],
+        "rest": "https://osmosis-cmp-api.polkachu.com",
+        "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "OSMO",
+            "coinGeckoId": "osmosis",
+            "coinMinimalDenom": "uosmo",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis"
+    },
     "secret-4": {
         "bech32Config": {
             "bech32PrefixAccAddr": "secret",
@@ -915,5 +759,163 @@ exports.keplrChains = {
             "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/secret/uscrt.png"
         },
         "walletUrlForStaking": "https://wallet.keplr.app/chains/secret-network"
+    },
+    "pacific-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "sei",
+            "bech32PrefixAccPub": "seipub",
+            "bech32PrefixValAddr": "seivaloper",
+            "bech32PrefixValPub": "seivaloperpub",
+            "bech32PrefixConsAddr": "seivalcons",
+            "bech32PrefixConsPub": "seivalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "pacific-1",
+        "chainName": "Sei",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/chains/sei.svg",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "SEI",
+                "coinGeckoId": "sei-network",
+                "coinMinimalDenom": "usei"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "SEI",
+                "coinGeckoId": "sei-network",
+                "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg",
+                "gasPriceStep": {
+                    "low": 0.1,
+                    "average": 0.2,
+                    "high": 0.3
+                },
+                "coinMinimalDenom": "usei"
+            }
+        ],
+        "rest": "https://sei-api.polkachu.com",
+        "rpc": "https://sei-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "SEI",
+            "coinGeckoId": "sei-network",
+            "coinMinimalDenom": "usei",
+            "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/sei.svg"
+        }
+    },
+    "stargaze-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "stars",
+            "bech32PrefixAccPub": "starspub",
+            "bech32PrefixValAddr": "starsvaloper",
+            "bech32PrefixValPub": "starsvaloperpub",
+            "bech32PrefixConsAddr": "starsvalcons",
+            "bech32PrefixConsPub": "starsvalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "stargaze-1",
+        "chainName": "Stargaze",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "STARS",
+                "coinGeckoId": "stargaze",
+                "coinMinimalDenom": "ustars"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "STARS",
+                "coinGeckoId": "stargaze",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png",
+                "gasPriceStep": {
+                    "low": 1,
+                    "average": 1.1,
+                    "high": 1.2
+                },
+                "coinMinimalDenom": "ustars"
+            }
+        ],
+        "rest": "https://stargaze-cmp-api.polkachu.com",
+        "rpc": "https://stargaze-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "STARS",
+            "coinGeckoId": "stargaze",
+            "coinMinimalDenom": "ustars",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stargaze/ustars.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/stargaze"
+    },
+    "stride-1": {
+        "bech32Config": {
+            "bech32PrefixAccAddr": "stride",
+            "bech32PrefixAccPub": "stridepub",
+            "bech32PrefixValAddr": "stridevaloper",
+            "bech32PrefixValPub": "stridevaloperpub",
+            "bech32PrefixConsAddr": "stridevalcons",
+            "bech32PrefixConsPub": "stridevalconspub"
+        },
+        "bip44": {
+            "coinType": 118
+        },
+        "chainId": "stride-1",
+        "chainName": "Stride",
+        "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/chain.png",
+        "currencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "stTIA",
+                "coinGeckoId": "stride-staked-tia",
+                "coinMinimalDenom": "stutia"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "STRD",
+                "coinGeckoId": "stride",
+                "coinMinimalDenom": "ustrd"
+            },
+            {
+                "coinDecimals": 6,
+                "coinDenom": "stATOM",
+                "coinGeckoId": "stride-staked-atom",
+                "coinMinimalDenom": "stuatom"
+            }
+        ],
+        "features": [],
+        "feeCurrencies": [
+            {
+                "coinDecimals": 6,
+                "coinDenom": "STRD",
+                "coinGeckoId": "stride",
+                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png",
+                "gasPriceStep": {
+                    "low": 0.005,
+                    "average": 0.005,
+                    "high": 0.05
+                },
+                "coinMinimalDenom": "ustrd"
+            }
+        ],
+        "rest": "https://stride-cmp-api.polkachu.com",
+        "rpc": "https://stride-cmp-rpc.polkachu.com",
+        "stakeCurrency": {
+            "coinDecimals": 6,
+            "coinDenom": "STRD",
+            "coinGeckoId": "stride",
+            "coinMinimalDenom": "ustrd",
+            "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/ustrd.png"
+        },
+        "walletUrlForStaking": "https://wallet.keplr.app/chains/stride"
     }
 };
