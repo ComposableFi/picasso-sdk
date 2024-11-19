@@ -174,6 +174,7 @@ export const solanaTransfer = async ({
 
   const buffer = borshSerialize(instructionSchema, instructionPayload);
 
+  console.log(buffer, 'buffer');
   const {
     guestChainPDA,
     triePDA,
@@ -210,6 +211,7 @@ export const solanaTransfer = async ({
     data: buffer, // All instructions are hellos
   });
 
+  console.log(instruction, 'instruction');
   return await sendTX(
     tx,
     accountId,
