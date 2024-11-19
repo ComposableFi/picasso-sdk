@@ -40,7 +40,7 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
   },
   "PICA": {
     "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-    "cosmosToEthereumFee": 2000,
+    "cosmosToEthereumFee": 2400,
     "minimumTransfer": 5000
   },
   "XRP": {
@@ -55,7 +55,7 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
   },
   "ATOM": {
     "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
-    "cosmosToEthereumFee": 2,
+    "cosmosToEthereumFee": 2.5,
     "minimumTransfer": 5
   },
   "ETH": {
@@ -170,32 +170,32 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
   },
   "JitoSOL": {
     "erc20Address": "0xBe90556468e5eE2A15Da99a5C0e045ED0B142143",
-    "cosmosToEthereumFee": 0.05,
+    "cosmosToEthereumFee": 0.025,
     "minimumTransfer": 0.2
   },
   "mSOL": {
     "erc20Address": "0xDa7Fa7248F62e051ccA4Af2522439A61d3976462",
-    "cosmosToEthereumFee": 0.05,
+    "cosmosToEthereumFee": 0.023,
     "minimumTransfer": 0.2
   },
   "bSOL": {
     "erc20Address": "0xc0732030f4DB63cfE0323dd87b497AE4Ecb43CEc",
-    "cosmosToEthereumFee": 0.0055,
+    "cosmosToEthereumFee": 0.024,
     "minimumTransfer": 0.2
   },
   "LST": {
     "erc20Address": "0x247dB9746755CF119d3AD68A6f8f60E7E650BFa1",
-    "cosmosToEthereumFee": 0.05,
+    "cosmosToEthereumFee": 0.024,
     "minimumTransfer": 0.2
   },
   "edgeSOL": {
     "erc20Address": "0x3d078B97918eDe947aF59E679eceF9fd87C32082",
-    "cosmosToEthereumFee": 0.05,
+    "cosmosToEthereumFee": 0.024,
     "minimumTransfer": 0.2
   },
   "jupSOL": {
     "erc20Address": "0x5cD8cd3c5e8780cCBc74277f22b099FEFd04F5ef",
-    "cosmosToEthereumFee": 0.05,
+    "cosmosToEthereumFee": 0.024,
     "minimumTransfer": 0.2
   },
   "hSOL": {
@@ -205,22 +205,22 @@ export const ethereumAssets :Record<string, EthereumAsset>= {
   },
   "wSOL": {
     "erc20Address": "0xd1D82d3Ab815E0B47e38EC2d666c5b8AA05Ae501",
-    "cosmosToEthereumFee": 0.055,
+    "cosmosToEthereumFee": 0.028,
     "minimumTransfer": 0.2
   },
   "WIF": {
     "erc20Address": "0xCF7e6742266aD5a76ee042e26d3F766c34195E5f",
-    "cosmosToEthereumFee": 3.5,
+    "cosmosToEthereumFee": 2,
     "minimumTransfer": 9
   },
   "BONK": {
     "erc20Address": "0x4aeF9BD3fBb09d8f374436D9ec25711A1Be9BaCb",
-    "cosmosToEthereumFee": 300000,
+    "cosmosToEthereumFee": 240000,
     "minimumTransfer": 1200000
   },
   "USDT Solana": {
     "erc20Address": "0x58efE15C0404aB22F87E4495D71f6f2077e862bE",
-    "cosmosToEthereumFee": 10,
+    "cosmosToEthereumFee": 5,
     "minimumTransfer": 30
   },
   "STARS": {

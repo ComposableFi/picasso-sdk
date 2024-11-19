@@ -216,7 +216,7 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   "edgeSOL": {
     "mintAddress": "edge86g9cVz87xcpKpy3J77vbp4wYd9idEV562CCntt",
     "minimumTransfer": 0.2,
-    "fromCosmosFee": 0.025
+    "fromCosmosFee": 0.024
   },
   "cSOL": {
     "mintAddress": "5h6ssFpeDeRbzsEHDbTQNH7nVGgsKrZydxdSTnLm6QdV",
