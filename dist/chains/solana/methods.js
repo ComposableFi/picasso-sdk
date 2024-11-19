@@ -192,6 +192,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 };
                 console.log(instructionPayload, 'instructionPayload ');
                 buffer = (0, borsher_1.borshSerialize)(helper_1.instructionSchema, instructionPayload);
+                console.log(buffer, 'buffer');
                 _d = (0, helper_1.getSolanaGuestChainAccounts)(constants_1.solanaPortId, refinedSourceChannel, hashedDenom), guestChainPDA = _d.guestChainPDA, triePDA = _d.triePDA, ibcStoragePDA = _d.ibcStoragePDA, mintAuthorityPDA = _d.mintAuthorityPDA, escrowAccountPDA = _d.escrowAccountPDA, feePDA = _d.feePDA;
                 instruction = new web3_js_1.TransactionInstruction({
                     keys: [
@@ -215,6 +216,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     programId: constants_1.solanaIbcProgramId,
                     data: buffer, // All instructions are hellos
                 });
+                console.log(instruction, 'instruction');
                 return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
