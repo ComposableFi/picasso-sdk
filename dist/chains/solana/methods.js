@@ -217,7 +217,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     data: buffer, // All instructions are hellos
                 });
                 console.log(instruction, 'instruction');
-                return [4 /*yield*/, sendTX(tx, accountId, endpoint, false, undefined, function () {
+                return [4 /*yield*/, sendTX(tx, accountId, endpoint, true, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
@@ -249,7 +249,7 @@ var sendTX = function (inputTx_1, address_1, endpoint_1) {
                     //set owner as feePayer
                     tx.feePayer = depositor;
                     beforeFeeFunc === null || beforeFeeFunc === void 0 ? void 0 : beforeFeeFunc();
-                    tx.add(getFee());
+                    tx.add(getFee(address, isBundle));
                     return [4 /*yield*/, constants_1.solana.signTransaction(tx).catch(function (err) {
                             utils_1.emitter.emit('CANCEL_SOLANA');
                             throw err;
@@ -340,10 +340,25 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
         });
     });
 };
-var getFee = function () {
-    var SEND_AMT = 0.01 * web3_js_1.LAMPORTS_PER_SOL; // for test, it used to be 0.006
-    var PRIORITY_FEE_IX = web3_js_1.ComputeBudgetProgram.setComputeUnitPrice({
-        microLamports: SEND_AMT,
+var getFee = function (address, isBundle) {
+    if (isBundle) {
+        return getTips(address, 15000000);
+    }
+    else {
+        var SEND_AMT = 0.01 * web3_js_1.LAMPORTS_PER_SOL; // for test, it used to be 0.006
+        var PRIORITY_FEE_IX = web3_js_1.ComputeBudgetProgram.setComputeUnitPrice({
+            microLamports: SEND_AMT,
+        });
+        return PRIORITY_FEE_IX;
+    }
+};
+var getTips = function (accountId, lamports) {
+    if (lamports === void 0) { lamports = 4000000; }
+    //0.000035
+    //0.015
+    return web3_js_1.SystemProgram.transfer({
+        toPubkey: (0, helper_1.getPublicKey)('96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5'),
+        fromPubkey: (0, helper_1.getPublicKey)(accountId),
+        lamports: lamports,
     });
-    return PRIORITY_FEE_IX;
 };
