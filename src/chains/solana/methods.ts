@@ -216,7 +216,7 @@ export const solanaTransfer = async ({
     tx,
     accountId,
     endpoint,
-    false,
+    true,
     undefined,
     () => {
       tx.add(ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
@@ -242,7 +242,7 @@ const sendTX = async (
   //set owner as feePayer
   tx.feePayer = depositor;
   beforeFeeFunc?.();
-  tx.add(getFee());
+  tx.add(getFee(address, isBundle));
   //this is event emitter for listening cancel /approval event
   const signedTx = await solana.signTransaction(tx).catch((err) => {
     emitter.emit('CANCEL_SOLANA');
@@ -284,11 +284,28 @@ const pollingSignatureStatus = async (
   }
 };
 
-const getFee = (): anchor.web3.TransactionInstruction => {
-  const SEND_AMT = 0.01 * LAMPORTS_PER_SOL; // for test, it used to be 0.006
-  const PRIORITY_FEE_IX = ComputeBudgetProgram.setComputeUnitPrice({
-    microLamports: SEND_AMT,
-  });
+const getFee = (
+  address: string,
+  isBundle: boolean
+): anchor.web3.TransactionInstruction => {
+  if (isBundle) {
+    return getTips(address, 15000000);
+  } else {
+    const SEND_AMT = 0.01 * LAMPORTS_PER_SOL; // for test, it used to be 0.006
+    const PRIORITY_FEE_IX = ComputeBudgetProgram.setComputeUnitPrice({
+      microLamports: SEND_AMT,
+    });
 
-  return PRIORITY_FEE_IX;
+    return PRIORITY_FEE_IX;
+  }
+};
+
+const getTips = (accountId: string, lamports: number = 4000000) => {
+  //0.000035
+  //0.015
+  return SystemProgram.transfer({
+    toPubkey: getPublicKey('96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5'),
+    fromPubkey: getPublicKey(accountId),
+    lamports,
+  });
 };
