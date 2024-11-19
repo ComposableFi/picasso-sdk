@@ -217,7 +217,7 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/ppica",
         "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
-        "fromCosmosFee": 2000,
+        "fromCosmosFee": 2400,
         "minimumTransfer": 5000
       },
       "solana": {
