@@ -152,7 +152,7 @@
     {
       "coinDenom": "USDT Kusama",
       "coinDecimals": 6,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT KUSAMA.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT.svg",
       "coinGeckoId": "tether",
       "cosmos": {},
       "polkadot": {
@@ -296,7 +296,7 @@
     {
       "coinDenom": "Karura Dollar",
       "coinDecimals": 12,
-      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KARURA DOLLAR.svg",
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/karura.webp",
       "coinGeckoId": "",
       "cosmos": {},
       "polkadot": {
