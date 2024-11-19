@@ -1794,7 +1794,7 @@ exports.crossChainAssets = {
             "decimals": 12,
             "minimalDenom": "129",
             "denom": "Karura Dollar",
-            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KARURA DOLLAR.svg",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/karura.webp",
             "ratio": {
                 "n": "1",
                 "d": "1"
@@ -1806,7 +1806,7 @@ exports.crossChainAssets = {
             "decimals": 6,
             "minimalDenom": "130",
             "denom": "USDT Kusama",
-            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT KUSAMA.svg",
+            "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT.svg",
             "ratio": {
                 "n": "2",
                 "d": "10000000"
