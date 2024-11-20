@@ -48,7 +48,7 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-4/uatom",
         "erc20Address": "0x519ddEff5d142Fc177d95F24952eF3D2EDe530BC",
-        "fromCosmosFee": 2.5,
+        "fromCosmosFee": 2.25,
         "minimumTransfer": 5
       },
       "solana": {

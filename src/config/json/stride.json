@@ -59,12 +59,17 @@
       },
       "isCoin": true,
 
-      "polkadot": {},
+      "polkadot": {
+        "picassoAssetId": "9",
+        "composableAssetId": "",
+        "ratio": { "n": "18", "d": "100000000" },
+        "existentialDeposit": "20000"
+      },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-5/ustrd",
         "erc20Address": "0x3f8Bb8634Ca4A61Aa23cd0DF00C3152E0eaF9587",
-        "fromCosmosFee": 15,
-        "minimumTransfer": 30
+        "minimumTransfer": 30,
+        "fromCosmosFee": 15
       },
       "solana": {
         "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
@@ -83,7 +88,12 @@
       "cosmos": {
         "minimalDenom": "stuatom"
       },
-      "polkadot": {},
+      "polkadot": {
+        "picassoAssetId": "10",
+        "composableAssetId": "",
+        "ratio": { "n": "18", "d": "1000000000" },
+        "existentialDeposit": "2000"
+      },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-5/stuatom",
         "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",

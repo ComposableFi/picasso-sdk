@@ -41,7 +41,7 @@
       "ethereum": {
         "minimalDenom": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
         "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
-        "fromCosmosFee": 35,
+        "fromCosmosFee": 20,
         "minimumTransfer": 94
       },
       "solana": {

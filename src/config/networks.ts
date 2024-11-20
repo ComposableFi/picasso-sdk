@@ -303,7 +303,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "2087",
-    "feeAssetId": "79228162514264337593543950337",
+    "feeAssetId": "",
     "polkadot": {
       "ss58Format": 49,
       "isParachain": true,

@@ -85,8 +85,8 @@
       "solana": {
         "mintAddress": "6SYCn6Hj4X3XV6dzRk8vXa1UyZc4SBvAT7p3e1AcATAx",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x6b175474e89094c44da98b954eedeac495271d0f",
-        "minimumTransfer": 20,
         "fromCosmosFee": 5,
+        "minimumTransfer": 20,
         "displayDecimals": 9
       }
     },
@@ -132,8 +132,8 @@
       "solana": {
         "mintAddress": "3AvDivzbMjfin9hSVUBjdYerKroX8jQuNyDVebdRiULE",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
-        "minimumTransfer": 20,
         "fromCosmosFee": 5,
+        "minimumTransfer": 20,
         "displayDecimals": 9
       }
     },
@@ -155,8 +155,8 @@
       "solana": {
         "mintAddress": "E5Lz7Bi1KZD9VTYXsCZhkWDiztkNzPoX7Jk71xbTkEoA",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xac3e018457b222d93114458476f3e3416abbe38f",
-        "minimumTransfer": 0.01,
         "fromCosmosFee": 0.002,
+        "minimumTransfer": 0.01,
         "displayDecimals": 9
       }
     },
@@ -224,8 +224,8 @@
       "solana": {
         "mintAddress": "Go2RiPCxrU3dWH7cs52pm2Q2R45HB2ACbYBZsx1vadZd",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x5E8422345238F34275888049021821E8E08CAa1f",
-        "minimumTransfer": 0.01,
         "fromCosmosFee": 0.002,
+        "minimumTransfer": 0.01,
         "displayDecimals": 9
       }
     },
@@ -247,8 +247,8 @@
       "solana": {
         "mintAddress": "GrkjmJt3KECe6Yi11LZxY88BJ69KyQnRtC6EioFAF1rD",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-        "minimumTransfer": 0.0003,
         "fromCosmosFee": 0.000075,
+        "minimumTransfer": 0.0003,
         "displayDecimals": 8
       }
     },
@@ -293,8 +293,8 @@
       "solana": {
         "mintAddress": "urez9EJo4YNdpQQxw6xrLfF1J3EqJSaVwPGHFNG338B",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0xae78736Cd615f374D3085123A210448E74Fc6393",
-        "minimumTransfer": 0.007,
         "fromCosmosFee": 0.0018,
+        "minimumTransfer": 0.007,
         "displayDecimals": 9
       }
     },
@@ -339,8 +339,8 @@
       "solana": {
         "mintAddress": "B1cm3Wf5ZNUdgZ1eaXaNdiy9DCmQudfmspRMBb2TqDjb",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x04c154b66cb340f3ae24111cc767e0184ed00cc6",
-        "minimumTransfer": 0.01,
         "fromCosmosFee": 0.002,
+        "minimumTransfer": 0.01,
         "displayDecimals": 9
       }
     },
@@ -362,8 +362,8 @@
       "solana": {
         "mintAddress": "CqzASJJsEA1TDvjCahP9pa7wPjqFEdouup6g5eNV71uv",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x35fa164735182de50811e8e2e824cfb9b6118ac2",
-        "minimumTransfer": 0.01,
         "fromCosmosFee": 0.002,
+        "minimumTransfer": 0.01,
         "displayDecimals": 9
       }
     },
@@ -433,8 +433,8 @@
       "solana": {
         "mintAddress": "GM4RuF5gLcytcq36wNJkX3UBYRKP9hQwJyyRWm6d6o47",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
-        "minimumTransfer": 20,
         "fromCosmosFee": 5,
+        "minimumTransfer": 20,
         "displayDecimals": 9
       }
     },

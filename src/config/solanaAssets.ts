@@ -10,23 +10,38 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   },
   "KSM": {
     "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-    "minimumTransfer": 1,
+    "minimumTransfer": 0.7,
     "fromCosmosFee": 0.3
+  },
+  "SEI": {
+    "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
+    "minimumTransfer": 30,
+    "fromCosmosFee": 13
   },
   "SILK": {
     "mintAddress": "Dcihw3DVQpxF7ri4fsdGaZWrwhtLgCvbkYHXWh1VdhQn",
     "minimumTransfer": 20,
     "fromCosmosFee": 5
   },
-  "OSMO": {
-    "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
-    "minimumTransfer": 20,
-    "fromCosmosFee": 11
+  "STRD": {
+    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
+    "minimumTransfer": 11,
+    "fromCosmosFee": 7.6
   },
   "BLD": {
     "mintAddress": "BtHCXVdDCRqDvuTfmsLK5gcz3WbSBNY5DxpzSxqAcouU",
     "minimumTransfer": 200,
     "fromCosmosFee": 105
+  },
+  "OSMO": {
+    "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+    "minimumTransfer": 20,
+    "fromCosmosFee": 11
+  },
+  "stATOM": {
+    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
+    "minimumTransfer": 2,
+    "fromCosmosFee": 1
   },
   "IST": {
     "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",
@@ -168,11 +183,6 @@ export const solanaAssets:Record<string, SolanaAsset> = {
     "minimumTransfer": 5,
     "fromCosmosFee": 5
   },
-  "SEI": {
-    "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
-    "minimumTransfer": 30,
-    "fromCosmosFee": 13
-  },
   "SOL": {
     "mintAddress": "SOL",
     "minimumTransfer": 0.2,
@@ -280,18 +290,8 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   },
   "STARS": {
     "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
-    "minimumTransfer": 2000,
-    "fromCosmosFee": 1600
-  },
-  "STRD": {
-    "mintAddress": "FjK5ms55rMZY42NUKnAayUjA8Q1nA2jhYwkHZUY7KwvE",
-    "minimumTransfer": 11,
-    "fromCosmosFee": 7.6
-  },
-  "stATOM": {
-    "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
-    "minimumTransfer": 2,
-    "fromCosmosFee": 1
+    "minimumTransfer": 990,
+    "fromCosmosFee": 800
   }
 };
 
