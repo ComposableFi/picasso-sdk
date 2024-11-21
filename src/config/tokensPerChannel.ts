@@ -116,6 +116,42 @@ export const tokensPerChannel : Record<
       ]
     }
   },
+  "archway-1": {
+    "108": {
+      "chainId": "centauri-1",
+      "destinationId": 50,
+      "tokens": [
+        "ARCH"
+      ]
+    }
+  },
+  "neutron-1": {
+    "17": {
+      "chainId": "centauri-1",
+      "destinationId": 18,
+      "tokens": [
+        "NTRN"
+      ]
+    }
+  },
+  "osmosis-1": {
+    "782": {
+      "chainId": "pacific-1",
+      "destinationId": 0,
+      "tokens": [
+        "OSMO",
+        "SEI"
+      ]
+    },
+    "1279": {
+      "chainId": "centauri-1",
+      "destinationId": 3,
+      "tokens": [
+        "OSMO",
+        "SEI"
+      ]
+    }
+  },
   "agoric-3": {
     "55": {
       "chainId": "centauri-1",
@@ -123,15 +159,6 @@ export const tokensPerChannel : Record<
       "tokens": [
         "BLD",
         "IST"
-      ]
-    }
-  },
-  "archway-1": {
-    "108": {
-      "chainId": "centauri-1",
-      "destinationId": 50,
-      "tokens": [
-        "ARCH"
       ]
     }
   },
@@ -407,33 +434,6 @@ export const tokensPerChannel : Record<
         "SEI",
         "SCRT",
         "STRD"
-      ]
-    }
-  },
-  "neutron-1": {
-    "17": {
-      "chainId": "centauri-1",
-      "destinationId": 18,
-      "tokens": [
-        "NTRN"
-      ]
-    }
-  },
-  "osmosis-1": {
-    "782": {
-      "chainId": "pacific-1",
-      "destinationId": 0,
-      "tokens": [
-        "OSMO",
-        "SEI"
-      ]
-    },
-    "1279": {
-      "chainId": "centauri-1",
-      "destinationId": 3,
-      "tokens": [
-        "OSMO",
-        "SEI"
       ]
     }
   },

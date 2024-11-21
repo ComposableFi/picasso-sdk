@@ -88,6 +88,26 @@ import { CoinGeckoAsset } from './types';
     "id": "kusama"
   },
   {
+    "name": "ARCH",
+    "id": "archway"
+  },
+  {
+    "name": "ASTRO",
+    "id": "astroport-fi"
+  },
+  {
+    "name": "NTRN",
+    "id": "neutron-3"
+  },
+  {
+    "name": "OSMO",
+    "id": "osmosis"
+  },
+  {
+    "name": "milkTIA",
+    "id": "milkyway-staked-tia"
+  },
+  {
     "name": "SEI",
     "id": "sei-network"
   },
@@ -228,10 +248,6 @@ import { CoinGeckoAsset } from './types';
     "id": "inter-stable-token"
   },
   {
-    "name": "ARCH",
-    "id": "archway"
-  },
-  {
     "name": "PICA",
     "id": "picasso"
   },
@@ -326,22 +342,6 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "CRV",
     "id": "curve-dao-token"
-  },
-  {
-    "name": "ASTRO",
-    "id": "astroport-fi"
-  },
-  {
-    "name": "NTRN",
-    "id": "neutron-3"
-  },
-  {
-    "name": "OSMO",
-    "id": "osmosis"
-  },
-  {
-    "name": "milkTIA",
-    "id": "milkyway-staked-tia"
   },
   {
     "name": "SCRT",
