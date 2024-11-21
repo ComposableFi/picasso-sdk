@@ -29,7 +29,9 @@
       "cosmos": {},
       "polkadot": {
         "picassoAssetId": "6",
-        "composableAssetId": "79228162514264337593543950342"
+        "composableAssetId": "79228162514264337593543950342",
+        "ratio": { "n": "3", "d": "10000" },
+        "existentialDeposit": "21430000"
       },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-2/transfer/channel-15/79228162514264337593543950342",

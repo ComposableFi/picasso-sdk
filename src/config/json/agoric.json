@@ -52,12 +52,14 @@
       },
       "polkadot": {
         "picassoAssetId": "18",
-        "composableAssetId": "79228162514264337593543950354"
+        "composableAssetId": "79228162514264337593543950354",
+        "ratio": { "n": "12", "d": "10000000" },
+        "existentialDeposit": "120000"
       },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-13/ubld",
         "erc20Address": "0xfd11E3564691A99bF56A3545A86Af2aEb8416CA1",
-        "fromCosmosFee": 165,
+        "fromCosmosFee": 215,
         "minimumTransfer": 400
       },
       "solana": {
@@ -79,13 +81,15 @@
       },
       "polkadot": {
         "picassoAssetId": "25",
-        "composableAssetId": "79228162514264337593543950361"
+        "composableAssetId": "79228162514264337593543950361",
+        "ratio": { "n": "2", "d": "1000000" },
+        "existentialDeposit": "20000"
       },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-13/uist",
         "erc20Address": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
-        "fromCosmosFee": 10,
-        "minimumTransfer": 50
+        "minimumTransfer": 20,
+        "fromCosmosFee": 10
       },
       "solana": {
         "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",

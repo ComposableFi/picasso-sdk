@@ -49,14 +49,14 @@
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-6/ustars",
         "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
-        "fromCosmosFee": 875,
-        "minimumTransfer": 2000
+        "fromCosmosFee": 16000,
+        "minimumTransfer": 30000
       },
       "solana": {
         "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",
         "minimalDenom": "transfer/channel-1/transfer/channel-6/ustars",
-        "minimumTransfer": 2000,
-        "fromCosmosFee": 1600,
+        "minimumTransfer": 990,
+        "fromCosmosFee": 800,
         "displayDecimals": 6
       }
     }

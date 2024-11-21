@@ -43,7 +43,10 @@
         "minimalDenom": "usei"
       },
       "polkadot": {
-        "picassoAssetId": "35"
+        "picassoAssetId": "35",
+        "composableAssetId": "",
+        "ratio": { "n": "143", "d": "100000000" },
+        "existentialDeposit": "1000000"
       },
       "ethereum": {
         "minimalDenom": "transfer/channel-2/transfer/channel-3/transfer/channel-782/usei",
