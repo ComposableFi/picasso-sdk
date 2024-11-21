@@ -140,8 +140,8 @@
       "solana": {
         "mintAddress": "ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump",
         "minimalDenom": "WHINE",
-        "minimumTransfer": 10,
-        "fromCosmosFee": 40000,
+        "minimumTransfer": 40000,
+        "fromCosmosFee": 80000,
         "displayDecimals": 6
       }
     },

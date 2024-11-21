@@ -103,13 +103,13 @@
       "ethereum": {
         "minimalDenom": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
         "erc20Address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
-        "fromCosmosFee": 3,
-        "minimumTransfer": 5
+        "minimumTransfer": 10,
+        "fromCosmosFee": 5.3
       },
       "solana": {
         "mintAddress": "6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
-        "minimumTransfer": 5,
+        "minimumTransfer": 10,
         "fromCosmosFee": 2.5,
         "displayDecimals": 9
       }
@@ -172,13 +172,13 @@
       "ethereum": {
         "minimalDenom": "0x57e114b691db790c35207b2e685d4a43181e6061",
         "erc20Address": "0x57e114b691db790c35207b2e685d4a43181e6061",
-        "fromCosmosFee": 23,
-        "minimumTransfer": 20
+        "minimumTransfer": 50,
+        "fromCosmosFee": 27
       },
       "solana": {
         "mintAddress": "Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW",
         "minimalDenom": "transfer/channel-1/transfer/channel-52/0x57e114b691db790c35207b2e685d4a43181e6061",
-        "minimumTransfer": 20,
+        "minimumTransfer": 50,
         "fromCosmosFee": 15,
         "displayDecimals": 9
       }

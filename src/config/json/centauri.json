@@ -218,12 +218,12 @@
         "minimalDenom": "transfer/channel-2/ppica",
         "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
         "fromCosmosFee": 24000,
-        "minimumTransfer": 5000
+        "minimumTransfer": 50000
       },
       "solana": {
         "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
         "minimalDenom": "transfer/channel-1/ppica",
-        "minimumTransfer": 4000,
+        "minimumTransfer": 25000,
         "fromCosmosFee": 12000,
         "displayDecimals": 9
       }
