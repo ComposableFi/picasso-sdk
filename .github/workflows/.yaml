@@ -11,28 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 저장소 체크아웃
+      # 1. store checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Node.js 설치
+      # 2. Node.js install
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18 # 원하는 Node.js 버전
           cache: 'npm'
 
-      # 3. 의존성 설치
+      # 3. install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. npm 로그인
+      # 4. npm login
       - name: Authenticate with npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
 
-      # 5. 버전 업데이트 및 배포
+      # 5. update version and publish
       - name: Publish package
         run: |
           npm version patch -m "Release v%s [skip ci]" # 버전 업데이트
