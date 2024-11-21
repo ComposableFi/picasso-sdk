@@ -1,0 +1,39 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main # main 브랜치로 머지될 때 트리거
+
+jobs:
+  publish:
+    name: Publish npm Package
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 저장소 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Node.js 설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # 원하는 Node.js 버전
+          cache: 'npm'
+
+      # 3. 의존성 설치
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. npm 로그인
+      - name: Authenticate with npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
+
+      # 5. 버전 업데이트 및 배포
+      - name: Publish package
+        run: |
+          npm version patch -m "Release v%s [skip ci]" # 버전 업데이트
+          npm publish
