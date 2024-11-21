@@ -625,6 +625,105 @@ import { NetworkInfo } from './types';
       "2087"
     ]
   },
+  "archway-1": {
+    "name": "Archway",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
+    "rpc": "https://rpc.mainnet.archway.io",
+    "rest": "https://api.mainnet.archway.io",
+    "chainType": "cosmos",
+    "chainId": "archway-1",
+    "feeAssetId": "aarch",
+    "cosmos": {
+      "bech32Config": {
+        "bech32PrefixAccAddr": "archway",
+        "bech32PrefixAccPub": "archwaypub",
+        "bech32PrefixConsAddr": "archwayvalcons",
+        "bech32PrefixConsPub": "archwayvalconspub",
+        "bech32PrefixValAddr": "archwayvaloper",
+        "bech32PrefixValPub": "archwayvaloperpub"
+      },
+      "bip44": {
+        "coinType": 118
+      }
+    },
+    "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/archway"
+      }
+    ],
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "neutron-1": {
+    "name": "Neutron",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
+    "rpc": "https://neutron-cmp-rpc.polkachu.com",
+    "rest": "https://neutron-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "neutron-1",
+    "feeAssetId": "untrn",
+    "cosmos": {
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "neutron",
+        "bech32PrefixAccPub": "neutronpub",
+        "bech32PrefixValAddr": "neutronvaloper",
+        "bech32PrefixValPub": "neutronvaloperpub",
+        "bech32PrefixConsAddr": "neutronvalcons",
+        "bech32PrefixConsPub": "neutronvalconspub"
+      }
+    },
+    "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/neutron"
+      }
+    ],
+    "network_to": [
+      "centauri-1"
+    ]
+  },
+  "osmosis-1": {
+    "name": "Osmosis",
+    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
+    "rpc": "https://osmosis-cmp-rpc.polkachu.com",
+    "rest": "https://osmosis-cmp-api.polkachu.com",
+    "chainType": "cosmos",
+    "chainId": "osmosis-1",
+    "feeAssetId": "uosmo",
+    "cosmos": {
+      "walletUrl": "https://app.osmosis.zone",
+      "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
+      "bip44": {
+        "coinType": 118
+      },
+      "bech32Config": {
+        "bech32PrefixAccAddr": "osmo",
+        "bech32PrefixAccPub": "osmopub",
+        "bech32PrefixValAddr": "osmovaloper",
+        "bech32PrefixValPub": "osmovaloperpub",
+        "bech32PrefixConsAddr": "osmovalcons",
+        "bech32PrefixConsPub": "osmovalconspub"
+      }
+    },
+    "enabled": true,
+    "explorer": [
+      {
+        "type": "mintscan",
+        "url": "https://www.mintscan.io/osmosis"
+      }
+    ],
+    "network_to": [
+      "pacific-1",
+      "centauri-1"
+    ]
+  },
   "polkadot": {
     "name": "Polkadot",
     "image": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/Polkadot.svg",
@@ -692,38 +791,6 @@ import { NetworkInfo } from './types';
       {
         "type": "mintscan",
         "url": "https://www.mintscan.io/agoric"
-      }
-    ],
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "archway-1": {
-    "name": "Archway",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
-    "rpc": "https://rpc.mainnet.archway.io",
-    "rest": "https://api.mainnet.archway.io",
-    "chainType": "cosmos",
-    "chainId": "archway-1",
-    "feeAssetId": "aarch",
-    "cosmos": {
-      "bech32Config": {
-        "bech32PrefixAccAddr": "archway",
-        "bech32PrefixAccPub": "archwaypub",
-        "bech32PrefixConsAddr": "archwayvalcons",
-        "bech32PrefixConsPub": "archwayvalconspub",
-        "bech32PrefixValAddr": "archwayvaloper",
-        "bech32PrefixValPub": "archwayvaloperpub"
-      },
-      "bip44": {
-        "coinType": 118
-      }
-    },
-    "enabled": true,
-    "explorer": [
-      {
-        "type": "mintscan",
-        "url": "https://www.mintscan.io/archway"
       }
     ],
     "network_to": [
@@ -862,73 +929,6 @@ import { NetworkInfo } from './types';
       }
     ],
     "network_to": [
-      "centauri-1"
-    ]
-  },
-  "neutron-1": {
-    "name": "Neutron",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
-    "rpc": "https://neutron-cmp-rpc.polkachu.com",
-    "rest": "https://neutron-cmp-api.polkachu.com",
-    "chainType": "cosmos",
-    "chainId": "neutron-1",
-    "feeAssetId": "untrn",
-    "cosmos": {
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "neutron",
-        "bech32PrefixAccPub": "neutronpub",
-        "bech32PrefixValAddr": "neutronvaloper",
-        "bech32PrefixValPub": "neutronvaloperpub",
-        "bech32PrefixConsAddr": "neutronvalcons",
-        "bech32PrefixConsPub": "neutronvalconspub"
-      }
-    },
-    "enabled": true,
-    "explorer": [
-      {
-        "type": "mintscan",
-        "url": "https://www.mintscan.io/neutron"
-      }
-    ],
-    "network_to": [
-      "centauri-1"
-    ]
-  },
-  "osmosis-1": {
-    "name": "Osmosis",
-    "image": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/chain.png",
-    "rpc": "https://osmosis-cmp-rpc.polkachu.com",
-    "rest": "https://osmosis-cmp-api.polkachu.com",
-    "chainType": "cosmos",
-    "chainId": "osmosis-1",
-    "feeAssetId": "uosmo",
-    "cosmos": {
-      "walletUrl": "https://app.osmosis.zone",
-      "walletUrlForStaking": "https://wallet.keplr.app/chains/osmosis",
-      "bip44": {
-        "coinType": 118
-      },
-      "bech32Config": {
-        "bech32PrefixAccAddr": "osmo",
-        "bech32PrefixAccPub": "osmopub",
-        "bech32PrefixValAddr": "osmovaloper",
-        "bech32PrefixValPub": "osmovaloperpub",
-        "bech32PrefixConsAddr": "osmovalcons",
-        "bech32PrefixConsPub": "osmovalconspub"
-      }
-    },
-    "enabled": true,
-    "explorer": [
-      {
-        "type": "mintscan",
-        "url": "https://www.mintscan.io/osmosis"
-      }
-    ],
-    "network_to": [
-      "pacific-1",
       "centauri-1"
     ]
   },

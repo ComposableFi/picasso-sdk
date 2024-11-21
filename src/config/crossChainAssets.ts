@@ -67,6 +67,46 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/umee/uumee.png",
       "codeHash": ""
     },
+    "aarch": {
+      "chainId": "archway-1",
+      "decimals": 18,
+      "minimalDenom": "aarch",
+      "denom": "ARCH",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+      "codeHash": ""
+    },
+    "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro": {
+      "chainId": "neutron-1",
+      "decimals": 6,
+      "minimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro",
+      "denom": "ASTRO",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
+      "codeHash": ""
+    },
+    "untrn": {
+      "chainId": "neutron-1",
+      "decimals": 6,
+      "minimalDenom": "untrn",
+      "denom": "NTRN",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
+      "codeHash": ""
+    },
+    "uosmo": {
+      "chainId": "2087",
+      "decimals": 6,
+      "minimalDenom": "uosmo",
+      "denom": "OSMO",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "codeHash": ""
+    },
+    "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA": {
+      "chainId": "osmosis-1",
+      "decimals": 6,
+      "minimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA",
+      "denom": "milkTIA",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
+      "codeHash": ""
+    },
     "usei": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -99,14 +139,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
       "codeHash": ""
     },
-    "uosmo": {
-      "chainId": "osmosis-1",
-      "decimals": 6,
-      "minimalDenom": "uosmo",
-      "denom": "OSMO",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "codeHash": ""
-    },
     "stuatom": {
       "chainId": "stride-1",
       "decimals": 6,
@@ -121,14 +153,6 @@ export const crossChainAssets :CrossChainAssets= {
       "minimalDenom": "uist",
       "denom": "IST",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
-      "codeHash": ""
-    },
-    "aarch": {
-      "chainId": "archway-1",
-      "decimals": 18,
-      "minimalDenom": "aarch",
-      "denom": "ARCH",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
       "codeHash": ""
     },
     "ppica": {
@@ -313,30 +337,6 @@ export const crossChainAssets :CrossChainAssets= {
       "minimalDenom": "0xd533a949740bb3306d119cc777fa900ba034cd52",
       "denom": "CRV",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg",
-      "codeHash": ""
-    },
-    "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro": {
-      "chainId": "neutron-1",
-      "decimals": 6,
-      "minimalDenom": "factory/neutron1ffus553eet978k024lmssw0czsxwr97mggyv85lpcsdkft8v9ufsz3sa07/astro",
-      "denom": "ASTRO",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
-      "codeHash": ""
-    },
-    "untrn": {
-      "chainId": "neutron-1",
-      "decimals": 6,
-      "minimalDenom": "untrn",
-      "denom": "NTRN",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/untrn.png",
-      "codeHash": ""
-    },
-    "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA": {
-      "chainId": "osmosis-1",
-      "decimals": 6,
-      "minimalDenom": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA",
-      "denom": "milkTIA",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/milktia.png",
       "codeHash": ""
     },
     "uscrt": {
@@ -559,6 +559,33 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "currentChainId": "solana"
     },
+    "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk": {
+      "chainId": "archway-1",
+      "decimals": 9,
+      "minimalDenom": "transfer/channel-1/transfer/channel-50/aarch",
+      "denom": "ARCH",
+      "realDecimals": 18,
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+      "currentChainId": "solana"
+    },
+    "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET": {
+      "chainId": "neutron-1",
+      "decimals": 6,
+      "minimalDenom": "",
+      "denom": "ASTRO",
+      "realDecimals": 6,
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
+      "currentChainId": "solana"
+    },
+    "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM": {
+      "chainId": "2087",
+      "decimals": 6,
+      "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
+      "denom": "OSMO",
+      "realDecimals": 6,
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "currentChainId": "solana"
+    },
     "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -595,15 +622,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
       "currentChainId": "solana"
     },
-    "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM": {
-      "chainId": "osmosis-1",
-      "decimals": 6,
-      "minimalDenom": "transfer/channel-1/transfer/channel-3/uosmo",
-      "denom": "OSMO",
-      "realDecimals": 6,
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "currentChainId": "solana"
-    },
     "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea": {
       "chainId": "stride-1",
       "decimals": 6,
@@ -620,15 +638,6 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "IST",
       "realDecimals": 6,
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
-      "currentChainId": "solana"
-    },
-    "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk": {
-      "chainId": "archway-1",
-      "decimals": 9,
-      "minimalDenom": "transfer/channel-1/transfer/channel-50/aarch",
-      "denom": "ARCH",
-      "realDecimals": 18,
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
       "currentChainId": "solana"
     },
     "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ": {
@@ -827,15 +836,6 @@ export const crossChainAssets :CrossChainAssets= {
       "denom": "CRV",
       "realDecimals": 18,
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/crv.svg",
-      "currentChainId": "solana"
-    },
-    "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET": {
-      "chainId": "neutron-1",
-      "decimals": 6,
-      "minimalDenom": "",
-      "denom": "ASTRO",
-      "realDecimals": 6,
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/astro.svg",
       "currentChainId": "solana"
     },
     "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V": {
@@ -1063,6 +1063,22 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
       "currentChainId": "ethereum"
     },
+    "0xA88bB3EB033F359FeF934Dd3b4b753847318072C": {
+      "chainId": "archway-1",
+      "decimals": 18,
+      "minimalDenom": "transfer/channel-2/transfer/channel-50/aarch",
+      "denom": "ARCH",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
+      "currentChainId": "ethereum"
+    },
+    "0x9243b3615ed297403c0cafa156c3fa16057526ca": {
+      "chainId": "2087",
+      "decimals": 6,
+      "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
+      "denom": "OSMO",
+      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
+      "currentChainId": "ethereum"
+    },
     "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5": {
       "chainId": "pacific-1",
       "decimals": 6,
@@ -1095,14 +1111,6 @@ export const crossChainAssets :CrossChainAssets= {
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/ubld.png",
       "currentChainId": "ethereum"
     },
-    "0x9243b3615ed297403c0cafa156c3fa16057526ca": {
-      "chainId": "osmosis-1",
-      "decimals": 6,
-      "minimalDenom": "transfer/channel-2/transfer/channel-3/uosmo",
-      "denom": "OSMO",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/osmosis/uosmo.png",
-      "currentChainId": "ethereum"
-    },
     "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2": {
       "chainId": "stride-1",
       "decimals": 6,
@@ -1117,14 +1125,6 @@ export const crossChainAssets :CrossChainAssets= {
       "minimalDenom": "transfer/channel-2/transfer/channel-13/uist",
       "denom": "IST",
       "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/uist.png",
-      "currentChainId": "ethereum"
-    },
-    "0xA88bB3EB033F359FeF934Dd3b4b753847318072C": {
-      "chainId": "archway-1",
-      "decimals": 18,
-      "minimalDenom": "transfer/channel-2/transfer/channel-50/aarch",
-      "denom": "ARCH",
-      "imageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png",
       "currentChainId": "ethereum"
     },
     "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c": {
@@ -1494,7 +1494,7 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "2087"
     },
     "8": {
-      "chainId": "osmosis-1",
+      "chainId": "2087",
       "decimals": 6,
       "minimalDenom": "uosmo",
       "denom": "OSMO",
