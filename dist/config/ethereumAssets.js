@@ -55,7 +55,7 @@ exports.ethereumAssets = {
     "PICA": {
         "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",
         "cosmosToEthereumFee": 24000,
-        "minimumTransfer": 5000
+        "minimumTransfer": 50000
     },
     "XRP": {
         "erc20Address": "0x628f76eab0c1298f7a24d337bbbf1ef8a1ea6a24",
@@ -84,8 +84,8 @@ exports.ethereumAssets = {
     },
     "FXS": {
         "erc20Address": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
-        "cosmosToEthereumFee": 3,
-        "minimumTransfer": 5
+        "cosmosToEthereumFee": 5.3,
+        "minimumTransfer": 10
     },
     "sFRAX": {
         "erc20Address": "0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32",
@@ -99,8 +99,8 @@ exports.ethereumAssets = {
     },
     "ENA": {
         "erc20Address": "0x57e114b691db790c35207b2e685d4a43181e6061",
-        "cosmosToEthereumFee": 23,
-        "minimumTransfer": 20
+        "cosmosToEthereumFee": 27,
+        "minimumTransfer": 50
     },
     "FRAX": {
         "erc20Address": "0x853d955acef822db058eb8505911ed77f175b99e",
@@ -235,6 +235,6 @@ exports.ethereumAssets = {
     "STARS": {
         "erc20Address": "0x59e0499554Cdcdfa90CCd96532e5aD5883a2a956",
         "cosmosToEthereumFee": 16000,
-        "minimumTransfer": 2000
+        "minimumTransfer": 30000
     }
 };

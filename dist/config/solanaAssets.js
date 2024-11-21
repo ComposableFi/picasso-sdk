@@ -54,7 +54,7 @@ exports.solanaAssets = {
     },
     "PICA": {
         "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
-        "minimumTransfer": 4000,
+        "minimumTransfer": 25000,
         "fromCosmosFee": 12000
     },
     "XRP": {
@@ -84,7 +84,7 @@ exports.solanaAssets = {
     },
     "FXS": {
         "mintAddress": "6jnTywpWt1u6Jh65FTSgUVDxv7Kyfp3f1mwH426LXmB7",
-        "minimumTransfer": 5,
+        "minimumTransfer": 10,
         "fromCosmosFee": 2.5
     },
     "sFRAX": {
@@ -99,7 +99,7 @@ exports.solanaAssets = {
     },
     "ENA": {
         "mintAddress": "Aa34MLrb7GfT5uMXnpT9oKnj11gGcXMq61b5kBzTvbnW",
-        "minimumTransfer": 20,
+        "minimumTransfer": 50,
         "fromCosmosFee": 15
     },
     "FRAX": {
@@ -179,7 +179,7 @@ exports.solanaAssets = {
     },
     "SHD": {
         "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",
-        "minimumTransfer": 5,
+        "minimumTransfer": 10,
         "fromCosmosFee": 5
     },
     "SOL": {
@@ -199,8 +199,8 @@ exports.solanaAssets = {
     },
     "WHINE": {
         "mintAddress": "ATeTQcUkWGs7AZ15mCiFUWCW9EUL7KpDZEHCN1Y8pump",
-        "minimumTransfer": 10,
-        "fromCosmosFee": 40000
+        "minimumTransfer": 40000,
+        "fromCosmosFee": 80000
     },
     "hausSOL": {
         "mintAddress": "HausGKcq9G9zM3azwNmgZyzUvYeeqR8h8663PmZpxuDj",
