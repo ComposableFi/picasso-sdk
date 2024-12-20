@@ -40,10 +40,6 @@ import { CoinGeckoAsset } from './types';
     "id": "kujira"
   },
   {
-    "name": "USDT Kusama",
-    "id": "tether"
-  },
-  {
     "name": "QCK",
     "id": "quicksilver"
   },
@@ -426,6 +422,14 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "stATOM",
     "id": "stride-staked-atom"
+  },
+  {
+    "name": "USDT Kusama",
+    "id": "tether"
+  },
+  {
+    "name": "KSM",
+    "id": "kusama"
   }
 ] ;
  

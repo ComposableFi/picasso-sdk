@@ -10,7 +10,7 @@ export const solanaAssets:Record<string, SolanaAsset> = {
   },
   "KSM": {
     "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-    "minimumTransfer": 0.7,
+    "minimumTransfer": 1,
     "fromCosmosFee": 0.3
   },
   "ARCH": {

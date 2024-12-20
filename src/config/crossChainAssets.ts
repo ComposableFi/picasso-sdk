@@ -551,7 +551,7 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "solana"
     },
     "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12": {
-      "chainId": "2087",
+      "chainId": "1000",
       "decimals": 9,
       "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
       "denom": "KSM",
@@ -1056,7 +1056,7 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "ethereum"
     },
     "0xB44D6C324A6c15127F1451465f1E1DbC39142A60": {
-      "chainId": "2087",
+      "chainId": "1000",
       "decimals": 12,
       "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
       "denom": "KSM",
@@ -1458,7 +1458,7 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "2087"
     },
     "4": {
-      "chainId": "2087",
+      "chainId": "1000",
       "decimals": 12,
       "minimalDenom": "4",
       "denom": "KSM",
@@ -1818,15 +1818,11 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "2087"
     },
     "130": {
-      "chainId": "2087",
+      "chainId": "1000",
       "decimals": 6,
       "minimalDenom": "130",
       "denom": "USDT Kusama",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDT.svg",
-      "ratio": {
-        "n": "2",
-        "d": "10000000"
-      },
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
       "currentChainId": "2087"
     },
     "149": {

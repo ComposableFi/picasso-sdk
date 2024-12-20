@@ -9,7 +9,7 @@ import { NetworkInfo } from './types';
     "rest": "",
     "chainType": "polkadot",
     "chainId": "1000",
-    "feeAssetId": "130",
+    "feeAssetId": "4",
     "polkadot": {
       "ss58Format": 2,
       "isParachain": true,

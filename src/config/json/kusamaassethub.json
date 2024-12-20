@@ -23,7 +23,7 @@
     {
       "coinDenom": "USDT Kusama",
       "coinDecimals": 6,
-      "isCoin": true,
+      "isCoin": false,
 
       "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/USDTkusama.svg",
       "coinGeckoId": "tether",
@@ -33,6 +33,34 @@
       },
       "ethereum": {},
       "solana": {}
+    },
+    {
+      "coinDenom": "KSM",
+      "isCoin": true,
+
+      "coinDecimals": 12,
+      "coinImageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/KSM.svg",
+      "coinGeckoId": "kusama",
+      "cosmos": {},
+      "polkadot": {
+        "picassoAssetId": "4",
+        "composableAssetId": "",
+        "ratio": { "n": "70", "d": "10000" },
+        "existentialDeposit": "375000000"
+      },
+      "ethereum": {
+        "minimalDenom": "transfer/channel-2/transfer/channel-2/4",
+        "erc20Address": "0xB44D6C324A6c15127F1451465f1E1DbC39142A60",
+        "fromCosmosFee": 0.6,
+        "minimumTransfer": 1
+      },
+      "solana": {
+        "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
+        "minimalDenom": "transfer/channel-1/transfer/channel-2/4",
+        "minimumTransfer": 1,
+        "fromCosmosFee": 0.3,
+        "displayDecimals": 9
+      }
     }
   ],
   "explorer": [
