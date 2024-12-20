@@ -168,7 +168,7 @@ function signAndSendTransfer(_a) {
                                 });
                             }); })
                                 .catch(function (e) {
-                                console.log('errorSDKSignAndSend', e);
+                                console.error('errorSDKSignAndSend', e);
                                 return reject({
                                     fromAddress: fromAddress,
                                     destAddress: toAddress,

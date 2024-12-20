@@ -53,9 +53,11 @@ async function signAndSendTransfer<T extends AnyTuple>({
 
   return new Promise<TransferStatusByAddress>((resolve, reject) => {
     const state = { isFailedTxShown: false };
+    console.log('step0', extrinsic);
     extrinsic
       .signAndSend(account, signerOption, async (result) => {
         // Emit approval event
+        console.log('step1', result);
 
         const { dispatchError, status, events } = result;
         const { txHash, sequence } = buildStatusInfo(
@@ -63,6 +65,7 @@ async function signAndSendTransfer<T extends AnyTuple>({
           JSON.parse(JSON.stringify(events))
         );
 
+        console.log('step2', events, txHash, sequence);
         // Handle dispatch errors
         if (dispatchError) {
           let errorMessage;
@@ -88,11 +91,13 @@ async function signAndSendTransfer<T extends AnyTuple>({
           };
           return reject(errorResult);
         }
+        console.log('step3', events);
 
         // Look for incomplete transfer events
         const found = JSON.parse(JSON.stringify(events)).find((e) =>
           e.event?.data?.find((data) => data['incomplete']?.length > 0)
         );
+        console.log('step4', found);
 
         if (found) {
           return reject({
@@ -106,7 +111,11 @@ async function signAndSendTransfer<T extends AnyTuple>({
 
         // Check if transaction is finalized
         if (status) {
+          console.log('step5', status);
+
           if (isIbc) {
+            console.log('step5.5');
+
             const header = apiTo ? await apiTo.rpc.chain.getHeader() : null;
             const result: TransferStatusByAddress = {
               destAddress: toAddress,
@@ -118,6 +127,8 @@ async function signAndSendTransfer<T extends AnyTuple>({
             };
             return resolve(result);
           } else if (filter) {
+            console.log('step6');
+
             const found = events.find((e) => filter(e.event));
             if (!found && !state.isFailedTxShown) {
               state.isFailedTxShown = true;
@@ -129,6 +140,8 @@ async function signAndSendTransfer<T extends AnyTuple>({
               });
             }
             if (found && found.event.data.find((x) => x['isComplete'])) {
+              console.log('step6.5');
+
               const result: TransferStatusByAddress = {
                 destAddress: toAddress,
                 txHash,
@@ -140,6 +153,8 @@ async function signAndSendTransfer<T extends AnyTuple>({
             }
           } else {
             // For xTokens
+            console.log('step7');
+
             const header = apiTo ? await apiTo.rpc.chain.getHeader() : null;
             const result: TransferStatusByAddress = {
               destAddress: toAddress,
@@ -168,6 +183,7 @@ async function signAndSendTransfer<T extends AnyTuple>({
 }
 
 export const buildStatusInfo = (txHash, events) => {
+  console.log('buildStatusInfo', events);
   if (!events) return { txHash, sequence: 'NONE' };
   const packet = events
     .filter(
