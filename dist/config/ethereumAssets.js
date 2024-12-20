@@ -12,6 +12,16 @@ exports.ethereumAssets = {
         "cosmosToEthereumFee": 0.6,
         "minimumTransfer": 1
     },
+    "ARCH": {
+        "erc20Address": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
+        "cosmosToEthereumFee": 315,
+        "minimumTransfer": 600
+    },
+    "OSMO": {
+        "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
+        "cosmosToEthereumFee": 23,
+        "minimumTransfer": 40
+    },
     "SEI": {
         "erc20Address": "0x013AdDc6512432304c055CEc20bbb0f6AA5ed7d5",
         "cosmosToEthereumFee": 27,
@@ -32,11 +42,6 @@ exports.ethereumAssets = {
         "cosmosToEthereumFee": 215,
         "minimumTransfer": 400
     },
-    "OSMO": {
-        "erc20Address": "0x9243b3615ed297403c0cafa156c3fa16057526ca",
-        "cosmosToEthereumFee": 23,
-        "minimumTransfer": 40
-    },
     "stATOM": {
         "erc20Address": "0xA534115DA1C1e51Cb2C6E8bC1fBA23A5189a1de2",
         "cosmosToEthereumFee": 2.5,
@@ -46,11 +51,6 @@ exports.ethereumAssets = {
         "erc20Address": "0x7d1b634d825221E8d8f619c5FA06a3F57dAFd5C6",
         "cosmosToEthereumFee": 10,
         "minimumTransfer": 20
-    },
-    "ARCH": {
-        "erc20Address": "0xA88bB3EB033F359FeF934Dd3b4b753847318072C",
-        "cosmosToEthereumFee": 315,
-        "minimumTransfer": 600
     },
     "PICA": {
         "erc20Address": "0xbb63a9b64a80e9338b8ea298c51765e57c4f159c",

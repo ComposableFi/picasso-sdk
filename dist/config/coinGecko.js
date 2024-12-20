@@ -39,10 +39,6 @@ exports.coinGecko = [
         "id": "kujira"
     },
     {
-        "name": "USDT Kusama",
-        "id": "tether"
-    },
-    {
         "name": "QCK",
         "id": "quicksilver"
     },
@@ -85,6 +81,26 @@ exports.coinGecko = [
     {
         "name": "KSM",
         "id": "kusama"
+    },
+    {
+        "name": "ARCH",
+        "id": "archway"
+    },
+    {
+        "name": "ASTRO",
+        "id": "astroport-fi"
+    },
+    {
+        "name": "NTRN",
+        "id": "neutron-3"
+    },
+    {
+        "name": "OSMO",
+        "id": "osmosis"
+    },
+    {
+        "name": "milkTIA",
+        "id": "milkyway-staked-tia"
     },
     {
         "name": "SEI",
@@ -227,10 +243,6 @@ exports.coinGecko = [
         "id": "inter-stable-token"
     },
     {
-        "name": "ARCH",
-        "id": "archway"
-    },
-    {
         "name": "PICA",
         "id": "picasso"
     },
@@ -327,22 +339,6 @@ exports.coinGecko = [
         "id": "curve-dao-token"
     },
     {
-        "name": "ASTRO",
-        "id": "astroport-fi"
-    },
-    {
-        "name": "NTRN",
-        "id": "neutron-3"
-    },
-    {
-        "name": "OSMO",
-        "id": "osmosis"
-    },
-    {
-        "name": "milkTIA",
-        "id": "milkyway-staked-tia"
-    },
-    {
         "name": "SCRT",
         "id": "secret"
     },
@@ -425,5 +421,13 @@ exports.coinGecko = [
     {
         "name": "stATOM",
         "id": "stride-staked-atom"
+    },
+    {
+        "name": "USDT Kusama",
+        "id": "tether"
+    },
+    {
+        "name": "KSM",
+        "id": "kusama"
     }
 ];

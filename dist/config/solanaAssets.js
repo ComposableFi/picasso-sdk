@@ -9,8 +9,23 @@ exports.solanaAssets = {
     },
     "KSM": {
         "mintAddress": "9m8kq5qhocfckRkRnhbAroPmR8zYaXugpyinpkpLnv12",
-        "minimumTransfer": 0.7,
+        "minimumTransfer": 1,
         "fromCosmosFee": 0.3
+    },
+    "ARCH": {
+        "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
+        "minimumTransfer": 300,
+        "fromCosmosFee": 160
+    },
+    "ASTRO": {
+        "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
+        "minimumTransfer": 40000,
+        "fromCosmosFee": 26000
+    },
+    "OSMO": {
+        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 11
     },
     "SEI": {
         "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
@@ -32,11 +47,6 @@ exports.solanaAssets = {
         "minimumTransfer": 200,
         "fromCosmosFee": 105
     },
-    "OSMO": {
-        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
-        "minimumTransfer": 20,
-        "fromCosmosFee": 11
-    },
     "stATOM": {
         "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
         "minimumTransfer": 2,
@@ -46,11 +56,6 @@ exports.solanaAssets = {
         "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",
         "minimumTransfer": 20,
         "fromCosmosFee": 5
-    },
-    "ARCH": {
-        "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
-        "minimumTransfer": 300,
-        "fromCosmosFee": 160
     },
     "PICA": {
         "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
@@ -166,11 +171,6 @@ exports.solanaAssets = {
         "mintAddress": "4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6",
         "minimumTransfer": 80,
         "fromCosmosFee": 20
-    },
-    "ASTRO": {
-        "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
-        "minimumTransfer": 40000,
-        "fromCosmosFee": 26000
     },
     "SCRT": {
         "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
