@@ -154,7 +154,7 @@ async function signAndSendTransfer<T extends AnyTuple>({
         }
       })
       .catch((e) => {
-        console.log('errorSDKSignAndSend', e);
+        console.error('errorSDKSignAndSend', e);
         return reject({
           fromAddress,
           destAddress: toAddress,

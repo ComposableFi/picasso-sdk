@@ -168,6 +168,7 @@ function signAndSendTransfer(_a) {
                                 });
                             }); })
                                 .catch(function (e) {
+                                console.log('errorSDKSignAndSend', e);
                                 return reject({
                                     fromAddress: fromAddress,
                                     destAddress: toAddress,
@@ -201,14 +202,16 @@ var buildStatusInfo = function (txHash, events) {
 exports.buildStatusInfo = buildStatusInfo;
 function transferXcm(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
-        var _c, fromSs58Format, isFromParachain, _d, toSs58Format, isToParachain, _e, xcmType, version, ethreumlish, convertedToAddr, convertedFromAddr, result;
+        var _c, fromSs58Format, isFromParachain, _d, toSs58Format, isToParachain, _e, xcmType, version, ethreumlish, convertedToAddr, convertedFromAddr, result, e_1;
         var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, fromApi = _b.fromApi, toApi = _b.toApi;
         return __generator(this, function (_f) {
             switch (_f.label) {
                 case 0:
+                    _f.trys.push([0, 2, , 3]);
                     _c = config_1.networks[fromChainId].polkadot, fromSs58Format = _c.ss58Format, isFromParachain = _c.isParachain;
                     _d = config_1.networks[toChainId].polkadot, toSs58Format = _d.ss58Format, isToParachain = _d.isParachain;
                     _e = (0, common_1.getXcmInfo)(fromChainId, toChainId), xcmType = _e.xcmType, version = _e.version;
+                    console.log('xcmTypeSDK', xcmType, version);
                     ethreumlish = ['2004', '2023'];
                     convertedToAddr = ethreumlish.includes(toChainId)
                         ? toAddress
@@ -219,6 +222,7 @@ function transferXcm(_a) {
                     // Ensure transferMedium is defined
                     if (!xcmType || !version)
                         return [2 /*return*/];
+                    result = void 0;
                     // Handle different transfer mediums
                     if (xcmType === 'xcmPallet.reserveTransferAssets') {
                         if (version === 'V1') {
@@ -230,7 +234,9 @@ function transferXcm(_a) {
                     }
                     else if (xcmType === 'xTokens.transfer') {
                         if (version === 'V2') {
-                            if (assetId === '32' && toChainId === '2087' && fromChainId === '2001') {
+                            if (assetId === '32' &&
+                                toChainId === '2087' &&
+                                fromChainId === '2001') {
                                 result = (0, type_builder_1.buildXTokensTransferV2)(fromApi, convertedToAddr, assetId, amount, toChainId, 'VToken', 'AccountId32');
                             }
                             else if (assetId === '31' &&
@@ -291,6 +297,11 @@ function transferXcm(_a) {
                 case 1: 
                 // Call signAndSendTransfer with the appropriate parameters
                 return [2 /*return*/, _f.sent()];
+                case 2:
+                    e_1 = _f.sent();
+                    console.log('errorSDK', e_1);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
             }
         });
     });
