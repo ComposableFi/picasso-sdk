@@ -184,7 +184,7 @@ exports.networks = {
         "polkadot": {
             "ss58Format": 50,
             "isParachain": true,
-            "relayChain": "kusama",
+            "relayChain": "polkadot",
             "hops": {
                 "2006": {
                     "type": "XCM",

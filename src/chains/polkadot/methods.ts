@@ -154,6 +154,7 @@ async function signAndSendTransfer<T extends AnyTuple>({
         }
       })
       .catch((e) => {
+        console.log('errorSDKSignAndSend', e);
         return reject({
           fromAddress,
           destAddress: toAddress,
@@ -210,190 +211,199 @@ export async function transferXcm({
   fromApi: ApiPromise;
   toApi: ApiPromise;
 }): Promise<TransferStatusByAddress> {
-  const {
-    polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
-  } = networks[fromChainId];
+  try {
+    const {
+      polkadot: { ss58Format: fromSs58Format, isParachain: isFromParachain },
+    } = networks[fromChainId];
 
-  const {
-    polkadot: { ss58Format: toSs58Format, isParachain: isToParachain },
-  } = networks[toChainId];
+    const {
+      polkadot: { ss58Format: toSs58Format, isParachain: isToParachain },
+    } = networks[toChainId];
 
-  const { xcmType, version } = getXcmInfo(fromChainId, toChainId);
+    const { xcmType, version } = getXcmInfo(fromChainId, toChainId);
 
-  const ethreumlish = ['2004', '2023'];
-  // Get network configurations
+    console.log('xcmTypeSDK', xcmType, version);
+    const ethreumlish = ['2004', '2023'];
+    // Get network configurations
 
-  // Convert addresses based on network type
-  const convertedToAddr = ethreumlish.includes(toChainId)
-    ? toAddress
-    : encodeAddress(decodeAddress(toAddress), toSs58Format);
-  const convertedFromAddr = ethreumlish.includes(fromChainId)
-    ? fromAddress
-    : encodeAddress(decodeAddress(fromAddress), fromSs58Format);
+    // Convert addresses based on network type
+    const convertedToAddr = ethreumlish.includes(toChainId)
+      ? toAddress
+      : encodeAddress(decodeAddress(toAddress), toSs58Format);
+    const convertedFromAddr = ethreumlish.includes(fromChainId)
+      ? fromAddress
+      : encodeAddress(decodeAddress(fromAddress), fromSs58Format);
 
-  // Ensure transferMedium is defined
-  if (!xcmType || !version) return;
+    // Ensure transferMedium is defined
+    if (!xcmType || !version) return;
 
-  let result;
+    let result;
 
-  // Handle different transfer mediums
-  if (xcmType === 'xcmPallet.reserveTransferAssets') {
-    if (version === 'V1') {
-      result = buildXcmPalletTransferV1(
-        fromApi,
-        toChainId,
-        convertedToAddr,
-        amount
-      );
-    } else {
-      result = buildXcmPalletTransferV2(
-        fromApi,
-        toChainId,
-        convertedToAddr,
-        amount
-      );
-    }
-  } else if (xcmType === 'xTokens.transfer') {
-    if (version === 'V2') {
-      if (assetId === '32' && toChainId === '2087' && fromChainId === '2001') {
-        result = buildXTokensTransferV2(
+    // Handle different transfer mediums
+    if (xcmType === 'xcmPallet.reserveTransferAssets') {
+      if (version === 'V1') {
+        result = buildXcmPalletTransferV1(
           fromApi,
-          convertedToAddr,
-          assetId,
-          amount,
           toChainId,
-          'VToken',
-          'AccountId32'
-        );
-      } else if (
-        assetId === '31' &&
-        toChainId === '2087' &&
-        fromChainId === '2001'
-      ) {
-        result = buildXTokensTransferV2(
-          fromApi,
           convertedToAddr,
-          assetId,
-          amount,
-          toChainId,
-          'Native',
-          'AccountId32'
-        );
-      } else if (fromChainId === '2030' && assetId === '33') {
-        result = buildXTokensTransferV2(
-          fromApi,
-          convertedToAddr,
-          assetId,
-          amount,
-          toChainId,
-          'Native',
-          'AccountId32'
-        );
-      } else if (fromChainId === '2030' && assetId === '34') {
-        result = buildXTokensTransferV2(
-          fromApi,
-          convertedToAddr,
-          '0',
-          amount,
-          toChainId,
-          'VToken2',
-          'AccountId32'
-        );
-      } else if (toChainId === '2004' || toChainId === '2023') {
-        result = buildXTokensTransferV2(
-          fromApi,
-          convertedToAddr,
-          assetId,
-          amount,
-          toChainId,
-          'AssetId',
-          'AccountKey20'
-        );
-      } else if (fromChainId === '2004' || fromChainId === '2023') {
-        result = buildXTokensMoonbeamTransferV2(
-          fromApi,
-          convertedToAddr,
-          assetId,
-          amount,
-          toChainId
+          amount
         );
       } else {
-        result = buildXTokensTransferV2(
+        result = buildXcmPalletTransferV2(
           fromApi,
-          convertedToAddr,
-          assetId,
-          amount,
           toChainId,
-          'AssetId',
-          'AccountId32'
-        );
-      }
-    } else {
-      if (fromChainId === '2125') {
-        result = buildXTokensTransferV3X2(
-          fromApi,
           convertedToAddr,
-          '0',
-          amount,
-          toChainId
-        );
-      } else {
-        result = buildXTokensTransferV3(
-          fromApi,
-          convertedToAddr,
-          assetId,
           amount
         );
       }
-    }
-  } else if (xcmType === 'polkadotXcm.limitedReserveTransferAssets') {
-    if (version === 'V2') {
-      result = buildPolkadotXcmTransferV2(
+    } else if (xcmType === 'xTokens.transfer') {
+      if (version === 'V2') {
+        if (
+          assetId === '32' &&
+          toChainId === '2087' &&
+          fromChainId === '2001'
+        ) {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId,
+            'VToken',
+            'AccountId32'
+          );
+        } else if (
+          assetId === '31' &&
+          toChainId === '2087' &&
+          fromChainId === '2001'
+        ) {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId,
+            'Native',
+            'AccountId32'
+          );
+        } else if (fromChainId === '2030' && assetId === '33') {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId,
+            'Native',
+            'AccountId32'
+          );
+        } else if (fromChainId === '2030' && assetId === '34') {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            '0',
+            amount,
+            toChainId,
+            'VToken2',
+            'AccountId32'
+          );
+        } else if (toChainId === '2004' || toChainId === '2023') {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId,
+            'AssetId',
+            'AccountKey20'
+          );
+        } else if (fromChainId === '2004' || fromChainId === '2023') {
+          result = buildXTokensMoonbeamTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId
+          );
+        } else {
+          result = buildXTokensTransferV2(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount,
+            toChainId,
+            'AssetId',
+            'AccountId32'
+          );
+        }
+      } else {
+        if (fromChainId === '2125') {
+          result = buildXTokensTransferV3X2(
+            fromApi,
+            convertedToAddr,
+            '0',
+            amount,
+            toChainId
+          );
+        } else {
+          result = buildXTokensTransferV3(
+            fromApi,
+            convertedToAddr,
+            assetId,
+            amount
+          );
+        }
+      }
+    } else if (xcmType === 'polkadotXcm.limitedReserveTransferAssets') {
+      if (version === 'V2') {
+        result = buildPolkadotXcmTransferV2(
+          fromApi,
+          convertedToAddr,
+          toChainId,
+          assetId,
+          amount,
+          fromChainId === '1000' ? '1984' : '' // only for statemine
+        );
+      } else {
+        result = buildPolkadotXcmTransferV3(
+          fromApi,
+          convertedToAddr,
+          toChainId,
+          amount
+        );
+      }
+    } else if (xcmType === 'xcmPallet.limitedReserveTransferAssets') {
+      result = buildXcmLimitedReserveTransferV2(
         fromApi,
         convertedToAddr,
         toChainId,
         assetId,
-        amount,
-        fromChainId === '1000' ? '1984' : '' // only for statemine
+        amount
       );
-    } else {
-      result = buildPolkadotXcmTransferV3(
+    } else if (xcmType === 'xTokens.transferMultiasset') {
+      result = buildXcmVersionedMultiAssetV3(
         fromApi,
         convertedToAddr,
         toChainId,
-        amount
+        amount,
+        '1984',
+        ''
       );
     }
-  } else if (xcmType === 'xcmPallet.limitedReserveTransferAssets') {
-    result = buildXcmLimitedReserveTransferV2(
-      fromApi,
-      convertedToAddr,
-      toChainId,
-      assetId,
-      amount
-    );
-  } else if (xcmType === 'xTokens.transferMultiasset') {
-    result = buildXcmVersionedMultiAssetV3(
-      fromApi,
-      convertedToAddr,
-      toChainId,
-      amount,
-      '1984',
-      ''
-    );
-  }
 
-  // Call signAndSendTransfer with the appropriate parameters
-  return await signAndSendTransfer({
-    api: fromApi,
-    apiTo: toApi,
-    fromAddress: convertedFromAddr,
-    toAddress: convertedToAddr,
-    extrinsic: result(),
-    isIbc: false,
-    filter: isFromParachain ? null : fromApi.events.xcmPallet.Attempted.is,
-    signer,
-  });
+    // Call signAndSendTransfer with the appropriate parameters
+    return await signAndSendTransfer({
+      api: fromApi,
+      apiTo: toApi,
+      fromAddress: convertedFromAddr,
+      toAddress: convertedToAddr,
+      extrinsic: result(),
+      isIbc: false,
+      filter: isFromParachain ? null : fromApi.events.xcmPallet.Attempted.is,
+      signer,
+    });
+  } catch (e) {
+    console.log('errorSDK', e);
+  }
 }
 
 export async function transferIbc(
