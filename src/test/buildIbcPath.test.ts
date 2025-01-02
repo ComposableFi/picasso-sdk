@@ -43,7 +43,7 @@ describe('buildIbcPath', () => {
 
 describe('getAllowedTokensForPath', () => {
   it('should return the correct path for polkadot to ethereum', () => {
-    expect(getAllowedTokensForPath('polkadot', 'osmosis-1')).toBe(['DOT']);
+    expect(getAllowedTokensForPath('polkadot', 'osmosis-1')).toEqual(['DOT']);
   });
 });
 describe('getSupportedType', () => {

@@ -124,6 +124,7 @@ export const getAllowedTokensForPath = (
 ) => {
   const result = buildIbcPath(originChainId, destinationChainId);
 
+  console.log(result);
   const supportedType = getSupportedType(originChainId, destinationChainId);
   if (supportedType === 'xcm') {
     const xcmInfo = getXcmInfo(originChainId, destinationChainId);
@@ -141,6 +142,11 @@ export const getAllowedTokensForPath = (
       return acc;
     }, []);
   }
+  if (
+    networks?.[originChainId]?.polkadot?.relayChain === 'polkadot' ||
+    networks?.[destinationChainId]?.polkadot?.relayChain === 'polkadot'
+  )
+    return ['DOT'];
   return [];
 };
 
