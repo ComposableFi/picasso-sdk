@@ -30,7 +30,35 @@
     "55": {
       "chainId": "centauri-1",
       "destinationId": 13,
-      "tokens": ["BLD", "IST"]
+      "tokens": [
+        "PICA",
+        "ETH",
+        "DAI",
+        "FXS",
+        "sFRAX",
+        "sfrxETH",
+        "OSMO",
+        "ENA",
+        "FRAX",
+        "frxETH",
+        "wBTC",
+        "pxETH",
+        "PEPE",
+        "CRV",
+        "rETH",
+        "crvUSD",
+        "eETH",
+        "USDe",
+        "USDT Ethereum",
+        "stETH",
+        "ATOM",
+        "IST",
+        "stATOM",
+        "BLD",
+        "SEI",
+        "SCRT",
+        "STRD"
+      ]
     }
   },
   "currencies": [

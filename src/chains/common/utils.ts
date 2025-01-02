@@ -69,7 +69,7 @@ export const getForbiddenChains = (fromChainId: string, toChainId: string) => {
     return true;
   return false;
 };
-// Function to find the shortest path with channel information
+/**@description Function to find the shortest path with channel information */
 export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
   if (getForbiddenChains(fromChainId, toChainId)) return null;
   // Set to keep track of visited chains
@@ -115,6 +115,39 @@ export const buildIbcPath = (fromChainId: string, toChainId: string): Hop[] => {
 
   // If we do not find a path to the target chain, return null
   return null;
+};
+
+/**@description Function to find the allowed tokens for the entire path */
+export const getAllowedTokensForPath = (
+  originChainId: string,
+  destinationChainId: string
+) => {
+  const result = buildIbcPath(originChainId, destinationChainId);
+
+  console.log(result);
+  const supportedType = getSupportedType(originChainId, destinationChainId);
+  if (supportedType === 'xcm') {
+    const xcmInfo = getXcmInfo(originChainId, destinationChainId);
+    return xcmInfo.tokens;
+  }
+  if (!!supportedType) {
+    return result.reduce((acc, item) => {
+      if (acc.length > 0) {
+        acc = acc.filter((token) =>
+          tokensPerChannel[item.chainId][item.channelId].tokens.includes(token)
+        );
+      } else {
+        acc = [...tokensPerChannel[item.chainId][item.channelId].tokens];
+      }
+      return acc;
+    }, []);
+  }
+  if (
+    networks?.[originChainId]?.polkadot?.relayChain === 'polkadot' ||
+    networks?.[destinationChainId]?.polkadot?.relayChain === 'polkadot'
+  )
+    return ['DOT'];
+  return [];
 };
 
 export const channelList = Object.values(networks);

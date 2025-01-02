@@ -24,7 +24,35 @@
     "62": {
       "chainId": "centauri-1",
       "destinationId": 0,
-      "tokens": ["UHUAHUA"]
+      "tokens": [
+        "PICA",
+        "ETH",
+        "DAI",
+        "FXS",
+        "sFRAX",
+        "sfrxETH",
+        "OSMO",
+        "ENA",
+        "FRAX",
+        "frxETH",
+        "wBTC",
+        "pxETH",
+        "PEPE",
+        "CRV",
+        "rETH",
+        "crvUSD",
+        "eETH",
+        "USDe",
+        "USDT Ethereum",
+        "stETH",
+        "ATOM",
+        "IST",
+        "stATOM",
+        "BLD",
+        "SEI",
+        "SCRT",
+        "STRD"
+      ]
     }
   },
   "currencies": [
