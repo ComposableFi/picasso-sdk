@@ -2,6 +2,7 @@ import {
   buildIbcPath,
   convertCosmosAddress,
   createForwardPathRecursive,
+  getAllowedTokensForPath,
   getChainIdsByChannels,
   getChannelIdsFromMemo,
   getExplorerUrl,
@@ -40,6 +41,11 @@ describe('buildIbcPath', () => {
   });
 });
 
+describe('getAllowedTokensForPath', () => {
+  it('should return the correct path for polkadot to ethereum', () => {
+    expect(getAllowedTokensForPath('polkadot', 'osmosis-1')).toBe(['DOT']);
+  });
+});
 describe('getSupportedType', () => {
   it('should return pfm for solana and ethereum', () => {
     expect(getSupportedType('solana', 'ethereum')).toBe('pfm');

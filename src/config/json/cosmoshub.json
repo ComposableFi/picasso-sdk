@@ -24,7 +24,35 @@
     "617": {
       "chainId": "centauri-1",
       "destinationId": 4,
-      "tokens": ["ATOM"]
+      "tokens": [
+        "PICA",
+        "ETH",
+        "DAI",
+        "FXS",
+        "sFRAX",
+        "sfrxETH",
+        "OSMO",
+        "ENA",
+        "FRAX",
+        "frxETH",
+        "wBTC",
+        "pxETH",
+        "PEPE",
+        "CRV",
+        "rETH",
+        "crvUSD",
+        "eETH",
+        "USDe",
+        "USDT Ethereum",
+        "stETH",
+        "ATOM",
+        "IST",
+        "stATOM",
+        "BLD",
+        "SEI",
+        "SCRT",
+        "STRD"
+      ]
     }
   },
   "currencies": [
