@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "chainId": "neutron-1",
-  "rest": "https://neutron-cmp-api.polkachu.com",
-  "rpc": "https://neutron-cmp-rpc.polkachu.com",
+  "rest": "https://neutron-api.polkachu.com",
+  "rpc": "https://neutron-rpc.polkachu.com",
   "chainName": "Neutron",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/neutron/chain.png",
   "cosmos": {

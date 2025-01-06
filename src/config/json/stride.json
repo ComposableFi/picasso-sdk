@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "chainId": "stride-1",
-  "rest": "https://stride-cmp-api.polkachu.com",
-  "rpc": "https://stride-cmp-rpc.polkachu.com",
+  "rest": "https://stride-api.polkachu.com",
+  "rpc": "https://stride-rpc.polkachu.com",
   "chainName": "Stride",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/stride/chain.png",
   "cosmos": {

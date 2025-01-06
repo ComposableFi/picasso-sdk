@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "chainId": "cosmoshub-4",
-  "rest": "https://cosmos-cmp-api.polkachu.com",
-  "rpc": "https://cosmos-cmp-rpc.polkachu.com",
+  "rest": "https://cosmos-api.polkachu.com",
+  "rpc": "https://cosmos-rpc.polkachu.com",
   "chainName": "Cosmos Hub",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/cosmoshub/chain.png",
   "cosmos": {

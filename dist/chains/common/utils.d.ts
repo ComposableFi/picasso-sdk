@@ -15,7 +15,10 @@ interface Hop {
     receiver?: string;
 }
 export declare const getForbiddenChains: (fromChainId: string, toChainId: string) => boolean;
+/**@description Function to find the shortest path with channel information */
 export declare const buildIbcPath: (fromChainId: string, toChainId: string) => Hop[];
+/**@description Function to find the allowed tokens for the entire path */
+export declare const getAllowedTokensForPath: (originChainId: string, destinationChainId: string) => any[];
 export declare const channelList: import("../../config").NetworkInfo[];
 export declare const getChainIdsByChannels: (channels: number[]) => string[];
 /**@description If it returns undefined, that means it is not supported */

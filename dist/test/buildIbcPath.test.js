@@ -26,6 +26,11 @@ var globals_1 = require("@jest/globals");
         ]);
     });
 });
+(0, globals_1.describe)('getAllowedTokensForPath', function () {
+    (0, globals_1.it)('should return the correct path for polkadot to ethereum', function () {
+        (0, globals_1.expect)((0, chains_1.getAllowedTokensForPath)('polkadot', 'osmosis-1')).toEqual(['DOT']);
+    });
+});
 (0, globals_1.describe)('getSupportedType', function () {
     (0, globals_1.it)('should return pfm for solana and ethereum', function () {
         (0, globals_1.expect)((0, chains_1.getSupportedType)('solana', 'ethereum')).toBe('pfm');

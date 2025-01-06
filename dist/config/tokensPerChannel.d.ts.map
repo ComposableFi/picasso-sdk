@@ -1,1 +1,1 @@
-{"version":3,"file":"tokensPerChannel.d.ts","sourceRoot":"","sources":["../../src/config/tokensPerChannel.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,eAAe,EAAE,MAAM,SAAS,CAAC;AAE1C,eAAO,MAAM,gBAAgB,EAAG,MAAM,CACpC,MAAM,EACN,MAAM,CAAC,MAAM,EAAE,eAAe,CAAC,CAghBhC,CAAE"}
+{"version":3,"file":"tokensPerChannel.d.ts","sourceRoot":"","sources":["../../src/config/tokensPerChannel.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,eAAe,EAAE,MAAM,SAAS,CAAC;AAE1C,eAAO,MAAM,gBAAgB,EAAG,MAAM,CACpC,MAAM,EACN,MAAM,CAAC,MAAM,EAAE,eAAe,CAAC,CAomDhC,CAAE"}
