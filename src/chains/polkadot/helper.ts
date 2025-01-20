@@ -23,6 +23,10 @@ import { MultihopRoutePath, RouteDetail } from './types';
 import { networks } from '../../config';
 import { hexToString } from '@polkadot/util';
 
+import { fromHex, toBech32 } from '@cosmjs/encoding';
+import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+import { getPublicKey } from '../solana';
+
 export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 export { base58Decode } from '@polkadot/util-crypto';
 export type OnFailedTxHandler = (
@@ -382,4 +386,68 @@ const chainNameMap = {
   quicksilver: 'quicksilver-2',
   inj: 'injective-1',
   agoric: 'agoric-3',
+};
+
+export const getPolkadotAddressNetwork = (accountId: string): string => {
+  let found = '';
+  try {
+    Object.keys(networks).forEach((networkId) => {
+      if (networks[networkId].polkadot.relayChain) {
+        const addressBytes = Buffer.from(accountId.slice(2), 'hex');
+        const kusamaAddress = decodeAddress(addressBytes);
+        const prefix = networks[networkId].polkadot?.ss58Format;
+        if (
+          prefix &&
+          kusamaAddress &&
+          accountId === encodeAddress(kusamaAddress, prefix)
+        ) {
+          found = networkId;
+        }
+      }
+    });
+    return found;
+  } catch (e) {
+    return found;
+  }
+};
+
+export const getCosmosAddressNetwork = (accountId: string): string => {
+  let found = '';
+  try {
+    Object.keys(networks).forEach((networkId) => {
+      const prefix =
+        networks[networkId].cosmos.bech32Config.bech32PrefixAccAddr;
+      if (prefix) {
+        if (accountId === toBech32(prefix, fromHex(accountId.slice(2)))) {
+          found = networkId;
+        }
+      }
+    });
+    return found;
+  } catch (e) {
+    return found;
+  }
+};
+
+export const getSolanaAddressNetwork = (accountId: string): string => {
+  try {
+    getPublicKey(accountId); //triggers error if not valid
+    return 'solana';
+  } catch (e) {
+    return '';
+  }
+};
+
+export const getEthereumAddressNetwork = (accountId: string): string => {
+  if (accountId.startsWith('0x')) {
+    return 'ethereum';
+  }
+  return '';
+};
+export const getNetworkFromAddress = (address: string) => {
+  const ethereumNetwork = getEthereumAddressNetwork(address);
+  const cosmosNetwork = getCosmosAddressNetwork(address);
+  const solanaNetwork = getSolanaAddressNetwork(address);
+  const polkadotNetwork = getPolkadotAddressNetwork(address);
+  return ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork;
 };
