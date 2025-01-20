@@ -20,12 +20,13 @@ import {
   polkadotApiTypes,
 } from './api-scheme';
 import { MultihopRoutePath, RouteDetail } from './types';
-import { networks } from '../../config';
+import { keplrChains, networks } from '../../config';
 import { hexToString } from '@polkadot/util';
 
 import { fromHex, toBech32 } from '@cosmjs/encoding';
 import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 import { getPublicKey } from '../solana';
+import { bech32 } from 'bech32';
 
 export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 export { base58Decode } from '@polkadot/util-crypto';
@@ -389,39 +390,29 @@ const chainNameMap = {
 };
 
 export const getPolkadotAddressNetwork = (accountId: string): string => {
-  let found = '';
   try {
-    Object.keys(networks).forEach((networkId) => {
-      if (networks[networkId].polkadot.relayChain) {
-        const addressBytes = Buffer.from(accountId.slice(2), 'hex');
-        const kusamaAddress = decodeAddress(addressBytes);
-        const prefix = networks[networkId].polkadot?.ss58Format;
-        if (
-          prefix &&
-          kusamaAddress &&
-          accountId === encodeAddress(kusamaAddress, prefix)
-        ) {
-          found = networkId;
-        }
-      }
-    });
-    return found;
+    return (
+      Object.values(networks).find((v) => {
+        const encoded = encodeAddress(
+          decodeAddress(accountId),
+          v.polkadot?.ss58Format
+        );
+
+        if (encoded === accountId) return v.chainId;
+      })?.chainId || ''
+    );
   } catch (e) {
-    return found;
+    return '';
   }
 };
 
 export const getCosmosAddressNetwork = (accountId: string): string => {
   let found = '';
   try {
-    Object.keys(networks).forEach((networkId) => {
-      const prefix =
-        networks[networkId].cosmos.bech32Config.bech32PrefixAccAddr;
-      if (prefix) {
-        if (accountId === toBech32(prefix, fromHex(accountId.slice(2)))) {
-          found = networkId;
-        }
-      }
+    const decoded = bech32.decode(accountId);
+    Object.values(keplrChains).forEach((v) => {
+      if (v.bech32Config.bech32PrefixAccAddr === decoded.prefix)
+        found = v.chainId;
     });
     return found;
   } catch (e) {
@@ -449,5 +440,7 @@ export const getNetworkFromAddress = (address: string) => {
   const cosmosNetwork = getCosmosAddressNetwork(address);
   const solanaNetwork = getSolanaAddressNetwork(address);
   const polkadotNetwork = getPolkadotAddressNetwork(address);
-  return ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork;
+  return (
+    ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork || ''
+  );
 };
