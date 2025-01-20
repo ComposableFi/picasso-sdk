@@ -367,3 +367,59 @@ export const getExplorerUrl = (
       return '';
   }
 };
+
+export const getPolkadotAddressNetwork = (accountId: string): string => {
+  try {
+    return (
+      Object.values(networks).find((v) => {
+        const encoded = encodeAddress(
+          decodeAddress(accountId),
+          v.polkadot?.ss58Format
+        );
+
+        if (encoded === accountId) return v.chainId;
+      })?.chainId || ''
+    );
+  } catch (e) {
+    return '';
+  }
+};
+
+export const getCosmosAddressNetwork = (accountId: string): string => {
+  let found = '';
+  try {
+    const decoded = bech32.decode(accountId);
+    Object.values(keplrChains).forEach((v) => {
+      if (v.bech32Config.bech32PrefixAccAddr === decoded.prefix)
+        found = v.chainId;
+    });
+    return found;
+  } catch (e) {
+    return found;
+  }
+};
+
+export const getSolanaAddressNetwork = (accountId: string): string => {
+  try {
+    getPublicKey(accountId); //triggers error if not valid
+    return 'solana';
+  } catch (e) {
+    return '';
+  }
+};
+
+export const getEthereumAddressNetwork = (accountId: string): string => {
+  if (accountId.startsWith('0x')) {
+    return 'ethereum';
+  }
+  return '';
+};
+export const getNetworkFromAddress = (address: string) => {
+  const ethereumNetwork = getEthereumAddressNetwork(address);
+  const cosmosNetwork = getCosmosAddressNetwork(address);
+  const solanaNetwork = getSolanaAddressNetwork(address);
+  const polkadotNetwork = getPolkadotAddressNetwork(address);
+  return (
+    ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork || ''
+  );
+};

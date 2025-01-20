@@ -6,11 +6,11 @@ import {
   getChainIdsByChannels,
   getChannelIdsFromMemo,
   getExplorerUrl,
+  getNetworkFromAddress,
   getSupportedType,
   TIMEOUT_IBC_MAX,
 } from '../chains';
 import { expect, it, describe, test } from '@jest/globals';
-import { getNetworkFromAddress } from '../chains/polkadot/helper';
 
 describe('buildIbcPath', () => {
   it('should return the correct path for osmosis-1 to ethereum', () => {
