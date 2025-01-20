@@ -40,6 +40,5 @@ export declare const getXcmInfo: (fromChainId: string, toChainId: string) => {
     tokens: string[];
 };
 export declare const getExplorerUrl: (chainId: string, infoType: "tx" | "address", info: string) => string;
-export declare const getNetworkFromAddress: (address: string) => any;
 export {};
 //# sourceMappingURL=utils.d.ts.map

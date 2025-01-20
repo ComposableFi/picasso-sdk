@@ -75,7 +75,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMultihopPath = exports.makeIbcToCosmos = exports.makeIbcToPolkadot = exports.getPolkadotBlockHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
+exports.getNetworkFromAddress = exports.getEthereumAddressNetwork = exports.getSolanaAddressNetwork = exports.getCosmosAddressNetwork = exports.getPolkadotAddressNetwork = exports.getMultihopPath = exports.makeIbcToCosmos = exports.makeIbcToPolkadot = exports.getPolkadotBlockHeight = exports.getMultiApi = exports.base58Decode = exports.encodeAddress = exports.decodeAddress = void 0;
 exports.getSubAccount = getSubAccount;
 exports.getPaymentAsset = getPaymentAsset;
 exports.setPaymentAsset = setPaymentAsset;
@@ -89,10 +89,13 @@ var api_scheme_1 = require("./api-scheme");
 var config_1 = require("../../config");
 var util_1 = require("@polkadot/util");
 var util_crypto_1 = require("@polkadot/util-crypto");
-Object.defineProperty(exports, "decodeAddress", { enumerable: true, get: function () { return util_crypto_1.decodeAddress; } });
-Object.defineProperty(exports, "encodeAddress", { enumerable: true, get: function () { return util_crypto_1.encodeAddress; } });
+var solana_1 = require("../solana");
+var bech32_1 = require("bech32");
 var util_crypto_2 = require("@polkadot/util-crypto");
-Object.defineProperty(exports, "base58Decode", { enumerable: true, get: function () { return util_crypto_2.base58Decode; } });
+Object.defineProperty(exports, "decodeAddress", { enumerable: true, get: function () { return util_crypto_2.decodeAddress; } });
+Object.defineProperty(exports, "encodeAddress", { enumerable: true, get: function () { return util_crypto_2.encodeAddress; } });
+var util_crypto_3 = require("@polkadot/util-crypto");
+Object.defineProperty(exports, "base58Decode", { enumerable: true, get: function () { return util_crypto_3.base58Decode; } });
 function checkWalletIdForSigning(accountId) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -410,3 +413,58 @@ var chainNameMap = {
     inj: 'injective-1',
     agoric: 'agoric-3',
 };
+var getPolkadotAddressNetwork = function (accountId) {
+    var _a;
+    try {
+        return (((_a = Object.values(config_1.networks).find(function (v) {
+            var _a;
+            var encoded = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(accountId), (_a = v.polkadot) === null || _a === void 0 ? void 0 : _a.ss58Format);
+            if (encoded === accountId)
+                return v.chainId;
+        })) === null || _a === void 0 ? void 0 : _a.chainId) || '');
+    }
+    catch (e) {
+        return '';
+    }
+};
+exports.getPolkadotAddressNetwork = getPolkadotAddressNetwork;
+var getCosmosAddressNetwork = function (accountId) {
+    var found = '';
+    try {
+        var decoded_1 = bech32_1.bech32.decode(accountId);
+        Object.values(config_1.keplrChains).forEach(function (v) {
+            if (v.bech32Config.bech32PrefixAccAddr === decoded_1.prefix)
+                found = v.chainId;
+        });
+        return found;
+    }
+    catch (e) {
+        return found;
+    }
+};
+exports.getCosmosAddressNetwork = getCosmosAddressNetwork;
+var getSolanaAddressNetwork = function (accountId) {
+    try {
+        (0, solana_1.getPublicKey)(accountId); //triggers error if not valid
+        return 'solana';
+    }
+    catch (e) {
+        return '';
+    }
+};
+exports.getSolanaAddressNetwork = getSolanaAddressNetwork;
+var getEthereumAddressNetwork = function (accountId) {
+    if (accountId.startsWith('0x')) {
+        return 'ethereum';
+    }
+    return '';
+};
+exports.getEthereumAddressNetwork = getEthereumAddressNetwork;
+var getNetworkFromAddress = function (address) {
+    var ethereumNetwork = (0, exports.getEthereumAddressNetwork)(address);
+    var cosmosNetwork = (0, exports.getCosmosAddressNetwork)(address);
+    var solanaNetwork = (0, exports.getSolanaAddressNetwork)(address);
+    var polkadotNetwork = (0, exports.getPolkadotAddressNetwork)(address);
+    return (ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork || '');
+};
+exports.getNetworkFromAddress = getNetworkFromAddress;
