@@ -92,4 +92,3 @@ export interface Erc20ABI extends BaseContract {
     once(event: 'Transfer', cb: Callback<Transfer>): void;
     once(event: 'Transfer', options: EventOptions, cb: Callback<Transfer>): void;
 }
-//# sourceMappingURL=Erc20ABI.d.ts.map

@@ -9,4 +9,3 @@ export { default as democracy } from './democracy/definitions';
 export { default as vesting } from './vesting/definitions';
 export { default as ibc } from './ibc/definitions';
 export { default as liquidStaking } from './liquidStaking/definitions';
-//# sourceMappingURL=definitions.d.ts.map

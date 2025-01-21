@@ -1,7 +1,6 @@
 import type { Enum, Null, Struct, u16, u128 } from '@polkadot/types-codec';
 import type { AccountId32, BlockNumber, Permill } from '@polkadot/types/interfaces/runtime';
 import type { ComposableTraitsDefiCurrencyPairCurrencyId, CustomRpcBalance, CustomRpcCurrencyId, SafeRpcWrapper } from '../common';
-/** @name ComposableTraitsDexFee */
 export interface ComposableTraitsDexFee extends Struct {
     readonly fee: u128;
     readonly lp_fee: u128;
@@ -9,10 +8,8 @@ export interface ComposableTraitsDexFee extends Struct {
     readonly protocol_fee: u128;
     readonly asset_id: u128;
 }
-/** @name ComposableTraitsDexStakingRewardPool */
 export interface ComposableTraitsDexStakingRewardPool extends Null {
 }
-/** @name PalletPabloPoolConfiguration */
 export interface PalletPabloPoolConfiguration extends Enum {
     readonly isStableSwap: boolean;
     readonly asStableSwap: {
@@ -46,24 +43,18 @@ export interface PalletPabloPoolConfiguration extends Enum {
     } & Struct;
     readonly type: 'StableSwap' | 'ConstantProduct' | 'LiquidityBootstrapping';
 }
-/** @name PalletPabloPoolId */
 export interface PalletPabloPoolId extends SafeRpcWrapper {
 }
-/** @name PalletPabloPoolInitConfiguration */
 export interface PalletPabloPoolInitConfiguration extends PalletPabloPoolConfiguration {
 }
-/** @name PalletPabloPriceAggregate */
 export interface PalletPabloPriceAggregate extends Struct {
     readonly poolId: PalletPabloPoolId;
     readonly baseAssetId: CustomRpcCurrencyId;
     readonly quoteAssetId: CustomRpcCurrencyId;
     readonly spotPrice: CustomRpcBalance;
 }
-/** @name PalletPabloPriceCumulative */
 export interface PalletPabloPriceCumulative extends Null {
 }
-/** @name PalletPabloTimeWeightedAveragePrice */
 export interface PalletPabloTimeWeightedAveragePrice extends Null {
 }
 export type PHANTOM_PABLO = 'pablo';
-//# sourceMappingURL=types.d.ts.map

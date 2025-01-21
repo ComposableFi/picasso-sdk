@@ -49,24 +49,22 @@ var fetchMultihopPaths = function () { return __awaiter(void 0, void 0, void 0, 
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 3, , 4]);
-                return [4 /*yield*/, (0, polkadot_1.getMultihopPath)('polkadot', '2019')];
+                return [4, (0, polkadot_1.getMultihopPath)('polkadot', '2019')];
             case 1:
                 polkadotComposable = _a.sent();
-                return [4 /*yield*/, (0, polkadot_1.getMultihopPath)('kusama', '2087')];
+                return [4, (0, polkadot_1.getMultihopPath)('kusama', '2087')];
             case 2:
                 kusamaPicasso = _a.sent();
                 result = polkadotComposable.concat(kusamaPicasso);
                 multihopOutputContent = "\n    // [GENERATED]\n  import { MultihopRoutePath } from \"../chains/polkadot/types\";\n\n    \n    export const multihopRoute :MultihopRoutePath[]= ".concat(JSON.stringify(result, null, 2), " ;\n    \n    ");
                 fs.writeFileSync(multihopRouteFilePath, multihopOutputContent, 'utf-8');
-                // save as tsfile
-                // fs.writeFileSync('result.json', JSON.stringify(result, null, 2));
                 process.exit(0);
-                return [2 /*return*/];
+                return [2];
             case 3:
                 error_1 = _a.sent();
                 console.error('Error fetching multihop paths:', error_1);
-                return [3 /*break*/, 4];
-            case 4: return [2 /*return*/];
+                return [3, 4];
+            case 4: return [2];
         }
     });
 }); };

@@ -54,28 +54,21 @@ exports.approveErc20 = exports.ethereumTransfer = void 0;
 var big_js_1 = __importDefault(require("big.js"));
 var constants_1 = require("./constants");
 var helper_1 = require("./helper");
-/**@description etheruem transfer */
 var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var transferContract, timeoutBlock, gasPrice, rawDataErc20, rawDataEth, isETH, rawData, encodedData, txObject, gas;
-    var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo, memo = _c === void 0 ? '' : _c, //
-    timeout = _b.timeout;
+    var web3 = _b.web3, amount = _b.amount, assetId = _b.assetId, originAddress = _b.originAddress, destinationAddress = _b.destinationAddress, channel = _b.channel, minimalDenom = _b.minimalDenom, _c = _b.memo, memo = _c === void 0 ? '' : _c, timeout = _b.timeout;
     return __generator(this, function (_d) {
         switch (_d.label) {
             case 0:
                 transferContract = (0, helper_1.getBankTransferContract)(web3);
-                return [4 /*yield*/, (0, helper_1.getBlock)(web3)];
+                return [4, (0, helper_1.getBlock)(web3)];
             case 1:
                 timeoutBlock = _d.sent();
-                return [4 /*yield*/, (0, helper_1.getGasPrice)(web3)];
+                return [4, (0, helper_1.getGasPrice)(web3)];
             case 2:
                 gasPrice = _d.sent();
-                rawDataErc20 = transferContract.methods.sendTransfer(minimalDenom, // pass minimal denom as first argument
-                amount, destinationAddress, //centauri
-                'transfer', "channel-".concat(channel), //update this using config
-                timeoutBlock, // replace it to get block
-                timeout, memo);
-                rawDataEth = transferContract.methods.sendTransferNativeToken(destinationAddress, 'transfer', "channel-".concat(channel), timeoutBlock, // replace it to get block
-                timeout.toString(), memo);
+                rawDataErc20 = transferContract.methods.sendTransfer(minimalDenom, amount, destinationAddress, 'transfer', "channel-".concat(channel), timeoutBlock, timeout, memo);
+                rawDataEth = transferContract.methods.sendTransferNativeToken(destinationAddress, 'transfer', "channel-".concat(channel), timeoutBlock, timeout.toString(), memo);
                 isETH = assetId === 'ETH';
                 rawData = isETH ? rawDataEth : rawDataErc20;
                 encodedData = rawData.encodeABI();
@@ -86,19 +79,17 @@ var ethereumTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                     value: isETH
                         ? new big_js_1.default(amount || 0).plus(constants_1.MAINNET_FEE).toFixed()
                         : constants_1.MAINNET_FEE,
-                    gasPrice: gasPrice, // wei
+                    gasPrice: gasPrice,
                 };
-                return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
+                return [4, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 3:
                 gas = _d.sent();
-                // simulate before sending transfer
                 (0, helper_1.getEthSimulate)(web3, encodedData, txObject);
-                return [2 /*return*/, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
+                return [2, rawData === null || rawData === void 0 ? void 0 : rawData.send(__assign(__assign({}, txObject), { gas: gas }))];
         }
     });
 }); };
 exports.ethereumTransfer = ethereumTransfer;
-/**@description Ask approval */
 var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var erc20Contract, tokenApprove, gasPrice, txObject, gas;
     var web3 = _b.web3, account = _b.account, amount = _b.amount, erc20TokenAddress = _b.erc20TokenAddress, _c = _b.spenderContract, spenderContract = _c === void 0 ? constants_1.bankContractAddress : _c;
@@ -107,9 +98,9 @@ var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, functi
             case 0:
                 erc20Contract = (0, helper_1.getErc20Contract)(web3, erc20TokenAddress);
                 if (!erc20Contract)
-                    return [2 /*return*/];
+                    return [2];
                 tokenApprove = erc20Contract.methods.approve(spenderContract, amount);
-                return [4 /*yield*/, web3.eth.getGasPrice()];
+                return [4, web3.eth.getGasPrice()];
             case 1:
                 gasPrice = _d.sent();
                 txObject = {
@@ -118,10 +109,10 @@ var approveErc20 = function (_a) { return __awaiter(void 0, [_a], void 0, functi
                     data: tokenApprove.encodeABI(),
                     gasPrice: gasPrice,
                 };
-                return [4 /*yield*/, (0, helper_1.getEthGasAmount)(web3, txObject)];
+                return [4, (0, helper_1.getEthGasAmount)(web3, txObject)];
             case 2:
                 gas = _d.sent();
-                return [2 /*return*/, tokenApprove.send({ from: account })];
+                return [2, tokenApprove.send({ from: account })];
         }
     });
 }); };

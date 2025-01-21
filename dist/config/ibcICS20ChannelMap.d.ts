@@ -12,4 +12,3 @@ export declare const ibcICS20ChannelMap: {
         };
     };
 };
-//# sourceMappingURL=ibcICS20ChannelMap.d.ts.map

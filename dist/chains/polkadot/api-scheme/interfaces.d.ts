@@ -34,4 +34,3 @@ export interface BalancesInterface {
     balance: string;
     decimal: Big;
 }
-//# sourceMappingURL=interfaces.d.ts.map

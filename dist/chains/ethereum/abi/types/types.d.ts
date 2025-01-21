@@ -51,4 +51,3 @@ export interface PayableTransactionObject<T> {
 }
 export type BlockType = 'latest' | 'pending' | 'genesis' | 'earliest' | number | BN;
 export type BaseContract = Omit<Contract, 'clone' | 'once'>;
-//# sourceMappingURL=types.d.ts.map

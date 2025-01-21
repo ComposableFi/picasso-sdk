@@ -1,12 +1,10 @@
 import * as anchor from '@coral-xyz/anchor';
 import { BorshSchema } from 'borsher';
 export { Keypair, PublicKey } from '@solana/web3.js';
-/**@description get connection of solana */
 export declare const getConnection: (endpoint: string) => anchor.web3.Connection;
 export declare const getPublicKey: (address: string) => anchor.web3.PublicKey;
 export declare const isNativeSolanaAsset: (minimalDenom: string) => boolean;
 export declare function hexToBytes(hex: string): number[];
-/**@description Tokenmint is derived from hashedDenom */
 export declare const getTokenMint: (hashedDenom: number[]) => string;
 export declare const getBaseDenomFromTracePath: (denom: string) => string;
 export declare const getSolanaAsset: (assetId: string, minimalDenom: string, isNative: boolean) => {
@@ -31,4 +29,3 @@ export declare const getSolanaGuestChainAccounts: (portId: string, channelId: st
 export declare function numberTo32ByteBuffer(num: bigint): Uint8Array;
 export declare const msgTransferSchema: BorshSchema;
 export declare const instructionSchema: BorshSchema;
-//# sourceMappingURL=helper.d.ts.map

@@ -101,15 +101,11 @@ var constants_1 = require("./constants");
 var helper_1 = require("./helper");
 var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var isNative, _c, denom, baseDenom, assetId, hashedDenom, senderPublicKey, associatedToken, tx, connection, tokenInfo, isWSOL, finalAmount, assetPubkeyAddress, refinedSourceChannel, senderTokenAccount, msgTransferPayload, instructionPayload, buffer, _d, guestChainPDA, triePDA, ibcStoragePDA, mintAuthorityPDA, escrowAccountPDA, feePDA, instruction;
-    var 
-    //write
-    quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, timeout = _b.timeout, _e = _b.memo, memo = _e === void 0 ? '' : _e;
+    var quantity = _b.quantity, accountId = _b.accountId, destinationAddress = _b.destinationAddress, configAssetId = _b.configAssetId, sourceChannelId = _b.sourceChannelId, configDenom = _b.configDenom, endpoint = _b.endpoint, timeout = _b.timeout, _e = _b.memo, memo = _e === void 0 ? '' : _e;
     return __generator(this, function (_f) {
         switch (_f.label) {
             case 0:
-                // const { network, minimalDenom: configMinimalDenom} = this.config.assets[configAssetId] || {};
                 console.log({
-                    //write
                     quantity: quantity,
                     accountId: accountId,
                     destinationAddress: destinationAddress,
@@ -127,8 +123,8 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 associatedToken = spl.getAssociatedTokenAddressSync(spl.NATIVE_MINT, senderPublicKey);
                 tx = new anchor.web3.Transaction();
                 connection = (0, helper_1.getConnection)(endpoint);
-                if (!(assetId === 'SOL' && connection)) return [3 /*break*/, 2];
-                return [4 /*yield*/, connection.getParsedTokenAccountsByOwner(senderPublicKey, {
+                if (!(assetId === 'SOL' && connection)) return [3, 2];
+                return [4, connection.getParsedTokenAccountsByOwner(senderPublicKey, {
                         programId: spl.TOKEN_PROGRAM_ID,
                     })];
             case 1:
@@ -144,11 +140,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                     }), spl.createSyncNativeInstruction(associatedToken, spl.TOKEN_PROGRAM_ID));
                 }
                 else {
-                    tx.add(
-                    // add  instruction for creating wSOL account
-                    spl.createAssociatedTokenAccountInstruction(senderPublicKey, associatedToken, senderPublicKey, spl.NATIVE_MINT, spl.TOKEN_PROGRAM_ID, spl.ASSOCIATED_TOKEN_PROGRAM_ID), 
-                    //add instruction for sol to wsol swap
-                    anchor.web3.SystemProgram.transfer({
+                    tx.add(spl.createAssociatedTokenAccountInstruction(senderPublicKey, associatedToken, senderPublicKey, spl.NATIVE_MINT, spl.TOKEN_PROGRAM_ID, spl.ASSOCIATED_TOKEN_PROGRAM_ID), anchor.web3.SystemProgram.transfer({
                         fromPubkey: senderPublicKey,
                         toPubkey: associatedToken,
                         lamports: BigInt(quantity),
@@ -159,7 +151,7 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 finalAmount = (0, helper_1.numberTo32ByteBuffer)(BigInt(quantity));
                 assetPubkeyAddress = assetId === 'SOL' ? spl.NATIVE_MINT : (0, helper_1.getPublicKey)(assetId);
                 refinedSourceChannel = "channel-".concat(sourceChannelId.toString());
-                return [4 /*yield*/, spl.getAssociatedTokenAddress(assetPubkeyAddress, senderPublicKey)];
+                return [4, spl.getAssociatedTokenAddress(assetPubkeyAddress, senderPublicKey)];
             case 3:
                 senderTokenAccount = _f.sent();
                 msgTransferPayload = {
@@ -214,20 +206,19 @@ var solanaTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                         { pubkey: web3_js_1.SystemProgram.programId, isSigner: false, isWritable: true },
                     ],
                     programId: constants_1.solanaIbcProgramId,
-                    data: buffer, // All instructions are hellos
+                    data: buffer,
                 });
                 console.log(instruction, 'instruction');
-                return [4 /*yield*/, sendTX(tx, accountId, endpoint, true, undefined, function () {
+                return [4, sendTX(tx, accountId, endpoint, true, undefined, function () {
                         tx.add(web3_js_1.ComputeBudgetProgram.requestHeapFrame({ bytes: 128 * 1024 }));
                         tx.add(web3_js_1.ComputeBudgetProgram.setComputeUnitLimit({ units: 700000 }));
                         tx.add(instruction);
                     }, true)];
-            case 4: return [2 /*return*/, _f.sent()];
+            case 4: return [2, _f.sent()];
         }
     });
 }); };
 exports.solanaTransfer = solanaTransfer;
-/**@description this function is used to send tx */
 var sendTX = function (inputTx_1, address_1, endpoint_1) {
     var args_1 = [];
     for (var _i = 3; _i < arguments.length; _i++) {
@@ -243,14 +234,13 @@ var sendTX = function (inputTx_1, address_1, endpoint_1) {
                     tx = inputTx;
                     depositor = (0, helper_1.getPublicKey)(address);
                     _a = tx;
-                    return [4 /*yield*/, (0, helper_1.getLatestBlockhash)(endpoint)];
+                    return [4, (0, helper_1.getLatestBlockhash)(endpoint)];
                 case 1:
                     _a.recentBlockhash = _b.sent();
-                    //set owner as feePayer
                     tx.feePayer = depositor;
                     beforeFeeFunc === null || beforeFeeFunc === void 0 ? void 0 : beforeFeeFunc();
                     tx.add(getFee(address, isBundle));
-                    return [4 /*yield*/, constants_1.solana.signTransaction(tx).catch(function (err) {
+                    return [4, constants_1.solana.signTransaction(tx).catch(function (err) {
                             utils_1.emitter.emit('CANCEL_SOLANA');
                             throw err;
                         })];
@@ -261,8 +251,8 @@ var sendTX = function (inputTx_1, address_1, endpoint_1) {
                         signedTx.partialSign(tokenMintKeypair);
                     }
                     rawTransaction = signedTx.serialize({ requireAllSignatures: true });
-                    return [4 /*yield*/, pollingSignatureStatus(rawTransaction, endpoint, skipPreflight)];
-                case 3: return [2 /*return*/, _b.sent()];
+                    return [4, pollingSignatureStatus(rawTransaction, endpoint, skipPreflight)];
+                case 3: return [2, _b.sent()];
             }
         });
     });
@@ -281,16 +271,15 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
             switch (_l.label) {
                 case 0:
                     connection = (0, helper_1.getConnection)(endpoint);
-                    //works like txHash
                     if (!connection)
-                        return [2 /*return*/];
-                    return [4 /*yield*/, connection.sendRawTransaction(rawTx, {
+                        return [2];
+                    return [4, connection.sendRawTransaction(rawTx, {
                             skipPreflight: skipPreflight,
                             maxRetries: 5,
                         })];
                 case 1:
                     signature = _l.sent();
-                    return [4 /*yield*/, connection.confirmTransaction(signature)];
+                    return [4, connection.confirmTransaction(signature)];
                 case 2:
                     _l.sent();
                     _l.label = 3;
@@ -298,44 +287,44 @@ var pollingSignatureStatus = function (rawTx_1, endpoint_1) {
                     _l.trys.push([3, 9, 10, 15]);
                     _a = true, _b = __asyncValues(__spreadArray([], __read(Array(9).keys()), false));
                     _l.label = 4;
-                case 4: return [4 /*yield*/, _b.next()];
+                case 4: return [4, _b.next()];
                 case 5:
-                    if (!(_c = _l.sent(), _d = _c.done, !_d)) return [3 /*break*/, 8];
+                    if (!(_c = _l.sent(), _d = _c.done, !_d)) return [3, 8];
                     _f = _c.value;
                     _a = false;
                     i = _f;
-                    return [4 /*yield*/, connection.getSignatureStatus(signature)];
+                    return [4, connection.getSignatureStatus(signature)];
                 case 6:
                     status_1 = _l.sent();
                     if (((_g = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _g === void 0 ? void 0 : _g.confirmationStatus) === 'finalized' ||
                         ((_h = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _h === void 0 ? void 0 : _h.confirmationStatus) === 'confirmed') {
-                        return [2 /*return*/, { signature: signature, status: (_j = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _j === void 0 ? void 0 : _j.confirmationStatus }];
+                        return [2, { signature: signature, status: (_j = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _j === void 0 ? void 0 : _j.confirmationStatus }];
                     }
                     if (i > 9) {
-                        return [2 /*return*/, { signature: signature, status: (_k = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _k === void 0 ? void 0 : _k.confirmationStatus }];
+                        return [2, { signature: signature, status: (_k = status_1 === null || status_1 === void 0 ? void 0 : status_1.value) === null || _k === void 0 ? void 0 : _k.confirmationStatus }];
                     }
                     _l.label = 7;
                 case 7:
                     _a = true;
-                    return [3 /*break*/, 4];
-                case 8: return [3 /*break*/, 15];
+                    return [3, 4];
+                case 8: return [3, 15];
                 case 9:
                     e_1_1 = _l.sent();
                     e_1 = { error: e_1_1 };
-                    return [3 /*break*/, 15];
+                    return [3, 15];
                 case 10:
                     _l.trys.push([10, , 13, 14]);
-                    if (!(!_a && !_d && (_e = _b.return))) return [3 /*break*/, 12];
-                    return [4 /*yield*/, _e.call(_b)];
+                    if (!(!_a && !_d && (_e = _b.return))) return [3, 12];
+                    return [4, _e.call(_b)];
                 case 11:
                     _l.sent();
                     _l.label = 12;
-                case 12: return [3 /*break*/, 14];
+                case 12: return [3, 14];
                 case 13:
                     if (e_1) throw e_1.error;
-                    return [7 /*endfinally*/];
-                case 14: return [7 /*endfinally*/];
-                case 15: return [2 /*return*/];
+                    return [7];
+                case 14: return [7];
+                case 15: return [2];
             }
         });
     });
@@ -345,7 +334,7 @@ var getFee = function (address, isBundle) {
         return getTips(address, 15000000);
     }
     else {
-        var SEND_AMT = 0.01 * web3_js_1.LAMPORTS_PER_SOL; // for test, it used to be 0.006
+        var SEND_AMT = 0.01 * web3_js_1.LAMPORTS_PER_SOL;
         var PRIORITY_FEE_IX = web3_js_1.ComputeBudgetProgram.setComputeUnitPrice({
             microLamports: SEND_AMT,
         });
@@ -354,8 +343,6 @@ var getFee = function (address, isBundle) {
 };
 var getTips = function (accountId, lamports) {
     if (lamports === void 0) { lamports = 4000000; }
-    //0.000035
-    //0.015
     return web3_js_1.SystemProgram.transfer({
         toPubkey: (0, helper_1.getPublicKey)('96gYZGLnJYVFmbjzopPSU6QiEV5fGqZNyN9nmNhvrZU5'),
         fromPubkey: (0, helper_1.getPublicKey)(accountId),
