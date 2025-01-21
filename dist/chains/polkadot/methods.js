@@ -57,14 +57,18 @@ function signAndSendTransfer(_a) {
                     _c = _d.sent(), account = _c.account, signerOption = _c.signerOption;
                     return [2 /*return*/, new Promise(function (resolve, reject) {
                             var state = { isFailedTxShown: false };
+                            console.log('step0', extrinsic);
                             extrinsic
                                 .signAndSend(account, signerOption, function (result) { return __awaiter(_this, void 0, void 0, function () {
                                 var dispatchError, status, events, _a, txHash, sequence, errorMessage, decoded, docs, name_1, section, errorResult, found, header, _b, result_1, found_1, result_2, header, _c, result_3;
                                 return __generator(this, function (_d) {
                                     switch (_d.label) {
                                         case 0:
+                                            // Emit approval event
+                                            console.log('step1', result);
                                             dispatchError = result.dispatchError, status = result.status, events = result.events;
                                             _a = (0, exports.buildStatusInfo)(result.txHash.toString(), JSON.parse(JSON.stringify(events))), txHash = _a.txHash, sequence = _a.sequence;
+                                            console.log('step2', events, txHash, sequence);
                                             // Handle dispatch errors
                                             if (dispatchError) {
                                                 errorMessage = void 0;
@@ -89,7 +93,9 @@ function signAndSendTransfer(_a) {
                                                 };
                                                 return [2 /*return*/, reject(errorResult)];
                                             }
+                                            console.log('step3', events);
                                             found = JSON.parse(JSON.stringify(events)).find(function (e) { var _a, _b; return (_b = (_a = e.event) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.find(function (data) { var _a; return ((_a = data['incomplete']) === null || _a === void 0 ? void 0 : _a.length) > 0; }); });
+                                            console.log('step4', found);
                                             if (found) {
                                                 return [2 /*return*/, reject({
                                                         destAddress: toAddress,
@@ -100,7 +106,9 @@ function signAndSendTransfer(_a) {
                                                     })];
                                             }
                                             if (!status) return [3 /*break*/, 9];
+                                            console.log('step5', status);
                                             if (!isIbc) return [3 /*break*/, 4];
+                                            console.log('step5.5');
                                             if (!apiTo) return [3 /*break*/, 2];
                                             return [4 /*yield*/, apiTo.rpc.chain.getHeader()];
                                         case 1:
@@ -122,6 +130,7 @@ function signAndSendTransfer(_a) {
                                             return [2 /*return*/, resolve(result_1)];
                                         case 4:
                                             if (!filter) return [3 /*break*/, 5];
+                                            console.log('step6');
                                             found_1 = events.find(function (e) { return filter(e.event); });
                                             if (!found_1 && !state.isFailedTxShown) {
                                                 state.isFailedTxShown = true;
@@ -133,6 +142,7 @@ function signAndSendTransfer(_a) {
                                                     })];
                                             }
                                             if (found_1 && found_1.event.data.find(function (x) { return x['isComplete']; })) {
+                                                console.log('step6.5');
                                                 result_2 = {
                                                     destAddress: toAddress,
                                                     txHash: txHash,
@@ -144,6 +154,8 @@ function signAndSendTransfer(_a) {
                                             }
                                             return [3 /*break*/, 9];
                                         case 5:
+                                            // For xTokens
+                                            console.log('step7');
                                             if (!apiTo) return [3 /*break*/, 7];
                                             return [4 /*yield*/, apiTo.rpc.chain.getHeader()];
                                         case 6:
@@ -184,6 +196,7 @@ function signAndSendTransfer(_a) {
     });
 }
 var buildStatusInfo = function (txHash, events) {
+    console.log('buildStatusInfo', events);
     if (!events)
         return { txHash: txHash, sequence: 'NONE' };
     var packet = events

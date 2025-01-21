@@ -368,39 +368,58 @@ export const getExplorerUrl = (
   }
 };
 
-export const getNetworkFromAddress = (address: string) => {
-  let ret = null;
-  //solana
+export const getPolkadotAddressNetwork = (accountId: string): string => {
   try {
-    getPublicKey(address);
-    return 'solana';
-  } catch {}
+    return (
+      Object.values(networks).find((v) => {
+        const encoded = encodeAddress(
+          decodeAddress(accountId),
+          v.polkadot?.ss58Format
+        );
 
-  // cosmos
+        if (encoded === accountId) return v.chainId;
+      })?.chainId || ''
+    );
+  } catch (e) {
+    return '';
+  }
+};
+
+export const getCosmosAddressNetwork = (accountId: string): string => {
+  let found = '';
   try {
-    const decoded = bech32.decode(address);
+    const decoded = bech32.decode(accountId);
     Object.values(keplrChains).forEach((v) => {
       if (v.bech32Config.bech32PrefixAccAddr === decoded.prefix)
-        ret = v.chainId;
+        found = v.chainId;
     });
-    return ret;
-  } catch {}
+    return found;
+  } catch (e) {
+    return found;
+  }
+};
 
-  // ethereum
+export const getSolanaAddressNetwork = (accountId: string): string => {
   try {
-    if (Web3.utils.isAddress(address)) return 'ethereum';
-  } catch {}
-  //polkadot
-  try {
-    return Object.values(networks).find((v) => {
-      const encoded = encodeAddress(
-        decodeAddress(address),
-        v.polkadot?.ss58Format
-      );
+    getPublicKey(accountId); //triggers error if not valid
+    return 'solana';
+  } catch (e) {
+    return '';
+  }
+};
 
-      if (encoded === address) return v.chainId;
-    })?.chainId;
-  } catch {}
-
-  return null;
+export const getEthereumAddressNetwork = (accountId: string): string => {
+  if (accountId.startsWith('0x')) {
+    return 'ethereum';
+  }
+  return '';
+};
+export const getNetworkFromAddress = (address: string) => {
+  const ethereumNetwork = getEthereumAddressNetwork(address);
+  const cosmosNetwork = getCosmosAddressNetwork(address);
+  const solanaNetwork = getSolanaAddressNetwork(address);
+  const polkadotNetwork = getPolkadotAddressNetwork(address);
+  return (
+    ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork || ''
+  );
 };

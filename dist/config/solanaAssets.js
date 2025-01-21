@@ -12,21 +12,6 @@ exports.solanaAssets = {
         "minimumTransfer": 1,
         "fromCosmosFee": 0.3
     },
-    "ARCH": {
-        "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
-        "minimumTransfer": 300,
-        "fromCosmosFee": 160
-    },
-    "ASTRO": {
-        "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
-        "minimumTransfer": 40000,
-        "fromCosmosFee": 26000
-    },
-    "OSMO": {
-        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
-        "minimumTransfer": 20,
-        "fromCosmosFee": 11
-    },
     "SEI": {
         "mintAddress": "BajH8K75CHJrmT1hf6QGHSyY5r5tbJYSHrCb7uDNCF5S",
         "minimumTransfer": 30,
@@ -47,6 +32,11 @@ exports.solanaAssets = {
         "minimumTransfer": 200,
         "fromCosmosFee": 105
     },
+    "OSMO": {
+        "mintAddress": "EpZeFE5ngedGVug3s1VQK9987FEsCY512VtKUKmfzidM",
+        "minimumTransfer": 20,
+        "fromCosmosFee": 11
+    },
     "stATOM": {
         "mintAddress": "8aHZdc7qrKAPMey7B6VHx3U3xWFBs7BZhdLAYqZBQwea",
         "minimumTransfer": 2,
@@ -56,26 +46,6 @@ exports.solanaAssets = {
         "mintAddress": "3bHxPkuJwztJyrZW2T6sZe8GkRjN1BXgw3ViHPcrQdCj",
         "minimumTransfer": 20,
         "fromCosmosFee": 5
-    },
-    "PICA": {
-        "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
-        "minimumTransfer": 25000,
-        "fromCosmosFee": 12000
-    },
-    "XRP": {
-        "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
-        "minimumTransfer": 35,
-        "fromCosmosFee": 10
-    },
-    "COREUM": {
-        "mintAddress": "Cq5Z54y9FpWQHkvspw63TKd9P9w34X5XjFk14FkG1H8",
-        "minimumTransfer": 200,
-        "fromCosmosFee": 83
-    },
-    "ATOM": {
-        "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
-        "minimumTransfer": 2,
-        "fromCosmosFee": 1
     },
     "ETH": {
         "mintAddress": "EXZbXNMbdTbMYpr9J5MUDv29XnWfxLZYyCCtk2tCy7XV",
@@ -171,16 +141,6 @@ exports.solanaAssets = {
         "mintAddress": "4tjtYi8dCVkE539ANy3qUHhKdqkjzqhn2iW4WSZMfMa6",
         "minimumTransfer": 80,
         "fromCosmosFee": 20
-    },
-    "SCRT": {
-        "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
-        "minimumTransfer": 50,
-        "fromCosmosFee": 25
-    },
-    "SHD": {
-        "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",
-        "minimumTransfer": 10,
-        "fromCosmosFee": 5
     },
     "SOL": {
         "mintAddress": "SOL",
@@ -286,6 +246,46 @@ exports.solanaAssets = {
         "mintAddress": "UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z",
         "minimumTransfer": 15000,
         "fromCosmosFee": 7500
+    },
+    "ARCH": {
+        "mintAddress": "BxZEQoVDwPT1dGTSnLw4Qvm17up2vvvP88PCSYTncgnk",
+        "minimumTransfer": 300,
+        "fromCosmosFee": 160
+    },
+    "PICA": {
+        "mintAddress": "966vsqwoS3ZBrHesTyAvE7esFV2kaHaDFLLXs4asPdLJ",
+        "minimumTransfer": 25000,
+        "fromCosmosFee": 12000
+    },
+    "XRP": {
+        "mintAddress": "DD4Ew6YcPCiJvb9ZQyAktRvgtckubPLTcHdbaK4nVKUW",
+        "minimumTransfer": 35,
+        "fromCosmosFee": 10
+    },
+    "COREUM": {
+        "mintAddress": "Cq5Z54y9FpWQHkvspw63TKd9P9w34X5XjFk14FkG1H8",
+        "minimumTransfer": 200,
+        "fromCosmosFee": 83
+    },
+    "SCRT": {
+        "mintAddress": "6bQZs6ZSaRoaYPsfLibM9ZhZa4Haj4xF5uFJ33Kduc3V",
+        "minimumTransfer": 50,
+        "fromCosmosFee": 25
+    },
+    "SHD": {
+        "mintAddress": "4Atqy7XYeHXLD2thRJtDtBaRassB2Ff4ksefhvzLKxDQ",
+        "minimumTransfer": 10,
+        "fromCosmosFee": 5
+    },
+    "ATOM": {
+        "mintAddress": "9gjHXkUVtDEPfxXXT9Jj3ZbYbFzS4zN92ewsCH8zGUKc",
+        "minimumTransfer": 2,
+        "fromCosmosFee": 1
+    },
+    "ASTRO": {
+        "mintAddress": "8knH1Z4kY6WaHRMZHMxe76d2Ar3kHhjz33t1eZRJSyET",
+        "minimumTransfer": 40000,
+        "fromCosmosFee": 26000
     },
     "STARS": {
         "mintAddress": "HYaNBn8TQCpy1ohJAQ8V8GaLsRFrkudszgQU8uQpWNvB",

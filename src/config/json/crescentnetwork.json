@@ -1,8 +1,8 @@
 {
   "enabled": false,
   "chainId": "crescent-1",
-  "rest": "https://crescent-cmp-api.polkachu.com",
-  "rpc": "https://crescent-cmp-rpc.polkachu.com",
+  "rest": "https://crescent-api.polkachu.com",
+  "rpc": "https://crescent-rpc.polkachu.com",
   "chainName": "Crescent Network",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/crescent/chain.png",
   "cosmos": {

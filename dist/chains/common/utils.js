@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNetworkFromAddress = exports.getExplorerUrl = exports.getXcmInfo = exports.getSourceChannel = exports.getChannelIdsFromMemo = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.getChainIdsByChannels = exports.channelList = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
+exports.getNetworkFromAddress = exports.getEthereumAddressNetwork = exports.getSolanaAddressNetwork = exports.getCosmosAddressNetwork = exports.getPolkadotAddressNetwork = exports.getExplorerUrl = exports.getXcmInfo = exports.getSourceChannel = exports.getChannelIdsFromMemo = exports.createForwardPathRecursive = exports.convertAddressToStr = exports.convertCosmosAddress = exports.getPolkadotAddressStr = exports.getSupportedType = exports.getChainIdsByChannels = exports.channelList = exports.getAllowedTokensForPath = exports.buildIbcPath = exports.getForbiddenChains = exports.findSourceChannelId = exports.getTimeOut = exports.memoBuilder = exports.emitter = void 0;
 var eventemitter3_1 = __importDefault(require("eventemitter3"));
 var big_js_1 = __importDefault(require("big.js"));
 var config_1 = require("../../config");
@@ -38,7 +38,6 @@ var cosmos_1 = require("../cosmos");
 exports.emitter = new eventemitter3_1.default();
 var bech32_1 = require("bech32");
 var solana_1 = require("../solana");
-var web3_1 = __importDefault(require("web3"));
 var memoBuilder = function (_a) {
     var destChannel = _a.destChannel, destAddress = _a.destAddress;
     return JSON.stringify({
@@ -73,7 +72,7 @@ var getForbiddenChains = function (fromChainId, toChainId) {
     return false;
 };
 exports.getForbiddenChains = getForbiddenChains;
-// Function to find the shortest path with channel information
+/**@description Function to find the shortest path with channel information */
 var buildIbcPath = function (fromChainId, toChainId) {
     if ((0, exports.getForbiddenChains)(fromChainId, toChainId))
         return null;
@@ -113,6 +112,35 @@ var buildIbcPath = function (fromChainId, toChainId) {
     return null;
 };
 exports.buildIbcPath = buildIbcPath;
+/**@description Function to find the allowed tokens for the entire path */
+var getAllowedTokensForPath = function (originChainId, destinationChainId) {
+    var _a, _b, _c, _d;
+    var result = (0, exports.buildIbcPath)(originChainId, destinationChainId);
+    console.log(result);
+    var supportedType = (0, exports.getSupportedType)(originChainId, destinationChainId);
+    if (supportedType === 'xcm') {
+        var xcmInfo = (0, exports.getXcmInfo)(originChainId, destinationChainId);
+        return xcmInfo.tokens;
+    }
+    if (!!supportedType) {
+        return result.reduce(function (acc, item) {
+            if (acc.length > 0) {
+                acc = acc.filter(function (token) {
+                    return config_1.tokensPerChannel[item.chainId][item.channelId].tokens.includes(token);
+                });
+            }
+            else {
+                acc = __spreadArray([], __read(config_1.tokensPerChannel[item.chainId][item.channelId].tokens), false);
+            }
+            return acc;
+        }, []);
+    }
+    if (((_b = (_a = config_1.networks === null || config_1.networks === void 0 ? void 0 : config_1.networks[originChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) === null || _b === void 0 ? void 0 : _b.relayChain) === 'polkadot' ||
+        ((_d = (_c = config_1.networks === null || config_1.networks === void 0 ? void 0 : config_1.networks[destinationChainId]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.relayChain) === 'polkadot')
+        return ['DOT'];
+    return [];
+};
+exports.getAllowedTokensForPath = getAllowedTokensForPath;
 exports.channelList = Object.values(config_1.networks);
 var getChainIdsByChannels = function (channels) {
     var _a, _b;
@@ -288,41 +316,58 @@ var getExplorerUrl = function (chainId, infoType, info) {
     }
 };
 exports.getExplorerUrl = getExplorerUrl;
-var getNetworkFromAddress = function (address) {
+var getPolkadotAddressNetwork = function (accountId) {
     var _a;
-    var ret = null;
-    //solana
     try {
-        (0, solana_1.getPublicKey)(address);
-        return 'solana';
+        return (((_a = Object.values(config_1.networks).find(function (v) {
+            var _a;
+            var encoded = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(accountId), (_a = v.polkadot) === null || _a === void 0 ? void 0 : _a.ss58Format);
+            if (encoded === accountId)
+                return v.chainId;
+        })) === null || _a === void 0 ? void 0 : _a.chainId) || '');
     }
-    catch (_b) { }
-    // cosmos
+    catch (e) {
+        return '';
+    }
+};
+exports.getPolkadotAddressNetwork = getPolkadotAddressNetwork;
+var getCosmosAddressNetwork = function (accountId) {
+    var found = '';
     try {
-        var decoded_1 = bech32_1.bech32.decode(address);
+        var decoded_1 = bech32_1.bech32.decode(accountId);
         Object.values(config_1.keplrChains).forEach(function (v) {
             if (v.bech32Config.bech32PrefixAccAddr === decoded_1.prefix)
-                ret = v.chainId;
+                found = v.chainId;
         });
-        return ret;
+        return found;
     }
-    catch (_c) { }
-    // ethereum
+    catch (e) {
+        return found;
+    }
+};
+exports.getCosmosAddressNetwork = getCosmosAddressNetwork;
+var getSolanaAddressNetwork = function (accountId) {
     try {
-        if (web3_1.default.utils.isAddress(address))
-            return 'ethereum';
+        (0, solana_1.getPublicKey)(accountId); //triggers error if not valid
+        return 'solana';
     }
-    catch (_d) { }
-    //polkadot
-    try {
-        return (_a = Object.values(config_1.networks).find(function (v) {
-            var _a;
-            var encoded = (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(address), (_a = v.polkadot) === null || _a === void 0 ? void 0 : _a.ss58Format);
-            if (encoded === address)
-                return v.chainId;
-        })) === null || _a === void 0 ? void 0 : _a.chainId;
+    catch (e) {
+        return '';
     }
-    catch (_e) { }
-    return null;
+};
+exports.getSolanaAddressNetwork = getSolanaAddressNetwork;
+var getEthereumAddressNetwork = function (accountId) {
+    if (accountId.startsWith('0x')) {
+        return 'ethereum';
+    }
+    return '';
+};
+exports.getEthereumAddressNetwork = getEthereumAddressNetwork;
+var getNetworkFromAddress = function (address) {
+    var ethereumNetwork = (0, exports.getEthereumAddressNetwork)(address);
+    var cosmosNetwork = (0, exports.getCosmosAddressNetwork)(address);
+    var solanaNetwork = (0, exports.getSolanaAddressNetwork)(address);
+    var polkadotNetwork = (0, exports.getPolkadotAddressNetwork)(address);
+    return (ethereumNetwork || cosmosNetwork || solanaNetwork || polkadotNetwork || '');
 };
 exports.getNetworkFromAddress = getNetworkFromAddress;

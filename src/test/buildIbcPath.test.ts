@@ -259,3 +259,36 @@ describe('getNetworkFromAddress', () => {
     expect(getNetworkFromAddress(picassoSS58Address)).toBe('2087');
   });
 });
+
+describe('getNetworkFromAddress', () => {
+  test('should correctly detect Picasso kusama address', () => {
+    const picassoKusamaAddress =
+      '5vBK5vCSwqiQSYD7rePoodc3koQjvvYpJDZDRdrHLDAeoVTs';
+    expect(getNetworkFromAddress(picassoKusamaAddress)).toBe('2087');
+  });
+
+  test('should correctly detect Astar address', () => {
+    const astarAddress = 'XYHiGNi33ERZxQi1DgmByuMKT7oWrquzqBSMZZ2xb1CRLxa';
+    expect(getNetworkFromAddress(astarAddress)).toBe('2006');
+  });
+
+  test('should correctly detect Solana address', () => {
+    const solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4qxPHKhmAht6pXPFWo';
+    expect(getNetworkFromAddress(solanaAddress)).toBe('solana');
+  });
+
+  test('should correctly detect error address', () => {
+    const solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4Wo';
+    expect(getNetworkFromAddress(solanaAddress)).toBe('');
+  });
+
+  test('should correctly detect Ethereum address', () => {
+    const ethereumAddress = '0x345cEF3e1DC8221BE6D94B933bF09Ca8de6Beb68';
+    expect(getNetworkFromAddress(ethereumAddress)).toBe('ethereum');
+  });
+
+  test('should correctly detect Picasso cosmos address', () => {
+    const picassoCosmosAddress = 'pica1src4utrx6llsteqd7wf5qcuxcgjg6s8tle8kvq';
+    expect(getNetworkFromAddress(picassoCosmosAddress)).toBe('centauri-1');
+  });
+});

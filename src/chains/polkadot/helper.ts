@@ -20,8 +20,13 @@ import {
   polkadotApiTypes,
 } from './api-scheme';
 import { MultihopRoutePath, RouteDetail } from './types';
-import { networks } from '../../config';
+import { keplrChains, networks } from '../../config';
 import { hexToString } from '@polkadot/util';
+
+import { fromHex, toBech32 } from '@cosmjs/encoding';
+import { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
+import { getPublicKey } from '../solana';
+import { bech32 } from 'bech32';
 
 export { decodeAddress, encodeAddress } from '@polkadot/util-crypto';
 export { base58Decode } from '@polkadot/util-crypto';

@@ -18,4 +18,3 @@ __exportStar(require("./common"), exports);
 __exportStar(require("./cosmos"), exports);
 __exportStar(require("./ethereum"), exports);
 __exportStar(require("./solana"), exports);
-__exportStar(require("./polkadot"), exports);

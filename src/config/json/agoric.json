@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "chainId": "agoric-3",
-  "rest": "https://agoric-cmp-api.polkachu.com",
-  "rpc": "https://agoric-cmp-rpc.polkachu.com",
+  "rest": "https://agoric-api.polkachu.com",
+  "rpc": "https://agoric-rpc.polkachu.com",
   "chainName": "Agoric",
   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/agoric/chain.png",
   "cosmos": {
