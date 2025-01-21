@@ -43,9 +43,6 @@
     "@injectivelabs/sdk-ts": "1.14.4",
     "eventemitter3": "^5.0.0",
     "js-sha256": "^0.11.0",
-    "prettier": "^3.3.3",
-    "ts-node": "^10.9.2",
-    "type-fest": "^4.23.0",
     "web3": "^1.6.0",
     "web3-core": "1.10.2",
     "web3-eth-contract": "1.6.1",
@@ -53,9 +50,15 @@
     "web3-utils": "^1.6.0"
   },
   "files": [
-    "dist/**/*"
+    "dist/chains/**/*",
+    "dist/config/**/*",
+    "dist/indexer/**/*",
+    "dist/index.*"
   ],
   "devDependencies": {
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "type-fest": "^4.23.0",
     "@keplr-wallet/types": "^0.11.26",
     "@polkadot/api-base": "^11.3.1",
     "@polkadot/rpc-core": "^11.3.1",

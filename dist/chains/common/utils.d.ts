@@ -40,5 +40,10 @@ export declare const getXcmInfo: (fromChainId: string, toChainId: string) => {
     tokens: string[];
 };
 export declare const getExplorerUrl: (chainId: string, infoType: "tx" | "address", info: string) => string;
+export declare const getPolkadotAddressNetwork: (accountId: string) => string;
+export declare const getCosmosAddressNetwork: (accountId: string) => string;
+export declare const getSolanaAddressNetwork: (accountId: string) => string;
+export declare const getEthereumAddressNetwork: (accountId: string) => string;
+export declare const getNetworkFromAddress: (address: string) => string;
 export {};
 //# sourceMappingURL=utils.d.ts.map

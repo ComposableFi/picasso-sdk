@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var chains_1 = require("../chains");
 var globals_1 = require("@jest/globals");
-var helper_1 = require("../chains/polkadot/helper");
 (0, globals_1.describe)('buildIbcPath', function () {
     (0, globals_1.it)('should return the correct path for osmosis-1 to ethereum', function () {
         var result = (0, chains_1.buildIbcPath)('osmosis-1', 'ethereum');
@@ -170,48 +169,48 @@ var helper_1 = require("../chains/polkadot/helper");
 (0, globals_1.describe)('getNetworkFromAddress', function () {
     (0, globals_1.test)('should correctly detect Solana address', function () {
         var solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4qxPHKhmAht6pXPFWo';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(solanaAddress)).toBe('solana');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(solanaAddress)).toBe('solana');
     });
     (0, globals_1.test)('should correctly detect Picasso bech32 address', function () {
         var picassoAddress = 'pica1src4utrx6llsteqd7wf5qcuxcgjg6s8tle8kvq';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(picassoAddress)).toBe('centauri-1');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoAddress)).toBe('centauri-1');
     });
     (0, globals_1.test)('should correctly detect Osmosis bech32 address', function () {
         var osmosisAddress = 'osmo1src4utrx6llsteqd7wf5qcuxcgjg6s8tv7hr74';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(osmosisAddress)).toBe('osmosis-1');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(osmosisAddress)).toBe('osmosis-1');
     });
     (0, globals_1.test)('should correctly detect Ethereum address', function () {
         var ethereumAddress = '0x46762bdE09C1a1c566c3efD959368455Bf20c354';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(ethereumAddress)).toBe('ethereum');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(ethereumAddress)).toBe('ethereum');
     });
     (0, globals_1.test)('should correctly detect Picasso SS58 address', function () {
         var picassoSS58Address = '5wFJF7twuHuSfUwK6tJFfHAbi55ubDx38QYSa5JfpDMNKuqU';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(picassoSS58Address)).toBe('2087');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoSS58Address)).toBe('2087');
     });
 });
 (0, globals_1.describe)('getNetworkFromAddress', function () {
     (0, globals_1.test)('should correctly detect Picasso kusama address', function () {
         var picassoKusamaAddress = '5vBK5vCSwqiQSYD7rePoodc3koQjvvYpJDZDRdrHLDAeoVTs';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(picassoKusamaAddress)).toBe('2087');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoKusamaAddress)).toBe('2087');
     });
     (0, globals_1.test)('should correctly detect Astar address', function () {
         var astarAddress = 'XYHiGNi33ERZxQi1DgmByuMKT7oWrquzqBSMZZ2xb1CRLxa';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(astarAddress)).toBe('2006');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(astarAddress)).toBe('2006');
     });
     (0, globals_1.test)('should correctly detect Solana address', function () {
         var solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4qxPHKhmAht6pXPFWo';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(solanaAddress)).toBe('solana');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(solanaAddress)).toBe('solana');
     });
     (0, globals_1.test)('should correctly detect error address', function () {
         var solanaAddress = '1ryziZbFQW4fcWck9wW4vU4KD4Wo';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(solanaAddress)).toBe('');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(solanaAddress)).toBe('');
     });
     (0, globals_1.test)('should correctly detect Ethereum address', function () {
         var ethereumAddress = '0x345cEF3e1DC8221BE6D94B933bF09Ca8de6Beb68';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(ethereumAddress)).toBe('ethereum');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(ethereumAddress)).toBe('ethereum');
     });
     (0, globals_1.test)('should correctly detect Picasso cosmos address', function () {
         var picassoCosmosAddress = 'pica1src4utrx6llsteqd7wf5qcuxcgjg6s8tle8kvq';
-        (0, globals_1.expect)((0, helper_1.getNetworkFromAddress)(picassoCosmosAddress)).toBe('centauri-1');
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoCosmosAddress)).toBe('centauri-1');
     });
 });

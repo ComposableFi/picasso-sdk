@@ -55,9 +55,4 @@ export declare const makeIbcToCosmos: ({ api, toAddress, sourceChannel, assetId,
     memo: string;
 }) => SubmittableExtrinsic<"promise", ISubmittableResult>;
 export declare const getMultihopPath: (fromChainId: string, networkType: "2019" | "2087") => Promise<MultihopRoutePath[]>;
-export declare const getPolkadotAddressNetwork: (accountId: string) => string;
-export declare const getCosmosAddressNetwork: (accountId: string) => string;
-export declare const getSolanaAddressNetwork: (accountId: string) => string;
-export declare const getEthereumAddressNetwork: (accountId: string) => string;
-export declare const getNetworkFromAddress: (address: string) => string;
 //# sourceMappingURL=helper.d.ts.map

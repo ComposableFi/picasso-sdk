@@ -1,0 +1,10 @@
+src/
+tests/
+scripts/
+.github/
+.vscode/
+.husky/
+*.test.*
+tsconfig.json
+jest.config.js
+.prettierrc
