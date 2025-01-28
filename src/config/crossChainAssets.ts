@@ -1638,15 +1638,11 @@ export const crossChainAssets :CrossChainAssets= {
       "currentChainId": "2087"
     },
     "23": {
-      "chainId": "2087",
+      "chainId": "2023",
       "decimals": 18,
       "minimalDenom": "23",
       "denom": "MOVR",
       "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/MOVR.svg",
-      "ratio": {
-        "n": "40900",
-        "d": "1"
-      },
       "currentChainId": "2087"
     },
     "24": {
