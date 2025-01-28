@@ -15,8 +15,8 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": false,
-    "outDir": "./dist", // 빌드된 파일 경로
-    "rootDir": "./src", // 소스 파일 경로
+    "outDir": "./dist",
+    "rootDir": "./src",
     "downlevelIteration": true,
     "target": "es5",
     "module": "commonjs",

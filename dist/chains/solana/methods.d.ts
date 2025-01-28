@@ -10,7 +10,7 @@ export declare const solanaTransfer: ({ quantity, accountId, destinationAddress,
     memo: string;
 }) => Promise<{
     signature: string;
-    status: "confirmed" | "finalized";
+    status: "finalized" | "confirmed";
 } | {
     signature: string;
     status: "processed";
