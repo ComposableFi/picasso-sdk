@@ -44,7 +44,6 @@ var type_builder_1 = require("./type-builder");
 var helper_1 = require("./helper");
 var config_1 = require("../../config");
 var common_1 = require("../common");
-// import { makeIbcToCosmos, makeIbcToPolkadot, getDefaultTxHeight } from './ibc';
 function signAndSendTransfer(_a) {
     return __awaiter(this, arguments, void 0, function (_b) {
         var _c, account, signerOption;
@@ -52,10 +51,10 @@ function signAndSendTransfer(_a) {
         var api = _b.api, apiTo = _b.apiTo, fromAddress = _b.fromAddress, toAddress = _b.toAddress, extrinsic = _b.extrinsic, isIbc = _b.isIbc, filter = _b.filter, signer = _b.signer;
         return __generator(this, function (_d) {
             switch (_d.label) {
-                case 0: return [4 /*yield*/, (0, helper_1.getSignAndSendParams)(fromAddress, signer)];
+                case 0: return [4, (0, helper_1.getSignAndSendParams)(fromAddress, signer)];
                 case 1:
                     _c = _d.sent(), account = _c.account, signerOption = _c.signerOption;
-                    return [2 /*return*/, new Promise(function (resolve, reject) {
+                    return [2, new Promise(function (resolve, reject) {
                             var state = { isFailedTxShown: false };
                             console.log('step0', extrinsic);
                             extrinsic
@@ -64,12 +63,10 @@ function signAndSendTransfer(_a) {
                                 return __generator(this, function (_d) {
                                     switch (_d.label) {
                                         case 0:
-                                            // Emit approval event
                                             console.log('step1', result);
                                             dispatchError = result.dispatchError, status = result.status, events = result.events;
                                             _a = (0, exports.buildStatusInfo)(result.txHash.toString(), JSON.parse(JSON.stringify(events))), txHash = _a.txHash, sequence = _a.sequence;
                                             console.log('step2', events, txHash, sequence);
-                                            // Handle dispatch errors
                                             if (dispatchError) {
                                                 errorMessage = void 0;
                                                 if (dispatchError.isModule) {
@@ -91,13 +88,13 @@ function signAndSendTransfer(_a) {
                                                     currentHopIndex: 0,
                                                     message: errorMessage,
                                                 };
-                                                return [2 /*return*/, reject(errorResult)];
+                                                return [2, reject(errorResult)];
                                             }
                                             console.log('step3', events);
                                             found = JSON.parse(JSON.stringify(events)).find(function (e) { var _a, _b; return (_b = (_a = e.event) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.find(function (data) { var _a; return ((_a = data['incomplete']) === null || _a === void 0 ? void 0 : _a.length) > 0; }); });
                                             console.log('step4', found);
                                             if (found) {
-                                                return [2 /*return*/, reject({
+                                                return [2, reject({
                                                         destAddress: toAddress,
                                                         txHash: txHash,
                                                         sequence: sequence,
@@ -105,15 +102,15 @@ function signAndSendTransfer(_a) {
                                                         message: 'Transfer incomplete',
                                                     })];
                                             }
-                                            if (!status) return [3 /*break*/, 9];
+                                            if (!status) return [3, 9];
                                             console.log('step5', status);
-                                            if (!isIbc) return [3 /*break*/, 4];
+                                            if (!isIbc) return [3, 4];
                                             console.log('step5.5');
-                                            if (!apiTo) return [3 /*break*/, 2];
-                                            return [4 /*yield*/, apiTo.rpc.chain.getHeader()];
+                                            if (!apiTo) return [3, 2];
+                                            return [4, apiTo.rpc.chain.getHeader()];
                                         case 1:
                                             _b = _d.sent();
-                                            return [3 /*break*/, 3];
+                                            return [3, 3];
                                         case 2:
                                             _b = null;
                                             _d.label = 3;
@@ -125,16 +122,16 @@ function signAndSendTransfer(_a) {
                                                 sequence: sequence,
                                                 currentHopIndex: 0,
                                                 status: 'pending',
-                                                latestBlockNumber: header ? header.number.toNumber() : -1, // For COSMOS
+                                                latestBlockNumber: header ? header.number.toNumber() : -1,
                                             };
-                                            return [2 /*return*/, resolve(result_1)];
+                                            return [2, resolve(result_1)];
                                         case 4:
-                                            if (!filter) return [3 /*break*/, 5];
+                                            if (!filter) return [3, 5];
                                             console.log('step6');
                                             found_1 = events.find(function (e) { return filter(e.event); });
                                             if (!found_1 && !state.isFailedTxShown) {
                                                 state.isFailedTxShown = true;
-                                                return [2 /*return*/, reject({
+                                                return [2, reject({
                                                         destAddress: toAddress,
                                                         txHash: txHash,
                                                         sequence: sequence,
@@ -150,17 +147,16 @@ function signAndSendTransfer(_a) {
                                                     currentHopIndex: 0,
                                                     status: 'success',
                                                 };
-                                                return [2 /*return*/, resolve(result_2)];
+                                                return [2, resolve(result_2)];
                                             }
-                                            return [3 /*break*/, 9];
+                                            return [3, 9];
                                         case 5:
-                                            // For xTokens
                                             console.log('step7');
-                                            if (!apiTo) return [3 /*break*/, 7];
-                                            return [4 /*yield*/, apiTo.rpc.chain.getHeader()];
+                                            if (!apiTo) return [3, 7];
+                                            return [4, apiTo.rpc.chain.getHeader()];
                                         case 6:
                                             _c = _d.sent();
-                                            return [3 /*break*/, 8];
+                                            return [3, 8];
                                         case 7:
                                             _c = null;
                                             _d.label = 8;
@@ -174,8 +170,8 @@ function signAndSendTransfer(_a) {
                                                 currentHopIndex: 0,
                                                 latestBlockNumber: header ? header.number.toNumber() : -1,
                                             };
-                                            return [2 /*return*/, resolve(result_3)];
-                                        case 9: return [2 /*return*/];
+                                            return [2, resolve(result_3)];
+                                        case 9: return [2];
                                     }
                                 });
                             }); })
@@ -232,11 +228,9 @@ function transferXcm(_a) {
                     convertedFromAddr = ethreumlish.includes(fromChainId)
                         ? fromAddress
                         : (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(fromAddress), fromSs58Format);
-                    // Ensure transferMedium is defined
                     if (!xcmType || !version)
-                        return [2 /*return*/];
+                        return [2];
                     result = void 0;
-                    // Handle different transfer mediums
                     if (xcmType === 'xcmPallet.reserveTransferAssets') {
                         if (version === 'V1') {
                             result = (0, type_builder_1.buildXcmPalletTransferV1)(fromApi, toChainId, convertedToAddr, amount);
@@ -284,8 +278,7 @@ function transferXcm(_a) {
                     }
                     else if (xcmType === 'polkadotXcm.limitedReserveTransferAssets') {
                         if (version === 'V2') {
-                            result = (0, type_builder_1.buildPolkadotXcmTransferV2)(fromApi, convertedToAddr, toChainId, assetId, amount, fromChainId === '1000' ? '1984' : '' // only for statemine
-                            );
+                            result = (0, type_builder_1.buildPolkadotXcmTransferV2)(fromApi, convertedToAddr, toChainId, assetId, amount, fromChainId === '1000' ? '1984' : '');
                         }
                         else {
                             result = (0, type_builder_1.buildPolkadotXcmTransferV3)(fromApi, convertedToAddr, toChainId, amount);
@@ -297,7 +290,7 @@ function transferXcm(_a) {
                     else if (xcmType === 'xTokens.transferMultiasset') {
                         result = (0, type_builder_1.buildXcmVersionedMultiAssetV3)(fromApi, convertedToAddr, toChainId, amount, '1984', '');
                     }
-                    return [4 /*yield*/, signAndSendTransfer({
+                    return [4, signAndSendTransfer({
                             api: fromApi,
                             apiTo: toApi,
                             fromAddress: convertedFromAddr,
@@ -307,32 +300,18 @@ function transferXcm(_a) {
                             filter: isFromParachain ? null : fromApi.events.xcmPallet.Attempted.is,
                             signer: signer,
                         })];
-                case 1: 
-                // Call signAndSendTransfer with the appropriate parameters
-                return [2 /*return*/, _f.sent()];
+                case 1: return [2, _f.sent()];
                 case 2:
                     e_1 = _f.sent();
                     console.log('errorSDK', e_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    return [3, 3];
+                case 3: return [2];
             }
         });
     });
 }
 function transferIbc(_a) {
-    return __awaiter(this, arguments, void 0, function (_b
-    // networkFrom: NetworkType,
-    // networkTo: NetworkType,
-    // fromAddress: string,
-    // toAddress: string,
-    // amount: string,
-    // assetId: string,
-    // feeAmount: string,
-    // gas: string,
-    // transferMedium: TransferApi | undefined,
-    // memo: string,
-    // config: any,
-    ) {
+    return __awaiter(this, arguments, void 0, function (_b) {
         var _c, _d, _e, fromSs58Format, _f, toChainType, _g, _h, _j, toSs58Format, convertedFromAddr, convertedToAddr, extrinsic;
         var fromChainId = _b.fromChainId, toChainId = _b.toChainId, fromAddress = _b.fromAddress, toAddress = _b.toAddress, amount = _b.amount, assetId = _b.assetId, signer = _b.signer, sourceChannel = _b.sourceChannel, memo = _b.memo, fromApi = _b.fromApi, toApi = _b.toApi, destinationHeight = _b.destinationHeight;
         return __generator(this, function (_k) {
@@ -350,7 +329,6 @@ function transferIbc(_a) {
                         config_1.networks[toChainId].chainType === 'polkadot'
                             ? (0, util_crypto_1.encodeAddress)((0, util_crypto_1.decodeAddress)(toAddress), toSs58Format)
                             : toAddress;
-                    // const defaultHeight = getPolkadotBlockHeight(height, chainType);
                     extrinsic =
                         toChainType === 'polkadot'
                             ? (0, helper_1.makeIbcToPolkadot)({
@@ -371,7 +349,7 @@ function transferIbc(_a) {
                                 destinationHeight: destinationHeight,
                                 memo: memo,
                             });
-                    return [4 /*yield*/, signAndSendTransfer({
+                    return [4, signAndSendTransfer({
                             api: fromApi,
                             apiTo: toApi,
                             fromAddress: convertedFromAddr,
@@ -381,7 +359,7 @@ function transferIbc(_a) {
                             filter: null,
                             signer: signer,
                         })];
-                case 1: return [2 /*return*/, _k.sent()];
+                case 1: return [2, _k.sent()];
             }
         });
     });
@@ -392,7 +370,7 @@ var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
     return __generator(this, function (_d) {
         try {
             if (((_c = (0, common_1.getXcmInfo)(fromChainId, toChainId)) === null || _c === void 0 ? void 0 : _c.type) === 'XCM')
-                return [2 /*return*/, transferXcm({
+                return [2, transferXcm({
                         fromApi: fromApi,
                         toApi: toApi,
                         fromChainId: fromChainId,
@@ -403,7 +381,7 @@ var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
                         assetId: assetId,
                         signer: signer,
                     })];
-            return [2 /*return*/, transferIbc({
+            return [2, transferIbc({
                     fromChainId: fromChainId,
                     toChainId: toChainId,
                     fromAddress: fromAddress,
@@ -421,7 +399,7 @@ var polkadotTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, fu
         catch (err) {
             console.error(err);
         }
-        return [2 /*return*/];
+        return [2];
     });
 }); };
 exports.polkadotTransfer = polkadotTransfer;

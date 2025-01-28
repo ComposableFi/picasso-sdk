@@ -31,4 +31,3 @@ export declare const injectiveTransfer: ({ generatedMsg, keplr, }: {
     generatedMsg: ReturnType<typeof generateTransferMsg>;
     keplr: Keplr;
 }) => Promise<import("@injectivelabs/sdk-ts").TxResponse>;
-//# sourceMappingURL=methods.d.ts.map

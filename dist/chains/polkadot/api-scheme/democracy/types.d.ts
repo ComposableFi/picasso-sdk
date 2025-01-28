@@ -1,18 +1,13 @@
 import type { Enum, Null, Struct, u128, Vec } from '@polkadot/types-codec';
 import type { AccountId32, Balance } from '@polkadot/types/interfaces/runtime';
-/** @name PalletDemocracyPreimageStatus */
 export interface PalletDemocracyPreimageStatus extends Null {
 }
-/** @name PalletDemocracyReferendumInfo */
 export interface PalletDemocracyReferendumInfo extends Null {
 }
-/** @name PalletDemocracyReleases */
 export interface PalletDemocracyReleases extends Null {
 }
-/** @name PalletDemocracyVoteThreshold */
 export interface PalletDemocracyVoteThreshold extends Null {
 }
-/** @name PalletDemocracyVoteVoting */
 export interface PalletDemocracyVoteVoting extends Enum {
     readonly isDelegating: boolean;
     readonly asDelegating: {
@@ -36,8 +31,6 @@ export interface PalletDemocracyVoteVoting extends Enum {
     } & Struct;
     readonly type: 'Delegating' | 'Direct';
 }
-/** @name PalletPreimageRequestStatus */
 export interface PalletPreimageRequestStatus extends Null {
 }
 export type PHANTOM_DEMOCRACY = 'democracy';
-//# sourceMappingURL=types.d.ts.map

@@ -87,8 +87,6 @@ var getWeb3 = function (provider) {
 };
 exports.getWeb3 = getWeb3;
 var getContract = function (web3, abi, contractAddress) {
-    // typeof window !== 'undefined' && !!web3 && web3.eth.setProvider(provider!);
-    // typeof window !== 'undefined' && web3.eth.setProvider(Web3.givenProvider);
     return web3 && contractAddress
         ? new web3.eth.Contract(abi, contractAddress)
         : undefined;
@@ -98,7 +96,6 @@ var getBankTransferContract = function (web3) {
     return (0, exports.getContract)(web3, abi_1.ics20TransferBankABI, constants_1.bankTransferContractAddress);
 };
 exports.getBankTransferContract = getBankTransferContract;
-// ideally contract address should be from outside, but right not it is just from constants file
 var getBankContract = function (web3) {
     return (0, exports.getContract)(web3, abi_1.ics20BankABI, constants_1.bankContractAddress);
 };
@@ -118,9 +115,9 @@ var getBlock = function (web3_2) {
             switch (_a.label) {
                 case 0:
                     if (!web3)
-                        return [2 /*return*/, '0'];
-                    return [4 /*yield*/, web3.eth.getBlockNumber()];
-                case 1: return [2 /*return*/, (_a.sent()) + addedAmount];
+                        return [2, '0'];
+                    return [4, web3.eth.getBlockNumber()];
+                case 1: return [2, (_a.sent()) + addedAmount];
             }
         });
     });
@@ -132,11 +129,11 @@ var getGasPrice = function (web3) { return __awaiter(void 0, void 0, void 0, fun
         switch (_a.label) {
             case 0:
                 if (!web3)
-                    return [2 /*return*/, '0'];
-                return [4 /*yield*/, web3.eth.getGasPrice()];
+                    return [2, '0'];
+                return [4, web3.eth.getGasPrice()];
             case 1:
                 gasPrice = _a.sent();
-                return [2 /*return*/, new big_js_1.default(gasPrice || 0).mul(1.3).toFixed(0)];
+                return [2, new big_js_1.default(gasPrice || 0).mul(1.3).toFixed(0)];
         }
     });
 }); };
@@ -147,18 +144,18 @@ var getEthGasAmount = function (web3, txConfig) { return __awaiter(void 0, void 
         switch (_a.label) {
             case 0:
                 if (!web3)
-                    return [2 /*return*/, '0'];
+                    return [2, '0'];
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, web3.eth.estimateGas(txConfig)];
+                return [4, web3.eth.estimateGas(txConfig)];
             case 2:
                 gasAmount = _a.sent();
-                return [2 /*return*/, gasAmount];
+                return [2, gasAmount];
             case 3:
                 err_1 = _a.sent();
-                return [2 /*return*/, '0'];
-            case 4: return [2 /*return*/];
+                return [2, '0'];
+            case 4: return [2];
         }
     });
 }); };
@@ -169,11 +166,11 @@ var getTransactionReceipt = function (web3, txHash) { return __awaiter(void 0, v
         switch (_a.label) {
             case 0:
                 if (!web3)
-                    return [2 /*return*/, null];
-                return [4 /*yield*/, web3.eth.getTransactionReceipt(txHash)];
+                    return [2, null];
+                return [4, web3.eth.getTransactionReceipt(txHash)];
             case 1:
                 receipt = _a.sent();
-                return [2 /*return*/, receipt];
+                return [2, receipt];
         }
     });
 }); };
@@ -195,7 +192,6 @@ var getErc20Contract = function (web3, erc20TokenAddress) {
     return (0, exports.getContract)(web3, abi_1.erc20ABI, erc20TokenAddress);
 };
 exports.getErc20Contract = getErc20Contract;
-/**@description get approved erc20 amount, returns wei */
 var getApprovedErc20 = function (web3_2, account_1, erc20TokenAddress_1) {
     var args_1 = [];
     for (var _i = 3; _i < arguments.length; _i++) {
@@ -208,12 +204,12 @@ var getApprovedErc20 = function (web3_2, account_1, erc20TokenAddress_1) {
             switch (_a.label) {
                 case 0:
                     if (!(0, exports.isEthereumAddress)(web3, account))
-                        return [2 /*return*/, '0'];
+                        return [2, '0'];
                     erc20Contract = (0, exports.getErc20Contract)(web3, erc20TokenAddress);
                     if (!erc20Contract)
-                        return [2 /*return*/, '0'];
-                    return [4 /*yield*/, erc20Contract.methods.allowance(account, spenderContract).call()];
-                case 1: return [2 /*return*/, _a.sent()];
+                        return [2, '0'];
+                    return [4, erc20Contract.methods.allowance(account, spenderContract).call()];
+                case 1: return [2, _a.sent()];
             }
         });
     });
@@ -230,12 +226,12 @@ var getErc20Balance = function (web3, account, erc20TokenAddress) { return __awa
             case 0:
                 isEthereum = (0, exports.isEthereumAddress)(web3, account);
                 if (!isEthereum)
-                    return [2 /*return*/, '0'];
+                    return [2, '0'];
                 erc20Contract = (0, exports.getErc20Contract)(web3, erc20TokenAddress);
                 if (!erc20Contract)
-                    return [2 /*return*/, '0'];
-                return [4 /*yield*/, erc20Contract.methods.balanceOf(account).call()];
-            case 1: return [2 /*return*/, _a.sent()];
+                    return [2, '0'];
+                return [4, erc20Contract.methods.balanceOf(account).call()];
+            case 1: return [2, _a.sent()];
         }
     });
 }); };

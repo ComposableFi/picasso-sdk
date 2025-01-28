@@ -100,7 +100,6 @@ var constants_1 = require("./constants");
 var web3_js_2 = require("@solana/web3.js");
 Object.defineProperty(exports, "Keypair", { enumerable: true, get: function () { return web3_js_2.Keypair; } });
 Object.defineProperty(exports, "PublicKey", { enumerable: true, get: function () { return web3_js_2.PublicKey; } });
-/**@description get connection of solana */
 var getConnection = function (endpoint) {
     return new web3_js_1.Connection(endpoint, 'finalized');
 };
@@ -119,7 +118,6 @@ function hexToBytes(hex) {
         bytes.push(parseInt(hex.substr(c, 2), 16));
     return bytes;
 }
-/**@description Tokenmint is derived from hashedDenom */
 var getTokenMint = function (hashedDenom) {
     var _a = __read(anchor.web3.PublicKey.findProgramAddressSync([Buffer.from('mint'), Buffer.from(hashedDenom)], constants_1.solanaIbcProgramId), 2), tokenMintPDA = _a[0], tokenMintBump = _a[1];
     return tokenMintPDA.toString();
@@ -139,7 +137,6 @@ var getSolanaAsset = function (assetId, minimalDenom, isNative) {
             hashedDenom: hexToBytes((0, js_sha256_1.sha256)(spl.NATIVE_MINT.toString())),
         };
     var hashedDenom = hexToBytes((0, js_sha256_1.sha256)(minimalDenom));
-    // const tokenMint = getTokenMint(hashedDenom) || assetId;
     if (!isNative)
         return {
             denom: minimalDenom,
@@ -165,14 +162,14 @@ var getLatestBlockhash = function (endpoint) { return __awaiter(void 0, void 0, 
                     jsonrpc: '2.0',
                     method: 'getLatestBlockhash',
                 };
-                return [4 /*yield*/, axios_1.default.post(endpoint, data, {
+                return [4, axios_1.default.post(endpoint, data, {
                         headers: {
                             'Content-Type': 'application/json',
                         },
                     })];
             case 1:
                 response = _a.sent();
-                return [2 /*return*/, response.data.result.value.blockhash || ''];
+                return [2, response.data.result.value.blockhash || ''];
         }
     });
 }); };
@@ -209,19 +206,14 @@ var getSolanaGuestChainAccounts = function (portId, channelId, hashedDenom) {
 };
 exports.getSolanaGuestChainAccounts = getSolanaGuestChainAccounts;
 function numberTo32ByteBuffer(num) {
-    // Create a buffer of 32 bytes initialized with zeros
     var buffer = Buffer.alloc(32);
-    // Convert the BigInt to a hexadecimal string
     var numberHex = num.toString(16);
     if (numberHex.length % 2 !== 0) {
-        numberHex = '0' + numberHex; // Ensure the hex string has an even length
+        numberHex = '0' + numberHex;
     }
-    // Create a buffer from the hexadecimal string
     var numberBytes = Buffer.from(numberHex, 'hex');
-    // Copy the number bytes to the end of the 32-byte buffer
     numberBytes.copy(buffer, 32 - numberBytes.length);
     var uintBuffer = new Uint8Array(buffer);
-    // split above array into 4 chunks of 8 bytes each
     var uintBufferChunks = [];
     for (var i = 0; i < uintBuffer.length; i += 8) {
         uintBufferChunks.push(uintBuffer.slice(i, i + 8));
@@ -233,7 +225,6 @@ function numberTo32ByteBuffer(num) {
     final_uintBuffer = final_uintBuffer.concat.apply(final_uintBuffer, __spreadArray([], __read(uintBufferChunks[0]), false));
     return new Uint8Array(final_uintBuffer);
 }
-// shema
 var tracePathSchema = borsher_1.BorshSchema.Vec(borsher_1.BorshSchema.Struct({
     port_id: borsher_1.BorshSchema.String,
     channel_id: borsher_1.BorshSchema.String,

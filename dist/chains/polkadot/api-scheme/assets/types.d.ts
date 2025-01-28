@@ -1,7 +1,6 @@
 import type { Bytes, Option, Struct, u32 } from '@polkadot/types-codec';
 import type { CustomRpcBalance } from '../common';
 import type { ComposableTraitsCurrencyRational64, XcmV1MultiLocation } from '../crowdloanRewards';
-/** @name Asset */
 export interface Asset extends Struct {
     readonly name: Bytes;
     readonly id: Text;
@@ -10,4 +9,3 @@ export interface Asset extends Struct {
     readonly foreignId: Option<XcmV1MultiLocation>;
     readonly existentialDeposit: CustomRpcBalance;
 }
-//# sourceMappingURL=types.d.ts.map

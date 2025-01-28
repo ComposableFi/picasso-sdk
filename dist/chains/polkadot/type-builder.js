@@ -79,7 +79,6 @@ var buildBatchTransfer = function (fromApi, path, amount, polkadotAddr, parachai
         });
     });
     var interior = {};
-    // for example if number of paths = 3, interior will be X6 including PalletInstance, GeneralIndex and AccountId32
     interior["X".concat(path.paths.length + 3)] = list;
     var beneficiary = fromApi.createType('XcmVersionedLocation', {
         V2: fromApi.createType('XcmV2MultiLocation', {
@@ -162,7 +161,6 @@ var buildXTokensTransferV1 = function (fromApi, convertedToAddr, assetId, amount
                         Parachain: fromApi.createType('u32', toChainId),
                     }),
                     fromApi.createType('XcmV1Junction', {
-                        //suspicious
                         AccountId32: {
                             id: fromApi.createType('AccountId32', convertedToAddr),
                             network: 'Any',
@@ -259,7 +257,6 @@ var buildXTokensMoonbeamTransferV2 = function (fromApi, convertedToAddr, assetId
         }),
     ];
     var interior = {};
-    // for example if number of paths = 3, interior will be X6 including PalletInstance, GeneralIndex and AccountId32
     interior["X2"] = list;
     var getCurrencyId = function () {
         if (assetId === '792281' || assetId === '167283') {
@@ -366,22 +363,6 @@ var buildXcmVersionedMultiAssetV3 = function (fromApi, convertedToAddr, toChainI
             }),
         }),
     });
-    // const fee = fromApi.createType('XcmVersionedMultiAsset', {
-    // 	V3: fromApi.createType('XcmV3MultiAsset', {
-    // 		id: fromApi.createType('XcmV3MultiassetAssetId', {
-    // 			Concrete: fromApi.createType('XcmV3MultiLocation', {
-    // 				parents: fromApi.createType('u8', 1),
-    // 				interior: fromApi.createType('XcmV3Junctions', 'Here'),
-    // 			}),
-    // 		}),
-    // 		fun: fromApi.createType('XcmV3MultiassetFungibility', {
-    // 			Fungible: fromApi.createType(
-    // 				'u128',
-    // 				10_000_000_000 //TODO: fix it
-    // 			),
-    // 		}),
-    // 	}),
-    // });
     return function () { return fromApi.tx.xTokens.transferMultiasset(asset, dest, 'unlimited'); };
 };
 exports.buildXcmVersionedMultiAssetV3 = buildXcmVersionedMultiAssetV3;
@@ -409,7 +390,6 @@ var buildXcmLimitedReserveTransferV2 = function (fromApi, convertedToAddr, toCha
             },
         },
     });
-    // Setting up the asset & amount
     var assets = fromApi.createType('XcmVersionedAssets', {
         V2: [
             {
@@ -425,7 +405,7 @@ var buildXcmLimitedReserveTransferV2 = function (fromApi, convertedToAddr, toCha
             },
         ],
     });
-    var feeAssetItem = fromApi.createType('u32', 0); // First item in the list.
+    var feeAssetItem = fromApi.createType('u32', 0);
     return function () {
         return fromApi.tx.xcmPallet.limitedReserveTransferAssets(dest, beneficiary, assets, feeAssetItem, 'unlimited');
     };
@@ -455,9 +435,8 @@ var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, 
             },
         },
     });
-    // Setting up the asset & amount
     var assets = fromApi.createType('XcmVersionedMultiAssets', {
-        V2: assetId === '130' && !!general_index //USDT Kusama
+        V2: assetId === '130' && !!general_index
             ? [
                 {
                     id: {
@@ -494,7 +473,7 @@ var buildPolkadotXcmTransferV2 = function (fromApi, convertedToAddr, toChainId, 
                 },
             ],
     });
-    var feeAssetItem = fromApi.createType('u32', 0); // First item in the list.
+    var feeAssetItem = fromApi.createType('u32', 0);
     return function () {
         return fromApi.tx.polkadotXcm.limitedReserveTransferAssets(dest, beneficiary, assets, feeAssetItem, 'unlimited');
     };
@@ -523,7 +502,6 @@ var buildPolkadotXcmTransferV3 = function (fromApi, convertedToAddr, toChainId, 
             }),
         }),
     });
-    // Setting up the asset & amount
     var assets = fromApi.createType('XcmVersionedMultiAssets', {
         V3: [
             fromApi.createType('XcmV3MultiAsset', {
@@ -539,7 +517,7 @@ var buildPolkadotXcmTransferV3 = function (fromApi, convertedToAddr, toChainId, 
             }),
         ],
     });
-    var feeAssetItem = fromApi.createType('u32', 0); // First item in the list.
+    var feeAssetItem = fromApi.createType('u32', 0);
     var destWeightLimit = fromApi.createType('XcmV3WeightLimit', 'Unlimited');
     return function () {
         return fromApi.tx.polkadotXcm.limitedReserveTransferAssets(dest, beneficiary, assets, feeAssetItem, destWeightLimit);

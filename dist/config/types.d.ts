@@ -88,4 +88,3 @@ export interface NetworkInfo {
     network_to?: string[];
 }
 export type TransferType = 'multihop' | 'pfm' | 'xcm' | 'channel';
-//# sourceMappingURL=types.d.ts.map

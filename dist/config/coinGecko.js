@@ -7,14 +7,6 @@ exports.coinGecko = [
         "id": "astar"
     },
     {
-        "name": "GLMR",
-        "id": "moonbeam"
-    },
-    {
-        "name": "MOVR",
-        "id": "moonriver"
-    },
-    {
         "name": "SDN",
         "id": "shiden"
     },
@@ -429,5 +421,13 @@ exports.coinGecko = [
     {
         "name": "UMEE",
         "id": "umee"
+    },
+    {
+        "name": "GLMR",
+        "id": "moonbeam"
+    },
+    {
+        "name": "MOVR",
+        "id": "moonriver"
     }
 ];

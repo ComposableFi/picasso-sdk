@@ -12,4 +12,3 @@ export declare const buildXcmVersionedMultiAssetV3: (fromApi: ApiPromise, conver
 export declare const buildXcmLimitedReserveTransferV2: (fromApi: ApiPromise, convertedToAddr: string, toChainId: string, assetId: string, amount: string) => () => import("@polkadot/api-base/types").SubmittableExtrinsic<"promise", import("@polkadot/types/types").ISubmittableResult>;
 export declare const buildPolkadotXcmTransferV2: (fromApi: ApiPromise, convertedToAddr: string, toChainId: string, assetId: string, amount: string, general_index?: string) => () => import("@polkadot/api-base/types").SubmittableExtrinsic<"promise", import("@polkadot/types/types").ISubmittableResult>;
 export declare const buildPolkadotXcmTransferV3: (fromApi: ApiPromise, convertedToAddr: string, toChainId: string, amount: string) => () => import("@polkadot/api-base/types").SubmittableExtrinsic<"promise", import("@polkadot/types/types").ISubmittableResult>;
-//# sourceMappingURL=type-builder.d.ts.map

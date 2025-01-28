@@ -11,22 +11,10 @@ var data = [
         existential_deposit: '200000',
         existentialDeposit: '200000',
     },
-    // {
-    //   name: 'Equilibrium USD', //does not support
-    //   symbol: [69, 81, 68],
-    //   id: '79228162514264337593543950463',
-    //   decimals: 9,
-    //   ratio: {
-    //     n: '2',
-    //     d: '100000',
-    //   },
-    //   existential_deposit: '200000',
-    //   existentialDeposit: '200000',
-    // },
     {
         name: 'BNC_DOT',
         symbol: [66, 78, 67, 32, 80, 111, 108, 107, 97, 100, 111, 116],
-        id: '79228162514264337593543950369', //only at composable
+        id: '79228162514264337593543950369',
         decimals: 12,
         ratio: {
             n: '11',
@@ -50,7 +38,7 @@ var data = [
         exchangeRate: '0.052479',
     },
     {
-        name: 'Equilibrium', //none
+        name: 'Equilibrium',
         symbol: [69, 81],
         id: '79228162514264337593543952347',
         decimals: 9,
@@ -112,7 +100,7 @@ var data = [
         existentialDeposit: '200000',
     },
     {
-        name: 'USDT', //added at picasso
+        name: 'USDT',
         symbol: [85, 83, 68, 84],
         id: '149',
         decimals: 6,
@@ -377,24 +365,6 @@ var data = [
         existentialDeposit: '120000',
         exchangeRate: '0.054234',
     },
-    // {
-    //   name: 'Equilibrium USD', //does not support
-    //   symbol: [69, 81, 68],
-    //   id: '127',
-    //   decimals: 9,
-    //   ratio: {
-    //     n: '2',
-    //     d: '100000',
-    //   },
-    //   foreign_id: {
-    //     IbcIcs20: {
-    //       trace_path: 'transfer/channel-15',
-    //       base_denom: '79228162514264337593543950463',
-    //     },
-    //   },
-    //   existential_deposit: '200000',
-    //   existentialDeposit: '200000',
-    // },
     {
         name: 'Liquid Staked Kusama',
         symbol: [108, 115, 75, 83, 77],

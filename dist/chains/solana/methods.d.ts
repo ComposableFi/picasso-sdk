@@ -15,4 +15,3 @@ export declare const solanaTransfer: ({ quantity, accountId, destinationAddress,
     signature: string;
     status: "processed";
 }>;
-//# sourceMappingURL=methods.d.ts.map

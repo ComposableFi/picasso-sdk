@@ -44,4 +44,3 @@ export declare const polkadotTransfer: ({ fromChainId, toChainId, fromAddress, t
     toApi?: ApiPromise;
     destinationHeight: number;
 }) => Promise<TransferStatusByAddress>;
-//# sourceMappingURL=methods.d.ts.map

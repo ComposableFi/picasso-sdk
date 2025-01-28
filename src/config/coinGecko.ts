@@ -8,14 +8,6 @@ import { CoinGeckoAsset } from './types';
     "id": "astar"
   },
   {
-    "name": "GLMR",
-    "id": "moonbeam"
-  },
-  {
-    "name": "MOVR",
-    "id": "moonriver"
-  },
-  {
     "name": "SDN",
     "id": "shiden"
   },
@@ -430,6 +422,14 @@ import { CoinGeckoAsset } from './types';
   {
     "name": "UMEE",
     "id": "umee"
+  },
+  {
+    "name": "GLMR",
+    "id": "moonbeam"
+  },
+  {
+    "name": "MOVR",
+    "id": "moonriver"
   }
 ] ;
  
