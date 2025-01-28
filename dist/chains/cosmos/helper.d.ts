@@ -21,9 +21,7 @@ export declare const generateTransferMsg: (txMsg: TX_MSG_TYPE, channel: number, 
         timeoutTimestamp: number;
     };
 };
-/** description the amount of seconds for timeout */
 export declare const getCosmosTimeoutTimestamp: (seconds: number) => number;
-/** @description chainId is from cosmos chain registry */
 export declare const getSigner: (chainId: string, keplr: Keplr, supportLedger?: boolean) => OfflineAminoSigner;
 export declare const getCosmosClient: ({ chainId, rpc, keplr, feeAssetId, gasPrice, supportLedger, }: {
     chainId: string;
@@ -47,4 +45,3 @@ export declare const broadcastTx: ({ chainId, txRaw, keplr, }: {
     txRaw: CosmosTxV1Beta1Tx.TxRaw;
     keplr: Keplr;
 }) => Promise<string>;
-//# sourceMappingURL=helper.d.ts.map

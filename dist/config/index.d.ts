@@ -7,4 +7,3 @@ export * from './networks';
 export * from './types';
 export * from './keplrChains';
 export * from './ibcICS20ChannelMap';
-//# sourceMappingURL=index.d.ts.map

@@ -96,7 +96,7 @@ Object.defineProperty(exports, "base58Decode", { enumerable: true, get: function
 function checkWalletIdForSigning(accountId) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/];
+            return [2];
         });
     });
 }
@@ -119,29 +119,23 @@ function getPaymentAsset(_a) {
             switch (_c.label) {
                 case 0:
                     accountId32 = api.createType('AccountId32', accountId);
-                    return [4 /*yield*/, api.query.assetTxPayment.paymentAssets(accountId32)];
+                    return [4, api.query.assetTxPayment.paymentAssets(accountId32)];
                 case 1:
                     result = _c.sent();
-                    return [2 /*return*/, result.toJSON()];
+                    return [2, result.toJSON()];
             }
         });
     });
 }
 function setPaymentAsset(_a) {
-    return __awaiter(this, arguments, void 0, function (
-    //   networkType: NetworkType,
-    //   walletId: PolkadotWalletId,
-    //   accountId: string,
-    //   assetId: string,
-    //   walletApi: WalletApi
-    _b) {
+    return __awaiter(this, arguments, void 0, function (_b) {
         var asset;
         var accountId = _b.accountId, assetId = _b.assetId, signer = _b.signer, api = _b.api;
         return __generator(this, function (_c) {
             switch (_c.label) {
                 case 0:
                     asset = Number(assetId) === 1 ? null : api.createType('u128', assetId);
-                    return [4 /*yield*/, signAndSend({
+                    return [4, signAndSend({
                             accountId: accountId,
                             extrinsics: [api.tx.assetTxPayment.setPaymentAsset(accountId, asset)],
                             filter: api.events.system.ExtrinsicSuccess.is,
@@ -149,7 +143,7 @@ function setPaymentAsset(_a) {
                             api: api,
                             signer: signer,
                         })];
-                case 1: return [2 /*return*/, _c.sent()];
+                case 1: return [2, _c.sent()];
             }
         });
     });
@@ -158,12 +152,12 @@ function getSignAndSendParams(accountId, signer) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, checkWalletIdForSigning(accountId)];
+                case 0: return [4, checkWalletIdForSigning(accountId)];
                 case 1:
                     _a.sent();
                     if (!signer)
                         throw new Error('No signer found');
-                    return [2 /*return*/, {
+                    return [2, {
                             account: accountId,
                             signerOption: { signer: signer },
                         }];
@@ -177,10 +171,10 @@ function signAndSend(_a) {
         var accountId = _b.accountId, extrinsics = _b.extrinsics, filter = _b.filter, onFailedTx = _b.onFailedTx, api = _b.api, signer = _b.signer;
         return __generator(this, function (_d) {
             switch (_d.label) {
-                case 0: return [4 /*yield*/, getSignAndSendParams(accountId, signer)];
+                case 0: return [4, getSignAndSendParams(accountId, signer)];
                 case 1:
                     _c = _d.sent(), account = _c.account, signerOption = _c.signerOption;
-                    return [2 /*return*/, new Promise(function (resolve, reject) {
+                    return [2, new Promise(function (resolve, reject) {
                             var state = { isFailedTxShown: false };
                             (extrinsics.length === 1 ? extrinsics[0] : api.tx.utility.batch(extrinsics))
                                 .signAndSend(account, signerOption, function (result) {
@@ -234,11 +228,11 @@ function getAvailableCoin(endpoint, accountId) {
         var _a, _b;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, getApi(endpoint)];
+                case 0: return [4, getApi(endpoint)];
                 case 1:
                     api = _c.sent();
                     accountId32 = api.createType('AccountId32', accountId);
-                    return [4 /*yield*/, api.query.system.account(accountId32)];
+                    return [4, api.query.system.account(accountId32)];
                 case 2:
                     accountInfo = (_c.sent()).toJSON();
                     free = (_a = accountInfo === null || accountInfo === void 0 ? void 0 : accountInfo.data) === null || _a === void 0 ? void 0 : _a['free'];
@@ -250,7 +244,7 @@ function getAvailableCoin(endpoint, accountId) {
                             return 16;
                         return 10;
                     };
-                    return [2 /*return*/, new big_js_1.default(parseInt(free, getDecimal(free)) || '0').minus(parseInt(feeFrozen, getDecimal(feeFrozen)) || 0)];
+                    return [2, new big_js_1.default(parseInt(free, getDecimal(free)) || '0').minus(parseInt(feeFrozen, getDecimal(feeFrozen)) || 0)];
             }
         });
     });
@@ -265,18 +259,18 @@ function getApi(endpoint, option) {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 4, , 5]);
-                    return [4 /*yield*/, api_1.ApiPromise.create(__assign({ provider: wsProvider, rpc: api_scheme_1.polkadotApiRpc, types: api_scheme_1.polkadotApiTypes, noInitWarn: false, throwOnConnect: true }, option))];
+                    return [4, api_1.ApiPromise.create(__assign({ provider: wsProvider, rpc: api_scheme_1.polkadotApiRpc, types: api_scheme_1.polkadotApiTypes, noInitWarn: false, throwOnConnect: true }, option))];
                 case 2:
                     api = _a.sent();
-                    return [4 /*yield*/, api.isReadyOrError];
+                    return [4, api.isReadyOrError];
                 case 3:
                     _a.sent();
-                    return [2 /*return*/, api];
+                    return [2, api];
                 case 4:
                     ex_1 = _a.sent();
                     void wsProvider.disconnect();
                     throw ex_1;
-                case 5: return [2 /*return*/];
+                case 5: return [2];
             }
         });
     });
@@ -302,10 +296,10 @@ var getPolkadotBlockHeight = function (api_2) {
             switch (_b.label) {
                 case 0:
                     _a = Number;
-                    return [4 /*yield*/, api.query.system.number()];
+                    return [4, api.query.system.number()];
                 case 1:
                     height = _a.apply(void 0, [_b.sent()]);
-                    return [2 /*return*/, height + extra];
+                    return [2, height + extra];
             }
         });
     });
@@ -359,20 +353,19 @@ var makeIbcToCosmos = function (_a) {
     }), api.createType('AssetId', assetId), api.createType('Balance', amount), api.createType('Text', memo));
 };
 exports.makeIbcToCosmos = makeIbcToCosmos;
-var getMultihopPath = function (fromChainId, networkType // composable |picasso
-) { return __awaiter(void 0, void 0, void 0, function () {
+var getMultihopPath = function (fromChainId, networkType) { return __awaiter(void 0, void 0, void 0, function () {
     var rpc, api, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 rpc = config_1.networks[networkType].rpc;
-                return [4 /*yield*/, getApi(rpc)];
+                return [4, getApi(rpc)];
             case 1:
                 api = _a.sent();
-                return [4 /*yield*/, api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries()];
+                return [4, api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries()];
             case 2:
                 result = _a.sent();
-                return [2 /*return*/, result.map(function (p) {
+                return [2, result.map(function (p) {
                         var paths = JSON.parse(JSON.stringify(p[1])).map(function (path) {
                             return __assign(__assign({}, path[0]), { chainId: path[1].startsWith('0x')
                                     ? chainNameMap[(0, util_1.hexToString)(path[1])]
@@ -380,10 +373,10 @@ var getMultihopPath = function (fromChainId, networkType // composable |picasso
                         });
                         var to = paths[paths.length - 1].chainId || 'NONE';
                         var route = {
-                            fromChainId: fromChainId, // Join the characters into a string.
+                            fromChainId: fromChainId,
                             toChainId: to.toString(),
                             paraChain: fromChainId === 'kusama' ? undefined : networkType,
-                            index: p[0][48], // currently p[0] is array of numbers - the 48th digit represents the actual index. but on the polkadot.js UI, this field is a simple integer.
+                            index: p[0][48],
                             paths: paths,
                         };
                         return route;
@@ -392,7 +385,6 @@ var getMultihopPath = function (fromChainId, networkType // composable |picasso
     });
 }); };
 exports.getMultihopPath = getMultihopPath;
-// for batching tx - inside of route there's a chain name. need to match it with networkType
 var chainNameMap = {
     polkadot: 'polkadot',
     picasso: '2087',

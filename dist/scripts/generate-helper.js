@@ -99,13 +99,12 @@ var processFiles = function () {
             birthtime: stats.birthtime,
         };
     })
-        .sort(function (a, b) { return Number(a.birthtime) - Number(b.birthtime); }) // 생성 날짜 기준 오름차순 정렬
-        .map(function (fileInfo) { return fileInfo.file; }); // 정렬 후 파일 이름만 추출
+        .sort(function (a, b) { return Number(a.birthtime) - Number(b.birthtime); })
+        .map(function (fileInfo) { return fileInfo.file; });
     files.forEach(function (file) {
         var _a;
         var filePath = path.join(dataDir, file);
         var data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        // generate networks
         var coin = data.currencies.filter(function (item) { return item.isCoin; });
         networks[data.chainId] = {
             name: data.chainName || '',
@@ -132,7 +131,6 @@ var processFiles = function () {
                     coinDecimals: item.coinDecimals,
                     coinDenom: item.coinDenom,
                     coinGeckoId: item.coinGeckoId,
-                    // coinImageUrl: item.coinImageUrl,
                     coinMinimalDenom: item.coinMinimalDenom,
                 }); }),
                 features: [],
@@ -156,11 +154,9 @@ var processFiles = function () {
                 walletUrlForStaking: data.cosmos.walletUrlForStaking,
             };
         }
-        // generate tokensPerChannel.ts
         if (data.channelMap) {
             tokensPerChannel[data.chainId] = data.channelMap;
         }
-        // generate ethereumAssets.ts
         data.currencies.forEach(function (currency) {
             var _a, _b;
             var coinDenom = currency.coinDenom, ethereum = currency.ethereum, solana = currency.solana;
@@ -181,7 +177,6 @@ var processFiles = function () {
                     };
                 }
             }
-            // generate solanaAssets.ts
             if (solana) {
                 var mintAddress = solana.mintAddress || '';
                 if (mintAddress) {
@@ -203,7 +198,6 @@ var processFiles = function () {
                     };
                 }
             }
-            // generate polkadotAssets.ts
             if (currency.polkadot) {
                 var _c = currency.polkadot || {}, picassoAssetId = _c.picassoAssetId, composableAssetId = _c.composableAssetId;
                 if ((_a = currency.polkadot) === null || _a === void 0 ? void 0 : _a.picassoAssetId) {
@@ -214,7 +208,7 @@ var processFiles = function () {
                         denom: coinDenom,
                         imageUrl: currency.coinImageUrl,
                         ratio: currency.polkadot.ratio,
-                        currentChainId: '2087', //picasso chainId
+                        currentChainId: '2087',
                     };
                 }
                 if ((_b = currency.polkadot) === null || _b === void 0 ? void 0 : _b.composableAssetId) {
@@ -225,11 +219,10 @@ var processFiles = function () {
                         denom: coinDenom,
                         imageUrl: currency.coinImageUrl,
                         ratio: currency.polkadot.ratio,
-                        currentChainId: '2019', //composable chainId
+                        currentChainId: '2019',
                     };
                 }
             }
-            // generate cosmosAssets.ts
             if (currency.cosmos && currency.cosmos.minimalDenom) {
                 crossChainAssets.cosmos[currency.cosmos.minimalDenom] = {
                     chainId: data.chainId || '',
@@ -240,7 +233,6 @@ var processFiles = function () {
                     codeHash: currency.codeHash || '',
                 };
             }
-            // generate coingecko.ts
             if (currency.coinGeckoId) {
                 coinGeckoAssets.push({
                     name: currency.coinDenom,
@@ -249,7 +241,6 @@ var processFiles = function () {
             }
         });
     });
-    // ethereumAssets.ts 파일로 저장
     var ethereumOutputDir = path.dirname(ethereumOutputFilePath);
     if (!fs.existsSync(ethereumOutputDir)) {
         fs.mkdirSync(ethereumOutputDir);
@@ -257,7 +248,6 @@ var processFiles = function () {
     var ethereumOutputContent = "\n// [GENERATED]\nimport { EthereumAsset } from './types';\n\nexport const ethereumAssets :Record<string, EthereumAsset>= ".concat(JSON.stringify(ethereumAssets, null, 2), ";\n\n");
     fs.writeFileSync(ethereumOutputFilePath, ethereumOutputContent, 'utf-8');
     console.log('ethereumAssets.ts has been created');
-    // solanaAssets.ts 파일로 저장
     var solanaOutputDir = path.dirname(solanaOutputFilePath);
     if (!fs.existsSync(solanaOutputDir)) {
         fs.mkdirSync(solanaOutputDir);
@@ -265,7 +255,6 @@ var processFiles = function () {
     var solanaOutputContent = "\n// [GENERATED]\nimport { SolanaAsset } from \"./types\";\n\nexport const solanaAssets:Record<string, SolanaAsset> = ".concat(JSON.stringify(solanaAssets, null, 2), ";\n\n");
     fs.writeFileSync(solanaOutputFilePath, solanaOutputContent, 'utf-8');
     console.log('solanaAssets.ts has been created');
-    // tokensPerChannel.ts 파일로 저장
     var tokensPerChannelOutputDir = path.dirname(tokensPerChannelOutputFilePath);
     if (!fs.existsSync(tokensPerChannelOutputDir)) {
         fs.mkdirSync(tokensPerChannelOutputDir);
@@ -280,7 +269,6 @@ var processFiles = function () {
     var networksOutputContent = "\n// [GENERATED]\nimport { NetworkInfo } from './types';\n export const networks: Record<string, NetworkInfo> = ".concat(JSON.stringify(networks, null, 2), ";\n  \n  ");
     fs.writeFileSync(networksOutputFilePath, networksOutputContent, 'utf-8');
     console.log('networks.ts has been created');
-    // coinGecko.ts 파일로 저장
     var coinGeckoOutputDir = path.dirname(coinGeckoOutputFilePath);
     if (!fs.existsSync(coinGeckoOutputDir)) {
         fs.mkdirSync(coinGeckoOutputDir);

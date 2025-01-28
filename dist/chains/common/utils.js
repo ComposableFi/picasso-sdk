@@ -51,7 +51,6 @@ var memoBuilder = function (_a) {
     });
 };
 exports.memoBuilder = memoBuilder;
-/**@description Plus mininutes. Default : 10  */
 var getTimeOut = function (plusMin) {
     if (plusMin === void 0) { plusMin = 30; }
     var now = new Date();
@@ -72,47 +71,33 @@ var getForbiddenChains = function (fromChainId, toChainId) {
     return false;
 };
 exports.getForbiddenChains = getForbiddenChains;
-/**@description Function to find the shortest path with channel information */
 var buildIbcPath = function (fromChainId, toChainId) {
     if ((0, exports.getForbiddenChains)(fromChainId, toChainId))
         return null;
-    // Set to keep track of visited chains
     var visited = new Set();
-    // Initialize the queue for BFS traversal
-    // The queue stores [current chain, path] where path includes both chain and channel
     var queue = [[fromChainId, []]];
-    // Start BFS
     while (queue.length > 0) {
-        // Get the first element from the queue
         var _a = __read(queue.shift(), 2), currentChainId = _a[0], path = _a[1];
-        // If we reach the target chain, return the path
         if (currentChainId === toChainId) {
             return path;
         }
-        // Mark the current chain as visited
         visited.add(currentChainId);
-        // Iterate through all the connected chains of the current chain
         var connections = config_1.tokensPerChannel[currentChainId];
         if (connections) {
             for (var destinationId in connections) {
                 var nextChainId = connections[destinationId].chainId;
-                // Ensure that the chain has not been visited yet
                 if (!visited.has(nextChainId)) {
-                    // Add the next hop (with chain and channel info) to the path
                     var newPath = __spreadArray(__spreadArray([], __read(path), false), [
                         { chainId: currentChainId, channelId: Number(destinationId) },
                     ], false);
-                    // Add the next chain and the updated path to the queue
                     queue.push([nextChainId, newPath]);
                 }
             }
         }
     }
-    // If we do not find a path to the target chain, return null
     return null;
 };
 exports.buildIbcPath = buildIbcPath;
-/**@description Function to find the allowed tokens for the entire path */
 var getAllowedTokensForPath = function (originChainId, destinationChainId) {
     var _a, _b, _c, _d;
     var result = (0, exports.buildIbcPath)(originChainId, destinationChainId);
@@ -162,15 +147,12 @@ var getChainIdsByChannels = function (channels) {
     return chainIds;
 };
 exports.getChainIdsByChannels = getChainIdsByChannels;
-// Example usage
-/**@description If it returns undefined, that means it is not supported */
 var getSupportedType = function (fromChainId, toChainId) {
     var _a, _b, _c, _d, _e, _f;
     if (fromChainId === toChainId || !fromChainId || !toChainId)
         return;
     if ((0, exports.getSourceChannel)(fromChainId, toChainId))
         return 'channel';
-    //XCM tx
     if (((_a = config_1.networks[fromChainId]) === null || _a === void 0 ? void 0 : _a.polkadot) &&
         ((_b = config_1.networks[toChainId]) === null || _b === void 0 ? void 0 : _b.polkadot) &&
         ((_d = (_c = config_1.networks[fromChainId]) === null || _c === void 0 ? void 0 : _c.polkadot) === null || _d === void 0 ? void 0 : _d.relayChain) ===
@@ -203,13 +185,11 @@ var convertCosmosAddress = function (address, newPrefix) {
     }
 };
 exports.convertCosmosAddress = convertCosmosAddress;
-/**@description When it comes to Cosmos network, coinType should be 114 to use this converter*/
 var convertAddressToStr = function (address, fromChainId) {
     var _a, _b, _c;
     if (!config_1.networks[fromChainId])
         return address;
     if (address.startsWith('0x')) {
-        // 2004: moonbeam, 2023:moonriver
         if (['ethereum', 'solana', '2004', '2023'].some(function (v) { return v === fromChainId; })) {
             return address;
         }
@@ -348,7 +328,7 @@ var getCosmosAddressNetwork = function (accountId) {
 exports.getCosmosAddressNetwork = getCosmosAddressNetwork;
 var getSolanaAddressNetwork = function (accountId) {
     try {
-        (0, solana_1.getPublicKey)(accountId); //triggers error if not valid
+        (0, solana_1.getPublicKey)(accountId);
         return 'solana';
     }
     catch (e) {

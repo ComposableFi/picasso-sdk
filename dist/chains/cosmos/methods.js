@@ -49,7 +49,7 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
     var sourceChannel = _b.sourceChannel, sourceAddress = _b.sourceAddress, destAddress = _b.destAddress, amount = _b.amount, assetId = _b.assetId, fee = _b.fee, chainId = _b.chainId, rpc = _b.rpc, memo = _b.memo, timeout = _b.timeout, _c = _b.txMsg, txMsg = _c === void 0 ? constants_1.TX_MSG : _c, keplr = _b.keplr, gasPrice = _b.gasPrice, gas = _b.gas, feeAssetId = _b.feeAssetId;
     return __generator(this, function (_d) {
         switch (_d.label) {
-            case 0: return [4 /*yield*/, (0, helper_1.getCosmosClient)({
+            case 0: return [4, (0, helper_1.getCosmosClient)({
                     chainId: chainId,
                     rpc: rpc,
                     keplr: keplr,
@@ -60,8 +60,6 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
             case 1:
                 client = _d.sent();
                 msg = (0, helper_1.generateTransferMsg)(txMsg, sourceChannel, sourceAddress, destAddress, amount, assetId, memo, timeout);
-                // await client.simulate(sourceAddress, [msg], memo);
-                // To avoid keplr or leap overrides custom fee from FE (mostly it is set to 'auto'
                 if (keplr) {
                     keplr.defaultOptions = {
                         sign: {
@@ -83,23 +81,23 @@ var cosmosTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 _d.label = 2;
             case 2:
                 _d.trys.push([2, 6, , 7]);
-                if (!(chainId === 'injective-1')) return [3 /*break*/, 4];
-                return [4 /*yield*/, (0, exports.injectiveTransfer)({
+                if (!(chainId === 'injective-1')) return [3, 4];
+                return [4, (0, exports.injectiveTransfer)({
                         generatedMsg: msg,
                         keplr: keplr,
                     })];
             case 3:
                 injectiveResponse = _d.sent();
-                return [2 /*return*/, injectiveResponse.txHash];
-            case 4: return [4 /*yield*/, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
+                return [2, injectiveResponse.txHash];
+            case 4: return [4, client.signAndBroadcast(sourceAddress, [msg], refinedFee)];
             case 5:
                 generalResponse = _d.sent();
-                return [2 /*return*/, generalResponse.transactionHash]; // Query indexer by this txHash
+                return [2, generalResponse.transactionHash];
             case 6:
                 ex_1 = _d.sent();
                 console.error(ex_1, 'cosmosError');
-                return [3 /*break*/, 7];
-            case 7: return [2 /*return*/];
+                return [3, 7];
+            case 7: return [2];
         }
     });
 }); };
@@ -112,7 +110,7 @@ var secretTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
             case 0:
                 refinedSecretAssetId = secretAssetId.split(':')[1];
                 signer = (0, helper_1.getSigner)('secret-4', keplr);
-                return [4 /*yield*/, (0, helper_2.getSecretClient)({
+                return [4, (0, helper_2.getSecretClient)({
                         keplr: keplr,
                         signer: signer,
                         address: sourceAddress,
@@ -122,27 +120,23 @@ var secretTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 _c.label = 2;
             case 2:
                 _c.trys.push([2, 4, , 5]);
-                return [4 /*yield*/, client.tx.compute.executeContract({
+                return [4, client.tx.compute.executeContract({
                         contract_address: refinedSecretAssetId,
                         code_hash: codeHash,
                         sender: sourceAddress,
                         msg: {
                             send: {
-                                //  no idea why this is hardcoded ngl
-                                recipient: 'secret1tqmms5awftpuhalcv5h5mg76fa0tkdz4jv9ex4', // cw20-ics20
+                                recipient: 'secret1tqmms5awftpuhalcv5h5mg76fa0tkdz4jv9ex4',
                                 recipient_code_hash: 'f85b413b547b9460162958bafd51113ac266dac96a84c33b9150f68f045f2641',
                                 amount: amount,
-                                // memo -> 1
                                 msg: (0, secretjs_1.toBase64)((0, secretjs_1.toUtf8)(JSON.stringify({
                                     channel: "channel-".concat(sourceChannel),
                                     remote_address: destAddress,
-                                    timeout: 30 * 60, // 2 minute timeout,
+                                    timeout: 30 * 60,
                                 }))),
                             },
                         },
-                    }, 
-                    //  ref https://github.com/scrtlabs/dash.scrt.network/blob/723e2e92e01c65cb4df67a7ddf097a5bd038f974/src/shared/utils/config.ts#L34
-                    {
+                    }, {
                         gasLimit: 300000,
                         gasPriceInFeeDenom: 0.1,
                         feeDenom: 'uscrt',
@@ -157,12 +151,12 @@ var secretTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, func
                 generalResponse = _c.sent();
                 rawLog = generalResponse.rawLog;
                 txHash = generalResponse.transactionHash;
-                return [2 /*return*/, txHash];
+                return [2, txHash];
             case 4:
                 ex_2 = _c.sent();
                 console.error(ex_2, 'secretError');
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [3, 5];
+            case 5: return [2];
         }
     });
 }); };
@@ -177,12 +171,12 @@ var injectiveTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, f
                 chainId = 'injective-1';
                 restEndpoint = config_1.networks[chainId].rest;
                 chainRestAuthApi = new sdk_ts_1.ChainRestAuthApi(restEndpoint);
-                return [4 /*yield*/, chainRestAuthApi.fetchAccount(generatedMsg.value.sender)];
+                return [4, chainRestAuthApi.fetchAccount(generatedMsg.value.sender)];
             case 1:
                 accountDetailsResponse = _d.sent();
                 baseAccount = sdk_ts_1.BaseAccount.fromRestApi(accountDetailsResponse);
                 chainRestTendermintApi = new sdk_ts_1.ChainRestTendermintApi(restEndpoint);
-                return [4 /*yield*/, chainRestTendermintApi.fetchLatestBlock()];
+                return [4, chainRestTendermintApi.fetchLatestBlock()];
             case 2:
                 latestBlock = _d.sent();
                 latestHeight = latestBlock.header.height;
@@ -203,7 +197,7 @@ var injectiveTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, f
                     sender: generatedMsg.value.sender,
                     receiver: generatedMsg.value.receiver,
                 });
-                return [4 /*yield*/, (keplr === null || keplr === void 0 ? void 0 : keplr.getKey(chainId))];
+                return [4, (keplr === null || keplr === void 0 ? void 0 : keplr.getKey(chainId))];
             case 3:
                 pubKeyResult = (_c = (_d.sent())) === null || _c === void 0 ? void 0 : _c.pubKey;
                 pubKey = Buffer.from(pubKeyResult).toString('base64');
@@ -217,22 +211,22 @@ var injectiveTransfer = function (_a) { return __awaiter(void 0, [_a], void 0, f
                     accountNumber: baseAccount.accountNumber,
                 }).signDoc;
                 signer = keplr.getOfflineSigner(chainId);
-                return [4 /*yield*/, (signer === null || signer === void 0 ? void 0 : signer.signDirect(generatedMsg.value.sender, signDoc))];
+                return [4, (signer === null || signer === void 0 ? void 0 : signer.signDirect(generatedMsg.value.sender, signDoc))];
             case 4:
                 result = _d.sent();
-                if (!result) return [3 /*break*/, 7];
+                if (!result) return [3, 7];
                 txRaw = (0, sdk_ts_1.getTxRawFromTxRawOrDirectSignResponse)(result);
-                return [4 /*yield*/, (0, helper_1.broadcastTx)({ chainId: chainId, txRaw: txRaw, keplr: keplr })];
+                return [4, (0, helper_1.broadcastTx)({ chainId: chainId, txRaw: txRaw, keplr: keplr })];
             case 5:
                 txHash = _d.sent();
                 console.log('injectiveHash:', txHash);
-                if (!txHash) return [3 /*break*/, 7];
-                return [4 /*yield*/, new sdk_ts_1.TxRestClient(restEndpoint).fetchTxPoll(txHash)];
+                if (!txHash) return [3, 7];
+                return [4, new sdk_ts_1.TxRestClient(restEndpoint).fetchTxPoll(txHash)];
             case 6:
                 response = _d.sent();
                 console.log('injectiveResponse:', response);
-                return [2 /*return*/, response];
-            case 7: return [2 /*return*/];
+                return [2, response];
+            case 7: return [2];
         }
     });
 }); };

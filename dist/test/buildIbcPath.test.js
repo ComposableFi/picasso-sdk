@@ -56,15 +56,12 @@ var globals_1 = require("@jest/globals");
 });
 (0, globals_1.describe)('createForwardPathRecursive', function () {
     (0, globals_1.test)('should create the correct forward structure for a valid ibcPath and destination', function () {
-        // Given test data
         var ibcPath = [
             { chainId: 'osmosis-1', channelId: 1279, receiver: 'centauri-address' },
             { chainId: 'centauri-1', channelId: 52, receiver: 'ethereum-address' },
         ];
-        // When calling the function
         var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
         console.log(result);
-        // 예상되는 출력을 다시 작성합니다
         var expectedOutput = {
             forward: {
                 receiver: 'centauri-address',
@@ -83,7 +80,6 @@ var globals_1 = require("@jest/globals");
                 },
             },
         };
-        // Then the expected output should be correct
         (0, globals_1.expect)(JSON.stringify(result, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
     (0, globals_1.describe)('getExplorerUrl', function () {
@@ -124,7 +120,6 @@ var globals_1 = require("@jest/globals");
         });
     });
     (0, globals_1.test)('should handle a single hop correctly', function () {
-        // Given test data with a single hop
         var ibcPath = [
             {
                 chainId: 'centauri-1',
@@ -132,9 +127,7 @@ var globals_1 = require("@jest/globals");
                 receiver: 'sei-destination-address',
             },
         ];
-        // When calling the function
         var result = (0, chains_1.createForwardPathRecursive)(ibcPath);
-        // Then the expected output should be correct
         var expectedOutput = {
             forward: {
                 receiver: 'sei-destination-address',
@@ -144,7 +137,6 @@ var globals_1 = require("@jest/globals");
                 retries: 0,
             },
         };
-        // Convert both result and expected output to JSON strings for comparison
         (0, globals_1.expect)(JSON.stringify(result, null, 2)).toBe(JSON.stringify(expectedOutput, null, 2));
     });
 });

@@ -49,4 +49,3 @@ export interface Ics20BankABI extends BaseContract {
     once(event: 'RoleTransferred', cb: Callback<RoleTransferred>): void;
     once(event: 'RoleTransferred', options: EventOptions, cb: Callback<RoleTransferred>): void;
 }
-//# sourceMappingURL=Ics20BankABI.d.ts.map

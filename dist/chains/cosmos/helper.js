@@ -60,18 +60,16 @@ var generateTransferMsg = function (txMsg, channel, sourceAddress, destAddress, 
             sender: sourceAddress,
             receiver: destAddress,
             memo: memo,
-            timeoutTimestamp: timeout, //  30~240 minutes
+            timeoutTimestamp: timeout,
         },
     };
     return msg;
 };
 exports.generateTransferMsg = generateTransferMsg;
-/** description the amount of seconds for timeout */
 var getCosmosTimeoutTimestamp = function (seconds) {
     return new Date().getTime() * 1000000 + seconds * 1000 * 1000000;
 };
 exports.getCosmosTimeoutTimestamp = getCosmosTimeoutTimestamp;
-/** @description chainId is from cosmos chain registry */
 var getSigner = function (chainId, keplr, supportLedger) {
     if (supportLedger === void 0) { supportLedger = true; }
     return supportLedger
@@ -79,7 +77,6 @@ var getSigner = function (chainId, keplr, supportLedger) {
         : keplr.getOfflineSigner(chainId);
 };
 exports.getSigner = getSigner;
-// export const keplr = (typeof window !== 'undefined') ? (window as any).keplr : undefined; // provider of cosmos wallet
 var getCosmosClient = function (_a) { return __awaiter(void 0, [_a], void 0, function (_b) {
     var signer, finalClient;
     var chainId = _b.chainId, rpc = _b.rpc, keplr = _b.keplr, feeAssetId = _b.feeAssetId, gasPrice = _b.gasPrice, _c = _b.supportLedger, supportLedger = _c === void 0 ? true : _c;
@@ -87,12 +84,12 @@ var getCosmosClient = function (_a) { return __awaiter(void 0, [_a], void 0, fun
         switch (_d.label) {
             case 0:
                 signer = (0, exports.getSigner)(chainId, keplr, supportLedger);
-                return [4 /*yield*/, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer, {
+                return [4, stargate_1.SigningStargateClient.connectWithSigner(rpc, signer, {
                         gasPrice: stargate_1.GasPrice.fromString("".concat(gasPrice).concat(feeAssetId)),
                     })];
             case 1:
                 finalClient = _d.sent();
-                return [2 /*return*/, finalClient];
+                return [2, finalClient];
         }
     });
 }); };
@@ -104,8 +101,8 @@ var getCosmosBlockHeight = function (_a) { return __awaiter(void 0, [_a], void 0
         switch (_e.label) {
             case 0:
                 _c = Number;
-                return [4 /*yield*/, client.getHeight()];
-            case 1: return [2 /*return*/, _c.apply(void 0, [_e.sent()]) + extra];
+                return [4, client.getHeight()];
+            case 1: return [2, _c.apply(void 0, [_e.sent()]) + extra];
         }
     });
 }); };
@@ -117,15 +114,14 @@ var getSecretClient = function (_a) { return __awaiter(void 0, [_a], void 0, fun
         secretChainId = 'secret-4';
         if (!keplr) {
             console.error('keplr provider is required');
-            return [2 /*return*/];
+            return [2];
         }
-        return [2 /*return*/, new secretjs_1.SecretNetworkClient({
+        return [2, new secretjs_1.SecretNetworkClient({
                 chainId: secretChainId,
                 url: config_1.networks[secretChainId].rest || '',
                 wallet: signer,
                 walletAddress: address,
-                //  NOTE : keep this in mind when integrating other wallets that potentially do not support this
-                encryptionUtils: keplr.getEnigmaUtils(secretChainId), //  lets keplr handle the encryption
+                encryptionUtils: keplr.getEnigmaUtils(secretChainId),
             })];
     });
 }); };
@@ -135,12 +131,12 @@ var broadcastTx = function (_a) { return __awaiter(void 0, [_a], void 0, functio
     var chainId = _b.chainId, txRaw = _b.txRaw, keplr = _b.keplr;
     return __generator(this, function (_c) {
         switch (_c.label) {
-            case 0: return [4 /*yield*/, (keplr === null || keplr === void 0 ? void 0 : keplr.sendTx(chainId, sdk_ts_1.CosmosTxV1Beta1Tx.TxRaw.encode(txRaw).finish(), 'sync'))];
+            case 0: return [4, (keplr === null || keplr === void 0 ? void 0 : keplr.sendTx(chainId, sdk_ts_1.CosmosTxV1Beta1Tx.TxRaw.encode(txRaw).finish(), 'sync'))];
             case 1:
                 result = _c.sent();
                 if (result && (result === null || result === void 0 ? void 0 : result.length) !== 0)
-                    return [2 /*return*/];
-                return [2 /*return*/, Buffer.from(result).toString('hex')];
+                    return [2];
+                return [2, Buffer.from(result).toString('hex')];
         }
     });
 }); };
