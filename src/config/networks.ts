@@ -80,7 +80,7 @@ import { NetworkInfo } from './types';
     "chainId": "2004",
     "feeAssetId": "79228162514264337593543950376",
     "polkadot": {
-      "ss58Format": 0,
+      "ss58Format": 1284,
       "isParachain": true,
       "relayChain": "polkadot",
       "hops": {
