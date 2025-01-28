@@ -236,7 +236,7 @@ exports.networks = {
         "chainId": "2023",
         "feeAssetId": "23",
         "polkadot": {
-            "ss58Format": 0,
+            "ss58Format": 1285,
             "isParachain": true,
             "relayChain": "kusama",
             "hops": {
