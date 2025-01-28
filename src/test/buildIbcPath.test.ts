@@ -260,9 +260,9 @@ describe('getNetworkFromAddress', () => {
   });
 
   test('should correctly detect Polkadot SS58 address', () => {
-    const picassoSS58Address =
+    const moonbeamSS58Address =
       '12pWcHT6PnwCg7bjh1ivEG8ZcCpCDzUSRiDfY5hRXcRnPJWR';
-    expect(getNetworkFromAddress(picassoSS58Address)).toBe('polkadot');
+    expect(getNetworkFromAddress(moonbeamSS58Address)).toBe('2004');
   });
 });
 
