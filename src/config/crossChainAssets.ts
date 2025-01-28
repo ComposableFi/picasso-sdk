@@ -1906,14 +1906,6 @@ export const crossChainAssets :CrossChainAssets= {
       },
       "currentChainId": "2019"
     },
-    "79228162514264337593543950376": {
-      "chainId": "2004",
-      "decimals": 18,
-      "minimalDenom": "79228162514264337593543950376",
-      "denom": "GLMR",
-      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
-      "currentChainId": "2019"
-    },
     "79228162514264337593543950369": {
       "chainId": "2019",
       "decimals": 12,
@@ -2017,6 +2009,14 @@ export const crossChainAssets :CrossChainAssets= {
         "n": "2",
         "d": "1000000"
       },
+      "currentChainId": "2019"
+    },
+    "79228162514264337593543950376": {
+      "chainId": "2004",
+      "decimals": 18,
+      "minimalDenom": "79228162514264337593543950376",
+      "denom": "GLMR",
+      "imageUrl": "https://raw.githubusercontent.com/ComposableFi/FE-assets/main/assets%20/tokens/GLMR.svg",
       "currentChainId": "2019"
     }
   }
