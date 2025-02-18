@@ -29,13 +29,14 @@ const config: Configuration = {
     },
   },
   output: {
-    filename: 'index.js',
+    filename: 'index.ts',
+    libraryTarget: 'umd',
+    globalObject: 'this',
     path: resolve(__dirname, 'dist'),
     library: {
       type: 'umd',
       name: 'picasso-sdk',
     },
-    globalObject: 'this',
   },
   externals: {
     '@coral-xyz/anchor': '@coral-xyz/anchor',
