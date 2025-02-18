@@ -1,9 +1,15 @@
 {
   "name": "picasso-sdk",
-  "version": "0.3.187",
+  "version": "0.3.196",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "keywords": [
     "picasso",
     "composable",
@@ -15,7 +21,8 @@
   "author": "composable finance",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --mode production && npm run test",
+    "build": "tsc && rollup -c && npm run test",
+    "build:types": "tsc --emitDeclarationOnly --declarationDir dist/types",
     "test": "jest",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "npm version patch && rm -rf ./dist && npm run build && npm publish --access public",
@@ -53,6 +60,7 @@
     "dist/chains/**/*",
     "dist/config/**/*",
     "dist/indexer/**/*",
+    "dist/types/**/*",
     "dist/index.*"
   ],
   "devDependencies": {
@@ -61,10 +69,14 @@
     "@polkadot/rpc-core": "^11.3.1",
     "@polkadot/types": "^11.3.1",
     "@polkadot/types-codec": "^11.3.1",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@types/jest": "^29.5.12",
     "husky": "^9.1.4",
     "jest": "^29.7.0",
     "prettier": "^3.3.3",
+    "rollup": "^4.34.8",
     "ts-jest": "^29.2.4",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",

@@ -5,7 +5,6 @@
     "composite": false,
     "declaration": true,
     "esModuleInterop": true,
-
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
@@ -23,7 +22,9 @@
     "resolveJsonModule": true,
     "removeComments": true,
     "sourceMap": false,
-    "declarationMap": false
+    "declarationMap": true,
+    "declarationDir": "./dist",
+    "types": ["node"]
   },
   "include": ["src/**/*"], // 포함할 파일 경로
   "exclude": ["node_modules", "dist"] // 제외할 파일 경로

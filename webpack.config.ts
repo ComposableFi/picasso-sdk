@@ -12,6 +12,11 @@ const config: Configuration = {
           loader: 'ts-loader',
           options: {
             configFile: resolve(__dirname, 'tsconfig.json'),
+            compilerOptions: {
+              declaration: true,
+              declarationDir: './dist/types',
+              types: ['node'],
+            },
           },
         },
         exclude: /node_modules/,
@@ -26,12 +31,13 @@ const config: Configuration = {
   },
   output: {
     filename: 'index.js',
+    libraryTarget: 'umd',
+    globalObject: 'this',
     path: resolve(__dirname, 'dist'),
     library: {
       type: 'umd',
       name: 'picasso-sdk',
     },
-    globalObject: 'this',
   },
   externals: {
     '@coral-xyz/anchor': '@coral-xyz/anchor',

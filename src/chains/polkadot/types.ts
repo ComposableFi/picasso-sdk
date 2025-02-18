@@ -4,7 +4,6 @@ export {
   type InjectedAccount,
   type InjectedWindowProvider,
 } from '@polkadot/extension-inject/types';
-
 export interface TransferStatusByAddress {
   destAddress: string;
   sequence: string;
