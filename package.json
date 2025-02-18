@@ -15,7 +15,7 @@
   "author": "composable finance",
   "license": "ISC",
   "scripts": {
-    "build": "webpack --mode production && npm run test",
+    "build": "tsc && webpack --mode production && npm run test",
     "test": "jest",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "npm version patch && rm -rf ./dist && npm run build && npm publish --access public",

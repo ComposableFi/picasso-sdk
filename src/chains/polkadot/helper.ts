@@ -348,8 +348,9 @@ export const getMultihopPath = async (
   const { rpc: rpc } = networks[networkType];
 
   const api = await getApi(rpc);
+  if (!api) return [];
   const result =
-    await api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries();
+    await api.query.palletMultihopXcmIbc?.routeIdToRoutePath.entries();
   return result.map((p) => {
     const paths = JSON.parse(JSON.stringify(p[1])).map((path) => {
       return {

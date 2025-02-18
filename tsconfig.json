@@ -23,7 +23,8 @@
     "resolveJsonModule": true,
     "removeComments": true,
     "sourceMap": false,
-    "declarationMap": false
+    "declarationMap": false,
+    "declarationDir": "./dist/types"
   },
   "include": ["src/**/*"], // 포함할 파일 경로
   "exclude": ["node_modules", "dist"] // 제외할 파일 경로
