@@ -12,6 +12,10 @@ const config: Configuration = {
           loader: 'ts-loader',
           options: {
             configFile: resolve(__dirname, 'tsconfig.json'),
+            compilerOptions: {
+              declaration: true,
+              declarationDir: './dist/types',
+            },
           },
         },
         exclude: /node_modules/,
