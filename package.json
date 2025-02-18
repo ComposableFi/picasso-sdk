@@ -1,6 +1,6 @@
 {
   "name": "picasso-sdk",
-  "version": "0.3.189",
+  "version": "0.3.190",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
