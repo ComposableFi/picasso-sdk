@@ -380,3 +380,4 @@ export interface StagingXcmVersionedMultiLocation extends Null {
 export interface XcmVersionedXcm extends Null {
 }
 export type PHANTOM_CROWDLOANREWARDS = 'crowdloanRewards';
+//# sourceMappingURL=types.d.ts.map

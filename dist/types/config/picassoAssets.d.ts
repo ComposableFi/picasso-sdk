@@ -342,3 +342,4 @@ declare const picassoAssets: ({
     existentialDeposit: string;
     exchangeRate: number;
 })[];
+//# sourceMappingURL=picassoAssets.d.ts.map

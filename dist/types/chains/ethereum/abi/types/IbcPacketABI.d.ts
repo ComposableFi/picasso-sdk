@@ -164,3 +164,4 @@ export interface IbcPacketABI extends BaseContract {
     once(event: 'WriteAcknowledgement', cb: Callback<WriteAcknowledgement>): void;
     once(event: 'WriteAcknowledgement', options: EventOptions, cb: Callback<WriteAcknowledgement>): void;
 }
+//# sourceMappingURL=IbcPacketABI.d.ts.map

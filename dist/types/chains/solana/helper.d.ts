@@ -29,3 +29,4 @@ export declare const getSolanaGuestChainAccounts: (portId: string, channelId: st
 export declare function numberTo32ByteBuffer(num: bigint): Uint8Array;
 export declare const msgTransferSchema: BorshSchema;
 export declare const instructionSchema: BorshSchema;
+//# sourceMappingURL=helper.d.ts.map

@@ -73,3 +73,4 @@ export interface Ics20TransferBankABI extends BaseContract {
         allEvents(options?: EventOptions, cb?: Callback<EventLog>): EventEmitter;
     };
 }
+//# sourceMappingURL=Ics20TransferBankABI.d.ts.map

@@ -28,3 +28,4 @@ export interface VestingWindow extends Enum {
     readonly type: 'MomentBased' | 'BlockNumberBased';
 }
 export type PHANTOM_VESTING = 'vesting';
+//# sourceMappingURL=types.d.ts.map

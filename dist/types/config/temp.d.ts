@@ -342,3 +342,4 @@ declare const data: ({
     existentialDeposit: string;
     exchangeRate: number;
 })[];
+//# sourceMappingURL=temp.d.ts.map

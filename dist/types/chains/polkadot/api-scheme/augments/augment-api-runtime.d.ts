@@ -96,3 +96,4 @@ declare module '@polkadot/api-base/types/calls' {
         };
     }
 }
+//# sourceMappingURL=augment-api-runtime.d.ts.map

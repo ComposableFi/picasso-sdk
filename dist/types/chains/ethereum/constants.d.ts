@@ -11,3 +11,4 @@ export declare const EthIbcChannel: {
 export declare const ERC_20_PICA: string;
 export declare const TESTNET_FEE = "1000000000000000";
 export declare const MAINNET_FEE = "6000000000000000";
+//# sourceMappingURL=constants.d.ts.map

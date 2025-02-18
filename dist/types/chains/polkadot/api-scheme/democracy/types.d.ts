@@ -34,3 +34,4 @@ export interface PalletDemocracyVoteVoting extends Enum {
 export interface PalletPreimageRequestStatus extends Null {
 }
 export type PHANTOM_DEMOCRACY = 'democracy';
+//# sourceMappingURL=types.d.ts.map

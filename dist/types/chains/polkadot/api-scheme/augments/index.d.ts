@@ -6,3 +6,4 @@ export * from './augment-api-rpc';
 export * from './augment-api-runtime';
 export * from './augment-api-tx';
 export * from './augment-types';
+//# sourceMappingURL=index.d.ts.map

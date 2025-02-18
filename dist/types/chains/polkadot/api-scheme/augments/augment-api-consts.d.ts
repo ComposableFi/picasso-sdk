@@ -233,3 +233,4 @@ declare module '@polkadot/api-base/types/consts' {
         };
     }
 }
+//# sourceMappingURL=augment-api-consts.d.ts.map

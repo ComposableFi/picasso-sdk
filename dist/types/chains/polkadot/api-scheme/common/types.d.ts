@@ -20,3 +20,4 @@ export interface CustomRpcCurrencyId extends SafeRpcWrapper {
 export interface SafeRpcWrapper extends Text {
 }
 export type PHANTOM_COMMON = 'common';
+//# sourceMappingURL=types.d.ts.map

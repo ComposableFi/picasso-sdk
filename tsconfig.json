@@ -22,7 +22,7 @@
     "resolveJsonModule": true,
     "removeComments": true,
     "sourceMap": false,
-    "declarationMap": false,
+    "declarationMap": true,
     "declarationDir": "./dist/types",
     "types": ["node"]
   },

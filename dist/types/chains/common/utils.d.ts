@@ -41,3 +41,4 @@ export declare const getSolanaAddressNetwork: (accountId: string) => string;
 export declare const getEthereumAddressNetwork: (accountId: string) => string;
 export declare const getNetworkFromAddress: (address: string) => string;
 export {};
+//# sourceMappingURL=utils.d.ts.map

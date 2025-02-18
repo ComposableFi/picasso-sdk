@@ -662,3 +662,4 @@ declare module '@polkadot/api-base/types/storage' {
         };
     }
 }
+//# sourceMappingURL=augment-api-query.d.ts.map

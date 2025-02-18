@@ -2070,3 +2070,4 @@ declare module '@polkadot/api-base/types/submittable' {
         };
     }
 }
+//# sourceMappingURL=augment-api-tx.d.ts.map

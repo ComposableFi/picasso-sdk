@@ -578,3 +578,4 @@ declare module '@polkadot/api-base/types/errors' {
         };
     }
 }
+//# sourceMappingURL=augment-api-errors.d.ts.map

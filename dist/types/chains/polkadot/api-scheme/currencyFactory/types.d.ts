@@ -8,3 +8,4 @@ export interface PalletCurrencyFactoryRangesRange extends Struct {
     readonly end: AssetId;
 }
 export type PHANTOM_CURRENCYFACTORY = 'currencyFactory';
+//# sourceMappingURL=types.d.ts.map

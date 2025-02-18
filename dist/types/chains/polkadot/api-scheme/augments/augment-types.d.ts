@@ -1332,3 +1332,4 @@ export declare module '@polkadot/types/types/registry' {
         XcmVersionedXcm: XcmVersionedXcm;
     }
 }
+//# sourceMappingURL=augment-types.d.ts.map

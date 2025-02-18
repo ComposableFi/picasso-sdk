@@ -18,3 +18,4 @@ export declare const getErc20Contract: (web3: Web3, erc20TokenAddress: string) =
 export declare const getApprovedErc20: (web3: Web3, account: string, erc20TokenAddress: string, spenderContract?: string) => Promise<string>;
 export declare const simulate: (web3: Web3, data: string, txObject: any) => void;
 export declare const getErc20Balance: (web3: Web3, account: string, erc20TokenAddress: string) => Promise<string>;
+//# sourceMappingURL=helper.d.ts.map

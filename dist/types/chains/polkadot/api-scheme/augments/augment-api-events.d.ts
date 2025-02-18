@@ -1752,3 +1752,4 @@ declare module '@polkadot/api-base/types/events' {
         };
     }
 }
+//# sourceMappingURL=augment-api-events.d.ts.map

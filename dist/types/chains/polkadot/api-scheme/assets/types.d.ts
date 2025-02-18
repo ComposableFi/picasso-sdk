@@ -9,3 +9,4 @@ export interface Asset extends Struct {
     readonly foreignId: Option<XcmV1MultiLocation>;
     readonly existentialDeposit: CustomRpcBalance;
 }
+//# sourceMappingURL=types.d.ts.map

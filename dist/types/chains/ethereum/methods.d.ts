@@ -17,3 +17,4 @@ export declare const approveErc20: ({ web3, account, amount, erc20TokenAddress, 
     erc20TokenAddress: string;
     spenderContract?: string;
 }) => Promise<import("web3-core").TransactionReceipt>;
+//# sourceMappingURL=methods.d.ts.map

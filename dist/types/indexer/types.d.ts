@@ -67,3 +67,4 @@ export interface MemoStructure {
     };
 }
 export {};
+//# sourceMappingURL=types.d.ts.map

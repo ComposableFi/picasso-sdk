@@ -45,3 +45,4 @@ export declare const broadcastTx: ({ chainId, txRaw, keplr, }: {
     txRaw: CosmosTxV1Beta1Tx.TxRaw;
     keplr: Keplr;
 }) => Promise<string>;
+//# sourceMappingURL=helper.d.ts.map

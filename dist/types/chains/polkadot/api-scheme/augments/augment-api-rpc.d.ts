@@ -264,3 +264,4 @@ declare module '@polkadot/rpc-core/types/jsonrpc' {
         };
     }
 }
+//# sourceMappingURL=augment-api-rpc.d.ts.map

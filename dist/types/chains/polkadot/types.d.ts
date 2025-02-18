@@ -34,3 +34,4 @@ export interface MultihopRoutePath {
     index?: number;
     paths: RouteDetail[];
 }
+//# sourceMappingURL=types.d.ts.map
