@@ -15,6 +15,7 @@ const config: Configuration = {
             compilerOptions: {
               declaration: true,
               declarationDir: './dist/types',
+              types: ['node'],
             },
           },
         },
@@ -29,7 +30,7 @@ const config: Configuration = {
     },
   },
   output: {
-    filename: 'index.ts',
+    filename: 'index.js',
     libraryTarget: 'umd',
     globalObject: 'this',
     path: resolve(__dirname, 'dist'),

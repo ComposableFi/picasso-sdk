@@ -2,7 +2,7 @@
   "name": "picasso-sdk",
   "version": "0.3.190",
   "description": "Picasso sdk for cosmos, ethereum, solana, and polkadot ibc transfer",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "picasso",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc && webpack --mode production && npm run test",
+    "build:types": "tsc --emitDeclarationOnly --declarationDir dist/types",
     "test": "jest",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "publish-npm": "npm version patch && rm -rf ./dist && npm run build && npm publish --access public",
