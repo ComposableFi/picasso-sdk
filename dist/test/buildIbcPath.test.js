@@ -179,6 +179,10 @@ var globals_1 = require("@jest/globals");
         var picassoSS58Address = '5wFJF7twuHuSfUwK6tJFfHAbi55ubDx38QYSa5JfpDMNKuqU';
         (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(picassoSS58Address)).toBe('2087');
     });
+    (0, globals_1.test)('should correctly detect Polkadot SS58 address', function () {
+        var moonbeamSS58Address = '12pWcHT6PnwCg7bjh1ivEG8ZcCpCDzUSRiDfY5hRXcRnPJWR';
+        (0, globals_1.expect)((0, chains_1.getNetworkFromAddress)(moonbeamSS58Address)).toBe('polkadot');
+    });
 });
 (0, globals_1.describe)('getNetworkFromAddress', function () {
     (0, globals_1.test)('should correctly detect Picasso kusama address', function () {

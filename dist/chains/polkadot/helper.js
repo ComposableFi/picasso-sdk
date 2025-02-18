@@ -355,17 +355,20 @@ var makeIbcToCosmos = function (_a) {
 exports.makeIbcToCosmos = makeIbcToCosmos;
 var getMultihopPath = function (fromChainId, networkType) { return __awaiter(void 0, void 0, void 0, function () {
     var rpc, api, result;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var _a;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0:
                 rpc = config_1.networks[networkType].rpc;
                 return [4, getApi(rpc)];
             case 1:
-                api = _a.sent();
-                return [4, api.query.palletMultihopXcmIbc.routeIdToRoutePath.entries()];
+                api = _b.sent();
+                if (!api)
+                    return [2, []];
+                return [4, ((_a = api.query.palletMultihopXcmIbc) === null || _a === void 0 ? void 0 : _a.routeIdToRoutePath.entries())];
             case 2:
-                result = _a.sent();
-                return [2, result.map(function (p) {
+                result = _b.sent();
+                return [2, result === null || result === void 0 ? void 0 : result.map(function (p) {
                         var paths = JSON.parse(JSON.stringify(p[1])).map(function (path) {
                             return __assign(__assign({}, path[0]), { chainId: path[1].startsWith('0x')
                                     ? chainNameMap[(0, util_1.hexToString)(path[1])]
