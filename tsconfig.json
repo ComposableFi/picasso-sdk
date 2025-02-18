@@ -23,7 +23,7 @@
     "removeComments": true,
     "sourceMap": false,
     "declarationMap": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist",
     "types": ["node"]
   },
   "include": ["src/**/*"], // 포함할 파일 경로
