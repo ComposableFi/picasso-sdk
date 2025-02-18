@@ -1,13 +1,13 @@
-import { resolve } from 'path';
-import typescript from '@rollup/plugin-typescript';
-import commonjs from '@rollup/plugin-commonjs';
-import nodeResolve from '@rollup/plugin-node-resolve';
+const { resolve } = require('path');
+const typescript = require('@rollup/plugin-typescript');
+const commonjs = require('@rollup/plugin-commonjs');
+const nodeResolve = require('@rollup/plugin-node-resolve');
 
-export default {
+module.exports = {
   input: 'src/index.ts',
   output: {
-    file: 'dist/index.js',
-    format: 'umd',
+    file: 'dist/index.ts',
+    format: 'esm',
     name: 'picasso-sdk',
     globals: {
       '@coral-xyz/anchor': '@coral-xyz/anchor',
