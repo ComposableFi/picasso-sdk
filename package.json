@@ -54,6 +54,7 @@
     "dist/chains/**/*",
     "dist/config/**/*",
     "dist/indexer/**/*",
+    "dist/types/**/*",
     "dist/index.*"
   ],
   "devDependencies": {
