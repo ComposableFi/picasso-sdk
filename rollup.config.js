@@ -6,7 +6,7 @@ const nodeResolve = require('@rollup/plugin-node-resolve');
 module.exports = {
   input: 'src/index.ts',
   output: {
-    file: 'dist/index.ts',
+    file: 'dist/index.js',
     format: 'esm',
     name: 'picasso-sdk',
     globals: {
