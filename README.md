@@ -365,6 +365,75 @@ const keplr = window.keplr;
 };
 ```
 
+### Polkadot
+
+```
+import { polkadotTransfer, buildIbcPath , getApi, getInjectedPolkadot} from 'picasso-sdk';
+import { getCosmosBlockHeight, getCosmosClient, getPolkadotBlockHeight, getTimeOut, keplrChains, networks } from '..';
+
+
+const getHeight = async(originChainId, destinationChainId, toApi)=>{
+    let height = 0;
+			if (networks[destinationChainId].chainType === 'cosmos') {
+				const keplr = window.keplr; // put provider here
+				const client = await getCosmosClient({
+					chainId: destinationChainId,
+					rpc: keplrChains[destinationChainId].rpc,
+					keplr: keplr,
+					gasPrice: keplrChains?.[destinationChainId]?.feeCurrencies?.[0]?.gasPriceStep?.high.toString() ?? '0',
+					feeAssetId: keplrChains[destinationChainId].stakeCurrency?.coinMinimalDenom as string,
+					supportLedger: false
+				});
+				height = await getCosmosBlockHeight({ client, extra: 100 });
+			} else if (networks[destinationChainId].chainType === 'polkadot') {
+				height = await getPolkadotBlockHeight(toApi);
+			}
+
+            return height
+}
+const CosmosButton = () => {
+const keplr = window.keplr;
+    //example : osmosis -> solana transfer via picasso pfm
+
+    const fromApi = getApi('picasso_kusama_rpc'); // rpc that you are using for each chain
+    const toApi = undefined // only pass this when the destination chain is polkadot
+    const builtIbcPath =  buildIbcPath('2087', 'centauri-1')
+
+
+    const memo = builtIbcPath.length > 1 ? JSON.stringify(createForwardPathRecursive(builtIbcPath?.slice(1, builtIbcPath.length))) : '';
+
+
+    const height = await getHeight('2087', 'centauri-1', toApi)
+
+    const picassoToCosmosPicassoTransfer = async () => {
+        await polkadotTransfer({
+            fromChainId: '2087',
+            toChainId: 'centauri-1',
+            fromAddress: '5yNZjX24n2eg7W6EVamaTXNQbWCwchhThEaSWB7V3GRjtHeL',
+            toAddress: 'centauri1ewm97t5qw3uutwd9qh0ydy007ymhl8qth56qlj',
+            amount: '1000000000',
+            sourceChannel:builtIbcPath[0]?.channelId,
+            assetId: 'uosmo',
+            fromApi,
+            toApi,
+            destinationHeight: height,
+            signer: (await getInjectedPolkadot('polkadot-js'))?.signer,
+            memo
+        });
+    }
+	return (
+		<>
+		   	<button onClick={picassoToCosmosPicassoTransfer}>picassoToCosmosPicassoTransfer</button>
+
+		</>
+	);
+};
+
+export default CosmosButton;
+
+
+```
+
 # How to generate config
 
 ### 1. upload src/config/json referring existing format
