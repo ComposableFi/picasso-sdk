@@ -364,3 +364,62 @@ const keplr = window.keplr;
 	);
 };
 ```
+
+# How to generate config
+
+### 1. upload src/config/json referring existing format
+
+### 2. run npm generate-helper / npm generate-multihop
+
+- This can be skipped since it will be run automatically with every commit
+
+# How to deploy to npm
+
+### 1. run npm run build
+
+- This can be skipped since it will be run automatically with command
+
+### 2. run npm run publish-npm
+
+- TODO: need to add pipeline to deploy to npm
+
+# GeneratedConfigs
+
+### coingecko
+
+- This is used to generate coingecko config
+
+### crossChainAssets.ts
+
+- This is used to generate all cross chain assets config (Polkadot, Solana, Cosmos, Ethereum)
+
+### keplrChains.ts
+
+- This is used to generate keplr config format (Only cosmos chains)
+
+### multihopRoute.ts
+
+- This file describes multihop(PFM) route between chains
+
+### networks.ts
+
+- This file describes all networks config (Polkadot, Solana, Cosmos, Ethereum)
+
+### solanaAssets.ts
+
+- This file describes all solana assets config
+
+### picassoAssets.ts
+
+- This file describes all picasso assets config
+
+### tokensPerChannel.ts
+
+- This file describes all tokens per channel
+
+# Quick Description of each network
+
+- polkadot chain : multichain, numeric network id,
+- solana chain : single chain(using dummy network id: solana)
+- cosmos chain : multichain, string network id,
+- ethereum chain : single chain(using dummy network id: ethereum)
