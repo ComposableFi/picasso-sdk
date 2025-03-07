@@ -433,7 +433,198 @@
       }
     ]
   },
-  null
+  {
+    "fromChainId": "kusama",
+    "toChainId": "osmosis-1",
+    "index": 1,
+    "paths": [
+      {
+        "chainId": "2087",
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "centauri-1",
+        "order": 2,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "osmosis-1",
+        "order": 3,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "umee-1",
+    "index": 8,
+    "paths": [
+      {
+        "chainId": "centauri-1",
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "umee-1",
+        "order": 2,
+        "channelId": 20,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "2019",
+    "index": 12,
+    "paths": [
+      {
+        "chainId": "2019",
+        "order": 1,
+        "channelId": 15,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "SubstrateIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "osmosis-1",
+    "index": 2,
+    "paths": [
+      {
+        "chainId": "centauri-1",
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "osmosis-1",
+        "order": 2,
+        "channelId": 3,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "crescent-1",
+    "index": 6,
+    "paths": [
+      {
+        "chainId": "centauri-1",
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "crescent-1",
+        "order": 2,
+        "channelId": 11,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "neutron-1",
+    "index": 4,
+    "paths": [
+      {
+        "chainId": "centauri-1",
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      },
+      {
+        "chainId": "neutron-1",
+        "order": 2,
+        "channelId": 18,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  },
+  {
+    "fromChainId": "kusama",
+    "toChainId": "centauri-1",
+    "index": 11,
+    "paths": [
+      {
+        "chainId": "centauri-1",
+        "order": 1,
+        "channelId": 17,
+        "timestamp": 1000,
+        "height": 1000,
+        "retries": 0,
+        "timeout": 6000000000000,
+        "chainHop": "CosmosIbc",
+        "paraId": null
+      }
+    ]
+  }
 ] ;
     
     
